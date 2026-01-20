@@ -3,11 +3,12 @@ module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './lib/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        // Pokemon type colors
+        // Type colors
         normal: '#A8A878',
         fire: '#F08030',
         water: '#6890F0',

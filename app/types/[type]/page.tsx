@@ -82,7 +82,7 @@ export default function TypePage({ params }: { params: { type: string } }) {
               <div className="flex flex-wrap gap-2">
                 {offensive.superEffective.map(t => (
                   <Link key={t} href={`/types/${t}`}>
-                    <TypeBadge typeId={t} clickable />
+                    <TypeBadge typeId={t as TypeId} clickable />
                   </Link>
                 ))}
               </div>
@@ -95,7 +95,7 @@ export default function TypePage({ params }: { params: { type: string } }) {
               <div className="flex flex-wrap gap-2">
                 {offensive.notVeryEffective.map(t => (
                   <Link key={t} href={`/types/${t}`}>
-                    <TypeBadge typeId={t} clickable />
+                    <TypeBadge typeId={t as TypeId} clickable />
                   </Link>
                 ))}
               </div>
@@ -108,7 +108,7 @@ export default function TypePage({ params }: { params: { type: string } }) {
               <div className="flex flex-wrap gap-2">
                 {offensive.noEffect.map(t => (
                   <Link key={t} href={`/types/${t}`}>
-                    <TypeBadge typeId={t} clickable />
+                    <TypeBadge typeId={t as TypeId} clickable />
                   </Link>
                 ))}
               </div>
@@ -129,7 +129,7 @@ export default function TypePage({ params }: { params: { type: string } }) {
               <div className="flex flex-wrap gap-2">
                 {defensive.weakTo.map(t => (
                   <Link key={t} href={`/types/${t}`}>
-                    <TypeBadge typeId={t} clickable />
+                    <TypeBadge typeId={t as TypeId} clickable />
                   </Link>
                 ))}
               </div>
@@ -142,7 +142,7 @@ export default function TypePage({ params }: { params: { type: string } }) {
               <div className="flex flex-wrap gap-2">
                 {defensive.resistsTo.map(t => (
                   <Link key={t} href={`/types/${t}`}>
-                    <TypeBadge typeId={t} clickable />
+                    <TypeBadge typeId={t as TypeId} clickable />
                   </Link>
                 ))}
               </div>
@@ -155,7 +155,7 @@ export default function TypePage({ params }: { params: { type: string } }) {
               <div className="flex flex-wrap gap-2">
                 {defensive.immuneTo.map(t => (
                   <Link key={t} href={`/types/${t}`}>
-                    <TypeBadge typeId={t} clickable />
+                    <TypeBadge typeId={t as TypeId} clickable />
                   </Link>
                 ))}
               </div>

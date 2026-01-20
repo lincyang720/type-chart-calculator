@@ -1,5 +1,7 @@
-import { TypeId, TypeMatchup, DualTypeWeaknesses } from './types';
-import defensiveTypeChart from '@/data/defensiveTypeChart.json';
+import { TypeId, TypeMatchup, DualTypeWeaknesses, DefensiveTypeChart } from './types';
+import defensiveTypeChartData from '@/data/defensiveTypeChart.json';
+
+const defensiveTypeChart = defensiveTypeChartData as DefensiveTypeChart;
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',

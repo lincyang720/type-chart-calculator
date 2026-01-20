@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Type Chart Calculator - Complete Type Effectiveness Guide',
     description: 'Interactive type matchup chart and calculator for all 18 types',
-    url: 'https://typematchup.gg',
+    url: 'https://typematchup.org',
     siteName: 'Type Chart Calculator',
     locale: 'en_US',
     type: 'website',

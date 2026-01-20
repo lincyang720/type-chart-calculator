@@ -17,7 +17,7 @@ export function WebApplicationSchema() {
     '@type': 'WebApplication',
     name: 'Type Chart Calculator',
     description: 'Interactive type matchup chart and calculator for all 18 types',
-    url: 'https://typematchup.gg',
+    url: 'https://typematchup.org',
     applicationCategory: 'GameApplication',
     operatingSystem: 'Any',
     offers: {
