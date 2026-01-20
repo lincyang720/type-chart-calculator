@@ -1,0 +1,112 @@
+{
+  "types": [
+    {
+      "id": "normal",
+      "name": "Normal",
+      "color": "#A8A878",
+      "description": "Normal-type moves are balanced and versatile, with no inherent strengths or weaknesses against most types."
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "color": "#F08030",
+      "description": "Fire-type moves are super effective against Grass, Ice, Bug, and Steel types, making them excellent for offensive strategies."
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "color": "#6890F0",
+      "description": "Water-type moves excel against Fire, Ground, and Rock types, offering both offensive and defensive capabilities."
+    },
+    {
+      "id": "electric",
+      "name": "Electric",
+      "color": "#F8D030",
+      "description": "Electric-type moves are highly effective against Water and Flying types, with immunity to paralysis."
+    },
+    {
+      "id": "grass",
+      "name": "Grass",
+      "color": "#78C850",
+      "description": "Grass-type moves are strong against Water, Ground, and Rock types, but have many weaknesses."
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "color": "#98D8D8",
+      "description": "Ice-type moves are devastating against Grass, Ground, Flying, and Dragon types."
+    },
+    {
+      "id": "fighting",
+      "name": "Fighting",
+      "color": "#C03028",
+      "description": "Fighting-type moves are super effective against Normal, Ice, Rock, Dark, and Steel types."
+    },
+    {
+      "id": "poison",
+      "name": "Poison",
+      "color": "#A040A0",
+      "description": "Poison-type moves are effective against Grass and Fairy types, with strong defensive capabilities."
+    },
+    {
+      "id": "ground",
+      "name": "Ground",
+      "color": "#E0C068",
+      "description": "Ground-type moves are powerful against Fire, Electric, Poison, Rock, and Steel types."
+    },
+    {
+      "id": "flying",
+      "name": "Flying",
+      "color": "#A890F0",
+      "description": "Flying-type moves are super effective against Grass, Fighting, and Bug types."
+    },
+    {
+      "id": "psychic",
+      "name": "Psychic",
+      "color": "#F85888",
+      "description": "Psychic-type moves are strong against Fighting and Poison types, with high special attack potential."
+    },
+    {
+      "id": "bug",
+      "name": "Bug",
+      "color": "#A8B820",
+      "description": "Bug-type moves are effective against Grass, Psychic, and Dark types."
+    },
+    {
+      "id": "rock",
+      "name": "Rock",
+      "color": "#B8A038",
+      "description": "Rock-type moves are super effective against Fire, Ice, Flying, and Bug types."
+    },
+    {
+      "id": "ghost",
+      "name": "Ghost",
+      "color": "#705898",
+      "description": "Ghost-type moves are powerful against Psychic and other Ghost types, with immunity to Normal and Fighting."
+    },
+    {
+      "id": "dragon",
+      "name": "Dragon",
+      "color": "#7038F8",
+      "description": "Dragon-type moves are super effective against other Dragon types, known for high stats."
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "color": "#705848",
+      "description": "Dark-type moves are effective against Psychic and Ghost types, with immunity to Psychic moves."
+    },
+    {
+      "id": "steel",
+      "name": "Steel",
+      "color": "#B8B8D0",
+      "description": "Steel-type moves are super effective against Ice, Rock, and Fairy types, with excellent defensive typing."
+    },
+    {
+      "id": "fairy",
+      "name": "Fairy",
+      "color": "#EE99AC",
+      "description": "Fairy-type moves are strong against Fighting, Dragon, and Dark types, with immunity to Dragon moves."
+    }
+  ]
+}
