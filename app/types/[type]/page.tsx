@@ -19,8 +19,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { type: string } }): Promise<Metadata> {
-  const typeId = params.type as TypeId;
+export async function generateMetadata({ params }: { params: Promise<{ type: string }> }): Promise<Metadata> {
+  const { type: typeParam } = await params;
+  const typeId = typeParam as TypeId;
   const type = typesData.types.find(t => t.id === typeId);
 
   if (!type) {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: { params: { type: string } })
   };
 }
 
-export default function TypePage({ params }: { params: { type: string } }) {
-  const typeId = params.type as TypeId;
+export default async function TypePage({ params }: { params: Promise<{ type: string }> }) {
+  const { type: typeParam } = await params;
+  const typeId = typeParam as TypeId;
   const type = typesData.types.find(t => t.id === typeId);
 
   if (!type || !ALL_TYPES.includes(typeId)) {
