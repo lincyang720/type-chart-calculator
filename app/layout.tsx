@@ -55,8 +55,14 @@ export default function RootLayout({
             gtag('config', 'G-Y6GJWZRG95');
           `}
         </Script>
+
+        {/* PayPal SDK */}
+        <Script
+          src={`https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}&currency=USD`}
+          strategy="lazyOnload"
+        />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
           <nav className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
@@ -68,6 +74,7 @@ export default function RootLayout({
                 <a href="/calculator" className="hover:underline">Calculator</a>
                 <a href="/battle-simulator" className="hover:underline">Battle Simulator</a>
                 <a href="/types" className="hover:underline">All Types</a>
+                <a href="/support" className="hover:underline">Support</a>
               </div>
             </div>
           </nav>
