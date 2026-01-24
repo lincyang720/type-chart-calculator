@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayPal 收款使用说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 60px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #2d3748;
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .subtitle {
+      text-align: center;
+      color: #718096;
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #0070ba;
+      font-size: 32px;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #0070ba;
+      padding-bottom: 10px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .step {
+      background: #f7fafc;
+      padding: 30px;
+      border-radius: 15px;
+      border-left: 5px solid #0070ba;
+    }
+    .step-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #0070ba;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .step h3 {
+      color: #2d3748;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .step p {
+      color: #4a5568;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .highlight-box {
+      background: #fff5f5;
+      border-left: 5px solid #f56565;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+    .highlight-box h3 {
+      color: #c53030;
+      margin-bottom: 10px;
+    }
+    .info-box {
+      background: #ebf8ff;
+      border-left: 5px solid #4299e1;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+    .info-box h3 {
+      color: #2c5282;
+      margin-bottom: 10px;
+    }
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .fee-table th,
+    .fee-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .fee-table th {
+      background: #0070ba;
+      color: white;
+      font-weight: bold;
+    }
+    .fee-table tr:hover {
+      background: #f7fafc;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 2px solid #e2e8f0;
+      color: #718096;
+    }
+    .badge {
+      display: inline-block;
+      background: #48bb78;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💰 PayPal 收款使用说明</h1>
+    <p class="subtitle">Type Chart Calculator 支付功能完整指南</p>
+    <span class="badge">✅ 已上线 - Live 环境</span>
+
+    <div class="section">
+      <h2>👥 用户如何支付</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>访问支持页面</h3>
+          <p>用户访问 <strong>typematchup.org/support</strong></p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>选择金额</h3>
+          <p>预设金额：$3, $5, $10, $20<br>或输入自定义金额（最低 $1）</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>点击 PayPal 按钮</h3>
+          <p>页面显示金色的 PayPal 支付按钮</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>登录并支付</h3>
+          <p>使用 PayPal 账号或信用卡完成支付</p>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <h3>支付成功</h3>
+          <p>显示感谢消息，资金立即到账</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>💵 你如何收款</h2>
+      <div class="info-box">
+        <h3>📊 查看收款</h3>
+        <p>登录 <strong>paypal.com</strong> → 点击"活动"查看所有交易记录</p>
+        <p style="margin-top: 10px;">每笔收款显示：付款人信息、金额、时间、交易状态</p>
+      </div>
+
+      <div class="info-box">
+        <h3>💳 提现到银行卡</h3>
+        <p><strong>步骤：</strong>转账 → 转账到银行 → 选择银行卡 → 确认提现</p>
+        <p style="margin-top: 10px;"><strong>到账时间：</strong>国内银行卡 1-3 个工作日</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>💸 手续费说明</h2>
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>费率</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>收款手续费</td>
+            <td>4.4% + $0.30</td>
+            <td>每笔交易自动扣除</td>
+          </tr>
+          <tr>
+            <td>提现手续费</td>
+            <td>$35 USD/笔</td>
+            <td>提现到中国银行卡</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <h3>💡 示例计算</h3>
+        <p><strong>用户支付：</strong>$10.00</p>
+        <p><strong>PayPal 扣除：</strong>$10 × 4.4% + $0.30 = $0.74</p>
+        <p><strong>你实际收到：</strong>$10.00 - $0.74 = <strong>$9.26</strong></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🔒 安全建议</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>✅ 启用两步验证</h3>
+          <p>在 PayPal 安全设置中启用两步验证，保护账户安全</p>
+        </div>
+        <div class="step">
+          <h3>✅ 设置通知</h3>
+          <p>启用收款通知、余额变动提醒、登录异常警告</p>
+        </div>
+        <div class="step">
+          <h3>✅ 定期检查</h3>
+          <p>每周查看交易记录，确认所有交易合法</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>❓ 常见问题</h2>
+      <div class="info-box">
+        <h3>Q: 用户支付后我多久能收到钱？</h3>
+        <p><strong>A:</strong> 立即到账，资金会立即显示在你的 PayPal 余额中。</p>
+      </div>
+      <div class="info-box">
+        <h3>Q: 用户可以用信用卡支付吗？</h3>
+        <p><strong>A:</strong> 可以。用户无需 PayPal 账号，可以直接使用借记卡或信用卡支付。</p>
+      </div>
+      <div class="info-box">
+        <h3>Q: 如何知道谁支付了？</h3>
+        <p><strong>A:</strong> 在 PayPal 交易详情中可以看到付款人的姓名和邮箱地址。</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>技术支持：</strong>查看 PAYPAL_README.md 和 PAYPAL_USAGE_GUIDE.md</p>
+      <p style="margin-top: 10px;">最后更新：2026-01-23 | 状态：✅ 已上线（Live 环境）</p>
+    </div>
+  </div>
+</body>
+</html>

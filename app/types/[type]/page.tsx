@@ -200,6 +200,73 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="bg-white rounded-lg shadow-lg p-6 mb-6">
+          <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-semibold text-lg mb-2">What is {type.name} type strong against?</h3>
+              <p className="text-gray-700">
+                {type.name} type moves are super effective (2× damage) against {offensive.superEffective.map(t =>
+                  typesData.types.find(type => type.id === t)?.name
+                ).join(', ')} types.
+                {offensive.superEffective.length === 0 && `${type.name} type has no super effective matchups.`}
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg mb-2">What is {type.name} type weak against?</h3>
+              <p className="text-gray-700">
+                {defensive.weakTo.length > 0 ? (
+                  `${type.name} type is weak to (takes 2× damage from) ${defensive.weakTo.map(t =>
+                    typesData.types.find(type => type.id === t)?.name
+                  ).join(', ')} type moves.`
+                ) : (
+                  `${type.name} type has no weaknesses!`
+                )}
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg mb-2">What types resist {type.name}?</h3>
+              <p className="text-gray-700">
+                {offensive.notVeryEffective.length > 0 ? (
+                  `${offensive.notVeryEffective.map(t =>
+                    typesData.types.find(type => type.id === t)?.name
+                  ).join(', ')} types resist ${type.name} type moves (take 0.5× damage).`
+                ) : (
+                  `No types resist ${type.name} type moves.`
+                )}
+              </p>
+            </div>
+            {defensive.resistsTo.length > 0 && (
+              <div>
+                <h3 className="font-semibold text-lg mb-2">What does {type.name} type resist?</h3>
+                <p className="text-gray-700">
+                  {type.name} type resists (takes 0.5× damage from) {defensive.resistsTo.map(t =>
+                    typesData.types.find(type => type.id === t)?.name
+                  ).join(', ')} type moves.
+                </p>
+              </div>
+            )}
+            {(defensive.immuneTo.length > 0 || offensive.noEffect.length > 0) && (
+              <div>
+                <h3 className="font-semibold text-lg mb-2">Immunities</h3>
+                <p className="text-gray-700">
+                  {defensive.immuneTo.length > 0 && (
+                    <>{type.name} type is immune to {defensive.immuneTo.map(t =>
+                      typesData.types.find(type => type.id === t)?.name
+                    ).join(', ')} type moves. </>
+                  )}
+                  {offensive.noEffect.length > 0 && (
+                    <>{type.name} type moves have no effect on {offensive.noEffect.map(t =>
+                      typesData.types.find(type => type.id === t)?.name
+                    ).join(', ')} types.</>
+                  )}
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+
         {/* Tools */}
         <section className="bg-gray-50 rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-4">Explore More</h2>
