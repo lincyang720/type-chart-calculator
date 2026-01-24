@@ -13,15 +13,18 @@ export default function SupportPage() {
   const [paypalLoaded, setPaypalLoaded] = useState(false);
 
   useEffect(() => {
-    // Check if PayPal SDK is loaded
-    const checkPayPal = setInterval(() => {
-      if (window.paypal) {
-        setPaypalLoaded(true);
-        clearInterval(checkPayPal);
-      }
-    }, 100);
+    // Load PayPal SDK dynamically only on this page
+    const script = document.createElement('script');
+    script.src = `https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}&currency=USD`;
+    script.async = true;
+    script.onload = () => setPaypalLoaded(true);
+    document.body.appendChild(script);
 
-    return () => clearInterval(checkPayPal);
+    return () => {
+      // Cleanup script on unmount
+      const scripts = document.querySelectorAll('script[src*="paypal.com/sdk"]');
+      scripts.forEach(s => s.remove());
+    };
   }, []);
 
   useEffect(() => {

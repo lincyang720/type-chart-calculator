@@ -42,12 +42,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics */}
+        {/* Google Analytics - Lazy load for better performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Y6GJWZRG95"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -55,17 +55,11 @@ export default function RootLayout({
             gtag('config', 'G-Y6GJWZRG95');
           `}
         </Script>
-
-        {/* PayPal SDK */}
-        <Script
-          src={`https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}&currency=USD`}
-          strategy="lazyOnload"
-        />
       </head>
       <body suppressHydrationWarning>
-        <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
-          <nav className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
+        <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg h-16">
+          <nav className="container mx-auto px-4 h-full">
+            <div className="flex items-center justify-between h-full">
               <a href="/" className="text-2xl font-bold hover:opacity-90 transition-opacity">
                 Type Chart Calculator
               </a>
