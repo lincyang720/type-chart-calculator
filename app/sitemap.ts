@@ -7,7 +7,7 @@ const ALL_TYPES = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://typematchup.org';
+  const baseUrl = 'https://www.typematchup.org';
 
   const staticPages = [
     {
