@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.typematchup.org'),
   title: 'Type Chart Calculator - Complete Type Effectiveness Guide',
   description: 'Interactive type matchup chart and calculator. Find weaknesses, resistances, and super effective moves for all 18 types. Perfect for competitive battles and team building.',
   keywords: 'type chart, type effectiveness, weakness calculator, type matchup, battle simulator, dual type calculator',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Type Chart Calculator - Complete Type Effectiveness Guide',
     description: 'Interactive type matchup chart and calculator for all 18 types',
-    url: 'https://typematchup.org',
+    url: 'https://www.typematchup.org',
     siteName: 'Type Chart Calculator',
     locale: 'en_US',
     type: 'website',

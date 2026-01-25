@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: 'All Types - Complete Type Guide and Matchups',
   description: 'Browse all 18 types with detailed information about strengths, weaknesses, and matchups. Learn about each type\'s characteristics.',
   keywords: 'all types, type list, type guide, type matchups, type strengths, type weaknesses',
+  openGraph: {
+    title: 'All Types - Complete Type Guide and Matchups',
+    description: 'Browse all 18 types with detailed matchup information',
+    url: 'https://www.typematchup.org/types',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/types',
+  },
 };
 
 const ALL_TYPES: TypeId[] = [

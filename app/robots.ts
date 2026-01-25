@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://typematchup.org/sitemap.xml',
+    sitemap: 'https://www.typematchup.org/sitemap.xml',
   };
 }

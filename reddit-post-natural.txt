@@ -1,0 +1,19 @@
+Title: Built a type matchup calculator in 2 weeks - got my first organic search click on day 4!
+
+---
+
+Hey everyone!
+
+Just wanted to share my side project - a type effectiveness calculator for competitive gaming (https://typematchup.org). Been working on it for about 2 weeks and finally launched it.
+
+The site basically helps you figure out type matchups - there's an 18x18 chart, a dual-type calculator, and a battle simulator. Nothing fancy, but it works.
+
+Tech stack is Next.js 14 with TypeScript and Tailwind. I went with Next.js mainly because I wanted to learn the new App Router and the built-in SSG is perfect for this kind of content site. Deployed on Vercel's free tier.
+
+What surprised me most was the SEO - I got my first click from Google Search on day 4, which was way faster than I expected. The site scored 100 on Lighthouse performance after I moved Google Analytics to lazy load and removed some blocking scripts.
+
+Cost is just $10/year for the domain. Everything else is free.
+
+Still have a lot to improve - the code is messy and I want to add more features. Planning to open source it once I clean things up.
+
+Happy to answer questions about Next.js 14, SEO for static sites, or anything else!

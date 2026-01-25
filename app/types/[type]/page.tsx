@@ -38,8 +38,13 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
     description: `Complete ${type.name} type analysis: super effective against ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}. Full matchup guide and strategy tips.`,
     keywords: `${type.name} type, ${type.name} weakness, ${type.name} strength, ${type.name} matchup, ${type.name} type chart`,
     openGraph: {
-      title: `${type.name} Type Chart`,
+      title: `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
       description: `Complete ${type.name} type matchup guide`,
+      url: `https://www.typematchup.org/types/${typeId}`,
+      type: 'website',
+    },
+    alternates: {
+      canonical: `/types/${typeId}`,
     },
   };
 }

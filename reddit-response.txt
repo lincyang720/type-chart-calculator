@@ -1,0 +1,10 @@
+Fair point - I did use AI to help polish the post formatting and wording (English isn't my first language). But the project itself is 100% real and I built it myself.
+
+Here's proof:
+- Live site: https://typematchup.org (you can test it)
+- Vercel deployment: [your vercel dashboard link if you want to share]
+- Google Search Console data showing real traffic
+
+I'm happy to answer any technical questions about the implementation - Next.js 14 App Router, SSG with generateStaticParams, how I optimized for Lighthouse 100, etc.
+
+Sorry if the post came across as too polished. Just wanted to share what I learned building this!
