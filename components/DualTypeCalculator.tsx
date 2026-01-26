@@ -13,8 +13,9 @@ const ALL_TYPES: TypeId[] = [
 ];
 
 export default function DualTypeCalculator() {
-  const [type1, setType1] = useState<TypeId>('normal');
-  const [type2, setType2] = useState<TypeId | ''>('');
+  // Default to Fire/Flying (like Charizard) as an example
+  const [type1, setType1] = useState<TypeId>('fire');
+  const [type2, setType2] = useState<TypeId | ''>('flying');
 
   const weaknesses = calculateDualTypeWeaknesses(
     type1,
@@ -38,10 +39,36 @@ export default function DualTypeCalculator() {
     );
   };
 
+  const quickExamples = [
+    { name: 'Fire/Flying', type1: 'fire' as TypeId, type2: 'flying' as TypeId },
+    { name: 'Water/Ground', type1: 'water' as TypeId, type2: 'ground' as TypeId },
+    { name: 'Steel/Fairy', type1: 'steel' as TypeId, type2: 'fairy' as TypeId },
+    { name: 'Dragon/Ground', type1: 'dragon' as TypeId, type2: 'ground' as TypeId },
+  ];
+
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="bg-white rounded-lg shadow-lg p-6">
         <h2 className="text-2xl font-bold mb-6">Dual Type Calculator</h2>
+
+        {/* Quick Examples */}
+        <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+          <p className="text-sm font-medium text-gray-700 mb-2">Try these popular combinations:</p>
+          <div className="flex flex-wrap gap-2">
+            {quickExamples.map((example) => (
+              <button
+                key={example.name}
+                onClick={() => {
+                  setType1(example.type1);
+                  setType2(example.type2);
+                }}
+                className="px-3 py-1 bg-white border border-blue-300 rounded-md text-sm font-medium text-blue-700 hover:bg-blue-100 transition-colors"
+              >
+                {example.name}
+              </button>
+            ))}
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div>

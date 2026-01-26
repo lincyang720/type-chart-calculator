@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.typematchup.org'),
   title: 'Type Chart Calculator - Complete Type Effectiveness Guide',
   description: 'Interactive type matchup chart and calculator. Find weaknesses, resistances, and super effective moves for all 18 types. Perfect for competitive battles and team building.',
-  keywords: 'type chart, type effectiveness, weakness calculator, type matchup, battle simulator, dual type calculator',
+  keywords: 'pokemon type chart, type effectiveness calculator, pokemon weakness calculator, dual type calculator, pokemon type matchup chart, type advantage calculator, pokemon type effectiveness, fire flying weakness, water ground weakness, steel fairy resistance, super effective moves, pokemon type resistance, type multiplier calculator, pokemon battle type chart, competitive pokemon types, pokemon type coverage, type weakness finder',
   authors: [{ name: 'Type Chart Calculator' }],
   openGraph: {
     title: 'Type Chart Calculator - Complete Type Effectiveness Guide',

@@ -1,8 +1,8 @@
-import TypeChart from '@/components/TypeChart';
 import Link from 'next/link';
 import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';
 import { WebApplicationSchema } from '@/components/SEO/JsonLd';
+import DualTypeCalculator from '@/components/DualTypeCalculator';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -16,47 +16,40 @@ export default function Home() {
       <WebApplicationSchema />
       <div className="container mx-auto px-4 py-8">
       {/* Hero Section */}
-      <section className="text-center mb-12">
+      <section className="text-center mb-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Type Chart Calculator
         </h1>
-        <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-          Master type effectiveness with our interactive type chart, dual-type calculator, and battle simulator.
-          Perfect for competitive battles and team building strategies.
+        <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+          Instantly calculate type effectiveness for any combination. See weaknesses, resistances, and immunities in seconds.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href="/calculator"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md"
-          >
-            Dual Type Calculator
-          </Link>
-          <Link
-            href="/battle-simulator"
-            className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors shadow-md"
-          >
-            Battle Simulator
-          </Link>
-        </div>
       </section>
 
-      {/* Type Chart Section */}
+      {/* Interactive Calculator Preview */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Complete Type Effectiveness Chart</h2>
-        <p className="text-gray-600 mb-6">
-          This comprehensive type chart shows how each attacking type performs against defending types.
-          Use this to quickly identify super effective moves and resistances.
-        </p>
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <TypeChart />
+        <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-6 border-2 border-blue-200">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl font-bold text-gray-800">Try It Now</h2>
+            <span className="text-sm text-gray-600 bg-white px-3 py-1 rounded-full">Live Example</span>
+          </div>
+          <DualTypeCalculator />
+        </div>
+
+        <div className="text-center">
+          <Link
+            href="/battle-simulator"
+            className="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors shadow-md"
+          >
+            Try Battle Simulator →
+          </Link>
         </div>
       </section>
 
       {/* Quick Type Reference */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">All Types</h2>
+        <h2 className="text-3xl font-bold mb-6">Explore All Types</h2>
         <p className="text-gray-600 mb-6">
-          Click on any type to see detailed information about its strengths, weaknesses, and best matchups.
+          Click any type to see detailed strengths, weaknesses, and matchups.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {ALL_TYPES.map(typeId => (
@@ -73,25 +66,25 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Features</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold mb-3 text-blue-600">Type Chart</h3>
-            <p className="text-gray-600">
-              Complete 18×18 type effectiveness matrix showing all offensive and defensive matchups at a glance.
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold mb-3 text-purple-600">Dual Type Calculator</h3>
-            <p className="text-gray-600">
-              Calculate weaknesses and resistances for any single or dual-type combination, including 4× and ¼× multipliers.
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold mb-3 text-green-600">Battle Simulator</h3>
-            <p className="text-gray-600">
+        <h2 className="text-3xl font-bold mb-6">More Tools</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-600">
+            <h3 className="text-xl font-semibold mb-3 text-purple-600">Battle Simulator</h3>
+            <p className="text-gray-600 mb-4">
               Simulate type matchups in battle with STAB calculations to plan your strategy effectively.
             </p>
+            <Link href="/battle-simulator" className="text-purple-600 font-semibold hover:underline">
+              Try Battle Simulator →
+            </Link>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-600">
+            <h3 className="text-xl font-semibold mb-3 text-blue-600">Complete Type Chart</h3>
+            <p className="text-gray-600 mb-4">
+              View the full 18×18 type effectiveness matrix for comprehensive reference.
+            </p>
+            <Link href="/types" className="text-blue-600 font-semibold hover:underline">
+              View Full Chart →
+            </Link>
           </div>
         </div>
       </section>
