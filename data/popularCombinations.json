@@ -1,0 +1,144 @@
+{
+  "combinations": [
+    {
+      "type1": "fire",
+      "type2": "flying",
+      "examples": ["Charizard", "Moltres", "Talonflame"],
+      "popularity": "very-high",
+      "reason": "Iconic starter evolution"
+    },
+    {
+      "type1": "water",
+      "type2": "ground",
+      "examples": ["Swampert", "Gastrodon", "Quagsire"],
+      "popularity": "very-high",
+      "reason": "Only one weakness"
+    },
+    {
+      "type1": "steel",
+      "type2": "fairy",
+      "examples": ["Magearna", "Zacian"],
+      "popularity": "very-high",
+      "reason": "Best defensive typing"
+    },
+    {
+      "type1": "dragon",
+      "type2": "ground",
+      "examples": ["Garchomp", "Flygon"],
+      "popularity": "very-high",
+      "reason": "Competitive favorite"
+    },
+    {
+      "type1": "water",
+      "type2": "flying",
+      "examples": ["Gyarados", "Pelipper", "Cramorant"],
+      "popularity": "high",
+      "reason": "Common combination"
+    },
+    {
+      "type1": "grass",
+      "type2": "poison",
+      "examples": ["Venusaur", "Vileplume", "Roserade"],
+      "popularity": "high",
+      "reason": "Classic starter"
+    },
+    {
+      "type1": "electric",
+      "type2": "flying",
+      "examples": ["Zapdos", "Emolga", "Thundurus"],
+      "popularity": "high",
+      "reason": "Legendary bird"
+    },
+    {
+      "type1": "psychic",
+      "type2": "fairy",
+      "examples": ["Gardevoir", "Galarian Rapidash"],
+      "popularity": "high",
+      "reason": "Popular design"
+    },
+    {
+      "type1": "steel",
+      "type2": "flying",
+      "examples": ["Skarmory", "Celesteela", "Corviknight"],
+      "popularity": "high",
+      "reason": "Excellent defensive"
+    },
+    {
+      "type1": "dragon",
+      "type2": "flying",
+      "examples": ["Dragonite", "Salamence", "Rayquaza"],
+      "popularity": "very-high",
+      "reason": "Pseudo-legendary"
+    },
+    {
+      "type1": "water",
+      "type2": "psychic",
+      "examples": ["Slowbro", "Starmie", "Slowking"],
+      "popularity": "high",
+      "reason": "Versatile typing"
+    },
+    {
+      "type1": "fighting",
+      "type2": "steel",
+      "examples": ["Lucario", "Cobalion"],
+      "popularity": "high",
+      "reason": "Popular Pokemon"
+    },
+    {
+      "type1": "ghost",
+      "type2": "poison",
+      "examples": ["Gengar", "Haunter"],
+      "popularity": "very-high",
+      "reason": "Fan favorite"
+    },
+    {
+      "type1": "ice",
+      "type2": "ground",
+      "examples": ["Mamoswine", "Piloswine"],
+      "popularity": "high",
+      "reason": "Strong offensive"
+    },
+    {
+      "type1": "dark",
+      "type2": "flying",
+      "examples": ["Honchkrow", "Yveltal", "Mandibuzz"],
+      "popularity": "high",
+      "reason": "Good coverage"
+    },
+    {
+      "type1": "bug",
+      "type2": "steel",
+      "examples": ["Scizor", "Forretress", "Genesect"],
+      "popularity": "high",
+      "reason": "Competitive staple"
+    },
+    {
+      "type1": "rock",
+      "type2": "ground",
+      "examples": ["Rhyperior", "Golem"],
+      "popularity": "medium",
+      "reason": "Common typing"
+    },
+    {
+      "type1": "fire",
+      "type2": "fighting",
+      "examples": ["Blaziken", "Infernape", "Emboar"],
+      "popularity": "very-high",
+      "reason": "Multiple starters"
+    },
+    {
+      "type1": "water",
+      "type2": "dragon",
+      "examples": ["Palkia", "Kingdra"],
+      "popularity": "high",
+      "reason": "Legendary"
+    },
+    {
+      "type1": "grass",
+      "type2": "flying",
+      "examples": ["Tropius", "Jumpluff"],
+      "popularity": "medium",
+      "reason": "Unique combination"
+    }
+  ]
+}
