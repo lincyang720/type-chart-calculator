@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
 import popularCombinations from '@/data/popularCombinations.json';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
 const ALL_TYPES = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -41,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
   ];
 
   const typePages = ALL_TYPES.map(type => ({
@@ -58,5 +67,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8, // Higher priority than single types as these are more specific queries
   }));
 
-  return [...staticPages, ...typePages, ...comboPages];
+  // Add blog posts
+  const blogDir = path.join(process.cwd(), 'content/blog');
+  let blogPages: MetadataRoute.Sitemap = [];
+
+  if (fs.existsSync(blogDir)) {
+    const files = fs.readdirSync(blogDir);
+    blogPages = files
+      .filter(file => file.endsWith('.md'))
+      .map(file => {
+        const filePath = path.join(blogDir, file);
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const { data } = matter(fileContent);
+
+        return {
+          url: `${baseUrl}/blog/${data.slug || file.replace('.md', '')}`,
+          lastModified: data.date ? new Date(data.date) : new Date(),
+          changeFrequency: 'monthly' as const,
+          priority: 0.7,
+        };
+      });
+  }
+
+  return [...staticPages, ...typePages, ...comboPages, ...blogPages];
 }

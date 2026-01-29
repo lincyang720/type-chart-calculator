@@ -69,6 +69,7 @@ export default function RootLayout({
                 <a href="/calculator" className="hover:underline">Calculator</a>
                 <a href="/battle-simulator" className="hover:underline">Battle Simulator</a>
                 <a href="/types" className="hover:underline">All Types</a>
+                <a href="/blog" className="hover:underline">Blog</a>
                 <a href="/support" className="hover:underline">Support</a>
               </div>
             </div>
