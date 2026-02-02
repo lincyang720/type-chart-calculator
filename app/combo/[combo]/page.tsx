@@ -7,11 +7,8 @@ import typesData from '@/data/types.json';
 import popularCombinations from '@/data/popularCombinations.json';
 import Link from 'next/link';
 
-export async function generateStaticParams() {
-  return popularCombinations.combinations.map(combo => ({
-    combo: `${combo.type1}-${combo.type2}`,
-  }));
-}
+// Force dynamic rendering (SSR)
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ combo: string }> }): Promise<Metadata> {
   const resolvedParams = await params;

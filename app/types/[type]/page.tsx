@@ -13,11 +13,8 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
-export async function generateStaticParams() {
-  return ALL_TYPES.map(type => ({
-    type: type,
-  }));
-}
+// Force dynamic rendering (SSR)
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ type: string }> }): Promise<Metadata> {
   const { type: typeParam } = await params;

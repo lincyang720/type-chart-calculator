@@ -4,6 +4,9 @@ import { TypeId } from '@/lib/types';
 import { WebApplicationSchema } from '@/components/SEO/JsonLd';
 import DualTypeCalculator from '@/components/DualTypeCalculator';
 
+// Force dynamic rendering (SSR)
+export const dynamic = 'force-dynamic';
+
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
   'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug',

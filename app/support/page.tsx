@@ -1,5 +1,8 @@
 'use client';
 
+// Force dynamic rendering (SSR)
+export const dynamic = 'force-dynamic';
+
 import { useEffect, useState } from 'react';
 
 declare global {

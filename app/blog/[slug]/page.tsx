@@ -7,24 +7,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 
-export async function generateStaticParams() {
-  const blogDir = path.join(process.cwd(), 'content/blog');
-
-  if (!fs.existsSync(blogDir)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(blogDir);
-  return files
-    .filter(file => file.endsWith('.md'))
-    .map(file => {
-      const fileContent = fs.readFileSync(path.join(blogDir, file), 'utf-8');
-      const { data } = matter(fileContent);
-      return {
-        slug: data.slug || file.replace('.md', ''),
-      };
-    });
-}
+// Force dynamic rendering (SSR)
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
