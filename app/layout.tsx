@@ -5,13 +5,13 @@ import '../styles/globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.typematchup.org'),
-  title: 'Type Chart Calculator - Complete Type Effectiveness Guide',
-  description: 'Interactive type matchup chart and calculator. Find weaknesses, resistances, and super effective moves for all 18 types. Perfect for competitive battles and team building.',
+  title: 'Pokemon Type Calculator - Instant Weakness & Resistance Checker',
+  description: 'Stop losing battles to type disadvantages. Instant calculator shows exact damage multipliers, STAB calculations, and weaknesses for all dual-type combinations. Free battle simulator included.',
   keywords: 'pokemon type chart, type effectiveness calculator, pokemon weakness calculator, dual type calculator, pokemon type matchup chart, type advantage calculator, pokemon type effectiveness, fire flying weakness, water ground weakness, steel fairy resistance, super effective moves, pokemon type resistance, type multiplier calculator, pokemon battle type chart, competitive pokemon types, pokemon type coverage, type weakness finder',
   authors: [{ name: 'Type Chart Calculator' }],
   openGraph: {
-    title: 'Type Chart Calculator - Complete Type Effectiveness Guide',
-    description: 'Interactive type matchup chart and calculator for all 18 types',
+    title: 'Pokemon Type Calculator - Instant Weakness Checker',
+    description: 'Stop losing battles to type disadvantages. Instant damage calculator with STAB for all dual-type combinations.',
     url: 'https://www.typematchup.org',
     siteName: 'Type Chart Calculator',
     locale: 'en_US',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Type Chart Calculator',
-    description: 'Interactive type matchup chart and calculator',
+    title: 'Pokemon Type Calculator - Instant Weakness Checker',
+    description: 'Stop losing battles. Instant damage calculator with STAB for all types.',
   },
   robots: {
     index: true,

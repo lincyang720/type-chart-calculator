@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
   const resistList = [...weaknesses.quadrupleResist, ...weaknesses.doubleResist].slice(0, 3).join(', ');
 
   return {
-    title: `${type1Data.name}/${type2Data.name} Type Weakness Calculator - Strengths & Counters`,
-    description: `Complete ${type1Data.name}/${type2Data.name} type analysis. Weak to: ${weakList}. Resists: ${resistList}. ${combo?.examples ? `Pokemon: ${combo.examples.slice(0, 2).join(', ')}.` : ''} Full matchup guide.`,
+    title: `${type1Data.name}/${type2Data.name} Weakness Guide - Best Counters & Resistances`,
+    description: `${type1Data.name}/${type2Data.name} type matchup guide. Weak to: ${weakList}. Resists: ${resistList}. ${combo?.examples ? `Used by ${combo.examples.slice(0, 2).join(', ')}.` : ''} Learn best counters and team synergy.`,
     keywords: `${type1} ${type2} weakness, ${type1} ${type2} type, ${type1Data.name} ${type2Data.name} weakness, ${type1} ${type2} resistances, ${type1} ${type2} counters, dual type calculator`,
     openGraph: {
       title: `${type1Data.name}/${type2Data.name} Type - Weaknesses & Resistances`,
