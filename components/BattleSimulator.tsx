@@ -63,7 +63,7 @@ export default function BattleSimulator() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-2xl font-bold mb-6">Battle Simulator</h2>
+        <h2 className="text-xl sm:text-2xl font-bold mb-6">Battle Simulator</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Attacking Side */}

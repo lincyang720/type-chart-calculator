@@ -79,7 +79,7 @@ export default async function DualTypePage({ params }: { params: Promise<{ combo
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             {type1Data.name}/{type2Data.name} Type
           </span>
@@ -98,7 +98,7 @@ export default async function DualTypePage({ params }: { params: Promise<{ combo
 
       {/* Quick Summary */}
       <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-8 border-2 border-blue-200">
-        <h2 className="text-2xl font-bold mb-4">Quick Summary</h2>
+        <h2 className="text-xl sm:text-2xl font-bold mb-4">Quick Summary</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <div>
             <h3 className="font-semibold text-red-600 mb-2">⚠️ Main Weaknesses:</h3>
@@ -137,7 +137,7 @@ export default async function DualTypePage({ params }: { params: Promise<{ combo
 
       {/* Detailed Matchups */}
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <h2 className="text-3xl font-bold mb-6">Defensive Type Matchups</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Defensive Type Matchups</h2>
 
         {renderTypeList(weaknesses.quadrupleWeak, 'Quadruple Weak', '4×', 'bg-red-700')}
         {renderTypeList(weaknesses.doubleWeak, 'Weak', '2×', 'bg-red-500')}
@@ -164,7 +164,7 @@ export default async function DualTypePage({ params }: { params: Promise<{ combo
       {/* Strategy Tips */}
       {combo && (
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h2 className="text-3xl font-bold mb-4">Strategy Tips</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Strategy Tips</h2>
           <div className="prose max-w-none">
             <h3 className="text-xl font-semibold mb-2">Why This Combination?</h3>
             <p className="text-gray-700 mb-4">{combo.reason}</p>
@@ -186,7 +186,7 @@ export default async function DualTypePage({ params }: { params: Promise<{ combo
 
       {/* Tools */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white">
-        <h2 className="text-2xl font-bold mb-4">Try Our Tools</h2>
+        <h2 className="text-xl sm:text-2xl font-bold mb-4">Try Our Tools</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Link href="/calculator" className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
             Dual Type Calculator

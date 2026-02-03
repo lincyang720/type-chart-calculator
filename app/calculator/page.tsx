@@ -23,7 +23,7 @@ export default function CalculatorPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4 text-center">Dual Type Calculator</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">Dual Type Calculator</h1>
         <p className="text-lg text-gray-600 mb-8 text-center">
           Select one or two types to see all weaknesses, resistances, and immunities.
           Perfect for team building and understanding defensive matchups.

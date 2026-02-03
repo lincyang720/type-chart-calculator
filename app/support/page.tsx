@@ -89,8 +89,8 @@ export default function SupportPage() {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Support Us</h1>
-          <p className="text-xl text-gray-600">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Support Us</h1>
+          <p className="text-lg sm:text-xl text-gray-600">
             Help keep Type Chart Calculator free and ad-free
           </p>
         </div>
@@ -98,7 +98,7 @@ export default function SupportPage() {
         {/* Support Card */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-4">Make a Contribution</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4">Make a Contribution</h2>
             <p className="text-gray-600 mb-4">
               Your support helps us maintain and improve this tool for the community.
               Every contribution, no matter how small, makes a difference!
@@ -110,7 +110,7 @@ export default function SupportPage() {
             <label className="block text-sm font-semibold mb-2">
               Select Amount (USD)
             </label>
-            <div className="grid grid-cols-4 gap-3 mb-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
               {['3.00', '5.00', '10.00', '20.00'].map((preset) => (
                 <button
                   key={preset}
@@ -157,7 +157,7 @@ export default function SupportPage() {
 
         {/* Why Support Section */}
         <div className="bg-blue-50 rounded-lg p-6 mb-8">
-          <h3 className="text-xl font-semibold mb-4">Why Support Us?</h3>
+          <h3 className="text-lg sm:text-xl font-semibold mb-4">Why Support Us?</h3>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start">
               <svg
@@ -228,7 +228,7 @@ export default function SupportPage() {
 
         {/* Other Ways to Support */}
         <div className="bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-xl font-semibold mb-4">Other Ways to Support</h3>
+          <h3 className="text-lg sm:text-xl font-semibold mb-4">Other Ways to Support</h3>
           <div className="space-y-3 text-gray-700">
             <p>
               <strong>Share:</strong> Tell your friends about Type Chart Calculator

@@ -31,7 +31,7 @@ const ALL_TYPES: TypeId[] = [
 export default function TypesPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-4 text-center">All Types</h1>
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">All Types</h1>
       <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
         Explore all 18 types and learn about their unique characteristics, strengths, and weaknesses.
         Click on any type to see detailed matchup information.

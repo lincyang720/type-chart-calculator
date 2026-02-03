@@ -49,7 +49,7 @@ export default function DualTypeCalculator() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-2xl font-bold mb-6">Dual Type Calculator</h2>
+        <h2 className="text-xl sm:text-2xl font-bold mb-6">Dual Type Calculator</h2>
 
         {/* Quick Examples */}
         <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">

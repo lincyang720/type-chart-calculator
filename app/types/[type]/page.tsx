@@ -68,7 +68,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-4xl font-bold">{type.name} Type</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{type.name} Type</h1>
           </div>
           <p className="text-lg text-gray-600">{type.description}</p>
         </div>
