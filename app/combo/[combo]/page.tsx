@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
 
   return {
     title: `${type1Data.name}/${type2Data.name} Weakness Guide - Best Counters & Resistances`,
-    description: `${type1Data.name}/${type2Data.name} type matchup guide. Weak to: ${weakList}. Resists: ${resistList}. ${combo?.examples ? `Used by ${combo.examples.slice(0, 2).join(', ')}.` : ''} Learn best counters and team synergy.`,
-    keywords: `${type1} ${type2} weakness, ${type1} ${type2} type, ${type1Data.name} ${type2Data.name} weakness, ${type1} ${type2} resistances, ${type1} ${type2} counters, dual type calculator`,
+    description: `${type1Data.name}/${type2Data.name} matchup guide. Weak to: ${weakList}. Resists: ${resistList}. Best counters and strategy tips.`,
+    keywords: `${type1} ${type2} weakness, ${type1Data.name} ${type2Data.name}, dual type, type matchup, counters`,
     openGraph: {
       title: `${type1Data.name}/${type2Data.name} Type - Weaknesses & Resistances`,
       description: `Weak to: ${weakList}. Resists: ${resistList}.`,

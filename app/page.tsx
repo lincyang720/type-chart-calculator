@@ -3,9 +3,16 @@ import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';
 import { WebApplicationSchema } from '@/components/SEO/JsonLd';
 import DualTypeCalculator from '@/components/DualTypeCalculator';
+import { Metadata } from 'next';
 
 // Force dynamic rendering (SSR)
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',

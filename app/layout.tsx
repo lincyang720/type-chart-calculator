@@ -7,8 +7,8 @@ import '../styles/globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.typematchup.org'),
   title: 'Pokemon Type Calculator - Instant Weakness & Resistance Checker',
-  description: 'Stop losing battles to type disadvantages. Instant calculator shows exact damage multipliers, STAB calculations, and weaknesses for all dual-type combinations. Free battle simulator included.',
-  keywords: 'pokemon type chart, type effectiveness calculator, pokemon weakness calculator, dual type calculator, pokemon type matchup chart, type advantage calculator, pokemon type effectiveness, fire flying weakness, water ground weakness, steel fairy resistance, super effective moves, pokemon type resistance, type multiplier calculator, pokemon battle type chart, competitive pokemon types, pokemon type coverage, type weakness finder',
+  description: 'Stop losing battles to type disadvantages. Instant calculator for weaknesses, resistances, and damage multipliers. Free battle simulator.',
+  keywords: 'pokemon type chart, type calculator, weakness calculator, dual type, type matchup, battle simulator',
   authors: [{ name: 'Type Chart Calculator' }],
   openGraph: {
     title: 'Pokemon Type Calculator - Instant Weakness Checker',
