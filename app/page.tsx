@@ -20,20 +20,20 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8">
       {/* Hero Section */}
       <section className="text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Type Chart Calculator
         </h1>
-        <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-600 mb-4 max-w-3xl mx-auto px-4">
           Instantly calculate type effectiveness for any combination. See weaknesses, resistances, and immunities in seconds.
         </p>
       </section>
 
       {/* Interactive Calculator Preview */}
       <section className="mb-12">
-        <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-6 border-2 border-blue-200">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-800">Try It Now</h2>
-            <span className="text-sm text-gray-600 bg-white px-3 py-1 rounded-full">Live Example</span>
+        <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 sm:p-6 mb-6 border-2 border-blue-200">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Try It Now</h2>
+            <span className="text-xs sm:text-sm text-gray-600 bg-white px-3 py-1 rounded-full">Live Example</span>
           </div>
           <DualTypeCalculator />
         </div>
@@ -50,11 +50,11 @@ export default function Home() {
 
       {/* Quick Type Reference */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Explore All Types</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Explore All Types</h2>
         <p className="text-gray-600 mb-6">
           Click any type to see detailed strengths, weaknesses, and matchups.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
           {ALL_TYPES.map(typeId => (
             <Link
               key={typeId}
@@ -69,8 +69,8 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">More Tools</h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">More Tools</h2>
+        <div className="grid sm:grid-cols-2 gap-6">
           <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-600">
             <h3 className="text-xl font-semibold mb-3 text-purple-600">Battle Simulator</h3>
             <p className="text-gray-600 mb-4">

@@ -58,19 +58,20 @@ export default function RootLayout({
         </Script>
       </head>
       <body suppressHydrationWarning>
-        <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg h-16">
-          <nav className="container mx-auto px-4 h-full">
-            <div className="flex items-center justify-between h-full">
-              <a href="/" className="text-2xl font-bold hover:opacity-90 transition-opacity">
-                Type Chart Calculator
+        <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+          <nav className="container mx-auto px-4 py-3">
+            <div className="flex items-center justify-between">
+              <a href="/" className="text-xl md:text-2xl font-bold hover:opacity-90 transition-opacity">
+                <span className="hidden sm:inline">Type Chart Calculator</span>
+                <span className="sm:hidden">Type Chart</span>
               </a>
-              <div className="flex gap-6">
-                <a href="/" className="hover:underline">Home</a>
+              <div className="flex gap-2 sm:gap-4 md:gap-6 text-sm md:text-base">
+                <a href="/" className="hover:underline hidden md:inline">Home</a>
                 <a href="/calculator" className="hover:underline">Calculator</a>
-                <a href="/battle-simulator" className="hover:underline">Battle Simulator</a>
-                <a href="/types" className="hover:underline">All Types</a>
-                <a href="/blog" className="hover:underline">Blog</a>
-                <a href="/support" className="hover:underline">Support</a>
+                <a href="/battle-simulator" className="hover:underline hidden sm:inline">Simulator</a>
+                <a href="/types" className="hover:underline">Types</a>
+                <a href="/blog" className="hover:underline hidden lg:inline">Blog</a>
+                <a href="/support" className="hover:underline hidden lg:inline">Support</a>
               </div>
             </div>
           </nav>
