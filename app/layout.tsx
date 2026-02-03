@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
+import MobileNav from '@/components/MobileNav';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -65,14 +66,19 @@ export default function RootLayout({
                 <span className="hidden sm:inline">Type Chart Calculator</span>
                 <span className="sm:hidden">Type Chart</span>
               </a>
-              <div className="flex gap-2 sm:gap-4 md:gap-6 text-sm md:text-base">
-                <a href="/" className="hover:underline hidden md:inline">Home</a>
+
+              {/* Desktop Navigation */}
+              <div className="hidden lg:flex gap-6 text-base">
+                <a href="/" className="hover:underline">Home</a>
                 <a href="/calculator" className="hover:underline">Calculator</a>
-                <a href="/battle-simulator" className="hover:underline hidden sm:inline">Simulator</a>
-                <a href="/types" className="hover:underline">Types</a>
-                <a href="/blog" className="hover:underline hidden lg:inline">Blog</a>
-                <a href="/support" className="hover:underline hidden lg:inline">Support</a>
+                <a href="/battle-simulator" className="hover:underline">Battle Simulator</a>
+                <a href="/types" className="hover:underline">All Types</a>
+                <a href="/blog" className="hover:underline">Blog</a>
+                <a href="/support" className="hover:underline">Support</a>
               </div>
+
+              {/* Mobile Navigation */}
+              <MobileNav />
             </div>
           </nav>
         </header>
