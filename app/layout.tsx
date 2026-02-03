@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   keywords: 'pokemon type chart, type calculator, weakness calculator, dual type, type matchup, battle simulator',
   authors: [{ name: 'Type Chart Calculator' }],
   openGraph: {
-    title: 'Pokemon Type Calculator - Instant Weakness Checker',
-    description: 'Stop losing battles to type disadvantages. Instant damage calculator with STAB for all dual-type combinations.',
+    title: 'Pokemon Type Calculator - Instant Weakness & Resistance Checker',
+    description: 'Stop losing battles to type disadvantages. Instant calculator for weaknesses, resistances, and damage multipliers.',
     url: 'https://www.typematchup.org',
     siteName: 'Type Chart Calculator',
     locale: 'en_US',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pokemon Type Calculator - Instant Weakness Checker',
-    description: 'Stop losing battles. Instant damage calculator with STAB for all types.',
+    description: 'Stop losing battles to type disadvantages. Instant calculator for weaknesses, resistances, and damage multipliers.',
   },
   robots: {
     index: true,

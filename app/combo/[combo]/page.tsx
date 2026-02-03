@@ -32,9 +32,14 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
     keywords: `${type1} ${type2} weakness, ${type1Data.name} ${type2Data.name}, dual type, type matchup, counters`,
     openGraph: {
       title: `${type1Data.name}/${type2Data.name} Type - Weaknesses & Resistances`,
-      description: `Weak to: ${weakList}. Resists: ${resistList}.`,
+      description: `${type1Data.name}/${type2Data.name} matchup guide. Weak to: ${weakList}. Resists: ${resistList}.`,
       url: `https://www.typematchup.org/combo/${type1}-${type2}`,
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${type1Data.name}/${type2Data.name} Type`,
+      description: `${type1Data.name}/${type2Data.name} matchup guide. Weak to: ${weakList}. Resists: ${resistList}.`,
     },
     alternates: {
       canonical: `/combo/${type1}-${type2}`,

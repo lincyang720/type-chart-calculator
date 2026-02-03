@@ -10,9 +10,14 @@ export const metadata: Metadata = {
   keywords: 'battle simulator, type matchup, damage calculator, STAB calculator, battle strategy',
   openGraph: {
     title: 'Battle Simulator - Calculate Type Matchup Damage',
-    description: 'Simulate type matchups and calculate damage multipliers',
+    description: 'Simulate type matchups in battle. Calculate damage multipliers with STAB bonus for competitive battles.',
     url: 'https://www.typematchup.org/battle-simulator',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Battle Simulator',
+    description: 'Simulate type matchups in battle. Calculate damage multipliers with STAB bonus for competitive battles.',
   },
   alternates: {
     canonical: '/battle-simulator',

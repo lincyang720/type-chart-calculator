@@ -10,9 +10,14 @@ export const metadata: Metadata = {
   keywords: 'dual type calculator, type weakness calculator, type resistance, type combination, 4x weakness',
   openGraph: {
     title: 'Dual Type Calculator - Calculate Type Weaknesses and Resistances',
-    description: 'Calculate type weaknesses and resistances for any combination',
+    description: 'Calculate weaknesses, resistances, and immunities for any single or dual-type combination. Find 4× weaknesses instantly.',
     url: 'https://www.typematchup.org/calculator',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dual Type Calculator',
+    description: 'Calculate weaknesses, resistances, and immunities for any type combination. Find 4× weaknesses instantly.',
   },
   alternates: {
     canonical: '/calculator',

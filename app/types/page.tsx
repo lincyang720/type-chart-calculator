@@ -13,9 +13,14 @@ export const metadata: Metadata = {
   keywords: 'all types, type list, type guide, type matchups, type strengths, type weaknesses',
   openGraph: {
     title: 'All Types - Complete Type Guide and Matchups',
-    description: 'Browse all 18 types with detailed matchup information',
+    description: 'Browse all 18 types with detailed information about strengths, weaknesses, and matchups.',
     url: 'https://www.typematchup.org/types',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'All Types Guide',
+    description: 'Browse all 18 types with detailed information about strengths, weaknesses, and matchups.',
   },
   alternates: {
     canonical: '/types',

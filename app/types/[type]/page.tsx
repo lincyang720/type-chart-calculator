@@ -36,9 +36,14 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
     keywords: `${type.name} type, ${type.name} weakness, ${type.name} strength, ${type.name} matchup, ${type.name} type chart`,
     openGraph: {
       title: `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
-      description: `Complete ${type.name} type matchup guide`,
+      description: `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
       url: `https://www.typematchup.org/types/${typeId}`,
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${type.name} Type Chart`,
+      description: `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
     },
     alternates: {
       canonical: `/types/${typeId}`,
