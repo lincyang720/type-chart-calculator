@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import popularCombinations from '@/data/popularCombinations.json';
+import pokemonData from '@/data/pokemon.json';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -97,5 +98,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
   }
 
-  return [...staticPages, ...typePages, ...comboPages, ...blogPages];
+  // Add pokemon pages
+  const pokemonPages = pokemonData.pokemon.map(p => ({
+    url: `${baseUrl}/pokemon/${p.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // Add pokemon list page
+  const pokemonListPage = {
+    url: `${baseUrl}/pokemon`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  };
+
+  return [...staticPages, ...typePages, ...comboPages, ...pokemonPages, pokemonListPage, ...blogPages];
 }

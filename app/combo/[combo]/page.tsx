@@ -5,6 +5,7 @@ import { TypeId } from '@/lib/types';
 import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
 import typesData from '@/data/types.json';
 import popularCombinations from '@/data/popularCombinations.json';
+import pokemonData from '@/data/pokemon.json';
 import Link from 'next/link';
 
 const ALL_TYPES: TypeId[] = [
@@ -205,6 +206,29 @@ export default async function DualTypePage({ params }: { params: Promise<{ combo
           </div>
         </div>
       )}
+
+      {/* Related Pokemon */}
+      {(() => {
+        const relatedPokemon = pokemonData.pokemon.filter(
+          p => (p.types[0] === type1 && p.types[1] === type2) ||
+               (p.types[0] === type2 && p.types[1] === type1)
+        );
+        if (relatedPokemon.length === 0) return null;
+        return (
+          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Pokemon with this Type</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {relatedPokemon.map(p => (
+                <Link key={p.id} href={`/pokemon/${p.id}`} className="block bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
+                  <h3 className="font-bold text-lg mb-1">{p.name}</h3>
+                  <p className="text-sm text-gray-600 mb-2">{p.strengths}</p>
+                  <span className="text-blue-600 text-sm font-medium">View full guide →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Tools */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white">

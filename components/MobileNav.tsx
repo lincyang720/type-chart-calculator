@@ -11,6 +11,7 @@ export default function MobileNav() {
     { href: '/calculator', label: 'Calculator' },
     { href: '/battle-simulator', label: 'Battle Simulator' },
     { href: '/types', label: 'All Types' },
+    { href: '/pokemon', label: 'Pokemon' },
     { href: '/blog', label: 'Blog' },
     { href: '/support', label: 'Support' },
   ];
