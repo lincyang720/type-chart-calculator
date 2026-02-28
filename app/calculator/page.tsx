@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 
-// Force dynamic rendering (SSR)
-export const dynamic = 'force-dynamic';
 import DualTypeCalculator from '@/components/DualTypeCalculator';
 
 export const metadata: Metadata = {

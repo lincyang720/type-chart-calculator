@@ -7,9 +7,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 
-// Force dynamic rendering (SSR)
-export const dynamic = 'force-dynamic';
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const blogDir = path.join(process.cwd(), 'content/blog');

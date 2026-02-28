@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 
-// Force dynamic rendering (SSR)
-export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';

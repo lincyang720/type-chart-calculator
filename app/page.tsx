@@ -5,8 +5,7 @@ import { WebApplicationSchema } from '@/components/SEO/JsonLd';
 import DualTypeCalculator from '@/components/DualTypeCalculator';
 import { Metadata } from 'next';
 
-// Force dynamic rendering (SSR)
-export const dynamic = 'force-dynamic';
+// Static generation for better SEO and performance
 
 export const metadata: Metadata = {
   alternates: {

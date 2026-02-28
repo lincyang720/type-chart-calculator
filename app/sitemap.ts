@@ -59,13 +59,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Add popular type combination pages
-  const comboPages = popularCombinations.combinations.map(combo => ({
-    url: `${baseUrl}/combo/${combo.type1}-${combo.type2}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8, // Higher priority than single types as these are more specific queries
-  }));
+  // Add ALL dual-type combination pages (153 combos = C(18,2))
+  const comboPages: MetadataRoute.Sitemap = [];
+  for (let i = 0; i < ALL_TYPES.length; i++) {
+    for (let j = i + 1; j < ALL_TYPES.length; j++) {
+      const isPopular = popularCombinations.combinations.some(
+        c => c.type1 === ALL_TYPES[i] && c.type2 === ALL_TYPES[j]
+      );
+      comboPages.push({
+        url: `${baseUrl}/combo/${ALL_TYPES[i]}-${ALL_TYPES[j]}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: isPopular ? 0.8 : 0.7,
+      });
+    }
+  }
 
   // Add blog posts
   const blogDir = path.join(process.cwd(), 'content/blog');

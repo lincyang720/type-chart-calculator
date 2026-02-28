@@ -7,8 +7,25 @@ import typesData from '@/data/types.json';
 import popularCombinations from '@/data/popularCombinations.json';
 import Link from 'next/link';
 
-// Force dynamic rendering (SSR)
-export const dynamic = 'force-dynamic';
+const ALL_TYPES: TypeId[] = [
+  'normal', 'fire', 'water', 'electric', 'grass', 'ice',
+  'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug',
+  'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
+];
+
+// Pre-generate all 153 dual-type combo pages at build time
+export async function generateStaticParams() {
+  const combos: { combo: string }[] = [];
+  for (let i = 0; i < ALL_TYPES.length; i++) {
+    for (let j = i + 1; j < ALL_TYPES.length; j++) {
+      combos.push({ combo: `${ALL_TYPES[i]}-${ALL_TYPES[j]}` });
+    }
+  }
+  return combos;
+}
+
+// Only allow pre-generated paths
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ combo: string }> }): Promise<Metadata> {
   const resolvedParams = await params;

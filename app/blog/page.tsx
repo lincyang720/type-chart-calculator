@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 
-// Force dynamic rendering (SSR)
-export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';

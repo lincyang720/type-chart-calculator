@@ -13,8 +13,13 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
-// Force dynamic rendering (SSR)
-export const dynamic = 'force-dynamic';
+// Pre-generate all 18 type pages at build time
+export async function generateStaticParams() {
+  return ALL_TYPES.map((type) => ({ type }));
+}
+
+// Only allow pre-generated paths, return 404 for others
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ type: string }> }): Promise<Metadata> {
   const { type: typeParam } = await params;
@@ -65,6 +70,48 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
 
   return (
     <div className="container mx-auto px-4 py-8">
+      {/* FAQ Schema JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: `What is ${type.name} type strong against?`,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: offensive.superEffective.length > 0
+                    ? `${type.name} type moves are super effective (2× damage) against ${offensive.superEffective.map(t => typesData.types.find(td => td.id === t)?.name).join(', ')} types.`
+                    : `${type.name} type has no super effective matchups.`,
+                },
+              },
+              {
+                '@type': 'Question',
+                name: `What is ${type.name} type weak against?`,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: defensive.weakTo.length > 0
+                    ? `${type.name} type is weak to (takes 2× damage from) ${defensive.weakTo.map(t => typesData.types.find(td => td.id === t)?.name).join(', ')} type moves.`
+                    : `${type.name} type has no weaknesses!`,
+                },
+              },
+              {
+                '@type': 'Question',
+                name: `What types resist ${type.name}?`,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: offensive.notVeryEffective.length > 0
+                    ? `${offensive.notVeryEffective.map(t => typesData.types.find(td => td.id === t)?.name).join(', ')} types resist ${type.name} type moves (take 0.5× damage).`
+                    : `No types resist ${type.name} type moves.`,
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">

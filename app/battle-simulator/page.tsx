@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 
-// Force dynamic rendering (SSR)
-export const dynamic = 'force-dynamic';
 import BattleSimulator from '@/components/BattleSimulator';
 
 export const metadata: Metadata = {
