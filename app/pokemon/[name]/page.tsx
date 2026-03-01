@@ -7,6 +7,18 @@ import typesData from '@/data/types.json';
 import pokemonData from '@/data/pokemon.json';
 import Link from 'next/link';
 
+const ALL_TYPES: TypeId[] = [
+  'normal', 'fire', 'water', 'electric', 'grass', 'ice',
+  'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug',
+  'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
+];
+
+function getComboSlug(t1: TypeId, t2: TypeId): string {
+  const i1 = ALL_TYPES.indexOf(t1);
+  const i2 = ALL_TYPES.indexOf(t2);
+  return i1 < i2 ? `${t1}-${t2}` : `${t2}-${t1}`;
+}
+
 // Pre-generate all pokemon pages at build time
 export async function generateStaticParams() {
   return pokemonData.pokemon.map((p) => ({ name: p.id }));
@@ -206,7 +218,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
             </div>
             {type2 && (
               <div className="mt-4 text-center">
-                <Link href={`/combo/${type1}-${type2}`} className="text-blue-600 hover:underline text-sm">
+                <Link href={`/combo/${getComboSlug(type1, type2)}`} className="text-blue-600 hover:underline text-sm">
                   View full {typeNames.join('/')} type matchup →
                 </Link>
               </div>
