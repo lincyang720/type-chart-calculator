@@ -73,6 +73,108 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Popular Combinations Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Popular Type Combinations</h2>
+        <p className="text-gray-600 mb-6">
+          Explore the most common dual-type combinations and their strengths.
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Link href="/combo/fire-flying" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <div className="flex gap-2 mb-2">
+              <TypeBadge typeId="fire" size="sm" />
+              <TypeBadge typeId="flying" size="sm" />
+            </div>
+            <h3 className="font-semibold text-gray-800">Fire/Flying</h3>
+            <p className="text-sm text-gray-600">Charizard, Moltres, Talonflame</p>
+          </Link>
+          <Link href="/combo/water-ground" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <div className="flex gap-2 mb-2">
+              <TypeBadge typeId="water" size="sm" />
+              <TypeBadge typeId="ground" size="sm" />
+            </div>
+            <h3 className="font-semibold text-gray-800">Water/Ground</h3>
+            <p className="text-sm text-gray-600">Swampert, Gastrodon, Quagsire</p>
+          </Link>
+          <Link href="/combo/steel-fairy" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <div className="flex gap-2 mb-2">
+              <TypeBadge typeId="steel" size="sm" />
+              <TypeBadge typeId="fairy" size="sm" />
+            </div>
+            <h3 className="font-semibold text-gray-800">Steel/Fairy</h3>
+            <p className="text-sm text-gray-600">Magearna, Zacian, Klefki</p>
+          </Link>
+          <Link href="/combo/dragon-flying" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <div className="flex gap-2 mb-2">
+              <TypeBadge typeId="dragon" size="sm" />
+              <TypeBadge typeId="flying" size="sm" />
+            </div>
+            <h3 className="font-semibold text-gray-800">Dragon/Flying</h3>
+            <p className="text-sm text-gray-600">Dragonite, Salamence, Rayquaza</p>
+          </Link>
+          <Link href="/combo/grass-poison" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <div className="flex gap-2 mb-2">
+              <TypeBadge typeId="grass" size="sm" />
+              <TypeBadge typeId="poison" size="sm" />
+            </div>
+            <h3 className="font-semibold text-gray-800">Grass/Poison</h3>
+            <p className="text-sm text-gray-600">Venusaur, Vileplume, Roserade</p>
+          </Link>
+          <Link href="/combo/electric-steel" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <div className="flex gap-2 mb-2">
+              <TypeBadge typeId="electric" size="sm" />
+              <TypeBadge typeId="steel" size="sm" />
+            </div>
+            <h3 className="font-semibold text-gray-800">Electric/Steel</h3>
+            <p className="text-sm text-gray-600">Magnezone, Togedemaru</p>
+          </Link>
+        </div>
+        <div className="text-center mt-6">
+          <Link href="/types" className="text-blue-600 font-semibold hover:underline">
+            View All 153 Combinations →
+          </Link>
+        </div>
+      </section>
+
+      {/* Popular Pokemon Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Popular Pokemon</h2>
+        <p className="text-gray-600 mb-6">
+          Check detailed type matchups for your favorite Pokemon.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <Link href="/pokemon/charizard" className="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow text-center">
+            <p className="font-semibold text-gray-800">Charizard</p>
+            <p className="text-xs text-gray-600">Fire/Flying</p>
+          </Link>
+          <Link href="/pokemon/pikachu" className="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow text-center">
+            <p className="font-semibold text-gray-800">Pikachu</p>
+            <p className="text-xs text-gray-600">Electric</p>
+          </Link>
+          <Link href="/pokemon/mewtwo" className="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow text-center">
+            <p className="font-semibold text-gray-800">Mewtwo</p>
+            <p className="text-xs text-gray-600">Psychic</p>
+          </Link>
+          <Link href="/pokemon/garchomp" className="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow text-center">
+            <p className="font-semibold text-gray-800">Garchomp</p>
+            <p className="text-xs text-gray-600">Dragon/Ground</p>
+          </Link>
+          <Link href="/pokemon/lucario" className="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow text-center">
+            <p className="font-semibold text-gray-800">Lucario</p>
+            <p className="text-xs text-gray-600">Fighting/Steel</p>
+          </Link>
+          <Link href="/pokemon/greninja" className="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow text-center">
+            <p className="font-semibold text-gray-800">Greninja</p>
+            <p className="text-xs text-gray-600">Water/Dark</p>
+          </Link>
+        </div>
+        <div className="text-center mt-6">
+          <Link href="/pokemon" className="text-blue-600 font-semibold hover:underline">
+            View All Pokemon →
+          </Link>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="mb-12">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">More Tools</h2>
