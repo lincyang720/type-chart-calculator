@@ -28,12 +28,14 @@
         "Solar Beam"
       ],
       "counters": [
-        "Stealth Rock users",
-        "Rock-type attackers",
-        "Electric-type attackers"
+        "Stealth Rock (removes 50% HP)",
+        "Rock-type attackers (Tyranitar, Lycanroc)",
+        "Electric-types (Zapdos, Magnezone)",
+        "Water-types with priority (Azumarill Aqua Jet)",
+        "Bulky Water walls (Toxapex, Gastrodon)"
       ],
-      "strengths": "High Special Attack and Speed. Excellent offensive coverage with Fire/Flying STAB.",
-      "strategy": "Charizard excels as a special attacker. Its 4× Rock weakness makes Stealth Rock devastating — always pair with a Rapid Spin or Defog user. Solar Power + Sun teams maximize its damage output."
+      "strengths": "High Special Attack (109) and Speed (100). Excellent offensive coverage with Fire/Flying STAB. Solar Power in sun makes it a nuclear threat. Access to Dragon Pulse and Focus Blast for coverage.",
+      "strategy": "Charizard excels as a special attacker with multiple viable sets:\n\n**Solar Power Sweeper (Sun Teams):**\n- Ability: Solar Power (1.5× Special Attack in sun, but loses HP)\n- Moves: Fire Blast, Solar Beam, Air Slash, Focus Blast\n- Item: Life Orb or Choice Specs\n- Strategy: Pair with Drought setter (Torkoal, Ninetales). Devastating power but short-lived due to HP drain.\n\n**Blaze Pivot (Balanced Teams):**\n- Ability: Blaze (boosts Fire moves at low HP)\n- Moves: Flamethrower, Air Slash, Roost, Will-O-Wisp\n- Item: Heavy-Duty Boots (negates Stealth Rock)\n- Strategy: More defensive. Roost for longevity, Will-O-Wisp cripples physical attackers.\n\n**Mega Charizard Y (if available):**\n- Sets permanent sun on entry\n- Massive Special Attack boost\n- Best Charizard forme for competitive play\n\n**Key Weaknesses:**\n- 4× weak to Rock (Stealth Rock removes 50% HP!)\n- Always run Heavy-Duty Boots or have Rapid Spin/Defog support\n- Vulnerable to priority moves (Aqua Jet, Sucker Punch)\n- Relatively frail Defense (78 base)\n\n**Best Partners:**\n- Rapid Spin/Defog users: Corviknight, Great Tusk, Torkoal\n- Drought setters: Torkoal, Ninetales (for Solar Power sets)\n- Electric immunities: Ground-types to handle Electric attacks\n- Stealth Rock setters: Pressure opponents, force switches"
     },
     {
       "id": "blastoise",
