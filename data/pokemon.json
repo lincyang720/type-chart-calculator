@@ -1518,6 +1518,120 @@
       "strategy": "Use as a revenge killer or late-game sweeper. Magic Guard prevents chip damage. Pair with screens support. Watch for Pursuit trappers like Tyranitar."
     },
     {
+      "id": "aegislash",
+      "name": "Aegislash",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "generation": 6,
+      "category": "mixed-attacker",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 150,
+        "spAtk": 50,
+        "spDef": 150,
+        "speed": 60
+      },
+      "abilities": [
+        "Stance Change"
+      ],
+      "recommendedMoves": [
+        "King's Shield",
+        "Shadow Ball",
+        "Flash Cannon",
+        "Shadow Sneak"
+      ],
+      "counters": [
+        "Fire-types (Heatran, Volcarona)",
+        "Ground-types (Landorus, Garchomp)",
+        "Dark-types (Tyranitar, Bisharp)",
+        "Ghost-types (Gengar, Dragapult)",
+        "Knock Off users (removes item)",
+        "Taunt users (blocks King's Shield)"
+      ],
+      "strengths": "Unique Stance Change ability: 150/150 defenses in Shield Forme, 150/150 offenses in Blade Forme. Excellent typing (Steel/Ghost) with 3 immunities (Normal, Fighting, Poison). Access to King's Shield for priority protection and Attack drops. Can run physical, special, or mixed sets.",
+      "strategy": "Aegislash is one of the most unique Pokemon in competitive play:\n\n**Stance Change Mechanic:**\n- Shield Forme: 60/50/150/50/150/60 (defensive)\n- Blade Forme: 60/150/50/150/50/60 (offensive)\n- Switches to Blade when using attacking moves\n- Switches to Shield when using King's Shield\n- Always starts battle in Shield Forme\n\n**Standard Mixed Attacker:**\n- Moves: King's Shield, Shadow Ball, Flash Cannon, Shadow Sneak\n- Item: Weakness Policy or Leftovers\n- EVs: 252 HP / 252 SpA / 4 Spe\n- Strategy: Lead with King's Shield to scout, attack with STAB moves, finish with Shadow Sneak priority\n\n**Physical Swords Dance:**\n- Moves: Swords Dance, Shadow Sneak, Iron Head, Shadow Claw\n- Item: Life Orb or Spell Tag\n- Strategy: Set up Swords Dance, sweep with boosted priority\n\n**SubToxic Stall:**\n- Moves: Substitute, Toxic, King's Shield, Shadow Ball\n- Item: Leftovers\n- Strategy: Stall out opponents with Toxic + King's Shield\n\n**Key Weaknesses:**\n- 4× weak to Ground (Earthquake is everywhere)\n- Vulnerable to Fire, Ghost, Dark coverage\n- Slow Speed (60) means often moving last\n- Knock Off removes item and cripples viability\n- Taunt shuts down King's Shield spam\n\n**Best Partners:**\n- Ground immunities: Rotom-Wash, Zapdos, Landorus\n- Fire resistances: Water/Rock types\n- Wish passers: Clefable, Sylveon (Aegislash has no recovery)\n- Rapid Spin/Defog: Keep hazards off the field"
+    },
+    {
+      "id": "zacian",
+      "name": "Zacian",
+      "types": [
+        "fairy",
+        "steel"
+      ],
+      "generation": 8,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 92,
+        "attack": 130,
+        "defense": 115,
+        "spAtk": 80,
+        "spDef": 115,
+        "speed": 148
+      },
+      "abilities": [
+        "Intrepid Sword"
+      ],
+      "recommendedMoves": [
+        "Behemoth Blade",
+        "Play Rough",
+        "Close Combat",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Fire-types (Heatran, Volcarona)",
+        "Ground-types (Landorus-T, Garchomp)",
+        "Physically defensive walls (Skarmory, Corviknight)",
+        "Will-O-Wisp users (burn cripples Attack)",
+        "Prankster Thunder Wave (Thundurus, Grimmsnarl)",
+        "Faster Choice Scarf users (rare due to 148 base Speed)"
+      ],
+      "strengths": "Intrepid Sword boosts Attack by 1 stage on entry (effectively 195 Attack). Incredible Speed (148) outspeeds almost everything. Behemoth Blade is 100 BP Steel STAB that doubles damage vs Dynamax. Fairy/Steel typing gives 11 resistances and 2 immunities. Banned to Ubers tier for being too powerful.",
+      "strategy": "Zacian is the most dominant physical attacker in Ubers:\n\n**Intrepid Sword:**\n- Automatically raises Attack by 1 stage on switch-in\n- Effectively starts at +1 Attack (195 base)\n- Stacks with Swords Dance for +3 total\n\n**Standard Swords Dance Sweeper:**\n- Moves: Swords Dance, Behemoth Blade, Play Rough, Close Combat\n- Item: Rusted Sword (transforms to Crowned form, +40 Attack)\n- EVs: 252 Atk / 4 SpD / 252 Spe\n- Nature: Jolly or Adamant\n- Strategy: Switch in, get free +1 Attack, set up Swords Dance, sweep\n\n**Choice Band Wallbreaker:**\n- Moves: Behemoth Blade, Play Rough, Close Combat, Crunch\n- Item: Choice Band\n- Strategy: Immediate pressure with +1 Attack + Choice Band. No setup needed.\n\n**Substitute + 3 Attacks:**\n- Moves: Substitute, Behemoth Blade, Play Rough, Close Combat\n- Item: Leftovers\n- Strategy: Block status with Substitute, maintain +1 Attack advantage\n\n**Crowned Forme (with Rusted Sword):**\n- Type becomes Fairy/Steel\n- Attack: 130 → 170 (highest in the game)\n- Behemoth Blade becomes signature move\n- This is the standard competitive form\n\n**Key Weaknesses:**\n- 4× weak to Ground (Earthquake, Earth Power)\n- 2× weak to Fire (Heatran is a common check)\n- Vulnerable to Will-O-Wisp (halves Attack)\n- No recovery moves (relies on switching)\n- Banned in most formats (Ubers only)\n\n**Best Partners:**\n- Ground immunities: Zapdos, Tornadus, Landorus\n- Fire checks: Water-types, Kyogre\n- Cleric support: Heal Bell/Aromatherapy for burns\n- Entry hazards: Stealth Rock + Spikes pressure switches"
+    },
+    {
+      "id": "dracovish",
+      "name": "Dracovish",
+      "types": [
+        "water",
+        "dragon"
+      ],
+      "generation": 8,
+      "category": "physical-attacker",
+      "baseStats": {
+        "hp": 90,
+        "attack": 90,
+        "defense": 100,
+        "spAtk": 70,
+        "spDef": 80,
+        "speed": 75
+      },
+      "abilities": [
+        "Water Absorb",
+        "Strong Jaw",
+        "Sand Rush"
+      ],
+      "recommendedMoves": [
+        "Fishious Rend",
+        "Crunch",
+        "Ice Fang",
+        "Low Kick"
+      ],
+      "counters": [
+        "Faster Pokemon (Fishious Rend loses power)",
+        "Fairy-types (Clefable, Azumarill)",
+        "Grass-types (Ferrothorn, Rillaboom)",
+        "Dragon-types (resist Fishious Rend)",
+        "Water Absorb/Storm Drain users",
+        "Priority moves (Aqua Jet, Mach Punch)",
+        "Choice Scarf users (outspeed and KO)"
+      ],
+      "strengths": "Fishious Rend is the most broken move in Gen 8: 85 BP that DOUBLES to 170 BP if user moves first. Strong Jaw boosts it further (1.5×). With Choice Band + Strong Jaw + priority, it hits harder than most Z-moves. Can OHKO even resists. Banned to Ubers for being too centralizing.",
+      "strategy": "Dracovish is infamous for breaking Gen 8 OU with Fishious Rend:\n\n**Fishious Rend Mechanics:**\n- Base Power: 85\n- Doubles to 170 BP if user moves first\n- Strong Jaw boosts by 1.5× (255 effective BP)\n- Choice Band boosts by 1.5× (382 effective BP)\n- Rain boosts by 1.5× (573 effective BP in rain!)\n- This is stronger than most legendary signature moves\n\n**Choice Band Wallbreaker:**\n- Ability: Strong Jaw\n- Moves: Fishious Rend, Crunch, Ice Fang, Psychic Fangs\n- Item: Choice Band\n- EVs: 252 Atk / 4 SpD / 252 Spe\n- Nature: Jolly or Adamant\n- Strategy: Click Fishious Rend. That's it. It 2HKOs everything.\n\n**Choice Scarf Revenge Killer:**\n- Ability: Strong Jaw\n- Moves: Fishious Rend, Crunch, Ice Fang, Outrage\n- Item: Choice Scarf\n- Strategy: Outspeed and OHKO with Fishious Rend. Scarf ensures you move first.\n\n**Sand Rush Sweeper (Sand Teams):**\n- Ability: Sand Rush (doubles Speed in Sandstorm)\n- Moves: Fishious Rend, Crunch, Low Kick, Substitute\n- Item: Life Orb\n- Strategy: Pair with Tyranitar/Hippowdon. Becomes fastest thing in sand.\n\n**Damage Calculations (Choice Band + Strong Jaw):**\n- vs 252 HP Toxapex: 79.6% - 93.7% (guaranteed 2HKO)\n- vs 252 HP Ferrothorn: 52.8% - 62.5% (guaranteed 2HKO)\n- vs 0 HP Dragapult: 89.8% - 105.7% (31.3% chance to OHKO)\n- vs 252 HP Clefable: 43.9% - 51.8% (resists, still chunks)\n\n**Why It Was Banned:**\n- Fishious Rend has no counterplay\n- Even resists take 40-50% damage\n- Choice Scarf set outspeeds everything and OHKOs\n- Centralizes teambuilding around Water immunities\n- Banned to Ubers in Gen 8 OU\n\n**Key Weaknesses:**\n- Mediocre stats (90/90/100/70/80/75)\n- Relies entirely on Fishious Rend\n- Loses to faster Pokemon (Rend loses power)\n- Fairy-types wall it (Clefable, Azumarill)\n- No recovery or setup moves\n- Locked into moves with Choice items\n\n**Best Partners:**\n- Sandstorm setters: Tyranitar, Hippowdon (for Sand Rush)\n- Rain setters: Pelipper, Politoed (boosts Fishious Rend)\n- Fairy checks: Steel-types, Poison-types\n- Slow pivots: U-turn/Volt Switch to bring Dracovish in safely"
+    },
+    {
       "id": "lapras",
       "name": "Lapras",
       "types": [
