@@ -1667,6 +1667,43 @@
       ],
       "strengths": "Massive HP (130) and good Special Defense. Freeze-Dry hits Water-types super effectively. Hydration + Rest combo in rain.",
       "strategy": "Use as a special wall or Trick Room sweeper. 4× weak to Fighting and Rock, so avoid physical attackers. Excellent in rain teams with Hydration ability."
+    },
+    {
+      "id": "calyrex-shadow",
+      "name": "Calyrex-Shadow",
+      "types": [
+        "psychic",
+        "ghost"
+      ],
+      "generation": 8,
+      "category": "special-attacker",
+      "baseStats": {
+        "hp": 100,
+        "attack": 85,
+        "defense": 80,
+        "spAtk": 165,
+        "spDef": 100,
+        "speed": 150
+      },
+      "abilities": [
+        "As One (Spectrier)"
+      ],
+      "recommendedMoves": [
+        "Astral Barrage",
+        "Psyshock",
+        "Draining Kiss",
+        "Nasty Plot"
+      ],
+      "counters": [
+        "Dark-types (Yveltal, Tyranitar)",
+        "Pursuit trappers (Weavile, Bisharp)",
+        "Priority moves (Sucker Punch, Shadow Sneak)",
+        "Specially defensive Dark-types (Umbreon, Mandibuzz)",
+        "Choice Scarf users (Darkrai, Hoopa-Unbound)",
+        "Blissey/Chansey (extreme special bulk)"
+      ],
+      "strengths": "Absolutely dominant in Ubers tier. 165 Special Attack + 150 Speed makes it the fastest special attacker in the game. As One ability combines Unnerve + Grim Neigh (boosts Special Attack on KO). Astral Barrage is 120 BP Ghost STAB that hits both opponents in doubles. Immune to Normal and Fighting. Can snowball with Grim Neigh boosts.",
+      "strategy": "Calyrex-Shadow Rider is the undisputed king of Ubers:\n\n**Offensive Specs:**\n- 165 Special Attack (tied for 2nd highest in game)\n- 150 Speed (outspeeds almost everything)\n- Astral Barrage: 120 BP Ghost STAB, hits both foes in doubles\n- Grim Neigh: +1 Special Attack every KO (snowballs out of control)\n\n**Life Orb Sweeper (Standard):**\n- Ability: As One (Spectrier)\n- Moves: Astral Barrage, Psyshock, Draining Kiss, Nasty Plot\n- Item: Life Orb\n- EVs: 252 SpA / 4 SpD / 252 Spe\n- Nature: Timid\n- Strategy: Click Astral Barrage. Get KO. Grim Neigh activates. Repeat. Draining Kiss for recovery and Fairy coverage.\n\n**Choice Specs Nuke:**\n- Moves: Astral Barrage, Psyshock, Hyper Beam, Trick\n- Item: Choice Specs\n- Strategy: Maximum immediate power. Astral Barrage OHKOs most Ubers. Trick to cripple walls.\n\n**Nasty Plot Setup:**\n- Moves: Nasty Plot, Astral Barrage, Psyshock, Draining Kiss\n- Item: Life Orb or Weakness Policy\n- Strategy: Set up on passive Pokemon. +2 Astral Barrage OHKOs everything.\n\n**Damage Calculations (Life Orb):**\n- vs 252 HP Necrozma-DM: 79.8% - 94.1% (guaranteed 2HKO)\n- vs 252 HP Zacian-C: 52.9% - 62.4% (guaranteed 2HKO)\n- vs 0 HP Mewtwo: 89.5% - 105.5% (37.5% chance to OHKO)\n- vs 252 HP Yveltal: 31.7% - 37.4% (resists, but still chunks)\n\n**After One Grim Neigh Boost (+1 SpA):**\n- vs 252 HP Necrozma-DM: 118.8% - 140.1% (guaranteed OHKO)\n- vs 252 HP Zacian-C: 78.8% - 92.9% (guaranteed 2HKO)\n- vs 252 HP Yveltal: 47.3% - 55.9% (resists)\n\n**Why It Dominates Ubers:**\n- Fastest special attacker (150 Speed)\n- Highest Special Attack among fast Pokemon\n- Snowballs with Grim Neigh\n- Astral Barrage has no immunities (Ghost hits everything)\n- Psychic/Ghost typing is excellent offensively\n- Immune to Fake Out, Extreme Speed, Close Combat\n\n**Key Weaknesses:**\n- Dark-types wall it completely (Yveltal, Tyranitar)\n- Pursuit trapping (Weavile, Bisharp can trap and KO)\n- Priority moves (Sucker Punch, Shadow Sneak)\n- Relatively frail Defense (80 base)\n- No physical bulk (dies to Weavile Ice Shard)\n- Blissey/Chansey can stall it out\n\n**Best Partners:**\n- Dark-type checks: Fighting-types, Fairy-types, Bug-types\n- Stealth Rock setters: Pressure opponents, chip damage\n- Screens support: Light Clay Grimmsnarl (Reflect/Light Screen)\n- Pursuit absorbers: Ghost-types to bait Pursuit\n- Priority blockers: Psychic Terrain setters (blocks priority)\n\n**Tier Status:**\n- Ubers: Top 5 Pokemon in the tier\n- Banned from OU for being too centralizing\n- Dominant in VGC Series 13 (restricted format)\n\n**Fun Fact:**\n- Calyrex-Shadow is Calyrex riding Spectrier\n- As One ability is unique: combines two abilities\n- Signature move Astral Barrage is exclusive to this forme\n- In lore, it's the \"High King\" of the Crown Tundra"
     }
   ]
 }
