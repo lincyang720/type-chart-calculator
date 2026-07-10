@@ -2,26 +2,40 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import MobileNav from '@/components/MobileNav';
+import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME, SITE_URL } from '@/lib/seo';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.typematchup.org'),
-  title: 'Pokemon Type Calculator - Instant Weakness & Resistance Checker',
-  description: 'Stop losing battles to type disadvantages. Instant calculator for weaknesses, resistances, and damage multipliers. Free battle simulator.',
+  metadataBase: new URL(SITE_URL),
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   keywords: 'pokemon type chart, type calculator, weakness calculator, dual type, type matchup, battle simulator',
-  authors: [{ name: 'Type Chart Calculator' }],
+  authors: [{ name: SITE_NAME }],
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    shortcut: '/favicon.svg',
+  },
   openGraph: {
-    title: 'Pokemon Type Calculator - Instant Weakness & Resistance Checker',
-    description: 'Stop losing battles to type disadvantages. Instant calculator for weaknesses, resistances, and damage multipliers.',
-    url: 'https://www.typematchup.org',
-    siteName: 'Type Chart Calculator',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Pokemon type calculator and type effectiveness calculator',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pokemon Type Calculator - Instant Weakness Checker',
-    description: 'Stop losing battles to type disadvantages. Instant calculator for weaknesses, resistances, and damage multipliers.',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,

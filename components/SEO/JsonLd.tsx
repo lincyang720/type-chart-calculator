@@ -1,3 +1,5 @@
+import { SITE_URL } from '@/lib/seo';
+
 interface JsonLdProps {
   data: Record<string, any>;
 }
@@ -17,7 +19,7 @@ export function WebApplicationSchema() {
     '@type': 'WebApplication',
     name: 'Type Chart Calculator',
     description: 'Interactive type matchup chart and calculator for all 18 types',
-    url: 'https://typematchup.org',
+    url: SITE_URL,
     applicationCategory: 'GameApplication',
     operatingSystem: 'Any',
     offers: {
