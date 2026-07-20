@@ -17,8 +17,8 @@ export function WebApplicationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Type Chart Calculator',
-    description: 'Interactive type matchup chart and calculator for all 18 types',
+    name: 'TypeMatchup - Pokemon Type Matchup Calculator',
+    description: 'Interactive Pokemon type matchup calculator and type effectiveness chart for all 18 types',
     url: SITE_URL,
     applicationCategory: 'GameApplication',
     operatingSystem: 'Any',

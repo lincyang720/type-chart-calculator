@@ -114,5 +114,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   };
 
-  return [...staticPages, ...typePages, ...comboPages, ...pokemonPages, pokemonListPage, ...blogPages];
+  // Add canonical type-chart and type-quiz pages
+  const pokemonToolPages = [
+    {
+      url: `${baseUrl}/pokemon/type-chart`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/pokemon/type-quiz`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+  ];
+
+  return [...staticPages, ...typePages, ...comboPages, ...pokemonPages, pokemonListPage, ...pokemonToolPages, ...blogPages];
 }

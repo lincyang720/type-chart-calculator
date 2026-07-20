@@ -11,6 +11,18 @@ const nextConfig = {
         destination: 'https://www.typematchup.org/:path*',
         permanent: true,
       },
+      // P1: Consolidate duplicate type-chart pages to resolve cannibalization
+      {
+        source: '/pokemon/pokemon-type-chart',
+        destination: '/pokemon/type-chart',
+        permanent: true,
+      },
+      // P1: Consolidate duplicate type-quiz pages to resolve cannibalization
+      {
+        source: '/pokemon/pokemon-type-quiz',
+        destination: '/pokemon/type-quiz',
+        permanent: true,
+      },
     ];
   },
 }
