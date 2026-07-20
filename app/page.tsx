@@ -188,7 +188,7 @@ export default function Home() {
         {/* Features Section */}
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6">More Type Effectiveness Tools</h2>
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-600">
               <h3 className="text-xl font-semibold mb-3 text-purple-600">Battle Simulator</h3>
               <p className="text-gray-600 mb-4">
@@ -203,8 +203,17 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 View the full 18×18 type effectiveness matrix for comprehensive reference.
               </p>
-              <Link href="/types" className="text-blue-600 font-semibold hover:underline">
+              <Link href="/pokemon/type-chart" className="text-blue-600 font-semibold hover:underline">
                 View Full Chart →
+              </Link>
+            </div>
+            <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-600">
+              <h3 className="text-xl font-semibold mb-3 text-green-700">Pokemon Type Quiz</h3>
+              <p className="text-gray-600 mb-4">
+                Practice single-type matchups or switch to Hard mode for dual-type weakness questions.
+              </p>
+              <Link href="/pokemon/type-quiz" className="text-green-700 font-semibold hover:underline">
+                Take the Quiz →
               </Link>
             </div>
           </div>

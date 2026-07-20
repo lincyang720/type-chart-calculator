@@ -12,22 +12,32 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
+type QuizMode = 'easy' | 'hard';
+
+interface QuizQuestion {
+  defendingTypes: TypeId[];
+  correctAnswer: TypeId;
+  options: TypeId[];
+  multiplier: number;
+}
+
 const INITIAL_QUESTION = {
-  defendingType: 'normal' as TypeId,
+  defendingTypes: ['normal'] as TypeId[],
   correctAnswer: 'fighting' as TypeId,
   options: ['fighting', 'ghost', 'ground', 'fairy'] as TypeId[],
+  multiplier: 2,
 };
 
 function getRandomType(): TypeId {
   return ALL_TYPES[Math.floor(Math.random() * ALL_TYPES.length)];
 }
 
-function getSuperEffectiveTypes(defendingType: TypeId): TypeId[] {
-  return ALL_TYPES.filter(attackingType => calculateMultiplier(attackingType, [defendingType]) >= 2);
+function getSuperEffectiveTypes(defendingTypes: TypeId[]): TypeId[] {
+  return ALL_TYPES.filter(attackingType => calculateMultiplier(attackingType, defendingTypes) >= 2);
 }
 
-function getNonSuperEffectiveTypes(defendingType: TypeId): TypeId[] {
-  return ALL_TYPES.filter(attackingType => calculateMultiplier(attackingType, [defendingType]) < 2);
+function getNonSuperEffectiveTypes(defendingTypes: TypeId[]): TypeId[] {
+  return ALL_TYPES.filter(attackingType => calculateMultiplier(attackingType, defendingTypes) < 2);
 }
 
 function shuffle<T>(array: T[]): T[] {
@@ -39,29 +49,39 @@ function shuffle<T>(array: T[]): T[] {
   return copy;
 }
 
-function generateQuestion() {
-  const defendingType = getRandomType();
-  const correctPool = getSuperEffectiveTypes(defendingType);
+function generateQuestion(mode: QuizMode): QuizQuestion {
+  const firstType = getRandomType();
+  let defendingTypes = [firstType];
+
+  if (mode === 'hard') {
+    const secondTypePool = ALL_TYPES.filter(type => type !== firstType);
+    const secondType = secondTypePool[Math.floor(Math.random() * secondTypePool.length)];
+    defendingTypes = [firstType, secondType];
+  }
+
+  const correctPool = getSuperEffectiveTypes(defendingTypes);
 
   // Ensure the question has at least one correct answer
   if (correctPool.length === 0) {
-    return generateQuestion();
+    return generateQuestion(mode);
   }
 
   const correctAnswer = correctPool[Math.floor(Math.random() * correctPool.length)];
-  const distractorPool = getNonSuperEffectiveTypes(defendingType);
+  const distractorPool = getNonSuperEffectiveTypes(defendingTypes);
   const distractors = shuffle(distractorPool).slice(0, 3);
   const options = shuffle([correctAnswer, ...distractors]);
 
   return {
-    defendingType,
+    defendingTypes,
     correctAnswer,
     options,
+    multiplier: calculateMultiplier(correctAnswer, defendingTypes),
   };
 }
 
 export default function TypeQuizPage() {
-  const [question, setQuestion] = useState(INITIAL_QUESTION);
+  const [mode, setMode] = useState<QuizMode>('easy');
+  const [question, setQuestion] = useState<QuizQuestion>(INITIAL_QUESTION);
   const [selected, setSelected] = useState<TypeId | null>(null);
   const [score, setScore] = useState(0);
   const [total, setTotal] = useState(0);
@@ -87,8 +107,18 @@ export default function TypeQuizPage() {
   }, [selected, question.correctAnswer]);
 
   const nextQuestion = useCallback(() => {
-    setQuestion(generateQuestion());
+    setQuestion(generateQuestion(mode));
     setSelected(null);
+  }, [mode]);
+
+  const changeMode = useCallback((nextMode: QuizMode) => {
+    setMode(nextMode);
+    setQuestion(nextMode === 'easy' ? INITIAL_QUESTION : generateQuestion('hard'));
+    setSelected(null);
+    setScore(0);
+    setTotal(0);
+    setStreak(0);
+    setBestStreak(0);
   }, []);
 
   const isCorrect = selected === question.correctAnswer;
@@ -100,8 +130,28 @@ export default function TypeQuizPage() {
           Pokemon Type Quiz
         </h1>
         <p className="text-lg text-gray-600 mb-8 text-center">
-          Test your type matchup knowledge. Which attacking type is super effective against the defending type?
+          Test your type matchup knowledge with single-type questions or hard dual-type matchups.
         </p>
+
+        <div className="mb-8 flex justify-center" aria-label="Quiz difficulty">
+          <div className="inline-flex rounded-md border border-gray-300 bg-white p-1 shadow-sm">
+            {(['easy', 'hard'] as QuizMode[]).map(option => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => changeMode(option)}
+                aria-pressed={mode === option}
+                className={`min-w-[104px] rounded px-4 py-2 text-sm font-semibold capitalize transition-colors ${
+                  mode === option
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* Scoreboard */}
         <div className="flex justify-center gap-4 mb-8">
@@ -121,9 +171,13 @@ export default function TypeQuizPage() {
 
         {/* Question Card */}
         <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 text-center">
-          <p className="text-gray-600 mb-4">Which type is super effective against:</p>
-          <div className="flex justify-center mb-8">
-            <TypeBadge typeId={question.defendingType} size="lg" />
+          <p className="text-gray-600 mb-4">
+            Which attacking type is super effective against this {mode === 'hard' ? 'dual-type combination' : 'type'}?
+          </p>
+          <div className="flex justify-center gap-2 mb-8">
+            {question.defendingTypes.map(type => (
+              <TypeBadge key={type} typeId={type} size="lg" />
+            ))}
           </div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -155,7 +209,9 @@ export default function TypeQuizPage() {
           {selected && (
             <div className="mt-6">
               <p className={`text-lg font-semibold mb-4 ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
-                {isCorrect ? 'Correct! 🎉' : `Wrong! The correct answer was ${question.correctAnswer.charAt(0).toUpperCase() + question.correctAnswer.slice(1)}.`}
+                {isCorrect
+                  ? `Correct! That attack deals ${question.multiplier}x damage.`
+                  : `Not quite. ${question.correctAnswer.charAt(0).toUpperCase() + question.correctAnswer.slice(1)} deals ${question.multiplier}x damage.`}
               </p>
               <button
                 onClick={nextQuestion}
@@ -169,12 +225,22 @@ export default function TypeQuizPage() {
 
         {/* Tips */}
         <section className="bg-blue-50 rounded-lg p-6 mb-8">
-          <h2 className="text-xl font-bold mb-3">Study Tips</h2>
+          <h2 className="text-xl font-bold mb-3">{mode === 'hard' ? 'Hard Mode Tips' : 'Study Tips'}</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-700">
             <li>Memorize the classic starters: Water beats Fire, Fire beats Grass, Grass beats Water.</li>
-            <li>Ghost and Dark moves are super effective against Ghost, while Dark resists Ghost moves.</li>
-            <li>Steel resists many types but is weak to Fire, Fighting, and Ground.</li>
-            <li>Ground is immune to Electric, and Electric is immune to Ground? No — Electric is weak to Ground!</li>
+            {mode === 'hard' ? (
+              <>
+                <li>Multiply both defensive matchups: 2x times 2x creates a 4x weakness.</li>
+                <li>A 2x weakness and a 0.5x resistance cancel each other to neutral damage.</li>
+                <li>An immunity always reduces the final type multiplier to zero.</li>
+              </>
+            ) : (
+              <>
+                <li>Ghost and Dark moves are super effective against Ghost, while Dark resists Ghost moves.</li>
+                <li>Steel resists many types but is weak to Fire, Fighting, and Ground.</li>
+                <li>Ground is immune to Electric, while Electric is weak to Ground.</li>
+              </>
+            )}
           </ul>
         </section>
 
