@@ -1,4 +1,5 @@
 import { TypeId } from '@/lib/types';
+import { getContrastTextColor } from '@/lib/colorContrast';
 import typesData from '@/data/types.json';
 
 interface TypeBadgeProps {
@@ -26,7 +27,7 @@ export default function TypeBadge({
 
   const baseClasses = `
     inline-flex items-center justify-center
-    rounded-md font-semibold text-white
+    rounded-md font-semibold
     shadow-sm transition-all duration-200
     ${sizeClasses[size]}
     ${clickable ? 'cursor-pointer hover:scale-105 hover:shadow-md' : ''}
@@ -35,7 +36,7 @@ export default function TypeBadge({
   return (
     <span
       className={baseClasses}
-      style={{ backgroundColor: type.color }}
+      style={{ backgroundColor: type.color, color: getContrastTextColor(type.color) }}
       onClick={onClick}
       role={clickable ? 'button' : undefined}
       tabIndex={clickable ? 0 : undefined}

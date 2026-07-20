@@ -75,7 +75,11 @@ export default function DualTypeCalculator() {
             <label className="block text-sm font-medium mb-2">Primary Type</label>
             <select
               value={type1}
-              onChange={(e) => setType1(e.target.value as TypeId)}
+              onChange={(e) => {
+                const nextType = e.target.value as TypeId;
+                setType1(nextType);
+                if (type2 === nextType) setType2('');
+              }}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               {ALL_TYPES.map(typeId => {
@@ -100,7 +104,7 @@ export default function DualTypeCalculator() {
               {ALL_TYPES.map(typeId => {
                 const type = typesData.types.find(t => t.id === typeId);
                 return (
-                  <option key={typeId} value={typeId}>
+                  <option key={typeId} value={typeId} disabled={typeId === type1}>
                     {type?.name}
                   </option>
                 );

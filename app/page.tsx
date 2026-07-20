@@ -217,6 +217,14 @@ export default function Home() {
               </Link>
             </div>
           </div>
+          <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-semibold">
+            <Link href="/pokemon/type-calculator-gen-9" className="text-blue-700 hover:underline">
+              Gen 9 Type Calculator →
+            </Link>
+            <Link href="/pokemon/type-chart-with-abilities" className="text-blue-700 hover:underline">
+              Type Chart With Abilities →
+            </Link>
+          </div>
         </section>
 
         {/* SEO Content Section */}

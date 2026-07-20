@@ -3,6 +3,7 @@
 import { TypeId } from '@/lib/types';
 import { calculateMultiplier, formatMultiplier } from '@/lib/typeCalculations';
 import typesData from '@/data/types.json';
+import { getContrastTextColor } from '@/lib/colorContrast';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -32,8 +33,8 @@ export default function TypeChart() {
                 return (
                   <th
                     key={type}
-                    className="border border-gray-300 p-2 text-xs font-semibold text-white min-w-[60px]"
-                    style={{ backgroundColor: typeData?.color }}
+                    className="border border-gray-300 p-2 text-xs font-semibold min-w-[60px]"
+                    style={typeData ? { backgroundColor: typeData.color, color: getContrastTextColor(typeData.color) } : undefined}
                   >
                     {typeData?.name}
                   </th>
@@ -47,8 +48,8 @@ export default function TypeChart() {
               return (
                 <tr key={defendingType}>
                   <th
-                    className="border border-gray-300 p-2 text-xs font-semibold text-white sticky left-0 z-10 min-w-[80px]"
-                    style={{ backgroundColor: typeData?.color }}
+                    className="border border-gray-300 p-2 text-xs font-semibold sticky left-0 z-10 min-w-[80px]"
+                    style={typeData ? { backgroundColor: typeData.color, color: getContrastTextColor(typeData.color) } : undefined}
                   >
                     {typeData?.name}
                   </th>

@@ -128,6 +128,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/pokemon/type-calculator-gen-9`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/pokemon/type-chart-with-abilities`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
   ];
 
   return [...staticPages, ...typePages, ...comboPages, ...pokemonPages, pokemonListPage, ...pokemonToolPages, ...blogPages];
