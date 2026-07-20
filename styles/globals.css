@@ -26,6 +26,13 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+select,
+option {
+  color-scheme: light;
+  color: #111827;
+  background-color: #ffffff;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
