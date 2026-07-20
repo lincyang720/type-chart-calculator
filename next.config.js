@@ -15,13 +15,13 @@ const nextConfig = {
       {
         source: '/pokemon/pokemon-type-chart',
         destination: '/pokemon/type-chart',
-        permanent: true,
+        statusCode: 301,
       },
       // P1: Consolidate duplicate type-quiz pages to resolve cannibalization
       {
         source: '/pokemon/pokemon-type-quiz',
         destination: '/pokemon/type-quiz',
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },

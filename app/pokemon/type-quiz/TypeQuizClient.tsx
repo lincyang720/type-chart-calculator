@@ -12,6 +12,12 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
+const INITIAL_QUESTION = {
+  defendingType: 'normal' as TypeId,
+  correctAnswer: 'fighting' as TypeId,
+  options: ['fighting', 'ghost', 'ground', 'fairy'] as TypeId[],
+};
+
 function getRandomType(): TypeId {
   return ALL_TYPES[Math.floor(Math.random() * ALL_TYPES.length)];
 }
@@ -55,7 +61,7 @@ function generateQuestion() {
 }
 
 export default function TypeQuizPage() {
-  const [question, setQuestion] = useState(() => generateQuestion());
+  const [question, setQuestion] = useState(INITIAL_QUESTION);
   const [selected, setSelected] = useState<TypeId | null>(null);
   const [score, setScore] = useState(0);
   const [total, setTotal] = useState(0);
@@ -166,7 +172,7 @@ export default function TypeQuizPage() {
           <h2 className="text-xl font-bold mb-3">Study Tips</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-700">
             <li>Memorize the classic starters: Water beats Fire, Fire beats Grass, Grass beats Water.</li>
-            <li>Ghost and Dark are super effective against each other.</li>
+            <li>Ghost and Dark moves are super effective against Ghost, while Dark resists Ghost moves.</li>
             <li>Steel resists many types but is weak to Fire, Fighting, and Ground.</li>
             <li>Ground is immune to Electric, and Electric is immune to Ground? No — Electric is weak to Ground!</li>
           </ul>
