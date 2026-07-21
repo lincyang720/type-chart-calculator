@@ -6,6 +6,10 @@ import typesData from '@/data/types.json';
 import typeChart from '@/data/typeChart.json';
 import defensiveTypeChart from '@/data/defensiveTypeChart.json';
 import Link from 'next/link';
+import {
+  DualTypeContent,
+  generateMetadata as generateDualTypeMetadata,
+} from '@/app/combo/[combo]/page';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -13,9 +17,17 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
-// Pre-generate all 18 type pages at build time
+// Pre-generate all 18 single-type pages and 153 dual-type pages at build time.
 export async function generateStaticParams() {
-  return ALL_TYPES.map((type) => ({ type }));
+  const params: { type: string }[] = ALL_TYPES.map((type) => ({ type }));
+
+  for (let i = 0; i < ALL_TYPES.length; i++) {
+    for (let j = i + 1; j < ALL_TYPES.length; j++) {
+      params.push({ type: `${ALL_TYPES[i]}-${ALL_TYPES[j]}` });
+    }
+  }
+
+  return params;
 }
 
 // Only allow pre-generated paths, return 404 for others
@@ -23,6 +35,13 @@ export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ type: string }> }): Promise<Metadata> {
   const { type: typeParam } = await params;
+
+  if (typeParam.includes('-')) {
+    return generateDualTypeMetadata({
+      params: Promise.resolve({ combo: typeParam }),
+    });
+  }
+
   const typeId = typeParam as TypeId;
   const type = typesData.types.find(t => t.id === typeId);
 
@@ -58,6 +77,13 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
 
 export default async function TypePage({ params }: { params: Promise<{ type: string }> }) {
   const { type: typeParam } = await params;
+
+  if (typeParam.includes('-')) {
+    return DualTypeContent({
+      params: Promise.resolve({ combo: typeParam }),
+    });
+  }
+
   const typeId = typeParam as TypeId;
   const type = typesData.types.find(t => t.id === typeId);
 

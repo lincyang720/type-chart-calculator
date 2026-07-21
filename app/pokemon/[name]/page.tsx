@@ -218,7 +218,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
             </div>
             {type2 && (
               <div className="mt-4 text-center">
-                <Link href={`/combo/${getComboSlug(type1, type2)}`} className="text-blue-600 hover:underline text-sm">
+                <Link href={`/types/${getComboSlug(type1, type2)}`} className="text-blue-600 hover:underline text-sm">
                   View full {typeNames.join('/')} type matchup →
                 </Link>
               </div>

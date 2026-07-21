@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';
 import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
     openGraph: {
       title: `${type1Data.name}/${type2Data.name} Type - Weaknesses & Resistances`,
       description: `${type1Data.name}/${type2Data.name} matchup guide. Weak to: ${weakList}. Resists: ${resistList}.`,
-      url: `https://www.typematchup.org/combo/${type1}-${type2}`,
+      url: `https://www.typematchup.org/types/${type1}-${type2}`,
       type: 'website',
     },
     twitter: {
@@ -60,12 +60,12 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
       description: `${type1Data.name}/${type2Data.name} matchup guide. Weak to: ${weakList}. Resists: ${resistList}.`,
     },
     alternates: {
-      canonical: `/combo/${type1}-${type2}`,
+      canonical: `/types/${type1}-${type2}`,
     },
   };
 }
 
-export default async function DualTypePage({ params }: { params: Promise<{ combo: string }> }) {
+export async function DualTypeContent({ params }: { params: Promise<{ combo: string }> }) {
   const resolvedParams = await params;
   const [type1, type2] = resolvedParams.combo.split('-') as [TypeId, TypeId];
 
@@ -244,4 +244,9 @@ export default async function DualTypePage({ params }: { params: Promise<{ combo
       </div>
     </div>
   );
+}
+
+export default async function LegacyDualTypePage({ params }: { params: Promise<{ combo: string }> }) {
+  const { combo } = await params;
+  permanentRedirect(`/types/${combo}`);
 }

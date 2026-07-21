@@ -68,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         c => c.type1 === ALL_TYPES[i] && c.type2 === ALL_TYPES[j]
       );
       comboPages.push({
-        url: `${baseUrl}/combo/${ALL_TYPES[i]}-${ALL_TYPES[j]}`,
+        url: `${baseUrl}/types/${ALL_TYPES[i]}-${ALL_TYPES[j]}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: isPopular ? 0.8 : 0.7,

@@ -90,7 +90,7 @@ export default function Home() {
             Explore common dual-type combinations and see how the Pokemon type matchup calculator explains their strengths and counters.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link href="/combo/fire-flying" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <Link href="/types/fire-flying" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
               <div className="flex gap-2 mb-2">
                 <TypeBadge typeId="fire" size="sm" />
                 <TypeBadge typeId="flying" size="sm" />
@@ -98,7 +98,7 @@ export default function Home() {
               <h3 className="font-semibold text-gray-800">Fire/Flying</h3>
               <p className="text-sm text-gray-600">Charizard, Moltres, Talonflame</p>
             </Link>
-            <Link href="/combo/water-ground" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <Link href="/types/water-ground" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
               <div className="flex gap-2 mb-2">
                 <TypeBadge typeId="water" size="sm" />
                 <TypeBadge typeId="ground" size="sm" />
@@ -106,7 +106,7 @@ export default function Home() {
               <h3 className="font-semibold text-gray-800">Water/Ground</h3>
               <p className="text-sm text-gray-600">Swampert, Gastrodon, Quagsire</p>
             </Link>
-            <Link href="/combo/steel-fairy" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <Link href="/types/steel-fairy" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
               <div className="flex gap-2 mb-2">
                 <TypeBadge typeId="steel" size="sm" />
                 <TypeBadge typeId="fairy" size="sm" />
@@ -114,7 +114,7 @@ export default function Home() {
               <h3 className="font-semibold text-gray-800">Steel/Fairy</h3>
               <p className="text-sm text-gray-600">Magearna, Zacian, Klefki</p>
             </Link>
-            <Link href="/combo/dragon-flying" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <Link href="/types/dragon-flying" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
               <div className="flex gap-2 mb-2">
                 <TypeBadge typeId="dragon" size="sm" />
                 <TypeBadge typeId="flying" size="sm" />
@@ -122,7 +122,7 @@ export default function Home() {
               <h3 className="font-semibold text-gray-800">Dragon/Flying</h3>
               <p className="text-sm text-gray-600">Dragonite, Salamence, Rayquaza</p>
             </Link>
-            <Link href="/combo/grass-poison" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <Link href="/types/grass-poison" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
               <div className="flex gap-2 mb-2">
                 <TypeBadge typeId="grass" size="sm" />
                 <TypeBadge typeId="poison" size="sm" />
@@ -130,7 +130,7 @@ export default function Home() {
               <h3 className="font-semibold text-gray-800">Grass/Poison</h3>
               <p className="text-sm text-gray-600">Venusaur, Vileplume, Roserade</p>
             </Link>
-            <Link href="/combo/electric-steel" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+            <Link href="/types/electric-steel" className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
               <div className="flex gap-2 mb-2">
                 <TypeBadge typeId="electric" size="sm" />
                 <TypeBadge typeId="steel" size="sm" />
