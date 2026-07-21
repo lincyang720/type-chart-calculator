@@ -257,6 +257,49 @@ export default function Home() {
               <li><strong>0.25× damage:</strong> Not very effective against both types (0.5× × 0.5×)</li>
               <li><strong>Neutralized effectiveness:</strong> Super effective against one type but not very effective against the other (2× × 0.5× = 1×)</li>
             </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3">How to Use Matchup Results in Battle</h3>
+            <p className="mb-4">
+              Start by selecting the defending Pokemon&apos;s type or dual-type combination. The results group every
+              attacking type by its final damage multiplier, which makes the most urgent threats easy to spot. A 4×
+              weakness is usually the first matchup to plan around because even a moderately strong coverage move can
+              force a switch or secure a knockout. Standard 2× weaknesses still matter, but their impact also depends
+              on the attacker&apos;s stats, move power, Same-Type Attack Bonus, held items, abilities, and battle format.
+            </p>
+            <p className="mb-4">
+              Resistances and immunities are equally useful when choosing a safe switch. A 0.5× resistance cuts type
+              damage in half, while a 0.25× resistance can turn an otherwise dangerous move into an opportunity to set
+              up, recover, or gain momentum. An immunity prevents damage from that attack type entirely. Remember that
+              this calculator evaluates type effectiveness; it does not predict a complete damage range or account for
+              every move-specific rule.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-3">Defensive Matchups vs. Offensive Coverage</h3>
+            <p className="mb-4">
+              A defensive matchup asks which move types are effective against your selected Pokemon. Offensive coverage
+              asks which opposing types your moves can hit effectively. Those are related questions, but they are not
+              interchangeable. For example, a Water/Ground Pokemon has only one type weakness, yet Water and Ground moves
+              do not automatically cover every opponent. When building a team, check defensive weaknesses first, then
+              make sure your available attacks can pressure the types that resist your primary moves.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-3">Common Type Matchup Mistakes</h3>
+            <p className="mb-4">
+              The most common mistake is checking only one half of a dual type. Both defending types always contribute to
+              the final multiplier. Another mistake is treating a type advantage as a guaranteed win: speed, stats,
+              abilities, move accuracy, and field effects can still change the outcome. Finally, do not confuse a
+              Pokemon&apos;s type with the type of every move it can learn. A Pokemon can carry coverage moves that threaten
+              counters that appear safe on the basic type chart.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-3">Choosing a Balanced Team</h3>
+            <p>
+              Use the calculator on each team member and look for repeated weaknesses. If several Pokemon take super
+              effective damage from the same type, add a teammate that resists or is immune to that type. Then review the
+              team&apos;s offensive coverage so common defensive types cannot wall every attacker. This quick process is
+              useful for story teams, raids, casual battles, Nuzlocke planning, and competitive formats, although each
+              format may introduce additional mechanics that deserve a separate check.
+            </p>
           </div>
         </section>
 
