@@ -34,6 +34,16 @@ export default function PokemonListPage() {
           Click any Pokemon to see its full guide.
         </p>
 
+        <section className="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-10">
+          <h2 className="text-xl font-bold mb-2">Best Pokemon Type Combinations</h2>
+          <p className="text-gray-700 mb-3">
+            Compare strong dual types for defensive balance, offensive pressure, immunities, and team roles.
+          </p>
+          <Link href="/pokemon/best-type-combinations" className="text-blue-700 font-semibold hover:underline">
+            Explore the best dual-type combinations →
+          </Link>
+        </section>
+
         {categories.map(cat => {
           const filtered = pokemonData.pokemon.filter(p => p.category === cat.key);
           if (filtered.length === 0) return null;
