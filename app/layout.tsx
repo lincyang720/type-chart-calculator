@@ -58,6 +58,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9200275562093244"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         {/* Google Analytics - Lazy load for better performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Y6GJWZRG95"
