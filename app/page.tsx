@@ -64,6 +64,19 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mb-12 border-y border-red-200 bg-red-50 px-4 py-5 sm:px-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Pokemon Champions Type Chart</h2>
+              <p className="text-gray-700 mt-1">Prepare for battles with the complete chart, dual-type rules, and team coverage tools.</p>
+            </div>
+            <Link href="/pokemon-champions-type-chart" className="text-blue-700 font-semibold hover:underline shrink-0">
+              Open the Champions guide →
+            </Link>
+          </div>
+        </section>
+
         {/* Quick Type Reference */}
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6">Explore Type Matchups by Type</h2>
