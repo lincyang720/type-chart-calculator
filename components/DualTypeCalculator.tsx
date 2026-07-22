@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { TypeId } from '@/lib/types';
 import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
 import TypeBadge from './TypeBadge';
@@ -11,6 +12,12 @@ const ALL_TYPES: TypeId[] = [
   'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug',
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
+
+function getCombinationSlug(type1: TypeId, type2: TypeId) {
+  return ALL_TYPES.indexOf(type1) < ALL_TYPES.indexOf(type2)
+    ? `${type1}-${type2}`
+    : `${type2}-${type1}`;
+}
 
 export default function DualTypeCalculator() {
   // Default to Fire/Flying (like Charizard) as an example
@@ -141,6 +148,33 @@ export default function DualTypeCalculator() {
             </div>
           </details>
         )}
+
+        <div className="mt-6 border-t border-gray-200 pt-6">
+          <h3 className="text-xl font-bold mb-3">What This Matchup Means</h3>
+          <div className="space-y-3 text-gray-700">
+            <p>
+              This selection has {weaknesses.quadrupleWeak.length + weaknesses.doubleWeak.length} damaging type
+              {weaknesses.quadrupleWeak.length + weaknesses.doubleWeak.length === 1 ? ' weakness' : ' weaknesses'} and{' '}
+              {weaknesses.doubleResist.length + weaknesses.quadrupleResist.length + weaknesses.immune.length} defensive
+              resistances or immunities. Prioritize any 4x weakness first because both defending types amplify that attack.
+            </p>
+            <p>
+              Type effectiveness is the foundation of the matchup, but abilities, stats, moves, items, and battle format
+              can change the best decision. Check whether the rest of your team can safely switch into the attack types
+              listed as weaknesses above.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 mt-4 font-semibold">
+            {type2 && (
+              <Link href={`/types/${getCombinationSlug(type1, type2 as TypeId)}`} className="text-blue-700 hover:underline">
+                Open the complete combination guide →
+              </Link>
+            )}
+            <Link href="/pokemon/team-calculator" className="text-blue-700 hover:underline">
+              Check this type in a full team →
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

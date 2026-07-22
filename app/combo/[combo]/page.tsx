@@ -233,9 +233,12 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
       {/* Tools */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white">
         <h2 className="text-xl sm:text-2xl font-bold mb-4">Try Our Tools</h2>
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-3 gap-4">
           <Link href="/calculator" className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
             Dual Type Calculator
+          </Link>
+          <Link href="/pokemon/team-calculator" className="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
+            Team Calculator
           </Link>
           <Link href="/battle-simulator" className="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors text-center">
             Battle Simulator

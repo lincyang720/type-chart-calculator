@@ -35,13 +35,23 @@ export default function PokemonListPage() {
         </p>
 
         <section className="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-10">
-          <h2 className="text-xl font-bold mb-2">Best Pokemon Type Combinations</h2>
-          <p className="text-gray-700 mb-3">
-            Compare strong dual types for defensive balance, offensive pressure, immunities, and team roles.
-          </p>
-          <Link href="/pokemon/best-type-combinations" className="text-blue-700 font-semibold hover:underline">
-            Explore the best dual-type combinations →
-          </Link>
+          <h2 className="text-xl font-bold mb-3">Team-Building Tools</h2>
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <h3 className="font-semibold mb-1">Pokemon Team Calculator</h3>
+              <p className="text-gray-700 mb-2">Find repeated weaknesses and missing defensive answers across six team slots.</p>
+              <Link href="/pokemon/team-calculator" className="text-blue-700 font-semibold hover:underline">
+                Analyze a team →
+              </Link>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-1">Best Type Combinations</h3>
+              <p className="text-gray-700 mb-2">Compare strong dual types for defense, offense, immunities, and team roles.</p>
+              <Link href="/pokemon/best-type-combinations" className="text-blue-700 font-semibold hover:underline">
+                Explore dual-type combinations →
+              </Link>
+            </div>
+          </div>
         </section>
 
         {categories.map(cat => {
