@@ -105,6 +105,12 @@ export default function RootLayout({
         <footer className="bg-gray-800 text-white py-8 mt-12">
           <div className="container mx-auto px-4 text-center">
             <p className="mb-2">© 2026 Type Chart Calculator. All rights reserved.</p>
+            <nav aria-label="Legal and contact links" className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4 text-sm">
+              <a href="/privacy" className="text-gray-200 hover:text-white hover:underline">Privacy</a>
+              <a href="/terms" className="text-gray-200 hover:text-white hover:underline">Terms</a>
+              <a href="/contact" className="text-gray-200 hover:text-white hover:underline">Contact</a>
+              <a href="/support" className="text-gray-200 hover:text-white hover:underline">Support</a>
+            </nav>
             <p className="text-sm text-gray-400">
               Educational tool for understanding type effectiveness and matchups.
             </p>

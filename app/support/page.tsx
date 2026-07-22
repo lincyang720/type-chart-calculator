@@ -88,7 +88,7 @@ export default function SupportPage() {
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Support Us</h1>
           <p className="text-lg sm:text-xl text-gray-600">
-            Help keep Type Chart Calculator free and ad-free
+            Help keep Type Chart Calculator free and improving
           </p>
         </div>
 
@@ -232,6 +232,12 @@ export default function SupportPage() {
             </p>
             <p>
               <strong>Feedback:</strong> Report bugs or suggest features on GitHub
+            </p>
+            <p>
+              <strong>Contact:</strong>{' '}
+              <a href="mailto:lincyang85@gmail.com" className="text-blue-700 hover:underline">
+                lincyang85@gmail.com
+              </a>
             </p>
             <p>
               <strong>Contribute:</strong> Help improve the codebase (coming soon)
