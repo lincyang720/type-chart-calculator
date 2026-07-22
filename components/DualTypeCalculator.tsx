@@ -6,6 +6,7 @@ import { TypeId } from '@/lib/types';
 import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
 import TypeBadge from './TypeBadge';
 import typesData from '@/data/types.json';
+import pokemonData from '@/data/pokemon.json';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -28,6 +29,13 @@ export default function DualTypeCalculator() {
     type1,
     type2 ? (type2 as TypeId) : undefined
   );
+  const selectedTypes = type2 ? [type1, type2] : [type1];
+  const matchingPokemon = pokemonData.pokemon
+    .filter(pokemon => (
+      pokemon.types.length === selectedTypes.length &&
+      selectedTypes.every(type => pokemon.types.includes(type))
+    ))
+    .slice(0, 3);
 
   const renderTypeList = (types: TypeId[], label: string, multiplier: string, bgColor: string) => {
     if (types.length === 0) return null;
@@ -172,6 +180,43 @@ export default function DualTypeCalculator() {
             )}
             <Link href="/pokemon/team-calculator" className="text-blue-700 hover:underline">
               Check this type in a full team →
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-5">
+          <h3 className="text-xl font-bold mb-2">You May Also Want to Check</h3>
+          <p className="text-gray-700 mb-4">
+            Continue from this result with a matching Pokemon guide or a more detailed matchup tool.
+          </p>
+
+          {matchingPokemon.length > 0 && (
+            <div className="mb-5">
+              <h4 className="font-semibold text-gray-800 mb-2">Pokemon with this typing</h4>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {matchingPokemon.map(pokemon => (
+                  <Link
+                    key={pokemon.id}
+                    href={`/pokemon/${pokemon.id}`}
+                    className="bg-white border border-blue-200 rounded-lg p-3 hover:border-blue-400 hover:shadow-sm transition"
+                  >
+                    <span className="block font-bold text-gray-900">{pokemon.name}</span>
+                    <span className="block text-sm text-blue-700 mt-1">View complete weaknesses →</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
+            <Link href="/pokemon/type-chart" className="text-blue-700 hover:underline">
+              Full type effectiveness chart →
+            </Link>
+            <Link href="/pokemon/type-chart-with-abilities" className="text-blue-700 hover:underline">
+              Matchups with abilities →
+            </Link>
+            <Link href="/pokemon/type-quiz" className="text-blue-700 hover:underline">
+              Practice with the type quiz →
             </Link>
           </div>
         </div>

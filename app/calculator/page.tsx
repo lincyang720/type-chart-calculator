@@ -1,6 +1,26 @@
 import { Metadata } from 'next';
 
 import DualTypeCalculator from '@/components/DualTypeCalculator';
+import JsonLd from '@/components/SEO/JsonLd';
+
+const faqItems = [
+  {
+    question: 'How does the Pokemon type calculator handle dual types?',
+    answer: 'It multiplies the effectiveness against both defending types. Two weaknesses create 4x damage, while a weakness and resistance cancel to 1x damage.',
+  },
+  {
+    question: 'Why does a Pokemon have a 4x weakness?',
+    answer: 'A 4x weakness occurs when the same attacking type is super effective against both of the Pokemon\'s defending types.',
+  },
+  {
+    question: 'Do abilities change Pokemon type weaknesses?',
+    answer: 'Some abilities add immunities or reduce damage from particular types. This calculator shows the standard type chart, so ability-specific effects should be checked separately.',
+  },
+  {
+    question: 'Can I check weaknesses for a complete Pokemon team?',
+    answer: 'Yes. The Pokemon team calculator analyzes up to six team members and highlights repeated weaknesses, resistances, immunities, and defensive coverage gaps.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Dual Type Calculator - Calculate Type Weaknesses and Resistances',
@@ -25,6 +45,18 @@ export const metadata: Metadata = {
 export default function CalculatorPage() {
   return (
     <div className="container mx-auto px-4 py-8">
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map(item => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }} />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">Dual Type Calculator</h1>
         <p className="text-lg text-gray-600 mb-8 text-center">
@@ -84,6 +116,18 @@ export default function CalculatorPage() {
                 <li>• Ice/Flying - 5 weaknesses</li>
               </ul>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-10 bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h2 className="text-2xl font-bold mb-5">Pokemon Type Calculator FAQ</h2>
+          <div className="space-y-5">
+            {faqItems.map(item => (
+              <div key={item.question}>
+                <h3 className="text-lg font-semibold mb-2">{item.question}</h3>
+                <p className="text-gray-700">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </section>
       </div>
