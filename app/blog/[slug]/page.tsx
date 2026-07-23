@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
+import JsonLd from '@/components/SEO/JsonLd';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -61,9 +62,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const fileContent = fs.readFileSync(path.join(blogDir, file), 'utf-8');
   const { data, content } = matter(fileContent);
+  const faqSchema = Array.isArray(data.faq) && data.faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: data.faq.map((item: { question: string; answer: string }) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <div className="container mx-auto px-4 py-8">
+      {faqSchema && <JsonLd data={faqSchema} />}
       <div className="max-w-4xl mx-auto">
         {/* Back to Blog */}
         <Link
