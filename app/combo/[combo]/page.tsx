@@ -14,6 +14,61 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
+type CombinationGuide = {
+  heading: string;
+  opening: string;
+  offense: string;
+  counterplay: string;
+  teamBuilding: string;
+  faqs: { question: string; answer: string }[];
+};
+
+// These are editorial expansions for combinations with sustained search interest.
+// Keys use the canonical order from ALL_TYPES, which is also used for /types URLs.
+const COMBINATION_GUIDES: Record<string, CombinationGuide> = {
+  'steel-fairy': {
+    heading: 'Steel/Fairy strategy: elite defense, limited safe answers',
+    opening: 'Steel/Fairy is prized because it turns many common attacks into low-risk switch-ins. It has no 4× weakness, takes no damage from Dragon and Poison, and only fears Fire and Ground at 2×. That defensive profile creates chances to set a boost, use utility, or simply force a pivot. It does not make every Steel/Fairy Pokémon a wall, though: stats, recovery, ability, held item, and format still decide whether it can repeatedly absorb hits.',
+    offense: 'The two STAB types also ask useful questions of an opposing team. Steel pressures Fairy, Ice, and Rock targets, while Fairy checks Dragon, Dark, and Fighting targets. Magearna commonly converts that coverage into special pressure or momentum; Zacian uses it to threaten fast physical damage in restricted formats. Do not assume the type pair alone supplies perfect coverage—bulky Fire- or Water-based answers can still need a separate move, a pivot, or hazards to wear down.',
+    counterplay: 'When facing Steel/Fairy, identify whether its Ground weakness can actually be exploited before committing to Earthquake or Earth Power. Air Balloon, a Flying Tera Type, a switch, or a partner with Ground immunity can change the exchange. Fire attacks are often the cleaner immediate pressure, but rain, resist berries, and special bulk may blunt them. Strong neutral attacks, Knock Off, status, and denying recovery are often better long-game plans than repeatedly attacking into its resistances.',
+    teamBuilding: 'Pair Steel/Fairy with a dependable Fire and Ground answer rather than stacking more Pokémon that share those weaknesses. Bulky Water-types, Levitate users, and Flying-types can cover those lanes, while the Steel/Fairy slot repays them by checking Dragons and many special attackers. Use the Team Calculator to make sure the six-Pokémon roster does not quietly become Ground-weak. For a broader comparison, see the best type combinations guide before choosing a role for this typing.',
+    faqs: [
+      { question: 'What is Steel/Fairy weak to?', answer: 'Under the standard chart it is weak only to Fire and Ground, both for 2× damage; it has no 4× weakness.' },
+      { question: 'What is Steel/Fairy immune to?', answer: 'It is immune to Dragon through Fairy and to Poison through Steel.' },
+    ],
+  },
+  'water-ground': {
+    heading: 'Water/Ground strategy: one flaw, but it is a major one',
+    opening: 'Water/Ground looks almost perfect on a defensive summary: Electric does nothing, Fire and Steel are resisted, and Grass is the only attacking type that is super effective. The catch is severity. Grass lands for 4× damage, so a coverage move such as Energy Ball, Giga Drain, Leaf Storm, or even a surprise Tera Blast can end a promising switch-in. Treat the typing as an invitation to control the matchup, not a license to ignore its one answer.',
+    offense: 'Water and Ground STAB give this pair practical pressure against Fire-, Rock-, Steel-, and Electric-based targets. Swampert illustrates the role well: it can provide bulk, Stealth Rock, and strong physical attacks without surrendering momentum to Electric-types. Ground attacks must still respect Flying and Levitate immunities, while Water attacks can be absorbed by common Water-type defenders. A coverage move, a double switch, or hazard chip is usually what turns favorable type coverage into a real breakthrough.',
+    counterplay: 'The direct answer is Grass, but good Water/Ground players plan for it. They may pivot immediately, carry Ice coverage, use a teammate to punish Grass-types, or rely on a Tera Type that changes the defensive calculation. If Grass is unavailable, use strong neutral special attacks and exploit limited recovery or Speed instead of feeding an Electric move into an immunity. Opponents should also account for item and ability; immunity to Electric says nothing about a specific Pokémon’s ability to take repeated Grass hits.',
+    teamBuilding: 'A Water/Ground slot wants partners that reliably deter Grass attacks. Steel, Fire, Flying, Bug, Poison, and Dragon Pokémon can help depending on the format and movesets; a Grass-resistant pivot that invites Electric attacks creates a particularly clean loop. Conversely, avoid giving the team only one Grass answer. Test the full spread in the Team Calculator, then compare this high-reward defensive profile with other top combinations in the best combinations guide.',
+    faqs: [
+      { question: 'What is Water/Ground 4× weak to?', answer: 'Grass is its only weakness and deals 4× damage under normal type rules.' },
+      { question: 'Is Water/Ground immune to Electric?', answer: 'Yes. Ground grants a complete Electric immunity, even though Water by itself is weak to Electric.' },
+    ],
+  },
+  'ground-dragon': {
+    heading: 'Ground/Dragon strategy: punishing coverage with an Ice emergency',
+    opening: 'Ground/Dragon is an attacking typing built around forcing uncomfortable answers. It is immune to Electric, resists Fire, Poison, and Rock, and has STAB attacks that threaten a broad range of targets. Water and Grass are neutral after the two types offset each other. The entire profile is balanced by a very clear danger: Ice hits for 4× damage. Any game plan with this combination must account for Ice Beam, Ice Spinner, Ice Shard, Freeze-Dry, and hidden coverage before it tries to sweep.',
+    offense: 'Earthquake and Dragon attacks give Ground/Dragon Pokémon excellent neutral reach, and Garchomp is the classic example of how that pressure can create setup turns. Ground STAB punishes Steel, Fire, Poison, Rock, and Electric types, while Dragon STAB keeps many Water-, Grass-, and Dragon-type switch-ins honest. Neither move is consequence-free: Flying-types and Levitate ignore Ground, and Fairy-types stop Dragon attacks cold. Rock, Steel, Fire, or Poison coverage and smart pivoting often matter more than simply clicking the strongest STAB move.',
+    counterplay: 'Against Ground/Dragon, preserve an Ice option and do not reveal it too early if the opponent can remove it. Priority Ice Shard is especially valuable against faster offensive variants, but it must still clear any Focus Sash, substitute, defensive Tera Type, or bulky spread. Fairy attacks also threaten the typing at 2× and can punish an Outrage lock. If direct Ice coverage is unavailable, pressure it with faster threats, status, and chip so it cannot repeatedly exploit its useful resistances.',
+    teamBuilding: 'This typing pairs naturally with teammates that absorb Ice and Fairy pressure—Steel-types are the most direct answer, while Fire- and Water-types can help versus Ice attacks depending on the matchup. It also appreciates support against opposing Flying-types and Levitate users that evade Ground STAB. Use the calculator to check coverage after adding moves and teammates; the best combinations guide is a useful comparison when deciding whether a 4× Ice weakness fits the roster.',
+    faqs: [
+      { question: 'What is Ground/Dragon 4× weak to?', answer: 'Ice is the only 4× weakness because both Ground and Dragon are weak to it.' },
+      { question: 'What is Ground/Dragon immune to?', answer: 'It is immune to Electric attacks through its Ground typing.' },
+    ],
+  },
+};
+
+function findCombination(type1: TypeId, type2: TypeId) {
+  return popularCombinations.combinations.find(
+    combination =>
+      (combination.type1 === type1 && combination.type2 === type2) ||
+      (combination.type1 === type2 && combination.type2 === type1)
+  );
+}
+
 // Pre-generate all 153 dual-type combo pages at build time
 export async function generateStaticParams() {
   const combos: { combo: string }[] = [];
@@ -34,7 +89,7 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
 
   const type1Data = typesData.types.find(t => t.id === type1);
   const type2Data = typesData.types.find(t => t.id === type2);
-  const combo = popularCombinations.combinations.find(c => c.type1 === type1 && c.type2 === type2);
+  const combo = findCombination(type1, type2);
 
   if (!type1Data || !type2Data) {
     return { title: 'Type Combination Not Found' };
@@ -71,7 +126,8 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
 
   const type1Data = typesData.types.find(t => t.id === type1);
   const type2Data = typesData.types.find(t => t.id === type2);
-  const combo = popularCombinations.combinations.find(c => c.type1 === type1 && c.type2 === type2);
+  const combo = findCombination(type1, type2);
+  const guide = COMBINATION_GUIDES[resolvedParams.combo];
 
   if (!type1Data || !type2Data) {
     notFound();
@@ -157,6 +213,43 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
           </div>
         </div>
       </div>
+
+      {guide && (
+        <article className="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">{guide.heading}</h2>
+          <div className="prose max-w-none text-gray-700">
+            <p>{guide.opening}</p>
+
+            <h3>Offensive plan</h3>
+            <p>{guide.offense}</p>
+
+            <h3>Counterplay and defensive risks</h3>
+            <p>{guide.counterplay}</p>
+
+            <h3>Team-building advice</h3>
+            <p>
+              {guide.teamBuilding.split('Team Calculator').map((part, index, parts) => (
+                <span key={part}>
+                  {part}
+                  {index < parts.length - 1 && <Link href="/pokemon/team-calculator">Team Calculator</Link>}
+                </span>
+              ))}
+            </p>
+            <p>
+              Read the <Link href="/pokemon/best-type-combinations">best Pokémon type combinations guide</Link> for a
+              side-by-side defensive comparison.
+            </p>
+
+            <h3>Frequently asked questions</h3>
+            {guide.faqs.map(faq => (
+              <div key={faq.question}>
+                <h4>{faq.question}</h4>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      )}
 
       {/* Detailed Matchups */}
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
