@@ -68,11 +68,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
-              <h2 className="text-xl sm:text-2xl font-bold">Cramorant Weaknesses: Pokémon GO Water Festival</h2>
-              <p className="text-gray-700 mt-1">Plan around Cramorant’s Water/Flying matchups before its official Pokémon GO debut.</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Professor Willow’s Assistant Pikachu: Pokémon GO Weakness Guide</h2>
+              <p className="text-gray-700 mt-1">Check the Electric-type matchup and the official Timed Research claim deadline.</p>
             </div>
-            <Link href="/blog/cramorant-weakness-pokemon-go-water-festival" className="text-blue-700 font-semibold hover:underline shrink-0">
-              Read the Cramorant guide →
+            <Link href="/blog/professor-willows-assistant-pikachu-weakness-pokemon-go" className="text-blue-700 font-semibold hover:underline shrink-0">
+              Read the Pikachu guide →
             </Link>
           </div>
         </section>
