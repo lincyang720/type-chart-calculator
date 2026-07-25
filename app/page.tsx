@@ -68,11 +68,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
-              <h2 className="text-xl sm:text-2xl font-bold">Professor Willow’s Assistant Pikachu: Pokémon GO Weakness Guide</h2>
-              <p className="text-gray-700 mt-1">Check the Electric-type matchup and the official Timed Research claim deadline.</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Mega Mewtwo Y: Pokémon GO Weakness Guide</h2>
+              <p className="text-gray-700 mt-1">Prepare for the July 26 raid make-up event with the Psychic-type matchup and official schedule.</p>
             </div>
-            <Link href="/blog/professor-willows-assistant-pikachu-weakness-pokemon-go" className="text-blue-700 font-semibold hover:underline shrink-0">
-              Read the Pikachu guide →
+            <Link href="/blog/mega-mewtwo-y-weakness-pokemon-go" className="text-blue-700 font-semibold hover:underline shrink-0">
+              Read the Mega Mewtwo Y guide →
             </Link>
           </div>
         </section>
