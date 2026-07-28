@@ -1669,6 +1669,118 @@
       "strategy": "Use as a special wall or Trick Room sweeper. 4× weak to Fighting and Rock, so avoid physical attackers. Excellent in rain teams with Hydration ability."
     },
     {
+      "id": "kingambit",
+      "name": "Kingambit",
+      "types": [
+        "dark",
+        "steel"
+      ],
+      "generation": 9,
+      "category": "competitive-staple",
+      "baseStats": {
+        "hp": 100,
+        "attack": 135,
+        "defense": 120,
+        "spAtk": 60,
+        "spDef": 85,
+        "speed": 50
+      },
+      "abilities": [
+        "Defiant",
+        "Supreme Overlord",
+        "Pressure"
+      ],
+      "recommendedMoves": [
+        "Kowtow Cleave",
+        "Sucker Punch",
+        "Iron Head",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Fighting-type attackers (Great Tusk, Iron Valiant)",
+        "Bulky Ground-types with Earthquake or Headlong Rush",
+        "Fire-type attackers that can survive Sucker Punch",
+        "Will-O-Wisp users that avoid a Dark-type attack",
+        "Encore or Taunt users that stop Swords Dance"
+      ],
+      "strengths": "Kingambit pairs 135 Attack and 120 Defense with Dark/Steel typing. It is immune to Psychic and Poison attacks, resists nine types, and can use priority Sucker Punch to pressure faster foes.",
+      "strategy": "Kingambit is most effective as a patient physical breaker or late-game cleaner. Its Dark/Steel typing gives it many useful switch-ins, especially against Psychic- and Ghost-type attacks, but its low Speed means it should not be treated as a general-purpose lead. Bring it in after a teammate faints, on a resisted hit, or through a slow pivot; then decide whether immediate pressure from Kowtow Cleave and Sucker Punch is safer than setting up Swords Dance.\n\nSupreme Overlord makes Kingambit particularly threatening late in a battle, while Defiant is the better fit when you expect Intimidate or other stat drops. Kowtow Cleave is dependable Dark STAB, Iron Head gives it a Fairy-targeting option, and Sucker Punch lets it punish faster attackers that must use a damaging move. The priority mind game matters: opponents can use status, Substitute, or setup to avoid Sucker Punch, so do not click it automatically.\n\nDefensively, the key fact is its 4× Fighting weakness. Keep a Fighting resist or immunity available and scout coverage before committing Kingambit. Ground and Fire attacks are also super effective, so Flying- or Water-type partners can help cover those matchups. Hazard removal and slow Volt Switch or U-turn support create the safe entries Kingambit needs. When building a team, use the team calculator to make sure its Fighting weakness is not stacked with other teammates."
+    },
+    {
+      "id": "great-tusk",
+      "name": "Great Tusk",
+      "types": [
+        "ground",
+        "fighting"
+      ],
+      "generation": 9,
+      "category": "competitive-staple",
+      "baseStats": {
+        "hp": 115,
+        "attack": 131,
+        "defense": 131,
+        "spAtk": 53,
+        "spDef": 53,
+        "speed": 87
+      },
+      "abilities": [
+        "Protosynthesis"
+      ],
+      "recommendedMoves": [
+        "Headlong Rush",
+        "Close Combat",
+        "Rapid Spin",
+        "Stealth Rock"
+      ],
+      "counters": [
+        "Bulky Water-types (Dondozo, Alomomola)",
+        "Flying-types (Corviknight, Landorus-Therian)",
+        "Grass-types that resist Ground attacks",
+        "Fast special attackers with Ice, Fairy, or Psychic coverage",
+        "Ghost-types that block Rapid Spin"
+      ],
+      "strengths": "Great Tusk has exceptional physical bulk and Attack, an Electric immunity, and access to both Rapid Spin and Stealth Rock. Ground/Fighting STAB gives it strong immediate coverage against Steel, Rock, Dark, and Electric targets.",
+      "strategy": "Great Tusk compresses several important jobs into one slot: a physical attacker, entry-hazard setter, and hazard remover. Headlong Rush and Close Combat hit extremely hard, but both lower its defensive stats. Use those moves to break a key target or force progress, rather than repeatedly exposing Great Tusk to revenge attacks after the drops. Rapid Spin removes hazards and boosts Speed, which can turn a defensive utility turn into a useful endgame position.\n\nProtosynthesis can enhance one of Great Tusk's stats in harsh sunlight or with Booster Energy, but the basic plan remains the same: capitalize on its physical bulk, set Stealth Rock when you force a switch, and remove hazards when your team needs the board cleared. It is especially valuable beside Pokémon that dislike Stealth Rock or need repeated switching opportunities. Because its Special Defense is much lower than its physical bulk, avoid leaving it in against strong special Water-, Grass-, Ice-, Fairy-, Flying-, or Psychic-type attacks.\n\nCounterplay usually comes from bulky Water-types, Flying-types, and faster special attackers. Keep a teammate that can answer those checks, such as an Electric- or Dark-type partner, and use pivots to bring Great Tusk in safely. The type calculator shows all six of its defensive weaknesses, while the team calculator can flag whether adding Great Tusk leaves your roster too exposed to Water or Fairy coverage."
+    },
+    {
+      "id": "tinkaton",
+      "name": "Tinkaton",
+      "types": [
+        "fairy",
+        "steel"
+      ],
+      "generation": 9,
+      "category": "popular",
+      "baseStats": {
+        "hp": 85,
+        "attack": 75,
+        "defense": 77,
+        "spAtk": 70,
+        "spDef": 105,
+        "speed": 94
+      },
+      "abilities": [
+        "Mold Breaker",
+        "Own Tempo",
+        "Pickpocket"
+      ],
+      "recommendedMoves": [
+        "Gigaton Hammer",
+        "Play Rough",
+        "Knock Off",
+        "Thunder Wave"
+      ],
+      "counters": [
+        "Ground-type attackers (Great Tusk, Garchomp)",
+        "Fire-type attackers (Heatran, Cinderace)",
+        "Physically bulky Steel-types that can take Gigaton Hammer",
+        "Faster attackers that threaten a super-effective hit",
+        "Special attackers that exploit its lower Defense"
+      ],
+      "strengths": "Fairy/Steel grants Tinkaton nine resistances plus Dragon and Poison immunities. Its good Special Defense and 94 Speed support a disruptive role, while Gigaton Hammer gives it a powerful Steel-type attack.",
+      "strategy": "Tinkaton is best used as a disruptive utility Pokémon, not as a pure physical sweeper. Its Fairy/Steel typing creates valuable defensive switch-ins: it is immune to Dragon and Poison attacks and resists many common attacking types. That gives it opportunities to spread Thunder Wave, remove an item with Knock Off, or threaten damage with Play Rough. Mold Breaker is a flexible ability for ignoring certain defensive abilities, while its other abilities are more situational.\n\nGigaton Hammer is the centerpiece of the set, but it cannot be selected on consecutive turns. Plan the following turn before using it: Knock Off, Play Rough, Thunder Wave, a pivot, or a switch can keep momentum while Gigaton Hammer is unavailable. This sequencing is why Tinkaton rewards careful play more than simply clicking its strongest move. It can also fit well on balanced teams that need a Dragon immunity, a Fairy resist, and item disruption in one slot.\n\nIts two direct type weaknesses are Ground and Fire. Ground attackers such as Great Tusk and Garchomp, or Fire attackers such as Heatran and Cinderace, are natural answers if they enter safely. Pair Tinkaton with Water-, Flying-, or Ground-type teammates that can absorb those attacks, and avoid relying on its average physical bulk against repeated strong hits. Check the Fairy/Steel combination page for the full defensive chart, then use the team calculator to balance its Ground and Fire weaknesses across the rest of the team."
+    },
+    {
       "id": "calyrex-shadow",
       "name": "Calyrex-Shadow",
       "types": [

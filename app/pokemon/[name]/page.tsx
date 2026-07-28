@@ -76,6 +76,12 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
     : null;
 
   const typeNames = pokemon.types.map(t => typesData.types.find(td => td.id === t)?.name);
+  const relatedPokemon = pokemonData.pokemon
+    .filter(candidate =>
+      candidate.id !== pokemon.id &&
+      candidate.types.some(candidateType => pokemon.types.includes(candidateType))
+    )
+    .slice(0, 3);
 
   // Build FAQ data for JSON-LD
   const faqItems = [
@@ -339,6 +345,18 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
             <Link href="/calculator" className="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors text-center text-sm">
               Type Calculator
             </Link>
+            <Link href="/pokemon/team-calculator" className="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors text-center text-sm">
+              Team Calculator
+            </Link>
+            {relatedPokemon.map(related => (
+              <Link
+                key={related.id}
+                href={`/pokemon/${related.id}`}
+                className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center text-sm"
+              >
+                {related.name} Weakness Guide
+              </Link>
+            ))}
           </div>
         </section>
       </div>
