@@ -68,11 +68,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
-              <h2 className="text-xl sm:text-2xl font-bold">Gigantamax Rillaboom: Pokémon GO Weakness Guide</h2>
-              <p className="text-gray-700 mt-1">Prepare for the August 1 Max Battle Day with the Grass-type matchup and official schedule.</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Mega Starmie: Pokémon GO Weakness Guide</h2>
+              <p className="text-gray-700 mt-1">Prepare for the August 22 Super Mega Raid Day with the Water/Psychic-type matchup and official schedule.</p>
             </div>
-            <Link href="/blog/gigantamax-rillaboom-weakness-pokemon-go" className="text-blue-700 font-semibold hover:underline shrink-0">
-              Read the Gigantamax Rillaboom guide →
+            <Link href="/blog/mega-starmie-weakness-pokemon-go" className="text-blue-700 font-semibold hover:underline shrink-0">
+              Read the Mega Starmie guide →
             </Link>
           </div>
         </section>
