@@ -75,6 +75,9 @@ export default function Home() {
               Read the Snom guide →
             </Link>
           </div>
+          <p className="mt-3 text-sm text-gray-700">
+            Up next: <Link href="/blog/nickit-weakness-pokemon-go-community-day-2026" className="font-semibold text-blue-700 hover:underline">Nickit Community Day weakness guide</Link> for August 16.
+          </p>
         </section>
 
         {/* Quick Type Reference */}
