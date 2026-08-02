@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
+import { EDITORIAL_POKEMON } from '@/lib/editorialPokemon';
 
 const ALL_TYPES = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -133,7 +134,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Add pokemon pages
-  const pokemonPages = pokemonData.pokemon.map(p => ({
+  const pokemonPages = pokemonData.pokemon.filter(p => EDITORIAL_POKEMON.has(p.id)).map(p => ({
     url: `${baseUrl}/pokemon/${p.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

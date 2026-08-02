@@ -4,10 +4,10 @@
 
 ## 已在代码中完成
 
-- [x] 根布局不再向所有页面无条件加载 AdSense。
-- [x] 没有人工深度指南的双属性页不加载广告代码。
+- [x] 审核期间从站点代码中完全移除 AdSense 脚本，避免客户端跳转后脚本残留到薄页。
 - [x] 没有人工深度指南的双属性页输出 `noindex,follow`，并从 sitemap 移除。
 - [x] Water/Psychic 与 Poison/Dragon 已加入独立的实战定位、进攻、反制、配队和 FAQ 内容。
+- [x] Ferrothorn 已扩写为完整战术指南；其余未完成编辑的 Pokémon 页 noindex 并从 sitemap 移除。
 - [x] 新增 About 页面，并在全站页脚加入 About、Privacy、Terms、Contact、Support 链接。
 - [x] 隐私政策补充 Google 广告 Cookie、个性化广告退出、PII、位置数据及地区同意说明。
 - [x] `ads.txt` 保留发布商授权行。
@@ -15,7 +15,7 @@
 
 ## 内容扩建规则
 
-任何双属性页只有在完成以下工作后，才可加入 `lib/editorialCombinations.ts` 的广告与索引白名单：
+任何双属性页只有在完成以下工作后，才可加入 `lib/editorialCombinations.ts` 的索引白名单：
 
 - [ ] 正文达到约 800–1500 个英文词，而不是只重复计算结果。
 - [ ] 至少包含：战术定位、进攻覆盖、反制风险、配队建议、具体宝可梦示例和 FAQ。
@@ -33,7 +33,7 @@
 - [ ] ADS-OWN-01：确认可部署并发布 `app/layout.tsx`、根目录静态文件和 DNS 记录。
 - [ ] ADS-OWN-02：在域名注册商检查 typematchup.org 的注册、续费和 DNS 管理权均由本人或公司控制。
 - [ ] ADS-SITE-01：在 AdSense 后台“网站”中确认 typematchup.org 已添加、已验证，并查看当前审核状态。
-- [ ] ADS-SITE-02：浏览线上页面源代码确认发布商脚本存在；再访问 `/ads.txt`，确认发布商 ID 与后台一致。
+- [ ] ADS-SITE-02：审核期使用 `/ads.txt` 或 AdSense 提供的 meta 方式验证所有权；恢复广告前再确认官方脚本与发布商 ID 一致。
 - [ ] ADS-CONTENT-07：当前站点没有评论/UGC；若将来增加，必须有审核、举报和垃圾内容清理机制。
 - [ ] ADS-PROG-01：本人、团队、测试人员均不点击自有广告；测试只使用 Google 允许的测试方式。
 - [ ] ADS-PROG-04：在 GA/Vercel/服务器日志按来源检查流量；停止 PTC、互点、买量机器人、垃圾邮件或垃圾评论流量。
@@ -50,11 +50,12 @@
 ## 部署后复检
 
 - [ ] `/about`、`/privacy`、`/terms`、`/contact` 均返回 200，且首页页脚可直接到达。
-- [ ] `/types/water-psychic` 和 `/types/poison-dragon` 返回 200、允许索引、正文可读且广告不压过内容。
-- [ ] 随机抽查至少 10 个未扩写双属性页：页面含 `noindex,follow`，Network 中没有 `adsbygoogle.js` 请求。
+- [ ] `/types/water-psychic`、`/types/poison-dragon` 和 `/pokemon/ferrothorn` 返回 200、允许索引且正文可读。
+- [ ] 随机抽查至少 10 个未扩写动态页：页面含 `noindex,follow`；全站 Network 中没有 `adsbygoogle.js` 请求。
 - [ ] sitemap 只含 18 个单属性页与已完成编辑指南的双属性页，不含其余薄页。
 - [ ] `/ads.txt` 返回 200，内容为 `google.com, pub-9200275562093244, DIRECT, f08c47fec0942fa0`。
 - [ ] robots.txt 未阻止 Googlebot、Mediapartners-Google 或 AdSense 抓取重要页面。
 - [ ] 移动端和桌面端检查导航、页脚、内容布局，无遮挡、误导按钮、自动跳转或横向溢出。
 - [ ] Search Console 提交新 sitemap，并对新增/改写页请求编入索引。
+- [ ] 在 AdSense 后台关闭 Auto Ads；恢复广告时只使用人工广告位并重新完成页面级合规检查。
 - [ ] 等 Google 重新抓取后再运行 AdSense 预检；Blocker、High、Medium 均应为 Pass，或有可解释的后台确认项。

@@ -6,6 +6,7 @@ import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
 import typesData from '@/data/types.json';
 import pokemonData from '@/data/pokemon.json';
 import Link from 'next/link';
+import { isEditorialPokemon } from '@/lib/editorialPokemon';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -57,6 +58,9 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
     alternates: {
       canonical: `/pokemon/${pokemon.id}`,
     },
+    robots: isEditorialPokemon(pokemon.id)
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
   };
 }
 
@@ -285,6 +289,76 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
         </section>
 
         {/* Strategy */}
+        {pokemon.id === 'ferrothorn' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-8 prose max-w-none text-gray-700">
+            <h2>How to Use Ferrothorn: Complete Battle Guide</h2>
+            <p>
+              Ferrothorn is a defensive Grass/Steel Pokémon whose value comes from role compression. It can set entry
+              hazards, drain opponents with Leech Seed, punish contact through Iron Barbs, and threaten meaningful damage
+              without investing heavily in Speed. Its 131 base Defense and 116 Special Defense let it check attacks from
+              both sides, but 74 HP means those defenses are not unlimited. Ferrothorn works best when it enters on a
+              resisted move, advances the team&apos;s position, and leaves before the opponent turns its Fire weakness into
+              a free knockout. It is a support Pokémon with offensive consequences, not a wall that should remain in
+              against every neutral attack.
+            </p>
+
+            <h3>Understanding the Grass/Steel matchup</h3>
+            <p>
+              Grass/Steel gives Ferrothorn a 4× Fire weakness and a 2× Fighting weakness. Fire is the emergency: even
+              modest coverage such as Flamethrower, Mystical Fire, Fire Punch, or Tera Blast can overwhelm it. Fighting
+              attacks are less catastrophic but still demand a reliable switch. In exchange, Ferrothorn resists Normal,
+              Water, Electric, Psychic, Rock, Dragon, Steel, and Fairy, double-resists Grass, and is immune to Poison.
+              Those resistances create entries against many Water- and Electric-type attacks, but abilities and move
+              effects still matter. Freeze-Dry, Knock Off, Trick, Taunt, and boosted neutral attacks can punish a switch
+              even when the simple type multiplier looks favorable.
+            </p>
+
+            <h3>Moves, item choices, and ability</h3>
+            <p>
+              Stealth Rock or Spikes gives every forced switch lasting value. Leech Seed supplies gradual recovery and
+              makes passive opponents choose between losing health and switching through hazards. Power Whip prevents
+              Water- and Ground-type Pokémon from treating Ferrothorn as harmless, while Gyro Ball uses its extremely low
+              Speed to pressure fast targets. Protect can scout a coverage move and collect another turn of recovery;
+              Knock Off removes Boots, Leftovers, or a Choice item. Leftovers improves longevity, whereas Rocky Helmet
+              stacks with Iron Barbs to punish contact. Anticipation can reveal dangerous coverage, but Iron Barbs is
+              usually the defining ability because it converts physical contact into reliable chip damage.
+            </p>
+
+            <h3>Positioning and common mistakes</h3>
+            <p>
+              Bring Ferrothorn in through a slow pivot, after a teammate faints, or against an attack it comfortably
+              resists. On the first safe turn, decide whether hazards, Leech Seed, direct damage, or an immediate switch
+              creates the most progress. Automatically setting hazards is a mistake if a Fire attacker can enter for free
+              and force the whole team backward. Another mistake is allowing Ferrothorn&apos;s item to be removed too early
+              when it is the only long-term answer to a Water attacker. Preserve enough health for the matchup it was
+              selected to handle, and remember that Leech Seed is not dependable recovery against Grass targets, Magic
+              Guard users, or opponents that can repeatedly force it out.
+            </p>
+
+            <h3>Team partners and defensive cores</h3>
+            <p>
+              Ferrothorn needs teammates that can repeatedly absorb Fire and Fighting attacks. Bulky Water-types are
+              natural Fire answers, while Ghost, Fairy, Flying, or Poison partners can help against Fighting depending on
+              the format. A Fire-resistant partner that is also weak to Electric or Grass forms a productive exchange:
+              Ferrothorn covers those attacks and receives Fire protection in return. Hazard removal is still valuable
+              because Ferrothorn may pivot frequently and lacks instant recovery. Avoid building a core where every Fire
+              answer is vulnerable to the same Ground or Rock coverage. Check all six team members in the Team Calculator
+              and identify a real switch-in rather than counting only the number of resistances.
+            </p>
+
+            <h3>How to counter Ferrothorn</h3>
+            <p>
+              Fire coverage is the fastest answer, especially when delivered by a Pokémon that does not fear Power Whip
+              or Gyro Ball. Fighting attacks also work, but contact moves may take Iron Barbs and Rocky Helmet damage.
+              Taunt blocks hazards, Leech Seed, and Protect; Trick can lock Ferrothorn into one move; Knock Off removes
+              its recovery or contact-punishing item. Substitute users may exploit a passive set if its attacking move
+              cannot break the substitute. Pressure it with hazards and repeated forced switches when direct coverage is
+              unavailable. Always verify the ruleset: Terastallization can remove the usual weaknesses, and different
+              generations or competitive formats may change available moves, items, and legal teammates.
+            </p>
+          </article>
+        )}
+
         <section className="bg-blue-50 rounded-lg p-6 mb-8">
           <h2 className="text-2xl font-bold mb-4">Competitive Strategy</h2>
           <p className="text-gray-700 leading-relaxed">{pokemon.strategy}</p>

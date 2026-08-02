@@ -1,6 +1,7 @@
 // Dual-type pages in this list have a human-written strategy guide and are
-// eligible for indexing and advertising. Calculator-only combinations remain
-// accessible to users, but are deliberately kept out of search and ad inventory.
+// eligible for indexing. Calculator-only combinations remain accessible to
+// users, but are deliberately kept out of search. Advertising is disabled sitewide
+// during the content-quality review.
 export const EDITORIAL_COMBINATIONS = new Set([
   'steel-fairy',
   'water-ground',

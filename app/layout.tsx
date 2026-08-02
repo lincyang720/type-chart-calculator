@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import MobileNav from '@/components/MobileNav';
-import AdSenseScript from '@/components/AdSenseScript';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME, SITE_URL } from '@/lib/seo';
 import '../styles/globals.css';
 
@@ -122,7 +121,6 @@ export default function RootLayout({
           </div>
         </footer>
 
-        <AdSenseScript />
         <Analytics />
       </body>
     </html>
