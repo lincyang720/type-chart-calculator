@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
     <div className="container mx-auto px-4 py-10">
       <article className="max-w-3xl mx-auto prose prose-gray">
         <h1>Privacy Policy</h1>
-        <p><strong>Last updated:</strong> July 22, 2026</p>
+        <p><strong>Last updated:</strong> August 2, 2026</p>
         <p>
           TypeMatchup operates the website at typematchup.org. This Privacy Policy explains what information may be
           collected when you use the site, why it is used, and the choices available to you. By using TypeMatchup, you
@@ -55,6 +55,24 @@ export default function PrivacyPolicyPage() {
           technologies to serve, personalize, and measure ads based on visits to this and other websites. You can manage
           personalized advertising through <a href="https://adssettings.google.com/" rel="noopener noreferrer">Google Ads Settings</a>.
           Where required, a consent prompt will be provided before non-essential advertising cookies are used.
+        </p>
+        <p>
+          Third-party vendors, including Google, use cookies to serve ads based on a visitor&apos;s prior visits to this
+          website or other websites. Google&apos;s use of advertising cookies enables it and its partners to serve ads based
+          on those visits. Visitors may opt out of personalized advertising in Google Ads Settings or review additional
+          industry opt-out choices at <a href="https://www.aboutads.info/choices/" rel="noopener noreferrer">YourAdChoices</a>.
+          We do not send names, email addresses, phone numbers, or other directly identifying information to Google in ad
+          request URLs or targeting parameters.
+        </p>
+
+        <h2>Location Data and Advertising Choices</h2>
+        <p>
+          TypeMatchup does not request precise GPS location from your device. Service providers may infer an approximate
+          region from an IP address for security, analytics, consent, or advertising purposes. Where local law requires
+          consent— including for visitors in the European Economic Area, the United Kingdom, or Switzerland—we will use
+          a consent mechanism for eligible advertising and analytics technologies. Your available choices may include
+          accepting, rejecting, or managing non-essential purposes. Withdrawing consent does not affect processing that
+          occurred before the change.
         </p>
         <p>
           The Support page may load PayPal services when you choose to make a contribution. PayPal processes payment and

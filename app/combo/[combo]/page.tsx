@@ -7,6 +7,7 @@ import typesData from '@/data/types.json';
 import popularCombinations from '@/data/popularCombinations.json';
 import pokemonData from '@/data/pokemon.json';
 import Link from 'next/link';
+import { isEditorialCombination } from '@/lib/editorialCombinations';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -92,6 +93,30 @@ const COMBINATION_GUIDES: Record<string, CombinationGuide> = {
       { question: 'What is Poison/Ghost immune to?', answer: 'It is immune to Normal and Fighting attacks through its Ghost typing.' },
     ],
   },
+  'water-psychic': {
+    heading: 'Water/Psychic strategy: flexible offense with important defensive caveats',
+    opening: 'Water/Psychic combines two useful attacking types without erasing the weaknesses of either one. The pairing resists Fire, Water, Ice, Fighting, Psychic, and Steel, which can create sensible entry points against common attacks. It is weak to Electric, Grass, Bug, Ghost, and Dark. None of those weaknesses is 4×, but all five appear often as STAB or coverage, so a Water/Psychic Pokémon should not be treated as a universal special wall. Slowbro, Slowking, and Starmie also demonstrate why the name of the typing never tells the whole story: one may function as a slow regenerative pivot, another as a specially bulky support piece, and another as a fast attacker or utility option. Check the Pokémon’s ability, stats, recovery, and item before using this chart as a switching instruction.',
+    offense: 'Water STAB threatens Fire, Ground, and Rock targets, while Psychic STAB pressures Fighting and Poison Pokémon. The combination is particularly good at making a Fire- or Fighting-based opponent think twice about staying in. It is not complete neutral coverage, however. Water, Grass, and Dragon targets resist Water; Steel and Psychic targets resist Psychic; Dark is completely immune to Psychic. A Dark-type switch can therefore steal momentum if the attacker commits to Psychic too freely. Ice Beam is a common complement because it pressures Grass and Dragon answers, while coverage such as Thunderbolt can punish opposing Water-types. Those examples explain a decision, not a mandatory moveset: a defensive Slowbro may value recovery, status, or a pivoting move more than a third attack. Choose coverage according to the team’s actual gaps rather than trying to hit every type on one set.',
+    counterplay: 'To counter Water/Psychic, start by identifying its role. Electric and Grass attacks are direct answers, but both can be anticipated and handed to a Ground-type or Grass-resistant partner. Ghost and Dark moves are often harder for the typing itself to absorb, although a Normal or Fairy teammate can change that exchange. Bug also deals 2× damage, but many Bug moves are weaker or easier to resist than the other choices. Against Slowbro or Slowking, preventing recovery and denying repeated Regenerator pivots may matter more than one super-effective hit; Knock Off, status, hazards, and sustained pressure can limit their safe entries. Against Starmie, Speed control and priority may be more reliable because a slower counter can be struck by coverage first. Always scout for an ability or held item before assuming the visible multiplier guarantees a knockout.',
+    teamBuilding: 'A Water/Psychic slot appreciates teammates that answer Electric, Grass, Ghost, Dark, and Bug pressure without all sharing a second weakness. Ground-types provide an Electric immunity, while Steel or Fairy partners can help into several Dark- and Bug-based attacks. A Grass-resistant pivot is important because Grass threatens the Water side and may also recover health with Giga Drain. In return, Water/Psychic can switch into Fire, Ice, Fighting, Psychic, and Steel attacks for those partners. Build around the Pokémon’s role: a slow bulky pivot wants hazard control and partners that exploit the switches it creates, while a fast attacker wants wallbreaking support and a plan for Dark- and Water-type answers. Use the Team Calculator to check the entire six-member weakness spread; covering five weaknesses on paper is not enough if four teammates all invite the same Electric attacker.',
+    faqs: [
+      { question: 'What is Water/Psychic weak to?', answer: 'It is weak to Electric, Grass, Bug, Ghost, and Dark attacks. Each normally deals 2× damage, and the typing has no inherent 4× weakness.' },
+      { question: 'What does Water/Psychic resist?', answer: 'It resists Fire, Water, Ice, Fighting, Psychic, and Steel attacks under the standard modern type chart.' },
+      { question: 'Which Pokémon use Water/Psychic?', answer: 'Well-known examples include Slowbro, Slowking, Starmie, and some regional or alternate forms. Their different stats and abilities give them very different battle roles.' },
+    ],
+  },
+  'poison-dragon': {
+    heading: 'Poison/Dragon strategy: strong neutral pressure without a simple defensive identity',
+    opening: 'Poison/Dragon is a rare pairing whose value comes from how its two halves cover one another. Poison removes Dragon’s Fairy weakness by resisting Fairy, so Fairy attacks become neutral rather than super effective. Dragon, meanwhile, resists Fire, Water, Electric, and Grass, while Poison adds resistances to Fighting, Poison, Bug, Grass, and Fairy. Grass is resisted twice and deals only ¼ damage. The resulting weaknesses are Ground, Psychic, Ice, and Dragon, all at 2×. That profile gives the typing several useful entry points but no immunity, so it still takes chip damage and strong neutral hits. Eternatus, Dragalge, and Naganadel illustrate very different uses of the same pair; their stats, abilities, legal formats, and moves are more decisive than the shared chart alone.',
+    offense: 'Dragon STAB is resisted by Steel and stopped entirely by Fairy, while Poison STAB hits Fairy super effectively and also pressures Grass. This makes Poison a natural partner for Dragon offense: a Fairy cannot assume that switching into a Dragon move makes the whole attacker harmless. Steel remains the most important structural answer because it resists Dragon and is immune to Poison. A Poison/Dragon attacker therefore often needs Ground, Fire, Fighting, or another coverage option—or a teammate that can exploit Steel-types. Dragon attacks otherwise offer broad neutral reach, and Poison can spread status or threaten chip even when immediate damage is not the plan. Before selecting both STAB moves, consider the role: a bulky utility set may gain more from recovery, hazards, phazing, or status, while a fast sweeper needs enough coverage to stop Steel from ending its progress.',
+    counterplay: 'Ground, Psychic, Ice, and Dragon are the chart-based answers. Ground is often the cleanest option because it hits Poison super effectively, but Levitate, an Air Balloon, defensive Terastallization, or a partner’s immunity can punish a predictable Earthquake. Psychic attackers must respect fast Dragon pressure and Dark-type teammates. Ice coverage is widely distributed and useful, although it only deals 2× here rather than the 4× damage seen against several other Dragon combinations. Using another Dragon is inherently risky because both sides may threaten super-effective damage, making Speed and priority important. If direct coverage is unavailable, force progress with hazards, Knock Off, status, and strong neutral attacks. The typing has useful resistances, but without an immunity it cannot repeatedly enter for free when recovery is limited.',
+    teamBuilding: 'Cover Ground, Psychic, Ice, and Dragon with a defensive core rather than expecting one partner to answer all four. Flying-types and Levitate users can discourage Ground attacks; Steel-types resist Ice, Psychic, and Dragon; Dark-types are immune to Psychic. Those options have their own overlaps, so check that adding a Steel partner does not leave the entire team vulnerable to Ground. Poison/Dragon repays support by absorbing Grass especially well and by resisting Fire, Water, Electric, Fighting, Poison, Bug, and Fairy attacks. Offensive versions appreciate a teammate that pressures Steel, while defensive versions benefit from recovery support and hazard removal. Run the full roster through the Team Calculator and inspect not only weakness counts but also which member can safely switch into the relevant attacker more than once.',
+    faqs: [
+      { question: 'What is Poison/Dragon weak to?', answer: 'Ground, Psychic, Ice, and Dragon attacks normally deal 2× damage. The combination has no inherent 4× weakness.' },
+      { question: 'Is Poison/Dragon weak to Fairy?', answer: 'No. Dragon is weak to Fairy but Poison resists it, so the multipliers cancel and Fairy deals neutral 1× damage.' },
+      { question: 'What does Poison/Dragon resist most?', answer: 'Grass deals only ¼ damage because both Poison and Dragon resist it. The combination also has several ½× resistances.' },
+    ],
+  },
 };
 
 function findCombination(type1: TypeId, type2: TypeId) {
@@ -150,6 +175,9 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
     alternates: {
       canonical: `/types/${type1}-${type2}`,
     },
+    robots: isEditorialCombination(resolvedParams.combo)
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
   };
 }
 

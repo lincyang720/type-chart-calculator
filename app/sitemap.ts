@@ -4,6 +4,7 @@ import pokemonData from '@/data/pokemon.json';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 
 const ALL_TYPES = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -64,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
@@ -84,15 +91,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Add ALL dual-type combination pages (153 combos = C(18,2))
+  // Only submit combinations with substantial editorial content. Calculator-only
+  // pages stay accessible but are noindex and intentionally absent here.
   const comboPages: MetadataRoute.Sitemap = [];
   for (let i = 0; i < ALL_TYPES.length; i++) {
     for (let j = i + 1; j < ALL_TYPES.length; j++) {
+      const slug = `${ALL_TYPES[i]}-${ALL_TYPES[j]}`;
+      if (!EDITORIAL_COMBINATIONS.has(slug)) continue;
       const isPopular = popularCombinations.combinations.some(
         c => c.type1 === ALL_TYPES[i] && c.type2 === ALL_TYPES[j]
       );
       comboPages.push({
-        url: `${baseUrl}/types/${ALL_TYPES[i]}-${ALL_TYPES[j]}`,
+        url: `${baseUrl}/types/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: isPopular ? 0.8 : 0.7,

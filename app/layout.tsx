@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import MobileNav from '@/components/MobileNav';
+import AdSenseScript from '@/components/AdSenseScript';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME, SITE_URL } from '@/lib/seo';
 import '../styles/globals.css';
 
@@ -58,11 +59,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9200275562093244"
-          crossOrigin="anonymous"
-        ></script>
         {/* Google Analytics - Lazy load for better performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Y6GJWZRG95"
@@ -112,6 +108,7 @@ export default function RootLayout({
             <p className="mb-2">© 2026 Type Chart Calculator. All rights reserved.</p>
             <nav aria-label="Legal and contact links" className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4 text-sm">
               <a href="/privacy" className="text-gray-200 hover:text-white hover:underline">Privacy</a>
+              <a href="/about" className="text-gray-200 hover:text-white hover:underline">About</a>
               <a href="/terms" className="text-gray-200 hover:text-white hover:underline">Terms</a>
               <a href="/contact" className="text-gray-200 hover:text-white hover:underline">Contact</a>
               <a href="/support" className="text-gray-200 hover:text-white hover:underline">Support</a>
@@ -125,6 +122,7 @@ export default function RootLayout({
           </div>
         </footer>
 
+        <AdSenseScript />
         <Analytics />
       </body>
     </html>
