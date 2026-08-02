@@ -10,6 +10,9 @@
 - [x] Ferrothorn、Charizard、Garchomp 已扩写为完整战术指南；其余未完成编辑的 Pokémon 页 noindex 并从 sitemap 移除。
 - [x] 新增 About 页面，并在全站页脚加入 About、Privacy、Terms、Contact、Support 链接。
 - [x] 隐私政策补充 Google 广告 Cookie、个性化广告退出、PII、位置数据及地区同意说明。
+- [x] Google Analytics 与 Vercel Analytics 改为访客明确同意后加载，并提供随时重开隐私选择的页脚入口。
+- [x] 隐私政策明确网站为普通受众、并非面向 13 岁以下儿童，同时说明儿童数据与广告处理原则。
+- [x] Flying 单属性页及 Steel/Fairy 组合页已补充独立策略内容。
 - [x] `ads.txt` 保留发布商授权行。
 - [x] 生产构建和 TypeScript 检查通过。
 
@@ -58,4 +61,5 @@
 - [ ] 移动端和桌面端检查导航、页脚、内容布局，无遮挡、误导按钮、自动跳转或横向溢出。
 - [ ] Search Console 提交新 sitemap，并对新增/改写页请求编入索引。
 - [ ] 在 AdSense 后台关闭 Auto Ads；恢复广告时只使用人工广告位并重新完成页面级合规检查。
+- [ ] 当前分析同意横幅不冒充广告 CMP；恢复 AdSense 前必须在后台启用 Google 认证 CMP，并测试广告请求受同意状态控制。
 - [ ] 等 Google 重新抓取后再运行 AdSense 预检；Blocker、High、Medium 均应为 Pass，或有可解释的后台确认项。

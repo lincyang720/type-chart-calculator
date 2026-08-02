@@ -98,9 +98,17 @@ export default function PrivacyPolicyPage() {
 
         <h2>Children&apos;s Privacy</h2>
         <p>
-          TypeMatchup is a general-audience reference tool and does not knowingly collect personal information directly
-          from children. If you believe a child has provided personal information, contact us so we can investigate and
-          remove it where appropriate.
+          TypeMatchup is a general-audience strategy and reference service. It is not directed to children under 13, does
+          not offer child-focused accounts or social features, and does not knowingly collect personal information
+          directly from children. The fact that Pokémon may appeal to different age groups does not change the intended
+          general-audience purpose of the service. Visitors may reject optional analytics without losing access to the
+          calculators or articles. If we learn that personal information from a child was collected, we will take
+          reasonable steps to delete it. A parent or guardian can contact us using the address below.
+        </p>
+        <p>
+          Before advertising is enabled, we will review available audience information and configure advertising for the
+          appropriate audience classification. We will not use interest-based advertising for a visitor when applicable
+          law, platform policy, an age signal, or a child-directed treatment requires it to be disabled.
         </p>
 
         <h2>Policy Changes</h2>

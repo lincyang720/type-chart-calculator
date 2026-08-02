@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
-import { Analytics } from '@vercel/analytics/next';
 import MobileNav from '@/components/MobileNav';
+import ConsentPreferences from '@/components/ConsentPreferences';
+import ConsentSettingsButton from '@/components/ConsentSettingsButton';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME, SITE_URL } from '@/lib/seo';
 import '../styles/globals.css';
 
@@ -57,21 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* Google Analytics - Lazy load for better performance */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-Y6GJWZRG95"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-Y6GJWZRG95');
-          `}
-        </Script>
-      </head>
+      <head />
       <body suppressHydrationWarning>
         <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
           <nav className="container mx-auto px-4 py-3">
@@ -111,6 +97,7 @@ export default function RootLayout({
               <a href="/terms" className="text-gray-200 hover:text-white hover:underline">Terms</a>
               <a href="/contact" className="text-gray-200 hover:text-white hover:underline">Contact</a>
               <a href="/support" className="text-gray-200 hover:text-white hover:underline">Support</a>
+              <ConsentSettingsButton />
             </nav>
             <p className="text-sm text-gray-400">
               Educational tool for understanding type effectiveness and matchups.
@@ -121,7 +108,7 @@ export default function RootLayout({
           </div>
         </footer>
 
-        <Analytics />
+        <ConsentPreferences />
       </body>
     </html>
   );

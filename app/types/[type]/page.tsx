@@ -280,6 +280,56 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </div>
         </section>
 
+        {typeId === 'flying' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Flying-Type Strategy and Matchup Guide</h2>
+            <p>
+              Flying is defined as much by its Ground immunity as by its attacking coverage. A Flying Pokémon can stop a
+              Choice-locked Earthquake, protect an Electric-weak teammate from Ground pressure, or enter while Spikes are
+              on the field. It is weak to Electric, Ice, and Rock, and it resists Grass, Fighting, and Bug. Those facts
+              create useful turns, but a type label does not guarantee durability: frail attackers and bulky pivots use
+              the same chart very differently. Abilities, secondary typing, held items, recovery, and the battle format
+              determine whether a predicted switch is actually safe.
+            </p>
+            <h3>Using Flying attacks</h3>
+            <p>
+              Flying moves are super effective against Grass, Fighting, and Bug. They are resisted by Electric, Rock, and
+              Steel, so a Flying attacker should identify which of those answers is likely to enter. Ground or Fighting
+              coverage can pressure some Rock and Steel targets, while a pivoting move may be better than guessing. Move
+              quality also matters: Brave Bird offers power with recoil, Hurricane trades accuracy for strength and may
+              interact with rain, and Air Slash provides a more controlled special option. Select the move for the role
+              and expected battle length rather than assuming every Flying Pokémon wants the strongest STAB attack.
+            </p>
+            <h3>Defensive positioning and hazards</h3>
+            <p>
+              The Ground immunity is excellent for creating momentum, but Stealth Rock punishes many Flying switches.
+              Pure Flying takes 2× effectiveness from Rock, so Stealth Rock removes a quarter of maximum health under
+              standard rules; a secondary type can raise or lower that amount. Heavy-Duty Boots prevents hazard damage,
+              while reliable removal preserves other item choices. Scout for Stone Edge, Ice coverage, Knock Off, and
+              Electric pivoting moves before repeatedly entering on Ground. Roost may change type interactions for the
+              turn in some generations, which can alter a predicted Electric, Ice, Rock, or Ground exchange.
+            </p>
+            <h3>Building around Flying Pokémon</h3>
+            <p>
+              Ground teammates are natural Electric answers and can pressure Rock or Steel, but they may share an Ice
+              weakness with some Flying partners. Steel types resist Ice and Rock; Water or Fighting coverage can help
+              remove Rock targets. In return, Flying supplies a Ground immunity and Fighting resistance that many Steel
+              teammates appreciate. Check the whole defensive core rather than counting one-for-one resistances. A team
+              needs an actual switch-in with enough health and recovery, hazard control when repeated pivots are planned,
+              and Speed control if its Flying slot is slow.
+            </p>
+            <h3>How to counter Flying types</h3>
+            <p>
+              Electric, Ice, and Rock are the direct super-effective options, but secondary typing can cancel or amplify
+              each one. Stealth Rock and item removal often create more reliable long-term progress than revealing a
+              coverage move immediately. Preserve an accurate revenge-killing option for fast sweepers and deny free
+              turns to defensive Defog or setup users with Taunt, status, or strong neutral pressure. Never send Ground
+              attacks into a standard Flying target unless Gravity, Smack Down, an ability, Terastallization, or another
+              explicit effect has removed the immunity. Confirm the current game’s rules before relying on an interaction.
+            </p>
+          </article>
+        )}
+
         {/* FAQ Section */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
