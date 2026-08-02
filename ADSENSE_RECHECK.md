@@ -7,7 +7,7 @@
 - [x] 审核期间从站点代码中完全移除 AdSense 脚本，避免客户端跳转后脚本残留到薄页。
 - [x] 没有人工深度指南的双属性页输出 `noindex,follow`，并从 sitemap 移除。
 - [x] Water/Psychic 与 Poison/Dragon 已加入独立的实战定位、进攻、反制、配队和 FAQ 内容。
-- [x] Ferrothorn 已扩写为完整战术指南；其余未完成编辑的 Pokémon 页 noindex 并从 sitemap 移除。
+- [x] Ferrothorn、Charizard、Garchomp 已扩写为完整战术指南；其余未完成编辑的 Pokémon 页 noindex 并从 sitemap 移除。
 - [x] 新增 About 页面，并在全站页脚加入 About、Privacy、Terms、Contact、Support 链接。
 - [x] 隐私政策补充 Google 广告 Cookie、个性化广告退出、PII、位置数据及地区同意说明。
 - [x] `ads.txt` 保留发布商授权行。

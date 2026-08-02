@@ -14,6 +14,28 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
+const FEATURED_POKEMON_GUIDES: Record<string, { heading: string; sections: { title: string; body: string }[] }> = {
+  charizard: {
+    heading: 'Charizard Matchup and Positioning Guide',
+    sections: [
+      { title: 'The matchup behind the 4× Rock weakness', body: 'Charizard’s Fire/Flying typing gives it a Ground immunity and useful resistances to Fire, Grass, Fighting, Bug, Steel, and Fairy, including especially strong Grass and Bug resistances. Rock is the central risk because it deals 4× damage; Water and Electric deal 2×. Stealth Rock can remove half of Charizard’s health when it enters, so Heavy-Duty Boots or dependable hazard removal is normally essential. Do not evaluate a switch from the type chart alone: a resisted attack may still carry Knock Off, status, or secondary coverage that removes Charizard before it can use its offensive stats.' },
+      { title: 'Choosing an offensive plan', body: 'Base Charizard’s 109 Special Attack and 100 Speed favor special pressure. Fire STAB becomes especially dangerous in sun, while Flying STAB covers Fighting, Grass, and Bug targets. Solar Beam can punish Water-, Ground-, and Rock-based answers in sun, and Focus Blast can target some Rock types, but both choices have conditions or accuracy costs. A balanced set may prefer Flamethrower, Air Slash, Roost, and a utility move rather than maximum immediate damage. Scout the opposing team and preserve the move that breaks Charizard’s actual counter instead of revealing every coverage option early.' },
+      { title: 'Counterplay and team support', body: 'Keep Stealth Rock active, remove Heavy-Duty Boots, or pressure hazard removal to shorten Charizard’s useful life. Faster attackers, priority, rain-boosted Water attacks, and accurate Electric moves can be more reliable than gambling on Stone Edge. Charizard wants partners that remove hazards and absorb Rock, Water, and Electric pressure; Ground types are valuable against Electric, while bulky Water or Grass partners can cover other lanes. In return, Charizard can enter on Ground attacks and threaten Grass or Steel opponents. Forms, abilities, and legal mechanics vary by game, so confirm the format before applying a moveset.' },
+      { title: 'Planning turns around weather and recovery', body: 'Sun changes several decisions at once: it strengthens Fire attacks, enables one-turn Solar Beam, weakens opposing Water damage, and may activate Solar Power. The same plan also accelerates recoil and chip, so calculate how many attacks Charizard can actually make after entry hazards, Life Orb, Solar Power, or resisted damage. Roost extends a game only when the opponent cannot use that turn to set hazards, boost, or bring in a hard answer. When sun is absent, avoid treating Solar Beam as dependable coverage because the charging turn can surrender momentum. A good Charizard turn either removes a key defender, forces meaningful progress, or preserves enough health for a later Ground immunity; damage without a follow-up plan is rarely worth sacrificing its limited entries.' },
+    ],
+  },
+  garchomp: {
+    heading: 'Garchomp Matchup and Positioning Guide',
+    sections: [
+      { title: 'Defensive profile and the Ice danger', body: 'Garchomp combines Dragon and Ground, granting an Electric immunity and resistances to Fire, Poison, and Rock. Ice is the emergency because it deals 4× damage; Dragon and Fairy deal 2×. Water and Grass are neutral because the two component multipliers cancel. Its 108 HP, 95 Defense, and 85 Special Defense provide useful natural bulk, but they do not make an unscouted Ice Beam or Ice Shard safe. Rough Skin can punish contact and accumulate chip, particularly beside a contact-damaging item, while the typing lets Garchomp discourage careless Electric attacks.' },
+      { title: 'Attacking, setup, and utility roles', body: 'A base 130 Attack makes Earthquake a defining threat, and Dragon STAB provides broad neutral pressure. Flying types and Levitate users ignore Ground, while Fairy types are immune to Dragon, so choosing the correct move matters more than simply selecting the largest displayed power. Stone Edge or another coverage move can pressure Flying answers; a Steel or Poison option may discourage Fairy. Swords Dance can turn a forced switch into a sweep attempt, but Garchomp can also set Stealth Rock and use its bulk and Rough Skin to create progress. Pick one coherent role rather than asking a single set to set hazards, break walls, and sweep.' },
+      { title: 'How to counter and support Garchomp', body: 'Preserve an Ice attacker or priority Ice Shard user, but verify whether a defensive Tera type, Focus Sash, substitute, or Yache Berry changes the expected knockout. Fairy attacks avoid the risk of Dragon immunity interactions, while faster Dragon attackers create a speed-dependent exchange. Burn, Intimidate, and physical walls can limit sets that lack the right coverage. Garchomp appreciates Steel partners that resist Ice, Dragon, and Fairy, plus teammates that pressure Flying and Levitate answers. Hazard control and speed support may matter depending on the set. Always separate the standard type calculation from abilities, items, field effects, and generation-specific rules.' },
+      { title: 'Reading the set before committing a counter', body: 'Do not assume every Garchomp is the same sweeper. An early Stealth Rock often signals a utility role, but it may still carry enough Speed and Attack to punish removal. Substitute can exploit passive answers, mixed coverage can surprise a physically defensive wall, and a Choice item changes which revenge killers are safe. Look for damage rolls, item recovery, Rough Skin activation, and revealed moves before locking in the response. If Ice priority is the only emergency answer, keep it outside Earthquake range and avoid unnecessary chip. If a Fairy is the primary switch, verify that Poison or Steel coverage has not been revealed. Counterplay succeeds by denying setup turns and limiting move freedom, not merely owning one super-effective attack.' },
+      { title: 'Endgame planning and speed control', body: 'Garchomp is most dangerous when its checks have been chipped into Earthquake or Dragon range. Track Flying immunities, Fairy immunities, remaining priority, and the exact Speed order before allowing a setup turn. Paralysis, Tailwind, Choice Scarf users, or naturally faster attackers can prevent a cleanup, though Scale Shot or another Speed boost may reverse the order. Conversely, a Garchomp user should weaken the opponent’s Ground immunity and Fairy before revealing the endgame plan. Rough Skin chip can place contact attackers into range for a teammate even when Garchomp faints, so trading it may be correct only after hazards or key damage have been secured. Preserve it when its Electric immunity or Rock resistance remains essential to the defensive structure.' },
+    ],
+  },
+};
+
 function getComboSlug(t1: TypeId, t2: TypeId): string {
   const i1 = ALL_TYPES.indexOf(t1);
   const i2 = ALL_TYPES.indexOf(t2);
@@ -289,6 +311,18 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
         </section>
 
         {/* Strategy */}
+        {FEATURED_POKEMON_GUIDES[pokemon.id] && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-8 prose max-w-none text-gray-700">
+            <h2>{FEATURED_POKEMON_GUIDES[pokemon.id].heading}</h2>
+            {FEATURED_POKEMON_GUIDES[pokemon.id].sections.map(section => (
+              <section key={section.title}>
+                <h3>{section.title}</h3>
+                <p>{section.body}</p>
+              </section>
+            ))}
+          </article>
+        )}
+
         {pokemon.id === 'ferrothorn' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-8 prose max-w-none text-gray-700">
             <h2>How to Use Ferrothorn: Complete Battle Guide</h2>
