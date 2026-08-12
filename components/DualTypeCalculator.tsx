@@ -7,7 +7,6 @@ import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
 import TypeBadge from './TypeBadge';
 import typesData from '@/data/types.json';
 import pokemonData from '@/data/pokemon.json';
-import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -62,17 +61,32 @@ export default function DualTypeCalculator() {
       selectedTypes.every(type => pokemon.types.includes(type))
     ))
     .slice(0, 6);
-  const relatedMatchups = Array.from(EDITORIAL_COMBINATIONS)
-    .filter(slug => slug !== (type2 ? getCombinationSlug(type1, type2 as TypeId) : ''))
-    .map(slug => {
-      const [first, second] = slug.split('-') as [TypeId, TypeId];
-      const sharedSelected = Number(first === type1 || second === type1) + Number(Boolean(type2) && (first === type2 || second === type2));
-      const relevantAttackTypes = [...weaknesses.quadrupleWeak, ...weaknesses.doubleWeak, ...weaknesses.immune];
-      const tacticalOverlap = Number(relevantAttackTypes.includes(first)) + Number(relevantAttackTypes.includes(second));
-      return { slug, first, second, score: sharedSelected * 3 + tacticalOverlap };
-    })
-    .sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug))
-    .slice(0, 9);
+  const relatedMatchups = (() => {
+    const anchors = type2 ? [type1, type2 as TypeId] : [type1];
+    const relevantTypes = [
+      ...weaknesses.quadrupleWeak,
+      ...weaknesses.doubleWeak,
+      ...weaknesses.immune,
+      ...weaknesses.doubleResist,
+    ];
+    const candidates = new Map<string, { slug: string; first: TypeId; second: TypeId; score: number }>();
+
+    anchors.forEach((anchor, anchorIndex) => {
+      ALL_TYPES.forEach(other => {
+        if (other === anchor) return;
+        const slug = getCombinationSlug(anchor, other);
+        if (type2 && slug === getCombinationSlug(type1, type2 as TypeId)) return;
+        const [first, second] = slug.split('-') as [TypeId, TypeId];
+        const score = (anchors.length - anchorIndex) * 10 + (relevantTypes.includes(other) ? 3 : 0) - ALL_TYPES.indexOf(other) / 100;
+        const existing = candidates.get(slug);
+        if (!existing || score > existing.score) candidates.set(slug, { slug, first, second, score });
+      });
+    });
+
+    return Array.from(candidates.values())
+      .sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug))
+      .slice(0, 9);
+  })();
 
   const renderTypeList = (types: TypeId[], label: string, multiplier: string, bgColor: string) => {
     if (types.length === 0) return null;
