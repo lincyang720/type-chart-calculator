@@ -50,7 +50,7 @@ export default function Home() {
         {/* Tool-first Hero */}
         <section className="text-center mb-6 sm:mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Pokemon Type Matchup Calculator
+            Pokemon Type Calculator for Matchups & Weaknesses
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-6 max-w-3xl mx-auto px-4">
             Use this interactive type matchup tool to check weaknesses, resistances, immunities, and damage multipliers for any single or dual-type Pokemon combination.
@@ -61,6 +61,92 @@ export default function Home() {
         <section className="mb-12">
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 sm:p-6 border-2 border-blue-200">
             <DualTypeCalculator />
+          </div>
+        </section>
+
+        <section className="mb-12 grid gap-8 lg:grid-cols-[1.25fr_1fr]" aria-labelledby="how-calculator-works">
+          <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-7">
+            <h2 id="how-calculator-works" className="text-2xl sm:text-3xl font-bold mb-4">
+              How the Pokemon Type Matchup Calculator Works
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                Every damaging Pokémon move has a type, and that type is compared with the defending Pokémon&apos;s type
+                before damage is resolved. A super-effective interaction normally doubles type-based damage, a resistance
+                halves it, and an immunity reduces it to zero. These relationships matter when choosing an attack,
+                predicting a switch, preparing for a raid, or checking whether several team members share a weakness.
+              </p>
+              <p>
+                Select the defender&apos;s primary type and add a secondary type when needed. Results update immediately and
+                group all 18 attacking types by their final multiplier. For a dual-type Pokémon, both interactions are
+                multiplied: two weaknesses produce 4× effectiveness, two resistances produce ¼× effectiveness, and a
+                weakness plus a resistance cancel to neutral 1× damage. Related guides beneath the result add examples,
+                counterplay, and team-building context.
+              </p>
+              <p>
+                This tool uses the modern 18-type chart from current main-series games. Earlier generations can differ
+                because Fairy did not exist before Generation VI and some Steel interactions changed. Abilities, items,
+                Terastallization, weather, move effects, stats, and Same-Type Attack Bonus can also change the practical
+                outcome. Use the Type Effectiveness Calculator when you need to test one move and optionally include STAB.
+              </p>
+            </div>
+          </article>
+
+          <section className="rounded-xl border border-blue-200 bg-blue-50 p-5 sm:p-7" aria-labelledby="homepage-faq">
+            <h2 id="homepage-faq" className="text-2xl sm:text-3xl font-bold mb-5">Frequently Asked Questions</h2>
+            <div className="space-y-5 text-gray-700">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">What is a dual-type Pokémon?</h3>
+                <p>A dual-type Pokémon has two defensive types at once. The game multiplies both interactions, creating 4× weaknesses, ¼× resistances, or neutralized matchups.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">How does STAB affect type matchups?</h3>
+                <p>Same-Type Attack Bonus normally adds a 1.5× modifier when a move matches one of its user&apos;s types. STAB is separate from the defender&apos;s effectiveness multiplier.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Does this calculator work for Pokémon GO?</h3>
+                <p>It identifies the underlying type relationships, but Pokémon GO uses different damage multipliers and battle systems. Use our GO-specific guides for exact event and counter advice.</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section className="mb-12">
+          <div className="rounded-xl border border-blue-200 bg-white p-5 sm:p-6 shadow-sm">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-5">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">Next step</p>
+                <h2 className="text-2xl sm:text-3xl font-bold">Build From This Matchup</h2>
+                <p className="text-gray-700 mt-2 max-w-3xl">
+                  After checking one Pokemon&apos;s weaknesses, use these related Pokemon type calculator tools to test a
+                  full team, compare the complete type chart, or jump into popular Pokemon matchup pages.
+                </p>
+              </div>
+              <Link
+                href="/pokemon/team-calculator"
+                className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-800 transition-colors"
+              >
+                Open Team Builder →
+              </Link>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <Link href="/pokemon/team-calculator" className="rounded-lg border border-gray-200 p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                <h3 className="font-semibold text-gray-900">Pokemon Team Builder</h3>
+                <p className="text-sm text-gray-600 mt-2">Check shared weaknesses and defensive gaps across six Pokemon.</p>
+              </Link>
+              <Link href="/pokemon/type-chart" className="rounded-lg border border-gray-200 p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                <h3 className="font-semibold text-gray-900">Complete Type Chart</h3>
+                <p className="text-sm text-gray-600 mt-2">Scan every type effectiveness result in one reference table.</p>
+              </Link>
+              <Link href="/pokemon" className="rounded-lg border border-gray-200 p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                <h3 className="font-semibold text-gray-900">Pokemon Weakness Pages</h3>
+                <p className="text-sm text-gray-600 mt-2">Open matchup guides for Charizard, Pikachu, Garchomp, and more.</p>
+              </Link>
+              <Link href="/pokemon/type-quiz" className="rounded-lg border border-gray-200 p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                <h3 className="font-semibold text-gray-900">Type Matchup Quiz</h3>
+                <p className="text-sm text-gray-600 mt-2">Practice weaknesses and resistances after using the calculator.</p>
+              </Link>
+            </div>
           </div>
         </section>
 

@@ -71,6 +71,7 @@ export default function RootLayout({
               <div className="hidden lg:flex gap-6 text-base">
                 <a href="/" className="hover:underline">Home</a>
                 <a href="/calculator" className="hover:underline">Calculator</a>
+                <a href="/pokemon/team-calculator" className="hover:underline">Team Builder</a>
                 <a href="/battle-simulator" className="hover:underline">Battle Simulator</a>
                 <a href="/types" className="hover:underline">All Types</a>
                 <a href="/pokemon" className="hover:underline">Pokemon</a>
