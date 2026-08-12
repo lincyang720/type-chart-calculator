@@ -3,19 +3,19 @@ import { Metadata } from 'next';
 import BattleSimulator from '@/components/BattleSimulator';
 
 export const metadata: Metadata = {
-  title: 'Battle Simulator - Calculate Type Matchup Damage',
-  description: 'Simulate type matchups in battle. Calculate damage multipliers with STAB bonus for competitive battles and strategy planning.',
-  keywords: 'battle simulator, type matchup, damage calculator, STAB calculator, battle strategy',
+  title: 'Pokemon Type Effectiveness Calculator – Damage & STAB',
+  description: 'Use this Pokemon type effectiveness calculator to test an attacking move against single or dual-type defenders and see 0× to 4× damage with optional STAB.',
+  keywords: 'pokemon type effectiveness calculator, pokemon resistance calculator, type matchup damage, STAB calculator',
   openGraph: {
-    title: 'Battle Simulator - Calculate Type Matchup Damage',
-    description: 'Simulate type matchups in battle. Calculate damage multipliers with STAB bonus for competitive battles.',
+    title: 'Pokemon Type Effectiveness Calculator – Damage & STAB',
+    description: 'Test an attacking type against single or dual-type defenders and calculate the exact type multiplier with optional STAB.',
     url: 'https://www.typematchup.org/battle-simulator',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Battle Simulator',
-    description: 'Simulate type matchups in battle. Calculate damage multipliers with STAB bonus for competitive battles.',
+    title: 'Pokemon Type Effectiveness Calculator',
+    description: 'Calculate type effectiveness and optional STAB for single or dual-type defenders.',
   },
   alternates: {
     canonical: '/battle-simulator',
@@ -26,10 +26,10 @@ export default function BattleSimulatorPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">Battle Simulator</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">Pokemon Type Effectiveness Calculator</h1>
         <p className="text-lg text-gray-600 mb-8 text-center">
-          Simulate type matchups in battle. Calculate damage multipliers and see effectiveness messages
-          just like in real battles.
+          Select an attacking move and one or two defending types to calculate the exact effectiveness multiplier.
+          Add STAB when the move matches its user&apos;s type.
         </p>
 
         <BattleSimulator />

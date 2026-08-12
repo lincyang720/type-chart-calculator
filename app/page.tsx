@@ -206,12 +206,12 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-6">More Type Effectiveness Tools</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-600">
-              <h3 className="text-xl font-semibold mb-3 text-purple-600">Battle Simulator</h3>
+              <h3 className="text-xl font-semibold mb-3 text-purple-600">Type Effectiveness Calculator</h3>
               <p className="text-gray-600 mb-4">
                 Simulate type matchups in battle with STAB calculations to plan your strategy effectively.
               </p>
               <Link href="/battle-simulator" className="text-purple-600 font-semibold hover:underline">
-                Try Battle Simulator →
+                Calculate Type Effectiveness →
               </Link>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-600">

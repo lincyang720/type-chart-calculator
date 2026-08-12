@@ -1,9 +1,9 @@
 export const SITE_URL = 'https://www.typematchup.org';
 export const SITE_NAME = 'TypeMatchup';
 
-export const HOME_TITLE = 'Pokemon Type Matchup Calculator & Type Chart Tool';
+export const HOME_TITLE = 'Pokemon Type Calculator – Weakness & Matchup Tool';
 export const HOME_DESCRIPTION =
-  'Free Pokemon type matchup calculator for single and dual types. Check weaknesses, resistances, immunities, and damage multipliers for battles.';
+  'Pokemon type calculator for instant matchups. Check strengths, weaknesses, resistances, immunities, and damage multipliers for any single or dual type.';
 
 export function getTypePageTitle(typeName: string): string {
   return `${typeName} Type Weaknesses, Resistances & Matchups | ${SITE_NAME}`;

@@ -7,6 +7,7 @@ import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
 import TypeBadge from './TypeBadge';
 import typesData from '@/data/types.json';
 import pokemonData from '@/data/pokemon.json';
+import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -36,6 +37,17 @@ export default function DualTypeCalculator() {
       selectedTypes.every(type => pokemon.types.includes(type))
     ))
     .slice(0, 3);
+  const relatedMatchups = Array.from(EDITORIAL_COMBINATIONS)
+    .filter(slug => slug !== (type2 ? getCombinationSlug(type1, type2 as TypeId) : ''))
+    .map(slug => {
+      const [first, second] = slug.split('-') as [TypeId, TypeId];
+      const sharedSelected = Number(first === type1 || second === type1) + Number(Boolean(type2) && (first === type2 || second === type2));
+      const relevantAttackTypes = [...weaknesses.quadrupleWeak, ...weaknesses.doubleWeak, ...weaknesses.immune];
+      const tacticalOverlap = Number(relevantAttackTypes.includes(first)) + Number(relevantAttackTypes.includes(second));
+      return { slug, first, second, score: sharedSelected * 3 + tacticalOverlap };
+    })
+    .sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug))
+    .slice(0, 3);
 
   const renderTypeList = (types: TypeId[], label: string, multiplier: string, bgColor: string) => {
     if (types.length === 0) return null;
@@ -63,7 +75,7 @@ export default function DualTypeCalculator() {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <div className="bg-white rounded-lg shadow-lg p-6">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
         <h2 className="text-xl sm:text-2xl font-bold mb-6">Dual Type Calculator</h2>
 
         {/* Quick Examples */}
@@ -95,7 +107,7 @@ export default function DualTypeCalculator() {
                 setType1(nextType);
                 if (type2 === nextType) setType2('');
               }}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full min-h-11 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               {ALL_TYPES.map(typeId => {
                 const type = typesData.types.find(t => t.id === typeId);
@@ -113,7 +125,7 @@ export default function DualTypeCalculator() {
             <select
               value={type2}
               onChange={(e) => setType2(e.target.value as TypeId | '')}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full min-h-11 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">None</option>
               {ALL_TYPES.map(typeId => {
@@ -185,10 +197,26 @@ export default function DualTypeCalculator() {
         </div>
 
         <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-5">
-          <h3 className="text-xl font-bold mb-2">You May Also Want to Check</h3>
+          <h3 className="text-xl font-bold mb-2">Related Type Matchups</h3>
           <p className="text-gray-700 mb-4">
-            Continue from this result with a matching Pokemon guide or a more detailed matchup tool.
+            Continue from this result with combinations that share one of your selected types or help explore its main
+            weaknesses, resistances, and immunities.
           </p>
+
+          <div className="grid sm:grid-cols-3 gap-3 mb-5">
+            {relatedMatchups.map(matchup => (
+              <Link key={matchup.slug} href={`/types/${matchup.slug}`} className="bg-white border border-blue-200 rounded-lg p-3 hover:border-blue-500 hover:shadow-sm transition">
+                <span className="flex flex-wrap gap-2 mb-2">
+                  <TypeBadge typeId={matchup.first} size="sm" />
+                  <TypeBadge typeId={matchup.second} size="sm" />
+                </span>
+                <span className="block font-bold text-gray-900">
+                  {typesData.types.find(type => type.id === matchup.first)?.name}/{typesData.types.find(type => type.id === matchup.second)?.name}
+                </span>
+                <span className="block text-sm text-blue-700 mt-1">Open matchup guide →</span>
+              </Link>
+            ))}
+          </div>
 
           {matchingPokemon.length > 0 && (
             <div className="mb-5">
@@ -209,6 +237,9 @@ export default function DualTypeCalculator() {
           )}
 
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
+            <Link href="/pokemon/team-calculator" className="rounded-lg bg-blue-700 px-4 py-2 text-white hover:bg-blue-800 no-underline">
+              Check your full team coverage →
+            </Link>
             <Link href="/pokemon/type-chart" className="text-blue-700 hover:underline">
               Full type effectiveness chart →
             </Link>
