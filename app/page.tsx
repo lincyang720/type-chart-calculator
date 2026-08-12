@@ -58,7 +58,7 @@ export default function Home() {
         </section>
 
         {/* Interactive Calculator — primary conversion area */}
-        <section className="mb-12">
+        <section id="calculator" className="mb-12 scroll-mt-6">
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 sm:p-6 border-2 border-blue-200">
             <DualTypeCalculator />
           </div>

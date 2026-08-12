@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { TypeId } from '@/lib/types';
 import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
@@ -25,6 +25,31 @@ export default function DualTypeCalculator() {
   // Default to Fire/Flying (like Charizard) as an example
   const [type1, setType1] = useState<TypeId>('fire');
   const [type2, setType2] = useState<TypeId | ''>('flying');
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const requestedType1 = searchParams.get('type1');
+    const requestedType2 = searchParams.get('type2');
+
+    if (requestedType1 && ALL_TYPES.includes(requestedType1 as TypeId)) {
+      setType1(requestedType1 as TypeId);
+      setType2(
+        requestedType2 && requestedType2 !== requestedType1 && ALL_TYPES.includes(requestedType2 as TypeId)
+          ? requestedType2 as TypeId
+          : ''
+      );
+    }
+  }, []);
+
+  const selectTypes = (nextType1: TypeId, nextType2: TypeId | '') => {
+    setType1(nextType1);
+    setType2(nextType2);
+    const url = new URL(window.location.href);
+    url.searchParams.set('type1', nextType1);
+    if (nextType2) url.searchParams.set('type2', nextType2);
+    else url.searchParams.delete('type2');
+    window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+  };
 
   const weaknesses = calculateDualTypeWeaknesses(
     type1,
@@ -86,8 +111,7 @@ export default function DualTypeCalculator() {
               <button
                 key={example.name}
                 onClick={() => {
-                  setType1(example.type1);
-                  setType2(example.type2);
+                  selectTypes(example.type1, example.type2);
                 }}
                 className="px-3 py-1 bg-white border border-blue-300 rounded-md text-sm font-medium text-blue-700 hover:bg-blue-100 transition-colors"
               >
@@ -104,8 +128,7 @@ export default function DualTypeCalculator() {
               value={type1}
               onChange={(e) => {
                 const nextType = e.target.value as TypeId;
-                setType1(nextType);
-                if (type2 === nextType) setType2('');
+                selectTypes(nextType, type2 === nextType ? '' : type2);
               }}
                 className="w-full min-h-11 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
@@ -124,7 +147,7 @@ export default function DualTypeCalculator() {
             <label className="block text-sm font-medium mb-2">Secondary Type (Optional)</label>
             <select
               value={type2}
-              onChange={(e) => setType2(e.target.value as TypeId | '')}
+              onChange={(e) => selectTypes(type1, e.target.value as TypeId | '')}
               className="w-full min-h-11 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">None</option>
@@ -205,7 +228,7 @@ export default function DualTypeCalculator() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
             {relatedMatchups.map(matchup => (
-              <Link key={matchup.slug} href={`/types/${matchup.slug}`} className="bg-white border border-blue-200 rounded-lg p-3 hover:border-blue-500 hover:shadow-sm transition">
+              <Link key={matchup.slug} href={`/?type1=${matchup.first}&type2=${matchup.second}#calculator`} className="bg-white border border-blue-200 rounded-lg p-3 hover:border-blue-500 hover:shadow-sm transition">
                 <span className="flex flex-wrap gap-2 mb-2">
                   <TypeBadge typeId={matchup.first} size="sm" />
                   <TypeBadge typeId={matchup.second} size="sm" />
