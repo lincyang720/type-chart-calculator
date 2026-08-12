@@ -36,7 +36,7 @@ export default function DualTypeCalculator() {
       pokemon.types.length === selectedTypes.length &&
       selectedTypes.every(type => pokemon.types.includes(type))
     ))
-    .slice(0, 3);
+    .slice(0, 6);
   const relatedMatchups = Array.from(EDITORIAL_COMBINATIONS)
     .filter(slug => slug !== (type2 ? getCombinationSlug(type1, type2 as TypeId) : ''))
     .map(slug => {
@@ -47,7 +47,7 @@ export default function DualTypeCalculator() {
       return { slug, first, second, score: sharedSelected * 3 + tacticalOverlap };
     })
     .sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug))
-    .slice(0, 3);
+    .slice(0, 9);
 
   const renderTypeList = (types: TypeId[], label: string, multiplier: string, bgColor: string) => {
     if (types.length === 0) return null;
@@ -203,7 +203,7 @@ export default function DualTypeCalculator() {
             weaknesses, resistances, and immunities.
           </p>
 
-          <div className="grid sm:grid-cols-3 gap-3 mb-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
             {relatedMatchups.map(matchup => (
               <Link key={matchup.slug} href={`/types/${matchup.slug}`} className="bg-white border border-blue-200 rounded-lg p-3 hover:border-blue-500 hover:shadow-sm transition">
                 <span className="flex flex-wrap gap-2 mb-2">
@@ -213,7 +213,9 @@ export default function DualTypeCalculator() {
                 <span className="block font-bold text-gray-900">
                   {typesData.types.find(type => type.id === matchup.first)?.name}/{typesData.types.find(type => type.id === matchup.second)?.name}
                 </span>
-                <span className="block text-sm text-blue-700 mt-1">Open matchup guide →</span>
+                <span className="mt-3 block rounded-md bg-blue-700 px-3 py-2 text-center text-sm font-semibold text-white">
+                  Check {typesData.types.find(type => type.id === matchup.first)?.name}/{typesData.types.find(type => type.id === matchup.second)?.name} weaknesses →
+                </span>
               </Link>
             ))}
           </div>
@@ -221,7 +223,7 @@ export default function DualTypeCalculator() {
           {matchingPokemon.length > 0 && (
             <div className="mb-5">
               <h4 className="font-semibold text-gray-800 mb-2">Pokemon with this typing</h4>
-              <div className="grid sm:grid-cols-3 gap-3">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {matchingPokemon.map(pokemon => (
                   <Link
                     key={pokemon.id}

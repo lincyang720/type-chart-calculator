@@ -89,6 +89,11 @@ export default function Home() {
                 Terastallization, weather, move effects, stats, and Same-Type Attack Bonus can also change the practical
                 outcome. Use the Type Effectiveness Calculator when you need to test one move and optionally include STAB.
               </p>
+              <p>
+                <Link href="/blog/pokemon-type-chart-2026" className="font-semibold text-blue-700 hover:underline">
+                  Read the complete Pokémon type chart guide →
+                </Link>
+              </p>
             </div>
           </article>
 
@@ -106,6 +111,18 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Does this calculator work for Pokémon GO?</h3>
                 <p>It identifies the underlying type relationships, but Pokémon GO uses different damage multipliers and battle systems. Use our GO-specific guides for exact event and counter advice.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">How do I use this Pokemon type calculator?</h3>
+                <p>Select a primary defending type, then add a secondary type for a dual-type Pokémon. The results update immediately and group attacks into 4× and 2× weaknesses, resistances, and immunities.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">What types are immune to each other?</h3>
+                <p>Examples include Normal against Ghost, Ghost against Normal and Fighting, Ground against Electric, Flying against Ground, Dark against Psychic, Fairy against Dragon, and Steel against Poison.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Does Tera type change weaknesses in Scarlet and Violet?</h3>
+                <p>Yes. Terastallization replaces the Pokémon&apos;s defensive typing with its Tera type. Select that Tera type alone in the calculator to check its new defensive weaknesses and resistances.</p>
               </div>
             </div>
           </section>

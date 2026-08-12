@@ -3,6 +3,7 @@
 // users, but are deliberately kept out of search. Advertising is disabled sitewide
 // during the content-quality review.
 export const EDITORIAL_COMBINATIONS = new Set([
+  'fire-flying',
   'steel-fairy',
   'water-ground',
   'ground-dragon',
