@@ -346,6 +346,12 @@ export default function Home() {
             <Link href="/pokemon/type-chart-with-abilities" className="text-blue-700 hover:underline">
               Type Chart With Abilities →
             </Link>
+            <Link href="/dual-type-chart" className="text-blue-700 hover:underline">
+              Interactive Dual Type Chart →
+            </Link>
+            <Link href="/type-coverage-calculator" className="text-blue-700 hover:underline">
+              Type Coverage Calculator →
+            </Link>
           </div>
         </section>
 

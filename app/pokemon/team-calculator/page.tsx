@@ -40,6 +40,13 @@ export default function PokemonTeamCalculatorPage() {
 
         <TeamTypeCalculator />
 
+        <p className="mt-6 text-center text-gray-700">
+          Looking specifically for the long-form coverage workflow? Open the{' '}
+          <Link href="/type-coverage-calculator" className="font-semibold text-blue-700 hover:underline">
+            Pokemon Type Coverage Calculator
+          </Link>.
+        </p>
+
         <section className="prose max-w-none text-gray-700 mt-12">
           <h2>How to Check a Pokemon Team&apos;s Type Coverage</h2>
           <p>

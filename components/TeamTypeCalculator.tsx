@@ -187,6 +187,12 @@ export default function TeamTypeCalculator() {
       </section>
 
       <div className="flex flex-wrap gap-x-6 gap-y-3 font-semibold">
+        <Link href="/type-effectiveness-calculator" className="text-blue-700 hover:underline">
+          Check exact type multipliers →
+        </Link>
+        <Link href="/dual-type-chart" className="text-blue-700 hover:underline">
+          Explore all dual-type combinations →
+        </Link>
         <Link href="/pokemon/best-type-combinations" className="text-blue-700 hover:underline">
           Compare strong dual-type combinations →
         </Link>

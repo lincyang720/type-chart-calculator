@@ -282,6 +282,12 @@ export default function DualTypeCalculator() {
             <Link href="/pokemon/type-chart" className="text-blue-700 hover:underline">
               Full type effectiveness chart →
             </Link>
+            <Link href="/dual-type-chart" className="text-blue-700 hover:underline">
+              Explore all 153 dual-type combinations →
+            </Link>
+            <Link href="/type-effectiveness-calculator" className="text-blue-700 hover:underline">
+              See exact multiplier calculations →
+            </Link>
             <Link href="/pokemon/type-chart-with-abilities" className="text-blue-700 hover:underline">
               Matchups with abilities →
             </Link>
