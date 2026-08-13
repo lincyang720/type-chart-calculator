@@ -36,6 +36,11 @@ export default function AboutPage() {
           relevant ability or format detail through the <Link href="/contact">Contact page</Link>. You can also read how
           analytics and advertising services are handled in our <Link href="/privacy">Privacy Policy</Link>.
         </p>
+        <h2>Use the calculator in your own guide</h2>
+        <p>
+          Gaming writers, community resources, and educators can use our <Link href="/embed">free embeddable type
+          calculator</Link>. The lightweight widget shows no ads and does not load TypeMatchup analytics inside the frame.
+        </p>
       </article>
     </div>
   );

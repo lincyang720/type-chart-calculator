@@ -3,6 +3,17 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   trailingSlash: false,
+  async headers() {
+    return [
+      {
+        source: '/embed/type-calculator',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          { key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=86400' },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {

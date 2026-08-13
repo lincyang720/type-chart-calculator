@@ -41,6 +41,16 @@ export default function ContactPage() {
             Information about data handling is available in our <Link href="/privacy" className="text-blue-700 font-semibold hover:underline">Privacy Policy</Link>.
           </p>
         </section>
+
+        <section className="mt-8 bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h2 className="text-2xl font-bold mb-3">For Gaming Sites and Guide Authors</h2>
+          <p className="text-gray-700">
+            You can add our lightweight type matchup widget to a guide or fan resource at no cost. It does not display
+            ads or load TypeMatchup analytics inside the embedded frame. See the{' '}
+            <Link href="/embed" className="font-semibold text-blue-700 hover:underline">embed instructions and live preview</Link>,
+            or email us about an editorial collaboration, correction, or custom integration.
+          </p>
+        </section>
       </div>
     </div>
   );
