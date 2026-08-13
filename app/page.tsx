@@ -171,15 +171,15 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
-              <h2 className="text-xl sm:text-2xl font-bold">Snom: Pokémon GO Weakness Guide</h2>
-              <p className="text-gray-700 mt-1">Prepare for Summer Marathon: Arctic Embers with the Bug/Ice-type matchup and official August 4–10 schedule.</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Mewtwo: Pokémon GO 10th Anniversary Guide</h2>
+              <p className="text-gray-700 mt-1">Timed Research is live through September 6—check the official reward details and the Psychic-type matchup.</p>
             </div>
-            <Link href="/blog/snom-weakness-pokemon-go-summer-marathon" className="text-blue-700 font-semibold hover:underline shrink-0">
-              Read the Snom guide →
+            <Link href="/blog/mewtwo-weakness-pokemon-go-10th-anniversary-2026" className="text-blue-700 font-semibold hover:underline shrink-0">
+              Read the Mewtwo guide →
             </Link>
           </div>
           <p className="mt-3 text-sm text-gray-700">
-            Up next: <Link href="/blog/nickit-weakness-pokemon-go-community-day-2026" className="font-semibold text-blue-700 hover:underline">Nickit Community Day weakness guide</Link> for August 16.
+            Also timely: <Link href="/blog/nickit-weakness-pokemon-go-community-day-2026" className="font-semibold text-blue-700 hover:underline">Nickit Community Day weakness guide</Link> for August 16.
           </p>
         </section>
 
