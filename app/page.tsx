@@ -50,7 +50,7 @@ export default function Home() {
         {/* Tool-first Hero */}
         <section className="text-center mb-6 sm:mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Pokemon Type Calculator for Matchups & Weaknesses
+            Pokemon Type Calculator
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-6 max-w-3xl mx-auto px-4">
             Use this interactive type matchup tool to check weaknesses, resistances, immunities, and damage multipliers for any single or dual-type Pokemon combination.
