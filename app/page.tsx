@@ -171,11 +171,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
-              <h2 className="text-xl sm:text-2xl font-bold">Mewtwo: Pokémon GO 10th Anniversary Guide</h2>
-              <p className="text-gray-700 mt-1">Timed Research is live through September 6—check the official reward details and the Psychic-type matchup.</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Pokémon Pokopia: Feebas Event Guide</h2>
+              <p className="text-gray-700 mt-1">The Fetching Scales for Feebas event runs through August 28 local time—check the official steps and standard Water-type matchups.</p>
             </div>
-            <Link href="/blog/mewtwo-weakness-pokemon-go-10th-anniversary-2026" className="text-blue-700 font-semibold hover:underline shrink-0">
-              Read the Mewtwo guide →
+            <Link href="/blog/pokemon-pokopia-type-chart" className="text-blue-700 font-semibold hover:underline shrink-0">
+              Read the Feebas guide →
             </Link>
           </div>
           <p className="mt-3 text-sm text-gray-700">
