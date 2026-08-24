@@ -2,7 +2,7 @@
 title: "Pokemon Type Chart 2026 - Complete Guide for Scarlet & Violet"
 slug: "pokemon-type-chart-2026"
 date: "2026-03-01"
-author: "Type Chart Calculator Team"
+author: "TypeMatchup"
 description: "The complete Pokemon type chart for 2026, updated for Scarlet & Violet. All 18 types, strengths, weaknesses, immunities, and Tera Type interactions explained."
 image: "/blog/type-chart-2026.jpg"
 tags: ["type-chart", "scarlet-violet", "guide", "beginners"]

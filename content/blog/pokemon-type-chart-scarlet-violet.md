@@ -3,7 +3,7 @@ slug: pokemon-type-chart-scarlet-violet
 title: "Pokemon Type Chart Scarlet Violet Complete Guide (2026)"
 description: "Complete type effectiveness guide for Pokemon Scarlet and Violet. Learn all type matchups, Terastal mechanics, and competitive strategies for Gen 9."
 date: "2026-03-05"
-author: "Type Chart Calculator"
+author: "TypeMatchup"
 tags: ["scarlet violet", "gen 9", "terastal", "type chart", "competitive"]
 ---
 

@@ -63,7 +63,7 @@ export default function SupportPage() {
                   value: amount,
                   currency_code: 'USD',
                 },
-                description: 'Support Type Chart Calculator',
+                description: 'Support TypeMatchup',
               },
             ],
           });
@@ -88,7 +88,7 @@ export default function SupportPage() {
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Support Us</h1>
           <p className="text-lg sm:text-xl text-gray-600">
-            Help keep Type Chart Calculator free and improving
+            Help keep TypeMatchup free and improving
           </p>
         </div>
 
@@ -228,7 +228,7 @@ export default function SupportPage() {
           <h3 className="text-lg sm:text-xl font-semibold mb-4">Other Ways to Support</h3>
           <div className="space-y-3 text-gray-700">
             <p>
-              <strong>Share:</strong> Tell your friends about Type Chart Calculator
+              <strong>Share:</strong> Tell your friends about TypeMatchup
             </p>
             <p>
               <strong>Feedback:</strong> Report bugs or suggest features on GitHub

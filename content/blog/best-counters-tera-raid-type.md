@@ -2,7 +2,7 @@
 title: "Best Counters for Every Tera Raid Type - Pokemon Scarlet Violet 2026"
 description: "Complete guide to countering every Tera Raid type in Pokemon Scarlet and Violet. Best Pokemon, moves, and strategies for 5-star and 6-star raids."
 date: "2026-03-18"
-author: "TypeMatchup Team"
+author: "TypeMatchup"
 tags: ["tera-raid", "scarlet-violet", "raid-guide", "counters", "pve"]
 featured: true
 ---

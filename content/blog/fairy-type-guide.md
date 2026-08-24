@@ -2,7 +2,7 @@
 title: "Fairy Type Guide - Why Fairy is the Best Defensive Type in Pokemon"
 slug: "fairy-type-guide"
 date: "2026-03-07"
-author: "Type Chart Calculator Team"
+author: "TypeMatchup"
 description: "Complete Fairy type guide: resistances, immunities, best Fairy Pokemon, and why Fairy is the strongest defensive typing in competitive Pokemon battles."
 image: "/blog/fairy-type-guide.jpg"
 tags: ["fairy", "defense", "competitive", "strategy", "type-guide"]

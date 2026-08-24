@@ -3,7 +3,7 @@ slug: pokemon-type-chart-history
 title: "Pokemon Type Chart History: How Type Effectiveness Changed from Gen 1 to Gen 9"
 description: "Complete history of Pokemon type chart changes from 1996 to 2026. Learn how type effectiveness evolved across 9 generations, including Dark, Steel, and Fairy type additions."
 date: "2026-03-06"
-author: "Type Chart Calculator"
+author: "TypeMatchup"
 tags: ["history", "type chart", "generations", "game mechanics"]
 ---
 

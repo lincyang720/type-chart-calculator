@@ -3,7 +3,7 @@ slug: pokemon-champions-regulation-mb-type-matchups
 title: "Pokémon Champions Regulation M-B: Type Matchup Planning Guide"
 description: "Use type matchups to review weather cores, Mega Evolutions, and shared weaknesses in Pokémon Champions Regulation M-B Double Battles."
 date: "2026-07-27"
-author: "Type Matchup"
+author: "TypeMatchup"
 tags: ["pokemon champions", "regulation m-b", "double battles", "mega evolution", "type matchups"]
 faq:
   - question: "What is Pokémon Champions Regulation M-B?"

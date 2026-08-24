@@ -1,20 +1,20 @@
 ---
 slug: cramorant-weakness-pokemon-go-water-festival
-title: "Cramorant Weaknesses in Pokémon GO: Water Festival 2026 Guide"
-description: "Cramorant arrives in Pokémon GO during Ultra Unlock: Water Festival. Check its official event availability and the Water/Flying type matchups to plan ahead."
+title: "Cramorant Water/Flying Matchup Guide: The Electric-First Check"
+description: "A focused Water/Flying matchup guide for Cramorant's Pokémon GO debut: why Electric is the first type to check, when Rock is the fallback, and what the type chart cannot confirm."
 date: "2026-07-23"
-author: "Type Matchup"
+author: "TypeMatchup"
 tags: ["pokemon go", "cramorant", "water festival", "water flying", "type matchups"]
 faq:
   - question: "When does Cramorant arrive in Pokémon GO?"
     answer: "Pokémon GO’s official Ultra Unlock: Water Festival announcement schedules the event from August 18, 2026, at 10:00 a.m. through August 24, 2026, at 8:00 p.m. local time."
-  - question: "What is Cramorant weak to by type?"
-    answer: "Cramorant is Water/Flying. In the standard type chart, Electric attacks are super effective against both of its types, while Rock attacks are super effective against Flying. Pokémon GO battle damage and available moves can change the practical result."
+  - question: "Why is Electric the first type to check against Cramorant?"
+    answer: "Cramorant is Water/Flying. In the standard type chart, Electric is super effective against both types, producing a 4× type multiplier before Pokémon GO's own damage system and live move availability are considered."
   - question: "How can I get Cramorant during Pokémon GO Water Festival?"
     answer: "The official event announcement says Cramorant will debut in Eggs, the GO Pass, and GO Battle League reward encounters, where it starts appearing at Rank 16."
 ---
 
-# Cramorant Weaknesses in Pokémon GO: Water Festival 2026 Guide
+# Cramorant Water/Flying Matchup Guide: The Electric-First Check
 
 Pokémon GO has officially announced that **Cramorant** will make its debut during **Ultra Unlock: Water Festival**, running from **August 18 at 10:00 a.m. to August 24 at 8:00 p.m. local time**. Cramorant will be available from Eggs, the event GO Pass, and GO Battle League reward encounters beginning at Rank 16. [Read the official event announcement](https://pokemongo.com/news/water-festival-2026).
 
@@ -26,14 +26,24 @@ The official Pokédex lists Cramorant as a **Water/Flying-type** Pokémon. That 
 
 **Type Matchup planning:** The weakness and resistance notes below are our interpretation of Cramorant’s official Water/Flying typing through the standard type chart. They are not a promise of a Pokémon GO moveset, damage breakpoint, raid role, or PvP ranking. Pokémon GO uses its own battle values, and the moves available at release matter.
 
-## Cramorant type weaknesses
+## The one-question counter check
 
-For a Water/Flying Pokémon, start with these type-chart answers:
+For Cramorant, the most useful type-only question is not “which Pokémon is best?” It is: **does my candidate have a viable Electric attack for the format I am playing?** Its Water/Flying typing makes Electric super effective twice in the standard chart, while Rock is super effective only against the Flying half.
 
-- **Electric:** super effective against both Water and Flying. This is the clearest type advantage to test first.
-- **Rock:** super effective against Flying.
-- **Ground:** has no effect against Flying in the standard type chart.
-- **Fire, Water, Fighting, Bug, and Steel:** are resisted by at least one part of Cramorant’s typing, so they are not the first attacking types to prioritize from a type-only perspective.
+| Candidate attack type | Standard-chart result | How to use the result |
+| --- | --- | --- |
+| Electric | 4× | First type to check when comparing potential attackers. |
+| Rock | 2× | A useful fallback if the candidate lacks Electric coverage. |
+| Ground | 0× in the core games | A typing dead end; Pokémon GO applies its own effectiveness model. |
+| Fire, Water, Fighting, Bug, Steel | Resisted overall | Do not treat these as type-only counter answers. |
+
+That 4×/2× distinction is a chart calculation, not a Pokémon GO damage prediction. A live Pokémon GO matchup can still turn on the released move pool, stats, shields, energy, raid rules, and the game’s different type-effectiveness multipliers.
+
+## A Water/Flying planning scenario
+
+Imagine a team slot that can use either an Electric move or a Rock move. The typing-only answer is to test the Electric move first, because it pressures both parts of Cramorant’s type combination. If the actual move or format makes that option unavailable, Rock is the next clean chart-based check. A Ground move should not be selected merely because the attacker is strong in another matchup: Flying grants a Ground immunity in the standard chart.
+
+This is deliberately a narrow decision rule. It avoids pretending that one species, moveset, or league is confirmed as the definitive Cramorant counter before Pokémon GO&apos;s live availability establishes those details.
 
 Use the [Water/Flying matchup page](/types/water-flying) for the complete defensive view, or enter the matchup in the [type calculator](/calculator). For quick counter ideas, begin with the [Electric type guide](/types/electric) and [Rock type guide](/types/rock), then confirm the moves available in Pokémon GO before investing resources.
 
@@ -47,16 +57,20 @@ According to Pokémon GO’s announcement, Cramorant will appear through three e
 
 The same announcement says Cramorant can change form in battle. That is an official mechanic note, but the announcement does not provide a complete competitive analysis. Treat any claims about its best league, moveset, or ranking as unconfirmed until the live game provides the relevant details.
 
-## Water Festival event checklist
+## Form-change note: what the calculator can and cannot tell you
+
+Pokémon GO&apos;s Water Festival announcement says Cramorant can change form in battle. TypeMatchup&apos;s calculator evaluates the listed Water/Flying typing; it does not model form-change behavior, move animations, energy timing, or other game-specific mechanics. Use the calculator for the transparent type baseline, then check the live game and official announcements for the format-specific rules.
+
+## Water Festival checklist
 
 The event also introduces **Arrokuda** and **Barraskewda**. The official announcement says Arrokuda can be evolved into Barraskewda with 50 Arrokuda Candy and may be found through Field Research task rewards, the GO Pass, and Rainy Lure Modules.
 
 For type-focused preparation:
 
-- Save an Electric option to check Cramorant’s double type weakness.
-- Keep a Rock option available for the Flying side of the matchup.
-- Review [Water type matchups](/types/water) and [Flying type matchups](/types/flying) before choosing a battle team.
-- Use the [Pokémon guide](/pokemon) and [team calculator](/pokemon/team-calculator) to identify repeated team weaknesses.
+- Start by checking whether an available attacker has Electric coverage.
+- Compare a Rock option only after that Electric-first check.
+- Review [Water type matchups](/types/water) and [Flying type matchups](/types/flying) to see why the dual typing produces different answers from either single type.
+- Use the [Water/Flying matchup page](/types/water-flying), [type calculator](/calculator), and [team calculator](/pokemon/team-calculator) to test a transparent type baseline before choosing a live-game team.
 
 ## Cramorant Water/Flying matchup FAQ
 

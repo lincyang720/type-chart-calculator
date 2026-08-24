@@ -2,7 +2,7 @@
 title: "Dragon Type Weakness - How to Beat Dragon Pokemon in 2026"
 slug: "dragon-type-weakness"
 date: "2026-03-01"
-author: "Type Chart Calculator Team"
+author: "TypeMatchup"
 description: "Complete guide to Dragon type weakness in Pokemon. Learn the best counters, moves, and strategies to beat Dragon Pokemon in competitive battles, raids, and Pokemon GO."
 image: "/blog/dragon-type-weakness.jpg"
 tags: ["dragon", "weakness", "counters", "strategy", "competitive"]

@@ -2,7 +2,7 @@
 title: "How to Build a Balanced Pokemon Team: Complete Guide for Competitive Play"
 slug: "how-to-build-balanced-pokemon-team"
 date: "2026-01-29"
-author: "Type Chart Calculator Team"
+author: "TypeMatchup"
 description: "Master team building with our comprehensive guide. Learn type coverage, role distribution, synergy strategies, and avoid common mistakes. Perfect for VGC and competitive battles."
 image: "/blog/team-building.jpg"
 tags: ["team-building", "strategy", "competitive", "beginner-guide"]

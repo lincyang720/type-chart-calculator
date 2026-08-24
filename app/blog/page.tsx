@@ -49,7 +49,7 @@ function getBlogPosts(): BlogPost[] {
         slug: data.slug || file.replace('.md', ''),
         title: data.title || 'Untitled',
         date: data.date || '',
-        author: data.author || 'Type Chart Calculator Team',
+        author: data.author || 'TypeMatchup',
         description: data.description || '',
         image: data.image,
         tags: data.tags || [],

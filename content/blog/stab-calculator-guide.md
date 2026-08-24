@@ -3,7 +3,7 @@ slug: stab-calculator-guide
 title: "STAB Calculator Guide: How Same-Type Attack Bonus Works in Pokemon"
 description: "Complete guide to STAB (Same-Type Attack Bonus) in Pokemon. Learn how STAB multipliers work, calculate damage, and optimize your team with our STAB calculator."
 date: "2026-03-06"
-author: "Type Chart Calculator"
+author: "TypeMatchup"
 tags: ["stab", "damage calculation", "battle mechanics", "competitive"]
 ---
 

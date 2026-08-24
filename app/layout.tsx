@@ -63,8 +63,7 @@ export default function RootLayout({
           <nav className="container mx-auto px-4 py-3">
             <div className="flex items-center justify-between">
               <a href="/" className="text-xl md:text-2xl font-bold hover:opacity-90 transition-opacity">
-                <span className="hidden sm:inline">Type Chart Calculator</span>
-                <span className="sm:hidden">Type Chart</span>
+                <span>TypeMatchup</span>
               </a>
 
               {/* Desktop Navigation */}
@@ -91,11 +90,12 @@ export default function RootLayout({
 
         <footer className="bg-gray-800 text-white py-8 mt-12">
           <div className="container mx-auto px-4 text-center">
-            <p className="mb-2">© 2026 Type Chart Calculator. All rights reserved.</p>
+            <p className="mb-2">© 2026 TypeMatchup. All rights reserved.</p>
             <nav aria-label="Legal and contact links" className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4 text-sm">
               <a href="/privacy" className="text-gray-200 hover:text-white hover:underline">Privacy</a>
               <a href="/about" className="text-gray-200 hover:text-white hover:underline">About</a>
               <a href="/terms" className="text-gray-200 hover:text-white hover:underline">Terms</a>
+              <a href="/disclaimer" className="text-gray-200 hover:text-white hover:underline">Disclaimer</a>
               <a href="/contact" className="text-gray-200 hover:text-white hover:underline">Contact</a>
               <a href="/support" className="text-gray-200 hover:text-white hover:underline">Support</a>
               <ConsentSettingsButton />
@@ -104,7 +104,7 @@ export default function RootLayout({
               Educational tool for understanding type effectiveness and matchups.
             </p>
             <p className="text-xs text-gray-500 mt-4">
-              Disclaimer: This is an unofficial fan-made tool. All type mechanics and data are based on game mechanics.
+              TypeMatchup is an unofficial, fan-made reference. Pokémon trademarks belong to their respective owners.
             </p>
           </div>
         </footer>

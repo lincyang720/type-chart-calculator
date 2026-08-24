@@ -27,10 +27,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { data } = matter(fileContent);
 
   return {
-    title: `${data.title} | Type Matchup Blog`,
+    title: `${data.title} | TypeMatchup`,
     description: data.description || '',
     keywords: data.tags?.join(', ') || '',
-    authors: [{ name: data.author || 'Type Chart Calculator Team' }],
+    authors: [{ name: data.author || 'TypeMatchup' }],
     openGraph: {
       title: data.title,
       description: data.description || '',

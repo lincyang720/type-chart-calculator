@@ -3,7 +3,7 @@ slug: mewtwo-weakness-pokemon-go-10th-anniversary-2026
 title: "Mewtwo Weakness in Pokémon GO: 10th Anniversary Timed Research"
 description: "Pokémon GO's 10th Anniversary Timed Research runs through September 6, 2026 and leads to a Mewtwo encounter. Check the official details and standard Psychic-type weaknesses."
 date: "2026-08-13"
-author: "Type Matchup"
+author: "TypeMatchup"
 tags: ["pokemon go", "mewtwo", "10th anniversary", "psychic type", "type matchups"]
 faq:
   - question: "When does the Pokémon GO 10th Anniversary Mewtwo Timed Research end?"

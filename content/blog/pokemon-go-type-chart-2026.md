@@ -2,7 +2,7 @@
 title: "Pokemon GO Type Chart 2026 - Quick Reference Guide"
 slug: "pokemon-go-type-chart-2026"
 date: "2026-03-01"
-author: "Type Chart Calculator Team"
+author: "TypeMatchup"
 description: "Pokemon GO type chart 2026 quick reference. All type effectiveness, weaknesses, and resistances for raids, PvP battles, and Team GO Rocket. Updated for current meta."
 image: "/blog/pokemon-go-type-chart.jpg"
 tags: ["pokemon-go", "type-chart", "raids", "pvp", "guide"]

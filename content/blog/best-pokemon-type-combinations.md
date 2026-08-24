@@ -2,7 +2,7 @@
 title: "Top 10 Best Pokemon Type Combinations for Competitive Battles"
 slug: "best-pokemon-type-combinations"
 date: "2026-01-29"
-author: "Type Chart Calculator Team"
+author: "TypeMatchup"
 description: "Discover the most powerful dual-type combinations in Pokemon. Learn why Steel/Fairy, Water/Ground, and Dragon/Ground dominate competitive battles."
 image: "/blog/type-combinations.jpg"
 tags: ["competitive", "strategy", "type-combinations"]

@@ -3,7 +3,7 @@ slug: pokemon-pokopia-type-chart
 title: "Pokémon Pokopia Feebas Event: Dates, Steps, and Water-Type Matchups"
 description: "Official dates and start requirements for Pokémon Pokopia's Fetching Scales for Feebas event, plus standard Water-type weakness context for Feebas and Milotic."
 date: "2026-08-15"
-author: "Type Matchup Editorial Team"
+author: "TypeMatchup"
 tags: ["pokemon pokopia", "feebas", "milotic", "water type", "event guide"]
 faq:
   - question: "When does the Fetching Scales for Feebas event end?"

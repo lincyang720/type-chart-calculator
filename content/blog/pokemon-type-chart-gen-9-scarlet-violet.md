@@ -2,7 +2,7 @@
 title: "Pokemon Type Chart Gen 9 Scarlet Violet - Complete Guide 2026"
 description: "Master the Gen 9 type chart for Pokemon Scarlet and Violet. Learn type effectiveness, Tera Type mechanics, and competitive strategies for the latest generation."
 date: "2026-03-18"
-author: "TypeMatchup Team"
+author: "TypeMatchup"
 tags: ["type-chart", "gen-9", "scarlet-violet", "tera-type", "competitive"]
 featured: true
 ---

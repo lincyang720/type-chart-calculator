@@ -2,7 +2,7 @@
 title: "Steel Type Pokemon - The Ultimate Defensive Typing Guide"
 slug: "steel-type-guide"
 date: "2026-03-07"
-author: "Type Chart Calculator Team"
+author: "TypeMatchup"
 description: "Complete Steel type guide: 11 resistances, 1 immunity, best Steel Pokemon, and why Steel is the most defensive typing in competitive battles."
 image: "/blog/steel-type-guide.jpg"
 tags: ["steel", "defense", "competitive", "strategy", "type-guide"]
