@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description: 'Expert guides on Pokemon type matchups, competitive strategies, and team building. Learn the best type combinations and battle tactics.',
   keywords: 'pokemon type guide, pokemon strategy, competitive pokemon, type matchup guide, pokemon team building, type combination analysis',
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Pokemon Type Strategy Blog',
     description: 'Expert guides on Pokemon type matchups and competitive strategies',
     url: 'https://www.typematchup.org/blog',

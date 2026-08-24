@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     follow: false,
   },
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Page Not Found | TypeMatchup',
     description: 'The page you requested could not be found.',
     type: 'website',

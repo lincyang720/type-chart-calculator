@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description: 'Use the complete Pokemon weakness chart for all 18 types. Find every weakness, resistance, immunity, and Gen 9 type effectiveness matchup.',
   keywords: 'pokemon type chart, type effectiveness chart, pokemon weakness chart, type matchup chart, gen 9 type chart',
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Pokemon Weakness Chart 2026 - Complete Type Effectiveness',
     description: 'Find every weakness, resistance, immunity, and Gen 9 type effectiveness matchup for all 18 Pokemon types.',
     url: 'https://www.typematchup.org/pokemon/type-chart',

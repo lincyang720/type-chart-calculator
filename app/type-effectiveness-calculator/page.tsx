@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/type-effectiveness-calculator' },
-  openGraph: { title, description, url: 'https://www.typematchup.org/type-effectiveness-calculator', type: 'website' },
+  openGraph: { siteName: 'TypeMatchup', title, description, url: 'https://www.typematchup.org/type-effectiveness-calculator', type: 'website' },
   twitter: { card: 'summary_large_image', title, description },
 };
 

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: HOME_TITLE,
   description: HOME_DESCRIPTION,
   openGraph: {
+    siteName: 'TypeMatchup',
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
     url: SITE_URL,

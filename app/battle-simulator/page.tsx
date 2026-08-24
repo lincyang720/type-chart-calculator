@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: 'Simulate Pokemon battle type matchups and include Same-Type Attack Bonus. Compare an attacking move with single or dual-type defenders.',
   keywords: 'pokemon battle simulator, type matchup battle, STAB calculator, pokemon battle strategy',
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Pokemon Battle Simulator – Type Matchups With STAB',
     description: 'Test an attacking type against single or dual-type defenders and calculate the exact type multiplier with optional STAB.',
     url: 'https://www.typematchup.org/battle-simulator',

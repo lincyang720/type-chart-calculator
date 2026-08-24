@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   keywords: 'pokemon type calculator gen 9, scarlet violet type calculator, gen 9 type chart, pokemon weakness calculator',
   alternates: { canonical: '/pokemon/type-calculator-gen-9' },
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Pokemon Type Calculator Gen 9',
     description: 'Calculate Scarlet and Violet type weaknesses, resistances, immunities, and dual-type matchups.',
     url: `${SITE_URL}/pokemon/type-calculator-gen-9`,

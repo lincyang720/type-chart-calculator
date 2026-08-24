@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     canonical: '/pokemon/best-type-combinations',
   },
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Best Pokemon Type Combinations for Offense and Defense',
     description:
       'Compare strong dual typings, their weaknesses and resistances, and the roles they fit on a Pokemon team.',

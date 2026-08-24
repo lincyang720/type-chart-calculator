@@ -67,6 +67,7 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
     description: `${pokemon.name} (${typeNames}) weakness guide. ${pokemon.strategy.slice(0, 120)}. Best counters, moveset, and battle strategy.`,
     keywords: `${pokemon.name} weakness, ${pokemon.name} counters, ${pokemon.name} best moveset, ${pokemon.name} type, ${pokemon.name} strategy`,
     openGraph: {
+    siteName: 'TypeMatchup',
       title: `${pokemon.name} - Weakness, Counters & Strategy Guide`,
       description: `Complete ${pokemon.name} guide: weaknesses, best counters, recommended moveset, and competitive strategy.`,
       url: `https://www.typematchup.org/pokemon/${pokemon.id}`,

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Embed the Free Pokemon Type Calculator',
   description: 'Add a free, lightweight Pokemon type matchup calculator to a guide, fan site, or gaming resource.',
   alternates: { canonical: '/embed' },
-  openGraph: { title: 'Embed the Free Pokemon Type Calculator', description: 'A lightweight, free Pokemon type matchup widget for gaming guides and fan sites.', url: 'https://www.typematchup.org/embed', type: 'website' },
+  openGraph: { siteName: 'TypeMatchup', title: 'Embed the Free Pokemon Type Calculator', description: 'A lightweight, free Pokemon type matchup widget for gaming guides and fan sites.', url: 'https://www.typematchup.org/embed', type: 'website' },
 };
 
 export default function EmbedPage() {

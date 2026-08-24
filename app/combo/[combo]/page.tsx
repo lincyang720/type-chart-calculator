@@ -210,6 +210,7 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
     description: `${type1Data.name}/${type2Data.name} matchup guide. Weak to: ${weakList}. Resists: ${resistList}. Best counters and strategy tips.`,
     keywords: `${type1} ${type2} weakness, ${type1Data.name} ${type2Data.name}, dual type, type matchup, counters`,
     openGraph: {
+    siteName: 'TypeMatchup',
       title: `${type1Data.name}/${type2Data.name} Type - Weaknesses & Resistances`,
       description: `${type1Data.name}/${type2Data.name} matchup guide. Weak to: ${weakList}. Resists: ${resistList}.`,
       url: `https://www.typematchup.org/types/${type1}-${type2}`,

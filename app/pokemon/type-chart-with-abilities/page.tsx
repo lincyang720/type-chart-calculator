@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   keywords: 'pokemon type chart with abilities, pokemon ability weakness calculator, levitate type chart, pokemon immunity calculator',
   alternates: { canonical: '/pokemon/type-chart-with-abilities' },
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Pokemon Type Chart With Abilities',
     description: 'See how defensive abilities change Pokemon weaknesses, resistances, and immunities.',
     url: `${SITE_URL}/pokemon/type-chart-with-abilities`,

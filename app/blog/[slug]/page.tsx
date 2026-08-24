@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords: data.tags?.join(', ') || '',
     authors: [{ name: data.author || 'TypeMatchup' }],
     openGraph: {
+    siteName: 'TypeMatchup',
       title: data.title,
       description: data.description || '',
       url: `https://www.typematchup.org/blog/${resolvedParams.slug}`,

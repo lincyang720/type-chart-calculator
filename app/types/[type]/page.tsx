@@ -59,6 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
     description: `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}. Full matchup analysis.`,
     keywords: `${type.name} type, ${type.name} weakness, ${type.name} strength, ${type.name} matchup, ${type.name} type chart`,
     openGraph: {
+    siteName: 'TypeMatchup',
       title: `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
       description: `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
       url: `https://www.typematchup.org/types/${typeId}`,

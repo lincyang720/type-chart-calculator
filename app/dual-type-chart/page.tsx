@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/dual-type-chart' },
-  openGraph: { title, description, url: 'https://www.typematchup.org/dual-type-chart', type: 'website' },
+  openGraph: { siteName: 'TypeMatchup', title, description, url: 'https://www.typematchup.org/dual-type-chart', type: 'website' },
   twitter: { card: 'summary_large_image', title, description },
 };
 

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     canonical: '/pokemon/team-calculator',
   },
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Pokemon Team Calculator - Check Team Weaknesses',
     description: 'Analyze shared weaknesses, resistances, immunities, and defensive gaps for a six-member Pokemon team.',
     url: 'https://www.typematchup.org/pokemon/team-calculator',

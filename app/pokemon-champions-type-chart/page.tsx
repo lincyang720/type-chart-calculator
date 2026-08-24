@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     canonical: '/pokemon-champions-type-chart',
   },
   openGraph: {
+    siteName: 'TypeMatchup',
     title: 'Pokemon Champions Type Chart and Battle Guide',
     description: 'Check all 18 type matchups and prepare a balanced team for Pokemon Champions battles.',
     url: `${SITE_URL}/pokemon-champions-type-chart`,
