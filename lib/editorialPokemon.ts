@@ -7,6 +7,9 @@ export const EDITORIAL_POKEMON = new Set([
   'dragonite',
   'corviknight',
   'heatran',
+  'tyranitar',
+  'dragapult',
+  'mimikyu',
 ]);
 
 export function isEditorialPokemon(slug: string): boolean {

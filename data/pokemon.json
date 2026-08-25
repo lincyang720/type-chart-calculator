@@ -234,7 +234,7 @@
       "recommendedMoves": [
         "Stone Edge",
         "Crunch",
-        "Pursuit",
+        "Earthquake",
         "Stealth Rock"
       ],
       "counters": [
@@ -243,8 +243,8 @@
         "Water-type moves",
         "Steel-type Pokemon"
       ],
-      "strengths": "Sand Stream boosts SpDef by 50%. Massive Attack and good bulk. Excellent trapper with Pursuit.",
-      "strategy": "Tyranitar's Sand Stream makes it a premier weather setter. Its 4× Fighting weakness is brutal, but its SpDef in sand is enormous. Use as a Stealth Rock setter, Pursuit trapper, or Dragon Dance sweeper."
+      "strengths": "Sand Stream gives Tyranitar immediate weather value alongside 134 Attack and strong natural bulk. Rock/Dark also creates a defining 4× Fighting weakness.",
+      "strategy": "Tyranitar is most valuable when its entry changes the board immediately. Sand Stream begins sand on entry, so bring it in on a resisted Fire, Flying, Ghost, Dark, or Psychic attack, or through a slow pivot, rather than exposing its low Speed to a strong neutral hit. Its Rock/Dark typing gives it useful resistances, but Fighting is a 4× weakness; Grass, Water, Bug, Ground, Steel, and Fairy are also super effective. Do not assume its bulk makes a close-combat exchange safe.\n\nChoose one job for the set. Stealth Rock turns forced switches into lasting chip. Stone Edge and Crunch provide the core STAB pressure, while Earthquake can punish Steel- and Poison-type answers. A Dragon Dance set needs its checks weakened before it boosts; a utility set should preserve health for repeated weather entries and key switches. Sand can support teammates that benefit from the weather, but it also chips non-Rock, Ground, or Steel partners, so plan the whole six rather than treating it as free value.\n\nTo counter Tyranitar, keep a Fighting attacker healthy whenever possible. Ground, Water, Grass, Steel, Bug, and Fairy attacks also threaten it, but first check whether its partner can punish the obvious response. Bulky Water- or Fairy-type teammates can help cover Fighting and Ground pressure, while a Flying type can give the team a Fighting immunity. Tyranitar appreciates pivots and hazard support, but it dislikes repeated chip and status. Use the team calculator to make sure its major Fighting weakness is backed by a real switch-in, not merely a revenge killer. Move availability, items, Tera types, and formats can change the exact set, so confirm the rules before committing to a line."
     },
     {
       "id": "lucario",
@@ -638,7 +638,7 @@
         "Specially defensive walls"
       ],
       "strengths": "Blazing 142 base Speed. Versatile — physical, special, or support sets. Two immunities.",
-      "strategy": "Dragapult's Speed tier is nearly unmatched. It can run physical (Dragon Darts), special (Shadow Ball + Draco Meteor), or even support (Will-O-Wisp + Hex). Its unpredictability is its greatest weapon."
+      "strategy": "Dragapult's 142 base Speed makes it an excellent fast attacker and pivot, but its Dragon/Ghost typing is just as important when planning turns. It is immune to Normal and Fighting and resists Fire, Water, Grass, Electric, Poison, and Bug, creating useful entries against the right locked move or pivot. In return, Ice, Ghost, Dragon, Dark, and Fairy attacks are super effective. Its defensive stats are only moderate, so a favorable type matchup is an invitation to act, not permission to absorb repeated hits.\n\nDecide early whether Dragapult is physical, special, or utility-focused. Dragon Darts pressures through a physical route, while Shadow Ball and Draco Meteor give a special route; U-turn keeps momentum when a dedicated answer enters. Clear Body helps it avoid stat drops from opposing moves or Abilities, and Infiltrator can bypass Substitutes and similar barriers. Those choices change which checks are safe, so avoid revealing coverage without a reason. Its best turns usually force a switch, deny a setup attempt, or bring in a slower teammate safely.\n\nAgainst Dragapult, preserve a healthy Fairy-, Dark-, Ghost-, Ice-, or Dragon-type answer, then identify its attacking side before treating a wall as secure. Faster threats are scarce, so priority, a Choice Scarf user, paralysis, or a bulky switch can be more reliable than racing it. Dark and Fairy partners can cover Ghost and Dragon pressure, while Steel types often help absorb Fairy and Ice attacks. Because Dragon attacks risk opposing Fairy immunities and Ghost attacks meet Dark resistance, Dragapult users should pair it with partners that punish those predictable answers. Check the team calculator for duplicated Fairy, Dark, or Ice exposure, and verify format-specific moves, items, abilities, and Tera types before using a sample set."
     },
     {
       "id": "blaziken",
@@ -848,8 +848,8 @@
         "Physically defensive walls",
         "Haze/Clear Smog users"
       ],
-      "strengths": "Disguise guarantees a free turn. Ghost/Fairy is excellent offensive typing. Shadow Sneak priority.",
-      "strategy": "Mimikyu's Disguise ability is essentially a free Swords Dance. Ghost/Fairy STAB hits almost everything neutrally. Shadow Sneak provides priority after setup. One of the best sweepers in the game thanks to its guaranteed setup turn."
+      "strengths": "Disguise can protect Mimikyu from one attack per battle. Ghost/Fairy grants three immunities and Shadow Sneak provides priority pressure.",
+      "strategy": "Mimikyu combines Ghost/Fairy typing with Disguise, so its first meaningful exchange needs more planning than a standard type chart shows. The official Pokédex describes Disguise as protecting it from an attack once per battle. That can create a valuable setup, attack, or scouting turn, but it is not a reason to ignore hazards, status, repeat damage, or the opponent's next move. Its standard typing is immune to Normal, Fighting, and Dragon; Bug is only quarter-effective, while Ghost and Steel are its direct type weaknesses.\n\nA physical set commonly uses Play Rough and Shadow Claw for STAB, with Shadow Sneak supplying priority after chip. Swords Dance is strongest when the opposing Steel type, bulky physical wall, or Unaware-style stopgap has already been identified and softened. Do not set up automatically just because Disguise is intact: using that window to remove an item, gain position, or attack a key switch can be the winning play. Mimikyu's moderate bulk means its value often comes from one carefully timed turn rather than repeated switching.\n\nSteel and Ghost attackers are the clearest type-based counters, but counterplay is more reliable when it also prevents a boosted endgame. Keep Mimikyu within range of priority or a faster attacker, avoid giving it a free turn after a faint, and use Haze, Clear Smog, Encore, or a durable physical wall when the format supplies them. Dark attacks are neutral rather than super effective, so do not mistake a Dark type alone for a complete answer. Partners that handle Steel and Ghost pressure—often Ground, Fire, Dark, or Normal types depending on the ruleset—make it much easier to preserve Mimikyu for the endgame. Use the team calculator to check those shared weaknesses, and confirm legal moves, items, and Tera types in the format you play."
     },
     {
       "id": "toxapex",
