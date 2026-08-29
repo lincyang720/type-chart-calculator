@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
     <div className="container mx-auto px-4 py-10">
       <article className="max-w-3xl mx-auto prose prose-gray">
         <h1>Privacy Policy</h1>
-        <p><strong>Last updated:</strong> August 2, 2026</p>
+        <p><strong>Last updated:</strong> August 29, 2026</p>
         <p>
           TypeMatchup operates the website at typematchup.org. This Privacy Policy explains what information may be
           collected when you use the site, why it is used, and the choices available to you. By using TypeMatchup, you
@@ -51,18 +51,39 @@ export default function PrivacyPolicyPage() {
           browser controls, privacy extensions, or cookie settings available in your region.
         </p>
         <p>
-          We may use Google AdSense to display advertisements. Google and its partners may use cookies or similar
-          technologies to serve, personalize, and measure ads based on visits to this and other websites. You can manage
-          personalized advertising through <a href="https://adssettings.google.com/" rel="noopener noreferrer">Google Ads Settings</a>.
-          Where required, a consent prompt will be provided before non-essential advertising cookies are used.
+          Advertising is currently disabled in the site code during review and setup. If TypeMatchup enables Google
+          AdSense later, ads will be served only through Google&apos;s official publisher tools and displayed in areas
+          labelled as advertising or otherwise clearly separate from navigation, calculator controls, download links, and
+          editorial recommendations.
+        </p>
+        <p>
+          Google and its partners may use cookies or similar technologies to serve, personalize, and measure ads based on
+          visits to this and other websites. You can manage personalized advertising through{' '}
+          <a href="https://adssettings.google.com/" rel="noopener noreferrer">Google Ads Settings</a>, read how Google
+          uses information from sites and apps at{' '}
+          <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">Google&apos;s partner
+          sites policy</a>, or review additional industry opt-out choices at{' '}
+          <a href="https://www.aboutads.info/choices/" rel="noopener noreferrer">YourAdChoices</a>. Where required, a
+          consent prompt will be provided before non-essential advertising cookies are used.
         </p>
         <p>
           Third-party vendors, including Google, use cookies to serve ads based on a visitor&apos;s prior visits to this
           website or other websites. Google&apos;s use of advertising cookies enables it and its partners to serve ads based
-          on those visits. Visitors may opt out of personalized advertising in Google Ads Settings or review additional
-          industry opt-out choices at <a href="https://www.aboutads.info/choices/" rel="noopener noreferrer">YourAdChoices</a>.
-          We do not send names, email addresses, phone numbers, or other directly identifying information to Google in ad
-          request URLs or targeting parameters.
+          on those visits. We do not send names, email addresses, phone numbers, or other directly identifying
+          information to Google in analytics events, ad request URLs, or targeting parameters.
+        </p>
+
+        <h2>Cookie and Local Storage Summary</h2>
+        <p>
+          TypeMatchup uses local storage to remember your analytics choice. If you accept analytics, Google Analytics and
+          Vercel Analytics may set measurement cookies or similar identifiers. If advertising is enabled later, Google
+          AdSense and its advertising partners may set advertising cookies for ad delivery, fraud prevention, frequency
+          capping, personalization where permitted, and performance measurement. Essential hosting, security, and payment
+          providers may process technical information needed to deliver their services.
+        </p>
+        <p>
+          You can reopen privacy choices from the footer, reject optional analytics, clear browser storage, block cookies
+          in your browser, or contact us if you need help understanding which controls apply to your location.
         </p>
 
         <h2>Location Data and Advertising Choices</h2>

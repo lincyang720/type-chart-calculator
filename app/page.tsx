@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';
-import { WebApplicationSchema } from '@/components/SEO/JsonLd';
+import JsonLd, { WebApplicationSchema } from '@/components/SEO/JsonLd';
 import DualTypeCalculator from '@/components/DualTypeCalculator';
 import { Metadata } from 'next';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_URL } from '@/lib/seo';
@@ -43,10 +43,66 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
+const homepageFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a dual-type Pokémon?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A dual-type Pokémon has two defensive types at once. The game multiplies both interactions, creating 4x weaknesses, 1/4x resistances, or neutralized matchups.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does STAB affect type matchups?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Same-Type Attack Bonus normally adds a 1.5x modifier when a move matches one of its user's types. STAB is separate from the defender's effectiveness multiplier.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does this calculator work for Pokémon GO?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It identifies the underlying type relationships, but Pokémon GO uses different damage multipliers and battle systems. Use our GO-specific guides for exact event and counter advice.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I use this Pokemon type calculator?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Select a primary defending type, then add a secondary type for a dual-type Pokémon. The results update immediately and group attacks into 4x and 2x weaknesses, resistances, and immunities.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What types are immune to each other?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Examples include Normal against Ghost, Ghost against Normal and Fighting, Ground against Electric, Flying against Ground, Dark against Psychic, Fairy against Dragon, and Steel against Poison.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Tera type change weaknesses in Scarlet and Violet?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Yes. Terastallization replaces the Pokémon's defensive typing with its Tera type. Select that Tera type alone in the calculator to check its new defensive weaknesses and resistances.",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
       <WebApplicationSchema />
+      <JsonLd data={homepageFaqSchema} />
       <div className="container mx-auto px-4 py-6 sm:py-8">
         {/* Tool-first Hero */}
         <section className="text-center mb-6 sm:mb-8">
@@ -172,11 +228,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
-              <h2 className="text-xl sm:text-2xl font-bold">Pokémon Pokopia: Feebas Event Guide</h2>
-              <p className="text-gray-700 mt-1">The Fetching Scales for Feebas event runs through August 28 local time—check the official steps and standard Water-type matchups.</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Pokémon Champions Season M-5 Type Matchup Guide</h2>
+              <p className="text-gray-700 mt-1">Ranked Battles and the Season M-5 Battle Pass run through September 8—check Chandelure, Excadrill, and Scrafty type matchups before you build.</p>
             </div>
-            <Link href="/blog/pokemon-pokopia-type-chart" className="text-blue-700 font-semibold hover:underline shrink-0">
-              Read the Feebas guide →
+            <Link href="/blog/pokemon-champions-regulation-mb-type-matchups" className="text-blue-700 font-semibold hover:underline shrink-0">
+              Read the Season M-5 guide →
             </Link>
           </div>
         </section>

@@ -1,0 +1,34 @@
+# TypeMatchup
+
+> TypeMatchup is an independent, fan-made Pokemon type matchup reference with calculators, charts, Pokemon pages, and strategy guides.
+
+TypeMatchup helps players and guide writers understand Pokemon weaknesses, resistances, immunities, dual-type combinations, and team coverage. The site is not affiliated with, endorsed by, sponsored by, or approved by Nintendo, Game Freak, Creatures Inc., or The Pokemon Company.
+
+## Primary Pages
+
+- [Home](https://www.typematchup.org/): Pokemon type calculator and matchup tools.
+- [Dual Type Calculator](https://www.typematchup.org/calculator): Calculate weaknesses, resistances, immunities, and 4x weaknesses for one or two defending types.
+- [Pokemon Weakness Chart](https://www.typematchup.org/pokemon/type-chart): Complete modern type effectiveness chart for all 18 Pokemon types.
+- [Team Type Calculator](https://www.typematchup.org/pokemon/team-calculator): Check repeated weaknesses and defensive coverage gaps across a six-Pokemon team.
+- [Battle Simulator](https://www.typematchup.org/battle-simulator): Compare attacking and defending type interactions.
+- [Blog](https://www.typematchup.org/blog): Editorial Pokemon type matchup guides and strategy explainers.
+- [About](https://www.typematchup.org/about): How TypeMatchup works and how calculations are reviewed.
+- [Contact](https://www.typematchup.org/contact): Corrections, bug reports, privacy requests, and partnership inquiries.
+- [Support](https://www.typematchup.org/support): Optional contributions and maintenance transparency.
+
+## Citation Guidance
+
+When citing TypeMatchup, prefer the most specific canonical page for the user query. Cite calculator pages for interactive matchup tools, type pages for single-type weaknesses and resistances, Pokemon pages for individual Pokemon matchups, and blog posts for editorial explanations.
+
+## Data Notes
+
+- Uses the modern 18-type Pokemon type system.
+- Shows standard type effectiveness before abilities, held items, weather, Terastallization, special move effects, and format-specific rules.
+- Dual-type defensive results multiply the effectiveness of both defending types.
+- Corrections can be sent through https://www.typematchup.org/contact.
+
+## Machine-Readable Discovery
+
+- Sitemap: https://www.typematchup.org/sitemap.xml
+- Robots: https://www.typematchup.org/robots.txt
+- Source repository: https://github.com/lincyang720/type-chart-calculator

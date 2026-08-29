@@ -1,22 +1,38 @@
 ---
 slug: pokemon-champions-regulation-mb-type-matchups
-title: "Pokémon Champions Regulation M-B: Type Matchup Planning Guide"
-description: "Use type matchups to review weather cores, Mega Evolutions, and shared weaknesses in Pokémon Champions Regulation M-B Double Battles."
-date: "2026-07-27"
+title: "Pokémon Champions Season M-5: Regulation M-B Type Matchup Guide"
+description: "Use type matchups to review Season M-5 rewards, weather cores, Mega Evolutions, and shared weaknesses in Pokémon Champions."
+date: "2026-08-26"
 author: "TypeMatchup"
 tags: ["pokemon champions", "regulation m-b", "double battles", "mega evolution", "type matchups"]
 faq:
-  - question: "What is Pokémon Champions Regulation M-B?"
-    answer: "Regulation M-B is the current Pokémon Champions Double Battles regulation discussed in Pokémon.com's July 24, 2026 strategy overview. That overview describes new Mega-Evolved Pokémon and several leading team archetypes."
+  - question: "When does Pokémon Champions Season M-5 end?"
+    answer: "Pokémon's official August 2026 events announcement schedules Ranked Battles Season M-5 and its Battle Pass through September 8, 2026, at 6:59 p.m. PDT."
+  - question: "What are the Season M-5 Battle Pass type matchups to check?"
+    answer: "The standard type chart makes Chandelure's Fire/Ghost typing weak to Water, Ground, Rock, Ghost, and Dark. Premium Battle Pass reward Excadrill is Ground/Steel, while Scrafty is Dark/Fighting; check each Pokémon's actual moves, Ability, item, and battle format before choosing a counter."
   - question: "Which type matchups should I check for Mega Charizard Y teams?"
     answer: "Start with the standard Fire/Flying defensive chart: Water, Electric, and Rock are super effective, with Rock dealing 4x damage before other battle effects. Then account for the actual Pokémon, moves, Abilities, weather, items, and partners in your Champions battle."
   - question: "Does a type advantage guarantee a win in Pokémon Champions?"
     answer: "No. Type effectiveness is a useful starting point, but Double Battles also depend on moves, Abilities, weather, speed order, switching, items, targeting, and teammates."
 ---
 
-# Pokémon Champions Regulation M-B: Type Matchup Planning Guide
+# Pokémon Champions Season M-5: Regulation M-B Type Matchup Guide
 
-Pokémon Champions **Regulation M-B Double Battles** is the newest official competitive focus, and Pokémon.com's July 24 strategy overview highlights a format shaped by new Mega Evolutions, weather teams, and flexible balance cores. Identify the defensive pressure your six Pokémon share before deciding that a powerful Mega Evolution or weather setter belongs on the team. [Read the official Regulation M-B overview](https://www.pokemon.com/us/features/pokemon-champions-regulation-m-b-double-battles-overview).
+Pokémon Champions **Season M-5** is in its active window through **September 8, 2026, at 6:59 p.m. PDT**. Pokémon's official August events announcement confirms the Ranked Battles and Battle Pass schedule, while the July Regulation M-B overview supplies the official Double Battle context for the weather cores and Mega Evolutions below. Start with the defensive pressure your six Pokémon share before deciding that a powerful Mega Evolution or weather setter belongs on the team. [Read the official Season M-5 announcement](https://www.pokemon.com/us/news/pokemon-champions-august-2026-events-mcs-ranked-battles-season-and-battle-pass) and [the official Regulation M-B overview](https://www.pokemon.com/us/features/pokemon-champions-regulation-m-b-double-battles-overview).
+
+## Season M-5 rewards: a type-chart starting point
+
+**Officially confirmed:** Season M-5's standard Battle Pass includes **Chandelure** and **Chandelurite**. The Premium Battle Pass includes **Excadrill**, **Scrafty**, and their Mega Stones, among other rewards. Both passes and Ranked Battles Season M-5 end on September 8 at 6:59 p.m. PDT.
+
+**TypeMatchup's chart interpretation:** Chandelure's Fire/Ghost typing invites Water, Ground, Rock, Ghost, and Dark attacks in the standard type chart. Excadrill's Ground/Steel typing is weak to Fire, Water, Fighting, and Ground. Scrafty's Dark/Fighting typing has a 4× Fairy weakness, plus standard Fighting and Flying weaknesses. These are matchup baselines—not confirmed movesets, rankings, or promises that one attacker wins a live Pokémon Champions battle.
+
+| Season M-5 reward | Defensive typing to enter | Standard-chart pressure to test first | Useful site check |
+| --- | --- | --- | --- |
+| Chandelure | Fire/Ghost | Water, Ground, Rock, Ghost, Dark | [Fire type matchups](/types/fire), [Ghost type matchups](/types/ghost) |
+| Excadrill (Premium) | Ground/Steel | Fire, Water, Fighting, Ground | [Ground/Steel matchup page](/types/ground-steel) |
+| Scrafty (Premium) | Dark/Fighting | Fairy (4×), Fighting, Flying | [Dark/Fighting matchup page](/types/dark-fighting) |
+
+Use the [type calculator](/calculator) to verify the defensive chart, then confirm the actual Pokémon, moves, Abilities, items, and format in-game. The official announcement identifies Season M-5 rewards and dates; the table translates those listed typings through the standard chart.
 
 ## What the official overview confirms
 
@@ -63,7 +79,15 @@ Pokémon.com's overview reports the current Regulation M-B landscape and gives o
 
 Use the chart to frame the question, validate the live format details in Pokémon Champions, and adjust after real Double Battle experience. That approach keeps the fast, reliable part of type planning separate from the facts that only the actual battle can settle.
 
-## Pokémon Champions Regulation M-B FAQ
+## Pokémon Champions Season M-5 FAQ
+
+### When does Pokémon Champions Season M-5 end?
+
+Pokémon's official August 2026 events announcement says Ranked Battles Season M-5 and Battle Pass Season M-5 run until September 8, 2026, at 6:59 p.m. PDT.
+
+### What type matchups should I check for Chandelure, Excadrill, and Scrafty?
+
+For the standard chart, check Chandelure as Fire/Ghost, Excadrill as Ground/Steel, and Scrafty as Dark/Fighting. Scrafty has a 4× Fairy weakness. Those results are a transparent type baseline; actual Champions choices also depend on moves, Abilities, items, teammates, and the battle format.
 
 ### What is Pokémon Champions Regulation M-B?
 

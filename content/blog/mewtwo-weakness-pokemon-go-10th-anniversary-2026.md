@@ -1,8 +1,8 @@
 ---
 slug: mewtwo-weakness-pokemon-go-10th-anniversary-2026
-title: "Mewtwo Weakness in Pokémon GO: 10th Anniversary Timed Research"
-description: "Pokémon GO's 10th Anniversary Timed Research runs through September 6, 2026 and leads to a Mewtwo encounter. Check the official details and standard Psychic-type weaknesses."
-date: "2026-08-13"
+title: "Mewtwo Weakness in Pokémon GO: Psychic Counters and Research Context"
+description: "A practical Mewtwo weakness guide for Pokémon GO: Psychic-type counters, Bug/Ghost/Dark timing, resource decisions, and 10th Anniversary Timed Research context."
+date: "2026-08-29"
 author: "TypeMatchup"
 tags: ["pokemon go", "mewtwo", "10th anniversary", "psychic type", "type matchups"]
 faq:
@@ -14,11 +14,11 @@ faq:
     answer: "Pokémon GO confirms free Timed Research leading to a Mewtwo with maxed-out stats and a Special Background. It also says the Mewtwo caught from the research will have the third Mega Level unlocked for Mega Mewtwo Y, subject to the separately noted Times Square exception."
 ---
 
-# Mewtwo Weakness in Pokémon GO: 10th Anniversary Timed Research
+# Mewtwo Weakness in Pokémon GO: Psychic Counters and Research Context
 
 Pokémon GO's **10th Anniversary Celebration** includes free Timed Research that leads to a **Mewtwo** encounter. The official announcement schedules the research from **August 12, 2026, at 4:00 p.m. PDT** through **September 6, 2026, at 11:59 p.m. local time**. Complete the tasks and claim their rewards before the local deadline. [Read Pokémon GO's official announcement](https://pokemongo.com/news/10th-anniversary-celebration).
 
-This guide answers the type-chart question behind searches such as “Mewtwo weakness Pokémon GO.” It separates the official event details from Type Matchup's standard type-chart interpretation. It does not claim a specific live moveset, raid counter ranking, damage breakpoint, or outcome.
+This guide answers the type-chart question behind searches such as “Mewtwo weakness Pokémon GO.” The Timed Research section explains the current official deadline, but the main value is the evergreen Psychic-type planning: when to choose Dark, when Ghost is the damage route, when Bug is only a roster fallback, and why type advantage does not automatically equal a good resource investment.
 
 ## Official event facts vs. Type Matchup planning
 
@@ -39,6 +39,20 @@ For a pure Psychic-type Pokémon, check these attacking types first:
 | Psychic | ½× effective | Psychic resists Psychic. |
 
 Start with Bug, Ghost, or Dark when you only need the standard type-chart answer. For the complete matchup, use the [Psychic type guide](/types/psychic), the [Mewtwo weakness page](/pokemon/mewtwo), and the [type matchup calculator](/calculator). For broader Pokémon GO context, see the [Pokémon GO type chart](/blog/pokemon-go-type-chart-2026).
+
+## Original judgment: Dark, Ghost, and Bug are not interchangeable
+
+The standard chart gives Mewtwo three weaknesses, but Pokémon GO players should not treat Bug, Ghost, and Dark as equal buckets. **Dark** is usually the safest first idea because it hits Psychic super effectively while also resisting Psychic-type damage in the core chart. If the live Mewtwo matchup includes Psychic pressure, a Dark answer often has the cleanest relationship between damage and survival. That does not mean every Dark Pokémon is best; it means Dark deserves the first serious roster check when survivability matters.
+
+**Ghost** is often the high-pressure route. Ghost attacks hit Psychic super effectively and can be excellent when your goal is fast damage, but Ghost users may be more fragile or may dislike coverage that Mewtwo can carry. Use Ghost when the Pokémon has the right moves, enough durability for the format, and a clear damage advantage over your Dark roster. If you are raiding with a group, Ghost’s value rises when the lobby can absorb risk and simply needs faster damage output.
+
+**Bug** is the most conditional of the three. It is chart-correct, and a strong Bug attacker can still matter, but many players have deeper Dark or Ghost rosters than Bug rosters. Bug becomes attractive when your specific Bug option is already powered up, has practical move access, and does not require diverting scarce resources from more common raid or PvP needs. In other words, Bug is a valid type answer, not automatically the best spending answer.
+
+## Resource timing and exceptions
+
+For the 10th Anniversary research encounter, the most important “counter” may be time management rather than battle prep: finish the tasks and claim rewards before the local deadline. For future Mewtwo raids, Shadow raids, Mega-related rotations, or GO Battle League formats, the question changes. You should then compare four things before powering anything up: the live Mewtwo moveset, your best available Dark/Ghost/Bug moves, the format’s shield or raid-timer pressure, and whether the investment helps beyond this one matchup.
+
+There are two common exceptions. First, a neutral Pokémon with exceptional Pokémon GO performance can outperform a weak super-effective option if the weak option lacks proper moves or levels. Second, a type-perfect counter can become shaky if Mewtwo’s coverage punishes it. That is why this page avoids naming a permanent “best counter.” The durable recommendation is narrower and more honest: start the shortlist with Dark, Ghost, and Bug, then let the live move pool and your roster decide the final pick.
 
 ## What to do before the deadline
 
