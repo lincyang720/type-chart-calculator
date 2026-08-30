@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import TypeBadge from '@/components/TypeBadge';
-import { TypeId } from '@/lib/types';
+import { DefensiveTypeChart, TypeChart, TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
-import typeChart from '@/data/typeChart.json';
-import defensiveTypeChart from '@/data/defensiveTypeChart.json';
+import typeChartData from '@/data/typeChart.json';
+import defensiveTypeChartData from '@/data/defensiveTypeChart.json';
 import Link from 'next/link';
+import { getTypeEditorialProfile } from '@/lib/typeEditorial';
 import {
   DualTypeContent,
   generateMetadata as generateDualTypeMetadata,
@@ -16,6 +17,32 @@ const ALL_TYPES: TypeId[] = [
   'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug',
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
+
+const typeChart = typeChartData as TypeChart;
+const defensiveTypeChart = defensiveTypeChartData as DefensiveTypeChart;
+
+function getTypeName(typeId: string) {
+  return typesData.types.find(typeItem => typeItem.id === typeId)?.name ?? typeId;
+}
+
+function formatTypeNames(typeIds: string[]) {
+  if (typeIds.length === 0) return 'none';
+  return typeIds.map(getTypeName).join(', ');
+}
+
+function scoreTypeRisk(typeId: TypeId) {
+  const defensiveProfile = defensiveTypeChart[typeId];
+  return defensiveProfile.weakTo.length * 2
+    + defensiveProfile.immuneTo.length * -2
+    + defensiveProfile.resistsTo.length * -1;
+}
+
+function describeRiskBand(score: number) {
+  if (score <= -3) return 'low defensive burden';
+  if (score <= 1) return 'balanced defensive burden';
+  if (score <= 4) return 'noticeable defensive burden';
+  return 'high defensive burden';
+}
 
 // Pre-generate all 18 single-type pages and 153 dual-type pages at build time.
 export async function generateStaticParams() {
@@ -94,6 +121,21 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
 
   const defensive = defensiveTypeChart[typeId];
   const offensive = typeChart[typeId];
+  const editorialProfile = getTypeEditorialProfile(typeId);
+  const offensiveCoverageScore = offensive.superEffective.length - offensive.notVeryEffective.length - offensive.noEffect.length * 2;
+  const defensiveBurdenScore = scoreTypeRisk(typeId);
+  const saferSwitchTypes = ALL_TYPES.filter(candidateTypeId =>
+    defensiveTypeChart[candidateTypeId].resistsTo.some(resistedType => defensive.weakTo.includes(resistedType as TypeId)) ||
+    defensiveTypeChart[candidateTypeId].immuneTo.some(immuneType => defensive.weakTo.includes(immuneType as TypeId))
+  ).slice(0, 6);
+  const coveragePartners = ALL_TYPES.filter(candidateTypeId => {
+    const candidateOffense = typeChart[candidateTypeId];
+    return offensive.notVeryEffective.some(resistedByType =>
+      candidateOffense.superEffective.includes(resistedByType as TypeId)
+    ) || offensive.noEffect.some(immuneDefenderType =>
+      candidateOffense.superEffective.includes(immuneDefenderType as TypeId)
+    );
+  }).slice(0, 6);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -280,6 +322,56 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
             </div>
           </div>
         </section>
+
+        <article className="bg-white rounded-lg shadow-lg p-6 mb-6">
+          <h2 className="text-2xl font-bold mb-4">{type.name} Type Editorial Analysis</h2>
+          <div className="grid gap-4 md:grid-cols-3 mb-6">
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+              <h3 className="font-semibold text-gray-900 mb-1">Coverage Score</h3>
+              <p className="text-2xl font-bold text-blue-700">{offensiveCoverageScore}</p>
+              <p className="text-sm text-gray-600">
+                TypeMatchup score: super-effective targets minus resisted and immune targets.
+              </p>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+              <h3 className="font-semibold text-gray-900 mb-1">Defensive Burden</h3>
+              <p className="text-2xl font-bold text-purple-700">{defensiveBurdenScore}</p>
+              <p className="text-sm text-gray-600">
+                {describeRiskBand(defensiveBurdenScore)} based on weaknesses, resistances, and immunities.
+              </p>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+              <h3 className="font-semibold text-gray-900 mb-1">Role Fit</h3>
+              <p className="text-sm text-gray-700">{editorialProfile.role}</p>
+            </div>
+          </div>
+          <div className="space-y-4 text-gray-700 leading-relaxed">
+            <section>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Original TypeMatchup judgment</h3>
+              <p>{editorialProfile.judgment}</p>
+            </section>
+            <section>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Team partners and coverage</h3>
+              <p>{editorialProfile.partners}</p>
+              <p className="mt-2">
+                Data check: {type.name} attacks are resisted or blocked by {formatTypeNames([...offensive.notVeryEffective, ...offensive.noEffect])}.
+                Candidate partner attack types that pressure at least one of those answers include {formatTypeNames(coveragePartners)}.
+              </p>
+            </section>
+            <section>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Best use case</h3>
+              <p>{editorialProfile.scenario}</p>
+              <p className="mt-2">
+                On defense, {type.name} is threatened by {formatTypeNames(defensive.weakTo)}. Teammate types that can
+                resist or blank at least one of those threats include {formatTypeNames(saferSwitchTypes)}.
+              </p>
+            </section>
+            <section>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Important exception</h3>
+              <p>{editorialProfile.exception}</p>
+            </section>
+          </div>
+        </article>
 
         {typeId === 'flying' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">

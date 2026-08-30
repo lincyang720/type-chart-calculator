@@ -15,6 +15,51 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
+function getTypeName(typeId: TypeId) {
+  return typesData.types.find(typeItem => typeItem.id === typeId)?.name ?? typeId;
+}
+
+function formatTypeList(typeIds: TypeId[]) {
+  if (typeIds.length === 0) return 'none';
+  return typeIds.map(getTypeName).join(', ');
+}
+
+function getCoverageValue(weaknesses: ReturnType<typeof calculateDualTypeWeaknesses>) {
+  return weaknesses.immune.length * 3
+    + weaknesses.quadrupleResist.length * 2
+    + weaknesses.doubleResist.length
+    - weaknesses.doubleWeak.length * 2
+    - weaknesses.quadrupleWeak.length * 4;
+}
+
+function describeCoverageValue(score: number) {
+  if (score >= 8) return 'excellent defensive compression';
+  if (score >= 4) return 'strong defensive compression';
+  if (score >= 0) return 'balanced defensive tradeoff';
+  if (score >= -5) return 'high-maintenance defensive profile';
+  return 'fragile defensive profile';
+}
+
+function getPartnerCandidates(type1: TypeId, type2: TypeId, weaknesses: ReturnType<typeof calculateDualTypeWeaknesses>) {
+  const pressureTypes = [...weaknesses.quadrupleWeak, ...weaknesses.doubleWeak];
+
+  return ALL_TYPES
+    .filter(candidateType => candidateType !== type1 && candidateType !== type2)
+    .map(candidateType => {
+      const candidateWeaknesses = calculateDualTypeWeaknesses(candidateType);
+      const coveredThreats = pressureTypes.filter(pressureType =>
+        candidateWeaknesses.doubleResist.includes(pressureType) ||
+        candidateWeaknesses.quadrupleResist.includes(pressureType) ||
+        candidateWeaknesses.immune.includes(pressureType)
+      );
+
+      return { candidateType, coveredThreats };
+    })
+    .filter(candidate => candidate.coveredThreats.length > 0)
+    .sort((a, b) => b.coveredThreats.length - a.coveredThreats.length)
+    .slice(0, 5);
+}
+
 type CombinationGuide = {
   heading: string;
   opening: string;
@@ -244,6 +289,11 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
   }
 
   const weaknesses = calculateDualTypeWeaknesses(type1, type2);
+  const pressureTypes = [...weaknesses.quadrupleWeak, ...weaknesses.doubleWeak];
+  const safeEntryTypes = [...weaknesses.immune, ...weaknesses.quadrupleResist, ...weaknesses.doubleResist];
+  const coverageValue = getCoverageValue(weaknesses);
+  const partnerCandidates = getPartnerCandidates(type1, type2, weaknesses);
+  const hasSevereWeakness = weaknesses.quadrupleWeak.length > 0;
 
   const renderTypeList = (types: TypeId[], label: string, multiplier: string, bgColor: string) => {
     if (types.length === 0) return null;
@@ -360,6 +410,70 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
           </div>
         </article>
       )}
+
+      <article className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+          TypeMatchup Original Analysis
+        </h2>
+        <div className="grid gap-4 md:grid-cols-3 mb-6">
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <h3 className="font-semibold text-gray-900 mb-1">Coverage Value</h3>
+            <p className="text-2xl font-bold text-blue-700">{coverageValue}</p>
+            <p className="text-sm text-gray-600">
+              Internal score from immunities, resistances, weaknesses, and 4× pressure.
+            </p>
+          </div>
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <h3 className="font-semibold text-gray-900 mb-1">Profile</h3>
+            <p className="text-sm text-gray-700">{describeCoverageValue(coverageValue)}</p>
+          </div>
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <h3 className="font-semibold text-gray-900 mb-1">Main Planning Risk</h3>
+            <p className="text-sm text-gray-700">
+              {hasSevereWeakness
+                ? `Protect the ${formatTypeList(weaknesses.quadrupleWeak)} 4× weakness before relying on this pairing as a switch-in.`
+                : pressureTypes.length > 0
+                  ? `No 4× weakness, but repeated ${formatTypeList(pressureTypes.slice(0, 3))} pressure can still force predictable switches.`
+                  : 'This pairing has no listed weakness in the standard chart, so matchup value depends heavily on stats, moves, and format rules.'}
+            </p>
+          </div>
+        </div>
+        <div className="space-y-4 text-gray-700 leading-relaxed">
+          <section>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">How to interpret this pairing</h3>
+            <p>
+              {type1Data.name}/{type2Data.name} should be judged by the trade it creates, not by the raw number of
+              weaknesses alone. It offers safe entry into {formatTypeList(safeEntryTypes.slice(0, 6))}, which means it can
+              buy turns when those attack types are predictable. In exchange, the opponent will usually try to line up
+              {pressureTypes.length > 0 ? formatTypeList(pressureTypes) : 'strong neutral damage'}, so the pairing needs
+              either speed, bulk, recovery, pivoting, or a teammate ready to absorb that pressure.
+            </p>
+          </section>
+          <section>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Team-building partners</h3>
+            <p>
+              Based on TypeMatchup&apos;s own defensive coverage pass, useful single-type partners to test first are{' '}
+              {partnerCandidates.length > 0
+                ? partnerCandidates.map(candidate =>
+                    `${getTypeName(candidate.candidateType)} for ${formatTypeList(candidate.coveredThreats)}`
+                  ).join('; ')
+                : 'format-specific bulky pivots, because this pairing has unusually few direct chart weaknesses'}.
+              These are not automatic best teammates; they are a shortlist for reducing repeated weaknesses before you
+              choose actual Pokémon, moves, items, abilities, and battle format.
+            </p>
+          </section>
+          <section>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">When this combination is worth using</h3>
+            <p>
+              Use this combination when its resisted or immune entries match threats you expect to face repeatedly. Avoid
+              using it only because the summary looks efficient: a 4× weakness can dominate a matchup, while even a
+              strong resistance profile can fail if the Pokémon lacks recovery, speed control, or meaningful pressure
+              after switching in. For a six-Pokémon build, run this pairing through the <Link href="/pokemon/team-calculator">Team Calculator</Link> and
+              check whether another teammate shares the same {pressureTypes.length > 0 ? formatTypeList(pressureTypes.slice(0, 2)) : 'neutral coverage'} problem.
+            </p>
+          </section>
+        </div>
+      </article>
 
       {/* Detailed Matchups */}
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
