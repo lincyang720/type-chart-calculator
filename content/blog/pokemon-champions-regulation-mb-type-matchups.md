@@ -1,8 +1,8 @@
 ---
 slug: pokemon-champions-regulation-mb-type-matchups
-title: "Pokémon Champions Season M-5: Regulation M-B Type Matchup Guide"
-description: "Use type matchups to review Season M-5 rewards, weather cores, Mega Evolutions, and shared weaknesses in Pokémon Champions."
-date: "2026-08-26"
+title: "Pokémon Champions Season M-5 and Worlds Incineroar: Type Matchup Guide"
+description: "Check Season M-5 rewards and the 2026 Worlds Incineroar with a clear Fire/Dark type-chart baseline for Pokémon Champions."
+date: "2026-08-31"
 author: "TypeMatchup"
 tags: ["pokemon champions", "regulation m-b", "double battles", "mega evolution", "type matchups"]
 faq:
@@ -12,11 +12,15 @@ faq:
     answer: "The standard type chart makes Chandelure's Fire/Ghost typing weak to Water, Ground, Rock, Ghost, and Dark. Premium Battle Pass reward Excadrill is Ground/Steel, while Scrafty is Dark/Fighting; check each Pokémon's actual moves, Ability, item, and battle format before choosing a counter."
   - question: "Which type matchups should I check for Mega Charizard Y teams?"
     answer: "Start with the standard Fire/Flying defensive chart: Water, Electric, and Rock are super effective, with Rock dealing 4x damage before other battle effects. Then account for the actual Pokémon, moves, Abilities, weather, items, and partners in your Champions battle."
+  - question: "What is the 2026 Worlds Incineroar in Pokémon Champions?"
+    answer: "Pokémon's official Worlds rewards announcement says a 60-minute Twitch Drop awarded a one-time-use code for a battle-ready, Careful Incineroar with Intimidate, Fake Out, Parting Shot, Throat Chop, Flare Blitz, and the 2026 Worlds title. The code expires September 3, 2026, at 4:59 p.m. PDT."
+  - question: "What is Incineroar weak to in Pokémon Champions?"
+    answer: "Incineroar is Fire/Dark. In the standard type chart, Water, Ground, Rock, and Fighting are super effective; Fighting is 4x effective. Actual battle results also depend on its moves, Ability, items, partners, speed order, and the live format."
   - question: "Does a type advantage guarantee a win in Pokémon Champions?"
     answer: "No. Type effectiveness is a useful starting point, but Double Battles also depend on moves, Abilities, weather, speed order, switching, items, targeting, and teammates."
 ---
 
-# Pokémon Champions Season M-5: Regulation M-B Type Matchup Guide
+# Pokémon Champions Season M-5 and Worlds Incineroar: Type Matchup Guide
 
 Pokémon Champions **Season M-5** is in its active window through **September 8, 2026, at 6:59 p.m. PDT**. Pokémon's official August events announcement confirms the Ranked Battles and Battle Pass schedule, while the July Regulation M-B overview supplies the official Double Battle context for the weather cores and Mega Evolutions below. Start with the defensive pressure your six Pokémon share before deciding that a powerful Mega Evolution or weather setter belongs on the team. [Read the official Season M-5 announcement](https://www.pokemon.com/us/news/pokemon-champions-august-2026-events-mcs-ranked-battles-season-and-battle-pass) and [the official Regulation M-B overview](https://www.pokemon.com/us/features/pokemon-champions-regulation-m-b-double-battles-overview).
 
@@ -33,6 +37,20 @@ Pokémon Champions **Season M-5** is in its active window through **September 8,
 | Scrafty (Premium) | Dark/Fighting | Fairy (4×), Fighting, Flying | [Dark/Fighting matchup page](/types/dark-fighting) |
 
 Use the [type calculator](/calculator) to verify the defensive chart, then confirm the actual Pokémon, moves, Abilities, items, and format in-game. The official announcement identifies Season M-5 rewards and dates; the table translates those listed typings through the standard chart.
+
+## 2026 Worlds Incineroar: redeem first, then check the matchup
+
+The 2026 Pokémon World Championships broadcast has ended, but its Pokémon Champions Incineroar reward is still within its redemption window. **Officially confirmed:** Pokémon's Worlds rewards announcement says that watching 60 minutes of the VGC broadcast awarded a one-time-use Twitch Drop code for a battle-ready **Careful Incineroar** with **Intimidate**, **Fake Out**, **Parting Shot**, **Throat Chop**, **Flare Blitz**, and the **2026 Worlds** title. That code expires **September 3, 2026, at 4:59 p.m. PDT**. The official announcement is the source for the distribution and expiry details; it does not claim that the reward is a universal best pick. [Read the official Worlds rewards announcement](https://www.pokemon.com/us/news/tune-in-to-worlds-and-pokemonxp-for-top-tier-digital-rewards).
+
+**TypeMatchup's chart interpretation:** Incineroar is Fire/Dark, so Water, Ground, Rock, and Fighting are super effective in the standard type chart; Fighting applies to both defensive types and is therefore **4×** effective. Psychic does no type-based damage to the Dark half. This is a defensive typing baseline, not a claim that any one Pokémon, move, or lead position beats the distributed Incineroar.
+
+| Question to test | Standard-chart answer | What can change the live result |
+| --- | --- | --- |
+| Which attacking type has the largest baseline multiplier? | Fighting (4×) | Targeting, partner protection, speed order, and the opponent's actual move choices |
+| Which other types are super effective? | Water, Ground, and Rock (2×) | Whether the attacker can safely enter and apply its move in Double Battles |
+| Is Psychic a counter by type alone? | No—Dark gives a Psychic immunity in the standard chart | A Pokémon's non-Psychic coverage, Ability, and team role may still matter |
+
+Review [Fire type matchups](/types/fire) and [Dark type matchups](/types/dark) for the single-type interactions, then use the [type calculator](/calculator) and [team weakness calculator](/pokemon/team-calculator) to check whether a six-Pokémon group has more than one answer to Fighting, Water, Ground, and Rock pressure. The official move and Ability list gives useful context, but it does not remove the need to evaluate the live board.
 
 ## What the official overview confirms
 
@@ -96,6 +114,14 @@ Regulation M-B is the current Pokémon Champions Double Battles regulation discu
 ### Which type matchups should I check for Mega Charizard Y teams?
 
 Start with Fire/Flying: Water, Electric, and Rock are super effective in the standard chart, with Rock dealing 4x damage before other battle effects. Then check the actual moves, Abilities, weather, items, and partners in your battle.
+
+### What is the 2026 Worlds Incineroar in Pokémon Champions?
+
+Pokémon's official Worlds rewards announcement says the 60-minute VGC Twitch Drop awarded a one-time-use code for a Careful Incineroar with Intimidate, Fake Out, Parting Shot, Throat Chop, Flare Blitz, and the 2026 Worlds title. Codes expire September 3, 2026, at 4:59 p.m. PDT.
+
+### What is Incineroar weak to in Pokémon Champions?
+
+Incineroar is Fire/Dark. In the standard type chart, Fighting is 4× effective, while Water, Ground, and Rock are 2× effective. Its Dark type grants a Psychic immunity. These are type-chart results; moves, Abilities, items, partners, and the live battle state can change the practical choice.
 
 ### Does a type advantage guarantee a win in Pokémon Champions?
 

@@ -228,11 +228,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
-              <h2 className="text-xl sm:text-2xl font-bold">Pokémon Champions Season M-5 Type Matchup Guide</h2>
-              <p className="text-gray-700 mt-1">Ranked Battles and the Season M-5 Battle Pass run through September 8—check Chandelure, Excadrill, and Scrafty type matchups before you build.</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Pokémon Champions Worlds Incineroar and Season M-5</h2>
+              <p className="text-gray-700 mt-1">A claimed Worlds Incineroar code expires September 3; check its Fire/Dark weaknesses and Season M-5 rewards before you build.</p>
             </div>
             <Link href="/blog/pokemon-champions-regulation-mb-type-matchups" className="text-blue-700 font-semibold hover:underline shrink-0">
-              Read the Season M-5 guide →
+              Read the matchup guide →
             </Link>
           </div>
         </section>
