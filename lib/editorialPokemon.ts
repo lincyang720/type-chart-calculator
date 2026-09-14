@@ -10,6 +10,10 @@ export const EDITORIAL_POKEMON = new Set([
   'tyranitar',
   'dragapult',
   'mimikyu',
+  'lucario',
+  'gengar',
+  'gyarados',
+  'rayquaza',
 ]);
 
 export function isEditorialPokemon(slug: string): boolean {
