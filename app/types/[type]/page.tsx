@@ -311,6 +311,120 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </article>
         )}
 
+        {typeId === 'fairy' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Fairy type across the generations</h2>
+            <p>
+              <strong>Direct answer:</strong> Fairy-type moves are super effective (2×) against Fighting, Dragon, and Dark.
+              A Fairy Pokémon is weak (2×) to Poison and Steel, resists Fighting, Bug, and Dark, and is immune to Dragon.
+            </p>
+
+            <h3>Gen 6 (2013): the type that was added to stop Dragon</h3>
+            <p>
+              Fairy did not exist before Generation 6. It was introduced specifically to rein in Dragon-types, which had dominated competitive play.
+              The chart gave Fairy two jobs: be super effective against Dragon, and be the only type immune to Dragon. Both are still true today.
+            </p>
+
+            <h3>What Fairy actually does now</h3>
+            <p>
+              Offensively Fairy hits Fighting, Dragon, and Dark for 2×, is weak (0.5×) against Fire, Poison, and Steel, and has no 0× targets of its own.
+              Defensively it is the Dragon-immune type, resists Fighting, Bug, and Dark, and is weak only to Poison and Steel.
+            </p>
+
+            <h3>What Fairy players most often get wrong</h3>
+            <ul>
+              <li><strong>"Fairy is immune to Dragon — and it is the only type that is."</strong> This was a Gen 6 addition built to check Dragon dominance. Players who learned the chart before 2013 never had a Dragon-immune type, so it still slips their mind.</li>
+              <li><strong>"Fairy is weak to Poison and Steel."</strong> Both are deliberate Fairy answers — a Fairy Pokémon takes 2× from Poison moves like Poison Jab and from Steel moves. Easy to forget because Fairy otherwise feels like a premium offensive type.</li>
+              <li><strong>"Fairy only resists three types."</strong> Aside from the Dragon immunity, Fairy resists just Fighting, Bug, and Dark and is neutral to almost everything else. People over-rate its bulk.</li>
+            </ul>
+          </article>
+        )}
+
+        {typeId === 'dragon' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Dragon type in battle</h2>
+            <p>
+              <strong>Direct answer:</strong> Dragon-type moves are super effective (2×) only against Dragon, not very effective (0.5×) against Steel,
+              and do nothing (0×) to Fairy. A Dragon Pokémon is weak (2×) to Ice, Dragon, and Fairy, and resists Fire, Water, Electric, and Grass.
+            </p>
+
+            <h3>Scenario 1 — Dragon versus Dragon</h3>
+            <p>
+              Your Dragon faces a Dragon (think Garchomp into Dragapult). Dragon is weak to Dragon, and Dragon moves are super effective against Dragon —
+              so it cuts both ways at 2×. The "same type feels neutral" trap again: neither side is safe.
+            </p>
+
+            <h3>Scenario 2 — an Ice move appears</h3>
+            <p>
+              Ice hits Dragon for 2×, and on a Dragon/Flying Pokémon that becomes a 4× weakness. Switch to a partner that resists Ice — Dragon itself resists Fire, Water, Electric, and Grass, so a bulky Fire or Water teammate often soaks the hit.
+            </p>
+
+            <h3>Scenario 3 — a Fairy switches in</h3>
+            <p>
+              Your Dragon moves do 0× to Fairy, and Fairy hits your Dragon for 2×. Dragon has no neutral or better option into Fairy — this is the Gen 6 Fairy check on Dragon. Keep a coverage move (Steel or Fairy-resistant partner) ready.
+            </p>
+
+            <h3>Scenario 4 — Dragon STAB only pressures Dragons</h3>
+            <p>
+              A Dragon attack is super effective only against other Dragons; against everything else it is neutral or worse (0.5× vs Steel). A Dragon Pokémon almost always needs a second attack type to actually threaten the team.
+            </p>
+
+            <h3>What Dragon players most often get wrong</h3>
+            <ul>
+              <li><strong>"Dragon is only super effective against Dragon."</strong> It is the most offensively narrow type — exactly one target. People assume Dragon hits wide because it is "strong."</li>
+              <li><strong>"Dragon has a Fairy weakness."</strong> Added in Gen 6. Before that Dragon was weak only to Ice and Dragon and resisted four types; the Fairy addition gave it a third weakness. Veterans pre-2013 forget Fairy exists in the matchup.</li>
+              <li><strong>"Dragon resists four types but the Ice weakness is the one to fear."</strong> Dragon resists Fire, Water, Electric, and Grass, yet a single Ice move (or Ice + Flying for 4×) is the classic knockout. Easy to remember Ice, forget the Fairy third wheel.</li>
+            </ul>
+          </article>
+        )}
+
+        {typeId === 'normal' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Normal type at a glance</h2>
+            <p>
+              <strong>Direct answer:</strong> Normal-type moves are super effective against nothing, not very effective (0.5×) against Rock and Steel,
+              and do nothing (0×) to Ghost. A Normal Pokémon is weak (2×) only to Fighting, resists nothing, and is immune to Ghost.
+            </p>
+
+            <h3>What Normal hits (offensive matchups)</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-2">Result</th>
+                  <th className="py-2">Types Normal is…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2 text-green-700 font-semibold">Super effective (2×)</td><td className="py-2">none</td></tr>
+                <tr className="border-b"><td className="py-2 text-red-700 font-semibold">Not very effective (0.5×)</td><td className="py-2">Rock, Steel</td></tr>
+                <tr><td className="py-2 text-gray-700 font-semibold">No effect (0×)</td><td className="py-2">Ghost</td></tr>
+              </tbody>
+            </table>
+
+            <h3>What hits Normal (defensive matchups)</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-2">Result</th>
+                  <th className="py-2">Types that are…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2 text-red-700 font-semibold">Super effective vs Normal (2×)</td><td className="py-2">Fighting</td></tr>
+                <tr className="border-b"><td className="py-2 text-green-700 font-semibold">Resist Normal (0.5×)</td><td className="py-2">none</td></tr>
+                <tr><td className="py-2 text-gray-700 font-semibold">Immune to Normal (0×)</td><td className="py-2">Ghost</td></tr>
+              </tbody>
+            </table>
+
+            <h3>What Normal players most often get wrong</h3>
+            <ul>
+              <li><strong>"Normal has zero super-effective matchups."</strong> Normal hits nothing for 2× — it is the only type with no offensive 2× targets. People expect a "basic" type to at least hit something hard.</li>
+              <li><strong>"Normal and Ghost are mutually immune."</strong> Normal moves do 0× to Ghost, and Ghost moves do 0× to Normal — both directions. A veteran who has been playing since Red and Blue admitted there are "still some moments I forget match ups." People remember one direction, forget the other.</li>
+              <li><strong>"Normal is weak only to Fighting and resists nothing."</strong> Exactly one weakness (Fighting) and zero resistances — unique among types. People over-estimate how "safe" or "broad" Normal is.</li>
+            </ul>
+          </article>
+        )}
+
         {/* Offensive Matchups */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <h2 className="text-2xl font-bold mb-4">Offensive Matchups</h2>
