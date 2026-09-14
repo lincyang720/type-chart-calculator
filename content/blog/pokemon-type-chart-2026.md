@@ -1,9 +1,9 @@
 ---
-title: "Pokemon Type Chart 2026 - Complete Guide for Scarlet & Violet"
+title: "Pokemon Type Chart 2026 - Complete Gen 9 Guide for Scarlet & Violet"
 slug: "pokemon-type-chart-2026"
 date: "2026-03-01"
 author: "TypeMatchup"
-description: "The complete Pokemon type chart for 2026, updated for Scarlet & Violet. All 18 types, strengths, weaknesses, immunities, and Tera Type interactions explained."
+description: "The complete Pokemon type chart for 2026, covering Gen 9 Scarlet & Violet. All 18 types, strengths, weaknesses, immunities, plus Tera Type, Tera Blast, Stellar Tera, and Paradox Pokemon explained."
 image: "/blog/type-chart-2026.jpg"
 tags: ["type-chart", "scarlet-violet", "guide", "beginners"]
 ---
@@ -187,6 +187,78 @@ In Tera Raids, the raid Pokemon's Tera Type determines its weaknesses:
 - Always bring Pokemon with moves super effective against the **Tera Type**, not the original type
 - For 7-star raids, coordinate with teammates for type coverage
 - Use our [Type Calculator](/calculator) to check exact matchups
+
+## Gen 9 Exclusive Mechanics
+
+### Stellar Tera Type (DLC)
+Introduced in *The Teal Mask* DLC, **Stellar Tera** boosts all of a Pokemon's moves once (2× STAB) the first time it Terastallizes. After that first use, it returns to the normal 1.5× STAB. It's best used on mixed attackers that benefit from a one-time burst.
+
+### Paradox Pokemon
+Scarlet and Violet introduced Paradox Pokemon — Ancient (Scarlet) and Future (Violet) forms — which often sport unique type combinations and synergize with the Booster Energy ability when Terastallized.
+
+### New Gen 9 Type Combinations
+Gen 9 debuted several brand-new type pairings:
+- **Grass/Fire** — Scovillain (the first ever!)
+- **Normal/Poison** — Grafaiai
+- **Poison/Normal** — Maushold line
+- **Electric/Fighting** — Pawmot
+
+## Tera Blast & Advanced Tera Strategy
+
+### Tera Blast (Gen 9 Move)
+**Tera Blast** is a Gen 9 move (Base Power 80) that changes to match your Tera Type and uses your higher offensive stat:
+- **Espathra** (Psychic) with Fairy Tera → Tera Blast becomes Fairy
+- **Dragonite** (Dragon/Flying) with Ground Tera → becomes Ground (hits Electric-types)
+- **Gholdengo** (Steel/Ghost) with Fighting Tera → becomes Fighting (hits Dark-types)
+
+### Best Tera Types by Pokemon
+
+**Offensive Pokemon**
+
+| Pokemon | Best Tera Type | Reason |
+|---------|---------------|--------|
+| Dragonite | Normal | 2× STAB Extreme Speed (priority nuke) |
+| Kingambit | Fairy/Dark | Removes Fighting weakness / boosts Sucker Punch |
+| Gholdengo | Steel/Fighting | Boosts Steel STAB / hits Dark-types |
+| Great Tusk | Ground/Fighting | Boosts STAB / removes weaknesses |
+| Roaring Moon | Flying/Dragon | Boosts STAB / removes Ice weakness |
+
+**Defensive Pokemon**
+
+| Pokemon | Best Tera Type | Reason |
+|---------|---------------|--------|
+| Garchomp | Fire/Steel | Removes 4× Ice weakness |
+| Corviknight | Steel/Water | Removes Electric weakness |
+| Toxapex | Poison/Water | Boosts defensive STAB |
+| Clodsire | Poison/Ground | Boosts defensive STAB |
+| Skeledirge | Fire/Ghost | Boosts STAB, removes weaknesses |
+
+### Competitive Tera Type Tier List
+A practical ranking of Tera Types by versatility:
+- **S-Tier:** Fairy (removes Dragon/Dark/Fighting weaknesses, Dragon immunity), Steel (best defensive typing, removes Poison/Steel weaknesses), Water (solid defense, boosts Water STAB), Ghost (immune to Normal/Fighting, great coverage)
+- **A-Tier:** Ground (Electric immunity, hits Steel/Electric/Fire), Flying (Ground immunity), Fire (removes Ice weakness), Grass (removes Water/Ground weaknesses situationally)
+- **B-Tier:** Electric, Dark, Dragon, Fighting
+- **C-Tier (niche):** Ice, Poison, Bug, Rock, Psychic, Normal (mostly for specific STAB boosts)
+
+### Tera Type Prediction & Counterplay
+- **Predict:** Check common sets, watch for defensive Teras when an opponent stays in on a bad matchup, bait an early Tera, or scout with Protect.
+- **Counter:** Force an early Tera with a super-effective move, then switch to a counter for their new type; or save your own Tera to react. Run multi-type coverage (e.g., Earthquake + Ice Beam + Thunderbolt) to blunt defensive Teras.
+
+### VGC vs Singles
+- **VGC (Doubles):** Offensive Teras dominate for quick KOs; defensive Teras are reserved for support Pokemon (Amoonguss, Torkoal); Tera timing can swing the whole game.
+- **OU Singles:** Defensive Teras are more common (remove key weaknesses); Tera Blast sees use on special attackers; Tera prediction and timing are win conditions saved for late game.
+
+### Common Tera Mistakes
+1. **Tera-ing too early** — save it for critical moments.
+2. **Predictable Tera Types** — mix it up to surprise opponents.
+3. **Ignoring the opponent's Tera** — always play around the fact they can Tera.
+4. **Bad Tera choices** — match the Tera Type to the Pokemon's role (offensive vs defensive).
+
+### Scarlet & Violet Meta: Top Threats by Type
+- **Dragon:** Garchomp, Dragapult, Baxcalibur — still powerful; Tera often removes Ice/Fairy weakness
+- **Fairy:** Flutter Mane, Iron Valiant, Clefable — dominate OU, check Dragon/Dark
+- **Steel:** Kingambit, Gholdengo, Corviknight — excellent defensive typing
+- **Ghost:** Gholdengo, Dragapult, Flutter Mane — immune to Normal/Fighting
 
 ## Quick Reference Tips
 

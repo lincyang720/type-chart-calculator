@@ -34,6 +34,17 @@ const nextConfig = {
         destination: '/pokemon/type-quiz',
         statusCode: 301,
       },
+      // P2: Merge twin type-chart pages into the canonical 2026 page
+      {
+        source: '/blog/pokemon-type-chart-scarlet-violet',
+        destination: '/blog/pokemon-type-chart-2026',
+        statusCode: 301,
+      },
+      {
+        source: '/blog/pokemon-type-chart-gen-9-scarlet-violet',
+        destination: '/blog/pokemon-type-chart-2026',
+        statusCode: 301,
+      },
     ];
   },
 }
