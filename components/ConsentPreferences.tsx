@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 type Consent = 'accepted' | 'rejected' | null;
 const STORAGE_KEY = 'typematchup-analytics-consent';
+const GA_MEASUREMENT_ID = 'G-TYMT2HPC3K';
 
 export default function ConsentPreferences() {
   const [consent, setConsent] = useState<Consent>(null);
@@ -30,9 +31,9 @@ export default function ConsentPreferences() {
     <>
       {consent === 'accepted' && (
         <>
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y6GJWZRG95" strategy="afterInteractive" />
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
           <Script id="google-analytics-consented" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y6GJWZRG95',{anonymize_ip:true});`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}',{anonymize_ip:true});`}
           </Script>
           <Analytics />
         </>
