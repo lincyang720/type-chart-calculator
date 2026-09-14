@@ -98,9 +98,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
   const type1 = pokemon.types[0] as TypeId;
   const type2 = pokemon.types.length > 1 ? pokemon.types[1] as TypeId : null;
 
-  const weaknesses = type2
-    ? calculateDualTypeWeaknesses(type1, type2)
-    : null;
+  const weaknesses = calculateDualTypeWeaknesses(type1, type2 ?? undefined);
 
   const typeNames = pokemon.types.map(t => typesData.types.find(td => td.id === t)?.name);
   const relatedPokemon = pokemonData.pokemon
