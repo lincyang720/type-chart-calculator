@@ -14,6 +14,14 @@ export const EDITORIAL_POKEMON = new Set([
   'gengar',
   'gyarados',
   'rayquaza',
+  'snorlax',
+  'umbreon',
+  'mewtwo',
+  'venusaur',
+  'pikachu',
+  'greninja',
+  'blastoise',
+  'sceptile',
 ]);
 
 export function isEditorialPokemon(slug: string): boolean {

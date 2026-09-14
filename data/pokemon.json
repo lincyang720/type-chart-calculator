@@ -1135,6 +1135,41 @@
       "strategy": "Greninja with Protean is unpredictable — every move gets STAB and changes its type, making it hard to switch into. Hydro Pump + Dark Pulse + Ice Beam covers almost everything. U-turn keeps momentum. Battle Bond Greninja trades versatility for raw power with boosted Water Shuriken."
     },
     {
+      "id": "sceptile",
+      "name": "Sceptile",
+      "types": [
+        "grass"
+      ],
+      "generation": 3,
+      "category": "starter",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 65,
+        "spAtk": 105,
+        "spDef": 85,
+        "speed": 120
+      },
+      "abilities": [
+        "Overgrow",
+        "Unburden"
+      ],
+      "recommendedMoves": [
+        "Leaf Blade",
+        "Energy Ball",
+        "Dragon Pulse",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Fire-type attackers",
+        "Flying-type attackers",
+        "Ice-type moves",
+        "Faster revenge killers"
+      ],
+      "strengths": "Blazing 120 Speed for a Grass type. Leaf Blade is a reliable high-power STAB. Unburden doubles Speed after losing its item.",
+      "strategy": "Sceptile is a fast Grass attacker built around Speed. Leaf Blade hits hard and rarely misses; Dragon Pulse adds unexpected Grass/Dragon coverage. Mega Sceptile gains Dragon typing plus Lightning Rod and a massive 145 Special Attack, becoming a premier special sweeper. Its low Defense (65) means it must out-speed and strike first — Swords Dance sets can clean late-game teams."
+    },
+    {
       "id": "heatran",
       "name": "Heatran",
       "types": [
