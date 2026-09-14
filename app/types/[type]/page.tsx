@@ -194,6 +194,123 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           <p className="text-lg text-gray-600">{type.description}</p>
         </div>
 
+        {typeId === 'fire' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Fire type at a glance</h2>
+            <p>
+              <strong>Direct answer:</strong> Fire-type moves are super effective (2×) against Grass, Ice, Bug, and Steel.
+              A Fire Pokémon is weak (2×) to Water, Ground, and Rock, resists six types (Fire, Grass, Ice, Bug, Steel, and Fairy),
+              and has no immunities.
+            </p>
+
+            <h3>What Fire hits (offensive matchups)</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-2">Result</th>
+                  <th className="py-2">Types Fire is…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2 text-green-700 font-semibold">Super effective (2×)</td><td className="py-2">Grass, Ice, Bug, Steel</td></tr>
+                <tr className="border-b"><td className="py-2 text-red-700 font-semibold">Not very effective (0.5×)</td><td className="py-2">Fire, Water, Rock, Dragon</td></tr>
+                <tr><td className="py-2 text-gray-700 font-semibold">No effect (0×)</td><td className="py-2">none</td></tr>
+              </tbody>
+            </table>
+
+            <h3>What hits Fire (defensive matchups)</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-2">Result</th>
+                  <th className="py-2">Types that are…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2 text-red-700 font-semibold">Super effective vs Fire (2×)</td><td className="py-2">Water, Ground, Rock</td></tr>
+                <tr className="border-b"><td className="py-2 text-green-700 font-semibold">Resist Fire (0.5×)</td><td className="py-2">Fire, Grass, Ice, Bug, Steel, Fairy</td></tr>
+                <tr><td className="py-2 text-gray-700 font-semibold">Immune to Fire (0×)</td><td className="py-2">none</td></tr>
+              </tbody>
+            </table>
+
+            <h3>What Fire players most often get wrong</h3>
+            <ul>
+              <li><strong>Fire resists Steel and Fairy.</strong> Because Fire resists so few things offensively, people forget it actually shrugs off Steel and Fairy moves (both 0.5×). Fire is one of only three types (with Poison and Steel) that resists Fairy on defense.</li>
+              <li><strong>Fire is weak to Rock.</strong> Rock is an uncommon attacking type, so it surprises people that a Rock Slide or Stone Edge dents Fire for 2× — the same Rock weakness Fire shares with Flying, Bug, and Ice.</li>
+              <li><strong>Ground is strong against Rock, not the reverse.</strong> A player who has been gaming since Red and Blue admitted the odd matchups still trip him up: "ground is strong against rock." It is a good reminder that Rock-type moves do nothing special to Ground, while Ground tears through Rock.</li>
+            </ul>
+          </article>
+        )}
+
+        {typeId === 'ghost' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Ghost type in battle</h2>
+            <p>
+              <strong>Direct answer:</strong> Ghost-type moves are super effective (2×) against Psychic and Ghost, and do nothing (0×) to Normal.
+              A Ghost Pokémon is weak (2×) to Ghost and Dark, and is immune (0×) to both Normal and Fighting.
+            </p>
+
+            <h3>Scenario 1 — switching into a Normal or Fighting move</h3>
+            <p>
+              You bring in Gengar as the opponent clicks Fake Out, Rapid Spin, or Close Combat. None of those connect: Ghost is immune to both Normal and Fighting.
+              That free turn is why Ghost is such a good defensive pivot — but only against those two categories, not against everything.
+            </p>
+
+            <h3>Scenario 2 — Ghost versus Ghost</h3>
+            <p>
+              Your Ghost faces a Ghost (think Gengar into Dragapult). Ghost is weak to Ghost, and Ghost moves are super effective against Ghost —
+              so it cuts both ways at 2×. Players often assume "same type = neutral" and lose a Pokémon they thought was safe.
+            </p>
+
+            <h3>Scenario 3 — a Dark attacker shows up</h3>
+            <p>
+              Dark moves hit Ghost for 2×. If you cannot switch to something that blanks Dark (a Fighting-immune or Dark-resistant partner),
+              the Ghost gets worn down fast. Terastallizing to a type that drops the Dark weakness is the common fix.
+            </p>
+
+            <h3>What Ghost players most often get wrong</h3>
+            <ul>
+              <li><strong>Ghost is immune to BOTH Normal and Fighting.</strong> Most people remember one and forget the other. Both Normal and Fighting moves do 0× to every Ghost Pokémon, and Ghost moves in turn do 0× to Normal.</li>
+              <li><strong>Ghost is weak to Ghost.</strong> The "same type feels neutral" trap again — Ghost takes 2× from Ghost moves, exactly like it does from Dark.</li>
+              <li><strong>Poison is not immune to Ghost or Rock — it is only half effective.</strong> A veteran admitted he mixes this up: "poison 对 rock 和对 ghost 都无效" (he remembers Poison as useless into both). In the actual chart, Poison is not very effective (0.5×) against Rock and Ghost, not 0×. It is a frequent mix-up worth catching before you plan a Poison switch.</li>
+            </ul>
+          </article>
+        )}
+
+        {typeId === 'steel' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Steel type across the generations</h2>
+            <p>
+              <strong>Direct answer:</strong> Steel-type moves are super effective (2×) against Ice, Rock, and Fairy.
+              A Steel Pokémon is weak (2×) to Fire, Fighting, and Ground, resists ten types, and is immune only to Poison.
+            </p>
+
+            <h3>Gen 2–5 (1999–2013): the original Steel</h3>
+            <p>
+              Steel was added in Generation 2 and arrived as the ultimate wall. It resisted eleven types — including Dark and Ghost —
+              and was immune to Poison, with only Fire, Fighting, and Ground as weaknesses. For a decade, "switch to Steel" meant "shrug off almost anything."
+            </p>
+
+            <h3>Gen 6 (2013): the Fairy rebalance</h3>
+            <p>
+              Fairy was introduced and the chart was trimmed. Steel lost its resistances to <strong>Dark</strong> and <strong>Ghost</strong> (those became neutral 1×),
+              and gained a new weakness to <strong>Fairy</strong>. Steel still resists ten types and is immune to Poison, but it no longer neutralizes Dark or Ghost attackers.
+            </p>
+
+            <h3>Gen 9 (2022+): Terastal</h3>
+            <p>
+              The type chart itself did not change, but Terastallization lets a Steel Pokémon change its type mid-battle, trading its resistances for a different defensive profile on demand.
+            </p>
+
+            <h3>What Steel players most often get wrong</h3>
+            <ul>
+              <li><strong>"Steel resists Dark and Ghost."</strong> Not since 2013. This is the single most common stale memory: a player who has been competing since Red and Blue told us the tricky ones are "matchups that have changed — mainly steel no longer resisting dark or ghost, or anything related to fairy." Since Gen 6 those two matchups are neutral, not resisted.</li>
+              <li><strong>"Steel isn't weak to Fairy."</strong> Wrong since Gen 6. Fairy was added that generation specifically and hits Steel for 2×, so Sylveon, Tinkaton, and other Fairy attackers are real answers to Steel.</li>
+              <li><strong>"Steel shrugs off Ground."</strong> It never did. Ground has been super effective against Steel since Steel existed (Gen 2). Steel's bulk comes from its many resistances, not from avoiding Ground.</li>
+            </ul>
+          </article>
+        )}
+
         {/* Offensive Matchups */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <h2 className="text-2xl font-bold mb-4">Offensive Matchups</h2>
