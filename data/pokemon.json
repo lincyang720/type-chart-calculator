@@ -750,6 +750,41 @@
       "strategy": "Infernape is the most versatile Fire/Fighting starter. It can go physical, special, or mixed. Iron Fist + Mach Punch gives it priority. U-turn generates momentum. Faster and more flexible than Blaziken without Speed Boost."
     },
     {
+      "id": "hydreigon",
+      "name": "Hydreigon",
+      "types": [
+        "dark",
+        "dragon"
+      ],
+      "generation": 5,
+      "category": "pseudo-legendary",
+      "baseStats": {
+        "hp": 92,
+        "attack": 105,
+        "defense": 90,
+        "spAtk": 125,
+        "spDef": 90,
+        "speed": 98
+      },
+      "abilities": [
+        "Levitate"
+      ],
+      "recommendedMoves": [
+        "Draco Meteor",
+        "Dark Pulse",
+        "Fire Blast",
+        "U-turn"
+      ],
+      "counters": [
+        "Fairy-type Pokemon",
+        "Fighting-type moves",
+        "Bug-type moves",
+        "Ice-type moves"
+      ],
+      "strengths": "Strong Special Attack (125) and Speed (98). Dark/Dragon coverage hits almost everything for neutral or better. Levitate grants Ground immunity.",
+      "strategy": "Hydreigon is a brutal special attacker with 125 SpAtk and 98 Speed. Draco Meteor and Dark Pulse give STAB on both of its types. Levitate makes it immune to Ground, covering an otherwise exploitable hole. Its main drawback is Draco Meteor's Special Attack drop and a spread of 2x weaknesses (Fairy, Fighting, Bug, Ice, Dragon) — but no 4x weakness keeps it bulky enough to fire off hits. Choice Specs or Life Orb sets hit like a truck."
+    },
+    {
       "id": "magearna",
       "name": "Magearna",
       "types": [

@@ -22,6 +22,14 @@ export const EDITORIAL_POKEMON = new Set([
   'greninja',
   'blastoise',
   'sceptile',
+  'metagross',
+  'salamence',
+  'scizor',
+  'swampert',
+  'togekiss',
+  'hydreigon',
+  'blaziken',
+  'infernape',
 ]);
 
 export function isEditorialPokemon(slug: string): boolean {
