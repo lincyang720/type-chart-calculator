@@ -4,6 +4,7 @@ import Link from 'next/link';
 import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
+import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 
 export const metadata: Metadata = {
   title: 'All Types - Complete Type Guide and Matchups',
@@ -32,7 +33,13 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
+function getTypeName(typeId: string) {
+  return typesData.types.find(typeItem => typeItem.id === typeId)?.name ?? typeId;
+}
+
 export default function TypesPage() {
+  const dualTypeGuides = Array.from(EDITORIAL_COMBINATIONS).sort((a, b) => a.localeCompare(b));
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">All Types</h1>
@@ -65,6 +72,31 @@ export default function TypesPage() {
           );
         })}
       </div>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold mb-4 text-center">Dual Type Guides</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {dualTypeGuides.map(slug => {
+            const [type1, type2] = slug.split('-') as [TypeId, TypeId];
+
+            return (
+              <Link
+                key={slug}
+                href={`/types/${slug}`}
+                className="bg-white rounded-lg shadow p-4 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex gap-2 mb-2">
+                  <TypeBadge typeId={type1} size="sm" />
+                  <TypeBadge typeId={type2} size="sm" />
+                </div>
+                <span className="font-semibold text-gray-800">
+                  {getTypeName(type1)}/{getTypeName(type2)}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }

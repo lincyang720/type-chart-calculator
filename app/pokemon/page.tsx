@@ -3,6 +3,7 @@ import Link from 'next/link';
 import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';
 import pokemonData from '@/data/pokemon.json';
+import { EDITORIAL_POKEMON } from '@/lib/editorialPokemon';
 
 export const metadata: Metadata = {
   title: 'Pokemon Weakness Guide - All Pokemon Counters & Strategy',
@@ -14,6 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function PokemonListPage() {
+  const allGuides = pokemonData.pokemon
+    .filter(pokemon => EDITORIAL_POKEMON.has(pokemon.id))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   const categories = [
     { key: 'pseudo-legendary', label: 'Pseudo-Legendaries' },
     { key: 'starter', label: 'Starters' },
@@ -51,6 +56,27 @@ export default function PokemonListPage() {
                 Explore dual-type combinations →
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4">All Pokemon Guides</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {allGuides.map(pokemon => (
+              <Link
+                key={pokemon.id}
+                href={`/pokemon/${pokemon.id}`}
+                className="block bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-4"
+              >
+                <h3 className="font-bold text-lg mb-2">{pokemon.name}</h3>
+                <div className="flex gap-2 mb-2">
+                  {pokemon.types.map(t => (
+                    <TypeBadge key={t} typeId={t as TypeId} size="sm" />
+                  ))}
+                </div>
+                <p className="text-sm text-gray-500">Gen {pokemon.generation}</p>
+              </Link>
+            ))}
           </div>
         </section>
 
