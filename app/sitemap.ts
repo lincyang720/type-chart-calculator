@@ -125,20 +125,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Only submit combinations with substantial editorial content. Calculator-only
   // pages stay accessible but are noindex and intentionally absent here.
   const comboPages: MetadataRoute.Sitemap = [];
-  for (let i = 0; i < ALL_TYPES.length; i++) {
-    for (let j = i + 1; j < ALL_TYPES.length; j++) {
-      const slug = `${ALL_TYPES[i]}-${ALL_TYPES[j]}`;
-      if (!EDITORIAL_COMBINATIONS.has(slug)) continue;
-      const isPopular = popularCombinations.combinations.some(
-        c => c.type1 === ALL_TYPES[i] && c.type2 === ALL_TYPES[j]
-      );
-      comboPages.push({
-        url: `${baseUrl}/types/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: isPopular ? 0.8 : 0.7,
-      });
-    }
+  for (const slug of EDITORIAL_COMBINATIONS) {
+    const [type1, type2] = slug.split('-');
+    const isPopular = popularCombinations.combinations.some(
+      c => (c.type1 === type1 && c.type2 === type2) ||
+        (c.type1 === type2 && c.type2 === type1)
+    );
+    comboPages.push({
+      url: `${baseUrl}/types/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: isPopular ? 0.8 : 0.7,
+    });
   }
 
   // Add blog posts
