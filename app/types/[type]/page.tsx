@@ -11,6 +11,7 @@ import {
   DualTypeContent,
   generateMetadata as generateDualTypeMetadata,
 } from '@/app/combo/[combo]/page';
+import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -47,10 +48,19 @@ function describeRiskBand(score: number) {
 // Pre-generate all 18 single-type pages and 153 dual-type pages at build time.
 export async function generateStaticParams() {
   const params: { type: string }[] = ALL_TYPES.map((type) => ({ type }));
+  const generated = new Set(params.map(param => param.type));
 
   for (let i = 0; i < ALL_TYPES.length; i++) {
     for (let j = i + 1; j < ALL_TYPES.length; j++) {
-      params.push({ type: `${ALL_TYPES[i]}-${ALL_TYPES[j]}` });
+      const combo = `${ALL_TYPES[i]}-${ALL_TYPES[j]}`;
+      params.push({ type: combo });
+      generated.add(combo);
+    }
+  }
+
+  for (const combo of EDITORIAL_COMBINATIONS) {
+    if (!generated.has(combo)) {
+      params.push({ type: combo });
     }
   }
 
