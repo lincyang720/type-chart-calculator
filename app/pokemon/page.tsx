@@ -119,6 +119,18 @@ export default function PokemonListPage() {
             <Link href="/battle-simulator" className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
               Battle Simulator
             </Link>
+            <Link href="/pokemon/type-chart" className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
+              Pokemon Type Chart
+            </Link>
+            <Link href="/pokemon/type-chart-with-abilities" className="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors text-center">
+              Type Chart With Abilities
+            </Link>
+            <Link href="/pokemon/type-calculator-gen-9" className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
+              Gen 9 Type Calculator
+            </Link>
+            <Link href="/pokemon/type-quiz" className="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors text-center">
+              Pokemon Type Quiz
+            </Link>
           </div>
         </section>
       </div>
