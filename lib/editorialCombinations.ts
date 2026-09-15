@@ -15,6 +15,20 @@ export const EDITORIAL_COMBINATIONS = new Set([
   'water-flying',
   'grass-poison',
   'dragon-flying',
+  'water-electric',
+  'psychic-dark',
+  'psychic-fairy',
+  'dragon-steel',
+  'fire-fighting',
+  'ground-ghost',
+  'ground-flying',
+  'flying-dark',
+  'ice-ground',
+  'poison-bug',
+  'ground-rock',
+  'grass-ice',
+  'normal-flying',
+  'bug-fairy',
 ]);
 
 export function isEditorialCombination(slug: string): boolean {

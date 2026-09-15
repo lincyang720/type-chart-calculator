@@ -66,6 +66,7 @@ type CombinationGuide = {
   offense: string;
   counterplay: string;
   teamBuilding: string;
+  extraLinks?: { href: string; label: string }[];
   faqs: { question: string; answer: string }[];
 };
 
@@ -211,6 +212,252 @@ const COMBINATION_GUIDES: Record<string, CombinationGuide> = {
     ],
   },
 };
+
+type GeneratedCombinationGuideConfig = {
+  slug: string;
+  type1: TypeId;
+  type2: TypeId;
+  headline: string;
+  examples: string[];
+  role: string;
+  offense: string;
+  teamBuilding: string;
+  related: string[];
+};
+
+function makeMultiplierPhrase(types: TypeId[], multiplier: string) {
+  if (types.length === 0) return `no ${multiplier} weakness`;
+  return `${multiplier} weak to ${formatTypeList(types)}`;
+}
+
+function makeResistancePhrase(types: TypeId[], multiplier: string) {
+  if (types.length === 0) return `no ${multiplier} resistance`;
+  return `${multiplier} resists ${formatTypeList(types)}`;
+}
+
+function makeGeneratedCombinationGuide(config: GeneratedCombinationGuideConfig): CombinationGuide {
+  const type1Name = getTypeName(config.type1);
+  const type2Name = getTypeName(config.type2);
+  const displayName = `${type1Name}/${type2Name}`;
+  const reverseName = `${type2Name}/${type1Name}`;
+  const weaknesses = calculateDualTypeWeaknesses(config.type1, config.type2);
+  const weakPhrase = [
+    makeMultiplierPhrase(weaknesses.quadrupleWeak, '4×'),
+    makeMultiplierPhrase(weaknesses.doubleWeak, '2×'),
+  ].join(' and ');
+  const resistPhrase = [
+    makeResistancePhrase(weaknesses.quadrupleResist, '¼×'),
+    makeResistancePhrase(weaknesses.doubleResist, '½×'),
+  ].join('; ');
+  const immunePhrase = weaknesses.immune.length > 0
+    ? `It is immune to ${formatTypeList(weaknesses.immune)}.`
+    : 'It has no type immunity under the standard chart.';
+  const examples = config.examples.length > 0
+    ? `Representative Pokémon include ${config.examples.join(', ')}.`
+    : `There are no established Pokémon with this exact ${displayName} typing.`;
+  const pressureTypes = [...weaknesses.quadrupleWeak, ...weaknesses.doubleWeak];
+  const pressureText = pressureTypes.length > 0 ? formatTypeList(pressureTypes) : 'strong neutral coverage';
+  const firstPressure = pressureTypes.length > 0 ? formatTypeList(pressureTypes.slice(0, 2)) : 'neutral attacks';
+
+  return {
+    heading: `${displayName} strategy: ${config.headline}`,
+    opening: `${displayName} and ${reverseName} are the same defensive pairing; this page uses ${config.slug} as the canonical URL. ${config.role} ${examples} The standard type chart gives this combination ${weakPhrase}. ${immunePhrase} Its main defensive value comes from ${resistPhrase}, but stats, ability, item, and format still decide whether a real Pokémon can use those entries repeatedly.`,
+    offense: config.offense,
+    counterplay: `To counter ${displayName}, start with the chart pressure: ${pressureText}. If a 4× weakness is listed, preserve that attack type before revealing it; if there is no 4× weakness, repeated 2× pressure and hazard chip usually matter more than a single surprise hit. Scout for abilities, Terastallization, weather, recovery, and pivot moves before assuming the visible multiplier ends the exchange.`,
+    teamBuilding: `${config.teamBuilding} Use the Team Calculator to check whether the rest of the six stacks the same ${firstPressure} problem, then compare the full defensive chart before choosing moves or teammates.`,
+    extraLinks: [
+      { href: '/pokemon/type-chart', label: 'Type Chart' },
+      { href: '/calculator', label: 'Dual Type Calculator' },
+      ...config.related.map(slug => ({
+        href: `/types/${slug}`,
+        label: `${slug.split('-').map(typeId => getTypeName(typeId as TypeId)).join('/')} guide`,
+      })),
+    ],
+    faqs: [
+      {
+        question: `What is ${displayName} weak to?`,
+        answer: `${displayName} is ${weakPhrase} under the standard type chart.`,
+      },
+      {
+        question: `Is ${reverseName} a different type combination?`,
+        answer: `No. ${reverseName} and ${displayName} use the same two types, so they share the same weaknesses, resistances, and immunities.`,
+      },
+      {
+        question: `What is ${displayName} immune to?`,
+        answer: immunePhrase,
+      },
+    ],
+  };
+}
+
+const GENERATED_COMBINATION_GUIDE_CONFIGS: GeneratedCombinationGuideConfig[] = [
+  {
+    slug: 'water-electric',
+    type1: 'water',
+    type2: 'electric',
+    headline: 'pivot pressure with only two direct weaknesses',
+    examples: ['Lanturn', 'Chinchou', 'Rotom-Wash'],
+    role: 'Water/Electric is a flexible pivot typing that can pressure Fire, Flying, Ground, and Water-based structures while resisting several common utility attacks.',
+    offense: 'Water STAB threatens Fire, Ground, and Rock targets, while Electric STAB pressures Water and Flying targets. The pairing is especially useful on pivots because the opponent often has to choose between respecting Hydro Pump-style Water damage and blocking Volt Switch-style momentum. Grass and Dragon resist the Water side, and Ground can block Electric attacks unless an ability or move changes the interaction, so coverage and prediction still matter.',
+    teamBuilding: 'Water/Electric appreciates Grass answers and a plan for Ground pressure. Flying, Grass, or Bug partners can soften Ground lanes, while Steel or Fire partners may help against Grass attacks depending on the format.',
+    related: ['water-ground', 'flying-steel'],
+  },
+  {
+    slug: 'psychic-dark',
+    type1: 'psychic',
+    type2: 'dark',
+    headline: 'Psychic immunity with a severe Bug alarm',
+    examples: ['Inkay', 'Malamar', 'Hoopa Unbound'],
+    role: 'Psychic/Dark is a tricky offensive pairing that blocks Psychic attacks while threatening Psychic- and Ghost-type opponents back.',
+    offense: 'Psychic STAB pressures Fighting and Poison targets, while Dark STAB threatens Psychic and Ghost targets. That gives the pairing good anti-utility value, but Fairy can punish the Dark side and Bug is the severe defensive warning. Because the typing has few resistances, it needs speed, disruption, or strong immediate pressure rather than relying on safe repeated switches.',
+    teamBuilding: 'Psychic/Dark wants Fairy and Bug answers nearby. Steel, Poison, Fire, Flying, or Rock teammates can help depending on the specific threats, while hazard support can make its forced switches more valuable.',
+    related: ['psychic-fairy', 'flying-dark'],
+  },
+  {
+    slug: 'psychic-fairy',
+    type1: 'psychic',
+    type2: 'fairy',
+    headline: 'Dragon immunity and steady special pressure',
+    examples: ['Gardevoir', 'Galarian Rapidash', 'Hatterene', 'Tapu Lele', 'Mr. Mime'],
+    role: 'Psychic/Fairy is best at punishing Fighting, Dragon, Dark, and Poison-adjacent game plans while giving a team a clean Dragon immunity.',
+    offense: 'Psychic STAB pressures Fighting and Poison targets, while Fairy STAB handles Dragon, Dark, and Fighting targets. Steel is the most important shared answer because it resists both STAB types and threatens back, while Ghost and Poison can also force the defensive side. The pairing works best when its user can punish Steel entries with coverage, hazards, or a teammate.',
+    teamBuilding: 'Psychic/Fairy needs Steel, Poison, and Ghost counterplay. Ground, Fire, Dark, or Steel partners can cover those lanes, and the Psychic/Fairy slot repays them by checking Fighting and Dragon pressure.',
+    related: ['psychic-dark', 'steel-fairy'],
+  },
+  {
+    slug: 'dragon-steel',
+    type1: 'dragon',
+    type2: 'steel',
+    headline: 'Dragon power without the usual Dragon liabilities',
+    examples: ['Dialga', 'Duraludon', 'Archaludon', 'Hisuian Sliggoo', 'Hisuian Goodra'],
+    role: 'Dragon/Steel is a premium defensive-offensive mix because Steel removes several classic Dragon problems while Dragon adds useful Fire and Water neutrality.',
+    offense: 'Dragon STAB supplies broad neutral pressure, while Steel STAB targets Fairy, Ice, and Rock opponents. The important offensive problem is that Steel-types can sit on both sides unless the user carries Fire, Ground, or Fighting coverage. Defensively, the typing gives many switch-in chances but must still respect Fighting and Ground attacks.',
+    teamBuilding: 'Dragon/Steel pairs well with Flying, Levitate, Fairy, Ghost, or bulky Water teammates that can absorb Ground and Fighting pressure. It also appreciates partners that punish Steel mirrors and bulky Ground answers.',
+    related: ['flying-steel', 'ground-dragon'],
+  },
+  {
+    slug: 'fire-fighting',
+    type1: 'fire',
+    type2: 'fighting',
+    headline: 'starter-style offense with four clear answers',
+    examples: ['Blaziken', 'Infernape', 'Emboar', 'Pignite', 'Combusken'],
+    role: 'Fire/Fighting is an aggressive wallbreaking combination associated with several starters and fast pressure roles.',
+    offense: 'Fire STAB threatens Grass, Ice, Bug, and Steel targets, while Fighting STAB breaks Normal, Rock, Steel, Ice, and Dark targets. Together they punish many defensive cores, especially Steel-heavy teams. Water, Ground, Flying, and Psychic pressure keeps the typing honest, so its best users usually rely on Speed, setup, priority, or pivot support rather than raw defensive safety.',
+    teamBuilding: 'Fire/Fighting needs dependable Water, Ground, Flying, and Psychic answers. Grass, Water, Dark, Flying, or Steel teammates can cover different parts of that spread, and hazard support helps turn forced switches into real progress.',
+    related: ['fire-flying', 'steel-fairy'],
+  },
+  {
+    slug: 'ground-ghost',
+    type1: 'ground',
+    type2: 'ghost',
+    headline: 'three immunities with many pressure points',
+    examples: ['Golett', 'Golurk', 'Sandygast', 'Palossand', 'Runerigus'],
+    role: 'Ground/Ghost is unusual because it combines Electric, Normal, and Fighting immunities with practical offensive pressure.',
+    offense: 'Ground STAB threatens Electric, Fire, Poison, Rock, and Steel targets, while Ghost STAB pressures Ghost and Psychic targets. Normal types block Ghost attacks and Flying or Levitate users avoid Ground, so the pairing needs coverage or prediction to avoid obvious blanks. Its five 2× weaknesses mean it should be used as a targeted switch-in, not a universal wall.',
+    teamBuilding: 'Ground/Ghost wants Water, Grass, Ice, Ghost, and Dark answers around it. Fairy, Dark, Water, Steel, and Grass partners can each cover part of the problem while benefiting from its immunities.',
+    related: ['water-ground', 'poison-ghost'],
+  },
+  {
+    slug: 'ground-flying',
+    type1: 'ground',
+    type2: 'flying',
+    headline: 'double immunity with a major Ice emergency',
+    examples: ['Gligar', 'Gliscor', 'Landorus', 'Landorus-Therian'],
+    role: 'Ground/Flying is a high-value pivot typing because it blocks both Electric and Ground attacks while resisting Fighting, Poison, and Bug.',
+    offense: 'Ground STAB threatens Electric, Fire, Poison, Rock, and Steel targets, while Flying STAB pressures Grass, Fighting, and Bug targets. Ice is the main defensive alarm and Water is the other direct weakness, so the user needs to avoid careless entries into common coverage. Flying and Levitate targets can avoid Ground attacks, which makes Rock, Flying, or utility coverage important.',
+    teamBuilding: 'Ground/Flying needs a strong Ice plan and a Water answer. Steel, Fire, Water, or bulky Grass partners can help, while this typing repays them by blanking Electric and Ground attacks.',
+    related: ['ground-dragon', 'flying-steel'],
+  },
+  {
+    slug: 'flying-dark',
+    type1: 'flying',
+    type2: 'dark',
+    headline: 'two immunities and a crowded weakness list',
+    examples: ['Murkrow', 'Honchkrow', 'Vullaby', 'Mandibuzz', 'Yveltal'],
+    role: 'Dark/Flying and Flying/Dark give a team Psychic and Ground immunities in one slot, which can be valuable for pivots and revenge killers.',
+    offense: 'Dark STAB threatens Psychic and Ghost targets, while Flying STAB pressures Grass, Fighting, and Bug targets. Electric, Ice, Rock, and Fairy all hit for 2×, so the typing often needs either strong Speed or defensive recovery to remain useful. Rock is especially important because it may also appear through entry hazards.',
+    teamBuilding: 'Dark/Flying needs Electric, Ice, Rock, and Fairy answers. Steel and Ground partners can cover several of those lanes, while the Dark/Flying slot can absorb Ground and Psychic pressure for them.',
+    related: ['psychic-dark', 'dragon-flying'],
+  },
+  {
+    slug: 'ice-ground',
+    type1: 'ice',
+    type2: 'ground',
+    headline: 'excellent attacking reach with five weaknesses',
+    examples: ['Swinub', 'Piloswine', 'Mamoswine'],
+    role: 'Ice/Ground is one of the strongest offensive type pairings because it pressures many common defensive structures at once.',
+    offense: 'Ice STAB threatens Dragon, Flying, Grass, and Ground targets, while Ground STAB threatens Electric, Fire, Poison, Rock, and Steel targets. The result is excellent coverage, but defensively the type must account for Fire, Water, Grass, Fighting, and Steel pressure. Its Electric immunity is valuable, but it does not make the pairing easy to switch in repeatedly.',
+    teamBuilding: 'Ice/Ground needs teammates that cover Fire, Water, Grass, Fighting, and Steel. Bulky Water, Fairy, Flying, and Fire-resistant partners can help create safer entries so the Ice/Ground slot can focus on attacking.',
+    related: ['water-ground', 'ground-flying'],
+  },
+  {
+    slug: 'poison-bug',
+    type1: 'poison',
+    type2: 'bug',
+    headline: 'strong Fighting and Grass control with common counters',
+    examples: ['Weedle', 'Kakuna', 'Beedrill', 'Venipede', 'Scolipede'],
+    role: 'Poison/Bug is a niche defensive pairing that sharply resists Fighting and Grass while checking some Fairy and Poison interactions.',
+    offense: 'Poison STAB pressures Fairy and Grass targets, while Bug STAB threatens Psychic, Dark, and Grass targets. Fire, Flying, Psychic, and Rock all punish the typing, so a Poison/Bug Pokémon needs a clear role such as speed, hazards, status, or priority rather than relying on broad defensive coverage.',
+    teamBuilding: 'Poison/Bug wants Rock, Fire, Flying, and Psychic answers. Steel, Rock, Water, Dark, or Ground partners can help cover those lanes while benefiting from the Grass and Fighting resistances.',
+    related: ['grass-poison', 'bug-steel'],
+  },
+  {
+    slug: 'ground-rock',
+    type1: 'ground',
+    type2: 'rock',
+    headline: 'Electric immunity with two severe 4× weaknesses',
+    examples: ['Geodude', 'Graveler', 'Golem', 'Rhydon', 'Rhyperior'],
+    role: 'Rock/Ground and Ground/Rock are powerful into Electric, Fire, Flying, and Poison pressure, but the defensive price is high.',
+    offense: 'Rock STAB threatens Flying, Fire, Ice, and Bug targets, while Ground STAB threatens Electric, Fire, Poison, Rock, and Steel targets. Together they create strong physical pressure, but Water and Grass both hit for 4× and can erase the advantage immediately. Ice, Fighting, Ground, and Steel also hit for 2×, so prediction and support are mandatory.',
+    teamBuilding: 'Rock/Ground needs real Water and Grass answers before anything else. Grass, Dragon, Water, Flying, and bulky Steel partners can help depending on the format, while the Rock/Ground slot repays them with Electric immunity and strong Rock pressure.',
+    related: ['water-ground', 'ground-dragon'],
+  },
+  {
+    slug: 'grass-ice',
+    type1: 'grass',
+    type2: 'ice',
+    headline: 'useful coverage with a Fire crisis',
+    examples: ['Snover', 'Abomasnow', 'Mega Abomasnow'],
+    role: 'Grass/Ice is a rare pairing that pressures Water, Ground, Flying, Dragon, and Grass-based structures, but it has a demanding defensive chart.',
+    offense: 'Grass STAB threatens Water, Ground, and Rock targets, while Ice STAB threatens Dragon, Flying, Grass, and Ground targets. That offensive spread is useful, but Fire is a 4× weakness and Fighting, Poison, Flying, Bug, Rock, and Steel all hit for 2×. The typing should normally be used to force progress, not to absorb many attacks.',
+    teamBuilding: 'Grass/Ice needs a dedicated Fire answer and several secondary covers. Water, Dragon, Fire-resistant, Steel-resistant, and Flying-resistant teammates can help keep its many weaknesses from becoming a constant liability.',
+    related: ['grass-poison', 'water-ground'],
+  },
+  {
+    slug: 'normal-flying',
+    type1: 'normal',
+    type2: 'flying',
+    headline: 'classic early-route utility with two immunities',
+    examples: ['Pidgey', 'Pidgeotto', 'Pidgeot', 'Spearow', 'Fearow'],
+    role: 'Normal/Flying is a classic utility pairing that combines Ghost and Ground immunities with straightforward Flying pressure.',
+    offense: 'Flying STAB pressures Grass, Fighting, and Bug targets, while Normal STAB gives neutral coverage against many opponents that do not resist it. Electric, Ice, and Rock are the direct weaknesses, and Rock also matters because of common hazard pressure. The type is simple, but speed, pivoting, and support moves can make it useful.',
+    teamBuilding: 'Normal/Flying needs Electric, Ice, and Rock answers. Ground partners block Electric, Steel partners help against Ice and Rock, and bulky Water partners can soften Rock pressure.',
+    related: ['flying-steel', 'dragon-flying'],
+  },
+  {
+    slug: 'bug-fairy',
+    type1: 'bug',
+    type2: 'fairy',
+    headline: 'Dragon immunity with a broad weakness spread',
+    examples: ['Cutiefly', 'Ribombee', 'Totem Ribombee'],
+    role: 'Bug/Fairy and Fairy/Bug are rare, fast-support leaning typings that combine a Dragon immunity with strong Fighting resistance.',
+    offense: 'Bug STAB threatens Psychic, Dark, and Grass targets, while Fairy STAB threatens Dragon, Dark, and Fighting targets. Fire, Poison, Flying, Rock, and Steel all hit for 2×, so the typing needs speed, utility, or a support role to avoid being overwhelmed by common coverage. Its Dragon immunity is valuable, but it does not cover the rest of the chart by itself.',
+    teamBuilding: 'Bug/Fairy wants Fire, Poison, Flying, Rock, and Steel answers. Ground, Water, Steel, and Fire-resistant partners can cover those lanes, while Bug/Fairy can help into Fighting, Dark, Grass, and Dragon pressure.',
+    related: ['bug-steel', 'steel-fairy'],
+  },
+];
+
+Object.assign(
+  COMBINATION_GUIDES,
+  Object.fromEntries(GENERATED_COMBINATION_GUIDE_CONFIGS.map(config => [config.slug, makeGeneratedCombinationGuide(config)]))
+);
+
+COMBINATION_GUIDES['dragon-flying'].extraLinks = [
+  { href: '/pokemon/type-chart', label: 'Type Chart' },
+  { href: '/calculator', label: 'Dual Type Calculator' },
+  { href: '/types/ground-dragon', label: 'Ground/Dragon guide' },
+  { href: '/types/flying-steel', label: 'Flying/Steel guide' },
+];
 
 function findCombination(type1: TypeId, type2: TypeId) {
   return popularCombinations.combinations.find(
@@ -399,6 +646,18 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
               Read the <Link href="/pokemon/best-type-combinations">best Pokémon type combinations guide</Link> for a
               side-by-side defensive comparison.
             </p>
+
+            {guide.extraLinks && guide.extraLinks.length > 0 && (
+              <p>
+                Continue with{' '}
+                {guide.extraLinks.map((link, index) => (
+                  <span key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                    {index < guide.extraLinks!.length - 2 ? ', ' : index === guide.extraLinks!.length - 2 ? ', and ' : ''}
+                  </span>
+                ))}.
+              </p>
+            )}
 
             <h3>Frequently asked questions</h3>
             {guide.faqs.map(faq => (
