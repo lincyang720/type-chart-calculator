@@ -53,6 +53,14 @@ export const EDITORIAL_POKEMON = new Set([
   'kingambit',
   'great-tusk',
   'tinkaton',
+  'grimmsnarl',
+  'machamp',
+  'weavile',
+  'volcarona',
+  'incineroar',
+  'arcanine',
+  'decidueye',
+  'rillaboom',
   'calyrex-shadow',
 ]);
 
