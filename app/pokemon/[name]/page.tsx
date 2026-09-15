@@ -42,6 +42,25 @@ function getComboSlug(t1: TypeId, t2: TypeId): string {
   return i1 < i2 ? `${t1}-${t2}` : `${t2}-${t1}`;
 }
 
+function applyPokemonAbilityContext(
+  pokemon: { id: string; abilities: string[] },
+  weaknesses: ReturnType<typeof calculateDualTypeWeaknesses>
+) {
+  if (pokemon.id !== 'rotom-wash' || !pokemon.abilities.includes('Levitate')) {
+    return weaknesses;
+  }
+
+  return {
+    ...weaknesses,
+    quadrupleWeak: weaknesses.quadrupleWeak.filter(type => type !== 'ground'),
+    doubleWeak: weaknesses.doubleWeak.filter(type => type !== 'ground'),
+    normal: weaknesses.normal.filter(type => type !== 'ground'),
+    doubleResist: weaknesses.doubleResist.filter(type => type !== 'ground'),
+    quadrupleResist: weaknesses.quadrupleResist.filter(type => type !== 'ground'),
+    immune: weaknesses.immune.includes('ground') ? weaknesses.immune : [...weaknesses.immune, 'ground' as TypeId],
+  };
+}
+
 // Pre-generate all pokemon pages at build time
 export async function generateStaticParams() {
   return pokemonData.pokemon.map((p) => ({ name: p.id }));
@@ -59,7 +78,10 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
 
   const typeNames = pokemon.types.map(t => typesData.types.find(td => td.id === t)?.name).join('/');
   const weaknesses = pokemon.types.length === 2
-    ? calculateDualTypeWeaknesses(pokemon.types[0] as TypeId, pokemon.types[1] as TypeId)
+    ? applyPokemonAbilityContext(
+      pokemon,
+      calculateDualTypeWeaknesses(pokemon.types[0] as TypeId, pokemon.types[1] as TypeId)
+    )
     : null;
 
   return {
@@ -98,7 +120,10 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
   const type1 = pokemon.types[0] as TypeId;
   const type2 = pokemon.types.length > 1 ? pokemon.types[1] as TypeId : null;
 
-  const weaknesses = calculateDualTypeWeaknesses(type1, type2 ?? undefined);
+  const weaknesses = applyPokemonAbilityContext(
+    pokemon,
+    calculateDualTypeWeaknesses(type1, type2 ?? undefined)
+  );
 
   const typeNames = pokemon.types.map(t => typesData.types.find(td => td.id === t)?.name);
   const relatedPokemon = pokemonData.pokemon
