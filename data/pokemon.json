@@ -2147,6 +2147,301 @@
       "strategy": "Rillaboom is a physical Grass attacker and terrain enabler. As a pure Grass type, it is weak to Fire, Ice, Poison, Flying, and Bug, while resisting Water, Electric, Grass, and Ground. Grassy Surge changes the board immediately by setting Grassy Terrain, which can strengthen Grass attacks, soften some Ground pressure, and support teammates with passive recovery. That terrain support is valuable, but it does not erase the five defensive weaknesses.\n\nWood Hammer gives maximum immediate damage at the cost of recoil, while Grassy Glide can provide priority when supported by the right rules and terrain interaction. Knock Off punishes Flying, Fire, Poison, or Steel switch-ins by removing items, and U-turn can keep momentum when the opponent brings a resist. Rillaboom should not blindly click Grass STAB into obvious Fire, Flying, or Steel answers; use item removal and pivoting to make those answers easier for teammates to break.\n\nTo counter Rillaboom, keep a Flying, Fire, Poison, Bug, or Ice attacker healthy and avoid letting Knock Off remove the item that makes the answer reliable. Physically bulky Grass resists can slow it down, especially if they do not fear U-turn chip. Rillaboom wants Fire and Flying answers beside it, plus partners that appreciate Grassy Terrain recovery or reduced Earthquake damage. If it is your team's Water and Ground answer, preserve enough health to switch in later rather than trading it early for recoil damage."
     },
     {
+      "id": "excadrill",
+      "name": "Excadrill",
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "generation": 5,
+      "category": "competitive-staple",
+      "baseStats": {
+        "hp": 110,
+        "attack": 135,
+        "defense": 60,
+        "spAtk": 50,
+        "spDef": 65,
+        "speed": 88
+      },
+      "abilities": [
+        "Sand Rush",
+        "Sand Force",
+        "Mold Breaker"
+      ],
+      "recommendedMoves": [
+        "Earthquake",
+        "Iron Head",
+        "Rapid Spin",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Water-type attackers and bulky Water walls",
+        "Fire-type attackers that punish Steel typing",
+        "Fighting-type attackers and priority Fighting moves",
+        "Ground-type attackers that win the mirror pressure",
+        "Physical walls that avoid being worn down by hazards"
+      ],
+      "strengths": "Excadrill combines 135 Attack, Ground/Steel STAB, an Electric immunity, and valuable utility through Rapid Spin or Stealth Rock. Sand Rush can turn it into a fast cleaner when sand is active.",
+      "strategy": "Excadrill is a Ground/Steel attacker that can compress offense, hazard control, and late-game cleaning into one team slot. Earthquake threatens Steel, Rock, Fire, Electric, and Poison targets, while Iron Head pressures Fairy and Ice opponents. Rapid Spin gives Excadrill a practical support role because it can clear hazards while still threatening damage, and Swords Dance can turn a forced switch into a sweep attempt if its checks have been weakened.\n\nThe weakness profile is direct: Excadrill is 2× weak to Fire, Water, Fighting, and Ground. It has no 4× weakness from Ground/Steel typing. Its Electric and Poison immunities are useful, but they do not make it safe into common Water attackers, faster Ground attackers, or Fighting coverage. Sand Rush can fix its Speed problem in sand, while Mold Breaker can ignore certain defensive abilities, so identify the ability before choosing a counter.\n\nTo use Excadrill well, pair it with sand support, pivots that create safe entries, and teammates that cover Water and Fighting pressure. Flying or Grass partners can help manage Ground and Water lanes, while bulky Water answers can absorb Fire and Ground attacks. To counter Excadrill, preserve a Water, Fighting, Fire, or Ground answer, keep it from gaining a free Swords Dance, and pressure it before sand turns or Rapid Spin momentum let it control the board."
+    },
+    {
+      "id": "annihilape",
+      "name": "Annihilape",
+      "types": [
+        "fighting",
+        "ghost"
+      ],
+      "generation": 9,
+      "category": "competitive-staple",
+      "baseStats": {
+        "hp": 110,
+        "attack": 115,
+        "defense": 80,
+        "spAtk": 50,
+        "spDef": 90,
+        "speed": 90
+      },
+      "abilities": [
+        "Vital Spirit",
+        "Inner Focus",
+        "Defiant"
+      ],
+      "recommendedMoves": [
+        "Rage Fist",
+        "Drain Punch",
+        "Bulk Up",
+        "Taunt"
+      ],
+      "counters": [
+        "Flying-type attackers",
+        "Psychic-type attackers that pressure its Fighting side",
+        "Ghost-type attackers that can win the mirror exchange",
+        "Fairy-type attackers and bulky Fairy checks",
+        "Haze, phazing, or Encore users that stop setup"
+      ],
+      "strengths": "Annihilape has strong HP, solid Attack, Fighting/Ghost STAB, and immunities to Normal and Fighting. Rage Fist can become more threatening as it takes hits, while Defiant punishes stat drops.",
+      "strategy": "Annihilape is a Fighting/Ghost attacker that often becomes more dangerous the longer it stays involved in a game. Drain Punch gives it recovery while applying Fighting pressure, Rage Fist gives Ghost pressure that can grow after it takes hits, and Bulk Up can turn its natural HP into a real endgame threat. Taunt or similar utility can stop passive answers from healing, phazing, or setting status before Annihilape starts snowballing.\n\nThe weakness profile is Flying, Psychic, Ghost, and Fairy, all at 2×. Annihilape has no 4× weakness from Fighting/Ghost typing. Its Normal and Fighting immunities are excellent switch-in tools, but Psychic and Fairy attackers can punish it if it tries to set up too casually. Ghost attacks are also important because they hit the Ghost side directly, even when Annihilape looks bulky enough to take neutral contact.\n\nTo use Annihilape, bring it in through a slow pivot, against a blocked Normal or Fighting move, or after a teammate creates a setup window. Partners that pressure Fairy and Flying targets are especially useful. To counter Annihilape, deny repeated free turns, use Haze, Encore, Taunt, or phazing when available, and keep a strong Flying, Psychic, Ghost, or Fairy attacker healthy enough to force it out before Rage Fist and Bulk Up become unmanageable."
+    },
+    {
+      "id": "groudon",
+      "name": "Groudon",
+      "types": [
+        "ground"
+      ],
+      "generation": 3,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 100,
+        "attack": 150,
+        "defense": 140,
+        "spAtk": 100,
+        "spDef": 90,
+        "speed": 90
+      },
+      "abilities": [
+        "Drought"
+      ],
+      "recommendedMoves": [
+        "Precipice Blades",
+        "Stone Edge",
+        "Stealth Rock",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Water-type attackers when sun is absent or weakened",
+        "Grass-type attackers and bulky Grass walls",
+        "Ice-type coverage from faster special attackers",
+        "Flying or Levitate users that avoid Ground STAB",
+        "Physical walls that can take boosted Ground attacks"
+      ],
+      "strengths": "Groudon brings 150 Attack, 140 Defense, an Electric immunity, and Drought support. It can set Stealth Rock, pressure teams with Ground STAB, or use setup to become a physical breaker.",
+      "strategy": "Groudon is a pure Ground legendary that changes the battle immediately through Drought and physical pressure. Its Ground STAB threatens Electric, Fire, Poison, Rock, and Steel targets, while its bulk gives it chances to set Stealth Rock or use Swords Dance against opponents that cannot force it out. Drought can support Fire-type partners and weaken incoming Water damage, but it does not remove Groudon's underlying Water weakness from the type chart.\n\nThe weakness profile is Water, Grass, and Ice, all at 2×. Groudon has no 4× weakness because it is a single Ground type. Its Electric immunity is valuable, but Flying and Levitate targets can ignore Ground attacks unless Groudon has the right coverage. Water attackers become more manageable in sun, yet a strong Water move can still matter if weather changes, the attacker is boosted, or Groudon has already taken chip.\n\nTo use Groudon well, pair it with teammates that punish Flying and Levitate switch-ins, plus Grass or Dragon partners that help into Water pressure. Fire teammates can benefit from sun, while hazard support can turn Groudon's forced switches into lasting progress. To counter Groudon, preserve Water, Grass, or Ice pressure, control the weather when possible, and avoid giving it a free setup turn behind its physical bulk."
+    },
+    {
+      "id": "palkia",
+      "name": "Palkia",
+      "types": [
+        "water",
+        "dragon"
+      ],
+      "generation": 4,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 90,
+        "attack": 120,
+        "defense": 100,
+        "spAtk": 150,
+        "spDef": 120,
+        "speed": 100
+      },
+      "abilities": [
+        "Pressure",
+        "Telepathy"
+      ],
+      "recommendedMoves": [
+        "Spacial Rend",
+        "Hydro Pump",
+        "Thunderbolt",
+        "Fire Blast"
+      ],
+      "counters": [
+        "Dragon-type attackers and faster Dragon coverage",
+        "Fairy-type attackers and bulky Fairy walls",
+        "Special walls that can absorb Water and Dragon pressure",
+        "Choice Scarf users that revenge kill before it moves",
+        "Status or chip damage that limits repeated entries"
+      ],
+      "strengths": "Palkia has 150 Special Attack, 120 Special Defense, and Water/Dragon typing with only two direct type weaknesses. It pressures many teams with strong Water and Dragon attacks.",
+      "strategy": "Palkia is a Water/Dragon legendary that combines special power with a strong defensive profile. Water STAB pressures Fire, Ground, and Rock targets, while Dragon STAB offers broad neutral damage when Fairy types are controlled. Its 150 Special Attack means even neutral hits can be difficult to absorb, and its 100 Speed lets it pressure slower bulky teams without needing a setup turn.\n\nThe weakness profile is Dragon and Fairy, both at 2×. Palkia has no 4× weakness from Water/Dragon typing. Water cancels several common Dragon-side problems, so Electric, Grass, and Ice do not become super-effective weaknesses in the standard chart. That makes Fairy and Dragon answers especially important for opponents, because relying on ordinary Water counterplay can fail if Palkia carries the right coverage.\n\nTo use Palkia well, bring it in against Fire, Water, or Steel pressure and force progress with its STAB combination. Partners that remove Fairy types or pressure faster Dragon attackers help it stay threatening. To counter Palkia, keep a Fairy or Dragon answer healthy, use special walls that can handle its coverage, and force it to take chip before it can repeatedly trade powerful attacks."
+    },
+    {
+      "id": "giratina",
+      "name": "Giratina",
+      "types": [
+        "ghost",
+        "dragon"
+      ],
+      "generation": 4,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 150,
+        "attack": 100,
+        "defense": 120,
+        "spAtk": 100,
+        "spDef": 120,
+        "speed": 90
+      },
+      "abilities": [
+        "Pressure",
+        "Telepathy"
+      ],
+      "recommendedMoves": [
+        "Shadow Ball",
+        "Dragon Tail",
+        "Will-O-Wisp",
+        "Defog"
+      ],
+      "counters": [
+        "Ice-type attackers and Ice coverage",
+        "Ghost-type attackers",
+        "Dragon-type attackers",
+        "Dark-type attackers and Knock Off pressure",
+        "Fairy-type attackers that punish Dragon typing"
+      ],
+      "strengths": "Giratina has enormous 150 HP, strong mixed bulk, Ghost/Dragon typing, and immunities to Normal and Fighting. It can function as a bulky pivot, status spreader, or defensive utility legendary.",
+      "strategy": "Giratina is a Ghost/Dragon legendary built around bulk, immunities, and disruption. Its Normal and Fighting immunities create valuable switch-in chances, while its large HP and defensive stats let it absorb many neutral hits. Depending on the format, it can spread burn, phase setup sweepers, clear hazards, or apply Ghost and Dragon pressure without needing to play like a fragile attacker.\n\nThe weakness profile is Ice, Ghost, Dragon, Dark, and Fairy, all at 2×. Giratina has no 4× weakness from Ghost/Dragon typing. That spread means many different attacking types can threaten it, but its bulk often gives it room to respond if it is not already chipped. Fairy and Dark attackers are especially important because they punish the usual Dragon and Ghost lanes directly.\n\nTo use Giratina well, bring it into Normal or Fighting attacks, passive physical threats, or targets it can burn or phase. It appreciates Steel or Fairy partners that cover Dragon and Ice pressure, plus Dark-resistant teammates that can absorb Knock Off or strong Dark attacks. To counter Giratina, use super-effective pressure before it spreads status, avoid letting it reset setup attempts for free, and keep hazards or item removal active so its bulk is easier to wear down."
+    },
+    {
+      "id": "clodsire",
+      "name": "Clodsire",
+      "types": [
+        "poison",
+        "ground"
+      ],
+      "generation": 9,
+      "category": "competitive-staple",
+      "baseStats": {
+        "hp": 130,
+        "attack": 75,
+        "defense": 60,
+        "spAtk": 45,
+        "spDef": 100,
+        "speed": 20
+      },
+      "abilities": [
+        "Poison Point",
+        "Water Absorb",
+        "Unaware"
+      ],
+      "recommendedMoves": [
+        "Earthquake",
+        "Toxic",
+        "Recover",
+        "Stealth Rock"
+      ],
+      "counters": [
+        "Water-type attackers unless Water Absorb is active",
+        "Ice-type coverage from special attackers",
+        "Ground-type attackers",
+        "Psychic-type attackers",
+        "Taunt users that block recovery and status"
+      ],
+      "strengths": "Clodsire has 130 HP, solid Special Defense, Poison/Ground typing, and access to Recover. Water Absorb or Unaware can radically change how opponents must attack it.",
+      "strategy": "Clodsire is a slow defensive Poison/Ground Pokemon that wins by absorbing special pressure, spreading status, and recovering at the right time. Its Electric immunity and Poison typing give it useful switch-in chances, while Toxic, Stealth Rock, and Earthquake let it create progress without needing high Speed. The ability choice matters: Water Absorb can erase a major weakness, while Unaware can stop setup sweepers from overpowering it through boosts.\n\nThe standard weakness profile is Water, Ice, Ground, and Psychic, all at 2×. Clodsire has no 4× weakness from Poison/Ground typing. Grass is neutral because Poison resists Grass while Ground is weak to it. If Water Absorb is active, Water attacks become a healing opportunity instead of a weakness, so opponents need to confirm the ability before assuming a Water move is safe.\n\nTo use Clodsire well, choose its ability around the team's defensive gaps, preserve Recover PP, and avoid letting Taunt or strong physical Ground pressure trap it. It appreciates Flying or Grass partners that can cover Ground and Water lanes, plus Steel or Dark support against Psychic pressure. To counter Clodsire, identify its ability, use Ground, Ice, Psychic, or non-absorbed Water pressure, and deny it repeated free recovery turns."
+    },
+    {
+      "id": "dialga",
+      "name": "Dialga",
+      "types": [
+        "steel",
+        "dragon"
+      ],
+      "generation": 4,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 100,
+        "attack": 120,
+        "defense": 120,
+        "spAtk": 150,
+        "spDef": 100,
+        "speed": 90
+      },
+      "abilities": [
+        "Pressure",
+        "Telepathy"
+      ],
+      "recommendedMoves": [
+        "Flash Cannon",
+        "Draco Meteor",
+        "Earth Power",
+        "Stealth Rock"
+      ],
+      "counters": [
+        "Fighting-type attackers and Fighting coverage",
+        "Ground-type attackers",
+        "Special walls that can absorb Steel and Dragon pressure",
+        "Faster attackers that threaten super-effective coverage",
+        "Status and chip damage that limit repeated entries"
+      ],
+      "strengths": "Dialga combines Steel/Dragon typing, 150 Special Attack, strong mixed bulk, and a useful resistance profile. It is a Dragon type that does not take super-effective damage from Dragon, Ice, or Fairy in the standard chart.",
+      "strategy": "Dialga is a Steel/Dragon legendary that blends special power, bulk, and utility. Flash Cannon threatens Fairy, Ice, and Rock targets, while Dragon coverage pressures many neutral matchups. It can also set Stealth Rock or use coverage such as Earth Power to punish opposing Steel and Fire targets. Its typing gives it many useful resistances and a Poison immunity, making it easier to bring in than many other Dragon types.\n\nThe weakness profile is Fighting and Ground, both at 2×. Dialga has no 4× weakness from Steel/Dragon typing. Steel cancels many of Dragon's usual defensive problems, so Dragon, Fairy, and Ice attacks are not super effective against standard Dialga. That makes Ground and Fighting coverage the cleanest way to force it out, especially from attackers that can handle its strong special hits.\n\nTo use Dialga well, bring it in on resisted attacks, set hazards when it forces a switch, and apply pressure with Steel and Dragon attacks rather than treating it as a passive wall. Partners that cover Ground and Fighting, such as Flying, Fairy, or bulky Water teammates, make its entries safer. To counter Dialga, preserve Ground or Fighting pressure, avoid giving it free hazard turns, and chip it down before its bulk lets it trade favorably."
+    },
+    {
+      "id": "darkrai",
+      "name": "Darkrai",
+      "types": [
+        "dark"
+      ],
+      "generation": 4,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 70,
+        "attack": 90,
+        "defense": 90,
+        "spAtk": 135,
+        "spDef": 90,
+        "speed": 125
+      },
+      "abilities": [
+        "Bad Dreams"
+      ],
+      "recommendedMoves": [
+        "Dark Pulse",
+        "Nasty Plot",
+        "Sludge Bomb",
+        "Focus Blast"
+      ],
+      "counters": [
+        "Fighting-type attackers",
+        "Bug-type attackers and U-turn pressure",
+        "Fairy-type attackers and bulky Fairy walls",
+        "Special walls that survive boosted Dark Pulse",
+        "Priority or Choice Scarf users that revenge kill it"
+      ],
+      "strengths": "Darkrai has 135 Special Attack, 125 Speed, Psychic immunity, and strong Dark-type pressure. It can threaten offensive teams with immediate Speed and punish passive turns with setup.",
+      "strategy": "Darkrai is a fast Dark-type special attacker that pressures teams through Speed, special power, and the threat of setup. Dark Pulse is its core STAB option, while coverage can target Fairy, Dark, Steel, or Normal answers depending on the format. Its Psychic immunity gives it a clean entry point against predicted Psychic attacks, but its bulk is not high enough to treat it as a defensive anchor.\n\nThe weakness profile is Fighting, Bug, and Fairy, all at 2×. Darkrai has no 4× weakness because it is a single Dark type. Fairy answers are especially important because they resist Dark pressure and threaten back, while Fighting attackers can force it out if they survive the first hit. Bug pressure often appears through pivot moves, which can punish Darkrai even when the direct damage is not the only problem.\n\nTo use Darkrai well, bring it in through a pivot, after a KO, or against Psychic pressure, then force the opponent to reveal its Fairy, Fighting, or special wall answer. It appreciates teammates that remove Fairy types and absorb priority. To counter Darkrai, keep a healthy Fairy, Fighting, or Bug answer, use revenge killers that outspeed or survive one hit, and avoid giving it a free setup turn against passive targets."
+    },
+    {
       "id": "calyrex-shadow",
       "name": "Calyrex-Shadow",
       "types": [

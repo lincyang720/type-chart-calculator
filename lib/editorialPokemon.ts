@@ -61,6 +61,14 @@ export const EDITORIAL_POKEMON = new Set([
   'arcanine',
   'decidueye',
   'rillaboom',
+  'excadrill',
+  'annihilape',
+  'groudon',
+  'palkia',
+  'giratina',
+  'clodsire',
+  'dialga',
+  'darkrai',
   'calyrex-shadow',
 ]);
 
