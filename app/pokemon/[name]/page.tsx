@@ -27,6 +27,40 @@ const FEATURED_POKEMON_GUIDES: Record<string, { heading: string; sections: { tit
   },
 };
 
+const BATCH6_TYPE_CHART_LINK_POKEMON = new Set([
+  'aerodactyl',
+  'gallade',
+  'absol',
+  'skarmory',
+  'empoleon',
+  'chandelure',
+  'eternatus',
+  'garganacl',
+  'iron-valiant',
+  'lugia',
+  'kyogre',
+  'torterra',
+  'sneasler',
+  'flutter-mane',
+  'pelipper',
+  'gholdengo',
+  'amoonguss',
+  'torkoal',
+  'ceruledge',
+  'blissey',
+  'ursaluna',
+  'mew',
+  'alolan-ninetales',
+  'urshifu',
+  'whimsicott',
+  'koraidon',
+  'miraidon',
+  'regieleki',
+  'raging-bolt',
+  'ditto',
+  'magikarp',
+]);
+
 function getComboSlug(t1: TypeId, t2: TypeId): string {
   const i1 = ALL_TYPES.indexOf(t1);
   const i2 = ALL_TYPES.indexOf(t2);
@@ -465,6 +499,11 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
                 {typesData.types.find(td => td.id === t)?.name} Type Guide
               </Link>
             ))}
+            {BATCH6_TYPE_CHART_LINK_POKEMON.has(pokemon.id) && (
+              <Link href="/pokemon/type-chart" className="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors text-center text-sm">
+                Type Chart
+              </Link>
+            )}
             <Link href="/calculator" className="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors text-center text-sm">
               Type Calculator
             </Link>

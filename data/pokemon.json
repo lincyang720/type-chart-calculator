@@ -2477,6 +2477,1093 @@
       ],
       "strengths": "Absolutely dominant in Ubers tier. 165 Special Attack + 150 Speed makes it the fastest special attacker in the game. As One ability combines Unnerve + Grim Neigh (boosts Special Attack on KO). Astral Barrage is 120 BP Ghost STAB that hits both opponents in doubles. Immune to Normal and Fighting. Can snowball with Grim Neigh boosts.",
       "strategy": "Calyrex-Shadow is a fast Psychic/Ghost special attacker whose threat comes from immediate Speed, high Special Attack, and snowball potential from As One with Grim Neigh. Astral Barrage gives it powerful Ghost pressure, while Psychic coverage and setup options can punish passive play. Its best turns come when it forces a KO or a defensive switch, then uses that momentum to keep the opponent from stabilizing.\n\nThe weakness profile is unusual but correct: Calyrex-Shadow is 4× weak to Ghost and 4× weak to Dark. It is immune to Normal and Fighting, but those immunities do not protect it from Sucker Punch, Shadow Sneak, Pursuit-style pressure in formats where that applies, or bulky Dark-types that can absorb Ghost and Psychic attacks. Because both weaknesses are quadruple, even coverage or priority from the right attacker can change the game immediately.\n\nTo use Calyrex-Shadow, remove or weaken Dark-types first, preserve enough health to avoid priority revenge kills, and avoid locking into a move that gives a Dark answer a free turn. It appreciates partners that pressure Dark-types, absorb priority, or create safe entries through pivots and hazards. To counter it, keep a healthy Dark or Ghost answer, use priority carefully, and deny free setup turns. Its Speed and power are real, but the 4× Ghost and 4× Dark weaknesses mean it cannot afford careless positioning."
+    },
+    {
+      "id": "aerodactyl",
+      "name": "Aerodactyl",
+      "types": [
+        "rock",
+        "flying"
+      ],
+      "generation": 1,
+      "category": "fossil",
+      "baseStats": {
+        "hp": 80,
+        "attack": 105,
+        "defense": 65,
+        "spAtk": 60,
+        "spDef": 75,
+        "speed": 130
+      },
+      "abilities": [
+        "Rock Head",
+        "Pressure",
+        "Unnerve"
+      ],
+      "recommendedMoves": [
+        "Stone Edge",
+        "Dual Wingbeat",
+        "Earthquake",
+        "Stealth Rock"
+      ],
+      "counters": [
+        "Water-type attackers",
+        "Electric-type attackers",
+        "Ice-type attackers",
+        "Rock-type attackers",
+        "Steel-type attackers"
+      ],
+      "strengths": "Aerodactyl is a fast Rock/Flying attacker and utility lead. Rock/Flying STAB lets it pressure Flying, Fire, Ice, Bug, Grass, and Fighting targets. Aerodactyl resists Normal, Fire, Poison, Flying, and Bug. Aerodactyl is immune to Ground.",
+      "strategy": "Aerodactyl is a fast Rock/Flying attacker and utility lead with Rock/Flying typing. Rock/Flying STAB lets it pressure Flying, Fire, Ice, Bug, Grass, and Fighting targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Aerodactyl is 2× weak to Water, Electric, Ice, Rock, and Steel. Aerodactyl is immune to Ground. These numbers come from the standard type chart for Rock/Flying, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Aerodactyl in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Aerodactyl well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Water, Electric, Ice, and Rock pressure and create safe entries. To counter Aerodactyl, preserve Water-type attackers, Electric-type attackers, Ice-type attackers, Rock-type attackers, and Steel-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "gallade",
+      "name": "Gallade",
+      "types": [
+        "psychic",
+        "fighting"
+      ],
+      "generation": 4,
+      "category": "evolution",
+      "baseStats": {
+        "hp": 68,
+        "attack": 125,
+        "defense": 65,
+        "spAtk": 65,
+        "spDef": 115,
+        "speed": 80
+      },
+      "abilities": [
+        "Steadfast",
+        "Sharpness",
+        "Justified"
+      ],
+      "recommendedMoves": [
+        "Close Combat",
+        "Psycho Cut",
+        "Leaf Blade",
+        "Shadow Sneak"
+      ],
+      "counters": [
+        "Flying-type attackers",
+        "Ghost-type attackers",
+        "Fairy-type attackers"
+      ],
+      "strengths": "Gallade is a physical Fighting/Psychic attacker. Psychic/Fighting STAB lets it pressure Fighting, Poison, Normal, Ice, Rock, Dark, and Steel targets. Gallade resists Fighting and Rock. Gallade has no type immunity.",
+      "strategy": "Gallade is a physical Fighting/Psychic attacker with Psychic/Fighting typing. Psychic/Fighting STAB lets it pressure Fighting, Poison, Normal, Ice, Rock, Dark, and Steel targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Gallade is 2× weak to Flying, Ghost, and Fairy. Gallade has no type immunity. These numbers come from the standard type chart for Psychic/Fighting, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Gallade in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Gallade well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Flying, Ghost, and Fairy pressure and create safe entries. To counter Gallade, preserve Flying-type attackers, Ghost-type attackers, and Fairy-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "absol",
+      "name": "Absol",
+      "types": [
+        "dark"
+      ],
+      "generation": 3,
+      "category": "dark attacker",
+      "baseStats": {
+        "hp": 65,
+        "attack": 130,
+        "defense": 60,
+        "spAtk": 75,
+        "spDef": 60,
+        "speed": 75
+      },
+      "abilities": [
+        "Pressure",
+        "Super Luck",
+        "Justified"
+      ],
+      "recommendedMoves": [
+        "Knock Off",
+        "Sucker Punch",
+        "Play Rough",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Fighting-type attackers",
+        "Bug-type attackers",
+        "Fairy-type attackers"
+      ],
+      "strengths": "Absol is a Dark-type attacker built around pressure and priority. Dark STAB lets it pressure Ghost and Psychic targets. Absol resists Ghost and Dark. Absol is immune to Psychic.",
+      "strategy": "Absol is a Dark-type attacker built around pressure and priority with Dark typing. Dark STAB lets it pressure Ghost and Psychic targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Absol is 2× weak to Fighting, Bug, and Fairy. Absol is immune to Psychic. These numbers come from the standard type chart for Dark, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Absol in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Absol well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Fighting, Bug, and Fairy pressure and create safe entries. To counter Absol, preserve Fighting-type attackers, Bug-type attackers, and Fairy-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "skarmory",
+      "name": "Skarmory",
+      "types": [
+        "steel",
+        "flying"
+      ],
+      "generation": 2,
+      "category": "defensive",
+      "baseStats": {
+        "hp": 65,
+        "attack": 80,
+        "defense": 140,
+        "spAtk": 40,
+        "spDef": 70,
+        "speed": 70
+      },
+      "abilities": [
+        "Keen Eye",
+        "Sturdy",
+        "Weak Armor"
+      ],
+      "recommendedMoves": [
+        "Brave Bird",
+        "Roost",
+        "Spikes",
+        "Whirlwind"
+      ],
+      "counters": [
+        "Fire-type attackers",
+        "Electric-type attackers"
+      ],
+      "strengths": "Skarmory is a defensive Steel/Flying hazard setter. Steel/Flying STAB lets it pressure Fairy, Ice, Rock, Grass, Fighting, and Bug targets. Skarmory resists Grass, Bug, Normal, Flying, Psychic, Dragon, Steel, and Fairy. Skarmory is immune to Poison and Ground.",
+      "strategy": "Skarmory is a defensive Steel/Flying hazard setter with Steel/Flying typing. Steel/Flying STAB lets it pressure Fairy, Ice, Rock, Grass, Fighting, and Bug targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Skarmory is 2× weak to Fire and Electric. Skarmory is immune to Poison and Ground. These numbers come from the standard type chart for Steel/Flying, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Skarmory in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Skarmory well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Fire and Electric pressure and create safe entries. To counter Skarmory, preserve Fire-type attackers and Electric-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "empoleon",
+      "name": "Empoleon",
+      "types": [
+        "water",
+        "steel"
+      ],
+      "generation": 4,
+      "category": "starter",
+      "baseStats": {
+        "hp": 84,
+        "attack": 86,
+        "defense": 88,
+        "spAtk": 111,
+        "spDef": 101,
+        "speed": 60
+      },
+      "abilities": [
+        "Torrent",
+        "Competitive"
+      ],
+      "recommendedMoves": [
+        "Surf",
+        "Flash Cannon",
+        "Ice Beam",
+        "Stealth Rock"
+      ],
+      "counters": [
+        "Electric-type attackers",
+        "Fighting-type attackers",
+        "Ground-type attackers"
+      ],
+      "strengths": "Empoleon is a Water/Steel pivot with useful resistances. Water/Steel STAB lets it pressure Fire, Ground, Rock, Fairy, and Ice targets. Empoleon resists Ice, Steel, Normal, Water, Flying, Psychic, Bug, Rock, Dragon, and Fairy. Empoleon is immune to Poison.",
+      "strategy": "Empoleon is a Water/Steel pivot with useful resistances with Water/Steel typing. Water/Steel STAB lets it pressure Fire, Ground, Rock, Fairy, and Ice targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Empoleon is 2× weak to Electric, Fighting, and Ground. Empoleon is immune to Poison. These numbers come from the standard type chart for Water/Steel, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Empoleon in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Empoleon well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Electric, Fighting, and Ground pressure and create safe entries. To counter Empoleon, preserve Electric-type attackers, Fighting-type attackers, and Ground-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "chandelure",
+      "name": "Chandelure",
+      "types": [
+        "ghost",
+        "fire"
+      ],
+      "generation": 5,
+      "category": "special attacker",
+      "baseStats": {
+        "hp": 60,
+        "attack": 55,
+        "defense": 90,
+        "spAtk": 145,
+        "spDef": 90,
+        "speed": 80
+      },
+      "abilities": [
+        "Flash Fire",
+        "Flame Body",
+        "Infiltrator"
+      ],
+      "recommendedMoves": [
+        "Shadow Ball",
+        "Flamethrower",
+        "Energy Ball",
+        "Trick"
+      ],
+      "counters": [
+        "Water-type attackers",
+        "Ground-type attackers",
+        "Rock-type attackers",
+        "Ghost-type attackers",
+        "Dark-type attackers"
+      ],
+      "strengths": "Chandelure is a Ghost/Fire special attacker. Ghost/Fire STAB lets it pressure Ghost, Psychic, Grass, Ice, Bug, and Steel targets. Chandelure resists Bug, Fire, Grass, Ice, Poison, Steel, and Fairy. Chandelure is immune to Normal and Fighting.",
+      "strategy": "Chandelure is a Ghost/Fire special attacker with Ghost/Fire typing. Ghost/Fire STAB lets it pressure Ghost, Psychic, Grass, Ice, Bug, and Steel targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Chandelure is 2× weak to Water, Ground, Rock, Ghost, and Dark. Chandelure is immune to Normal and Fighting. These numbers come from the standard type chart for Ghost/Fire, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Chandelure in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Chandelure well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Water, Ground, Rock, and Ghost pressure and create safe entries. To counter Chandelure, preserve Water-type attackers, Ground-type attackers, Rock-type attackers, Ghost-type attackers, and Dark-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "eternatus",
+      "name": "Eternatus",
+      "types": [
+        "poison",
+        "dragon"
+      ],
+      "generation": 8,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 140,
+        "attack": 85,
+        "defense": 95,
+        "spAtk": 145,
+        "spDef": 95,
+        "speed": 130
+      },
+      "abilities": [
+        "Pressure"
+      ],
+      "recommendedMoves": [
+        "Dynamax Cannon",
+        "Sludge Bomb",
+        "Flamethrower",
+        "Recover"
+      ],
+      "counters": [
+        "Ice-type attackers",
+        "Ground-type attackers",
+        "Psychic-type attackers",
+        "Dragon-type attackers"
+      ],
+      "strengths": "Eternatus is a Poison/Dragon legendary with special pressure. Poison/Dragon STAB lets it pressure Fairy, Grass, and Dragon targets. Eternatus resists Grass, Fire, Water, Electric, Fighting, Poison, and Bug. Eternatus has no type immunity.",
+      "strategy": "Eternatus is a Poison/Dragon legendary with special pressure with Poison/Dragon typing. Poison/Dragon STAB lets it pressure Fairy, Grass, and Dragon targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Eternatus is 2× weak to Ice, Ground, Psychic, and Dragon. Eternatus has no type immunity. These numbers come from the standard type chart for Poison/Dragon, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Eternatus in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Eternatus well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Ice, Ground, Psychic, and Dragon pressure and create safe entries. To counter Eternatus, preserve Ice-type attackers, Ground-type attackers, Psychic-type attackers, and Dragon-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "garganacl",
+      "name": "Garganacl",
+      "types": [
+        "rock"
+      ],
+      "generation": 9,
+      "category": "defensive",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 130,
+        "spAtk": 45,
+        "spDef": 90,
+        "speed": 35
+      },
+      "abilities": [
+        "Purifying Salt",
+        "Sturdy",
+        "Clear Body"
+      ],
+      "recommendedMoves": [
+        "Salt Cure",
+        "Recover",
+        "Stealth Rock",
+        "Earthquake"
+      ],
+      "counters": [
+        "Water-type attackers",
+        "Grass-type attackers",
+        "Fighting-type attackers",
+        "Ground-type attackers",
+        "Steel-type attackers"
+      ],
+      "strengths": "Garganacl is a Rock-type defensive utility Pokemon. Rock STAB lets it pressure Flying, Fire, Ice, and Bug targets. Garganacl resists Normal, Fire, Poison, and Flying. Garganacl has no type immunity.",
+      "strategy": "Garganacl is a Rock-type defensive utility Pokemon with Rock typing. Rock STAB lets it pressure Flying, Fire, Ice, and Bug targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Garganacl is 2× weak to Water, Grass, Fighting, Ground, and Steel. Garganacl has no type immunity. These numbers come from the standard type chart for Rock, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Garganacl in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Garganacl well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Water, Grass, Fighting, and Ground pressure and create safe entries. To counter Garganacl, preserve Water-type attackers, Grass-type attackers, Fighting-type attackers, Ground-type attackers, and Steel-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "iron-valiant",
+      "name": "Iron Valiant",
+      "types": [
+        "fairy",
+        "fighting"
+      ],
+      "generation": 9,
+      "category": "paradox",
+      "baseStats": {
+        "hp": 74,
+        "attack": 130,
+        "defense": 90,
+        "spAtk": 120,
+        "spDef": 60,
+        "speed": 116
+      },
+      "abilities": [
+        "Quark Drive"
+      ],
+      "recommendedMoves": [
+        "Close Combat",
+        "Moonblast",
+        "Knock Off",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Poison-type attackers",
+        "Flying-type attackers",
+        "Psychic-type attackers",
+        "Steel-type attackers",
+        "Fairy-type attackers"
+      ],
+      "strengths": "Iron Valiant is a Fighting/Fairy paradox attacker. Fairy/Fighting STAB lets it pressure Dragon, Dark, Fighting, Normal, Ice, Rock, and Steel targets. Iron Valiant resists Bug, Dark, Fighting, and Rock. Iron Valiant is immune to Dragon.",
+      "strategy": "Iron Valiant is a Fighting/Fairy paradox attacker with Fairy/Fighting typing. Fairy/Fighting STAB lets it pressure Dragon, Dark, Fighting, Normal, Ice, Rock, and Steel targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Iron Valiant is 2× weak to Poison, Flying, Psychic, Steel, and Fairy. Iron Valiant is immune to Dragon. These numbers come from the standard type chart for Fairy/Fighting, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Iron Valiant in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Iron Valiant well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Poison, Flying, Psychic, and Steel pressure and create safe entries. To counter Iron Valiant, preserve Poison-type attackers, Flying-type attackers, Psychic-type attackers, Steel-type attackers, and Fairy-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "lugia",
+      "name": "Lugia",
+      "types": [
+        "psychic",
+        "flying"
+      ],
+      "generation": 2,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 106,
+        "attack": 90,
+        "defense": 130,
+        "spAtk": 90,
+        "spDef": 154,
+        "speed": 110
+      },
+      "abilities": [
+        "Pressure",
+        "Multiscale"
+      ],
+      "recommendedMoves": [
+        "Aeroblast",
+        "Roost",
+        "Calm Mind",
+        "Earth Power"
+      ],
+      "counters": [
+        "Electric-type attackers",
+        "Ice-type attackers",
+        "Rock-type attackers",
+        "Ghost-type attackers",
+        "Dark-type attackers"
+      ],
+      "strengths": "Lugia is a bulky Psychic/Flying legendary. Psychic/Flying STAB lets it pressure Fighting, Poison, Grass, and Bug targets. Lugia resists Fighting, Grass, and Psychic. Lugia is immune to Ground.",
+      "strategy": "Lugia is a bulky Psychic/Flying legendary with Psychic/Flying typing. Psychic/Flying STAB lets it pressure Fighting, Poison, Grass, and Bug targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Lugia is 2× weak to Electric, Ice, Rock, Ghost, and Dark. Lugia is immune to Ground. These numbers come from the standard type chart for Psychic/Flying, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Lugia in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Lugia well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Electric, Ice, Rock, and Ghost pressure and create safe entries. To counter Lugia, preserve Electric-type attackers, Ice-type attackers, Rock-type attackers, Ghost-type attackers, and Dark-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "kyogre",
+      "name": "Kyogre",
+      "types": [
+        "water"
+      ],
+      "generation": 3,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 90,
+        "spAtk": 150,
+        "spDef": 140,
+        "speed": 90
+      },
+      "abilities": [
+        "Drizzle"
+      ],
+      "recommendedMoves": [
+        "Water Spout",
+        "Origin Pulse",
+        "Ice Beam",
+        "Thunder"
+      ],
+      "counters": [
+        "Electric-type attackers",
+        "Grass-type attackers"
+      ],
+      "strengths": "Kyogre is a Water-type legendary rain attacker. Water STAB lets it pressure Fire, Ground, and Rock targets. Kyogre resists Fire, Water, Ice, and Steel. Kyogre has no type immunity.",
+      "strategy": "Kyogre is a Water-type legendary rain attacker with Water typing. Water STAB lets it pressure Fire, Ground, and Rock targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Kyogre is 2× weak to Electric and Grass. Kyogre has no type immunity. These numbers come from the standard type chart for Water, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Kyogre in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Kyogre well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Electric and Grass pressure and create safe entries. To counter Kyogre, preserve Electric-type attackers and Grass-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "torterra",
+      "name": "Torterra",
+      "types": [
+        "grass",
+        "ground"
+      ],
+      "generation": 4,
+      "category": "starter",
+      "baseStats": {
+        "hp": 95,
+        "attack": 109,
+        "defense": 105,
+        "spAtk": 75,
+        "spDef": 85,
+        "speed": 56
+      },
+      "abilities": [
+        "Overgrow",
+        "Shell Armor"
+      ],
+      "recommendedMoves": [
+        "Wood Hammer",
+        "Earthquake",
+        "Stone Edge",
+        "Stealth Rock"
+      ],
+      "counters": [
+        "Ice-type attackers",
+        "Fire-type attackers",
+        "Flying-type attackers",
+        "Bug-type attackers"
+      ],
+      "strengths": "Torterra is a Grass/Ground physical attacker. Grass/Ground STAB lets it pressure Water, Ground, Rock, Electric, Fire, Poison, and Steel targets. Torterra resists Ground and Rock. Torterra is immune to Electric.",
+      "strategy": "Torterra is a Grass/Ground physical attacker with Grass/Ground typing. Grass/Ground STAB lets it pressure Water, Ground, Rock, Electric, Fire, Poison, and Steel targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Torterra is 4× weak to Ice and Torterra is 2× weak to Fire, Flying, and Bug. Torterra is immune to Electric. These numbers come from the standard type chart for Grass/Ground, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Torterra in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Torterra well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Ice, Fire, Flying, and Bug pressure and create safe entries. To counter Torterra, preserve Ice-type attackers, Fire-type attackers, Flying-type attackers, and Bug-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "sneasler",
+      "name": "Sneasler",
+      "types": [
+        "fighting",
+        "poison"
+      ],
+      "generation": 8,
+      "category": "regional evolution",
+      "baseStats": {
+        "hp": 80,
+        "attack": 130,
+        "defense": 60,
+        "spAtk": 40,
+        "spDef": 80,
+        "speed": 120
+      },
+      "abilities": [
+        "Pressure",
+        "Unburden",
+        "Poison Touch"
+      ],
+      "recommendedMoves": [
+        "Dire Claw",
+        "Close Combat",
+        "U-turn",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Psychic-type attackers",
+        "Ground-type attackers",
+        "Flying-type attackers"
+      ],
+      "strengths": "Sneasler is a fast Poison/Fighting attacker. Fighting/Poison STAB lets it pressure Normal, Ice, Rock, Dark, Steel, Fairy, and Grass targets. Sneasler resists Bug, Grass, Fighting, Poison, Rock, and Dark. Sneasler has no type immunity.",
+      "strategy": "Sneasler is a fast Poison/Fighting attacker with Fighting/Poison typing. Fighting/Poison STAB lets it pressure Normal, Ice, Rock, Dark, Steel, Fairy, and Grass targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Sneasler is 4× weak to Psychic and Sneasler is 2× weak to Ground and Flying. Sneasler has no type immunity. These numbers come from the standard type chart for Fighting/Poison, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Sneasler in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Sneasler well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Psychic, Ground, and Flying pressure and create safe entries. To counter Sneasler, preserve Psychic-type attackers, Ground-type attackers, and Flying-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "flutter-mane",
+      "name": "Flutter Mane",
+      "types": [
+        "ghost",
+        "fairy"
+      ],
+      "generation": 9,
+      "category": "paradox",
+      "baseStats": {
+        "hp": 55,
+        "attack": 55,
+        "defense": 55,
+        "spAtk": 135,
+        "spDef": 135,
+        "speed": 135
+      },
+      "abilities": [
+        "Protosynthesis"
+      ],
+      "recommendedMoves": [
+        "Moonblast",
+        "Shadow Ball",
+        "Mystical Fire",
+        "Calm Mind"
+      ],
+      "counters": [
+        "Ghost-type attackers",
+        "Steel-type attackers"
+      ],
+      "strengths": "Flutter Mane is a Ghost/Fairy special attacker. Ghost/Fairy STAB lets it pressure Ghost, Psychic, Dragon, Dark, and Fighting targets. Flutter Mane resists Bug. Flutter Mane is immune to Normal, Fighting, and Dragon.",
+      "strategy": "Flutter Mane is a Ghost/Fairy special attacker with Ghost/Fairy typing. Ghost/Fairy STAB lets it pressure Ghost, Psychic, Dragon, Dark, and Fighting targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Flutter Mane is 2× weak to Ghost and Steel. Flutter Mane is immune to Normal, Fighting, and Dragon. These numbers come from the standard type chart for Ghost/Fairy, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Flutter Mane in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Flutter Mane well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Ghost and Steel pressure and create safe entries. To counter Flutter Mane, preserve Ghost-type attackers and Steel-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "pelipper",
+      "name": "Pelipper",
+      "types": [
+        "water",
+        "flying"
+      ],
+      "generation": 3,
+      "category": "weather support",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 100,
+        "spAtk": 95,
+        "spDef": 70,
+        "speed": 65
+      },
+      "abilities": [
+        "Keen Eye",
+        "Drizzle",
+        "Rain Dish"
+      ],
+      "recommendedMoves": [
+        "Hurricane",
+        "Surf",
+        "U-turn",
+        "Roost"
+      ],
+      "counters": [
+        "Electric-type attackers",
+        "Rock-type attackers"
+      ],
+      "strengths": "Pelipper is a Water/Flying rain support Pokemon. Water/Flying STAB lets it pressure Fire, Ground, Rock, Grass, Fighting, and Bug targets. Pelipper resists Fire, Water, Fighting, Bug, and Steel. Pelipper is immune to Ground.",
+      "strategy": "Pelipper is a Water/Flying rain support Pokemon with Water/Flying typing. Water/Flying STAB lets it pressure Fire, Ground, Rock, Grass, Fighting, and Bug targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Pelipper is 4× weak to Electric and Pelipper is 2× weak to Rock. Pelipper is immune to Ground. These numbers come from the standard type chart for Water/Flying, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Pelipper in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Pelipper well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Electric and Rock pressure and create safe entries. To counter Pelipper, preserve Electric-type attackers and Rock-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "gholdengo",
+      "name": "Gholdengo",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "generation": 9,
+      "category": "special attacker",
+      "baseStats": {
+        "hp": 87,
+        "attack": 60,
+        "defense": 95,
+        "spAtk": 133,
+        "spDef": 91,
+        "speed": 84
+      },
+      "abilities": [
+        "Good As Gold"
+      ],
+      "recommendedMoves": [
+        "Make It Rain",
+        "Shadow Ball",
+        "Nasty Plot",
+        "Recover"
+      ],
+      "counters": [
+        "Fire-type attackers",
+        "Ground-type attackers",
+        "Ghost-type attackers",
+        "Dark-type attackers"
+      ],
+      "strengths": "Gholdengo is a Ghost/Steel special attacker. Steel/Ghost STAB lets it pressure Fairy, Ice, Rock, Ghost, and Psychic targets. Gholdengo resists Bug, Grass, Ice, Flying, Psychic, Rock, Dragon, Steel, and Fairy. Gholdengo is immune to Normal, Fighting, and Poison.",
+      "strategy": "Gholdengo is a Ghost/Steel special attacker with Steel/Ghost typing. Steel/Ghost STAB lets it pressure Fairy, Ice, Rock, Ghost, and Psychic targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Gholdengo is 2× weak to Fire, Ground, Ghost, and Dark. Gholdengo is immune to Normal, Fighting, and Poison. These numbers come from the standard type chart for Steel/Ghost, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Gholdengo in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Gholdengo well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Fire, Ground, Ghost, and Dark pressure and create safe entries. To counter Gholdengo, preserve Fire-type attackers, Ground-type attackers, Ghost-type attackers, and Dark-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "amoonguss",
+      "name": "Amoonguss",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "generation": 5,
+      "category": "defensive",
+      "baseStats": {
+        "hp": 114,
+        "attack": 85,
+        "defense": 70,
+        "spAtk": 85,
+        "spDef": 80,
+        "speed": 30
+      },
+      "abilities": [
+        "Effect Spore",
+        "Regenerator"
+      ],
+      "recommendedMoves": [
+        "Spore",
+        "Giga Drain",
+        "Sludge Bomb",
+        "Clear Smog"
+      ],
+      "counters": [
+        "Fire-type attackers",
+        "Ice-type attackers",
+        "Flying-type attackers",
+        "Psychic-type attackers"
+      ],
+      "strengths": "Amoonguss is a Grass/Poison defensive support Pokemon. Grass/Poison STAB lets it pressure Water, Ground, Rock, Fairy, and Grass targets. Amoonguss resists Grass, Water, Electric, Fighting, and Fairy. Amoonguss has no type immunity.",
+      "strategy": "Amoonguss is a Grass/Poison defensive support Pokemon with Grass/Poison typing. Grass/Poison STAB lets it pressure Water, Ground, Rock, Fairy, and Grass targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Amoonguss is 2× weak to Fire, Ice, Flying, and Psychic. Amoonguss has no type immunity. These numbers come from the standard type chart for Grass/Poison, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Amoonguss in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Amoonguss well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Fire, Ice, Flying, and Psychic pressure and create safe entries. To counter Amoonguss, preserve Fire-type attackers, Ice-type attackers, Flying-type attackers, and Psychic-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "torkoal",
+      "name": "Torkoal",
+      "types": [
+        "fire"
+      ],
+      "generation": 3,
+      "category": "weather support",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 140,
+        "spAtk": 85,
+        "spDef": 70,
+        "speed": 20
+      },
+      "abilities": [
+        "White Smoke",
+        "Drought",
+        "Shell Armor"
+      ],
+      "recommendedMoves": [
+        "Lava Plume",
+        "Stealth Rock",
+        "Rapid Spin",
+        "Yawn"
+      ],
+      "counters": [
+        "Water-type attackers",
+        "Ground-type attackers",
+        "Rock-type attackers"
+      ],
+      "strengths": "Torkoal is a Fire-type sun and utility Pokemon. Fire STAB lets it pressure Grass, Ice, Bug, and Steel targets. Torkoal resists Fire, Grass, Ice, Bug, Steel, and Fairy. Torkoal has no type immunity.",
+      "strategy": "Torkoal is a Fire-type sun and utility Pokemon with Fire typing. Fire STAB lets it pressure Grass, Ice, Bug, and Steel targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Torkoal is 2× weak to Water, Ground, and Rock. Torkoal has no type immunity. These numbers come from the standard type chart for Fire, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Torkoal in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Torkoal well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Water, Ground, and Rock pressure and create safe entries. To counter Torkoal, preserve Water-type attackers, Ground-type attackers, and Rock-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "ceruledge",
+      "name": "Ceruledge",
+      "types": [
+        "fire",
+        "ghost"
+      ],
+      "generation": 9,
+      "category": "physical attacker",
+      "baseStats": {
+        "hp": 75,
+        "attack": 125,
+        "defense": 80,
+        "spAtk": 60,
+        "spDef": 100,
+        "speed": 85
+      },
+      "abilities": [
+        "Flash Fire",
+        "Weak Armor"
+      ],
+      "recommendedMoves": [
+        "Bitter Blade",
+        "Shadow Sneak",
+        "Swords Dance",
+        "Close Combat"
+      ],
+      "counters": [
+        "Water-type attackers",
+        "Ground-type attackers",
+        "Rock-type attackers",
+        "Ghost-type attackers",
+        "Dark-type attackers"
+      ],
+      "strengths": "Ceruledge is a Fire/Ghost physical attacker. Fire/Ghost STAB lets it pressure Grass, Ice, Bug, Steel, Ghost, and Psychic targets. Ceruledge resists Bug, Fire, Grass, Ice, Poison, Steel, and Fairy. Ceruledge is immune to Normal and Fighting.",
+      "strategy": "Ceruledge is a Fire/Ghost physical attacker with Fire/Ghost typing. Fire/Ghost STAB lets it pressure Grass, Ice, Bug, Steel, Ghost, and Psychic targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Ceruledge is 2× weak to Water, Ground, Rock, Ghost, and Dark. Ceruledge is immune to Normal and Fighting. These numbers come from the standard type chart for Fire/Ghost, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Ceruledge in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Ceruledge well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Water, Ground, Rock, and Ghost pressure and create safe entries. To counter Ceruledge, preserve Water-type attackers, Ground-type attackers, Rock-type attackers, Ghost-type attackers, and Dark-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "blissey",
+      "name": "Blissey",
+      "types": [
+        "normal"
+      ],
+      "generation": 2,
+      "category": "defensive",
+      "baseStats": {
+        "hp": 255,
+        "attack": 10,
+        "defense": 10,
+        "spAtk": 75,
+        "spDef": 135,
+        "speed": 55
+      },
+      "abilities": [
+        "Natural Cure",
+        "Serene Grace",
+        "Healer"
+      ],
+      "recommendedMoves": [
+        "Seismic Toss",
+        "Soft-Boiled",
+        "Thunder Wave",
+        "Stealth Rock"
+      ],
+      "counters": [
+        "Fighting-type attackers"
+      ],
+      "strengths": "Blissey is a Normal-type special wall. Normal STAB lets it pressure neutral targets targets. Blissey has no listed type resistance in the standard chart. Blissey is immune to Ghost.",
+      "strategy": "Blissey is a Normal-type special wall with Normal typing. Normal STAB lets it pressure neutral targets targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Blissey is 2× weak to Fighting. Blissey is immune to Ghost. These numbers come from the standard type chart for Normal, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Blissey in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Blissey well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Fighting pressure and create safe entries. To counter Blissey, preserve Fighting-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "ursaluna",
+      "name": "Ursaluna",
+      "types": [
+        "ground",
+        "normal"
+      ],
+      "generation": 8,
+      "category": "physical attacker",
+      "baseStats": {
+        "hp": 130,
+        "attack": 140,
+        "defense": 105,
+        "spAtk": 45,
+        "spDef": 80,
+        "speed": 50
+      },
+      "abilities": [
+        "Guts",
+        "Bulletproof",
+        "Unnerve"
+      ],
+      "recommendedMoves": [
+        "Headlong Rush",
+        "Facade",
+        "Earthquake",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Water-type attackers",
+        "Grass-type attackers",
+        "Ice-type attackers",
+        "Fighting-type attackers"
+      ],
+      "strengths": "Ursaluna is a Normal/Ground physical wallbreaker. Ground/Normal STAB lets it pressure Electric, Fire, Poison, Rock, Steel, and neutral targets targets. Ursaluna resists Poison and Rock. Ursaluna is immune to Electric and Ghost.",
+      "strategy": "Ursaluna is a Normal/Ground physical wallbreaker with Ground/Normal typing. Ground/Normal STAB lets it pressure Electric, Fire, Poison, Rock, Steel, and neutral targets targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Ursaluna is 2× weak to Water, Grass, Ice, and Fighting. Ursaluna is immune to Electric and Ghost. These numbers come from the standard type chart for Ground/Normal, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Ursaluna in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Ursaluna well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Water, Grass, Ice, and Fighting pressure and create safe entries. To counter Ursaluna, preserve Water-type attackers, Grass-type attackers, Ice-type attackers, and Fighting-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "mew",
+      "name": "Mew",
+      "types": [
+        "psychic"
+      ],
+      "generation": 1,
+      "category": "mythical",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 100,
+        "spAtk": 100,
+        "spDef": 100,
+        "speed": 100
+      },
+      "abilities": [
+        "Synchronize"
+      ],
+      "recommendedMoves": [
+        "Psychic",
+        "Knock Off",
+        "Will-O-Wisp",
+        "Stealth Rock"
+      ],
+      "counters": [
+        "Bug-type attackers",
+        "Ghost-type attackers",
+        "Dark-type attackers"
+      ],
+      "strengths": "Mew is a Psychic-type mythical utility Pokemon. Psychic STAB lets it pressure Fighting and Poison targets. Mew resists Fighting and Psychic. Mew has no type immunity.",
+      "strategy": "Mew is a Psychic-type mythical utility Pokemon with Psychic typing. Psychic STAB lets it pressure Fighting and Poison targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Mew is 2× weak to Bug, Ghost, and Dark. Mew has no type immunity. These numbers come from the standard type chart for Psychic, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Mew in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Mew well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Bug, Ghost, and Dark pressure and create safe entries. To counter Mew, preserve Bug-type attackers, Ghost-type attackers, and Dark-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "alolan-ninetales",
+      "name": "Alolan Ninetales",
+      "types": [
+        "ice",
+        "fairy"
+      ],
+      "generation": 7,
+      "category": "regional form",
+      "baseStats": {
+        "hp": 73,
+        "attack": 67,
+        "defense": 75,
+        "spAtk": 81,
+        "spDef": 100,
+        "speed": 109
+      },
+      "abilities": [
+        "Snow Cloak",
+        "Snow Warning"
+      ],
+      "recommendedMoves": [
+        "Moonblast",
+        "Freeze-Dry",
+        "Aurora Veil",
+        "Encore"
+      ],
+      "counters": [
+        "Steel-type attackers",
+        "Fire-type attackers",
+        "Poison-type attackers",
+        "Rock-type attackers"
+      ],
+      "strengths": "Alolan Ninetales is an Ice/Fairy support Pokemon. Ice/Fairy STAB lets it pressure Dragon, Flying, Grass, Ground, Dark, and Fighting targets. Alolan Ninetales resists Ice, Bug, and Dark. Alolan Ninetales is immune to Dragon.",
+      "strategy": "Alolan Ninetales is an Ice/Fairy support Pokemon with Ice/Fairy typing. Ice/Fairy STAB lets it pressure Dragon, Flying, Grass, Ground, Dark, and Fighting targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Alolan Ninetales is 4× weak to Steel and Alolan Ninetales is 2× weak to Fire, Poison, and Rock. Alolan Ninetales is immune to Dragon. These numbers come from the standard type chart for Ice/Fairy, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Alolan Ninetales in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Alolan Ninetales well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Steel, Fire, Poison, and Rock pressure and create safe entries. To counter Alolan Ninetales, preserve Steel-type attackers, Fire-type attackers, Poison-type attackers, and Rock-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "urshifu",
+      "name": "Urshifu",
+      "types": [
+        "fighting",
+        "dark"
+      ],
+      "generation": 8,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 100,
+        "attack": 130,
+        "defense": 100,
+        "spAtk": 63,
+        "spDef": 60,
+        "speed": 97
+      },
+      "abilities": [
+        "Unseen Fist"
+      ],
+      "recommendedMoves": [
+        "Wicked Blow",
+        "Close Combat",
+        "Sucker Punch",
+        "U-turn"
+      ],
+      "counters": [
+        "Fairy-type attackers",
+        "Fighting-type attackers",
+        "Flying-type attackers"
+      ],
+      "strengths": "Urshifu is a Fighting/Dark physical attacker. Fighting/Dark STAB lets it pressure Normal, Ice, Rock, Dark, Steel, Ghost, and Psychic targets. Urshifu resists Dark, Rock, and Ghost. Urshifu is immune to Psychic.",
+      "strategy": "Urshifu is a Fighting/Dark physical attacker with Fighting/Dark typing. Fighting/Dark STAB lets it pressure Normal, Ice, Rock, Dark, Steel, Ghost, and Psychic targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Urshifu is 4× weak to Fairy and Urshifu is 2× weak to Fighting and Flying. Urshifu is immune to Psychic. These numbers come from the standard type chart for Fighting/Dark, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Urshifu in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Urshifu well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Fairy, Fighting, and Flying pressure and create safe entries. To counter Urshifu, preserve Fairy-type attackers, Fighting-type attackers, and Flying-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "whimsicott",
+      "name": "Whimsicott",
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "generation": 5,
+      "category": "support",
+      "baseStats": {
+        "hp": 60,
+        "attack": 67,
+        "defense": 85,
+        "spAtk": 77,
+        "spDef": 75,
+        "speed": 116
+      },
+      "abilities": [
+        "Prankster",
+        "Infiltrator",
+        "Chlorophyll"
+      ],
+      "recommendedMoves": [
+        "Moonblast",
+        "Encore",
+        "Tailwind",
+        "Giga Drain"
+      ],
+      "counters": [
+        "Poison-type attackers",
+        "Fire-type attackers",
+        "Ice-type attackers",
+        "Flying-type attackers",
+        "Steel-type attackers"
+      ],
+      "strengths": "Whimsicott is a Grass/Fairy support Pokemon. Grass/Fairy STAB lets it pressure Water, Ground, Rock, Dragon, Dark, and Fighting targets. Whimsicott resists Water, Electric, Grass, Fighting, Ground, and Dark. Whimsicott is immune to Dragon.",
+      "strategy": "Whimsicott is a Grass/Fairy support Pokemon with Grass/Fairy typing. Grass/Fairy STAB lets it pressure Water, Ground, Rock, Dragon, Dark, and Fighting targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Whimsicott is 4× weak to Poison and Whimsicott is 2× weak to Fire, Ice, Flying, and Steel. Whimsicott is immune to Dragon. These numbers come from the standard type chart for Grass/Fairy, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Whimsicott in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Whimsicott well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Poison, Fire, Ice, and Flying pressure and create safe entries. To counter Whimsicott, preserve Poison-type attackers, Fire-type attackers, Ice-type attackers, Flying-type attackers, and Steel-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "koraidon",
+      "name": "Koraidon",
+      "types": [
+        "fighting",
+        "dragon"
+      ],
+      "generation": 9,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 100,
+        "attack": 135,
+        "defense": 115,
+        "spAtk": 85,
+        "spDef": 100,
+        "speed": 135
+      },
+      "abilities": [
+        "Orichalcum Pulse"
+      ],
+      "recommendedMoves": [
+        "Collision Course",
+        "Flare Blitz",
+        "Dragon Claw",
+        "Swords Dance"
+      ],
+      "counters": [
+        "Fairy-type attackers",
+        "Ice-type attackers",
+        "Flying-type attackers",
+        "Psychic-type attackers",
+        "Dragon-type attackers"
+      ],
+      "strengths": "Koraidon is a Fighting/Dragon legendary attacker. Fighting/Dragon STAB lets it pressure Normal, Ice, Rock, Dark, Steel, and Dragon targets. Koraidon resists Fire, Water, Electric, Grass, Bug, Rock, and Dark. Koraidon has no type immunity.",
+      "strategy": "Koraidon is a Fighting/Dragon legendary attacker with Fighting/Dragon typing. Fighting/Dragon STAB lets it pressure Normal, Ice, Rock, Dark, Steel, and Dragon targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Koraidon is 4× weak to Fairy and Koraidon is 2× weak to Ice, Flying, Psychic, and Dragon. Koraidon has no type immunity. These numbers come from the standard type chart for Fighting/Dragon, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Koraidon in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Koraidon well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Fairy, Ice, Flying, and Psychic pressure and create safe entries. To counter Koraidon, preserve Fairy-type attackers, Ice-type attackers, Flying-type attackers, Psychic-type attackers, and Dragon-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "miraidon",
+      "name": "Miraidon",
+      "types": [
+        "electric",
+        "dragon"
+      ],
+      "generation": 9,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 100,
+        "attack": 85,
+        "defense": 100,
+        "spAtk": 135,
+        "spDef": 115,
+        "speed": 135
+      },
+      "abilities": [
+        "Hadron Engine"
+      ],
+      "recommendedMoves": [
+        "Electro Drift",
+        "Draco Meteor",
+        "Volt Switch",
+        "Calm Mind"
+      ],
+      "counters": [
+        "Ice-type attackers",
+        "Ground-type attackers",
+        "Dragon-type attackers",
+        "Fairy-type attackers"
+      ],
+      "strengths": "Miraidon is an Electric/Dragon legendary attacker. Electric/Dragon STAB lets it pressure Water, Flying, and Dragon targets. Miraidon resists Electric, Fire, Water, Grass, Flying, and Steel. Miraidon has no type immunity.",
+      "strategy": "Miraidon is an Electric/Dragon legendary attacker with Electric/Dragon typing. Electric/Dragon STAB lets it pressure Water, Flying, and Dragon targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Miraidon is 2× weak to Ice, Ground, Dragon, and Fairy. Miraidon has no type immunity. These numbers come from the standard type chart for Electric/Dragon, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Miraidon in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Miraidon well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Ice, Ground, Dragon, and Fairy pressure and create safe entries. To counter Miraidon, preserve Ice-type attackers, Ground-type attackers, Dragon-type attackers, and Fairy-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "regieleki",
+      "name": "Regieleki",
+      "types": [
+        "electric"
+      ],
+      "generation": 8,
+      "category": "legendary",
+      "baseStats": {
+        "hp": 80,
+        "attack": 100,
+        "defense": 50,
+        "spAtk": 100,
+        "spDef": 50,
+        "speed": 200
+      },
+      "abilities": [
+        "Transistor"
+      ],
+      "recommendedMoves": [
+        "Thunderbolt",
+        "Volt Switch",
+        "Rapid Spin",
+        "Electro Ball"
+      ],
+      "counters": [
+        "Ground-type attackers"
+      ],
+      "strengths": "Regieleki is an Electric-type speed control Pokemon. Electric STAB lets it pressure Water and Flying targets. Regieleki resists Electric, Flying, and Steel. Regieleki has no type immunity.",
+      "strategy": "Regieleki is an Electric-type speed control Pokemon with Electric typing. Electric STAB lets it pressure Water and Flying targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Regieleki is 2× weak to Ground. Regieleki has no type immunity. These numbers come from the standard type chart for Electric, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Regieleki in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Regieleki well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Ground pressure and create safe entries. To counter Regieleki, preserve Ground-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "raging-bolt",
+      "name": "Raging Bolt",
+      "types": [
+        "electric",
+        "dragon"
+      ],
+      "generation": 9,
+      "category": "paradox",
+      "baseStats": {
+        "hp": 125,
+        "attack": 73,
+        "defense": 91,
+        "spAtk": 137,
+        "spDef": 89,
+        "speed": 75
+      },
+      "abilities": [
+        "Protosynthesis"
+      ],
+      "recommendedMoves": [
+        "Thunderclap",
+        "Draco Meteor",
+        "Thunderbolt",
+        "Calm Mind"
+      ],
+      "counters": [
+        "Ice-type attackers",
+        "Ground-type attackers",
+        "Dragon-type attackers",
+        "Fairy-type attackers"
+      ],
+      "strengths": "Raging Bolt is an Electric/Dragon special attacker. Electric/Dragon STAB lets it pressure Water, Flying, and Dragon targets. Raging Bolt resists Electric, Fire, Water, Grass, Flying, and Steel. Raging Bolt has no type immunity.",
+      "strategy": "Raging Bolt is an Electric/Dragon special attacker with Electric/Dragon typing. Electric/Dragon STAB lets it pressure Water, Flying, and Dragon targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Raging Bolt is 2× weak to Ice, Ground, Dragon, and Fairy. Raging Bolt has no type immunity. These numbers come from the standard type chart for Electric/Dragon, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Raging Bolt in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Raging Bolt well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Ice, Ground, Dragon, and Fairy pressure and create safe entries. To counter Raging Bolt, preserve Ice-type attackers, Ground-type attackers, Dragon-type attackers, and Fairy-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "ditto",
+      "name": "Ditto",
+      "types": [
+        "normal"
+      ],
+      "generation": 1,
+      "category": "transform",
+      "baseStats": {
+        "hp": 48,
+        "attack": 48,
+        "defense": 48,
+        "spAtk": 48,
+        "spDef": 48,
+        "speed": 48
+      },
+      "abilities": [
+        "Limber",
+        "Imposter"
+      ],
+      "recommendedMoves": [
+        "Transform"
+      ],
+      "counters": [
+        "Fighting-type attackers"
+      ],
+      "strengths": "Ditto is a Normal-type transformation specialist. Normal STAB lets it pressure neutral targets targets. Ditto has no listed type resistance in the standard chart. Ditto is immune to Ghost.",
+      "strategy": "Ditto is a Normal-type transformation specialist with Normal typing. Normal STAB lets it pressure neutral targets targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Ditto is 2× weak to Fighting. Ditto is immune to Ghost. These numbers come from the standard type chart for Normal, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Ditto in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Ditto well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Fighting pressure and create safe entries. To counter Ditto, preserve Fighting-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
+    },
+    {
+      "id": "magikarp",
+      "name": "Magikarp",
+      "types": [
+        "water"
+      ],
+      "generation": 1,
+      "category": "basic",
+      "baseStats": {
+        "hp": 20,
+        "attack": 10,
+        "defense": 55,
+        "spAtk": 15,
+        "spDef": 20,
+        "speed": 80
+      },
+      "abilities": [
+        "Swift Swim",
+        "Rattled"
+      ],
+      "recommendedMoves": [
+        "Splash",
+        "Tackle",
+        "Flail",
+        "Bounce"
+      ],
+      "counters": [
+        "Electric-type attackers",
+        "Grass-type attackers"
+      ],
+      "strengths": "Magikarp is a Water-type basic Pokemon. Water STAB lets it pressure Fire, Ground, and Rock targets. Magikarp resists Fire, Water, Ice, and Steel. Magikarp has no type immunity.",
+      "strategy": "Magikarp is a Water-type basic Pokemon with Water typing. Water STAB lets it pressure Fire, Ground, and Rock targets. Its role depends on the format, but the type-chart job is clear: use its useful resistances, immunities, or offensive pressure to force the opponent into predictable answers rather than treating it as a generic switch-in. Stats, ability choice, and legal moves still decide how aggressively it can be positioned.\n\nThe weakness profile is the central part of the page: Magikarp is 2× weak to Electric and Grass. Magikarp has no type immunity. These numbers come from the standard type chart for Water, so ability effects, field effects, Terastallization, or format-specific rules can change an individual turn without changing the baseline matchup. Do not leave Magikarp in front of a super-effective attacker just because it has a useful offensive move in return.\n\nTo use Magikarp well, bring it in through a resisted move, a pivot, a forced switch, or a revenge-kill window rather than repeated raw entries. It appreciates teammates that cover Electric and Grass pressure and create safe entries. To counter Magikarp, preserve Electric-type attackers and Grass-type attackers and pressure it before it can turn its matchup into momentum. Use the type chart first, then account for speed, bulk, ability, recovery, and revealed coverage before committing to the exchange."
     }
   ]
 }
