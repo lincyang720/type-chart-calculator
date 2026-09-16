@@ -57,7 +57,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-37RP6M77TC"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-37RP6M77TC');
+`,
+          }}
+        />
+      </head>
       <body suppressHydrationWarning>
         <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
           <nav className="container mx-auto px-4 py-3">
