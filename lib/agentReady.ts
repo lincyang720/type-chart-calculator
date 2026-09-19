@@ -13,6 +13,7 @@ export const SITE = 'https://www.typematchup.org';
 export const ORIGIN = SITE;
 
 export const MCP_ENDPOINT = `${SITE}/api/mcp`;
+export const A2A_ENDPOINT = `${SITE}/api/a2a`;
 export const SEARCH_ENDPOINT = `${SITE}/api/agent/search`;
 export const OPENAPI_URL = `${SITE}/openapi.json`;
 export const API_CATALOG_URL = `${SITE}/.well-known/api-catalog`;
@@ -182,6 +183,14 @@ export function agentCardDocument() {
     security: [],
     defaultInputModes: ['text', 'application/json'],
     defaultOutputModes: ['text', 'application/json'],
+    supportedInterfaces: [
+      {
+        protocolBinding: 'JSONRPC',
+        protocolVersion: '0.3.0',
+        url: A2A_ENDPOINT,
+        description: 'A2A JSON-RPC 2.0 endpoint. Accepts message/send with a single text part.',
+      },
+    ],
     skills: [
       {
         id: 'type-effectiveness',
@@ -211,6 +220,7 @@ export function agentCardDocument() {
 export function aiCatalogDocument() {
   return {
     $schema: 'https://ard.dev/schema/ai-catalog.json',
+    specVersion: '1.0',
     name: 'TypeMatchup',
     description: SERVER_DESCRIPTION,
     url: SITE,
@@ -245,6 +255,7 @@ export function aiCatalogDocument() {
     ],
     endpoints: {
       mcp: MCP_ENDPOINT,
+      a2a: A2A_ENDPOINT,
       openapi: OPENAPI_URL,
       apiCatalog: API_CATALOG_URL,
       mcpServerCard: MCP_CARD_URL,
@@ -325,7 +336,7 @@ export function jwksDocument() {
 }
 
 export const AUTH_MD = [
-  '# Authentication — TypeMatchup',
+  '# auth.md — Authentication for TypeMatchup',
   '',
   '**Status: under construction. No authentication is required today.**',
   '',
@@ -338,6 +349,7 @@ export const AUTH_MD = [
   '| Capability | Endpoint | Auth |',
   '| --- | --- | --- |',
   '| MCP server (Streamable HTTP) | `' + MCP_ENDPOINT + '` | none |',
+  '| A2A endpoint (JSON-RPC) | `' + A2A_ENDPOINT + '` | none |',
   '| Pokemon / type search | `GET ' + SEARCH_ENDPOINT + '?q=` | none |',
   '| OpenAPI 3.1 description | `' + OPENAPI_URL + '` | none |',
   '',
@@ -458,6 +470,37 @@ export function openApiDocument() {
           },
           responses: {
             '200': { description: 'JSON-RPC 2.0 response.' },
+          },
+        },
+      },
+      '/api/a2a': {
+        post: {
+          tags: ['mcp'],
+          summary: 'A2A JSON-RPC 2.0 endpoint',
+          operationId: 'a2aMessageSend',
+          description:
+            'Accepts A2A `message/send` requests with a single text part. The message is scanned for ' +
+            'Pokemon type names and answered with the same engine that backs the MCP server. Returns ' +
+            '`input-required` when no type can be identified.',
+          requestBody: {
+            required: true,
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    jsonrpc: { type: 'string', enum: ['2.0'] },
+                    id: { type: ['integer', 'string', 'null'] },
+                    method: { type: 'string', enum: ['message/send'] },
+                    params: { type: 'object' },
+                  },
+                  required: ['jsonrpc', 'method'],
+                },
+              },
+            },
+          },
+          responses: {
+            '200': { description: 'A2A task object.' },
           },
         },
       },

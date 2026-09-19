@@ -6,6 +6,7 @@ import {
   SERVER_VERSION,
 } from '@/lib/agentReady';
 import { TypeId, TypeChart } from '@/lib/types';
+import { ALL_TYPES, TYPE_DESCRIPTIONS, isTypeId, typeName, typeNames } from '@/lib/typeFacts';
 import {
   calculateDualTypeWeaknesses,
   calculateMultiplier,
@@ -16,38 +17,8 @@ export const dynamic = 'force-dynamic';
 
 const typeChart = typeChartData as TypeChart;
 
-const ALL_TYPES: TypeId[] = [
-  'normal', 'fire', 'water', 'electric', 'grass', 'ice',
-  'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug',
-  'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy',
-];
-
-const TYPE_NAMES: Record<TypeId, string> = {
-  normal: 'Normal', fire: 'Fire', water: 'Water', electric: 'Electric', grass: 'Grass', ice: 'Ice',
-  fighting: 'Fighting', poison: 'Poison', ground: 'Ground', flying: 'Flying', psychic: 'Psychic',
-  bug: 'Bug', rock: 'Rock', ghost: 'Ghost', dragon: 'Dragon', dark: 'Dark', steel: 'Steel', fairy: 'Fairy',
-};
-
-const TYPE_DESCRIPTIONS: Record<TypeId, string> = {
-  normal: 'Balanced and versatile; only walled by Rock and Steel, and cannot touch Ghost.',
-  fire: 'Strong against Grass, Ice, Bug and Steel; resisted by Fire, Water, Rock and Dragon.',
-  water: 'Strong against Fire, Ground and Rock; resisted by Water, Grass and Dragon.',
-  electric: 'Strong against Water and Flying; useless against Ground.',
-  grass: 'Strong against Water, Ground and Rock; resisted by a wide spread of types.',
-  ice: 'Strong against Grass, Ground, Flying and Dragon; resisted by Fire, Water, Ice and Steel.',
-  fighting: 'Strong against Normal, Ice, Rock, Dark and Steel; cannot touch Ghost.',
-  poison: 'Strong against Grass and Fairy; useless against Steel.',
-  ground: 'Strong against Fire, Electric, Poison, Rock and Steel; cannot touch Flying.',
-  flying: 'Strong against Grass, Fighting and Bug; resisted by Electric, Rock and Steel.',
-  psychic: 'Strong against Fighting and Poison; useless against Dark.',
-  bug: 'Strong against Grass, Psychic and Dark; resisted by a wide spread of types.',
-  rock: 'Strong against Fire, Ice, Flying and Bug; resisted by Fighting, Ground and Steel.',
-  ghost: 'Strong against Psychic and Ghost; useless against Normal.',
-  dragon: 'Strong only against Dragon; resisted by Steel and useless against Fairy.',
-  dark: 'Strong against Psychic and Ghost; resisted by Fighting, Dark and Fairy.',
-  steel: 'Strong against Ice, Rock and Fairy; resisted by Fire, Water, Electric and Steel.',
-  fairy: 'Strong against Fighting, Dragon and Dark; resisted by Fire, Poison and Steel.',
-};
+const label = typeName;
+const list = typeNames;
 
 interface RawPokemon {
   id: string;
@@ -60,18 +31,6 @@ interface RawPokemon {
 }
 
 const POKEMON = (pokemonData as { pokemon: RawPokemon[] }).pokemon;
-
-function isTypeId(value: unknown): value is TypeId {
-  return typeof value === 'string' && (ALL_TYPES as string[]).includes(value);
-}
-
-function label(id: TypeId): string {
-  return TYPE_NAMES[id];
-}
-
-function list(ids: TypeId[]): string[] {
-  return ids.map(label);
-}
 
 /* ---------------------------- tool implementations --------------------------- */
 
