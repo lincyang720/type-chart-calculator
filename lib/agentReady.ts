@@ -255,6 +255,8 @@ export function aiCatalogDocument() {
     ],
     entries: [
       {
+        identifier: `${SITE}/#type-effectiveness`,
+        displayName: 'Type effectiveness',
         id: 'type-effectiveness',
         type: 'capability',
         name: 'Type effectiveness',
@@ -263,6 +265,8 @@ export function aiCatalogDocument() {
         url: MCP_ENDPOINT,
       },
       {
+        identifier: `${SITE}/#defensive-profile`,
+        displayName: 'Defensive profile',
         id: 'defensive-profile',
         type: 'capability',
         name: 'Defensive profile',
@@ -271,6 +275,8 @@ export function aiCatalogDocument() {
         url: MCP_ENDPOINT,
       },
       {
+        identifier: `${SITE}/#pokemon-directory`,
+        displayName: 'Pokemon directory',
         id: 'pokemon-directory',
         type: 'data',
         name: 'Pokemon directory',
@@ -279,6 +285,8 @@ export function aiCatalogDocument() {
         url: SEARCH_ENDPOINT,
       },
       {
+        identifier: `${SITE}/#agent-task`,
+        displayName: 'Agent task (A2A)',
         id: 'agent-task',
         type: 'capability',
         name: 'Agent task (A2A)',
