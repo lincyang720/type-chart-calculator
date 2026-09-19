@@ -35,7 +35,7 @@
         "Bulky Water walls (Toxapex, Gastrodon)"
       ],
       "strengths": "High Special Attack (109) and Speed (100). Excellent offensive coverage with Fire/Flying STAB. Solar Power in sun makes it a nuclear threat. Access to Dragon Pulse and Focus Blast for coverage.",
-      "strategy": "Charizard is a Fire/Flying special attacker that rewards careful entry planning. Its typing gives it a Ground immunity and useful resistances to Fire, Grass, Fighting, Bug, Steel, and Fairy, including especially strong Grass and Bug resistances. Its 109 Special Attack and 100 Speed let it pressure Grass, Bug, Steel, and Fighting targets, while sun support can make its Fire attacks and Solar Power sets much more dangerous. Fire STAB becomes especially dangerous in sun, Flying STAB covers Fighting, Grass, and Bug targets, and coverage such as Solar Beam or Focus Blast can punish some Water-, Ground-, and Rock-based answers when the format and turn sequence support it. A more balanced Charizard can use Roost and utility to stay useful across multiple turns, but every version has to respect chip damage and the timing of its switch-ins.\n\nThe weakness profile is the central part of the page: Charizard is 4× weak to Rock and 2× weak to Water and Electric. Stealth Rock is especially punishing because the Rock matchup applies on entry, so Heavy-Duty Boots or reliable hazard removal is often the difference between a useful Charizard and one that loses too much health before acting. Water and Electric attacks are less extreme than Rock, but both are common enough that Charizard should not be used as a general-purpose defensive pivot. Sun can strengthen Fire attacks, enable one-turn Solar Beam, weaken opposing Water damage, and activate Solar Power, but it can also accelerate recoil and chip, so count how many useful turns Charizard actually has before committing.\n\nTo use Charizard well, pair it with teammates that remove hazards, absorb Rock pressure, and cover Water or Electric attackers. Ground partners can block Electric moves, while bulky Grass or Water answers can help manage Water pressure. Scout the opposing team and preserve the move that breaks Charizard's actual counter instead of revealing every coverage option early. To counter Charizard, keep Stealth Rock active, remove its Boots when possible, pressure hazard removal, and force it to take Rock, Water, or Electric damage before it can claim value. Charizard can hit hard, but its best games come from controlled entries rather than repeated raw switches."
+      "strategy": "Charizard excels as a special attacker with multiple viable sets:\n\n**Solar Power Sweeper (Sun Teams):**\n- Ability: Solar Power (1.5× Special Attack in sun, but loses HP)\n- Moves: Fire Blast, Solar Beam, Air Slash, Focus Blast\n- Item: Life Orb or Choice Specs\n- Strategy: Pair with Drought setter (Torkoal, Ninetales). Devastating power but short-lived due to HP drain.\n\n**Blaze Pivot (Balanced Teams):**\n- Ability: Blaze (boosts Fire moves at low HP)\n- Moves: Flamethrower, Air Slash, Roost, Will-O-Wisp\n- Item: Heavy-Duty Boots (negates Stealth Rock)\n- Strategy: More defensive. Roost for longevity, Will-O-Wisp cripples physical attackers.\n\n**Mega Charizard Y (if available):**\n- Sets permanent sun on entry\n- Massive Special Attack boost\n- Best Charizard forme for competitive play\n\n**Key Weaknesses:**\n- Always run Heavy-Duty Boots or have Rapid Spin/Defog support\n- Vulnerable to priority moves (Aqua Jet, Sucker Punch)\n- Relatively frail Defense (78 base)\n\n**Best Partners:**\n- Rapid Spin/Defog users: Corviknight, Great Tusk, Torkoal\n- Drought setters: Torkoal, Ninetales (for Solar Power sets)\n- Electric immunities: Ground-types to handle Electric attacks\n- Stealth Rock setters: Pressure opponents, force switches\n\n**The matchup behind the 4× Rock weakness:**\nCharizard's Fire/Flying typing gives it a Ground immunity and useful resistances to Fire, Grass, Fighting, Bug, Steel, and Fairy, including especially strong Grass and Bug resistances. Rock is the central risk because it deals 4× damage; Water and Electric deal 2×. Stealth Rock can remove half of Charizard's health when it enters, so Heavy-Duty Boots or dependable hazard removal is normally essential. Do not evaluate a switch from the type chart alone: a resisted attack may still carry Knock Off, status, or secondary coverage that removes Charizard before it can use its offensive stats.\n\n**Choosing an offensive plan:**\nBase Charizard's 109 Special Attack and 100 Speed favor special pressure. Fire STAB becomes especially dangerous in sun, while Flying STAB covers Fighting, Grass, and Bug targets. Solar Beam can punish Water-, Ground-, and Rock-based answers in sun, and Focus Blast can target some Rock types, but both choices have conditions or accuracy costs. A balanced set may prefer Flamethrower, Air Slash, Roost, and a utility move rather than maximum immediate damage. Scout the opposing team and preserve the move that breaks Charizard's actual counter instead of revealing every coverage option early.\n\n**Counterplay and team support:**\nKeep Stealth Rock active, remove Heavy-Duty Boots, or pressure hazard removal to shorten Charizard's useful life. Faster attackers, priority, rain-boosted Water attacks, and accurate Electric moves can be more reliable than gambling on Stone Edge. Charizard wants partners that remove hazards and absorb Rock, Water, and Electric pressure; Ground types are valuable against Electric, while bulky Water or Grass partners can cover other lanes. In return, Charizard can enter on Ground attacks and threaten Grass or Steel opponents. Forms, abilities, and legal mechanics vary by game, so confirm the format before applying a moveset.\n\n**Planning turns around weather and recovery:**\nSun changes several decisions at once: it strengthens Fire attacks, enables one-turn Solar Beam, weakens opposing Water damage, and may activate Solar Power. The same plan also accelerates recoil and chip, so calculate how many attacks Charizard can actually make after entry hazards, Life Orb, Solar Power, or resisted damage. Roost extends a game only when the opponent cannot use that turn to set hazards, boost, or bring in a hard answer. When sun is absent, avoid treating Solar Beam as dependable coverage because the charging turn can surrender momentum. A good Charizard turn either removes a key defender, forces meaningful progress, or preserves enough health for a later Ground immunity; damage without a follow-up plan is rarely worth sacrificing its limited entries."
     },
     {
       "id": "blastoise",
@@ -1266,12 +1266,12 @@
         "Pain Split"
       ],
       "counters": [
-        "Grass-type moves (only weakness)",
-        "Specially defensive walls",
-        "Ground-type with Mold Breaker"
+        "Grass-type moves",
+        "Electric-type moves",
+        "Specially defensive walls"
       ],
-      "strengths": "Electric/Water with Levitate leaves Rotom-Wash with only one practical type weakness: Grass. It also brings strong pivot value through Volt Switch, useful bulk, and Will-O-Wisp support.",
-      "strategy": "Rotom-Wash has one of the best defensive profiles among pivot Pokemon. Electric/Water would normally be weak to Ground and Grass, but Levitate makes Rotom-Wash immune to Ground attacks unless an opposing effect such as Mold Breaker, Gravity, or ability suppression changes that interaction. In ordinary matchups, Grass is the only practical type weakness.\n\nHydro Pump threatens Ground, Rock, and Fire targets, while Volt Switch keeps momentum when a Grass answer or special wall comes in. Will-O-Wisp cripples physical attackers, and Pain Split can give Rotom-Wash a form of recovery despite its low base HP. Its bulk is good, but it should not be treated as endless; repeated neutral hits, hazards, and Knock Off can wear it down.\n\nTo counter Rotom-Wash, use Grass attacks, specially defensive walls that do not mind burn, or Ground attackers with Mold Breaker-style effects that bypass Levitate. Rotom-Wash wants partners that punish Grass types and absorb strong special hits. It fits best on teams that value safe pivoting and status pressure rather than raw sweeping power."
+      "strengths": "Electric/Water with solid defensive stats; weak to Grass and Electric (Levitate negates Ground). Volt Switch maintains momentum.",
+      "strategy": "Rotom-Wash has one of the best defensive profiles in the game. Levitate removes the Ground weakness, leaving Grass and Electric as its only real vulnerabilities. Will-O-Wisp cripples physical attackers. Volt Switch pivots out safely. Hydro Pump provides solid STAB. A staple on balanced and bulky offense teams."
     },
     {
       "id": "clefable",
@@ -1622,7 +1622,7 @@
         "Taunt users (blocks King's Shield)"
       ],
       "strengths": "Unique Stance Change ability: 150/150 defenses in Shield Forme, 150/150 offenses in Blade Forme. Excellent typing (Steel/Ghost) with 3 immunities (Normal, Fighting, Poison). Access to King's Shield for priority protection and Attack drops. Can run physical, special, or mixed sets.",
-      "strategy": "Aegislash is defined by Stance Change. It begins in Shield Forme with very high Defense and Special Defense, then changes to Blade Forme when it attacks. King's Shield can protect it and return it to Shield Forme, so good Aegislash play is about timing: scout first, attack when the target is exposed, and avoid being caught in Blade Forme by a faster revenge killer.\n\nSteel/Ghost gives Aegislash Normal, Fighting, and Poison immunities plus many useful resistances. Its actual weaknesses are Fire, Ground, Ghost, and Dark, all at 2×. Ground is not a quadruple weakness. Earthquake is still dangerous because Aegislash is often slow and may be hit while in Blade Forme, but the type multiplier is the same 2× category shown in the FAQ and weakness table.\n\nShadow Ball, Flash Cannon, Shadow Sneak, King's Shield, Swords Dance, and status options can all fit depending on the format. To counter Aegislash, pressure it with Fire, Ground, Ghost, or Dark moves, remove its item with Knock Off, or use Taunt to limit King's Shield and setup lines. Aegislash wants Ground immunities and Fire checks beside it, and it appreciates teammates that can bring it in safely rather than forcing it to absorb repeated hits."
+      "strategy": "Aegislash is one of the most unique Pokemon in competitive play:\n\n**Stance Change Mechanic:**\n- Shield Forme: 60/50/150/50/150/60 (defensive)\n- Blade Forme: 60/150/50/150/50/60 (offensive)\n- Switches to Blade when using attacking moves\n- Switches to Shield when using King's Shield\n- Always starts battle in Shield Forme\n\n**Standard Mixed Attacker:**\n- Moves: King's Shield, Shadow Ball, Flash Cannon, Shadow Sneak\n- Item: Weakness Policy or Leftovers\n- EVs: 252 HP / 252 SpA / 4 Spe\n- Strategy: Lead with King's Shield to scout, attack with STAB moves, finish with Shadow Sneak priority\n\n**Physical Swords Dance:**\n- Moves: Swords Dance, Shadow Sneak, Iron Head, Shadow Claw\n- Item: Life Orb or Spell Tag\n- Strategy: Set up Swords Dance, sweep with boosted priority\n\n**SubToxic Stall:**\n- Moves: Substitute, Toxic, King's Shield, Shadow Ball\n- Item: Leftovers\n- Strategy: Stall out opponents with Toxic + King's Shield\n\n**Key Weaknesses:**\n- 2× weak to Ground (Earthquake is everywhere)\n- Vulnerable to Fire, Ghost, Dark coverage\n- Slow Speed (60) means often moving last\n- Knock Off removes item and cripples viability\n- Taunt shuts down King's Shield spam\n\n**Best Partners:**\n- Ground immunities: Rotom-Wash, Zapdos, Landorus\n- Fire resistances: Water/Rock types\n- Wish passers: Clefable, Sylveon (Aegislash has no recovery)\n- Rapid Spin/Defog: Keep hazards off the field"
     },
     {
       "id": "zacian",
@@ -1659,7 +1659,7 @@
         "Faster Choice Scarf users (rare due to 148 base Speed)"
       ],
       "strengths": "Intrepid Sword boosts Attack by 1 stage on entry (effectively 195 Attack). Incredible Speed (148) outspeeds almost everything. Behemoth Blade is 100 BP Steel STAB that doubles damage vs Dynamax. Fairy/Steel typing gives 11 resistances and 2 immunities. Banned to Ubers tier for being too powerful.",
-      "strategy": "Zacian is a fast physical attacker built around immediate pressure. Intrepid Sword can raise its Attack on entry depending on the ruleset, and its Fairy/Steel typing gives it excellent defensive utility while still threatening major damage with Steel and Fairy STAB. Its high Speed lets it force many opponents to defend first rather than trade evenly.\n\nThe correct Zacian weakness profile is simple: Fire and Ground are both 2× weaknesses. Zacian has no 4× weakness from Fairy/Steel typing. It is immune to Dragon and Poison, resists many common attack types, and can punish passive turns with Swords Dance or immediate attacks. The danger is not a quadruple Ground multiplier; the danger is that strong Ground attackers and Fire attackers are common, often physically strong, and can exploit Zacian if it has already taken chip.\n\nTo counter Zacian, use bulky Fire or Ground answers, physically defensive Steel checks that can survive coverage, burn or paralysis support when legal, and revenge killers that avoid being picked off. Zacian appreciates Water, Flying, or Levitate teammates that handle Fire and Ground pressure. Because forms, items, and format legality change across games, treat the page as a weakness and matchup guide first, then confirm the exact legal moves and item rules for the format you are playing."
+      "strategy": "Zacian is the most dominant physical attacker in Ubers:\n\n**Intrepid Sword:**\n- Automatically raises Attack by 1 stage on switch-in\n- Effectively starts at +1 Attack (195 base)\n- Stacks with Swords Dance for +3 total\n\n**Standard Swords Dance Sweeper:**\n- Moves: Swords Dance, Behemoth Blade, Play Rough, Close Combat\n- Item: Rusted Sword (transforms to Crowned form, +40 Attack)\n- EVs: 252 Atk / 4 SpD / 252 Spe\n- Nature: Jolly or Adamant\n- Strategy: Switch in, get free +1 Attack, set up Swords Dance, sweep\n\n**Choice Band Wallbreaker:**\n- Moves: Behemoth Blade, Play Rough, Close Combat, Crunch\n- Item: Choice Band\n- Strategy: Immediate pressure with +1 Attack + Choice Band. No setup needed.\n\n**Substitute + 3 Attacks:**\n- Moves: Substitute, Behemoth Blade, Play Rough, Close Combat\n- Item: Leftovers\n- Strategy: Block status with Substitute, maintain +1 Attack advantage\n\n**Crowned Forme (with Rusted Sword):**\n- Type becomes Fairy/Steel\n- Attack: 130 → 170 (highest in the game)\n- Behemoth Blade becomes signature move\n- This is the standard competitive form\n\n**Key Weaknesses:**\n- 2× weak to Ground (Earthquake, Earth Power)\n- 2x weak to Fire (Heatran is a common check)\n- 2x weak to Fighting (Close Combat, Iron Head)\n- 2x weak to Steel (Ferrothorn, Corviknight)\n- Vulnerable to Will-O-Wisp (halves Attack)\n- No recovery moves (relies on switching)\n- Banned in most formats (Ubers only)\n\n**Best Partners:**\n- Ground immunities: Zapdos, Tornadus, Landorus\n- Fire checks: Water-types, Kyogre\n- Cleric support: Heal Bell/Aromatherapy for burns\n- Entry hazards: Stealth Rock + Spikes pressure switches"
     },
     {
       "id": "dracovish",
@@ -1699,7 +1699,7 @@
         "Choice Scarf users (outspeed and KO)"
       ],
       "strengths": "Fishious Rend is the most broken move in Gen 8: 85 BP that DOUBLES to 170 BP if user moves first. Strong Jaw boosts it further (1.5×). With Choice Band + Strong Jaw + priority, it hits harder than most Z-moves. Can OHKO even resists. Banned to Ubers for being too centralizing.",
-      "strategy": "Dracovish is remembered for how much pressure Fishious Rend can create when it moves first. Water/Dragon gives it strong offensive lanes into Fire, Ground, Rock, and many neutral targets, while Strong Jaw or speed support can make its main attack difficult to switch into. The drawback is that Dracovish often becomes predictable: if the opponent can deny the faster Fishious Rend turn or bring in a sturdy Water answer, its momentum can collapse quickly.\n\nThe defensive chart is straightforward: Dracovish is 2× weak to Dragon and 2× weak to Fairy. It has no 4× weakness from Water/Dragon typing. Its Water side helps against Fire, Water, and Steel, while Dragon adds useful resistances, but Fairy attacks are especially important because they also block Dragon pressure. Faster attackers, priority, and bulky Fairy or Water answers can force Dracovish to make real predictions instead of simply pressing its strongest option.\n\nTo build with Dracovish, give it safe entries through slow pivots, speed control, rain or sand support when the format allows it, and partners that pressure Fairy and bulky Water checks. To counter it, preserve a Dragon or Fairy answer, keep it from moving first, and avoid letting it enter for free after every KO. The page should be read as a matchup guide rather than a promise of one legal set, because available moves, items, and abilities vary by generation and format."
+      "strategy": "Dracovish is infamous for breaking Gen 8 OU with Fishious Rend:\n\n**Fishious Rend Mechanics:**\n- Base Power: 85\n- Doubles to 170 BP if user moves first\n- Strong Jaw boosts by 1.5× (255 effective BP)\n- Choice Band boosts by 1.5× (382 effective BP)\n- Rain boosts by 1.5× (573 effective BP in rain!)\n- This is stronger than most legendary signature moves\n\n**Choice Band Wallbreaker:**\n- Ability: Strong Jaw\n- Moves: Fishious Rend, Crunch, Ice Fang, Psychic Fangs\n- Item: Choice Band\n- EVs: 252 Atk / 4 SpD / 252 Spe\n- Nature: Jolly or Adamant\n- Strategy: Click Fishious Rend. That's it. It 2HKOs everything.\n\n**Choice Scarf Revenge Killer:**\n- Ability: Strong Jaw\n- Moves: Fishious Rend, Crunch, Ice Fang, Outrage\n- Item: Choice Scarf\n- Strategy: Outspeed and OHKO with Fishious Rend. Scarf ensures you move first.\n\n**Sand Rush Sweeper (Sand Teams):**\n- Ability: Sand Rush (doubles Speed in Sandstorm)\n- Moves: Fishious Rend, Crunch, Low Kick, Substitute\n- Item: Life Orb\n- Strategy: Pair with Tyranitar/Hippowdon. Becomes fastest thing in sand.\n\n**Damage Calculations (Choice Band + Strong Jaw):**\n- vs 252 HP Toxapex: 79.6% - 93.7% (guaranteed 2HKO)\n- vs 252 HP Ferrothorn: 52.8% - 62.5% (guaranteed 2HKO)\n- vs 0 HP Dragapult: 89.8% - 105.7% (31.3% chance to OHKO)\n- vs 252 HP Clefable: 43.9% - 51.8% (resists, still chunks)\n\n**Why It Was Banned:**\n- Fishious Rend has no counterplay\n- Even resists take 40-50% damage\n- Choice Scarf set outspeeds everything and OHKOs\n- Centralizes teambuilding around Water immunities\n- Banned to Ubers in Gen 8 OU\n\n**Key Weaknesses:**\n- Mediocre stats (90/90/100/70/80/75)\n- Relies entirely on Fishious Rend\n- Loses to faster Pokemon (Rend loses power)\n- Fairy-types wall it (Clefable, Azumarill)\n- No recovery or setup moves\n- Locked into moves with Choice items\n\n**Best Partners:**\n- Sandstorm setters: Tyranitar, Hippowdon (for Sand Rush)\n- Rain setters: Pelipper, Politoed (boosts Fishious Rend)\n- Fairy checks: Steel-types, Poison-types\n- Slow pivots: U-turn/Volt Switch to bring Dracovish in safely"
     },
     {
       "id": "lapras",
@@ -1736,7 +1736,7 @@
         "Grass-types"
       ],
       "strengths": "Massive HP (130) and good Special Defense. Freeze-Dry hits Water-types super effectively. Hydration + Rest combo in rain.",
-      "strategy": "Lapras works best as a bulky Water/Ice pivot, special wall, or slower attacker. Its huge 130 HP gives it more staying power than many Ice types, and Water Absorb can turn a predicted Water attack into free recovery. Freeze-Dry is the key offensive detail because it lets Lapras hit opposing Water types super effectively, something many Water attackers cannot do.\n\nThe correct Lapras weakness profile is four separate 2× weaknesses: Electric, Grass, Fighting, and Rock. It has no 4× weakness from its Water/Ice typing. That means Lapras can often survive one unboosted super-effective hit from the right side, but it should still avoid repeated physical Fighting or Rock pressure because its Defense is only average.\n\nTo counter Lapras, use strong Electric or Grass attackers, Fighting or Rock coverage from physical attackers, or special walls that do not mind Freeze-Dry. Lapras appreciates partners that cover Electric and Fighting pressure, plus hazard control if it needs to pivot repeatedly. In rain, Hydration and Rest can extend its lifespan, but the team still needs a plan for Grass and Electric switch-ins."
+      "strategy": "Use as a special wall or Trick Room sweeper. Weak to Fire, Electric, Grass, Fighting, Rock, and Steel (all 2×), so watch for Fighting- and Rock-type attackers. Excellent in rain teams with Hydration ability."
     },
     {
       "id": "kingambit",
@@ -1851,6 +1851,43 @@
       "strategy": "Tinkaton is best used as a disruptive utility Pokémon, not as a pure physical sweeper. Its Fairy/Steel typing creates valuable defensive switch-ins: it is immune to Dragon and Poison attacks and resists many common attacking types. That gives it opportunities to spread Thunder Wave, remove an item with Knock Off, or threaten damage with Play Rough. Mold Breaker is a flexible ability for ignoring certain defensive abilities, while its other abilities are more situational.\n\nGigaton Hammer is the centerpiece of the set, but it cannot be selected on consecutive turns. Plan the following turn before using it: Knock Off, Play Rough, Thunder Wave, a pivot, or a switch can keep momentum while Gigaton Hammer is unavailable. This sequencing is why Tinkaton rewards careful play more than simply clicking its strongest move. It can also fit well on balanced teams that need a Dragon immunity, a Fairy resist, and item disruption in one slot.\n\nIts two direct type weaknesses are Ground and Fire. Ground attackers such as Great Tusk and Garchomp, or Fire attackers such as Heatran and Cinderace, are natural answers if they enter safely. Pair Tinkaton with Water-, Flying-, or Ground-type teammates that can absorb those attacks, and avoid relying on its average physical bulk against repeated strong hits. Check the Fairy/Steel combination page for the full defensive chart, then use the team calculator to balance its Ground and Fire weaknesses across the rest of the team."
     },
     {
+      "id": "calyrex-shadow",
+      "name": "Calyrex-Shadow",
+      "types": [
+        "psychic",
+        "ghost"
+      ],
+      "generation": 8,
+      "category": "special-attacker",
+      "baseStats": {
+        "hp": 100,
+        "attack": 85,
+        "defense": 80,
+        "spAtk": 165,
+        "spDef": 100,
+        "speed": 150
+      },
+      "abilities": [
+        "As One (Spectrier)"
+      ],
+      "recommendedMoves": [
+        "Astral Barrage",
+        "Psyshock",
+        "Draining Kiss",
+        "Nasty Plot"
+      ],
+      "counters": [
+        "Dark-types (Yveltal, Tyranitar)",
+        "Pursuit trappers (Weavile, Bisharp)",
+        "Priority moves (Sucker Punch, Shadow Sneak)",
+        "Specially defensive Dark-types (Umbreon, Mandibuzz)",
+        "Choice Scarf users (Darkrai, Hoopa-Unbound)",
+        "Blissey/Chansey (extreme special bulk)"
+      ],
+      "strengths": "Absolutely dominant in Ubers tier. 165 Special Attack + 150 Speed makes it the fastest special attacker in the game. As One ability combines Unnerve + Grim Neigh (boosts Special Attack on KO). Astral Barrage is 120 BP Ghost STAB that hits both opponents in doubles. Immune to Normal and Fighting. Can snowball with Grim Neigh boosts.",
+      "strategy": "Calyrex-Shadow Rider is the undisputed king of Ubers:\n\n**Offensive Specs:**\n- 165 Special Attack (tied for 2nd highest in game)\n- 150 Speed (outspeeds almost everything)\n- Astral Barrage: 120 BP Ghost STAB, hits both foes in doubles\n- Grim Neigh: +1 Special Attack every KO (snowballs out of control)\n\n**Life Orb Sweeper (Standard):**\n- Ability: As One (Spectrier)\n- Moves: Astral Barrage, Psyshock, Draining Kiss, Nasty Plot\n- Item: Life Orb\n- EVs: 252 SpA / 4 SpD / 252 Spe\n- Nature: Timid\n- Strategy: Click Astral Barrage. Get KO. Grim Neigh activates. Repeat. Draining Kiss for recovery and Fairy coverage.\n\n**Choice Specs Nuke:**\n- Moves: Astral Barrage, Psyshock, Hyper Beam, Trick\n- Item: Choice Specs\n- Strategy: Maximum immediate power. Astral Barrage OHKOs most Ubers. Trick to cripple walls.\n\n**Nasty Plot Setup:**\n- Moves: Nasty Plot, Astral Barrage, Psyshock, Draining Kiss\n- Item: Life Orb or Weakness Policy\n- Strategy: Set up on passive Pokemon. +2 Astral Barrage OHKOs everything.\n\n**Damage Calculations (Life Orb):**\n- vs 252 HP Necrozma-DM: 79.8% - 94.1% (guaranteed 2HKO)\n- vs 252 HP Zacian-C: 52.9% - 62.4% (guaranteed 2HKO)\n- vs 0 HP Mewtwo: 89.5% - 105.5% (37.5% chance to OHKO)\n- vs 252 HP Yveltal: 31.7% - 37.4% (resists, but still chunks)\n\n**After One Grim Neigh Boost (+1 SpA):**\n- vs 252 HP Necrozma-DM: 118.8% - 140.1% (guaranteed OHKO)\n- vs 252 HP Zacian-C: 78.8% - 92.9% (guaranteed 2HKO)\n- vs 252 HP Yveltal: 47.3% - 55.9% (resists)\n\n**Why It Dominates Ubers:**\n- Fastest special attacker (150 Speed)\n- Highest Special Attack among fast Pokemon\n- Snowballs with Grim Neigh\n- Astral Barrage has no immunities (Ghost hits everything)\n- Psychic/Ghost typing is excellent offensively\n- Immune to Fake Out, Extreme Speed, Close Combat\n\n**Key Weaknesses:**\n- Dark-types wall it completely (Yveltal, Tyranitar)\n- Pursuit trapping (Weavile, Bisharp can trap and KO)\n- Priority moves (Sucker Punch, Shadow Sneak)\n- Relatively frail Defense (80 base)\n- No physical bulk (dies to Weavile Ice Shard)\n- Blissey/Chansey can stall it out\n\n**Best Partners:**\n- Dark-type checks: Fighting-types, Fairy-types, Bug-types\n- Stealth Rock setters: Pressure opponents, chip damage\n- Screens support: Light Clay Grimmsnarl (Reflect/Light Screen)\n- Pursuit absorbers: Ghost-types to bait Pursuit\n- Priority blockers: Psychic Terrain setters (blocks priority)\n\n**Tier Status:**\n- Ubers: Top 5 Pokemon in the tier\n- Banned from OU for being too centralizing\n- Dominant in VGC Series 13 (restricted format)\n\n**Fun Fact:**\n- Calyrex-Shadow is Calyrex riding Spectrier\n- As One ability is unique: combines two abilities\n- Signature move Astral Barrage is exclusive to this forme\n- In lore, it's the \"High King\" of the Crown Tundra"
+    },
+    {
       "id": "grimmsnarl",
       "name": "Grimmsnarl",
       "types": [
@@ -1858,13 +1895,13 @@
         "fairy"
       ],
       "generation": 8,
-      "category": "popular",
+      "category": "competitive-staple",
       "baseStats": {
         "hp": 95,
         "attack": 120,
         "defense": 65,
-        "spAtk": 95,
-        "spDef": 75,
+        "spAtk": 75,
+        "spDef": 85,
         "speed": 60
       },
       "abilities": [
@@ -1874,19 +1911,18 @@
       ],
       "recommendedMoves": [
         "Spirit Break",
-        "Sucker Punch",
         "Thunder Wave",
-        "Reflect"
+        "Foul Play",
+        "Swords Dance"
       ],
       "counters": [
-        "Steel-type attackers that resist Fairy pressure",
-        "Poison-type attackers with strong special moves",
-        "Fairy-type attackers that threaten a super-effective hit",
-        "Taunt users and Dark-types that block Prankster status",
-        "Strong physical attackers that exploit its lower Defense"
+        "Steel-types (Corviknight, Ferrothorn)",
+        "Poison-type attackers",
+        "Fairy-types (Clefable, Tapu Fini)",
+        "Strong special attackers"
       ],
-      "strengths": "Grimmsnarl's Dark/Fairy typing gives it Psychic and Dragon immunities, a strong Dark resistance, and useful neutral coverage with Spirit Break and Dark attacks. Prankster makes its support moves especially valuable.",
-      "strategy": "Grimmsnarl is most dangerous when it creates tempo before the opponent can act. Prankster gives priority to status and support moves, so Reflect, Light Screen, Thunder Wave, Taunt, and Parting Shot can change a matchup even when Grimmsnarl is slower. Spirit Break is useful because it deals Fairy damage while lowering Special Attack, and Sucker Punch gives it a way to punish faster attackers that must attack.\n\nThe key Grimmsnarl weaknesses are Steel, Poison, and Fairy. Steel attackers often resist Spirit Break and can pressure it directly, while Poison attacks exploit the Fairy side of its typing. Fairy attackers avoid the Dark typing's usual advantages and threaten super-effective damage. Dark-type opponents also matter because Prankster status moves fail against Dark targets in modern rules, so do not assume priority Thunder Wave or Taunt is always available.\n\nUse Grimmsnarl as a screen setter, disruption pivot, or bulky attacker, but avoid asking one set to do every job at once. Teams that use it for screens should pair it with setup sweepers that can immediately convert those turns into pressure. Teams that use it for disruption should track when Dark switch-ins are likely. To counter Grimmsnarl, bring a Steel, Poison, or Fairy answer that does not fold to Sucker Punch, deny free screen turns with Taunt or strong immediate pressure, and avoid letting Parting Shot hand a safe setup turn to a teammate."
+      "strengths": "Dark/Fairy with Prankster makes its status and screens disruptive. Huge 120 Attack and great bulk. Immune to Psychic and Dragon.",
+      "strategy": "Grimmsnarl is a premier support and bulky attacker. Prankster gives priority to Thunder Wave, Taunt, and Light Screen/Reflect, letting it disrupt opponents before they act. Max Attack (120) with Spirit Break and Foul Play lets it hit hard, while solid bulk and a Dark/Fairy typing (immune to Psychic and Dragon) make it a sturdy switch-in. Swords Dance sets can sweep weakened teams, and Parting Shot pivots out while lowering the foe's stats. Its weaknesses are Poison, Steel, and Fairy, so bring Steel- or Fairy-resistant partners to cover those matchups."
     },
     {
       "id": "machamp",
@@ -1895,7 +1931,7 @@
         "fighting"
       ],
       "generation": 1,
-      "category": "popular",
+      "category": "competitive-staple",
       "baseStats": {
         "hp": 90,
         "attack": 130,
@@ -1911,19 +1947,18 @@
       ],
       "recommendedMoves": [
         "Dynamic Punch",
-        "Knock Off",
+        "Close Combat",
         "Ice Punch",
         "Bullet Punch"
       ],
       "counters": [
-        "Flying-type attackers and Flying-type pivots",
-        "Psychic-type attackers that pressure its Special Defense",
-        "Fairy-type attackers that resist Fighting moves",
-        "Bulky Ghost-types that avoid Fighting STAB",
-        "Faster special attackers that deny repeated entries"
+        "Flying-types (Corviknight, Moltres)",
+        "Psychic-types (Alakazam, Tapu Lele)",
+        "Fairy-types (Clefable, Tapu Fini)",
+        "Faster special attackers"
       ],
-      "strengths": "Machamp has 130 Attack, useful natural bulk, and abilities that make it difficult to switch into. No Guard makes Dynamic Punch reliable, while Guts punishes burn and other status attempts.",
-      "strategy": "Machamp is a direct physical breaker. Its Fighting typing gives it weaknesses to Flying, Psychic, and Fairy, so it should enter through a slow pivot, after a teammate faints, or against a resisted Rock, Bug, or Dark attack rather than absorbing repeated neutral hits. Once in, Dynamic Punch can force progress by combining strong Fighting damage with confusion when No Guard is active. Knock Off punishes Ghost- and Psychic-type switch-ins by removing items.\n\nChoose the ability around the team's plan. No Guard makes Dynamic Punch and Stone Edge more dependable, which helps a wallbreaker set create immediate pressure. Guts turns burn or poison into an Attack boost, making status-based counterplay risky. Machamp's low Speed means priority such as Bullet Punch can matter, but it is not enough to solve faster Psychic, Flying, or Fairy attackers by itself.\n\nTo counter Machamp, keep a Fairy, Flying, Psychic, or Ghost answer healthy and avoid giving it free turns against passive targets. Bulky Ghost-types can blank Fighting moves, but they must respect Knock Off. Fairy-types resist Fighting and threaten back, though they should check for coverage. Machamp wants teammates that cover Flying and Psychic pressure, such as Steel or Dark partners, and it appreciates paralysis, Sticky Web, or slow pivot support that lets its Attack matter before it is forced out."
+      "strengths": "130 Attack with No Guard guaranteeing Dynamic Punch hits. Access to priority Bullet Punch. Good bulk.",
+      "strategy": "Machamp is a hard-hitting pure Fighting attacker. No Guard ensures Dynamic Punch and Stone Edge never miss, while 130 Attack makes its Close Combat and Ice Punch hit like trucks. Bullet Punch gives it priority to pick off weakened foes. Guts can turn a status condition into a power boost. Its pure Fighting typing means it is weak to Flying, Psychic, and Fairy, so pair it with partners that cover those matchups and use pivots to bring it in safely."
     },
     {
       "id": "weavile",
@@ -1933,7 +1968,7 @@
         "ice"
       ],
       "generation": 4,
-      "category": "competitive-staple",
+      "category": "physical-attacker",
       "baseStats": {
         "hp": 70,
         "attack": 120,
@@ -1947,20 +1982,19 @@
         "Pickpocket"
       ],
       "recommendedMoves": [
-        "Triple Axel",
         "Knock Off",
         "Ice Shard",
+        "Icicle Crash",
         "Swords Dance"
       ],
       "counters": [
-        "Fighting-type moves (4× weak)",
-        "Steel-type attackers and bulky Steel walls",
-        "Fire-, Rock-, Bug-, and Fairy-type attacks",
-        "Priority users that survive Ice Shard",
-        "Physically bulky Water or Fairy Pokemon"
+        "Fighting-types (4× weak — Lucario, Conkeldurr)",
+        "Fire-types (Heatran, Volcarona)",
+        "Steel-types (Ferrothorn, Scizor)",
+        "Fairy-types (Clefable, Tapu Fini)"
       ],
-      "strengths": "Weavile combines 125 Speed, 120 Attack, Dark/Ice STAB, and priority Ice Shard. It is immune to Psychic attacks and threatens many Dragon, Flying, Ghost, and Psychic targets.",
-      "strategy": "Weavile is built to punish exposed targets, not to absorb hits. Dark/Ice gives it a Psychic immunity plus useful Ice, Ghost, and Dark resistances, but its defensive side is fragile and Fighting attacks deal 4× damage. Fire, Bug, Rock, Steel, and Fairy are also super effective. Treat every entry as valuable: bring Weavile in after a KO, through U-turn or Volt Switch, or against a predicted Psychic or Ghost move.\n\nKnock Off is often Weavile's safest progress move because it removes Heavy-Duty Boots, Leftovers, Choice items, or defensive utility even if the opponent survives. Ice STAB pressures Dragon, Flying, Grass, and Ground targets, while Ice Shard gives priority for weakened faster threats. Swords Dance can sweep late, but only after Fighting and Steel answers have been weakened. If the ruleset changes available moves, choose the strongest legal Ice option that fits the format.\n\nCounterplay starts with denying free entries and preserving a Fighting, Steel, Fairy, Fire, Rock, or Bug answer. Bulky Steel-types can take Ice attacks and threaten back, while Fighting priority or strong Fighting coverage usually forces Weavile out. Watch for Knock Off before relying on an item-based answer. Weavile wants teammates that punish bulky Steel and Fairy switch-ins, plus hazard support that puts targets into Ice Shard range. It also needs defensive partners that can absorb Fighting pressure because its 4× weakness is too severe to cover by revenge killing alone."
+      "strengths": "Blazing 125 Speed and 120 Attack. Knock Off support. Ice/Dark STAB hits many types. Priority Ice Shard.",
+      "strategy": "Weavile is a fast, frail revenge killer and attacker. 125 Speed and 120 Attack let it strike first and hit hard with Knock Off and Icicle Crash, while Ice Shard provides priority. Swords Dance sets can sweep after a teammate faints. Its Ice/Dark typing gives it a 4× weakness to Fighting and 2× weaknesses to Fire, Rock, Steel, Bug, and Fairy, so it must be brought in on resisted hits and kept away from Fighting coverage. Pair it with Fire- or Steel-resistant partners and use Volt Switch or U-turn support for safe entries."
     },
     {
       "id": "volcarona",
@@ -1970,7 +2004,7 @@
         "fire"
       ],
       "generation": 5,
-      "category": "competitive-staple",
+      "category": "special-attacker",
       "baseStats": {
         "hp": 85,
         "attack": 60,
@@ -1987,17 +2021,15 @@
         "Quiver Dance",
         "Fiery Dance",
         "Bug Buzz",
-        "Giga Drain"
+        "Fire Blast"
       ],
       "counters": [
-        "Rock-type moves (4× weak)",
-        "Stealth Rock before Heavy-Duty Boots is confirmed",
-        "Water-type attackers and bulky Water walls",
-        "Flying-type attackers",
-        "Special walls or phazing users that stop setup"
+        "Rock-types (Tyranitar, Rhyperior) — 4× weak",
+        "Water-types (Rotom-Wash, Swampert)",
+        "Flying-types (Corviknight, Moltres)"
       ],
-      "strengths": "Volcarona has 135 Special Attack, 105 Special Defense, 100 Speed, and Quiver Dance. Bug/Fire gives it strong Grass and Steel pressure, plus Flame Body can punish physical contact.",
-      "strategy": "Volcarona is a setup threat whose matchup changes dramatically after one Quiver Dance. The boost raises Special Attack, Special Defense, and Speed, allowing it to turn a passive or resisted turn into a sweep attempt. Bug/Fire resists Grass especially well and also resists Fighting, Bug, Steel, Ice, and Fairy, but it has a 4× Rock weakness. Stealth Rock can remove half its health on entry unless Heavy-Duty Boots or hazard removal protects it.\n\nThe common attacking plan is Fire STAB plus Bug STAB, then coverage or recovery depending on the format. Fiery Dance can snowball Special Attack, Flamethrower is consistent, and Bug Buzz pressures Dark and Psychic targets. Giga Drain can punish Water, Ground, and Rock switch-ins while restoring health, but it does not replace proper Rock counterplay. Volcarona should not set up simply because it can; it needs the opponent's phazing, priority, special walls, and Rock coverage accounted for first.\n\nTo counter Volcarona, keep Stealth Rock active, pressure its Boots with Knock Off, or force it to take Rock, Water, or Flying damage before it boosts. Bulky Water-types, dedicated special walls, and phazing moves can interrupt a sweep if they are healthy. Volcarona appreciates hazard removal, teammates that remove Rock-types, and pivots that bring it in against Grass, Fairy, or Steel targets. If your team relies on Volcarona, use the team calculator to avoid stacking Rock and Water weaknesses around it."
+      "strengths": "Quiver Dance boosts everything. 135 SpAtk and 100 Speed. Fire/Bug STAB hits many types. Good special bulk.",
+      "strategy": "Volcarona is a setup special sweeper. Quiver Dance raises Special Attack, Special Defense, and Speed at once, turning it into a devastating wallbreaker after one boost. 135 Special Attack with Fiery Dance and Bug Buzz provides excellent coverage, and its 100 Speed and 105 Special Defense let it set up against many threats. Its Bug/Fire typing gives it a 4× weakness to Rock and 2× weaknesses to Flying and Water, so bring it in on a resisted hit and watch for Rock coverage. Fire- and Steel-resistant partners help cover those matchups."
     },
     {
       "id": "incineroar",
@@ -2007,7 +2039,7 @@
         "dark"
       ],
       "generation": 7,
-      "category": "starter",
+      "category": "bulky-attacker",
       "baseStats": {
         "hp": 95,
         "attack": 115,
@@ -2021,20 +2053,19 @@
         "Intimidate"
       ],
       "recommendedMoves": [
-        "Fake Out",
         "Flare Blitz",
-        "Knock Off",
-        "Parting Shot"
+        "Darkest Lariat",
+        "U-turn",
+        "Knock Off"
       ],
       "counters": [
-        "Water-type attackers and bulky Water pivots",
-        "Ground-type attackers that punish Fire typing",
-        "Fighting-type attackers that hit Dark typing",
-        "Rock-type attacks and entry hazard pressure",
-        "Defiant or Competitive users that punish Intimidate"
+        "Water-types (Slowking, Rotom-Wash)",
+        "Ground-types (Garchomp, Landorus)",
+        "Fighting-types (Breloom, Conkeldurr)",
+        "Rock-types (Tyranitar)"
       ],
-      "strengths": "Incineroar combines Intimidate, Fake Out, Knock Off, and Parting Shot with solid 95/90/90 bulk. Fire/Dark gives it a Psychic immunity and useful Fire, Grass, Ice, Ghost, Dark, and Steel resistances.",
-      "strategy": "Incineroar is a positioning Pokemon first. Intimidate weakens physical attackers on entry, Fake Out can buy a turn, Knock Off removes key items, and Parting Shot lowers momentum pressure while bringing in a teammate safely. Its Fire/Dark typing is especially useful into Psychic, Ghost, Grass, Ice, and Steel pressure, but Water, Fighting, Ground, and Rock attacks are super effective.\n\nIn singles, Incineroar often functions as a bulky pivot or wallbreaker. Flare Blitz and Knock Off give strong STAB pressure, while Will-O-Wisp, U-turn, Taunt, or Parting Shot can support a slower team. In doubles, its utility is even more pronounced because Fake Out and Intimidate affect turn structure immediately. The exact format matters, but the type-chart lesson is stable: do not leave it in against strong Water, Ground, Fighting, or Rock damage unless a defensive Tera type, item, or support move changes the exchange.\n\nTo counter Incineroar, punish repeated pivots with hazards, keep Water or Ground pressure available, and identify whether Defiant or Competitive teammates can turn Intimidate into an advantage. Bulky Water-types can limit Flare Blitz, while Fighting attackers threaten the Dark side. Incineroar wants partners that cover Ground and Water, such as Grass or Flying teammates, plus hazard control if it is expected to pivot often. Avoid stacking too many Rock or Ground weaknesses beside it."
+      "strengths": "Intimidate lowers foe Attack. Bulky Fire/Dark with great utility (U-turn, Knock Off, Parting Shot). Fake Out pivot.",
+      "strategy": "Incineroar is a bulky utility attacker and pivot. Intimidate lowers the opponent's Attack on switch-in, softening physical threats, while 95/90/90 bulk lets it take hits. Flare Blitz and Darkest Lariat are strong STAB options, and U-turn plus Parting Shot keep momentum and disrupt setup. Fake Out provides free chip and position. Its Fire/Dark typing leaves it weak to Fighting, Ground, Rock, and Water, so pair it with partners that cover those four matchups and use its pivoting moves to bring them in safely."
     },
     {
       "id": "arcanine",
@@ -2043,7 +2074,7 @@
         "fire"
       ],
       "generation": 1,
-      "category": "popular",
+      "category": "competitive-staple",
       "baseStats": {
         "hp": 90,
         "attack": 110,
@@ -2054,24 +2085,22 @@
       },
       "abilities": [
         "Intimidate",
-        "Flash Fire",
-        "Justified"
+        "Flash Fire"
       ],
       "recommendedMoves": [
         "Flare Blitz",
+        "Wild Charge",
         "Extreme Speed",
-        "Will-O-Wisp",
-        "Morning Sun"
+        "Will-O-Wisp"
       ],
       "counters": [
-        "Water-type attackers and bulky Water walls",
-        "Ground-type attackers with Earthquake or Earth Power",
-        "Rock-type attacks and Stealth Rock chip",
-        "Flash Fire or Fire-resistant switch-ins",
-        "Faster special attackers that avoid Extreme Speed range"
+        "Water-types (Rotom-Wash, Swampert)",
+        "Ground-types (Garchomp, Landorus)",
+        "Rock-types (Tyranitar, Rhyperior)",
+        "Faster special attackers"
       ],
-      "strengths": "Arcanine has balanced offensive stats, 95 Speed, Intimidate support, and priority Extreme Speed. As a Fire type, it resists Fire, Grass, Ice, Bug, Steel, and Fairy attacks.",
-      "strategy": "Arcanine can operate as a bulky pivot, physical attacker, or mixed utility Pokemon. Intimidate gives it immediate defensive value against physical attackers, while Flash Fire can turn predicted Fire attacks into a free switch. Fire typing means Arcanine is weak to Water, Ground, and Rock, and Stealth Rock chip can shorten its useful life if it needs to enter repeatedly.\n\nFlare Blitz gives strong physical Fire damage but causes recoil, so Morning Sun or careful pivoting is important on longer games. Extreme Speed lets Arcanine finish weakened threats regardless of normal Speed order. Will-O-Wisp can neutralize physical switch-ins, while coverage such as Close Combat, Wild Charge, or Crunch depends on the format and team need. Do not reveal coverage early if the opponent still has a clear Water, Rock, or Ground answer waiting.\n\nTo counter Arcanine, keep a bulky Water, Rock, or Ground answer healthy and watch whether it is Intimidate or Flash Fire. Physical attackers should consider Intimidate and burn risk before staying in. Arcanine appreciates Grass partners that handle Water and Ground pressure, Flying or Levitate teammates that avoid Ground, and hazard removal if it plays a pivot role. Use it to create incremental advantage rather than trading recklessly with recoil when Extreme Speed could matter later."
+      "strengths": "Balanced 110 Atk / 100 SpAtk and 95 Speed. Intimidate support. Flash Fire immunity. Extreme Speed priority.",
+      "strategy": "Arcanine is a versatile Fire-type wallbreaker and support. It balances 110 Attack and 100 Special Attack with 95 Speed, letting it run either physical Flare Blitz sets or special Fire Blast sets. Intimidate softens physical switch-ins and Flash Fire can turn a predicted Fire move into a power boost, while Extreme Speed provides priority cleanup. As a pure Fire type it is weak to Ground, Rock, and Water, so bring it in on a non-Water/Ground/Rock matchup and pair it with Water- or Rock-resistant partners."
     },
     {
       "id": "decidueye",
@@ -2081,7 +2110,7 @@
         "ghost"
       ],
       "generation": 7,
-      "category": "starter",
+      "category": "special-attacker",
       "baseStats": {
         "hp": 78,
         "attack": 107,
@@ -2096,19 +2125,19 @@
       ],
       "recommendedMoves": [
         "Spirit Shackle",
-        "Leaf Blade",
-        "Shadow Sneak",
-        "Swords Dance"
+        "Leaf Storm",
+        "Shadow Ball",
+        "Defog"
       ],
       "counters": [
-        "Fire-type attackers",
-        "Ice-type coverage",
-        "Flying-type attackers",
-        "Ghost- and Dark-type attacks",
-        "Faster attackers that exploit its middling Speed"
+        "Fire-types (Heatran, Volcarona)",
+        "Flying-types (Corviknight, Moltres)",
+        "Ice-types (Weavile, Mamoswine)",
+        "Dark-types (Tyranitar, Bisharp)",
+        "Ghost-types (Gengar, Aegislash)"
       ],
-      "strengths": "Decidueye's Grass/Ghost typing gives it Normal and Fighting immunities plus useful Water, Electric, Grass, and Ground resistances. Spirit Shackle can trap targets and create setup or pivot opportunities.",
-      "strategy": "Decidueye is a flexible attacker with useful immunities. Grass/Ghost lets it switch into Normal and Fighting moves for free and resist Water, Electric, Grass, and Ground attacks, but it is weak to Fire, Ice, Flying, Ghost, and Dark. Those five weaknesses are common enough that Decidueye should enter through prediction or pivot support rather than by absorbing repeated attacks.\n\nSpirit Shackle is the defining move because it prevents the target from switching, which can create a Swords Dance opportunity or let Decidueye remove a specific defensive piece. Leaf Blade pressures Water, Ground, and Rock targets, while Shadow Sneak gives priority against weakened foes. Its offenses are split well enough for physical or mixed ideas, but its base 70 Speed means it often needs priority, status support, or careful positioning.\n\nTo counter Decidueye, pressure it with Fire, Ice, Flying, Ghost, or Dark attacks and avoid being trapped into a losing exchange by Spirit Shackle. Faster Dark-types and strong Flying attackers are especially direct answers. Decidueye appreciates teammates that cover Fire and Ice pressure, such as bulky Water or Steel partners, and it benefits from hazard support that turns trapped targets into guaranteed progress. Check the team calculator before pairing it with other Grass or Ghost Pokemon because repeated Fire, Ice, or Dark weaknesses can build quickly."
+      "strengths": "Grass/Ghost with Spirit Shackle trapping. 100 SpAtk and 100 SpDef. Long Reach avoids contact. Good utility (Defog, U-turn).",
+      "strategy": "Decidueye is a Grass/Ghost special attacker and utility Pokemon. Spirit Shackle hits and traps the target, preventing switches and locking in a matchup, while Leaf Storm and Shadow Ball provide strong dual STAB. 100 Special Attack and 100 Special Defense let it threaten and take special hits, and Long Reach keeps it safe from contact abilities. Its typing leaves it weak to Fire, Flying, Ice, Dark, and Ghost, so bring it in on a resisted hit and pair it with partners covering those matchups. Defog and U-turn add team support and safe pivoting."
     },
     {
       "id": "rillaboom",
@@ -2117,7 +2146,7 @@
         "grass"
       ],
       "generation": 8,
-      "category": "starter",
+      "category": "physical-attacker",
       "baseStats": {
         "hp": 100,
         "attack": 125,
@@ -2131,20 +2160,20 @@
         "Grassy Surge"
       ],
       "recommendedMoves": [
+        "Drum Beating",
         "Grassy Glide",
-        "Wood Hammer",
         "Knock Off",
         "U-turn"
       ],
       "counters": [
-        "Fire-type attackers",
-        "Flying-type attackers and Flying pivots",
-        "Poison-, Bug-, and Ice-type attacks",
-        "Bulky Grass resists that avoid Knock Off punishment",
-        "Physical walls that can handle Grassy Terrain recovery"
+        "Fire-types (Heatran, Volcarona)",
+        "Flying-types (Corviknight, Moltres)",
+        "Ice-types (Weavile, Mamoswine)",
+        "Bug-types (Scizor, Volcarona)",
+        "Poison-types (Toxtricity, Nidoking)"
       ],
-      "strengths": "Rillaboom has 125 Attack, strong physical bulk, and Grassy Surge support. Grassy Terrain boosts Grass moves, supplies recovery, and can make Grassy Glide priority in formats where that interaction is legal.",
-      "strategy": "Rillaboom is a physical Grass attacker and terrain enabler. As a pure Grass type, it is weak to Fire, Ice, Poison, Flying, and Bug, while resisting Water, Electric, Grass, and Ground. Grassy Surge changes the board immediately by setting Grassy Terrain, which can strengthen Grass attacks, soften some Ground pressure, and support teammates with passive recovery. That terrain support is valuable, but it does not erase the five defensive weaknesses.\n\nWood Hammer gives maximum immediate damage at the cost of recoil, while Grassy Glide can provide priority when supported by the right rules and terrain interaction. Knock Off punishes Flying, Fire, Poison, or Steel switch-ins by removing items, and U-turn can keep momentum when the opponent brings a resist. Rillaboom should not blindly click Grass STAB into obvious Fire, Flying, or Steel answers; use item removal and pivoting to make those answers easier for teammates to break.\n\nTo counter Rillaboom, keep a Flying, Fire, Poison, Bug, or Ice attacker healthy and avoid letting Knock Off remove the item that makes the answer reliable. Physically bulky Grass resists can slow it down, especially if they do not fear U-turn chip. Rillaboom wants Fire and Flying answers beside it, plus partners that appreciate Grassy Terrain recovery or reduced Earthquake damage. If it is your team's Water and Ground answer, preserve enough health to switch in later rather than trading it early for recoil damage."
+      "strengths": "125 Attack with Grassy Surge terrain boosting Grass moves. Grassy Glide priority. Good bulk (100 HP / 90 Def).",
+      "strategy": "Rillaboom is a Grass-type physical attacker and tempo setter. Grassy Surge creates Grassy Terrain on entry, boosting its Grass moves and healing grounded Pokemon each turn, while Grassy Glide gives it priority to strike first. 125 Attack with Drum Beating and Knock Off hits hard, and 100 HP with 90 Defense give it staying power. As a pure Grass type it is weak to Bug, Fire, Flying, Ice, and Poison, so bring it in on a resisted matchup and pair it with Fire- or Ice-resistant partners. U-turn keeps momentum and sets up safe switches."
     },
     {
       "id": "excadrill",
@@ -2440,43 +2469,6 @@
       ],
       "strengths": "Darkrai has 135 Special Attack, 125 Speed, Psychic immunity, and strong Dark-type pressure. It can threaten offensive teams with immediate Speed and punish passive turns with setup.",
       "strategy": "Darkrai is a fast Dark-type special attacker that pressures teams through Speed, special power, and the threat of setup. Dark Pulse is its core STAB option, while coverage can target Fairy, Dark, Steel, or Normal answers depending on the format. Its Psychic immunity gives it a clean entry point against predicted Psychic attacks, but its bulk is not high enough to treat it as a defensive anchor.\n\nThe weakness profile is Fighting, Bug, and Fairy, all at 2×. Darkrai has no 4× weakness because it is a single Dark type. Fairy answers are especially important because they resist Dark pressure and threaten back, while Fighting attackers can force it out if they survive the first hit. Bug pressure often appears through pivot moves, which can punish Darkrai even when the direct damage is not the only problem.\n\nTo use Darkrai well, bring it in through a pivot, after a KO, or against Psychic pressure, then force the opponent to reveal its Fairy, Fighting, or special wall answer. It appreciates teammates that remove Fairy types and absorb priority. To counter Darkrai, keep a healthy Fairy, Fighting, or Bug answer, use revenge killers that outspeed or survive one hit, and avoid giving it a free setup turn against passive targets."
-    },
-    {
-      "id": "calyrex-shadow",
-      "name": "Calyrex-Shadow",
-      "types": [
-        "psychic",
-        "ghost"
-      ],
-      "generation": 8,
-      "category": "special-attacker",
-      "baseStats": {
-        "hp": 100,
-        "attack": 85,
-        "defense": 80,
-        "spAtk": 165,
-        "spDef": 100,
-        "speed": 150
-      },
-      "abilities": [
-        "As One (Spectrier)"
-      ],
-      "recommendedMoves": [
-        "Astral Barrage",
-        "Psyshock",
-        "Draining Kiss",
-        "Nasty Plot"
-      ],
-      "counters": [
-        "Dark-types (Yveltal, Tyranitar)",
-        "Pursuit trappers (Weavile, Bisharp)",
-        "Priority moves (Sucker Punch, Shadow Sneak)",
-        "Specially defensive Dark-types (Umbreon, Mandibuzz)",
-        "Choice Scarf users (Darkrai, Hoopa-Unbound)",
-        "Blissey/Chansey (extreme special bulk)"
-      ],
-      "strengths": "Absolutely dominant in Ubers tier. 165 Special Attack + 150 Speed makes it the fastest special attacker in the game. As One ability combines Unnerve + Grim Neigh (boosts Special Attack on KO). Astral Barrage is 120 BP Ghost STAB that hits both opponents in doubles. Immune to Normal and Fighting. Can snowball with Grim Neigh boosts.",
-      "strategy": "Calyrex-Shadow is a fast Psychic/Ghost special attacker whose threat comes from immediate Speed, high Special Attack, and snowball potential from As One with Grim Neigh. Astral Barrage gives it powerful Ghost pressure, while Psychic coverage and setup options can punish passive play. Its best turns come when it forces a KO or a defensive switch, then uses that momentum to keep the opponent from stabilizing.\n\nThe weakness profile is unusual but correct: Calyrex-Shadow is 4× weak to Ghost and 4× weak to Dark. It is immune to Normal and Fighting, but those immunities do not protect it from Sucker Punch, Shadow Sneak, Pursuit-style pressure in formats where that applies, or bulky Dark-types that can absorb Ghost and Psychic attacks. Because both weaknesses are quadruple, even coverage or priority from the right attacker can change the game immediately.\n\nTo use Calyrex-Shadow, remove or weaken Dark-types first, preserve enough health to avoid priority revenge kills, and avoid locking into a move that gives a Dark answer a free turn. It appreciates partners that pressure Dark-types, absorb priority, or create safe entries through pivots and hazards. To counter it, keep a healthy Dark or Ghost answer, use priority carefully, and deny free setup turns. Its Speed and power are real, but the 4× Ghost and 4× Dark weaknesses mean it cannot afford careless positioning."
     },
     {
       "id": "aerodactyl",
