@@ -12,7 +12,9 @@ interface RawPokemon {
 
 const ALL = (pokemonData as { pokemon: RawPokemon[] }).pokemon;
 
-export const dynamic = 'force-static';
+// Must stay dynamic: the response depends on the query string. 'force-static'
+// would prerender it and bake away the request, dropping ?q entirely.
+export const dynamic = 'force-dynamic';
 
 /**
  * Public, read-only Pokemon directory search.
