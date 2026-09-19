@@ -1,6 +1,6 @@
 import { createHash } from 'crypto';
+import { AUTH_MD } from '@/lib/authMd';
 import {
-  AUTH_MD,
   SKILL_MD,
   SKILL_NAME,
   SERVER_VERSION,
