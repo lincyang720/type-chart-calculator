@@ -8,6 +8,7 @@ import popularCombinations from '@/data/popularCombinations.json';
 import pokemonData from '@/data/pokemon.json';
 import Link from 'next/link';
 import { isEditorialCombination } from '@/lib/editorialCombinations';
+import { COMBO_WORDING } from '@/lib/comboWording';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -1889,6 +1890,7 @@ export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ combo: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
+  const comboWording = COMBO_WORDING[resolvedParams.combo];
   const [type1, type2] = resolvedParams.combo.split('-') as [TypeId, TypeId];
 
   const type1Data = typesData.types.find(t => t.id === type1);
@@ -1930,6 +1932,7 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
 
 export async function DualTypeContent({ params }: { params: Promise<{ combo: string }> }) {
   const resolvedParams = await params;
+  const comboWording = COMBO_WORDING[resolvedParams.combo];
   const [type1, type2] = resolvedParams.combo.split('-') as [TypeId, TypeId];
 
   const type1Data = typesData.types.find(t => t.id === type1);
@@ -1973,7 +1976,7 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
       <div className="text-center mb-8">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            {type1Data.name}/{type2Data.name} Type
+            {comboWording ? comboWording.h1 : `${type1Data.name}/${type2Data.name} Type`}
           </span>
         </h1>
         <div className="flex justify-center gap-3 mb-4">
@@ -1986,7 +1989,24 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
             <strong>Popular Pokemon:</strong> {combo.examples.join(', ')}
           </p>
         )}
+        {comboWording && (
+          <p className="mt-4 text-lg text-gray-700 mx-auto max-w-3xl">{comboWording.intro}</p>
+        )}
       </div>
+
+      {comboWording && (
+        <section className="mb-8 rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-7">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Common questions about {comboWording.h1}</h2>
+          <dl className="mx-auto max-w-3xl space-y-4 text-left">
+            {comboWording.faq.map((item) => (
+              <div key={item.q}>
+                <dt className="mb-1 font-semibold text-gray-900">{item.q}</dt>
+                <dd className="text-gray-700">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
 
       {/* Quick Summary */}
       <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-8 border-2 border-blue-200">

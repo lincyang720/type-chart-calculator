@@ -3,7 +3,7 @@ export const SITE_NAME = 'TypeMatchup';
 
 export const HOME_TITLE = 'Pokemon Type Calculator: Matchup & Weakness Tool';
 export const HOME_DESCRIPTION =
-  'Pokemon Type Calculator for instant matchups. Check weaknesses, resistances, immunities, team coverage, and damage multipliers for any single or dual type.';
+  'Pokemon Type Calculator for instant matchups. A free type calculator for weaknesses, resistances, immunities, team coverage, and damage multipliers on any single or dual type.';
 
 export function getTypePageTitle(typeName: string): string {
   return `${typeName} Type Weaknesses, Resistances & Matchups | ${SITE_NAME}`;

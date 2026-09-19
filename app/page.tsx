@@ -110,7 +110,7 @@ export default function Home() {
             Pokemon Type Calculator
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-6 max-w-3xl mx-auto px-4">
-            Use this interactive type matchup tool to check weaknesses, resistances, immunities, and damage multipliers for any single or dual-type Pokemon combination.
+            Use this Pokémon type calculator to check weaknesses, resistances, immunities, and damage multipliers for any single or dual-type Pokemon combination.
           </p>
         </section>
 
@@ -205,7 +205,7 @@ export default function Home() {
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               <Link href="/pokemon/team-calculator" className="rounded-lg border border-gray-200 p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                <h3 className="font-semibold text-gray-900">Pokemon Team Builder</h3>
+                <h3 className="font-semibold text-gray-900">Pokemon Team Weakness Calculator</h3>
                 <p className="text-sm text-gray-600 mt-2">Check shared weaknesses and defensive gaps across six Pokemon.</p>
               </Link>
               <Link href="/pokemon/type-chart" className="rounded-lg border border-gray-200 p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors">
@@ -430,7 +430,7 @@ export default function Home() {
               <li><strong>No Effect (0×):</strong> The attacking type cannot damage the defending type at all</li>
               <li><strong>Normal (1×):</strong> Standard damage with no type advantage or disadvantage</li>
             </ul>
-            <h3 className="text-xl font-semibold mb-3">Type Chart Calculator for Dual-Type Interactions</h3>
+            <h3 className="text-xl font-semibold mb-3">Type Calc for Dual-Type Interactions</h3>
             <p className="mb-4">
               When facing dual-type opponents, multipliers stack multiplicatively. This can result in:
             </p>

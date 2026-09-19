@@ -12,6 +12,7 @@ import {
   generateMetadata as generateDualTypeMetadata,
 } from '@/app/combo/[combo]/page';
 import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
+import { COMBO_WORDING } from '@/lib/comboWording';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -72,6 +73,29 @@ export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ type: string }> }): Promise<Metadata> {
   const { type: typeParam } = await params;
+
+  const comboWording = COMBO_WORDING[typeParam];
+  if (comboWording) {
+    return {
+      title: comboWording.title,
+      description: comboWording.description,
+      openGraph: {
+        siteName: 'TypeMatchup',
+        title: comboWording.title,
+        description: comboWording.description,
+        url: `https://www.typematchup.org/types/${typeParam}`,
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: comboWording.title,
+        description: comboWording.description,
+      },
+      alternates: {
+        canonical: `/types/${typeParam}`,
+      },
+    };
+  }
 
   if (typeParam.includes('-')) {
     return generateDualTypeMetadata({

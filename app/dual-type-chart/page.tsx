@@ -10,8 +10,8 @@ const faqs = [
   ['What is a strong defensive dual type?', 'Steel/Fairy has only Fire and Ground weaknesses plus two immunities. Water/Ground has one weakness, Grass, but that weakness deals 4× damage. Stats, abilities, recovery, and format still matter.'],
 ];
 
-const title = 'Pokémon Dual Type Chart — All 153 Combinations';
-const description = 'Interactive Pokémon dual type chart for all 153 combinations. Sort by weakness count and inspect 4× weaknesses, resistances, immunities, and example Pokémon.';
+const title = 'Dual Type Chart — All 153 Pokémon Combinations';
+const description = 'Interactive dual type chart for all 153 Pokémon combinations. Sort by weakness count and inspect 4× weaknesses, resistances, immunities, and example Pokémon.';
 
 export const metadata: Metadata = {
   title,
@@ -47,16 +47,16 @@ export default function Page() {
       }} />
 
       <header className="mx-auto mb-8 max-w-4xl text-center">
-        <h1 className="text-3xl font-bold sm:text-5xl">Pokémon Dual Type Chart</h1>
+        <h1 className="text-3xl font-bold sm:text-5xl">Dual Type Chart</h1>
         <p className="mt-4 text-lg text-gray-700">
-          Every dual-type combination&apos;s weaknesses, resistances, and immunities—sorted and explorable.
+          This Pokémon dual type chart covers every dual-type combination&apos;s weaknesses, resistances, and immunities—sorted and explorable.
         </p>
       </header>
 
       <DualTypeExplorer />
 
       <article className="prose mx-auto mt-12 max-w-4xl">
-        <h2>What Is a Dual Type in Pokémon?</h2>
+        <h2>What Is a Dual Type Pokemon?</h2>
         <p>
           A dual-type Pokémon uses two types for its defensive matchups. The pair can add weaknesses and resistances,
           cancel one type&apos;s weakness with the other type&apos;s resistance, or gain an immunity that overrides the second
@@ -72,7 +72,7 @@ export default function Page() {
           resistance cancel to the usual 1× multiplier.
         </p>
 
-        <h2>Which Dual Types Have the Most Weaknesses?</h2>
+        <h2>Which Dual Type Chart Pokemon Have the Most Weaknesses?</h2>
         <p>
           Grass/Ice has seven weaknesses under the modern type chart: Fire, Fighting, Poison, Flying, Bug, Rock, and Steel.
           Its Fire weakness is 4×, while the other six deal 2× type effectiveness. Rock/Ice is also fragile but has six
