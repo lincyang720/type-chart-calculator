@@ -1,0 +1,11 @@
+# TypeMatchup — https://www.typematchup.org
+#
+# Content Signals (https://contentsignals.org/) declare how this site's content
+# may be used. TypeMatchup is a public reference tool and permits all three.
+
+User-Agent: *
+Allow: /
+
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+Sitemap: https://www.typematchup.org/sitemap.xml

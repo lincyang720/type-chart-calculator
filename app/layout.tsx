@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import MobileNav from '@/components/MobileNav';
 import ConsentPreferences from '@/components/ConsentPreferences';
 import ConsentSettingsButton from '@/components/ConsentSettingsButton';
+import WebMCPBootstrap from '@/components/WebMCPBootstrap';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME, SITE_URL } from '@/lib/seo';
 import '../styles/globals.css';
 
@@ -123,6 +124,7 @@ export default function RootLayout({
         </footer>
 
         <ConsentPreferences />
+        <WebMCPBootstrap />
       </body>
     </html>
   );
