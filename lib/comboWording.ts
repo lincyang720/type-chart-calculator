@@ -19,7 +19,7 @@ export const COMBO_WORDING: Record<string, ComboWording> = {
       'Steel Fairy Pokemon pair two of the strongest defensive types available. Players also search this pairing as Fairy Steel Pokemon. Below you can check the Steel Fairy weakness list, its resistances, and how to counter it.',
     faq: [
       {
-        q: 'What is the Steel Fairy weakness?',
+        q: 'What is the Steel Fairy Pokémon weakness?',
         a: 'The Steel Fairy weakness list is shown in the defensive matchups above. Both types contribute, so any attack either type is weak to becomes a real threat.',
       },
       {

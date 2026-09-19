@@ -95,6 +95,14 @@ const homepageFaqSchema = {
         text: "Yes. Terastallization replaces the Pokémon's defensive typing with its Tera type. Select that Tera type alone in the calculator to check its new defensive weaknesses and resistances.",
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Is this the type calculator pokemon players look for?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The calculator above is the same tool: pick a defending type, add a second type, and it returns every matchup as 4×, 2×, ½×, ¼× or 0×.',
+      },
+    },
   ],
 };
 
@@ -180,6 +188,10 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Does Tera type change weaknesses in Scarlet and Violet?</h3>
                 <p>Yes. Terastallization replaces the Pokémon&apos;s defensive typing with its Tera type. Select that Tera type alone in the calculator to check its new defensive weaknesses and resistances.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Is this the type calculator pokemon players look for?</h3>
+                <p>Yes. The calculator above is the same tool: pick a defending type, add a second type, and it returns every matchup as 4×, 2×, ½×, ¼× or 0×.</p>
               </div>
             </div>
           </section>
