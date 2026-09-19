@@ -2,6 +2,18 @@
 
 A comprehensive type effectiveness calculator and battle simulator built with Next.js 14, TypeScript, and Tailwind CSS.
 
+**Live site:** https://www.typematchup.org/ — an interactive Pokemon type matchup, weakness, and team-coverage calculator.
+
+## Public Dataset
+
+The [`dataset/`](dataset) folder contains open, machine-readable exports of the type chart plus a
+dependency-free calculator, all generated from this repository's own `data/typeChart.json`:
+
+- `dataset/type-chart.csv` — the full 18×18 effectiveness matrix
+- `dataset/dual-type-combinations.json` — every single and dual-type combination with its defensive summary
+- `dataset/index.html` — a standalone, offline calculator
+- `dataset/typecalc.py` — a command-line calculator
+
 ## Features
 
 - **Interactive Type Chart**: Complete 18×18 type effectiveness matrix

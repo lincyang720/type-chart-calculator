@@ -1,0 +1,19 @@
+defending \ attacking,normal,fire,water,electric,grass,ice,fighting,poison,ground,flying,psychic,bug,rock,ghost,dragon,dark,steel,fairy
+normal,1x,1x,1x,1x,1x,1x,2x,1x,1x,1x,1x,1x,1x,0x,1x,1x,1x,1x
+fire,1x,0.5x,2x,1x,0.5x,0.5x,1x,1x,2x,1x,1x,0.5x,2x,1x,1x,1x,0.5x,0.5x
+water,1x,0.5x,0.5x,2x,2x,0.5x,1x,1x,1x,1x,1x,1x,1x,1x,1x,1x,0.5x,1x
+electric,1x,1x,1x,0.5x,1x,1x,1x,1x,2x,0.5x,1x,1x,1x,1x,1x,1x,0.5x,1x
+grass,1x,2x,0.5x,0.5x,0.5x,2x,1x,2x,0.5x,2x,1x,2x,1x,1x,1x,1x,1x,1x
+ice,1x,2x,1x,1x,1x,0.5x,2x,1x,1x,1x,1x,1x,2x,1x,1x,1x,2x,1x
+fighting,1x,1x,1x,1x,1x,1x,1x,1x,1x,2x,2x,0.5x,0.5x,1x,1x,0.5x,1x,2x
+poison,1x,1x,1x,1x,0.5x,1x,0.5x,0.5x,2x,1x,2x,0.5x,1x,1x,1x,1x,1x,0.5x
+ground,1x,1x,2x,0x,2x,2x,1x,0.5x,1x,1x,1x,1x,0.5x,1x,1x,1x,1x,1x
+flying,1x,1x,1x,2x,0.5x,2x,0.5x,1x,0x,1x,1x,0.5x,2x,1x,1x,1x,1x,1x
+psychic,1x,1x,1x,1x,1x,1x,0.5x,1x,1x,1x,0.5x,2x,1x,2x,1x,2x,1x,1x
+bug,1x,2x,1x,1x,0.5x,1x,0.5x,1x,0.5x,2x,1x,1x,2x,1x,1x,1x,1x,1x
+rock,0.5x,0.5x,2x,1x,2x,1x,2x,0.5x,2x,0.5x,1x,1x,1x,1x,1x,1x,2x,1x
+ghost,0x,1x,1x,1x,1x,1x,0x,0.5x,1x,1x,1x,0.5x,1x,2x,1x,2x,1x,1x
+dragon,1x,0.5x,0.5x,0.5x,0.5x,2x,1x,1x,1x,1x,1x,1x,1x,1x,2x,1x,1x,2x
+dark,1x,1x,1x,1x,1x,1x,2x,1x,1x,1x,0x,2x,1x,0.5x,1x,0.5x,1x,2x
+steel,0.5x,2x,1x,1x,0.5x,0.5x,2x,0x,2x,0.5x,0.5x,0.5x,0.5x,1x,0.5x,1x,0.5x,0.5x
+fairy,1x,1x,1x,1x,1x,1x,0.5x,2x,1x,1x,1x,0.5x,1x,1x,0x,0.5x,2x,1x

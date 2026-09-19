@@ -1,0 +1,4744 @@
+{
+  "schema_version": 1,
+  "description": "Pokemon type effectiveness, Generation 6-9 (18 types). matrix[defending][attacking] = damage multiplier. Generated from this repository's canonical data/typeChart.json.",
+  "types": [
+    "normal",
+    "fire",
+    "water",
+    "electric",
+    "grass",
+    "ice",
+    "fighting",
+    "poison",
+    "ground",
+    "flying",
+    "psychic",
+    "bug",
+    "rock",
+    "ghost",
+    "dragon",
+    "dark",
+    "steel",
+    "fairy"
+  ],
+  "matrix": {
+    "normal": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 1.0,
+      "ice": 1.0,
+      "fighting": 2.0,
+      "poison": 1.0,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 1.0,
+      "rock": 1.0,
+      "ghost": 0.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 1.0,
+      "fairy": 1.0
+    },
+    "fire": {
+      "normal": 1.0,
+      "fire": 0.5,
+      "water": 2.0,
+      "electric": 1.0,
+      "grass": 0.5,
+      "ice": 0.5,
+      "fighting": 1.0,
+      "poison": 1.0,
+      "ground": 2.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 0.5,
+      "rock": 2.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 0.5,
+      "fairy": 0.5
+    },
+    "water": {
+      "normal": 1.0,
+      "fire": 0.5,
+      "water": 0.5,
+      "electric": 2.0,
+      "grass": 2.0,
+      "ice": 0.5,
+      "fighting": 1.0,
+      "poison": 1.0,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 1.0,
+      "rock": 1.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 0.5,
+      "fairy": 1.0
+    },
+    "electric": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 0.5,
+      "grass": 1.0,
+      "ice": 1.0,
+      "fighting": 1.0,
+      "poison": 1.0,
+      "ground": 2.0,
+      "flying": 0.5,
+      "psychic": 1.0,
+      "bug": 1.0,
+      "rock": 1.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 0.5,
+      "fairy": 1.0
+    },
+    "grass": {
+      "normal": 1.0,
+      "fire": 2.0,
+      "water": 0.5,
+      "electric": 0.5,
+      "grass": 0.5,
+      "ice": 2.0,
+      "fighting": 1.0,
+      "poison": 2.0,
+      "ground": 0.5,
+      "flying": 2.0,
+      "psychic": 1.0,
+      "bug": 2.0,
+      "rock": 1.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 1.0,
+      "fairy": 1.0
+    },
+    "ice": {
+      "normal": 1.0,
+      "fire": 2.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 1.0,
+      "ice": 0.5,
+      "fighting": 2.0,
+      "poison": 1.0,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 1.0,
+      "rock": 2.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 2.0,
+      "fairy": 1.0
+    },
+    "fighting": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 1.0,
+      "ice": 1.0,
+      "fighting": 1.0,
+      "poison": 1.0,
+      "ground": 1.0,
+      "flying": 2.0,
+      "psychic": 2.0,
+      "bug": 0.5,
+      "rock": 0.5,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 0.5,
+      "steel": 1.0,
+      "fairy": 2.0
+    },
+    "poison": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 0.5,
+      "ice": 1.0,
+      "fighting": 0.5,
+      "poison": 0.5,
+      "ground": 2.0,
+      "flying": 1.0,
+      "psychic": 2.0,
+      "bug": 0.5,
+      "rock": 1.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 1.0,
+      "fairy": 0.5
+    },
+    "ground": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 2.0,
+      "electric": 0.0,
+      "grass": 2.0,
+      "ice": 2.0,
+      "fighting": 1.0,
+      "poison": 0.5,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 1.0,
+      "rock": 0.5,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 1.0,
+      "fairy": 1.0
+    },
+    "flying": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 2.0,
+      "grass": 0.5,
+      "ice": 2.0,
+      "fighting": 0.5,
+      "poison": 1.0,
+      "ground": 0.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 0.5,
+      "rock": 2.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 1.0,
+      "fairy": 1.0
+    },
+    "psychic": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 1.0,
+      "ice": 1.0,
+      "fighting": 0.5,
+      "poison": 1.0,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 0.5,
+      "bug": 2.0,
+      "rock": 1.0,
+      "ghost": 2.0,
+      "dragon": 1.0,
+      "dark": 2.0,
+      "steel": 1.0,
+      "fairy": 1.0
+    },
+    "bug": {
+      "normal": 1.0,
+      "fire": 2.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 0.5,
+      "ice": 1.0,
+      "fighting": 0.5,
+      "poison": 1.0,
+      "ground": 0.5,
+      "flying": 2.0,
+      "psychic": 1.0,
+      "bug": 1.0,
+      "rock": 2.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 1.0,
+      "fairy": 1.0
+    },
+    "rock": {
+      "normal": 0.5,
+      "fire": 0.5,
+      "water": 2.0,
+      "electric": 1.0,
+      "grass": 2.0,
+      "ice": 1.0,
+      "fighting": 2.0,
+      "poison": 0.5,
+      "ground": 2.0,
+      "flying": 0.5,
+      "psychic": 1.0,
+      "bug": 1.0,
+      "rock": 1.0,
+      "ghost": 1.0,
+      "dragon": 1.0,
+      "dark": 1.0,
+      "steel": 2.0,
+      "fairy": 1.0
+    },
+    "ghost": {
+      "normal": 0.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 1.0,
+      "ice": 1.0,
+      "fighting": 0.0,
+      "poison": 0.5,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 0.5,
+      "rock": 1.0,
+      "ghost": 2.0,
+      "dragon": 1.0,
+      "dark": 2.0,
+      "steel": 1.0,
+      "fairy": 1.0
+    },
+    "dragon": {
+      "normal": 1.0,
+      "fire": 0.5,
+      "water": 0.5,
+      "electric": 0.5,
+      "grass": 0.5,
+      "ice": 2.0,
+      "fighting": 1.0,
+      "poison": 1.0,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 1.0,
+      "rock": 1.0,
+      "ghost": 1.0,
+      "dragon": 2.0,
+      "dark": 1.0,
+      "steel": 1.0,
+      "fairy": 2.0
+    },
+    "dark": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 1.0,
+      "ice": 1.0,
+      "fighting": 2.0,
+      "poison": 1.0,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 0.0,
+      "bug": 2.0,
+      "rock": 1.0,
+      "ghost": 0.5,
+      "dragon": 1.0,
+      "dark": 0.5,
+      "steel": 1.0,
+      "fairy": 2.0
+    },
+    "steel": {
+      "normal": 0.5,
+      "fire": 2.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 0.5,
+      "ice": 0.5,
+      "fighting": 2.0,
+      "poison": 0.0,
+      "ground": 2.0,
+      "flying": 0.5,
+      "psychic": 0.5,
+      "bug": 0.5,
+      "rock": 0.5,
+      "ghost": 1.0,
+      "dragon": 0.5,
+      "dark": 1.0,
+      "steel": 0.5,
+      "fairy": 0.5
+    },
+    "fairy": {
+      "normal": 1.0,
+      "fire": 1.0,
+      "water": 1.0,
+      "electric": 1.0,
+      "grass": 1.0,
+      "ice": 1.0,
+      "fighting": 0.5,
+      "poison": 2.0,
+      "ground": 1.0,
+      "flying": 1.0,
+      "psychic": 1.0,
+      "bug": 0.5,
+      "rock": 1.0,
+      "ghost": 1.0,
+      "dragon": 0.0,
+      "dark": 0.5,
+      "steel": 2.0,
+      "fairy": 1.0
+    }
+  },
+  "combinations": {
+    "normal": {
+      "types": [
+        "normal"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting"
+        ],
+        "resist_0_5x": [],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "fire": {
+      "types": [
+        "fire"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground",
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "fire",
+          "grass",
+          "ice",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "water": {
+      "types": [
+        "water"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "grass"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "ice",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "electric": {
+      "types": [
+        "electric"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "flying",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "grass": {
+      "types": [
+        "grass"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "fire",
+          "flying",
+          "ice",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "grass",
+          "ground",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ice": {
+      "types": [
+        "ice"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "fire",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "ice"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "fighting": {
+      "types": [
+        "fighting"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "flying",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "poison": {
+      "types": [
+        "poison"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "fighting",
+          "grass",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ground": {
+      "types": [
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "grass",
+          "ice",
+          "water"
+        ],
+        "resist_0_5x": [
+          "poison",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "flying": {
+      "types": [
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "ice",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fighting",
+          "grass"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "psychic": {
+      "types": [
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark",
+          "ghost"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "psychic"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "bug": {
+      "types": [
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "flying",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "grass",
+          "ground"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "rock": {
+      "types": [
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "grass",
+          "ground",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "flying",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ghost": {
+      "types": [
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "ghost"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "dragon": {
+      "types": [
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "fairy",
+          "ice"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fire",
+          "grass",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "dark": {
+      "types": [
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "fairy",
+          "fighting"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "ghost"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "steel": {
+      "types": [
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "fire",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dragon",
+          "fairy",
+          "flying",
+          "grass",
+          "ice",
+          "normal",
+          "psychic",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "fairy": {
+      "types": [
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "poison",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "fighting"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "normal-fire": {
+      "types": [
+        "normal",
+        "fire"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "ground",
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "fire",
+          "grass",
+          "ice",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-water": {
+      "types": [
+        "normal",
+        "water"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "fighting",
+          "grass"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "ice",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-electric": {
+      "types": [
+        "normal",
+        "electric"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "flying",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-grass": {
+      "types": [
+        "normal",
+        "grass"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "fighting",
+          "fire",
+          "flying",
+          "ice",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "grass",
+          "ground",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-ice": {
+      "types": [
+        "normal",
+        "ice"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting"
+        ],
+        "weak_2x": [
+          "fire",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "ice"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-fighting": {
+      "types": [
+        "normal",
+        "fighting"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "fighting",
+          "flying",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-poison": {
+      "types": [
+        "normal",
+        "poison"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "grass",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-ground": {
+      "types": [
+        "normal",
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "grass",
+          "ice",
+          "water"
+        ],
+        "resist_0_5x": [
+          "poison",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric",
+          "ghost"
+        ]
+      }
+    },
+    "normal-flying": {
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "ice",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "grass"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost",
+          "ground"
+        ]
+      }
+    },
+    "normal-psychic": {
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark"
+        ],
+        "resist_0_5x": [
+          "psychic"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-bug": {
+      "types": [
+        "normal",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "flying",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "grass",
+          "ground"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-rock": {
+      "types": [
+        "normal",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting"
+        ],
+        "weak_2x": [
+          "grass",
+          "ground",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "flying",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-ghost": {
+      "types": [
+        "normal",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "ghost",
+          "normal"
+        ]
+      }
+    },
+    "normal-dragon": {
+      "types": [
+        "normal",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "fairy",
+          "fighting",
+          "ice"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fire",
+          "grass",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost"
+        ]
+      }
+    },
+    "normal-dark": {
+      "types": [
+        "normal",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting"
+        ],
+        "weak_2x": [
+          "bug",
+          "fairy"
+        ],
+        "resist_0_5x": [
+          "dark"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost",
+          "psychic"
+        ]
+      }
+    },
+    "normal-steel": {
+      "types": [
+        "normal",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting"
+        ],
+        "weak_2x": [
+          "fire",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dragon",
+          "fairy",
+          "flying",
+          "grass",
+          "ice",
+          "normal",
+          "psychic",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ghost",
+          "poison"
+        ]
+      }
+    },
+    "normal-fairy": {
+      "types": [
+        "normal",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "poison",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon",
+          "ghost"
+        ]
+      }
+    },
+    "fire-water": {
+      "types": [
+        "fire",
+        "water"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "ground",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy"
+        ],
+        "double_resist_0_25x": [
+          "fire",
+          "ice",
+          "steel"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-electric": {
+      "types": [
+        "fire",
+        "electric"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground"
+        ],
+        "weak_2x": [
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "electric",
+          "fairy",
+          "fire",
+          "flying",
+          "grass",
+          "ice"
+        ],
+        "double_resist_0_25x": [
+          "steel"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-grass": {
+      "types": [
+        "fire",
+        "grass"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "flying",
+          "poison",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fairy",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-ice": {
+      "types": [
+        "fire",
+        "ice"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "rock"
+        ],
+        "weak_2x": [
+          "fighting",
+          "ground",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "grass"
+        ],
+        "double_resist_0_25x": [
+          "ice"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-fighting": {
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "flying",
+          "ground",
+          "psychic",
+          "water"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fire",
+          "grass",
+          "ice",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-poison": {
+      "types": [
+        "fire",
+        "poison"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground"
+        ],
+        "weak_2x": [
+          "psychic",
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "fire",
+          "ice",
+          "poison",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "fairy",
+          "grass"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-ground": {
+      "types": [
+        "fire",
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "water"
+        ],
+        "weak_2x": [
+          "ground"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "fire",
+          "poison",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "fire-flying": {
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "rock"
+        ],
+        "weak_2x": [
+          "electric",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fairy",
+          "fighting",
+          "fire",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "grass"
+        ],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "fire-psychic": {
+      "types": [
+        "fire",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "ghost",
+          "ground",
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fairy",
+          "fighting",
+          "fire",
+          "grass",
+          "ice",
+          "psychic",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "fire-bug": {
+      "types": [
+        "fire",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "rock"
+        ],
+        "weak_2x": [
+          "flying",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "fighting",
+          "ice",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-rock": {
+      "types": [
+        "fire",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground",
+          "water"
+        ],
+        "weak_2x": [
+          "fighting",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "flying",
+          "ice",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "fire"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-ghost": {
+      "types": [
+        "fire",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "ghost",
+          "ground",
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fairy",
+          "fire",
+          "grass",
+          "ice",
+          "poison",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "fire-dragon": {
+      "types": [
+        "fire",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "ground",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "electric",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "fire",
+          "grass"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fire-dark": {
+      "types": [
+        "fire",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "ground",
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fire",
+          "ghost",
+          "grass",
+          "ice",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "fire-steel": {
+      "types": [
+        "fire",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground"
+        ],
+        "weak_2x": [
+          "fighting",
+          "water"
+        ],
+        "resist_0_5x": [
+          "dragon",
+          "flying",
+          "normal",
+          "psychic"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "fairy",
+          "grass",
+          "ice",
+          "steel"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "fire-fairy": {
+      "types": [
+        "fire",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground",
+          "poison",
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fairy",
+          "fighting",
+          "fire",
+          "grass",
+          "ice"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "water-electric": {
+      "types": [
+        "water",
+        "electric"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "grass",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "flying",
+          "ice",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "steel"
+        ],
+        "immune_0x": []
+      }
+    },
+    "water-grass": {
+      "types": [
+        "water",
+        "grass"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "flying",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "ground",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "water"
+        ],
+        "immune_0x": []
+      }
+    },
+    "water-ice": {
+      "types": [
+        "water",
+        "ice"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "fighting",
+          "grass",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "ice"
+        ],
+        "immune_0x": []
+      }
+    },
+    "water-fighting": {
+      "types": [
+        "water",
+        "fighting"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "fairy",
+          "flying",
+          "grass",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "fire",
+          "ice",
+          "rock",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "water-poison": {
+      "types": [
+        "water",
+        "poison"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "ground",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "fighting",
+          "fire",
+          "ice",
+          "poison",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "water-ground": {
+      "types": [
+        "water",
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "grass"
+        ],
+        "weak_2x": [],
+        "resist_0_5x": [
+          "fire",
+          "poison",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "water-flying": {
+      "types": [
+        "water",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "electric"
+        ],
+        "weak_2x": [
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fighting",
+          "fire",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "water-psychic": {
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark",
+          "electric",
+          "ghost",
+          "grass"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "fire",
+          "ice",
+          "psychic",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "water-bug": {
+      "types": [
+        "water",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "flying",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "ground",
+          "ice",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "water-rock": {
+      "types": [
+        "water",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "grass"
+        ],
+        "weak_2x": [
+          "electric",
+          "fighting",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "flying",
+          "ice",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "fire"
+        ],
+        "immune_0x": []
+      }
+    },
+    "water-ghost": {
+      "types": [
+        "water",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "electric",
+          "ghost",
+          "grass"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fire",
+          "ice",
+          "poison",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "water-dragon": {
+      "types": [
+        "water",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "fairy"
+        ],
+        "resist_0_5x": [
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "fire",
+          "water"
+        ],
+        "immune_0x": []
+      }
+    },
+    "water-dark": {
+      "types": [
+        "water",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "electric",
+          "fairy",
+          "fighting",
+          "grass"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fire",
+          "ghost",
+          "ice",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "water-steel": {
+      "types": [
+        "water",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "fighting",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dragon",
+          "fairy",
+          "flying",
+          "normal",
+          "psychic",
+          "rock",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "ice",
+          "steel"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "water-fairy": {
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "grass",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "fighting",
+          "fire",
+          "ice",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "electric-grass": {
+      "types": [
+        "electric",
+        "grass"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "fire",
+          "ice",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "grass",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "electric"
+        ],
+        "immune_0x": []
+      }
+    },
+    "electric-ice": {
+      "types": [
+        "electric",
+        "ice"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "fire",
+          "ground",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "flying",
+          "ice"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "electric-fighting": {
+      "types": [
+        "electric",
+        "fighting"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "ground",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "electric",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "electric-poison": {
+      "types": [
+        "electric",
+        "poison"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground"
+        ],
+        "weak_2x": [
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "electric",
+          "fairy",
+          "fighting",
+          "flying",
+          "grass",
+          "poison",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "electric-ground": {
+      "types": [
+        "electric",
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "grass",
+          "ground",
+          "ice",
+          "water"
+        ],
+        "resist_0_5x": [
+          "flying",
+          "poison",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "electric-flying": {
+      "types": [
+        "electric",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ice",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fighting",
+          "flying",
+          "grass",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "electric-psychic": {
+      "types": [
+        "electric",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark",
+          "ghost",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fighting",
+          "flying",
+          "psychic",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "electric-bug": {
+      "types": [
+        "electric",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fighting",
+          "grass",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "electric-rock": {
+      "types": [
+        "electric",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground"
+        ],
+        "weak_2x": [
+          "fighting",
+          "grass",
+          "water"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fire",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "flying"
+        ],
+        "immune_0x": []
+      }
+    },
+    "electric-ghost": {
+      "types": [
+        "electric",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "ghost",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "electric",
+          "flying",
+          "poison",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "electric-dragon": {
+      "types": [
+        "electric",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "fairy",
+          "ground",
+          "ice"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "flying",
+          "grass",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "electric"
+        ],
+        "immune_0x": []
+      }
+    },
+    "electric-dark": {
+      "types": [
+        "electric",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "fairy",
+          "fighting",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "electric",
+          "flying",
+          "ghost",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "electric-steel": {
+      "types": [
+        "electric",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground"
+        ],
+        "weak_2x": [
+          "fighting",
+          "fire"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dragon",
+          "electric",
+          "fairy",
+          "grass",
+          "ice",
+          "normal",
+          "psychic",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "flying",
+          "steel"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "electric-fairy": {
+      "types": [
+        "electric",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "electric",
+          "fighting",
+          "flying"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "grass-ice": {
+      "types": [
+        "grass",
+        "ice"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fire"
+        ],
+        "weak_2x": [
+          "bug",
+          "fighting",
+          "flying",
+          "poison",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "grass",
+          "ground",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "grass-fighting": {
+      "types": [
+        "grass",
+        "fighting"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "flying"
+        ],
+        "weak_2x": [
+          "fairy",
+          "fire",
+          "ice",
+          "poison",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "electric",
+          "grass",
+          "ground",
+          "rock",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "grass-poison": {
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "flying",
+          "ice",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fairy",
+          "fighting",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": []
+      }
+    },
+    "grass-ground": {
+      "types": [
+        "grass",
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ice"
+        ],
+        "weak_2x": [
+          "bug",
+          "fire",
+          "flying"
+        ],
+        "resist_0_5x": [
+          "ground",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "grass-flying": {
+      "types": [
+        "grass",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ice"
+        ],
+        "weak_2x": [
+          "fire",
+          "flying",
+          "poison",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "grass-psychic": {
+      "types": [
+        "grass",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "bug"
+        ],
+        "weak_2x": [
+          "dark",
+          "fire",
+          "flying",
+          "ghost",
+          "ice",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fighting",
+          "grass",
+          "ground",
+          "psychic",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "grass-bug": {
+      "types": [
+        "grass",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fire",
+          "flying"
+        ],
+        "weak_2x": [
+          "bug",
+          "ice",
+          "poison",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fighting",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "grass",
+          "ground"
+        ],
+        "immune_0x": []
+      }
+    },
+    "grass-rock": {
+      "types": [
+        "grass",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "fighting",
+          "ice",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "normal"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "grass-ghost": {
+      "types": [
+        "grass",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "fire",
+          "flying",
+          "ghost",
+          "ice"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "grass",
+          "ground",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "grass-dragon": {
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ice"
+        ],
+        "weak_2x": [
+          "bug",
+          "dragon",
+          "fairy",
+          "flying",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "ground"
+        ],
+        "double_resist_0_25x": [
+          "electric",
+          "grass",
+          "water"
+        ],
+        "immune_0x": []
+      }
+    },
+    "grass-dark": {
+      "types": [
+        "grass",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "bug"
+        ],
+        "weak_2x": [
+          "fairy",
+          "fighting",
+          "fire",
+          "flying",
+          "ice",
+          "poison"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "electric",
+          "ghost",
+          "grass",
+          "ground",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "grass-steel": {
+      "types": [
+        "grass",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fire"
+        ],
+        "weak_2x": [
+          "fighting"
+        ],
+        "resist_0_5x": [
+          "dragon",
+          "electric",
+          "fairy",
+          "normal",
+          "psychic",
+          "rock",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "grass-fairy": {
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "poison"
+        ],
+        "weak_2x": [
+          "fire",
+          "flying",
+          "ice",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "electric",
+          "fighting",
+          "grass",
+          "ground",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "ice-fighting": {
+      "types": [
+        "ice",
+        "fighting"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "fighting",
+          "fire",
+          "flying",
+          "psychic",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "ice"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ice-poison": {
+      "types": [
+        "ice",
+        "poison"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "ground",
+          "psychic",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "grass",
+          "ice",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ice-ground": {
+      "types": [
+        "ice",
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "fire",
+          "grass",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "ice-flying": {
+      "types": [
+        "ice",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "rock"
+        ],
+        "weak_2x": [
+          "electric",
+          "fire",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "grass"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "ice-psychic": {
+      "types": [
+        "ice",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark",
+          "fire",
+          "ghost",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "ice",
+          "psychic"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ice-bug": {
+      "types": [
+        "ice",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fire",
+          "rock"
+        ],
+        "weak_2x": [
+          "flying",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "grass",
+          "ground",
+          "ice"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ice-rock": {
+      "types": [
+        "ice",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting",
+          "steel"
+        ],
+        "weak_2x": [
+          "grass",
+          "ground",
+          "rock",
+          "water"
+        ],
+        "resist_0_5x": [
+          "flying",
+          "ice",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ice-ghost": {
+      "types": [
+        "ice",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "fire",
+          "ghost",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "ice",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "ice-dragon": {
+      "types": [
+        "ice",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "fairy",
+          "fighting",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "grass",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "ice-dark": {
+      "types": [
+        "ice",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting"
+        ],
+        "weak_2x": [
+          "bug",
+          "fairy",
+          "fire",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "ghost",
+          "ice"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "ice-steel": {
+      "types": [
+        "ice",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting",
+          "fire"
+        ],
+        "weak_2x": [
+          "ground"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dragon",
+          "fairy",
+          "flying",
+          "grass",
+          "normal",
+          "psychic"
+        ],
+        "double_resist_0_25x": [
+          "ice"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "ice-fairy": {
+      "types": [
+        "ice",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "steel"
+        ],
+        "weak_2x": [
+          "fire",
+          "poison",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "ice"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "fighting-poison": {
+      "types": [
+        "fighting",
+        "poison"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "psychic"
+        ],
+        "weak_2x": [
+          "flying",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fighting",
+          "grass",
+          "poison",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": []
+      }
+    },
+    "fighting-ground": {
+      "types": [
+        "fighting",
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "flying",
+          "grass",
+          "ice",
+          "psychic",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "rock"
+        ],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "fighting-flying": {
+      "types": [
+        "fighting",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "fairy",
+          "flying",
+          "ice",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fighting",
+          "grass"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "fighting-psychic": {
+      "types": [
+        "fighting",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "flying",
+          "ghost"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "fighting-bug": {
+      "types": [
+        "fighting",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "flying"
+        ],
+        "weak_2x": [
+          "fairy",
+          "fire",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "fighting",
+          "grass",
+          "ground"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "fighting-rock": {
+      "types": [
+        "fighting",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "fighting",
+          "grass",
+          "ground",
+          "psychic",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "fire",
+          "normal",
+          "poison",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "fighting-ghost": {
+      "types": [
+        "fighting",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "flying",
+          "ghost",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "poison",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "fighting-dragon": {
+      "types": [
+        "fighting",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fairy"
+        ],
+        "weak_2x": [
+          "dragon",
+          "flying",
+          "ice",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "electric",
+          "fire",
+          "grass",
+          "rock",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "fighting-dark": {
+      "types": [
+        "fighting",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fairy"
+        ],
+        "weak_2x": [
+          "fighting",
+          "flying"
+        ],
+        "resist_0_5x": [
+          "ghost",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "dark"
+        ],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "fighting-steel": {
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "fire",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "dragon",
+          "grass",
+          "ice",
+          "normal",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "rock"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "fighting-fairy": {
+      "types": [
+        "fighting",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "flying",
+          "poison",
+          "psychic",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "dark"
+        ],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "poison-ground": {
+      "types": [
+        "poison",
+        "ground"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground",
+          "ice",
+          "psychic",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "fighting",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "poison"
+        ],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "poison-flying": {
+      "types": [
+        "poison",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "ice",
+          "psychic",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "fairy",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "fighting",
+          "grass"
+        ],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "poison-psychic": {
+      "types": [
+        "poison",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "ghost",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "fairy",
+          "grass",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "fighting"
+        ],
+        "immune_0x": []
+      }
+    },
+    "poison-bug": {
+      "types": [
+        "poison",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "flying",
+          "psychic",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "fighting",
+          "grass"
+        ],
+        "immune_0x": []
+      }
+    },
+    "poison-rock": {
+      "types": [
+        "poison",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground"
+        ],
+        "weak_2x": [
+          "psychic",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fairy",
+          "fire",
+          "flying",
+          "normal"
+        ],
+        "double_resist_0_25x": [
+          "poison"
+        ],
+        "immune_0x": []
+      }
+    },
+    "poison-ghost": {
+      "types": [
+        "poison",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "ghost",
+          "ground",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "fairy",
+          "grass"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "poison"
+        ],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "poison-dragon": {
+      "types": [
+        "poison",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "ground",
+          "ice",
+          "psychic"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "electric",
+          "fighting",
+          "fire",
+          "poison",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": []
+      }
+    },
+    "poison-dark": {
+      "types": [
+        "poison",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "ghost",
+          "grass",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "poison-steel": {
+      "types": [
+        "poison",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ground"
+        ],
+        "weak_2x": [
+          "fire"
+        ],
+        "resist_0_5x": [
+          "dragon",
+          "flying",
+          "ice",
+          "normal",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "fairy",
+          "grass"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "poison-fairy": {
+      "types": [
+        "poison",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ground",
+          "psychic",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fairy",
+          "grass"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "fighting"
+        ],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "ground-flying": {
+      "types": [
+        "ground",
+        "flying"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ice"
+        ],
+        "weak_2x": [
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fighting",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric",
+          "ground"
+        ]
+      }
+    },
+    "ground-psychic": {
+      "types": [
+        "ground",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark",
+          "ghost",
+          "grass",
+          "ice",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "poison",
+          "psychic",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "ground-bug": {
+      "types": [
+        "ground",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "flying",
+          "ice",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fighting",
+          "ground",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "ground-rock": {
+      "types": [
+        "ground",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "grass",
+          "water"
+        ],
+        "weak_2x": [
+          "fighting",
+          "ground",
+          "ice",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "flying",
+          "normal",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "poison"
+        ],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "ground-ghost": {
+      "types": [
+        "ground",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "ghost",
+          "grass",
+          "ice",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "poison"
+        ],
+        "immune_0x": [
+          "electric",
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "ground-dragon": {
+      "types": [
+        "ground",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ice"
+        ],
+        "weak_2x": [
+          "dragon",
+          "fairy"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "poison",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric"
+        ]
+      }
+    },
+    "ground-dark": {
+      "types": [
+        "ground",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "fairy",
+          "fighting",
+          "grass",
+          "ice",
+          "water"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "ghost",
+          "poison",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "electric",
+          "psychic"
+        ]
+      }
+    },
+    "ground-steel": {
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "fire",
+          "ground",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dragon",
+          "fairy",
+          "flying",
+          "normal",
+          "psychic",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "rock"
+        ],
+        "immune_0x": [
+          "electric",
+          "poison"
+        ]
+      }
+    },
+    "ground-fairy": {
+      "types": [
+        "ground",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "grass",
+          "ice",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "fighting",
+          "rock"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon",
+          "electric"
+        ]
+      }
+    },
+    "flying-psychic": {
+      "types": [
+        "flying",
+        "psychic"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "electric",
+          "ghost",
+          "ice",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "grass",
+          "psychic"
+        ],
+        "double_resist_0_25x": [
+          "fighting"
+        ],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "flying-bug": {
+      "types": [
+        "flying",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "rock"
+        ],
+        "weak_2x": [
+          "electric",
+          "fire",
+          "flying",
+          "ice"
+        ],
+        "resist_0_5x": [
+          "bug"
+        ],
+        "double_resist_0_25x": [
+          "fighting",
+          "grass"
+        ],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "flying-rock": {
+      "types": [
+        "flying",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "ice",
+          "rock",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fire",
+          "flying",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "flying-ghost": {
+      "types": [
+        "flying",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "electric",
+          "ghost",
+          "ice",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "grass",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": [
+          "fighting",
+          "ground",
+          "normal"
+        ]
+      }
+    },
+    "flying-dragon": {
+      "types": [
+        "flying",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "ice"
+        ],
+        "weak_2x": [
+          "dragon",
+          "fairy",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fighting",
+          "fire",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": [
+          "ground"
+        ]
+      }
+    },
+    "flying-dark": {
+      "types": [
+        "flying",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "fairy",
+          "ice",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "ghost",
+          "grass"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "ground",
+          "psychic"
+        ]
+      }
+    },
+    "flying-steel": {
+      "types": [
+        "flying",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "fire"
+        ],
+        "resist_0_5x": [
+          "dragon",
+          "fairy",
+          "flying",
+          "normal",
+          "psychic",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "grass"
+        ],
+        "immune_0x": [
+          "ground",
+          "poison"
+        ]
+      }
+    },
+    "flying-fairy": {
+      "types": [
+        "flying",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "electric",
+          "ice",
+          "poison",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "grass"
+        ],
+        "double_resist_0_25x": [
+          "bug",
+          "fighting"
+        ],
+        "immune_0x": [
+          "dragon",
+          "ground"
+        ]
+      }
+    },
+    "psychic-bug": {
+      "types": [
+        "psychic",
+        "bug"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark",
+          "fire",
+          "flying",
+          "ghost",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "grass",
+          "ground",
+          "psychic"
+        ],
+        "double_resist_0_25x": [
+          "fighting"
+        ],
+        "immune_0x": []
+      }
+    },
+    "psychic-rock": {
+      "types": [
+        "psychic",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark",
+          "ghost",
+          "grass",
+          "ground",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "fire",
+          "flying",
+          "normal",
+          "poison",
+          "psychic"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "psychic-ghost": {
+      "types": [
+        "psychic",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "dark",
+          "ghost"
+        ],
+        "weak_2x": [],
+        "resist_0_5x": [
+          "poison",
+          "psychic"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "psychic-dragon": {
+      "types": [
+        "psychic",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "dark",
+          "dragon",
+          "fairy",
+          "ghost",
+          "ice"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fighting",
+          "fire",
+          "grass",
+          "psychic",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "psychic-dark": {
+      "types": [
+        "psychic",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "bug"
+        ],
+        "weak_2x": [
+          "fairy"
+        ],
+        "resist_0_5x": [],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "psychic-steel": {
+      "types": [
+        "psychic",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "fire",
+          "ghost",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "dragon",
+          "fairy",
+          "flying",
+          "grass",
+          "ice",
+          "normal",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "psychic"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "psychic-fairy": {
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ghost",
+          "poison",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "psychic"
+        ],
+        "double_resist_0_25x": [
+          "fighting"
+        ],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "bug-rock": {
+      "types": [
+        "bug",
+        "rock"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "rock",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": []
+      }
+    },
+    "bug-ghost": {
+      "types": [
+        "bug",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "fire",
+          "flying",
+          "ghost",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "grass",
+          "ground",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "bug-dragon": {
+      "types": [
+        "bug",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "fairy",
+          "flying",
+          "ice",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "fighting",
+          "ground",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": []
+      }
+    },
+    "bug-dark": {
+      "types": [
+        "bug",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "bug",
+          "fairy",
+          "fire",
+          "flying",
+          "rock"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "ghost",
+          "grass",
+          "ground"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "bug-steel": {
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fire"
+        ],
+        "weak_2x": [],
+        "resist_0_5x": [
+          "bug",
+          "dragon",
+          "fairy",
+          "ice",
+          "normal",
+          "psychic",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "bug-fairy": {
+      "types": [
+        "bug",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "flying",
+          "poison",
+          "rock",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "grass",
+          "ground"
+        ],
+        "double_resist_0_25x": [
+          "fighting"
+        ],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "rock-ghost": {
+      "types": [
+        "rock",
+        "ghost"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "ghost",
+          "grass",
+          "ground",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "fire",
+          "flying"
+        ],
+        "double_resist_0_25x": [
+          "poison"
+        ],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "rock-dragon": {
+      "types": [
+        "rock",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dragon",
+          "fairy",
+          "fighting",
+          "ground",
+          "ice",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "electric",
+          "flying",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [
+          "fire"
+        ],
+        "immune_0x": []
+      }
+    },
+    "rock-dark": {
+      "types": [
+        "rock",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting"
+        ],
+        "weak_2x": [
+          "bug",
+          "fairy",
+          "grass",
+          "ground",
+          "steel",
+          "water"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fire",
+          "flying",
+          "ghost",
+          "normal",
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "rock-steel": {
+      "types": [
+        "rock",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting",
+          "ground"
+        ],
+        "weak_2x": [
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dragon",
+          "fairy",
+          "ice",
+          "psychic",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "flying",
+          "normal"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "rock-fairy": {
+      "types": [
+        "rock",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "steel"
+        ],
+        "weak_2x": [
+          "grass",
+          "ground",
+          "water"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "fire",
+          "flying",
+          "normal"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "ghost-dragon": {
+      "types": [
+        "ghost",
+        "dragon"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "dragon",
+          "fairy",
+          "ghost",
+          "ice"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "electric",
+          "fire",
+          "grass",
+          "poison",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "ghost-dark": {
+      "types": [
+        "ghost",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy"
+        ],
+        "resist_0_5x": [
+          "poison"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "fighting",
+          "normal",
+          "psychic"
+        ]
+      }
+    },
+    "ghost-steel": {
+      "types": [
+        "ghost",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "dark",
+          "fire",
+          "ghost",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "dragon",
+          "fairy",
+          "flying",
+          "grass",
+          "ice",
+          "psychic",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": [
+          "fighting",
+          "normal",
+          "poison"
+        ]
+      }
+    },
+    "ghost-fairy": {
+      "types": [
+        "ghost",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "ghost",
+          "steel"
+        ],
+        "resist_0_5x": [],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": [
+          "dragon",
+          "fighting",
+          "normal"
+        ]
+      }
+    },
+    "dragon-dark": {
+      "types": [
+        "dragon",
+        "dark"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fairy"
+        ],
+        "weak_2x": [
+          "bug",
+          "dragon",
+          "fighting",
+          "ice"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "electric",
+          "fire",
+          "ghost",
+          "grass",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "psychic"
+        ]
+      }
+    },
+    "dragon-steel": {
+      "types": [
+        "dragon",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fighting",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "electric",
+          "flying",
+          "normal",
+          "psychic",
+          "rock",
+          "steel",
+          "water"
+        ],
+        "double_resist_0_25x": [
+          "grass"
+        ],
+        "immune_0x": [
+          "poison"
+        ]
+      }
+    },
+    "dragon-fairy": {
+      "types": [
+        "dragon",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "ice",
+          "poison",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "bug",
+          "dark",
+          "electric",
+          "fighting",
+          "fire",
+          "grass",
+          "water"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "dragon"
+        ]
+      }
+    },
+    "dark-steel": {
+      "types": [
+        "dark",
+        "steel"
+      ],
+      "defensive": {
+        "quad_weak_4x": [
+          "fighting"
+        ],
+        "weak_2x": [
+          "fire",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "dragon",
+          "flying",
+          "ghost",
+          "grass",
+          "ice",
+          "normal",
+          "rock",
+          "steel"
+        ],
+        "double_resist_0_25x": [],
+        "immune_0x": [
+          "poison",
+          "psychic"
+        ]
+      }
+    },
+    "dark-fairy": {
+      "types": [
+        "dark",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fairy",
+          "poison",
+          "steel"
+        ],
+        "resist_0_5x": [
+          "ghost"
+        ],
+        "double_resist_0_25x": [
+          "dark"
+        ],
+        "immune_0x": [
+          "dragon",
+          "psychic"
+        ]
+      }
+    },
+    "steel-fairy": {
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "defensive": {
+        "quad_weak_4x": [],
+        "weak_2x": [
+          "fire",
+          "ground"
+        ],
+        "resist_0_5x": [
+          "dark",
+          "fairy",
+          "flying",
+          "grass",
+          "ice",
+          "normal",
+          "psychic",
+          "rock"
+        ],
+        "double_resist_0_25x": [
+          "bug"
+        ],
+        "immune_0x": [
+          "dragon",
+          "poison"
+        ]
+      }
+    }
+  }
+}

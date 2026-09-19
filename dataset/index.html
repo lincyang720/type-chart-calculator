@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pokemon Type Effectiveness Calculator</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+  h1 { font-size: 1.4rem; }
+  select { font-size: 1rem; padding: .4rem; margin: .25rem .5rem .25rem 0; }
+  table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+  td, th { border: 1px solid #ccc; padding: .35rem .5rem; text-align: left; }
+  .x4 { background: #c0392b; color: #fff; }
+  .x2 { background: #e67e22; color: #fff; }
+  .x05 { background: #2ecc71; color: #fff; }
+  .x025 { background: #27ae60; color: #fff; }
+  .x0 { background: #34495e; color: #fff; }
+  code { background: #f4f4f4; padding: .1rem .3rem; border-radius: 3px; }
+</style>
+</head>
+<body>
+<h1>Pokemon Type Effectiveness Calculator</h1>
+<p>Pick one or two defending types to see every weakness, resistance, and immunity.
+Data: Generation 6-9 (18 types).</p>
+
+<label>Type 1:
+<select id="t1"></select></label>
+<label>Type 2 (optional):
+<select id="t2"><option value="">(none)</option></select></label>
+
+<table id="out">
+  <thead><tr><th>Multiplier</th><th>Attacking types</th></tr></thead>
+  <tbody></tbody>
+</table>
+
+<p style="margin-top:1.5rem;font-size:.85rem;color:#666">
+  This dataset is the openly licensed type-effectiveness data behind the
+  interactive calculator at <a href="https://www.typematchup.org/">typematchup.org</a>.
+</p>
+
+<script>
+const TYPES = ["normal","fire","water","electric","grass","ice","fighting","poison","ground","flying","psychic","bug","rock","ghost","dragon","dark","steel","fairy"];
+const M = {
+  normal:[1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1],
+  fire:[1,0.5,2,1,0.5,0.5,1,1,2,1,1,0.5,2,1,1,1,0.5,0.5],
+  water:[1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1],
+  electric:[1,1,1,0.5,1,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1],
+  grass:[1,2,0.5,0.5,0.5,2,1,2,0.5,2,1,2,1,1,1,1,1,1],
+  ice:[1,2,1,1,1,0.5,2,1,1,1,1,1,2,1,1,1,2,1],
+  fighting:[1,1,1,1,1,1,1,1,1,2,2,0.5,0.5,1,1,0.5,1,2],
+  poison:[1,1,1,1,0.5,1,0.5,0.5,2,1,2,0.5,1,1,1,1,1,0.5],
+  ground:[1,1,2,0,2,2,1,0.5,1,1,1,1,0.5,1,1,1,1,1],
+  flying:[1,1,1,2,0.5,2,0.5,1,0,1,1,0.5,2,1,1,1,1,1],
+  psychic:[1,1,1,1,1,1,0.5,1,1,1,0.5,2,1,2,1,2,1,1],
+  bug:[1,2,1,1,0.5,1,0.5,1,0.5,2,1,1,2,1,1,1,1,1],
+  rock:[0.5,0.5,2,1,2,1,2,0.5,2,0.5,1,1,1,1,1,1,2,1],
+  ghost:[0,1,1,1,1,1,0,0.5,1,1,1,0.5,1,2,1,2,1,1],
+  dragon:[1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2],
+  dark:[1,1,1,1,1,1,2,1,1,1,0,2,1,0.5,1,0.5,1,2],
+  steel:[0.5,2,1,1,0.5,0.5,2,0,2,0.5,0.5,0.5,0.5,1,0.5,1,0.5,0.5],
+  fairy:[1,1,1,1,1,1,0.5,2,1,1,1,0.5,1,1,0,0.5,2,1]
+};
+const t1 = document.getElementById('t1');
+const t2 = document.getElementById('t2');
+TYPES.forEach(t => { t1.add(new Option(t, t)); t2.add(new Option(t, t)); });
+
+function render() {
+  const a = t1.value;
+  const b = t2.value;
+  const buckets = {4:[],2:[],0.5:[],0.25:[],0:[]};
+  TYPES.forEach((atk, i) => {
+    let m = M[a][i];
+    if (b) m *= M[b][i];
+    if (buckets[m]) buckets[m].push(atk);
+  });
+  const rows = [
+    [4, 'quad_weak_4x', '4x (quadruple weak)', 'x4'],
+    [2, 'weak_2x', '2x (weak)', 'x2'],
+    [0.5, 'resist_0_5x', '0.5x (resists)', 'x05'],
+    [0.25, 'double_resist_0_25x', '0.25x (double resists)', 'x025'],
+    [0, 'immune_0x', '0x (immune)', 'x0']
+  ];
+  const tb = document.querySelector('#out tbody');
+  tb.innerHTML = '';
+  rows.forEach(([val, , label, cls]) => {
+    const arr = buckets[val];
+    const tr = document.createElement('tr');
+    const td1 = document.createElement('td');
+    td1.className = cls; td1.textContent = label;
+    const td2 = document.createElement('td');
+    td2.textContent = arr.length ? arr.join(', ') : '—';
+    tr.append(td1, td2); tb.append(tr);
+  });
+}
+t1.onchange = render; t2.onchange = render;
+render();
+</script>
+</body>
+</html>
