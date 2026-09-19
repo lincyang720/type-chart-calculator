@@ -51,18 +51,14 @@ export function typeNames(ids: TypeId[]): string[] {
  * Used by the A2A endpoint to work out what a caller is asking about.
  */
 export function findTypesInText(text: string): TypeId[] {
-  const lower = ` ${text.toLowerCase()} `;
+  // Normalise punctuation and separators to spaces first, otherwise a trailing
+  // "?" or a "/" glued to a type name ("Dragon/Flying?") would not match.
+  const normalised = ` ${text.toLowerCase().replace(/[^a-z]+/g, ' ')} `;
   const hits: Array<{ id: TypeId; at: number }> = [];
   for (const id of ALL_TYPES) {
-    const at = lower.indexOf(` ${id} `);
+    // Longest-first de-duplication is unnecessary: no type name contains another.
+    const at = normalised.indexOf(` ${id} `);
     if (at !== -1) hits.push({ id, at });
-  }
-  // A trailing punctuation mark would break the spaced match, so retry word-boundary.
-  if (hits.length === 0) {
-    for (const id of ALL_TYPES) {
-      const re = new RegExp(`\\b${id}\\b`, 'i');
-      if (re.test(lower)) hits.push({ id, at: lower.indexOf(id) });
-    }
   }
   return hits.sort((a, b) => a.at - b.at).map((h) => h.id);
 }
