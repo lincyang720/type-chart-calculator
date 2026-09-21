@@ -1,13 +1,13 @@
-import Script from 'next/script';
-import type { Metadata } from 'next';
+export const dynamic = 'force-static';
 
-export const metadata: Metadata = {
-  title: 'Pokemon Type Matchups: Full 18-Type Chart & Calculator',
-  description:
-    'Look up any Pokemon type matchup in seconds. Interactive type calculator, the full 18-type effectiveness chart, dual-type math, STAB, and how the chart changed across generations.',
-};
-
-const STYLE = `
+const HTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pokémon Type Matchups: Full 18-Type Chart &amp; Calculator</title>
+<meta name="description" content="Look up any Pokémon type matchup in seconds. Interactive type calculator, the full 18-type effectiveness chart, dual-type math, STAB, and how the chart changed across generations.">
+<style>
   :root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e2e2e2;--accent:#3b5bdb;--good:#1f9d55;--bad:#d64545;--card:#f7f8fa}
   *{box-sizing:border-box}
   body{margin:0;font:16px/1.6 system-ui,Segoe UI,Arial,sans-serif;color:var(--fg);background:var(--bg)}
@@ -42,9 +42,10 @@ const STYLE = `
   footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;font-size:13px;color:var(--muted)}
   code{background:var(--card);padding:1px 5px;border-radius:4px}
   @media(max-width:560px){.tool{grid-template-columns:1fr}.mult{font-size:28px}}
-`;
-
-const BODY = `<div class="wrap">
+</style>
+</head>
+<body>
+<div class="wrap">
 
   <h1>Pokémon Type Matchups</h1>
   <p class="lede">The full 18-type effectiveness chart, an interactive calculator, the dual-type math, and how the chart evolved — on one page.</p>
@@ -147,14 +148,81 @@ const BODY = `<div class="wrap">
     <p>Historical note sourced from an archived dead-site snapshot (Wayback Machine, 2009-01-07).</p>
   </footer>
 
-</div>`;
+</div>
 
-export default function Page() {
-  return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: STYLE }} />
-      <div dangerouslySetInnerHTML={{ __html: BODY }} />
-      <Script src="/type-matchup-chart.js" strategy="afterInteractive" />
-    </>
-  );
+<script>
+var TYPES = ["Normal","Fire","Water","Electric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dragon","Dark","Steel","Fairy"];
+// matrix[row=attack][col=defend] -> multiplier (Gen 6+)
+var M = [
+ [1,1,1,1,1,1,1,1,1,1,1,1,0.5,0,1,1,0.5,1],
+ [1,0.5,0.5,1,2,2,1,1,1,1,1,2,0.5,1,0.5,1,2,0.5],
+ [1,2,0.5,1,0.5,1,1,1,2,1,1,1,2,1,0.5,1,1,1],
+ [1,1,2,0.5,0.5,1,1,1,2,0.5,1,1,1,1,0.5,1,1,1],
+ [1,0.5,2,0.5,0.5,1,1,0.5,2,0.5,1,0.5,2,1,0.5,1,0.5,1],
+ [1,0.5,0.5,1,2,0.5,1,1,2,2,1,1,2,1,2,1,0.5,1],
+ [2,1,1,1,1,2,1,0.5,1,0.5,0.5,0.5,2,0,1,2,2,0.5],
+ [1,1,1,1,2,1,1,0.5,0.5,1,1,1,0.5,0.5,1,1,0,2],
+ [1,2,1,0,2,1,1,2,1,0,1,0.5,2,1,1,1,2,1],
+ [1,1,1,2,2,1,2,1,1,1,1,0.5,0.5,1,1,1,0.5,1],
+ [1,1,1,1,1,1,2,2,1,1,0.5,1,1,1,1,0,0.5,1],
+ [1,0.5,1,1,2,1,0.5,0.5,1,0.5,2,1,2,0.5,1,2,0.5,0.5],
+ [1,2,1,1,1,2,0.5,1,0.5,2,1,2,1,1,1,1,0.5,1],
+ [0,1,1,1,1,1,0,0.5,1,1,2,0.5,1,2,1,0.5,1,1],
+ [1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,0.5,2],
+ [1,1,1,1,1,1,0.5,1,1,1,2,2,1,2,1,0.5,1,0.5],
+ [1,0.5,0.5,0.5,1,2,2,0,2,1,1,1,2,1,1,1,0.5,2],
+ [1,0.5,1,1,1,1,2,0.5,1,1,1,1,1,2,2,2,0.5,1]
+];
+var atk=document.getElementById('atk'),def1=document.getElementById('def1'),def2=document.getElementById('def2'),stab=document.getElementById('stab');
+TYPES.forEach(function(t,i){var o1=new Option(t,i);var o2=new Option(t,i);atk.add(o1);def1.add(o2);});
+def2.length=1; TYPES.forEach(function(t,i){def2.add(new Option(t,i));});
+
+function fmt(v){
+  if(v===0) return ["0×","none","No effect"];
+  if(v===0.25) return ["0.25×","v025","¼× (two resistances)"];
+  if(v===0.5) return ["½×","v05","Not very effective"];
+  if(v===1) return ["1×","","Neutral"];
+  if(v===2) return ["2×","v2","Super-effective"];
+  if(v===4) return ["4×","v2","Quadruple (double super-effective)"];
+  return [v+"×","" ,""];
+}
+function calc(){
+  var r=+atk.value, c1=+def1.value, c2=+def2.value, s=+stab.value;
+  var v=M[r][c1]; if(c2>=0) v*=M[r][c2]; v*=s;
+  var f=fmt(v);
+  var el=document.getElementById('mult');
+  el.textContent=f[0]; el.className='mult '+f[1];
+  var note = TYPES[r]+" → "+TYPES[c1]+(c2>=0?(" / "+TYPES[c2]):"");
+  note += (c2>=0?("  =  "+M[r][c1]+"×"+M[r][c2]+(s>1?"×1.5 STAB":"")+"  =  "+v+"×"):("  =  "+v+"×"+(s>1?" (incl. STAB)":"")));
+  note += "  —  "+f[2];
+  document.getElementById('multnote').textContent=note;
+}
+[atk,def1,def2,stab].forEach(function(s){s.addEventListener('change',calc);});
+calc();
+
+// build chart table
+var tbl=document.getElementById('chartTable');
+var thead='<tr><th></th>'+TYPES.map(function(t){return '<th>'+t.slice(0,4)+'</th>';}).join('')+'</tr>';
+var rows='';
+M.forEach(function(row,i){
+  var cells='<td class="rowh">'+TYPES[i]+'</td>';
+  row.forEach(function(v){
+    var cls = v===2?'v2':(v===0.5?'v05':(v===0?'v0':(v===0.25?'v025':'')));
+    var disp = v===0?'0':(v===0.5?'½':(v===0.25?'¼':(v===1?'1':(v===2?'2':v))));
+    cells+='<td class="'+cls+'">'+disp+'</td>';
+  });
+  rows+=('<tr>'+cells+'</tr>');
+});
+tbl.innerHTML='<thead>'+thead+'</thead><tbody>'+rows+'</tbody>';
+</script>
+</body>
+</html>
+`;
+
+export async function GET() {
+  return new Response(HTML, {
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+    },
+  });
 }
