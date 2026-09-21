@@ -101,6 +101,62 @@ export default function Page() {
           of trying to memorize all 324 single-type cells at once.
         </p>
 
+        <h2>Dual-Type Interactions Worth Memorizing</h2>
+        <p>
+          Because dual-type defenders multiply, a few pairs behave in ways that surprise people. <b>Steel/Fairy</b> takes
+          only ¼× from Fire, since Fire is ½× against both of its types. <b>Water/Ground</b> is 4× weak to Grass, yet it
+          resists Fire, Water, and Poison and takes 0× from Electric through Ground. <b>Dark/Ghost</b> hits Psychic and
+          Ghost at 2×, with only Fairy resisting the combination.
+        </p>
+
+        <h2>How the Type Chart Changed Across Generations</h2>
+        <p>
+          The 18-type chart is stable today, but three moments shaped it:
+        </p>
+        <ul>
+          <li>
+            <b>Generation 2</b> introduced <b>Dark</b> and <b>Steel</b>. From Generation 6 onward, Ghost and Dark moves hit
+            Steel neutrally, where earlier generations had them resisted.
+          </li>
+          <li>
+            <b>Generation 6</b> introduced <b>Fairy</b>, which is super-effective against Dragon, Dark, and Fighting while
+            resisting Bug, Dark, and Fighting. This remains the last structural change to the chart.
+          </li>
+          <li>
+            <b>Generation 1 quirks</b> were later corrected: Ghost was not effective against Psychic (now 2×), Bug was
+            super-effective against Poison (now Bug resists Poison), and Ice was neutral against Fire (now ½×).
+          </li>
+        </ul>
+
+        <h2>A Historical Chart, Archived From a Dead Site</h2>
+        <p>
+          Before Generation 4, moves were split into physical and special by the <b>type</b> of the move rather than by the
+          individual move. A 2009 fan chart archived from the now-defunct site{' '}
+          <a
+            href="https://web.archive.org/web/2009id_/http://www.azureheights.com/compendium/typechart.htm"
+            rel="nofollow"
+          >
+            azureheights.com
+          </a>{' '}
+          lists only 15 types and groups them as Special (Fire, Water, Grass, Electric, Ice, Psychic) and Physical (Normal,
+          Fighting, Flying, Ground, Rock, Bug, Poison, Ghost, Dragon). That type-based split was replaced in Generation 4
+          when the physical/special distinction moved to individual moves, a useful reminder that the chart itself has
+          changed over time.
+        </p>
+        <p>
+          Source: archived snapshot via the Wayback Machine, 2009-01-07. Included as historical context, not as a current
+          reference.
+        </p>
+
+        <h2>Who Made This Page</h2>
+        <p>
+          This is a fan-made reference page, built so that one lookup does not require opening five tabs. There are no ads,
+          no tracking, and no account. The effectiveness values follow the official games&apos; defined type chart, which is
+          public and stable across generations, while the layout and wording here are original. If you spot a discrepancy,
+          the in-game values always win.
+        </p>
+        <p>Not affiliated with Nintendo, Game Freak, or The Pokemon Company.</p>
+
         <h2>Type Effectiveness FAQ</h2>
         {faqs.map(([question, answer]) => (
           <section key={question}>
