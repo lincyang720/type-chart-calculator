@@ -657,6 +657,181 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
 
         {typeId === 'normal' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Normal dual-type checks</h2>
+            <p>Normal is often the neutral half of a dual typing, so the second type decides whether a move stays neutral or becomes a weakness.</p>
+            <table className="w-full text-left border-collapse">
+              <thead><tr className="border-b"><th className="py-2">Defender</th><th className="py-2">Attacking type</th><th className="py-2">Factor one</th><th className="py-2">Factor two</th><th className="py-2">Result</th></tr></thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2">Staraptor (Normal/Flying)</td><td className="py-2">Electric</td><td className="py-2">1×</td><td className="py-2">2×</td><td className="py-2">2×</td></tr>
+                <tr className="border-b"><td className="py-2">Bibarel (Normal/Water)</td><td className="py-2">Grass</td><td className="py-2">1×</td><td className="py-2">2×</td><td className="py-2">2×</td></tr>
+                <tr><td className="py-2">Heliolisk (Electric/Normal)</td><td className="py-2">Ground</td><td className="py-2">2×</td><td className="py-2">1×</td><td className="py-2">2×</td></tr>
+              </tbody>
+            </table>
+            <p>The Normal factor is neutral in all three examples; the partner type supplies the weakness.</p>
+          </article>
+        )}
+
+        {typeId === 'fire' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Questions players ask when a Fire switch goes wrong</h2>
+            <p>Players often ask why a Fire Pokémon that resists one move still feels unsafe on the next turn.</p>
+            <ul>
+              <li>Why does a Fire switch into Grass not guarantee safety? The opponent may carry Ground or Rock coverage, so the resisted move is only one part of the turn.</li>
+              <li>Why does Fire struggle with entry hazards? Rock pressure punishes repeated switching before the type chart is even used for the next attack.</li>
+              <li>Why does a Fire attacker need a second move type? Water, Rock, Dragon, and Fire all resist Fire attacks in the standard chart.</li>
+            </ul>
+            <p>These questions separate a one-turn resistance from a complete defensive plan.</p>
+          </article>
+        )}
+
+        {typeId === 'water' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Water type changes, generation by generation</h2>
+            <p>Water has kept its familiar chart role, but the generation around that role changed what a Water move or Water Pokémon meant.</p>
+            <ol>
+              <li><strong>Generation I:</strong> Water attacks were part of the original chart, and Water had no ability-based exceptions.</li>
+              <li><strong>Generation II:</strong> Dark and Steel entered the chart, while the special category still controlled Water attacks such as Surf and Hydro Pump.</li>
+              <li><strong>Generation III:</strong> Abilities introduced matchup exceptions such as Water Absorb, so a Water immunity could belong to an ability rather than a type.</li>
+              <li><strong>Generation IV:</strong> The physical/special split made moves such as Waterfall physical while Surf remained special, without changing Water&apos;s type effectiveness row.</li>
+              <li><strong>Generation VI onward:</strong> Fairy joined the chart as a neutral Water target, while abilities and regional forms continued to change practical answers.</li>
+            </ol>
+            <p>Reading a Water matchup therefore requires both the generation and the move category, not only the Water label.</p>
+          </article>
+        )}
+
+        {typeId === 'grass' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Grass dual-type checks</h2>
+            <p>Grass is a useful second type to inspect because a partner can amplify a weakness or leave the attack neutral.</p>
+            <table className="w-full text-left border-collapse">
+              <thead><tr className="border-b"><th className="py-2">Defender</th><th className="py-2">Attacking type</th><th className="py-2">Factor one</th><th className="py-2">Factor two</th><th className="py-2">Result</th></tr></thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2">Ferrothorn (Grass/Steel)</td><td className="py-2">Fire</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
+                <tr className="border-b"><td className="py-2">Cradily (Grass/Rock)</td><td className="py-2">Ice</td><td className="py-2">2×</td><td className="py-2">1×</td><td className="py-2">2×</td></tr>
+                <tr><td className="py-2">Ludicolo (Grass/Water)</td><td className="py-2">Bug</td><td className="py-2">2×</td><td className="py-2">1×</td><td className="py-2">2×</td></tr>
+              </tbody>
+            </table>
+            <p>Ferrothorn is the only 4× example here because both Grass and Steel are weak to Fire in the site chart.</p>
+          </article>
+        )}
+
+        {typeId === 'fighting' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Questions players ask about Fighting coverage</h2>
+            <p>A recurring player question is why a Fighting move that threatens five types can still miss the target that matters.</p>
+            <ul>
+              <li>Why does Fighting fail against Ghost? Ghost is a complete immunity, so more Fighting power does not change the result.</li>
+              <li>Why do Fighting attackers fear Fairy and Flying switch-ins? Both types resist Fighting, and neither is merely a small damage reduction in a practical team turn.</li>
+              <li>Why is Fighting coverage still valuable? It pressures Normal, Ice, Rock, Dark, and Steel, so one move can target several common defensive structures.</li>
+            </ul>
+            <p>The useful question is not only what Fighting hits for 2×; it is which immunity or resistance the opponent can bring next.</p>
+          </article>
+        )}
+
+        {typeId === 'ground' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Ground matchup changes across generations</h2>
+            <p>Ground&apos;s type-row answers stayed recognizable while later generations added ways to bypass or restore its immunity.</p>
+            <ol>
+              <li><strong>Generation I:</strong> Ground attacks were blocked by Flying and were super effective against Fire, Electric, Poison, Rock, and the original chart&apos;s other listed targets.</li>
+              <li><strong>Generation II:</strong> Steel was added as a type that Ground attacks hit super effectively, giving Ground a new high-value target.</li>
+              <li><strong>Generation III:</strong> Levitate introduced an ability-based Ground immunity that is separate from the Flying type.</li>
+              <li><strong>Generation IV:</strong> Magnet Rise allowed a non-Flying Pokémon to become immune to Ground temporarily, while the physical/special split changed how Ground moves were assigned.</li>
+              <li><strong>Generation V onward:</strong> items, moves, and abilities continued to create grounded and ungrounded states without changing the base Ground row.</li>
+            </ol>
+            <p>That history explains why a Ground calculation needs the type chart plus the active ability, item, or field state.</p>
+          </article>
+        )}
+
+        {typeId === 'flying' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Flying dual-type checks</h2>
+            <p>Flying often turns a second weakness into a 4× result, but a partner can also cancel part of the Electric or Rock pressure.</p>
+            <table className="w-full text-left border-collapse">
+              <thead><tr className="border-b"><th className="py-2">Defender</th><th className="py-2">Attacking type</th><th className="py-2">Factor one</th><th className="py-2">Factor two</th><th className="py-2">Result</th></tr></thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2">Charizard (Fire/Flying)</td><td className="py-2">Rock</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
+                <tr className="border-b"><td className="py-2">Gliscor (Ground/Flying)</td><td className="py-2">Ice</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
+                <tr><td className="py-2">Skarmory (Steel/Flying)</td><td className="py-2">Electric</td><td className="py-2">0.5×</td><td className="py-2">2×</td><td className="py-2">1×</td></tr>
+              </tbody>
+            </table>
+            <p>Skarmory shows why the two factors must be multiplied: Flying is weak to Electric, but Steel resists it, leaving a neutral result.</p>
+          </article>
+        )}
+
+        {typeId === 'psychic' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Questions players ask about Psychic matchups</h2>
+            <p>Players often ask why Psychic feels powerful into Poison and Fighting but suddenly stops working against one switch.</p>
+            <ul>
+              <li>Why does Dark blank Psychic completely? Dark is an immunity in the base chart, not a resistance that stronger Psychic moves can overcome.</li>
+              <li>Why do Bug and Ghost moves matter so much against Psychic teams? Psychic defenders are weak to Bug, Ghost, and Dark, so those attack categories pressure the same role from different directions.</li>
+              <li>Why can Steel stay in on Psychic attacks? Steel resists Psychic, which turns a clean offensive answer into a prediction problem.</li>
+            </ul>
+            <p>The player-facing answer is to identify the opponent&apos;s immunity first, then identify the coverage move that punishes that switch.</p>
+          </article>
+        )}
+
+        {typeId === 'rock' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Rock type changes, generation by generation</h2>
+            <p>Rock has kept its familiar offensive targets, while later generations changed its defensive context and move categories.</p>
+            <ol>
+              <li><strong>Generation I:</strong> Rock attacks were super effective against Fire, Ice, Flying, and Bug, while the chart had no Dark, Steel, or Fairy row.</li>
+              <li><strong>Generation II:</strong> Steel and Dark entered the chart, and Sandstorm introduced a weather interaction that Rock Pokémon ignore.</li>
+              <li><strong>Generation IV:</strong> The physical/special split made Rock moves such as Stone Edge physical while type effectiveness stayed separate from move category.</li>
+              <li><strong>Generation VI:</strong> Fairy joined the chart, adding a new neutral target for Rock while reshaping several surrounding matchup decisions.</li>
+              <li><strong>Generation IX:</strong> Terastallization can replace the active defensive type, so a Rock calculation may describe the base form rather than the battle state.</li>
+            </ol>
+            <p>Rock&apos;s chart answer and Rock&apos;s practical battle answer are not always the same generation-specific question.</p>
+          </article>
+        )}
+
+        {typeId === 'dark' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Dark dual-type checks</h2>
+            <p>Dark pairings are especially sensitive to Fighting, Bug, and Fairy because the partner type can stack the same weakness.</p>
+            <table className="w-full text-left border-collapse">
+              <thead><tr className="border-b"><th className="py-2">Defender</th><th className="py-2">Attacking type</th><th className="py-2">Factor one</th><th className="py-2">Factor two</th><th className="py-2">Result</th></tr></thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2">Tyranitar (Rock/Dark)</td><td className="py-2">Fighting</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
+                <tr className="border-b"><td className="py-2">Hydreigon (Dark/Dragon)</td><td className="py-2">Fairy</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
+                <tr><td className="py-2">Mandibuzz (Dark/Flying)</td><td className="py-2">Bug</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
+              </tbody>
+            </table>
+            <p>Each 4× result comes from two separate 2× entries in the site chart; neither factor is inferred from the species name.</p>
+          </article>
+        )}
+
+        {typeId === 'steel' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Questions players ask about Steel&apos;s resistances</h2>
+            <p>A recurring player question is whether Steel&apos;s many resistances make every Steel switch automatically safe.</p>
+            <ul>
+              <li>Why does Steel still lose to Fire, Fighting, and Ground? The resistance count does not remove those three weaknesses from the base chart.</li>
+              <li>Why do older players remember Steel resisting Dark and Ghost? Those matchups changed when the modern chart was revised in Generation VI.</li>
+              <li>Why can a Steel Pokémon still be pressured by a neutral attack? A resistance is only one chart factor; power, coverage, hazards, and recovery decide the actual turn.</li>
+            </ul>
+            <p>The discussion is about the tradeoff between Steel&apos;s broad resistance profile and its concentrated weaknesses, not about counting resistances alone.</p>
+          </article>
+        )}
+
+        {typeId === 'fairy' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Fairy type changes, generation by generation</h2>
+            <p>Fairy is the clearest example of a modern type changing how older matchups must be read.</p>
+            <ol>
+              <li><strong>Generations I–V:</strong> Fairy did not exist, so Dragon had no Fairy immunity to account for.</li>
+              <li><strong>Generation VI:</strong> Fairy was introduced as a new type; it became super effective against Dragon, Dark, and Fighting and immune to Dragon.</li>
+              <li><strong>Generation VI revisions:</strong> Several existing Pokémon gained Fairy as a secondary or replacement type, so historical species comparisons need the generation label.</li>
+              <li><strong>Generation IX:</strong> Terastallization allows a Pokémon to become Fairy temporarily, separating the base species typing from the active battle typing.</li>
+            </ol>
+            <p>A pre-Generation VI chart cannot answer a Fairy matchup because the defending type did not exist in that chart.</p>
+          </article>
+        )}
+
+        {typeId === 'normal' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
             <h2>Normal type at a glance</h2>
             <p>
               <strong>Direct answer:</strong> Normal-type moves are super effective against nothing, not very effective (0.5×) against Rock and Steel,
