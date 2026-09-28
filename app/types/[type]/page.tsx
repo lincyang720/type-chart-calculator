@@ -606,13 +606,6 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
               Dragon, and Fairy. The second type is the part that makes each Dragon matchup different. Use the grouped
               list above to identify the pairing, then verify the exact multiplier before building a team or choosing a counter.
             </p>
-            <h3>Questions players ask before choosing a Dragon counter</h3>
-            <p>A recurring player question is why a Dragon/Flying Pokémon can feel safe against many moves and then disappear to one Ice move.</p>
-            <ul>
-              <li>Why does Dragon only hit Dragon super effectively? Its attacks are narrow, so a second move type matters.</li>
-              <li>Why do players put Ice coverage on a Water Pokémon? The move type can exploit Dragon/Flying without asking the attacker to be an Ice Pokémon.</li>
-              <li>Why does Fairy stop Dragon moves completely? Fairy is an immunity, not merely a resistance, so the Dragon user needs a different attack.</li>
-            </ul>
           </article>
         )}
 
