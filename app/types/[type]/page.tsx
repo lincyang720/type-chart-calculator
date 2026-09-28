@@ -752,7 +752,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
               <tbody>
                 <tr className="border-b"><td className="py-2">Charizard (Fire/Flying)</td><td className="py-2">Rock</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
                 <tr className="border-b"><td className="py-2">Gliscor (Ground/Flying)</td><td className="py-2">Ice</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
-                <tr><td className="py-2">Skarmory (Steel/Flying)</td><td className="py-2">Electric</td><td className="py-2">0.5×</td><td className="py-2">2×</td><td className="py-2">1×</td></tr>
+                <tr><td className="py-2">Skarmory (Steel/Flying)</td><td className="py-2">Electric</td><td className="py-2">1×</td><td className="py-2">2×</td><td className="py-2">2×</td></tr>
               </tbody>
             </table>
             <p>Skarmory shows why the two factors must be multiplied: Flying is weak to Electric, but Steel resists it, leaving a neutral result.</p>
@@ -796,7 +796,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
               <tbody>
                 <tr className="border-b"><td className="py-2">Tyranitar (Rock/Dark)</td><td className="py-2">Fighting</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
                 <tr className="border-b"><td className="py-2">Hydreigon (Dark/Dragon)</td><td className="py-2">Fairy</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
-                <tr><td className="py-2">Mandibuzz (Dark/Flying)</td><td className="py-2">Bug</td><td className="py-2">2×</td><td className="py-2">2×</td><td className="py-2">4×</td></tr>
+                <tr><td className="py-2">Mandibuzz (Dark/Flying)</td><td className="py-2">Bug</td><td className="py-2">2×</td><td className="py-2">0.5×</td><td className="py-2">1×</td></tr>
               </tbody>
             </table>
             <p>Each 4× result comes from two separate 2× entries in the site chart; neither factor is inferred from the species name.</p>
