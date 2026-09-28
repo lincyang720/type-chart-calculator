@@ -1992,9 +1992,9 @@ const BATCH6_CONTENT: Record<string, Batch6Content> = {
     rows: [
       { defender: 'Gardevoir (Psychic/Fairy)', attack: 'Bug', factorOne: '2×', factorTwo: '0.5×', result: '1×' },
       { defender: 'Hatterene (Psychic/Fairy)', attack: 'Ghost', factorOne: '2×', factorTwo: '1×', result: '2×' },
-      { defender: 'Tapu Lele (Psychic/Fairy)', attack: 'Steel', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Tapu Lele (Psychic/Fairy)', attack: 'Steel', factorOne: '1×', factorTwo: '2×', result: '2×' },
     ],
-    points: ['Bug is neutral after Psychic weakness and Fairy resistance cancel.', 'Ghost remains 2× because Ghost is super effective against Psychic and neutral against Fairy.', 'Steel hits both defending types for 2×, producing 4×.'],
+    points: ['Bug is neutral after Psychic weakness and Fairy resistance cancel.', 'Ghost remains 2× because Ghost is super effective against Psychic and neutral against Fairy.', 'Steel is neutral against Psychic and super effective against Fairy, producing 2×.'],
   },
   'fire-fighting': {
     kind: 'discussion',
