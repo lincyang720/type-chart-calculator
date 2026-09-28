@@ -755,7 +755,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
                 <tr><td className="py-2">Skarmory (Steel/Flying)</td><td className="py-2">Electric</td><td className="py-2">1×</td><td className="py-2">2×</td><td className="py-2">2×</td></tr>
               </tbody>
             </table>
-            <p>Skarmory shows why the two factors must be multiplied: Flying is weak to Electric, but Steel resists it, leaving a neutral result.</p>
+            <p>Skarmory shows why the two factors must be multiplied: Electric is neutral against Steel, while Flying is weak to Electric, so the combined result is 2×.</p>
           </article>
         )}
 

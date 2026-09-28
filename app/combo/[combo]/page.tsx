@@ -1930,6 +1930,109 @@ export async function generateMetadata({ params }: { params: Promise<{ combo: st
   };
 }
 
+type Batch6Content = {
+  kind: 'multiplication' | 'discussion' | 'history';
+  heading: string;
+  opening: string;
+  points: string[];
+  rows?: { defender: string; attack: string; factorOne: string; factorTwo: string; result: string }[];
+};
+
+const BATCH6_CONTENT: Record<string, Batch6Content> = {
+  'steel-fairy': {
+    kind: 'multiplication',
+    heading: 'Steel/Fairy worked multiplier checks',
+    opening: 'A Steel/Fairy label is not one multiplier: each attacking type must be checked against Steel and Fairy separately.',
+    rows: [
+      { defender: 'Mawile (Steel/Fairy)', attack: 'Fire', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Klefki (Steel/Fairy)', attack: 'Ground', factorOne: '2×', factorTwo: '1×', result: '2×' },
+      { defender: 'Magearna (Steel/Fairy)', attack: 'Fighting', factorOne: '2×', factorTwo: '0.5×', result: '1×' },
+    ],
+    points: ['Mawile shows the only 4× row here because Fire is super effective against both defending types.', 'Klefki shows Ground remains a 2× hit when Fairy is neutral.', 'Magearna shows a 2× weakness and a 0.5× resistance cancel to 1×.'],
+  },
+  'water-ground': {
+    kind: 'discussion',
+    heading: 'Questions players ask about Water/Ground',
+    opening: 'Players repeatedly ask how a pairing can ignore Electric and still lose so sharply to one Grass move.',
+    points: ['Why does Water/Ground ignore Electric? Ground supplies a complete immunity, even though Water alone is weak to Electric.', 'Why is Grass the matchup players plan around? Grass hits both halves for 2×, so the pairing has a 4× emergency rather than an ordinary weakness.', 'Why do players keep Ice coverage nearby? Ice can pressure Grass switch-ins and punish some common Water/Ground counter patterns.'],
+  },
+  'grass-poison': {
+    kind: 'history',
+    heading: 'Grass/Poison through chart revisions',
+    opening: 'Grass/Poison has existed across every modern chart, but the surrounding type roster changed what its answers look like.',
+    points: ['Generation I: Grass/Poison entered the original roster, with no Dark, Steel, or Fairy types to reshape its defensive context.', 'Generation II: Steel and Dark arrived, adding new resistances and new offensive questions around Grass and Poison attacks.', 'Generation VI: Fairy arrived, giving Poison STAB a new super-effective target and giving the pairing a new defensive role.', 'Generation IX: Terastallization can replace the active defending type, so the base Grass/Poison chart is not always the battle state.'],
+  },
+  'fire-flying': {
+    kind: 'multiplication',
+    heading: 'Fire/Flying worked multiplier checks',
+    opening: 'Fire/Flying is defined by the two factors that either stack a weakness or cancel into a neutral result.',
+    rows: [
+      { defender: 'Charizard (Fire/Flying)', attack: 'Rock', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Moltres (Fire/Flying)', attack: 'Electric', factorOne: '1×', factorTwo: '2×', result: '2×' },
+      { defender: 'Talonflame (Fire/Flying)', attack: 'Water', factorOne: '2×', factorTwo: '1×', result: '2×' },
+    ],
+    points: ['Rock is the 4× result because Fire and Flying are both weak to Rock.', 'Electric is neutral into Fire and super effective into Flying.', 'Water is super effective into Fire and neutral into Flying.'],
+  },
+  'grass-steel': {
+    kind: 'discussion',
+    heading: 'Questions players ask about Grass/Steel',
+    opening: 'Players often ask why Grass/Steel feels safe into so many moves but still needs an explicit Fire plan.',
+    points: ['Why does Grass/Steel handle Grass attacks so well? Both defending types resist Grass, so the move is reduced twice.', 'Why is Fire the move people scout first? Fire is super effective against both Grass and Steel, creating a 4× emergency.', 'Why do Ground and Fighting still matter? Steel is weak to both, while Grass is neutral, so neither attack is cancelled by the Grass half.'],
+  },
+  'bug-steel': {
+    kind: 'history',
+    heading: 'Bug/Steel through chart revisions',
+    opening: 'Bug/Steel became more distinctive as new types and battle mechanics changed the context around its long resistance list.',
+    points: ['Generation I: Bug and Steel were not yet a combined pairing because Steel did not exist.', 'Generation II: Steel arrived, creating the Bug/Steel pairing and adding Steel resistances to the Bug profile.', 'Generation VI: Fairy added a new modern target for Steel attacks and a new type interaction for Bug/Steel teams.', 'Generation IX: Terastallization can replace the active Bug/Steel typing, while the base chart still retains its 4× Fire weakness.'],
+  },
+  'psychic-fairy': {
+    kind: 'multiplication',
+    heading: 'Psychic/Fairy worked multiplier checks',
+    opening: 'Psychic/Fairy needs both defending types checked because several apparent weaknesses cancel or stack.',
+    rows: [
+      { defender: 'Gardevoir (Psychic/Fairy)', attack: 'Bug', factorOne: '2×', factorTwo: '0.5×', result: '1×' },
+      { defender: 'Hatterene (Psychic/Fairy)', attack: 'Ghost', factorOne: '2×', factorTwo: '1×', result: '2×' },
+      { defender: 'Tapu Lele (Psychic/Fairy)', attack: 'Steel', factorOne: '2×', factorTwo: '2×', result: '4×' },
+    ],
+    points: ['Bug is neutral after Psychic weakness and Fairy resistance cancel.', 'Ghost remains 2× because Ghost is super effective against Psychic and neutral against Fairy.', 'Steel hits both defending types for 2×, producing 4×.'],
+  },
+  'fire-fighting': {
+    kind: 'discussion',
+    heading: 'Questions players ask about Fire/Fighting',
+    opening: 'Players ask why Fire/Fighting feels dominant against some teams but still folds to a small set of predictable answers.',
+    points: ['Why does Fire/Fighting break Steel so reliably? Both STAB types pressure Steel, so the defender cannot rely on one resistance plan.', 'Why are Water, Ground, Flying, and Psychic the recurring answers? Those attack types target one or both halves without needing a rare interaction.', 'Why does the pairing need speed or setup? It has offensive reach but no type immunity, so a faster super-effective attack can remove the entry opportunity.'],
+  },
+  'dragon-flying': {
+    kind: 'history',
+    heading: 'Dragon/Flying through chart revisions',
+    opening: 'Dragon/Flying kept its Ground immunity while the generations around it changed which counter types players had to respect.',
+    points: ['Generation I: Flying existed, but Dragon was not yet an available type pairing in the original roster.', 'Generation II: Dragon became available and Dragon/Flying combinations could use the shared Ground immunity and Grass resistance.', 'Generation VI: Fairy arrived as a new 2× Dragon/Flying threat, while Ice remained the paired 4× weakness.', 'Generation IX: Terastallization can replace Dragon/Flying during battle, but the base combination still has the same chart multipliers.'],
+  },
+  'water-ice': {
+    kind: 'multiplication',
+    heading: 'Water/Ice worked multiplier checks',
+    opening: 'Water/Ice has no single stacked 4× row in these checks; the factors show why several threats remain 2×.',
+    rows: [
+      { defender: 'Lapras (Water/Ice)', attack: 'Grass', factorOne: '2×', factorTwo: '1×', result: '2×' },
+      { defender: 'Dewgong (Water/Ice)', attack: 'Rock', factorOne: '1×', factorTwo: '2×', result: '2×' },
+      { defender: 'Cloyster (Water/Ice)', attack: 'Fighting', factorOne: '1×', factorTwo: '2×', result: '2×' },
+    ],
+    points: ['Grass is super effective against Water and neutral against Ice.', 'Rock is neutral against Water and super effective against Ice.', 'Fighting is neutral against Water and super effective against Ice.'],
+  },
+  'water-dragon': {
+    kind: 'discussion',
+    heading: 'Questions players ask about Water/Dragon',
+    opening: 'Players ask why Water/Dragon looks safe into Fire and Water but still treats Fairy as an urgent matchup.',
+    points: ['Why is Water/Dragon not weak to Grass? Water is weak to Grass, but Dragon resists Grass, so the two factors cancel.', 'Why is Fairy the cleanest warning? Fairy is super effective against Dragon and neutral against Water, so it remains a direct 2× threat.', 'Why does Ice coverage still matter? Ice is super effective against Dragon while Water is neutral, so Ice keeps pressure on both defensive and offensive variants.'],
+  },
+  'electric-flying': {
+    kind: 'history',
+    heading: 'Electric/Flying through chart revisions',
+    opening: 'Electric/Flying has kept its Ground immunity while later generations changed the abilities and battle states that interact with it.',
+    points: ['Generation I: Electric and Flying existed separately, and Flying supplied the basic Ground immunity to the pairing.', 'Generation II: Steel and Dark entered the chart, changing surrounding resistance and coverage decisions without removing the Ground immunity.', 'Generation III: Levitate and other abilities made ability-based Ground interactions more visible across Electric/Flying counterplay.', 'Generation IX: Terastallization can replace Electric/Flying temporarily, but the base pairing remains weak to Ice and Rock and neutral to Ground only through Flying immunity.'],
+  },
+};
+
 export async function DualTypeContent({ params }: { params: Promise<{ combo: string }> }) {
   const resolvedParams = await params;
   const comboWording = COMBO_WORDING[resolvedParams.combo];
@@ -1939,6 +2042,7 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
   const type2Data = typesData.types.find(t => t.id === type2);
   const combo = findCombination(type1, type2);
   const guide = COMBINATION_GUIDES[resolvedParams.combo];
+  const batch6 = BATCH6_CONTENT[resolvedParams.combo];
 
   if (!type1Data || !type2Data) {
     notFound();
@@ -2092,6 +2196,42 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
                 <p>{faq.answer}</p>
               </div>
             ))}
+          </div>
+        </article>
+      )}
+
+      {batch6 && (
+        <article className="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">{batch6.heading}</h2>
+          <div className="prose max-w-none text-gray-700">
+            <p>{batch6.opening}</p>
+            {batch6.rows && (
+              <table className="w-full text-left border-collapse not-prose">
+                <thead>
+                  <tr className="border-b">
+                    <th className="py-2">Defender</th>
+                    <th className="py-2">Attacking type</th>
+                    <th className="py-2">Factor one</th>
+                    <th className="py-2">Factor two</th>
+                    <th className="py-2">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {batch6.rows.map(row => (
+                    <tr className="border-b last:border-b-0" key={`${row.defender}-${row.attack}`}>
+                      <td className="py-2">{row.defender}</td>
+                      <td className="py-2">{row.attack}</td>
+                      <td className="py-2">{row.factorOne}</td>
+                      <td className="py-2">{row.factorTwo}</td>
+                      <td className="py-2">{row.result}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+            <ul>
+              {batch6.points.map(point => <li key={point}>{point}</li>)}
+            </ul>
           </div>
         </article>
       )}
