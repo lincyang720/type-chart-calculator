@@ -109,6 +109,30 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
     )
     : null;
 
+  if (pokemon.id === 'eevee') {
+    return {
+      title: 'Eevee Weakness & Eeveelution Chart - Every Eevee Evolution, Type, and Weakness',
+      description: 'Eevee (Normal) weakness guide plus the full Eeveelution chart: Vaporeon, Jolteon, Flareon, Espeon, Umbreon, Leafeon, Glaceon, and Sylveon compared by type, weaknesses, resistances, and immunities.',
+      keywords: 'eevee weakness, eeveelution chart, eevee evolutions, eevee type, sylveon, umbreon, espeon, jolteon, vaporeon, flareon, leafeon, glaceon',
+      openGraph: {
+        siteName: 'TypeMatchup',
+        title: 'Eevee Weakness and the Complete Eeveelution Chart',
+        description: 'Eevee plus its eight evolutions compared by type, weakness, resistance, and immunity in one chart.',
+        url: 'https://www.typematchup.org/pokemon/eevee',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Eevee Weakness & Eeveelution Chart',
+        description: 'Eevee and all eight Eeveelutions: type, weaknesses, resistances, and immunities.',
+      },
+      alternates: {
+        canonical: '/pokemon/eevee',
+      },
+      robots: { index: true, follow: true },
+    };
+  }
+
   return {
     title: `${pokemon.name} Weakness & Counters - ${typeNames} Type Guide`,
     description: `${pokemon.name} (${typeNames}) weakness guide. ${pokemon.strategy.slice(0, 120)}. Best counters, moveset, and battle strategy.`,
@@ -369,6 +393,114 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
                 <p>{section.body}</p>
               </section>
             ))}
+          </article>
+        )}
+
+        {pokemon.id === 'eevee' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-8 prose max-w-none text-gray-700">
+            <h2>Eeveelution Chart: Every Eevee Evolution, Type, and Weakness</h2>
+            <p>
+              Here is the quick <strong>Eeveelution chart</strong>: Eevee is Normal, and its eight evolutions cover eight
+              different types. Use the weakness column when choosing a counter, and the immunity or resistance column when
+              choosing a switch-in.
+            </p>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-2 pr-4">Pokemon</th>
+                  <th className="py-2 pr-4">Type</th>
+                  <th className="py-2 pr-4">Standard weaknesses</th>
+                  <th className="py-2">Key resistance or immunity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2 pr-4">Eevee</td><td className="py-2 pr-4">Normal</td><td className="py-2 pr-4">Fighting</td><td className="py-2">Immune to Ghost</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Vaporeon</td><td className="py-2 pr-4">Water</td><td className="py-2 pr-4">Electric, Grass</td><td className="py-2">Resists Fire, Water, Ice, Steel</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Jolteon</td><td className="py-2 pr-4">Electric</td><td className="py-2 pr-4">Ground</td><td className="py-2">Resists Electric, Flying, Steel</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Flareon</td><td className="py-2 pr-4">Fire</td><td className="py-2 pr-4">Water, Ground, Rock</td><td className="py-2">Resists Fire, Grass, Ice, Bug, Steel, Fairy</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Espeon</td><td className="py-2 pr-4">Psychic</td><td className="py-2 pr-4">Bug, Ghost, Dark</td><td className="py-2">Resists Fighting, Psychic</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Umbreon</td><td className="py-2 pr-4">Dark</td><td className="py-2 pr-4">Fighting, Bug, Fairy</td><td className="py-2">Immune to Psychic; resists Ghost and Dark</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Leafeon</td><td className="py-2 pr-4">Grass</td><td className="py-2 pr-4">Fire, Ice, Poison, Flying, Bug</td><td className="py-2">Resists Water, Electric, Grass, Ground</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Glaceon</td><td className="py-2 pr-4">Ice</td><td className="py-2 pr-4">Fire, Fighting, Rock, Steel</td><td className="py-2">Resists Ice</td></tr>
+                <tr><td className="py-2 pr-4">Sylveon</td><td className="py-2 pr-4">Fairy</td><td className="py-2 pr-4">Poison, Steel</td><td className="py-2">Immune to Dragon; resists Fighting, Bug, Dark</td></tr>
+              </tbody>
+            </table>
+            <p>
+              The table uses the standard main-series type chart. A move&apos;s actual result can change with abilities,
+              held items, weather, Terastallization, or a game-specific battle rule, so verify unusual cases in the
+              <Link href="/pokemon/type-chart">Pokemon type chart</Link>.
+            </p>
+
+            <h3>Eeveelutions by type</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-2 pr-4">Type</th>
+                  <th className="py-2 pr-4">Eeveelution</th>
+                  <th className="py-2">What makes the type useful</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2 pr-4">Normal</td><td className="py-2 pr-4">Eevee</td><td className="py-2">The baseline choice with a simple weakness and a Ghost immunity.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Water</td><td className="py-2 pr-4">Vaporeon</td><td className="py-2">A bulky Water option that handles Fire, Water, Ice, and Steel attacks well.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Electric</td><td className="py-2 pr-4">Jolteon</td><td className="py-2">The narrowest defensive weakness in the family: Ground is the matchup to cover.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Fire</td><td className="py-2 pr-4">Flareon</td><td className="py-2">Strong resistance coverage, balanced by weaknesses to Water, Ground, and Rock.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Psychic</td><td className="py-2 pr-4">Espeon</td><td className="py-2">Fast Psychic identity with useful Fighting and Psychic resistances.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dark</td><td className="py-2 pr-4">Umbreon</td><td className="py-2">A defensive Dark profile with a Psychic immunity and a different set of answers from Espeon.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Grass</td><td className="py-2 pr-4">Leafeon</td><td className="py-2">Four helpful resistances, but several common attacking types to watch.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Ice</td><td className="py-2 pr-4">Glaceon</td><td className="py-2">A clear Ice identity that needs protection from Fire, Fighting, Rock, and Steel.</td></tr>
+                <tr><td className="py-2 pr-4">Fairy</td><td className="py-2 pr-4">Sylveon</td><td className="py-2">The family member that blanks Dragon attacks and checks Fighting, Bug, and Dark pressure.</td></tr>
+              </tbody>
+            </table>
+
+            <h3>How to use the chart in a matchup</h3>
+
+            <h4>If you are picking an evolution</h4>
+            <p>
+              Start with the type you need, not the Pokemon name. Jolteon is the cleanest choice when the main concern is
+              a Flying or Water matchup and you can protect it from Ground. Sylveon is the direct Fairy option when Dragon
+              immunity matters. Umbreon is the better Dark-flavored defensive choice when you want a Psychic immunity
+              rather than Espeon&apos;s Psychic damage profile.
+            </p>
+
+            <h4>If you are countering an Eeveelution</h4>
+            <p>
+              Read the exact row. Do not use &quot;Eevee weakness&quot; as a substitute for the evolved form&apos;s weakness.
+              Fighting is super effective against Eevee, but that does not have the same meaning against Espeon, Umbreon,
+              or Sylveon. The evolution&apos;s type is the first filter.
+            </p>
+
+            <h4>If the Pokemon has an extra battle mechanic</h4>
+            <p>
+              Use this as the type baseline, then check the exact game and format. Terastallization, abilities, and special
+              forms can change what you should bring. The <Link href="/calculator">type calculator</Link> is the quickest
+              way to compare one or two defending types against every attacking type.
+            </p>
+
+            <h3>Eeveelution chart FAQ</h3>
+            <h4>How many Eeveelutions are there?</h4>
+            <p>
+              There are eight Eevee evolutions in this chart: Vaporeon, Jolteon, Flareon, Espeon, Umbreon, Leafeon,
+              Glaceon, and Sylveon. Eevee itself is included as the Normal-type starting point.
+            </p>
+            <h4>Which Eeveelution is Fairy type?</h4>
+            <p>
+              Sylveon is the Fairy-type Eeveelution. Its standard weaknesses are Poison and Steel, and Dragon-type attacks
+              do not affect it.
+            </p>
+            <h4>Which Eeveelution has only one weakness?</h4>
+            <p>
+              Jolteon has one standard type weakness, Ground. Umbreon has three listed weaknesses but gains a Psychic
+              immunity from its Dark typing.
+            </p>
+
+            <h3>Eeveelution chart takeaway</h3>
+            <p>
+              The eight evolutions are a compact tour of the type system: Water, Electric, Fire, Psychic, Dark, Grass, Ice,
+              and Fairy. Pick by the matchup you need, then cover the weakness shown in the table. That keeps the chart
+              useful for both collecting and team planning, without treating every Eeveelution as if it shared Eevee&apos;s
+              Normal typing.
+            </p>
           </article>
         )}
 

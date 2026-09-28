@@ -81,22 +81,24 @@ const nextConfig = {
         destination: '/pokemon/type-quiz',
         statusCode: 301,
       },
-      // P2: Merge twin type-chart pages into the canonical 2026 page
+      // P2: Merge twin type-chart pages into the canonical type chart page
       {
         source: '/blog/pokemon-type-chart-scarlet-violet',
-        destination: '/blog/pokemon-type-chart-2026',
+        destination: '/pokemon/type-chart',
         statusCode: 301,
       },
       {
         source: '/blog/pokemon-type-chart-gen-9-scarlet-violet',
-        destination: '/blog/pokemon-type-chart-2026',
+        destination: '/pokemon/type-chart',
         statusCode: 301,
       },
+      // Merge the 2026 type chart article into the canonical type chart page
       {
         source: '/blog/pokemon-type-chart-2026',
         destination: '/pokemon/type-chart',
         statusCode: 301,
       },
+      // Merge both Dragon articles into the Dragon type page
       {
         source: '/blog/dragon-types-chart',
         destination: '/types/dragon',
@@ -107,9 +109,10 @@ const nextConfig = {
         destination: '/types/dragon',
         statusCode: 301,
       },
+      // Merge the Eeveelution chart into the Eevee page
       {
-        source: '/pokemon/eevee',
-        destination: '/blog/eeveelution-chart',
+        source: '/blog/eeveelution-chart',
+        destination: '/pokemon/eevee',
         statusCode: 301,
       },
       // Merge the standalone matchup page into the canonical effectiveness calculator

@@ -163,11 +163,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         `${baseUrl}/blog/pokemon-type-chart-2026`,
         `${baseUrl}/blog/dragon-types-chart`,
         `${baseUrl}/blog/dragon-type-weakness`,
+        `${baseUrl}/blog/eeveelution-chart`,
       ].includes(page.url));
   }
 
   // Add pokemon pages
-  const pokemonPages = pokemonData.pokemon.filter(p => EDITORIAL_POKEMON.has(p.id) && p.id !== 'eevee').map(p => ({
+  const pokemonPages = pokemonData.pokemon.filter(p => EDITORIAL_POKEMON.has(p.id)).map(p => ({
     url: `${baseUrl}/pokemon/${p.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

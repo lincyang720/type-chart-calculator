@@ -320,6 +320,6 @@ If you're building a defensive core, include a Steel type. It's the most reliabl
 
 **Related Guides:**
 - [Fairy Type Guide →](/blog/fairy-type-guide)
-- [Dragon Type Guide →](/types/dragon)
+- [Dragon Type Weakness Guide →](/types/dragon)
 - [Best Pokemon Type Combinations →](/blog/best-pokemon-type-combinations)
 - [How to Build a Balanced Pokemon Team →](/blog/how-to-build-balanced-pokemon-team)

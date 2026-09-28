@@ -115,6 +115,29 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   const defensive = defensiveTypeChart[typeId];
   const offensive = typeChart[typeId];
 
+  if (typeId === 'dragon') {
+    return {
+      title: 'Dragon Types Chart and Dragon Type Weakness - How to Beat Dragon Pokemon (2026)',
+      description: 'Dragon types chart and Dragon type weakness on one page: Dragon is weak to Ice, Dragon, and Fairy, resists Fire, Water, Electric, and Grass, and cannot hit Fairy. Featured Dragon Pokemon by dual typing, the 4x Ice weakness club, Fairy and Ice counters, anti-Dragon team cores, and Pokemon GO raid counters.',
+      keywords: 'dragon types chart, dragon type weakness, dragon pokemon, dragon type matchups, how to beat dragon pokemon, dragon weakness 2026, dragon type chart',
+      openGraph: {
+        siteName: 'TypeMatchup',
+        title: 'Dragon Types Chart and Dragon Type Weakness (2026)',
+        description: 'Dragon is weak to Ice, Dragon, and Fairy, resists Fire, Water, Electric, and Grass, and cannot hit Fairy. Grouped Dragon Pokemon by dual typing plus counters and team cores.',
+        url: 'https://www.typematchup.org/types/dragon',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Dragon Types Chart and Dragon Type Weakness',
+        description: 'Dragon weaknesses, resistances, featured Dragon Pokemon by typing, and the counters that beat them.',
+      },
+      alternates: {
+        canonical: '/types/dragon',
+      },
+    };
+  }
+
   return {
     title: `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
     description: `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}. Full matchup analysis.`,
@@ -433,34 +456,155 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
               <li><strong>"Dragon has a Fairy weakness."</strong> Added in Gen 6. Before that Dragon was weak only to Ice and Dragon and resisted four types; the Fairy addition gave it a third weakness. Veterans pre-2013 forget Fairy exists in the matchup.</li>
               <li><strong>"Dragon resists four types but the Ice weakness is the one to fear."</strong> Dragon resists Fire, Water, Electric, and Grass, yet a single Ice move (or Ice + Flying for 4×) is the classic knockout. Easy to remember Ice, forget the Fairy third wheel.</li>
             </ul>
-            <h3>Dragon Pokémon grouped by their second type</h3>
+
+            <h3>Dragon type matchup at a glance</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-2 pr-4">Question</th>
+                  <th className="py-2">Answer for a pure Dragon defender or attacker</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon&apos;s weaknesses</td><td className="py-2">Ice, Dragon, Fairy</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon&apos;s resistances</td><td className="py-2">Fire, Water, Electric, Grass</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon&apos;s immunities</td><td className="py-2">None from the Dragon type alone</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon attacks are strong against</td><td className="py-2">Dragon</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon attacks are resisted by</td><td className="py-2">Steel</td></tr>
+                <tr><td className="py-2 pr-4">Dragon attacks do not affect</td><td className="py-2">Fairy</td></tr>
+              </tbody>
+            </table>
             <p>
-              The word Dragon does not describe one defensive profile. Dragon/Flying Pokémon such as Dragonite, Salamence,
-              and Rayquaza add a 4× Ice weakness; Dragon/Ground Garchomp adds an Electric immunity; Dragon/Steel Dialga
-              changes the resistance profile; and Dragon/Ghost, Dragon/Dark, Dragon/Water, Dragon/Poison, Dragon/Fighting,
-              and Dragon/Electric pairs each need their own two-type calculation.
+              These are the standard main-series type interactions. A second type can add, remove, or multiply the result,
+              so the grouped list below matters more than the single word &quot;Dragon.&quot;
             </p>
+
+            <h3>Featured Dragon Pokemon by typing</h3>
             <p>
-              For a concrete counter check, identify the second type first, then verify the exact pairing in the
-              calculator. Fairy answers Dragon moves with immunity, Ice is the cleanest pressure against pure Dragon and
-              many Dragon/Flying pairs, and a Steel partner can resist Dragon while covering the Fairy matchup.
+              Dragon Pokemon are not all weak to the same moves. The second type is the part that makes each Dragon
+              matchup different, so read the row before you pick a counter.
             </p>
-            <h3>Featured pairings and counter patterns</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-2 pr-4">Typing</th>
+                  <th className="py-2 pr-4">Featured Pokemon</th>
+                  <th className="py-2">What the second type changes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon / Flying</td><td className="py-2 pr-4">Dragonite, Salamence, Rayquaza</td><td className="py-2">Adds Flying&apos;s matchup rules, including a strong concern about Ice attacks.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon / Ground</td><td className="py-2 pr-4">Garchomp</td><td className="py-2">Adds Ground&apos;s Electric immunity while keeping the Dragon identity.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon / Ghost</td><td className="py-2 pr-4">Dragapult, Giratina</td><td className="py-2">Adds Ghost interactions and gives the pair a different defensive profile.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon / Dark</td><td className="py-2 pr-4">Hydreigon</td><td className="py-2">Adds Dark&apos;s Psychic immunity and changes how the pair handles several attacks.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon / Water</td><td className="py-2 pr-4">Dracovish, Palkia</td><td className="py-2">Adds Water&apos;s resistance profile and makes the combination less like a pure Dragon.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon / Steel</td><td className="py-2 pr-4">Dialga</td><td className="py-2">Steel changes the defensive profile substantially and resists Dragon attacks.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon / Poison</td><td className="py-2 pr-4">Eternatus</td><td className="py-2">Poison adds its own matchup rules and a different set of resistances.</td></tr>
+                <tr className="border-b"><td className="py-2 pr-4">Dragon / Fighting</td><td className="py-2 pr-4">Koraidon</td><td className="py-2">Fighting adds offensive pressure against Normal, Ice, Rock, Dark, and Steel targets.</td></tr>
+                <tr><td className="py-2 pr-4">Dragon / Electric</td><td className="py-2 pr-4">Miraidon, Raging Bolt</td><td className="py-2">Electric gives the pair an Electric identity and a useful Flying matchup.</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Why Fairy is the best Dragon counter</h3>
+            <p>
+              Fairy is <strong>immune</strong> to Dragon moves. A Garchomp locked into Outrage does literally 0 damage to
+              any Fairy type, and Fairy hits back for 2×. The most common Fairy answers to Dragon are:
+            </p>
             <ul>
-              <li><strong>Dragon/Flying:</strong> Dragonite, Salamence, and Rayquaza take 4× from Ice.</li>
-              <li><strong>Dragon/Ground:</strong> Garchomp adds an Electric immunity but keeps the 4× Ice weakness.</li>
-              <li><strong>Dragon/Ghost:</strong> Dragapult and Giratina add Ghost matchups that are not present on pure Dragon.</li>
-              <li><strong>Dragon/Dark:</strong> Hydreigon adds a Psychic immunity; Fairy remains a direct answer to Dragon.</li>
-              <li><strong>Dragon/Water:</strong> Dracovish and Palkia add Water&apos;s resistance profile.</li>
-              <li><strong>Dragon/Steel:</strong> Dialga changes the defensive profile and resists Dragon attacks.</li>
-              <li><strong>Dragon/Poison:</strong> Eternatus adds Poison matchups; Dragon/Fighting Koraidon and Dragon/Electric Miraidon or Raging Bolt also require the exact two-type calculation.</li>
+              <li><strong>Sylveon</strong> — Pixilate Hyper Voice destroys Dragons, and 130 base SpDef tanks Dragon Pulse.</li>
+              <li><strong>Clefable</strong> — Magic Guard plus Unaware ignores Dragon Dance boosts, and Moonblast OHKOs most Dragons.</li>
+              <li><strong>Gardevoir</strong> — Fairy/Psychic with Moonblast and Psychic coverage.</li>
+              <li><strong>Togekiss</strong> — Air Slash flinch plus Dazzling Gleam, with Serene Grace making it annoying.</li>
+              <li><strong>Magearna</strong> — Steel/Fairy resists Dragon <em>and</em> is immune to it, while Fleur Cannon hits hard.</li>
             </ul>
+
+            <h3>Why Ice moves are essential</h3>
             <p>
-              Against Garchomp, Fairy attacks avoid Dragon and Ice attacks exploit the 4× weakness. Against Dragonite and
-              Salamence, Ice priority and Stealth Rock interact with their Flying pairing. Against Dragapult, Dark or Fairy
-              answers must account for its speed and mixed coverage. A main-series anti-Dragon core commonly combines a
-              Fairy answer, an Ice coverage move, and a Steel partner, then checks the revealed ability, item, and Tera
-              state before committing to a counter.
+              You do not need an Ice-type Pokemon — you just need Ice-type moves. Many Water types learn Ice Beam, which
+              makes them excellent Dragon checks:
+            </p>
+            <ul>
+              <li><strong>Ice Beam on Blastoise or Swampert</strong> — surprise KO on Garchomp and Dragonite.</li>
+              <li><strong>Ice Shard on Mamoswine</strong> — priority that picks off weakened Dragons.</li>
+              <li><strong>Freeze-Dry on Lapras</strong> — hits Water/Dragon types such as Palkia and Kingdra super effectively.</li>
+              <li><strong>Ice Punch on Weavile</strong> — one of the fastest Ice attackers, revenge killing most Dragons.</li>
+            </ul>
+            <h4>The 4× Ice weakness club</h4>
+            <p>Some Dragon Pokemon take <strong>4× damage</strong> from Ice:</p>
+            <ul>
+              <li><strong>Garchomp</strong> (Dragon/Ground) — Ice Beam is an instant KO.</li>
+              <li><strong>Dragonite</strong> (Dragon/Flying) — Ice Shard can OHKO.</li>
+              <li><strong>Rayquaza</strong> (Dragon/Flying) — the most extreme case.</li>
+              <li><strong>Salamence</strong> (Dragon/Flying) — same as Dragonite.</li>
+              <li><strong>Landorus</strong> (Ground/Flying) — not a Dragon, but the same 4× Ice weakness.</li>
+            </ul>
+            <p>If you see any of these on the opponent&apos;s team, bring Ice coverage.</p>
+
+            <h3>Dragon versus Dragon</h3>
+            <p>
+              Using Dragon moves against Dragons works, but you also take super effective damage back. The Dragon
+              Pokemon most often used to beat other Dragons are <strong>Dragapult</strong> (Dragon/Ghost, 142 base Speed
+              with Dragon Darts and Shadow Ball), <strong>Garchomp</strong> (Outrage hits hard, but getting locked in is
+              dangerous against a Fairy switch), and <strong>Kyurem-Black</strong> (170 base Attack with Fusion Bolt and
+              Dragon Claw covering almost everything).
+            </p>
+
+            <h3>Countering specific Dragons</h3>
+            <ul>
+              <li><strong>Garchomp</strong> — any Fairy type is immune to Outrage and Dragon Claw, and Ice Beam from any Water type OHKOs the 4× weakness. Watch out for Swords Dance plus Scale Shot and Stone Edge for Ice types. <Link href="/pokemon/garchomp">Full Garchomp guide</Link></li>
+              <li><strong>Dragonite</strong> — Ice Shard from Mamoswine or Weavile hits the 4× weakness and bypasses Multiscale once there is prior damage, and Stealth Rock strips Multiscale on switch-in. Fairy types wall it completely. Watch out for Dragon Dance plus Extreme Speed priority. <Link href="/pokemon/dragonite">Full Dragonite guide</Link></li>
+              <li><strong>Dragapult</strong> — Dark types such as Tyranitar and Greninja resist the Ghost STAB, and Fairy types are immune to Dragon. Watch out for 142 base Speed, mixed attacking stats, and U-turn pivoting. <Link href="/pokemon/dragapult">Full Dragapult guide</Link></li>
+              <li><strong>Salamence</strong> — Ice moves hit the 4× weakness and Fairy types wall it, while Stealth Rock chips 25% on every switch. Watch out for Dragon Dance plus Moxie snowballing and Mega Salamence&apos;s Aerilate. <Link href="/pokemon/salamence">Full Salamence guide</Link></li>
+            </ul>
+
+            <h3>Best anti-Dragon team core</h3>
+            <p>Build with at least two of these three pieces to handle Dragon Pokemon:</p>
+            <ol>
+              <li><strong>Fairy type</strong> (Sylveon, Clefable, or Magearna) — the primary Dragon check.</li>
+              <li><strong>Ice coverage</strong> (Ice Beam on a Water type) — the backup for 4× weak Dragons.</li>
+              <li><strong>Steel type</strong> (Ferrothorn, Corviknight) — resists Dragon and provides hazards.</li>
+            </ol>
+            <p>
+              A practical core is <strong>Clefable</strong> (Unaware walls Dragon Dance sweepers), <strong>Swampert</strong>
+              (Ice Beam for Garchomp, resists Rock), and <strong>Ferrothorn</strong> (Stealth Rock plus Leech Seed, resists Dragon).
+            </p>
+
+            <h3>Dragon type in Pokemon GO</h3>
+            <p>In Pokemon GO raids, Dragon types are best countered by:</p>
+            <ol>
+              <li><strong>Mega Gardevoir</strong> — Charm plus Dazzling Gleam (Fairy).</li>
+              <li><strong>Shadow Mamoswine</strong> — Powder Snow plus Avalanche (Ice).</li>
+              <li><strong>Mega Rayquaza</strong> — Dragon Tail plus Outrage (Dragon versus Dragon).</li>
+              <li><strong>Shadow Dragonite</strong> — Dragon Tail plus Outrage.</li>
+              <li><strong>Galarian Darmanitan</strong> — Ice Fang plus Avalanche.</li>
+            </ol>
+            <p>
+              For GO Battle League PvP: <strong>Togekiss</strong> dominates Dragon types in Master League,
+              <strong>Azumarill</strong> (Water/Fairy) walls Dragons in Great League, and <strong>Alolan Ninetales</strong>
+              (Ice/Fairy) double-counters Dragons.
+            </p>
+
+            <h3>Key takeaways for 2026</h3>
+            <ol>
+              <li><strong>Always carry Ice coverage</strong> — Ice Beam on a Water type costs nothing and handles most Dragons.</li>
+              <li><strong>Fairy types are mandatory</strong> — at least one Fairy on every competitive team.</li>
+              <li><strong>Stealth Rock matters</strong> — 25% chip on Dragonite, Salamence, and Charizard on every switch.</li>
+              <li><strong>Do not rely on Dragon versus Dragon</strong> — it is a coin flip, and Fairy is safer.</li>
+              <li><strong>Scout for coverage moves</strong> — good Dragon players carry Poison Jab or Iron Head for Fairies.</li>
+            </ol>
+
+            <h3>The three checks before using a Dragon counter</h3>
+            <ol>
+              <li><strong>Check the second type.</strong> Start with the row in the table, not the word &quot;Dragon.&quot; Dragon/Flying, Dragon/Ground, and Dragon/Steel do not share a defensive profile — the second type can create an immunity or add a new weakness.</li>
+              <li><strong>Check whether the move is really Ice, Dragon, or Fairy.</strong> The displayed type of the move matters more than the species name; if it is not one of those three, check the full chart instead of assuming super-effective damage.</li>
+              <li><strong>Check the exact combination in the calculator.</strong> Open the <Link href="/calculator">type calculator</Link>, select the defending Pokemon&apos;s two types, then compare the attacking type. This catches cases where two multipliers combine into something different from the pure Dragon row.</li>
+            </ol>
+
+            <h3>Dragon type chart takeaway</h3>
+            <p>
+              Dragon is strong against Dragon but cannot hit Fairy at all, while pure Dragon defenders are weak to Ice,
+              Dragon, and Fairy. The second type is the part that makes each Dragon matchup different. Use the grouped
+              list above to identify the pairing, then verify the exact multiplier before building a team or choosing a counter.
             </p>
             <h3>Questions players ask before choosing a Dragon counter</h3>
             <p>A recurring player question is why a Dragon/Flying Pokémon can feel safe against many moves and then disappear to one Ice move.</p>

@@ -60,6 +60,7 @@ function getBlogPosts(): BlogPost[] {
       'pokemon-type-chart-2026',
       'dragon-types-chart',
       'dragon-type-weakness',
+      'eeveelution-chart',
     ].includes(post.slug))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

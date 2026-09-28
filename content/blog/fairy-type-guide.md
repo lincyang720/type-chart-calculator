@@ -233,7 +233,7 @@ If you're building a defensive core, include a Fairy type. It's the most reliabl
 ---
 
 **Related Guides:**
-- [Dragon Type Guide →](/types/dragon)
+- [Dragon Type Weakness Guide →](/types/dragon)
 - [Steel Type Pokemon Guide →](/blog/steel-type-guide)
 - [Best Pokemon Type Combinations →](/blog/best-pokemon-type-combinations)
 - [How to Build a Balanced Pokemon Team →](/blog/how-to-build-balanced-pokemon-team)
