@@ -421,6 +421,23 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
               calculator. Fairy answers Dragon moves with immunity, Ice is the cleanest pressure against pure Dragon and
               many Dragon/Flying pairs, and a Steel partner can resist Dragon while covering the Fairy matchup.
             </p>
+            <h3>Featured pairings and counter patterns</h3>
+            <ul>
+              <li><strong>Dragon/Flying:</strong> Dragonite, Salamence, and Rayquaza take 4× from Ice.</li>
+              <li><strong>Dragon/Ground:</strong> Garchomp adds an Electric immunity but keeps the 4× Ice weakness.</li>
+              <li><strong>Dragon/Ghost:</strong> Dragapult and Giratina add Ghost matchups that are not present on pure Dragon.</li>
+              <li><strong>Dragon/Dark:</strong> Hydreigon adds a Psychic immunity; Fairy remains a direct answer to Dragon.</li>
+              <li><strong>Dragon/Water:</strong> Dracovish and Palkia add Water&apos;s resistance profile.</li>
+              <li><strong>Dragon/Steel:</strong> Dialga changes the defensive profile and resists Dragon attacks.</li>
+              <li><strong>Dragon/Poison:</strong> Eternatus adds Poison matchups; Dragon/Fighting Koraidon and Dragon/Electric Miraidon or Raging Bolt also require the exact two-type calculation.</li>
+            </ul>
+            <p>
+              Against Garchomp, Fairy attacks avoid Dragon and Ice attacks exploit the 4× weakness. Against Dragonite and
+              Salamence, Ice priority and Stealth Rock interact with their Flying pairing. Against Dragapult, Dark or Fairy
+              answers must account for its speed and mixed coverage. A main-series anti-Dragon core commonly combines a
+              Fairy answer, an Ice coverage move, and a Steel partner, then checks the revealed ability, item, and Tera
+              state before committing to a counter.
+            </p>
           </article>
         )}
 
