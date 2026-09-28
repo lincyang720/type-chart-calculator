@@ -158,11 +158,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency: 'monthly' as const,
           priority: 0.7,
         };
-      });
+      })
+      .filter(page => ![
+        `${baseUrl}/blog/pokemon-type-chart-2026`,
+        `${baseUrl}/blog/dragon-types-chart`,
+        `${baseUrl}/blog/dragon-type-weakness`,
+      ].includes(page.url));
   }
 
   // Add pokemon pages
-  const pokemonPages = pokemonData.pokemon.filter(p => EDITORIAL_POKEMON.has(p.id)).map(p => ({
+  const pokemonPages = pokemonData.pokemon.filter(p => EDITORIAL_POKEMON.has(p.id) && p.id !== 'eevee').map(p => ({
     url: `${baseUrl}/pokemon/${p.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

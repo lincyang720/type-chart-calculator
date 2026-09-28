@@ -30,6 +30,18 @@ Here is the quick **Eeveelution chart**: Eevee is Normal, and its eight evolutio
 | Glaceon | Ice | Fire, Fighting, Rock, Steel | Resists Ice |
 | Sylveon | Fairy | Poison, Steel | Immune to Dragon; resists Fighting, Bug, Dark |
 
+## Eevee base profile
+
+Eevee is the Normal-type starting point for this family. It is weak to Fighting, immune to Ghost, and its listed
+abilities are Run Away, Adaptability, and Anticipation. Its standard reference moves are Last Resort, Quick Attack,
+Bite, and Baby-Doll Eyes. The base-stat total is 325, with 55 HP, 55 Attack, 50 Defense, 45 Special Attack, 65
+Special Defense, and 55 Speed.
+
+For a direct matchup, Fighting-type moves are the standard pressure, Ghost-type Pokémon are immune to Eevee's normal
+STAB, and any strong attacker can exploit Eevee's limited competitive profile. Eevee's strategic value is its eight
+evolutions: Vaporeon, Jolteon, Flareon, Espeon, Umbreon, Leafeon, Glaceon, and Sylveon each replace the Normal typing
+with a different type and therefore require a different weakness check.
+
 The table uses the standard main-series type chart. A move's actual result can change with abilities, held items, weather, Terastallization, or a game-specific battle rule, so verify unusual cases in the [Pokémon type chart](/pokemon/type-chart).
 
 ## Eeveelutions by type
@@ -63,4 +75,3 @@ Use this as the type baseline, then check the exact game and format. Terastalliz
 ## Eeveelution chart takeaway
 
 The eight evolutions are a compact tour of the type system: Water, Electric, Fire, Psychic, Dark, Grass, Ice, and Fairy. Pick by the matchup you need, then cover the weakness shown in the table. That keeps the chart useful for both collecting and team planning without treating every Eeveelution as if it shared Eevee's Normal typing.
-

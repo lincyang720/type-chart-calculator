@@ -409,6 +409,18 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
               <li><strong>"Dragon has a Fairy weakness."</strong> Added in Gen 6. Before that Dragon was weak only to Ice and Dragon and resisted four types; the Fairy addition gave it a third weakness. Veterans pre-2013 forget Fairy exists in the matchup.</li>
               <li><strong>"Dragon resists four types but the Ice weakness is the one to fear."</strong> Dragon resists Fire, Water, Electric, and Grass, yet a single Ice move (or Ice + Flying for 4×) is the classic knockout. Easy to remember Ice, forget the Fairy third wheel.</li>
             </ul>
+            <h3>Dragon Pokémon grouped by their second type</h3>
+            <p>
+              The word Dragon does not describe one defensive profile. Dragon/Flying Pokémon such as Dragonite, Salamence,
+              and Rayquaza add a 4× Ice weakness; Dragon/Ground Garchomp adds an Electric immunity; Dragon/Steel Dialga
+              changes the resistance profile; and Dragon/Ghost, Dragon/Dark, Dragon/Water, Dragon/Poison, Dragon/Fighting,
+              and Dragon/Electric pairs each need their own two-type calculation.
+            </p>
+            <p>
+              For a concrete counter check, identify the second type first, then verify the exact pairing in the
+              calculator. Fairy answers Dragon moves with immunity, Ice is the cleanest pressure against pure Dragon and
+              many Dragon/Flying pairs, and a Steel partner can resist Dragon while covering the Fairy matchup.
+            </p>
           </article>
         )}
 

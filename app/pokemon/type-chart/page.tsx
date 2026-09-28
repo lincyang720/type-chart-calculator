@@ -171,6 +171,27 @@ export default function TypeChartPage() {
           </div>
         </section>
 
+        <section className="mb-12 rounded-lg border border-purple-200 bg-purple-50 p-6">
+          <h2 className="mb-4 text-2xl font-bold">Gen 9, Tera, and Generation Context</h2>
+          <p className="mb-4 text-gray-700">
+            This chart is the modern 18-type chart used in Pokémon Scarlet and Violet. Terastallization can change a
+            Pokémon&apos;s defensive type during battle, so the displayed Tera Type becomes the type to check for incoming
+            damage while the original typing still matters for the move&apos;s normal STAB context.
+          </p>
+          <ul className="list-disc space-y-2 pl-6 text-gray-700">
+            <li><strong>Gen 1:</strong> the chart had 15 types; Dark, Steel, and Fairy were not present.</li>
+            <li><strong>Gen 2–5:</strong> Dark and Steel were added and the older matchup rules applied.</li>
+            <li><strong>Gen 6 onward:</strong> Fairy was added, and the modern Steel, Dark, Ghost, and Fairy interactions began.</li>
+            <li><strong>Stellar Tera:</strong> it is a temporary battle mechanic rather than a normal Pokémon type row in this chart.</li>
+            <li><strong>Practical check:</strong> verify the exact two defending types in the calculator when an ability, held item, weather, special move, or Tera state changes the normal result.</li>
+          </ul>
+          <p className="mt-4 text-gray-700">
+            Tera Raid decisions use the raid Pokémon&apos;s displayed Tera Type as the immediate defensive target. Paradox
+            Pokémon can also pair unusual type combinations with their abilities, so the standard matrix remains the
+            baseline rather than the complete battle calculation.
+          </p>
+        </section>
+
         <section className="mb-12 print:hidden">
           <h2 className="mb-3 text-2xl font-bold">Weaknesses by Pokemon Type</h2>
           <p className="mb-6 text-gray-700">

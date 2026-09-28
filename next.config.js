@@ -92,6 +92,26 @@ const nextConfig = {
         destination: '/blog/pokemon-type-chart-2026',
         statusCode: 301,
       },
+      {
+        source: '/blog/pokemon-type-chart-2026',
+        destination: '/pokemon/type-chart',
+        statusCode: 301,
+      },
+      {
+        source: '/blog/dragon-types-chart',
+        destination: '/types/dragon',
+        statusCode: 301,
+      },
+      {
+        source: '/blog/dragon-type-weakness',
+        destination: '/types/dragon',
+        statusCode: 301,
+      },
+      {
+        source: '/pokemon/eevee',
+        destination: '/blog/eeveelution-chart',
+        statusCode: 301,
+      },
       // Merge the standalone matchup page into the canonical effectiveness calculator
       {
         source: '/type-matchup-chart',

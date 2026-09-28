@@ -56,6 +56,11 @@ function getBlogPosts(): BlogPost[] {
         tags: data.tags || [],
       } as BlogPost;
     })
+    .filter(post => ![
+      'pokemon-type-chart-2026',
+      'dragon-types-chart',
+      'dragon-type-weakness',
+    ].includes(post.slug))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return posts;

@@ -155,7 +155,7 @@ export default function Home() {
                 outcome. Use the Type Effectiveness Calculator when you need to test one move and optionally include STAB.
               </p>
               <p>
-                <Link href="/blog/pokemon-type-chart-2026" className="font-semibold text-blue-700 hover:underline">
+                <Link href="/pokemon/type-chart" className="font-semibold text-blue-700 hover:underline">
                   Read the complete Pokémon type chart guide →
                 </Link>
               </p>
