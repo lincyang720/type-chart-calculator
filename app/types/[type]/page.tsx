@@ -308,6 +308,30 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
               <li><strong>Ghost is weak to Ghost.</strong> The "same type feels neutral" trap again — Ghost takes 2× from Ghost moves, exactly like it does from Dark.</li>
               <li><strong>Poison is not immune to Ghost or Rock — it is only half effective.</strong> A veteran admitted he mixes this up: "poison 对 rock 和对 ghost 都无效" (he remembers Poison as useless into both). In the actual chart, Poison is not very effective (0.5×) against Rock and Ghost, not 0×. It is a frequent mix-up worth catching before you plan a Poison switch.</li>
             </ul>
+            <h3>Three real dual-type checks</h3>
+            <table className="w-full text-left border-collapse">
+              <thead><tr className="border-b"><th className="py-2">Pokémon and target move</th><th className="py-2">Calculation</th><th className="py-2">Final result</th></tr></thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2">Gengar (Ghost/Poison) vs Ground</td><td className="py-2">1× × 2×</td><td className="py-2">2×</td></tr>
+                <tr className="border-b"><td className="py-2">Gengar (Ghost/Poison) vs Psychic</td><td className="py-2">1× × 2×</td><td className="py-2">2×</td></tr>
+                <tr><td className="py-2">Aegislash (Ghost/Steel) vs Fighting</td><td className="py-2">0× × 2×</td><td className="py-2">0×</td></tr>
+              </tbody>
+            </table>
+            <p>These examples show why the Ghost row alone is not enough: the second type can turn a neutral matchup into a weakness or preserve an immunity when the other type is weak.</p>
+          </article>
+        )}
+
+        {typeId === 'poison' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Poison dual-type multiplication</h2>
+            <p>Poison is weak to Ground and Psychic, resists Fighting, Poison, Bug, Grass, and Fairy, and its attacks are super effective against Grass and Fairy.</p>
+            <dl>
+              <div className="border-b py-3"><dt className="font-semibold">Venusaur (Grass/Poison) vs Ground</dt><dd>2× × 2× = 4×</dd></div>
+              <div className="border-b py-3"><dt className="font-semibold">Toxapex (Poison/Water) vs Ground</dt><dd>2× × 1× = 2×</dd></div>
+              <div className="border-b py-3"><dt className="font-semibold">Gengar (Ghost/Poison) vs Fighting</dt><dd>0× × 0.5× = 0×</dd></div>
+              <div className="py-3"><dt className="font-semibold">Venusaur (Grass/Poison) vs Psychic</dt><dd>2× × 2× = 4×</dd></div>
+            </dl>
+            <p>The first type gives only one factor. Check both defending types before calling a Poison matchup neutral, resisted, or immune.</p>
           </article>
         )}
 
@@ -438,6 +462,59 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
               Fairy answer, an Ice coverage move, and a Steel partner, then checks the revealed ability, item, and Tera
               state before committing to a counter.
             </p>
+            <h3>Questions players ask before choosing a Dragon counter</h3>
+            <p>A recurring player question is why a Dragon/Flying Pokémon can feel safe against many moves and then disappear to one Ice move.</p>
+            <ul>
+              <li>Why does Dragon only hit Dragon super effectively? Its attacks are narrow, so a second move type matters.</li>
+              <li>Why do players put Ice coverage on a Water Pokémon? The move type can exploit Dragon/Flying without asking the attacker to be an Ice Pokémon.</li>
+              <li>Why does Fairy stop Dragon moves completely? Fairy is an immunity, not merely a resistance, so the Dragon user needs a different attack.</li>
+            </ul>
+          </article>
+        )}
+
+        {typeId === 'ice' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>The Ice-type question players keep asking</h2>
+            <p>A recurring player question is why Ice feels excellent on offense but fragile on defense.</p>
+            <h3>Why an Ice move is often better than an Ice Pokémon</h3>
+            <p>Ice moves are super effective against Flying, Ground, Grass, and Dragon. A non-Ice Pokémon can carry that coverage while avoiding the pure Ice defender&apos;s weaknesses to Fire, Fighting, Rock, and Steel.</p>
+            <h3>Where the chart surprises players</h3>
+            <ul>
+              <li>Dragon/Flying takes 2× × 2× = 4× from Ice.</li>
+              <li>Ground/Flying takes 2× × 2× = 4× from Ice.</li>
+              <li>Grass/Flying takes 2× × 2× = 4× from Ice.</li>
+              <li>Pure Ice resists only Ice, so an Ice label does not make a safe defensive switch.</li>
+            </ul>
+          </article>
+        )}
+
+        {typeId === 'bug' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Bug matchups, one generation at a time</h2>
+            <p>Reading an older Bug chart without its generation label can produce a wrong answer because some rows belong to types that did not exist yet.</p>
+            <ol>
+              <li><strong>Generation I:</strong> Bug is super effective against Grass and Psychic; Dark, Steel, and Fairy are not rows in this generation&apos;s chart.</li>
+              <li><strong>Generation II:</strong> Dark and Steel arrive. Bug gains Dark as an offensive target, while Steel resists Bug.</li>
+              <li><strong>Generation VI:</strong> Fairy arrives and resists Bug, adding a modern defensive answer that older charts cannot show.</li>
+              <li><strong>Generations VII–IX:</strong> The 18-type baseline remains, while battle mechanics such as regional forms and Terastallization can change the practical matchup without changing the base Bug row.</li>
+            </ol>
+            <p>Use the generation label first, then read the Bug multiplier; the same move can be evaluated against a different type roster in an older game.</p>
+          </article>
+        )}
+
+        {typeId === 'electric' && (
+          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
+            <h2>Electric matchups across chart revisions</h2>
+            <p>The chart has changed around Electric without changing its central Ground interaction.</p>
+            <table className="w-full text-left border-collapse">
+              <thead><tr className="border-b"><th className="py-2">Era</th><th className="py-2">Electric-specific reading</th></tr></thead>
+              <tbody>
+                <tr className="border-b"><td className="py-2">Generation I</td><td className="py-2">Electric is super effective against Water and Flying, resisted by Electric and Grass, and blocked by Ground; Steel and Fairy do not exist yet.</td></tr>
+                <tr className="border-b"><td className="py-2">Generations II–V</td><td className="py-2">Steel is present as a neutral Electric target, while Ground remains the immunity.</td></tr>
+                <tr className="border-b"><td className="py-2">Generations VI–IX</td><td className="py-2">Fairy is present, but Electric remains neutral into it; Ground remains the defensive answer.</td></tr>
+              </tbody>
+            </table>
+            <p>The stable answer is not “Electric is always safe”: Ground remains an immunity to Electric attacks, while abilities such as Levitate can change a Pokémon&apos;s practical result without changing the base type table.</p>
           </article>
         )}
 
