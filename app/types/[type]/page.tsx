@@ -349,10 +349,10 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
             <h2>Poison dual-type multiplication</h2>
             <p>Poison is weak to Ground and Psychic, resists Fighting, Poison, Bug, Grass, and Fairy, and its attacks are super effective against Grass and Fairy.</p>
             <dl>
-              <div className="border-b py-3"><dt className="font-semibold">Venusaur (Grass/Poison) vs Ground</dt><dd>2× × 2× = 4×</dd></div>
+              <div className="border-b py-3"><dt className="font-semibold">Venusaur (Grass/Poison) vs Ground</dt><dd>0.5× × 2× = 1×</dd></div>
               <div className="border-b py-3"><dt className="font-semibold">Toxapex (Poison/Water) vs Ground</dt><dd>2× × 1× = 2×</dd></div>
               <div className="border-b py-3"><dt className="font-semibold">Gengar (Ghost/Poison) vs Fighting</dt><dd>0× × 0.5× = 0×</dd></div>
-              <div className="py-3"><dt className="font-semibold">Venusaur (Grass/Poison) vs Psychic</dt><dd>2× × 2× = 4×</dd></div>
+              <div className="py-3"><dt className="font-semibold">Venusaur (Grass/Poison) vs Psychic</dt><dd>1× × 2× = 2×</dd></div>
             </dl>
             <p>The first type gives only one factor. Check both defending types before calling a Poison matchup neutral, resisted, or immune.</p>
           </article>
