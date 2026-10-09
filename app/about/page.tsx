@@ -30,6 +30,22 @@ export default function AboutPage() {
           multipliers and review reports when game rules or page content change. The site is not affiliated with,
           endorsed by, or sponsored by Nintendo, Game Freak, or The Pokémon Company.
         </p>
+        <h2>Data scope and limitations</h2>
+        <p>
+          The calculator answers a narrow question: how a move type interacts with a defending type or dual-type
+          combination under the standard modern main-series chart. It does not calculate a complete damage range or
+          decide the winner of a battle.
+        </p>
+        <ul>
+          <li>Dual-type results multiply the two type factors, including 0× immunities.</li>
+          <li>Abilities, held items, moves, weather, terrain, stats, and battle formats can change the result in play.</li>
+          <li>Pokémon GO and older generations can use different mechanics or type relationships.</li>
+          <li>When a page mixes a standard chart result with game-specific advice, the scope is stated in the page text.</li>
+        </ul>
+        <p>
+          This scope keeps the calculator result separate from strategy context, so a visitor can verify the multiplier
+          first and then decide whether the relevant game or format needs a more specific check.
+        </p>
         <h2>Corrections and contact</h2>
         <p>
           Accuracy matters. If a result looks wrong, send the page URL, attacking type, defending type or types, and any
