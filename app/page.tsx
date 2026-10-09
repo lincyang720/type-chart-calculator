@@ -73,14 +73,6 @@ const homepageFaqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How do I use this Pokemon type calculator?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Select a primary defending type, then add a secondary type for a dual-type Pokémon. The results update immediately and group attacks into 4x and 2x weaknesses, resistances, and immunities.',
-      },
-    },
-    {
-      '@type': 'Question',
       name: 'What types are immune to each other?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -93,14 +85,6 @@ const homepageFaqSchema = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: "Yes. Terastallization replaces the Pokémon's defensive typing with its Tera type. Select that Tera type alone in the calculator to check its new defensive weaknesses and resistances.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is this the type calculator pokemon players look for?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. The calculator above is the same tool: pick a defending type, add a second type, and it returns every matchup as 4×, 2×, ½×, ¼× or 0×.',
       },
     },
   ],
@@ -178,20 +162,12 @@ export default function Home() {
                 <p>It identifies the underlying type relationships, but Pokémon GO uses different damage multipliers and battle systems. Use our GO-specific guides for exact event and counter advice.</p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">How do I use this Pokemon type calculator?</h3>
-                <p>Select a primary defending type, then add a secondary type for a dual-type Pokémon. The results update immediately and group attacks into 4× and 2× weaknesses, resistances, and immunities.</p>
-              </div>
-              <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">What types are immune to each other?</h3>
                 <p>Examples include Normal against Ghost, Ghost against Normal and Fighting, Ground against Electric, Flying against Ground, Dark against Psychic, Fairy against Dragon, and Steel against Poison.</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Does Tera type change weaknesses in Scarlet and Violet?</h3>
                 <p>Yes. Terastallization replaces the Pokémon&apos;s defensive typing with its Tera type. Select that Tera type alone in the calculator to check its new defensive weaknesses and resistances.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Is this the type calculator pokemon players look for?</h3>
-                <p>Yes. The calculator above is the same tool: pick a defending type, add a second type, and it returns every matchup as 4×, 2×, ½×, ¼× or 0×.</p>
               </div>
             </div>
           </section>
@@ -497,44 +473,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FAQ Content Section */}
-        <section className="mb-12 prose max-w-none">
-          <h2 className="text-3xl font-bold mb-6">Pokemon Type Matchup Calculator FAQ</h2>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700 space-y-5">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">What is a Pokemon type matchup calculator?</h3>
-              <p>
-                A Pokemon type matchup calculator checks how attacking types interact with one or two defending types. It shows
-                whether a matchup is super effective, resisted, immune, or neutral so you can choose better moves and
-                avoid bad switch-ins.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">How is a type chart calculator different from a type chart?</h3>
-              <p>
-                A type chart is a complete reference table for all matchups. This type chart calculator turns that chart
-                into an interactive tool, so you can select a type combination and immediately see the exact weaknesses,
-                resistances, immunities, and damage multipliers.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Why do dual-type Pokemon have 4x weaknesses?</h3>
-              <p>
-                Dual-type matchups multiply both defensive results together. If an attacking type is super effective
-                against both defending types, the result is 2x times 2x, or 4x damage. The same rule can also create
-                quarter-damage resistances when both types resist the same attack.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">When should I use a type effectiveness calculator?</h3>
-              <p>
-                Use a type effectiveness calculator when building a team, preparing for raids, checking counters, or
-                learning a new Pokemon&apos;s weaknesses. It is most useful before battles because it quickly reveals which
-                types threaten your Pokemon and which matchups you can safely resist.
-              </p>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
