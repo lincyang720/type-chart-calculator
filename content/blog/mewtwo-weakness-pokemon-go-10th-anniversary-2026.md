@@ -1,13 +1,14 @@
 ---
 slug: mewtwo-weakness-pokemon-go-10th-anniversary-2026
 title: "Mewtwo Weakness in Pokémon GO: Psychic Counters and Research Context"
-description: "A practical Mewtwo weakness guide for Pokémon GO: Psychic-type counters, Bug/Ghost/Dark timing, resource decisions, and 10th Anniversary Timed Research context."
+description: "A practical Mewtwo weakness guide for Pokémon GO: Psychic-type counters, Bug/Ghost/Dark timing, resource decisions, and historical 10th Anniversary research context."
 date: "2026-08-29"
+updated: "2026-10-09"
 author: "TypeMatchup"
 tags: ["pokemon go", "mewtwo", "10th anniversary", "psychic type", "type matchups"]
 faq:
-  - question: "When does the Pokémon GO 10th Anniversary Mewtwo Timed Research end?"
-    answer: "Pokémon GO says the 10th Anniversary Timed Research runs from August 12, 2026, at 4:00 p.m. PDT until September 6, 2026, at 11:59 p.m. local time. Tasks and rewards must be completed and claimed before the local deadline."
+  - question: "When did the Pokémon GO 10th Anniversary Mewtwo Timed Research end?"
+    answer: "Pokémon GO's announcement listed the Timed Research from August 12, 2026, at 4:00 p.m. PDT until September 6, 2026, at 11:59 p.m. local time. That event window has passed."
   - question: "What is Mewtwo weak to by type?"
     answer: "Mewtwo is Psychic-type. In the standard type chart, Bug, Ghost, and Dark attacks are super effective against Psychic. Pokémon GO uses its own combat values and move system, so this is a type-only starting point rather than a live counter ranking."
   - question: "What does the official announcement say about the 10th Anniversary Mewtwo?"
@@ -16,9 +17,9 @@ faq:
 
 # Mewtwo Weakness in Pokémon GO: Psychic Counters and Research Context
 
-Pokémon GO's **10th Anniversary Celebration** includes free Timed Research that leads to a **Mewtwo** encounter. The official announcement schedules the research from **August 12, 2026, at 4:00 p.m. PDT** through **September 6, 2026, at 11:59 p.m. local time**. Complete the tasks and claim their rewards before the local deadline. [Read Pokémon GO's official announcement](https://pokemongo.com/news/10th-anniversary-celebration).
+Pokémon GO's **10th Anniversary Celebration** included free Timed Research that led to a **Mewtwo** encounter. The official announcement listed the research from **August 12, 2026, at 4:00 p.m. PDT** through **September 6, 2026, at 11:59 p.m. local time**; that window has passed. The dates below are retained as historical context, while the type matchup guidance remains the evergreen focus. [Read Pokémon GO's official announcement](https://pokemongo.com/news/10th-anniversary-celebration).
 
-This guide answers the type-chart question behind searches such as “Mewtwo weakness Pokémon GO.” The Timed Research section explains the current official deadline, but the main value is the evergreen Psychic-type planning: when to choose Dark, when Ghost is the damage route, when Bug is only a roster fallback, and why type advantage does not automatically equal a good resource investment.
+This guide answers the type-chart question behind searches such as “Mewtwo weakness Pokémon GO.” Its research section is a historical event record; the evergreen focus is Psychic-type planning: when to choose Dark, when Ghost is the damage route, when Bug is only a roster fallback, and why type advantage does not automatically equal a good resource investment.
 
 ## Official event facts vs. Type Matchup planning
 
@@ -50,7 +51,7 @@ The standard chart gives Mewtwo three weaknesses, but Pokémon GO players should
 
 ## Resource timing and exceptions
 
-For the 10th Anniversary research encounter, the most important “counter” may be time management rather than battle prep: finish the tasks and claim rewards before the local deadline. For future Mewtwo raids, Shadow raids, Mega-related rotations, or GO Battle League formats, the question changes. You should then compare four things before powering anything up: the live Mewtwo moveset, your best available Dark/Ghost/Bug moves, the format’s shield or raid-timer pressure, and whether the investment helps beyond this one matchup.
+The 10th Anniversary research window has passed, so its former deadline is included only as historical context. For future Mewtwo raids, Shadow raids, Mega-related rotations, or GO Battle League formats, compare the live Mewtwo moveset, your best available Dark/Ghost/Bug moves, the format’s shield or raid-timer pressure, and whether the investment helps beyond this one matchup.
 
 There are two common exceptions. First, a neutral Pokémon with exceptional Pokémon GO performance can outperform a weak super-effective option if the weak option lacks proper moves or levels. Second, a type-perfect counter can become shaky if Mewtwo’s coverage punishes it. That is why this page avoids naming a permanent “best counter.” The durable recommendation is narrower and more honest: start the shortlist with Dark, Ghost, and Bug, then let the live move pool and your roster decide the final pick.
 
@@ -69,9 +70,9 @@ Recent community discussion shows strong interest in the free Mewtwo encounter, 
 
 ## Mewtwo weakness FAQ
 
-### When does the Pokémon GO 10th Anniversary Mewtwo Timed Research end?
+### When did the Pokémon GO 10th Anniversary Mewtwo Timed Research end?
 
-Pokémon GO says the research runs through September 6, 2026, at 11:59 p.m. local time. Its tasks and rewards must be completed and claimed before that deadline.
+Pokémon GO's announcement listed the research through September 6, 2026, at 11:59 p.m. local time. That deadline has passed.
 
 ### What is Mewtwo weak to by type?
 

@@ -1,13 +1,14 @@
 ---
 slug: pokemon-pokopia-type-chart
 title: "Pokémon Pokopia Feebas Event: Dates, Steps, and Water-Type Matchups"
-description: "Official dates and start requirements for Pokémon Pokopia's Fetching Scales for Feebas event, plus standard Water-type weakness context for Feebas and Milotic."
+description: "Historical dates and requirements for Pokémon Pokopia's Fetching Scales for Feebas event, plus standard Water-type weakness context for Feebas and Milotic."
 date: "2026-08-15"
+updated: "2026-10-09"
 author: "TypeMatchup"
 tags: ["pokemon pokopia", "feebas", "milotic", "water type", "event guide"]
 faq:
-  - question: "When does the Fetching Scales for Feebas event end?"
-    answer: "Nintendo lists the event from August 13 at 5:00 a.m. through August 28 at 4:59 a.m. local time."
+  - question: "When did the Fetching Scales for Feebas event end?"
+    answer: "Nintendo listed the event from August 13 at 5:00 a.m. through August 28 at 4:59 a.m. local time. That event window has passed."
   - question: "What type are Feebas and Milotic?"
     answer: "The official Pokémon Pokédex lists both Feebas and Milotic as Water type. In the standard type chart, Water Pokémon are weak to Grass- and Electric-type attacks."
   - question: "Do Grass and Electric attacks have a confirmed special effect in Pokémon Pokopia?"
@@ -16,11 +17,11 @@ faq:
 
 ## Fetching Scales for Feebas: official event details
 
-Nintendo's official announcement says **Feebas and Milotic are coming to town** during the *Fetching Scales for Feebas* event in Pokémon Pokopia. The event runs from **August 13 at 5:00 a.m. to August 28 at 4:59 a.m. local time**. During that window, players can collect the event-only **Prism Scales**, befriend Feebas and Milotic, and exchange the scales for seaside-themed furniture and other items.
+Nintendo's official announcement said **Feebas and Milotic were coming to town** during the *Fetching Scales for Feebas* event in Pokémon Pokopia. The event ran from **August 13 at 5:00 a.m. to August 28 at 4:59 a.m. local time** and has ended. The steps below are kept as a historical record, not current event instructions. During the event, players could collect the event-only **Prism Scales**, befriend Feebas and Milotic, and exchange the scales for seaside-themed furniture and other items.
 
 The event instructions and timing below come from [Nintendo's official event announcement](https://www.nintendo.com/us/whatsnew/join-the-fetching-scales-for-feebas-event-in-pokemon-pokopia/). The type-matchup section is a separate TypeMatchup explanation based on the standard Pokémon type chart.
 
-### How to start the event
+### How players started the event
 
 Nintendo says that the following conditions are required:
 
@@ -62,20 +63,17 @@ Use the [Water type weakness guide](/types/water) for the complete defensive cha
 
 **TypeMatchup's interpretation:** the table above applies the standard type chart to those official typings. It is useful for a general "Feebas weakness" or "Milotic weakness" lookup, but it does not add unannounced Pokopia systems, damage values, moves, stats, or encounter rules.
 
-## Before the event closes
+## Event deadline (historical)
 
-1. Check that the game displays version 2.0.0.
-2. Make sure the Pokémon Center has been rebuilt and your system clock is current.
-3. Speak to Feebas before beginning Link Play in Palette Town.
-4. Collect and exchange Prism Scales before **August 28 at 4:59 a.m. local time**.
+The official event window closed on **August 28, 2026, at 4:59 a.m. local time**. If Nintendo announces a rerun, confirm its dates and requirements in the new official announcement rather than relying on this archived schedule.
 
 For broader planning beyond this event, consult the [complete Pokémon type chart](/pokemon/type-chart) or test a full group with the [team weakness calculator](/pokemon/team-calculator). Those tools cover standard type interactions and should be kept separate from event-specific mechanics unless Nintendo confirms otherwise.
 
 ## Frequently asked questions
 
-### When does the Fetching Scales for Feebas event end?
+### When did the Fetching Scales for Feebas event end?
 
-Nintendo lists the event from August 13 at 5:00 a.m. through August 28 at 4:59 a.m. local time.
+Nintendo listed the event from August 13 at 5:00 a.m. through August 28 at 4:59 a.m. local time. That event window has passed.
 
 ### What type are Feebas and Milotic?
 

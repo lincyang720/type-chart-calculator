@@ -1,8 +1,9 @@
 ---
 slug: pokemon-champions-regulation-mb-type-matchups
 title: "Pokémon Champions Season M-5 and Worlds Incineroar: Type Matchup Guide"
-description: "Check Season M-5 rewards and the 2026 Worlds Incineroar with a clear Fire/Dark type-chart baseline for Pokémon Champions."
+description: "Review the historical Season M-5 rewards and 2026 Worlds Incineroar alongside a clear Fire/Dark type-chart baseline for Pokémon Champions."
 date: "2026-08-31"
+updated: "2026-10-09"
 author: "TypeMatchup"
 tags: ["pokemon champions", "regulation m-b", "double battles", "mega evolution", "type matchups"]
 faq:
@@ -22,7 +23,7 @@ faq:
 
 # Pokémon Champions Season M-5 and Worlds Incineroar: Type Matchup Guide
 
-Pokémon Champions **Season M-5** is in its active window through **September 8, 2026, at 6:59 p.m. PDT**. Pokémon's official August events announcement confirms the Ranked Battles and Battle Pass schedule, while the July Regulation M-B overview supplies the official Double Battle context for the weather cores and Mega Evolutions below. Start with the defensive pressure your six Pokémon share before deciding that a powerful Mega Evolution or weather setter belongs on the team. [Read the official Season M-5 announcement](https://www.pokemon.com/us/news/pokemon-champions-august-2026-events-mcs-ranked-battles-season-and-battle-pass) and [the official Regulation M-B overview](https://www.pokemon.com/us/features/pokemon-champions-regulation-m-b-double-battles-overview).
+Pokémon Champions **Season M-5 ended on September 8, 2026, at 6:59 p.m. PDT**. Its schedule and rewards below are historical context, not current event instructions. Pokémon's official August events announcement confirms the former Ranked Battles and Battle Pass schedule, while the July Regulation M-B overview supplies official Double Battle context for the weather cores and Mega Evolutions discussed here. The reusable portion of this guide is the type-chart baseline and team-planning framework. [Read the official Season M-5 announcement](https://www.pokemon.com/us/news/pokemon-champions-august-2026-events-mcs-ranked-battles-season-and-battle-pass) and [the official Regulation M-B overview](https://www.pokemon.com/us/features/pokemon-champions-regulation-m-b-double-battles-overview).
 
 ## Season M-5 rewards: a type-chart starting point
 
@@ -38,9 +39,9 @@ Pokémon Champions **Season M-5** is in its active window through **September 8,
 
 Use the [type calculator](/calculator) to verify the defensive chart, then confirm the actual Pokémon, moves, Abilities, items, and format in-game. The official announcement identifies Season M-5 rewards and dates; the table translates those listed typings through the standard chart.
 
-## 2026 Worlds Incineroar: redeem first, then check the matchup
+## 2026 Worlds Incineroar: historical distribution details
 
-The 2026 Pokémon World Championships broadcast has ended, but its Pokémon Champions Incineroar reward is still within its redemption window. **Officially confirmed:** Pokémon's Worlds rewards announcement says that watching 60 minutes of the VGC broadcast awarded a one-time-use Twitch Drop code for a battle-ready **Careful Incineroar** with **Intimidate**, **Fake Out**, **Parting Shot**, **Throat Chop**, **Flare Blitz**, and the **2026 Worlds** title. That code expires **September 3, 2026, at 4:59 p.m. PDT**. The official announcement is the source for the distribution and expiry details; it does not claim that the reward is a universal best pick. [Read the official Worlds rewards announcement](https://www.pokemon.com/us/news/tune-in-to-worlds-and-pokemonxp-for-top-tier-digital-rewards).
+The 2026 Pokémon World Championships broadcast and the Incineroar code redemption window have both ended. **Historical official details:** Pokémon's Worlds rewards announcement said that watching 60 minutes of the VGC broadcast awarded a one-time-use Twitch Drop code for a battle-ready **Careful Incineroar** with **Intimidate**, **Fake Out**, **Parting Shot**, **Throat Chop**, **Flare Blitz**, and the **2026 Worlds** title. The code's redemption deadline was **September 3, 2026, at 4:59 p.m. PDT**. This archived distribution information is not an active offer or a claim that the reward was a universal best pick. [Read the official Worlds rewards announcement](https://www.pokemon.com/us/news/tune-in-to-worlds-and-pokemonxp-for-top-tier-digital-rewards).
 
 **TypeMatchup's chart interpretation:** Incineroar is Fire/Dark, so Water, Ground, Rock, and Fighting are super effective in the standard type chart; Fighting applies to both defensive types and is therefore **4×** effective. Psychic does no type-based damage to the Dark half. This is a defensive typing baseline, not a claim that any one Pokémon, move, or lead position beats the distributed Incineroar.
 
@@ -93,7 +94,7 @@ The [team weakness calculator](/pokemon/team-calculator) makes that audit faster
 
 ## What this guide does not claim
 
-Pokémon.com's overview reports the current Regulation M-B landscape and gives official examples of successful ideas. This guide does not turn those examples into guaranteed rankings, exact win rates, mandatory movesets, or a prediction for the next tournament. It also does not assume that a standard type advantage overrides an Ability, weather effect, item, move choice, target selection, or teammate support.
+Pokémon.com's overview documented the Regulation M-B landscape at publication and gave official examples of team ideas. This guide does not turn those examples into guaranteed rankings, exact win rates, mandatory movesets, or a prediction for a future tournament. It also does not assume that a standard type advantage overrides an Ability, weather effect, item, move choice, target selection, or teammate support.
 
 Use the chart to frame the question, validate the live format details in Pokémon Champions, and adjust after real Double Battle experience. That approach keeps the fast, reliable part of type planning separate from the facts that only the actual battle can settle.
 
@@ -109,7 +110,7 @@ For the standard chart, check Chandelure as Fire/Ghost, Excadrill as Ground/Stee
 
 ### What is Pokémon Champions Regulation M-B?
 
-Regulation M-B is the current Pokémon Champions Double Battles regulation discussed in Pokémon.com's July 24, 2026 strategy overview. It introduces new Mega-Evolved Pokémon and features several weather and balance archetypes.
+Regulation M-B was the Pokémon Champions Double Battles regulation discussed in Pokémon.com's July 24, 2026 strategy overview. The overview described new Mega-Evolved Pokémon and several weather and balance archetypes at that time; check current official rules for the active regulation.
 
 ### Which type matchups should I check for Mega Charizard Y teams?
 

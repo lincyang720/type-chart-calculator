@@ -154,7 +154,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         return {
           url: `${baseUrl}/blog/${data.slug || file.replace('.md', '')}`,
-          lastModified: data.date ? new Date(data.date) : new Date(),
+          lastModified: data.updated || data.date ? new Date(data.updated || data.date) : new Date(),
           changeFrequency: 'monthly' as const,
           priority: 0.7,
         };

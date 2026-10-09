@@ -1,13 +1,14 @@
 ---
 slug: phantump-weakness-pokemon-go-catch-mastery-2026
 title: "Phantump Weakness in Pokémon GO: Ghost/Grass Catch Mastery Guide"
-description: "Prepare for Pokémon GO’s Phantump Catch Mastery with a clear Ghost/Grass weakness chart, official event dates, and practical type-first planning."
+description: "Review Pokémon GO’s Phantump Catch Mastery as a historical event and use a clear Ghost/Grass weakness chart for future matchup planning."
 date: "2026-08-31"
+updated: "2026-10-09"
 author: "TypeMatchup"
 tags: ["pokemon go", "phantump", "catch mastery", "ghost grass", "type matchups"]
 faq:
-  - question: "When is Phantump Catch Mastery in Pokémon GO?"
-    answer: "Pokémon GO schedules Phantump Catch Mastery for Saturday, September 26, 2026, from 10:00 a.m. to 8:00 p.m. local time."
+  - question: "When was Phantump Catch Mastery in Pokémon GO?"
+    answer: "Pokémon GO scheduled Phantump Catch Mastery for September 26, 2026, from 10:00 a.m. to 8:00 p.m. local time. That event date has passed."
   - question: "What is Phantump weak to?"
     answer: "Phantump is Ghost/Grass. In the standard type chart, Fire, Flying, Ice, Ghost, and Dark attacks are super effective against it."
   - question: "Does this guide name the best Phantump counter in Pokémon GO?"
@@ -16,7 +17,7 @@ faq:
 
 # Phantump Weakness in Pokémon GO: Ghost/Grass Catch Mastery Guide
 
-**Phantump Catch Mastery** is scheduled for **September 26, 2026, from 10:00 a.m. to 8:00 p.m. local time**. Pokémon GO says Phantump will appear through Field Research plus free and paid Timed Research. Phantump is **Ghost/Grass**, so it does not behave like a pure Ghost or Grass defender. [Read the official announcement](https://pokemongo.com/news/catch-mastery-phantump-2026).
+Pokémon GO's **Phantump Catch Mastery** took place on **September 26, 2026, from 10:00 a.m. to 8:00 p.m. local time**. The event details below are historical; the Ghost/Grass weakness chart remains useful for future encounters. Phantump is **Ghost/Grass**, so it does not behave like a pure Ghost or Grass defender. [Read the official announcement](https://pokemongo.com/news/catch-mastery-phantump-2026).
 
 This guide separates confirmed event details from the standard type-chart answer. It does not assume an unannounced raid, moveset, or battle role.
 
@@ -48,15 +49,9 @@ The chart gives Phantump five 2× weaknesses, but that does not make Fire, Flyin
 
 That is why this guide does not name one permanent “best” counter. In Pokémon GO, live moves, stats, weather, shields, raid rules, and your roster decide whether a chart-correct option is actually practical.
 
-## A simple event-to-battle workflow
+## Reusing the matchup after the event
 
-Catch Mastery is an encounter and research event, so protect the time window first and keep the Ghost/Grass chart for future formats.
-
-1. Check the event date and plan to play before the local **8:00 p.m.** research deadline.
-2. Complete and claim Field Research and Timed Research rewards before the event ends; unclaimed Timed Research rewards expire.
-3. If you need a standard matchup answer later, test Fire, Flying, Ice, Ghost, and Dark before neutral options.
-4. Rule out Normal and Fighting as type-only damage answers, since Ghost creates an immunity in the standard chart.
-5. Confirm live moves and format before spending resources.
+The event's local **8:00 p.m.** research deadline on September 26, 2026, has passed. For a future Phantump encounter, use the matchup chart as a type-only starting point: test Fire, Flying, Ice, Ghost, and Dark, rule out Normal and Fighting as type-only damage answers, and confirm live moves and format before spending resources.
 
 For a broader group, use the [team weakness calculator](/pokemon/team-calculator) to spot repeated standard-chart weaknesses.
 
@@ -66,9 +61,9 @@ The event announcement does not announce a Phantump raid boss, moveset, damage b
 
 ## Phantump Catch Mastery FAQ
 
-### When is Phantump Catch Mastery in Pokémon GO?
+### When was Phantump Catch Mastery in Pokémon GO?
 
-Pokémon GO schedules the event for September 26, 2026, from 10:00 a.m. to 8:00 p.m. local time. Phantump appears in Field Research, free Timed Research, and paid Timed Research.
+Pokémon GO scheduled the event for September 26, 2026, from 10:00 a.m. to 8:00 p.m. local time. That date has passed; the announcement listed Phantump in Field Research, free Timed Research, and paid Timed Research.
 
 ### What is Phantump weak to?
 

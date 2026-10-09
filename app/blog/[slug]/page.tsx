@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://www.typematchup.org/blog/${resolvedParams.slug}`,
       type: 'article',
       publishedTime: data.date,
+      modifiedTime: data.updated || data.date,
       images: data.image ? [{ url: data.image }] : [],
     },
     alternates: {
@@ -108,15 +109,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {data.title}
             </h1>
 
-            <div className="flex items-center justify-between text-sm text-gray-600 border-b pb-4">
-              <span>{data.author}</span>
-              <time dateTime={data.date}>
-                {new Date(data.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
+            <div className="flex flex-col gap-2 text-sm text-gray-600 border-b pb-4 sm:flex-row sm:items-center sm:justify-between">
+              <span>By {data.author}</span>
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                <time dateTime={data.date}>
+                  Published {new Date(data.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+                {data.updated && (
+                  <time dateTime={data.updated}>
+                    Updated {new Date(data.updated).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                )}
+              </div>
             </div>
           </header>
 
