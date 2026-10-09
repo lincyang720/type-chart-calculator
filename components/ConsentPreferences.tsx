@@ -61,7 +61,9 @@ export default function ConsentPreferences() {
     <>
       {consent === 'accepted' && (
         <>
-          <Analytics />
+          <Analytics beforeSend={(event) => (
+            window.localStorage.getItem(STORAGE_KEY) === 'accepted' ? event : null
+          )} />
         </>
       )}
       {showPrompt && (
