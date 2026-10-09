@@ -236,15 +236,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-12 border-y border-red-200 bg-red-50 px-4 py-5 sm:px-6">
+        <section className="mb-12 rounded-xl border border-blue-200 bg-blue-50 px-4 py-5 sm:px-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <p className="text-sm font-bold text-red-700 mb-1">Trending</p>
-              <h2 className="text-xl sm:text-2xl font-bold">Pokémon Champions Worlds Incineroar and Season M-5</h2>
-              <p className="text-gray-700 mt-1">A claimed Worlds Incineroar code expires September 3; check its Fire/Dark weaknesses and Season M-5 rewards before you build.</p>
+              <p className="text-sm font-bold text-blue-800 mb-1">How to read the results</p>
+              <h2 className="text-xl sm:text-2xl font-bold">Type effectiveness is only one part of a battle</h2>
+              <p className="text-gray-700 mt-1">This chart shows the standard main-series type multipliers. A Pokémon’s second type multiplies the result; abilities, moves, items, and game-specific rules can change what happens in play.</p>
             </div>
-            <Link href="/blog/pokemon-champions-regulation-mb-type-matchups" className="text-blue-700 font-semibold hover:underline shrink-0">
-              Read the matchup guide →
+            <Link href="/pokemon/type-chart" className="text-blue-700 font-semibold hover:underline shrink-0">
+              Open the full type chart →
             </Link>
           </div>
         </section>

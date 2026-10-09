@@ -329,7 +329,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
             <ul>
               <li><strong>Ghost is immune to BOTH Normal and Fighting.</strong> Most people remember one and forget the other. Both Normal and Fighting moves do 0× to every Ghost Pokémon, and Ghost moves in turn do 0× to Normal.</li>
               <li><strong>Ghost is weak to Ghost.</strong> The "same type feels neutral" trap again — Ghost takes 2× from Ghost moves, exactly like it does from Dark.</li>
-              <li><strong>Poison is not immune to Ghost or Rock — it is only half effective.</strong> A veteran admitted he mixes this up: "poison 对 rock 和对 ghost 都无效" (he remembers Poison as useless into both). In the actual chart, Poison is not very effective (0.5×) against Rock and Ghost, not 0×. It is a frequent mix-up worth catching before you plan a Poison switch.</li>
+              <li><strong>Poison attacks do not affect Steel.</strong> That is the chart’s 0× interaction; Rock and Ghost instead take 0.5× damage from Poison moves. These are different outcomes, so check the target type before treating a resisted hit as an immunity.</li>
             </ul>
             <h3>Three real dual-type checks</h3>
             <table className="w-full text-left border-collapse">
@@ -1010,17 +1010,17 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           <h2 className="text-2xl font-bold mb-4">{type.name} Type Editorial Analysis</h2>
           <div className="grid gap-4 md:grid-cols-3 mb-6">
             <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <h3 className="font-semibold text-gray-900 mb-1">Coverage Score</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">Offensive chart index</h3>
               <p className="text-2xl font-bold text-blue-700">{offensiveCoverageScore}</p>
               <p className="text-sm text-gray-600">
-                TypeMatchup score: super-effective targets minus resisted and immune targets.
+                A site-created comparison index: super-effective targets − resisted targets − 2 × immune targets. It is not an in-game stat or an official ranking.
               </p>
             </div>
             <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <h3 className="font-semibold text-gray-900 mb-1">Defensive Burden</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">Defensive chart index</h3>
               <p className="text-2xl font-bold text-purple-700">{defensiveBurdenScore}</p>
               <p className="text-sm text-gray-600">
-                {describeRiskBand(defensiveBurdenScore)} based on weaknesses, resistances, and immunities.
+                A site-created comparison index: 2 × weaknesses − resistances − 2 × immunities. {describeRiskBand(defensiveBurdenScore)} describes this formula only; it is not an in-game stat or an official ranking.
               </p>
             </div>
             <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
