@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 type Consent = 'accepted' | 'rejected' | null;
 const STORAGE_KEY = 'typematchup-analytics-consent';
+const GA4_MEASUREMENT_ID = 'G-37RP6M77TC';
 
 export default function ConsentPreferences() {
   const [consent, setConsent] = useState<Consent>(null);
@@ -18,6 +19,37 @@ export default function ConsentPreferences() {
     window.addEventListener('open-consent-preferences', open);
     return () => window.removeEventListener('open-consent-preferences', open);
   }, []);
+
+  useEffect(() => {
+    const analyticsWindow = window as typeof window & {
+      dataLayer?: unknown[];
+      gtag?: (...args: unknown[]) => void;
+    };
+    const disableFlag = `ga-disable-${GA4_MEASUREMENT_ID}`;
+
+    if (consent !== 'accepted') {
+      (window as unknown as Record<string, unknown>)[disableFlag] = true;
+      analyticsWindow.gtag?.('consent', 'update', { analytics_storage: 'denied' });
+      return;
+    }
+
+    (window as unknown as Record<string, unknown>)[disableFlag] = false;
+    analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+    analyticsWindow.gtag = analyticsWindow.gtag || ((...args: unknown[]) => {
+      analyticsWindow.dataLayer?.push(args);
+    });
+    analyticsWindow.gtag('consent', 'update', { analytics_storage: 'granted' });
+    analyticsWindow.gtag('js', new Date());
+    analyticsWindow.gtag('config', GA4_MEASUREMENT_ID);
+
+    if (!document.getElementById('google-analytics-script')) {
+      const script = document.createElement('script');
+      script.id = 'google-analytics-script';
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
+      document.head.appendChild(script);
+    }
+  }, [consent]);
 
   const choose = (value: Exclude<Consent, null>) => {
     window.localStorage.setItem(STORAGE_KEY, value);
