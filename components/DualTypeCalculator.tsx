@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { TypeId } from '@/lib/types';
-import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
+import { calculateDualTypeWeaknesses, calculateMultiplier, formatMultiplier } from '@/lib/typeCalculations';
 import TypeBadge from './TypeBadge';
 import typesData from '@/data/types.json';
 import pokemonData from '@/data/pokemon.json';
@@ -24,6 +24,7 @@ export default function DualTypeCalculator() {
   // Default to Fire/Flying (like Charizard) as an example
   const [type1, setType1] = useState<TypeId>('fire');
   const [type2, setType2] = useState<TypeId | ''>('flying');
+  const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -55,6 +56,13 @@ export default function DualTypeCalculator() {
     type2 ? (type2 as TypeId) : undefined
   );
   const selectedTypes = type2 ? [type1, type2] : [type1];
+  const matchupBreakdown = useMemo(() => ALL_TYPES.map(attackingType => {
+    const firstFactor = calculateMultiplier(attackingType, [type1]);
+    const secondFactor = type2 ? calculateMultiplier(attackingType, [type2]) : undefined;
+    const total = secondFactor === undefined ? firstFactor : firstFactor * secondFactor;
+
+    return { attackingType, firstFactor, secondFactor, total };
+  }), [type1, type2]);
   const matchingPokemon = pokemonData.pokemon
     .filter(pokemon => (
       pokemon.types.length === selectedTypes.length &&
@@ -112,10 +120,35 @@ export default function DualTypeCalculator() {
     { name: 'Dragon/Ground', type1: 'dragon' as TypeId, type2: 'ground' as TypeId },
   ];
 
+  const copyShareLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopyState('copied');
+    } catch {
+      setCopyState('error');
+    }
+    window.setTimeout(() => setCopyState('idle'), 2000);
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
-        <h2 className="text-xl sm:text-2xl font-bold mb-6">Dual Type Calculator</h2>
+        <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold">Dual Type Calculator</h2>
+            <p className="mt-1 text-sm text-gray-600">
+              Rules: modern main-series type chart. Pokémon GO and older generations may differ.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={copyShareLink}
+            className="min-h-10 shrink-0 rounded-md border border-blue-300 bg-white px-3 py-2 text-sm font-semibold text-blue-800 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-live="polite"
+          >
+            {copyState === 'copied' ? 'Link copied' : copyState === 'error' ? 'Copy failed' : 'Copy result link'}
+          </button>
+        </div>
 
         {/* Quick Examples */}
         <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
@@ -192,6 +225,40 @@ export default function DualTypeCalculator() {
           {renderTypeList(weaknesses.quadrupleResist, 'Double Resistant', '¼×', 'bg-green-700')}
           {renderTypeList(weaknesses.immune, 'Immune', '0×', 'bg-gray-600')}
         </div>
+
+        <details className="mt-5 rounded-lg border border-gray-200 bg-gray-50 p-4">
+          <summary className="cursor-pointer font-semibold text-gray-800">
+            Show multiplier calculations
+          </summary>
+          <p className="mt-2 text-sm text-gray-600">
+            Each factor is the attacking type&apos;s effectiveness against one selected defending type.
+            For dual types, multiply the factors to get the final result.
+          </p>
+          <div className="mt-3 overflow-x-auto">
+            <table className="w-full min-w-[28rem] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-gray-300 text-gray-700">
+                  <th scope="col" className="py-2 pr-3">Attacking type</th>
+                  <th scope="col" className="py-2 pr-3">{typesData.types.find(type => type.id === type1)?.name}</th>
+                  {type2 && <th scope="col" className="py-2 pr-3">{typesData.types.find(type => type.id === type2)?.name}</th>}
+                  <th scope="col" className="py-2">Final multiplier</th>
+                </tr>
+              </thead>
+              <tbody>
+                {matchupBreakdown.map(row => (
+                  <tr key={row.attackingType} className="border-b border-gray-200 last:border-0">
+                    <th scope="row" className="py-2 pr-3 font-medium text-gray-900">
+                      {typesData.types.find(type => type.id === row.attackingType)?.name}
+                    </th>
+                    <td className="py-2 pr-3">{formatMultiplier(row.firstFactor)}</td>
+                    {type2 && <td className="py-2 pr-3">{formatMultiplier(row.secondFactor ?? 1)}</td>}
+                    <td className="py-2 font-semibold">{formatMultiplier(row.total)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
 
         {weaknesses.normal.length > 0 && (
           <details className="mt-4">
