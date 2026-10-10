@@ -9,13 +9,13 @@ import { SITE_URL } from '@/lib/seo';
 import PrintChartButton from './PrintChartButton';
 
 export const metadata: Metadata = {
-  title: 'Pokemon Type Chart 2026 - Complete Gen 9 Guide for Scarlet & Violet',
-  description: 'The complete Pokemon type chart for 2026, covering Gen 9 Scarlet & Violet and The Indigo Disk DLC. All 18 types, strengths, weaknesses, immunities, resistances, plus Tera Type, Tera Blast, Stellar Tera, and Paradox Pokemon explained.',
+  title: 'Pokemon Type Chart 2026 - Complete Printable Gen 9 Guide',
+  description: 'Complete and printable Pokemon type chart for Gen 9 Scarlet & Violet. Check all 18 types, weaknesses, resistances, immunities, Tera Type, Tera Blast, and dual-type matchups.',
   keywords: 'pokemon type chart, type effectiveness chart, pokemon weakness chart, type matchup chart, gen 9 type chart, scarlet and violet type chart, tera type chart, 2026 type chart, stellar tera, tera blast',
   openGraph: {
     siteName: 'TypeMatchup',
-    title: 'Pokemon Type Chart 2026 - Complete Gen 9 Guide for Scarlet & Violet',
-    description: 'Find every weakness, resistance, immunity, and Gen 9 type effectiveness matchup for all 18 Pokemon types, including Tera Type and Tera Blast.',
+    title: 'Pokemon Type Chart 2026 - Complete Printable Gen 9 Guide',
+    description: 'Find every weakness, resistance, immunity, and Gen 9 type effectiveness matchup for all 18 Pokemon types, with a print-friendly chart and Tera Type notes.',
     url: 'https://www.typematchup.org/pokemon/type-chart',
     type: 'website',
   },
@@ -237,6 +237,20 @@ export default function TypeChartPage() {
             </tbody>
           </table>
         </div>
+
+        <section className="mb-12 rounded-lg border border-blue-200 bg-blue-50 p-6 print:hidden" aria-labelledby="printable-type-chart">
+          <h2 id="printable-type-chart" className="text-2xl font-bold mb-3">Printable Pokemon Type Chart Quick Reference</h2>
+          <p className="text-gray-700 mb-4">
+            Use the chart above as a quick reference during team building or a battle. The print button creates a cleaner
+            version of the 18×18 matrix: read a defending type down the left side, find the attacking type across the top,
+            and use the multiplier in the intersecting cell.
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>Red cells show a weakness, green cells show resistance, and gray cells show immunity.</li>
+            <li>For a dual-type defender, multiply the two cells instead of choosing only one type.</li>
+            <li>This quick reference uses the standard main-series chart; it does not replace game-specific ability, item, or move rules.</li>
+          </ul>
+        </section>
 
         {/* Explanation */}
         <section className="mb-12 bg-gray-50 rounded-lg p-6">
