@@ -25,6 +25,7 @@ interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  updated?: string;
   author: string;
   description: string;
   image?: string;
@@ -50,6 +51,7 @@ function getBlogPosts(): BlogPost[] {
         slug: data.slug || file.replace('.md', ''),
         title: data.title || 'Untitled',
         date: data.date || '',
+        updated: data.updated || undefined,
         author: data.author || 'TypeMatchup',
         description: data.description || '',
         image: data.image,
@@ -120,7 +122,10 @@ export default function BlogPage() {
 
                     <div className="flex items-center justify-between text-sm text-gray-500">
                       <span>{post.author}</span>
-                      <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                      <span>
+                        Published {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        {post.updated && ` · Updated ${new Date(post.updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
+                      </span>
                     </div>
                   </div>
                 </Link>
