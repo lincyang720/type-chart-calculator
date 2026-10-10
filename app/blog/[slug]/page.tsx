@@ -137,14 +137,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
-                a: ({ node, ...props }) => (
-                  <Link
-                    href={props.href || '#'}
-                    className="text-blue-600 hover:text-blue-800 underline"
-                  >
-                    {props.children}
-                  </Link>
-                ),
+                a: ({ node, ...props }) => {
+                  const href = props.href || '#';
+                  const canonicalHref = href.startsWith('/combo/')
+                    ? href.replace('/combo/', '/types/')
+                    : href;
+
+                  return (
+                    <Link
+                      href={canonicalHref}
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      {props.children}
+                    </Link>
+                  );
+                },
                 h1: ({ node, ...props }) => (
                   <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />
                 ),
