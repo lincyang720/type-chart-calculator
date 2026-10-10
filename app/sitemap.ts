@@ -19,97 +19,82 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      // Omit lastModified when the page has no tracked content date.
       changeFrequency: 'weekly' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/calculator`,
-      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/battle-simulator`,
-      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/dual-type-chart`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/type-effectiveness-calculator`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/type-coverage-calculator`,
-      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/pokemon-champions-type-chart`,
-      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/types`,
-      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/support`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/disclaimer`,
-      lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     },
     {
       url: `${baseUrl}/embed`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
@@ -117,7 +102,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const typePages = ALL_TYPES.map(type => ({
     url: `${baseUrl}/types/${type}`,
-    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
@@ -133,7 +117,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
     comboPages.push({
       url: `${baseUrl}/types/${slug}`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: isPopular ? 0.8 : 0.7,
     });
@@ -151,10 +134,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         const filePath = path.join(blogDir, file);
         const fileContent = fs.readFileSync(filePath, 'utf-8');
         const { data } = matter(fileContent);
+        const contentDate = data.updated || data.date;
 
         return {
           url: `${baseUrl}/blog/${data.slug || file.replace('.md', '')}`,
-          lastModified: data.updated || data.date ? new Date(data.updated || data.date) : new Date(),
+          ...(contentDate ? { lastModified: new Date(contentDate) } : {}),
           changeFrequency: 'monthly' as const,
           priority: 0.7,
         };
@@ -170,7 +154,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Add pokemon pages
   const pokemonPages = pokemonData.pokemon.filter(p => EDITORIAL_POKEMON.has(p.id)).map(p => ({
     url: `${baseUrl}/pokemon/${p.id}`,
-    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
@@ -178,7 +161,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Add pokemon list page
   const pokemonListPage = {
     url: `${baseUrl}/pokemon`,
-    lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   };
@@ -187,37 +169,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pokemonToolPages = [
     {
       url: `${baseUrl}/pokemon/type-chart`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/pokemon/type-quiz`,
-      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/pokemon/type-calculator-gen-9`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/pokemon/type-chart-with-abilities`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/pokemon/best-type-combinations`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/pokemon/team-calculator`,
-      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
