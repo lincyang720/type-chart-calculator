@@ -75,6 +75,22 @@ function getAnswer(text: string) {
   };
 }
 
+function trackAssistantEvent(name: string, params: Record<string, string>) {
+  const analyticsWindow = window as typeof window & {
+    gtag?: (...args: unknown[]) => void;
+  };
+  analyticsWindow.gtag?.('event', name, params);
+}
+
+function classifyQuestion(text: string) {
+  const pokemon = findPokemon(text);
+  if (pokemon) return 'pokemon';
+  if (/strong against|super effective|what does .* beat|what is .* good against/i.test(text)) return 'offensive_type';
+  if (findTypes(text).length > 1) return 'dual_type';
+  if (findTypes(text).length === 1) return 'single_type';
+  return 'unresolved';
+}
+
 export default function TypeMatchupAssistant() {
   const [question, setQuestion] = useState('');
   const [submitted, setSubmitted] = useState('What is Charizard weak to?');
@@ -82,7 +98,11 @@ export default function TypeMatchupAssistant() {
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (question.trim()) setSubmitted(question.trim());
+    if (question.trim()) {
+      const cleanQuestion = question.trim();
+      setSubmitted(cleanQuestion);
+      trackAssistantEvent('assistant_question', { question_type: classifyQuestion(cleanQuestion) });
+    }
   };
 
   return (
@@ -100,7 +120,7 @@ export default function TypeMatchupAssistant() {
       <div className="mt-5 rounded-lg border border-white bg-white/80 p-4" aria-live="polite">
         <p className="text-sm font-semibold text-gray-600">Answer</p>
         <p className="mt-1 text-lg text-gray-900">{answer.text}</p>
-        {answer.kind === 'answer' && answer.link && <Link href={answer.link} className="mt-3 inline-block font-semibold text-blue-700 hover:underline">{answer.linkText}</Link>}
+        {answer.kind === 'answer' && answer.link && <Link href={answer.link} onClick={() => trackAssistantEvent('assistant_result_click', { destination_type: answer.link?.startsWith('/pokemon/') ? 'pokemon' : 'type' })} className="mt-3 inline-block font-semibold text-blue-700 hover:underline">{answer.linkText}</Link>}
       </div>
       <div className="mt-4 flex flex-wrap gap-2 text-sm">
         {['What beats Water/Flying?', 'What is Pikachu weak to?', 'What is Fire strong against?'].map((example) => (
