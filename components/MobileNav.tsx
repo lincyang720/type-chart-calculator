@@ -9,6 +9,7 @@ export default function MobileNav() {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/calculator', label: 'Calculator' },
+    { href: '/assistant', label: 'AI Assistant' },
     { href: '/battle-simulator', label: 'Battle Simulator' },
     { href: '/types', label: 'All Types' },
     { href: '/pokemon', label: 'Pokemon' },

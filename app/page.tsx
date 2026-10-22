@@ -5,6 +5,7 @@ import JsonLd, { WebApplicationSchema } from '@/components/SEO/JsonLd';
 import DualTypeCalculator from '@/components/DualTypeCalculator';
 import { Metadata } from 'next';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_URL } from '@/lib/seo';
+import TypeMatchupAssistant from '@/components/TypeMatchupAssistant';
 
 // Static generation for better SEO and performance
 
@@ -111,6 +112,10 @@ export default function Home() {
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 sm:p-6 border-2 border-blue-200">
             <DualTypeCalculator />
           </div>
+        </section>
+
+        <section id="assistant" className="mb-12 scroll-mt-6">
+          <TypeMatchupAssistant />
         </section>
 
         <section className="mb-12 grid gap-8 lg:grid-cols-[1.25fr_1fr]" aria-labelledby="how-calculator-works">
