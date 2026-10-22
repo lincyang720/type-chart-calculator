@@ -46,6 +46,12 @@ function describeRiskBand(score: number) {
   return 'high defensive burden';
 }
 
+// Prioritize the pages with the most recent Search Console impressions for the
+// first title/snippet and above-the-fold answer pass.
+const PRIORITY_CTR_TYPES: TypeId[] = [
+  'ghost', 'dragon', 'poison', 'flying', 'dark', 'fairy', 'ice', 'electric',
+];
+
 // Pre-generate all 18 single-type pages and 153 dual-type pages at build time.
 export async function generateStaticParams() {
   const params: { type: string }[] = ALL_TYPES.map((type) => ({ type }));
@@ -117,8 +123,8 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
 
   if (typeId === 'dragon') {
     return {
-      title: 'Dragon Types Chart and Dragon Type Weakness - How to Beat Dragon Pokemon (2026)',
-      description: 'Dragon types chart and Dragon type weakness on one page: Dragon is weak to Ice, Dragon, and Fairy, resists Fire, Water, Electric, and Grass, and cannot hit Fairy. Featured Dragon Pokemon by dual typing, the 4x Ice weakness club, Fairy and Ice counters, anti-Dragon team cores, and Pokemon GO raid counters.',
+      title: 'Dragon Type Weaknesses & Chart: What Beats Dragon Pokémon?',
+      description: 'Dragon-type Pokémon are weak to Ice, Dragon, and Fairy. See the full Dragon type chart, resistances, Fairy immunity, dual-type examples, and a free matchup calculator.',
       keywords: 'dragon types chart, dragon type weakness, dragon pokemon, dragon type matchups, how to beat dragon pokemon, dragon weakness 2026, dragon type chart',
       openGraph: {
         siteName: 'TypeMatchup',
@@ -139,20 +145,32 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   }
 
   return {
-    title: `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
-    description: `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}. Full matchup analysis.`,
+    title: PRIORITY_CTR_TYPES.includes(typeId)
+      ? `${type.name} Type Weaknesses & Chart: What Beats ${type.name} Pokémon?`
+      : `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
+    description: PRIORITY_CTR_TYPES.includes(typeId)
+      ? `${type.name}-type Pokémon are weak to ${formatTypeNames(defensive.weakTo)}. See ${type.name} resistances, immunities, matchups, and use the free Pokemon type calculator.`
+      : `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}. Full matchup analysis.`,
     keywords: `${type.name} type, ${type.name} weakness, ${type.name} strength, ${type.name} matchup, ${type.name} type chart`,
     openGraph: {
     siteName: 'TypeMatchup',
-      title: `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
-      description: `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
+      title: PRIORITY_CTR_TYPES.includes(typeId)
+        ? `${type.name} Type Weaknesses & Chart: What Beats ${type.name} Pokémon?`
+        : `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
+      description: PRIORITY_CTR_TYPES.includes(typeId)
+        ? `${type.name}-type Pokémon are weak to ${formatTypeNames(defensive.weakTo)}. See ${type.name} resistances, immunities, and matchups.`
+        : `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
       url: `https://www.typematchup.org/types/${typeId}`,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${type.name} Type Chart`,
-      description: `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
+      title: PRIORITY_CTR_TYPES.includes(typeId)
+        ? `${type.name} Type Weaknesses & Chart`
+        : `${type.name} Type Chart`,
+      description: PRIORITY_CTR_TYPES.includes(typeId)
+        ? `${type.name}-type Pokémon are weak to ${formatTypeNames(defensive.weakTo)}. Check the complete ${type.name} type chart and matchup calculator.`
+        : `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
     },
     alternates: {
       canonical: `/types/${typeId}`,
@@ -249,6 +267,17 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{type.name} Type</h1>
           </div>
           <p className="text-lg text-gray-600">{type.description}</p>
+          {PRIORITY_CTR_TYPES.includes(typeId) && (
+            <div className="mt-5 rounded-lg border border-blue-200 bg-blue-50 p-4 text-gray-800">
+              <p>
+                <strong>Quick answer:</strong> {type.name}-type Pokémon are weak to {formatTypeNames(defensive.weakTo)}.
+                {defensive.immuneTo.length > 0 && ` They are immune to ${formatTypeNames(defensive.immuneTo)}.`}
+              </p>
+              <Link href={`/calculator?type1=${typeId}`} className="mt-3 inline-block font-semibold text-blue-700 hover:underline">
+                Check another matchup in the Type Calculator →
+              </Link>
+            </div>
+          )}
         </div>
 
         {typeId === 'fire' && (
