@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 
 import DualTypeCalculator from '@/components/DualTypeCalculator';
 import JsonLd from '@/components/SEO/JsonLd';
+import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 const faqItems = [
   {
@@ -66,6 +67,10 @@ export default function CalculatorPage() {
         </p>
 
         <DualTypeCalculator />
+
+        <div className="mt-8">
+          <AssistantEntryCta compact />
+        </div>
 
         <section className="mt-12 bg-gray-50 rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-4">How to Use the Dual Type Calculator</h2>

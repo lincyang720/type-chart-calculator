@@ -5,22 +5,23 @@ import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
 import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
+import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 export const metadata: Metadata = {
-  title: 'All Types - Complete Type Guide and Matchups',
-  description: 'Browse all 18 types with detailed information about strengths, weaknesses, and matchups. Learn about each type\'s characteristics.',
+  title: 'All Pokémon Types: Complete Type Chart & Matchups',
+  description: 'Browse all 18 Pokémon types with weaknesses, resistances, immunities, and matchup guides. Ask the Type Assistant for a quick answer.',
   keywords: 'all types, type list, type guide, type matchups, type strengths, type weaknesses',
   openGraph: {
     siteName: 'TypeMatchup',
-    title: 'All Types - Complete Type Guide and Matchups',
-    description: 'Browse all 18 types with detailed information about strengths, weaknesses, and matchups.',
+    title: 'All Pokémon Types: Complete Type Chart & Matchups',
+    description: 'Browse all 18 Pokémon types with weaknesses, resistances, immunities, and matchup guides.',
     url: 'https://www.typematchup.org/types',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'All Types Guide',
-    description: 'Browse all 18 types with detailed information about strengths, weaknesses, and matchups.',
+    title: 'All Pokémon Types Guide',
+    description: 'Browse all 18 Pokémon types with weaknesses, resistances, immunities, and matchup guides.',
   },
   alternates: {
     canonical: '/types',
@@ -42,6 +43,9 @@ export default function TypesPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <div className="mx-auto mb-8 max-w-5xl">
+        <AssistantEntryCta compact />
+      </div>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">All Types</h1>
       <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
         Explore all 18 types and learn about their unique characteristics, strengths, and weaknesses.

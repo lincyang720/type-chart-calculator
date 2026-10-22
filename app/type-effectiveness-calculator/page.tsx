@@ -3,6 +3,7 @@ import Link from 'next/link';
 import EffectivenessExplorer from '@/components/EffectivenessExplorer';
 import ToolNetwork from '@/components/ToolNetwork';
 import JsonLd from '@/components/SEO/JsonLd';
+import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 const faqs = [
   ['How does Pokémon type effectiveness work?', 'Each attacking type has a 2×, 1×, 0.5×, or 0× relationship with each defending type. For a dual-type defender, multiply both relationships together.'],
@@ -55,6 +56,9 @@ export default function Page() {
       </header>
 
       <EffectivenessExplorer />
+      <div className="mx-auto mt-8 max-w-4xl">
+        <AssistantEntryCta compact />
+      </div>
       <div className="mx-auto mt-6 max-w-4xl text-center">
         <Link href="/#calculator" className="font-semibold text-blue-700 hover:underline">
           Use the Type Calculator to see every matchup category →

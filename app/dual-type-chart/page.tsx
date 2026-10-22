@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import DualTypeExplorer from '@/components/DualTypeExplorer';
 import ToolNetwork from '@/components/ToolNetwork';
 import JsonLd from '@/components/SEO/JsonLd';
+import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 const faqs = [
   ['What is a rare dual type in Pokémon?', 'Normal/Ghost and Ice/Fairy have historically appeared on relatively few evolutionary lines. Availability changes whenever new Pokémon, forms, or games are released.'],
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="container mx-auto px-4 py-8">
+      <div className="mx-auto mb-8 max-w-5xl">
+        <AssistantEntryCta compact />
+      </div>
       <JsonLd data={{
         '@context': 'https://schema.org',
         '@graph': [

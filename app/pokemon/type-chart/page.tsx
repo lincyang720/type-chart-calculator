@@ -7,6 +7,7 @@ import typesData from '@/data/types.json';
 import JsonLd, { BreadcrumbSchema } from '@/components/SEO/JsonLd';
 import { SITE_URL } from '@/lib/seo';
 import PrintChartButton from './PrintChartButton';
+import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 export const metadata: Metadata = {
   title: 'Pokemon Type Chart 2026 - Complete Printable Gen 9 Guide',
@@ -172,6 +173,9 @@ export default function TypeChartPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 print:px-0 print:py-0">
+      <div className="mx-auto mb-8 max-w-5xl print:hidden">
+        <AssistantEntryCta compact />
+      </div>
       <JsonLd data={faqSchema} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: SITE_URL },
