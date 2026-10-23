@@ -10,6 +10,8 @@ export default function MobileNav() {
     { href: '/', label: 'Home' },
     { href: '/calculator', label: 'Calculator' },
     { href: '/assistant', label: 'AI Assistant' },
+    { href: '/pokemon/team-calculator', label: 'Team Builder' },
+    { href: '/pokemon/type-chart-with-abilities', label: 'Ability Matchups' },
     { href: '/battle-simulator', label: 'Battle Simulator' },
     { href: '/types', label: 'All Types' },
     { href: '/pokemon', label: 'Pokemon' },

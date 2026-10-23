@@ -3,6 +3,7 @@ import MobileNav from '@/components/MobileNav';
 import ConsentPreferences from '@/components/ConsentPreferences';
 import ConsentSettingsButton from '@/components/ConsentSettingsButton';
 import WebMCPBootstrap from '@/components/WebMCPBootstrap';
+import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME, SITE_URL } from '@/lib/seo';
 import '../styles/globals.css';
 
@@ -72,6 +73,7 @@ export default function RootLayout({
                 <a href="/calculator" className="hover:underline">Calculator</a>
                 <a href="/assistant" className="hover:underline">AI Assistant</a>
                 <a href="/pokemon/team-calculator" className="hover:underline">Team Builder</a>
+                <a href="/pokemon/type-chart-with-abilities" className="hover:underline">Ability Matchups</a>
                 <a href="/battle-simulator" className="hover:underline">Battle Simulator</a>
                 <a href="/types" className="hover:underline">All Types</a>
                 <a href="/pokemon" className="hover:underline">Pokemon</a>
@@ -112,6 +114,7 @@ export default function RootLayout({
 
         <ConsentPreferences />
         <WebMCPBootstrap />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

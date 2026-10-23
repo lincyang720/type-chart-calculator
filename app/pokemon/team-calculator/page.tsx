@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import TeamTypeCalculator from '@/components/TeamTypeCalculator';
+import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 export const metadata: Metadata = {
   title: 'Pokemon Team Calculator - Check Team Weaknesses',
@@ -40,6 +41,10 @@ export default function PokemonTeamCalculatorPage() {
         </header>
 
         <TeamTypeCalculator />
+
+        <div className="mt-8">
+          <AssistantEntryCta compact />
+        </div>
 
         <p className="mt-6 text-center text-gray-700">
           Looking specifically for the long-form coverage workflow? Open the{' '}

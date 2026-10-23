@@ -105,6 +105,12 @@ export default function TypeMatchupAssistant() {
     }
   };
 
+  const askExample = (example: string) => {
+    setQuestion(example);
+    setSubmitted(example);
+    trackAssistantEvent('assistant_question', { question_type: classifyQuestion(example) });
+  };
+
   return (
     <section className="rounded-xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50 p-5 shadow-sm sm:p-7" aria-labelledby="type-matchup-assistant-title">
       <div className="mb-5">
@@ -124,7 +130,7 @@ export default function TypeMatchupAssistant() {
       </div>
       <div className="mt-4 flex flex-wrap gap-2 text-sm">
         {['What beats Water/Flying?', 'What is Pikachu weak to?', 'What is Fire strong against?'].map((example) => (
-          <button key={example} type="button" onClick={() => setQuestion(example)} className="rounded-full border border-purple-200 bg-white px-3 py-1.5 text-purple-800 hover:bg-purple-100">{example}</button>
+          <button key={example} type="button" onClick={() => askExample(example)} className="min-h-10 rounded-full border border-purple-200 bg-white px-3 py-1.5 text-purple-800 hover:bg-purple-100">{example}</button>
         ))}
       </div>
     </section>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import AbilityTypeCalculator from '@/components/AbilityTypeCalculator';
 import { BreadcrumbSchema } from '@/components/SEO/JsonLd';
 import { SITE_URL } from '@/lib/seo';
+import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 export const metadata: Metadata = {
   title: 'Pokemon Type Chart With Abilities - Weakness Calculator',
@@ -31,6 +32,10 @@ export default function TypeChartWithAbilitiesPage() {
           Add a defensive ability to a single or dual type and compare the adjusted matchup with its normal type multiplier.
         </p>
         <AbilityTypeCalculator />
+
+        <div className="mt-8">
+          <AssistantEntryCta compact />
+        </div>
 
         <section className="mt-12 rounded-lg bg-gray-50 p-6">
           <h2 className="mb-4 text-2xl font-bold">How Abilities Change Type Matchups</h2>
