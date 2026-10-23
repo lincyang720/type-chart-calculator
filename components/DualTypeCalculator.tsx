@@ -218,6 +218,28 @@ export default function DualTypeCalculator() {
           </div>
         </div>
 
+        <section className="mb-6 rounded-lg border-2 border-blue-200 bg-blue-50 p-4 sm:p-5" aria-labelledby="matchup-summary-title">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">Quick answer</p>
+              <h3 id="matchup-summary-title" className="mt-1 text-xl font-bold text-gray-900">
+                {weaknesses.quadrupleWeak.length > 0
+                  ? `Watch for ${weaknesses.quadrupleWeak.map(typeId => typesData.types.find(type => type.id === typeId)?.name).join(', ')} 4× damage`
+                  : weaknesses.doubleWeak.length > 0
+                    ? `${weaknesses.doubleWeak.length} type weakness${weaknesses.doubleWeak.length === 1 ? '' : 'es'} found`
+                    : 'No damaging type weaknesses found'}
+              </h3>
+              <p className="mt-1 text-gray-700">
+                {weaknesses.quadrupleWeak.length} quadruple weakness{weaknesses.quadrupleWeak.length === 1 ? '' : 'es'}, {weaknesses.doubleWeak.length} standard weakness{weaknesses.doubleWeak.length === 1 ? '' : 'es'}, and {weaknesses.immune.length} immunit{weaknesses.immune.length === 1 ? 'y' : 'ies'}.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-sm font-semibold">
+              <Link href="/assistant" className="rounded-md bg-purple-700 px-3 py-2 text-white hover:bg-purple-800">Ask assistant</Link>
+              <Link href="/pokemon/type-chart-with-abilities" className="rounded-md border border-blue-300 bg-white px-3 py-2 text-blue-800 hover:bg-blue-100">Check abilities</Link>
+            </div>
+          </div>
+        </section>
+
         <div className="space-y-4">
           {renderTypeList(weaknesses.quadrupleWeak, 'Quadruple Weak', '4×', 'bg-red-700')}
           {renderTypeList(weaknesses.doubleWeak, 'Weak', '2×', 'bg-red-500')}
