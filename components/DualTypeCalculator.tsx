@@ -160,7 +160,7 @@ export default function DualTypeCalculator() {
                 onClick={() => {
                   selectTypes(example.type1, example.type2);
                 }}
-                className="px-3 py-1 bg-white border border-blue-300 rounded-md text-sm font-medium text-blue-700 hover:bg-blue-100 transition-colors"
+                className="min-h-11 px-3 py-2 bg-white border border-blue-300 rounded-md text-sm font-medium text-blue-700 hover:bg-blue-100 transition-colors"
               >
                 {example.name}
               </button>
@@ -234,8 +234,8 @@ export default function DualTypeCalculator() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2 text-sm font-semibold">
-              <Link href={`/assistant?question=${encodeURIComponent(`What beats ${typesData.types.find(type => type.id === type1)?.name}/${type2 ? typesData.types.find(type => type.id === type2)?.name : ''}`)}`} className="rounded-md bg-purple-700 px-3 py-2 text-white hover:bg-purple-800">Ask assistant</Link>
-              <Link href={`/pokemon/type-chart-with-abilities?type1=${type1}${type2 ? `&type2=${type2}` : ''}`} className="rounded-md border border-blue-300 bg-white px-3 py-2 text-blue-800 hover:bg-blue-100">Check abilities</Link>
+              <Link href={`/assistant?question=${encodeURIComponent(`What beats ${typesData.types.find(type => type.id === type1)?.name}${type2 ? `/${typesData.types.find(type => type.id === type2)?.name}` : ''}`)}`} className="min-h-11 rounded-md bg-purple-700 px-3 py-2 text-white hover:bg-purple-800">Ask assistant</Link>
+              <Link href={`/pokemon/type-chart-with-abilities?type1=${type1}${type2 ? `&type2=${type2}` : ''}`} className="min-h-11 rounded-md border border-blue-300 bg-white px-3 py-2 text-blue-800 hover:bg-blue-100">Check abilities</Link>
             </div>
           </div>
         </section>
@@ -260,7 +260,7 @@ export default function DualTypeCalculator() {
             <table className="w-full min-w-[28rem] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-gray-300 text-gray-700">
-                  <th scope="col" className="py-2 pr-3">Attacking type</th>
+                    <th scope="col" className="sticky left-0 bg-gray-50 py-2 pr-3">Attacking type</th>
                   <th scope="col" className="py-2 pr-3">{typesData.types.find(type => type.id === type1)?.name}</th>
                   {type2 && <th scope="col" className="py-2 pr-3">{typesData.types.find(type => type.id === type2)?.name}</th>}
                   <th scope="col" className="py-2">Final multiplier</th>
@@ -269,7 +269,7 @@ export default function DualTypeCalculator() {
               <tbody>
                 {matchupBreakdown.map(row => (
                   <tr key={row.attackingType} className="border-b border-gray-200 last:border-0">
-                    <th scope="row" className="py-2 pr-3 font-medium text-gray-900">
+                    <th scope="row" className="sticky left-0 bg-gray-50 py-2 pr-3 font-medium text-gray-900">
                       {typesData.types.find(type => type.id === row.attackingType)?.name}
                     </th>
                     <td className="py-2 pr-3">{formatMultiplier(row.firstFactor)}</td>

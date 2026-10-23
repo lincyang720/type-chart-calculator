@@ -26,6 +26,19 @@ option {
   background-color: #ffffff;
 }
 
+button,
+a,
+select,
+input,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(button, a, select, input, summary):focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

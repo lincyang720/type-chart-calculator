@@ -134,14 +134,14 @@ export default function TeamTypeCalculator() {
                 value={member.name}
                 onChange={event => updatePokemonName(index, event.target.value)}
                 placeholder="Search Pokémon"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
+                className="w-full min-h-11 px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
               />
               <label className="sr-only" htmlFor={`team-primary-${index}`}>Member {index + 1} primary type</label>
               <select
                 id={`team-primary-${index}`}
                 value={member.type1}
                 onChange={event => updateMember(index, 'type1', event.target.value as TypeId | '')}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
+                className="w-full min-h-11 px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Empty slot</option>
                 {ALL_TYPES.map(type => <option key={type} value={type}>{getTypeName(type)}</option>)}
@@ -152,7 +152,7 @@ export default function TeamTypeCalculator() {
                 value={member.type2}
                 disabled={!member.type1}
                 onChange={event => updateMember(index, 'type2', event.target.value as TypeId | '')}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 disabled:bg-gray-100 disabled:text-gray-500 focus:ring-2 focus:ring-blue-500"
+                className="w-full min-h-11 px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 disabled:bg-gray-100 disabled:text-gray-500 focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">No secondary type</option>
                 {ALL_TYPES.map(type => (
@@ -201,7 +201,7 @@ export default function TeamTypeCalculator() {
               <table className="w-full min-w-[36rem] text-left border-collapse">
                 <thead>
                   <tr className="border-b-2 border-gray-200">
-                    <th className="py-3 pr-3">Attack type</th>
+                    <th className="sticky left-0 bg-white py-3 pr-3">Attack type</th>
                     <th className="py-3 px-3">Weak members</th>
                     <th className="py-3 px-3">Resistant members</th>
                     <th className="py-3 pl-3">Immune members</th>

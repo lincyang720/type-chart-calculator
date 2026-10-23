@@ -35,11 +35,19 @@ export default function TypeBadge({
 
   return (
     <span
-      className={baseClasses}
+      className={`${baseClasses} ${clickable ? 'focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2' : ''}`}
       style={{ backgroundColor: type.color, color: getContrastTextColor(type.color) }}
       onClick={onClick}
-      role={clickable ? 'button' : undefined}
-      tabIndex={clickable ? 0 : undefined}
+      onKeyDown={onClick ? event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onClick?.();
+        }
+      } : undefined}
+      role={clickable && onClick ? 'button' : undefined}
+      tabIndex={clickable && onClick ? 0 : undefined}
+      aria-label={clickable && onClick ? `${type.name} type` : undefined}
+      title={`${type.name} type`}
     >
       {type.name}
     </span>
