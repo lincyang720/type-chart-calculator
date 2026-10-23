@@ -6,6 +6,7 @@ import TypeBadge from '@/components/TypeBadge';
 import { calculateMultiplier } from '@/lib/typeCalculations';
 import { TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
+import pokemonData from '@/data/pokemon.json';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -14,21 +15,27 @@ const ALL_TYPES: TypeId[] = [
 ];
 
 type TeamMember = {
+  name: string;
   type1: TypeId | '';
   type2: TypeId | '';
 };
 
 const INITIAL_TEAM: TeamMember[] = [
-  { type1: 'fire', type2: 'flying' },
-  { type1: 'water', type2: 'ground' },
-  { type1: 'steel', type2: 'fairy' },
-  { type1: '', type2: '' },
-  { type1: '', type2: '' },
-  { type1: '', type2: '' },
+  { name: 'Charizard', type1: 'fire', type2: 'flying' },
+  { name: 'Swampert', type1: 'water', type2: 'ground' },
+  { name: 'Klefki', type1: 'steel', type2: 'fairy' },
+  { name: '', type1: '', type2: '' },
+  { name: '', type1: '', type2: '' },
+  { name: '', type1: '', type2: '' },
 ];
 
 function getTypeName(typeId: TypeId) {
   return typesData.types.find(type => type.id === typeId)?.name ?? typeId;
+}
+
+function findPokemon(name: string) {
+  const query = name.trim().toLowerCase();
+  return pokemonData.pokemon.find(pokemon => pokemon.name.toLowerCase() === query);
 }
 
 export default function TeamTypeCalculator() {
@@ -41,12 +48,27 @@ export default function TeamTypeCalculator() {
 
       if (field === 'type1') {
         return {
+          ...member,
+          name: '',
           type1: value,
           type2: value === '' || member.type2 === value ? '' : member.type2,
         };
       }
 
       return { ...member, type2: value };
+    }));
+  };
+
+  const updatePokemonName = (index: number, name: string) => {
+    const pokemon = findPokemon(name);
+    setTeam(current => current.map((member, memberIndex) => {
+      if (memberIndex !== index) return member;
+      if (!pokemon) return { ...member, name };
+      return {
+        name: pokemon.name,
+        type1: pokemon.types[0] as TypeId,
+        type2: (pokemon.types[1] as TypeId | undefined) ?? '',
+      };
     }));
   };
 
@@ -78,11 +100,11 @@ export default function TeamTypeCalculator() {
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
           <div>
             <h2 className="text-2xl font-bold">Build Your Team</h2>
-            <p className="text-gray-600 mt-1">Add the defensive type or types for up to six team members.</p>
+            <p className="text-gray-600 mt-1">Search a Pokémon to fill its types automatically, or choose types manually.</p>
           </div>
           <button
             type="button"
-            onClick={() => setTeam(team.map(() => ({ type1: '', type2: '' })))}
+            onClick={() => setTeam(team.map(() => ({ name: '', type1: '', type2: '' })))}
             className="text-sm font-semibold text-blue-700 hover:underline"
           >
             Clear team
@@ -91,8 +113,17 @@ export default function TeamTypeCalculator() {
 
         <div className="space-y-3">
           {team.map((member, index) => (
-            <div key={index} className="grid sm:grid-cols-[7rem_1fr_1fr] gap-3 items-center bg-gray-50 p-3 rounded-lg">
+            <div key={index} className="grid gap-3 bg-gray-50 p-3 rounded-lg sm:grid-cols-[7rem_1fr_1fr_1fr] sm:items-center">
               <span className="font-semibold text-gray-800">Member {index + 1}</span>
+              <label className="sr-only" htmlFor={`team-pokemon-${index}`}>Member {index + 1} Pokémon name</label>
+              <input
+                id={`team-pokemon-${index}`}
+                list="team-pokemon-names"
+                value={member.name}
+                onChange={event => updatePokemonName(index, event.target.value)}
+                placeholder="Search Pokémon"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
+              />
               <label className="sr-only" htmlFor={`team-primary-${index}`}>Member {index + 1} primary type</label>
               <select
                 id={`team-primary-${index}`}
@@ -118,6 +149,9 @@ export default function TeamTypeCalculator() {
               </select>
             </div>
           ))}
+          <datalist id="team-pokemon-names">
+            {pokemonData.pokemon.map(pokemon => <option key={pokemon.id} value={pokemon.name} />)}
+          </datalist>
         </div>
       </section>
 
