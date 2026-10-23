@@ -234,8 +234,8 @@ export default function DualTypeCalculator() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2 text-sm font-semibold">
-              <Link href="/assistant" className="rounded-md bg-purple-700 px-3 py-2 text-white hover:bg-purple-800">Ask assistant</Link>
-              <Link href="/pokemon/type-chart-with-abilities" className="rounded-md border border-blue-300 bg-white px-3 py-2 text-blue-800 hover:bg-blue-100">Check abilities</Link>
+              <Link href={`/assistant?question=${encodeURIComponent(`What beats ${typesData.types.find(type => type.id === type1)?.name}/${type2 ? typesData.types.find(type => type.id === type2)?.name : ''}`)}`} className="rounded-md bg-purple-700 px-3 py-2 text-white hover:bg-purple-800">Ask assistant</Link>
+              <Link href={`/pokemon/type-chart-with-abilities?type1=${type1}${type2 ? `&type2=${type2}` : ''}`} className="rounded-md border border-blue-300 bg-white px-3 py-2 text-blue-800 hover:bg-blue-100">Check abilities</Link>
             </div>
           </div>
         </section>
@@ -316,7 +316,7 @@ export default function DualTypeCalculator() {
                 Open the complete combination guide →
               </Link>
             )}
-            <Link href="/pokemon/team-calculator" className="text-blue-700 hover:underline">
+            <Link href={`/pokemon/team-calculator?type1=${type1}${type2 ? `&type2=${type2}` : ''}`} className="text-blue-700 hover:underline">
               Check this type in a full team →
             </Link>
           </div>

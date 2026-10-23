@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import typesData from '@/data/types.json';
 import pokemonData from '@/data/pokemon.json';
@@ -95,6 +95,15 @@ export default function TypeMatchupAssistant() {
   const [question, setQuestion] = useState('');
   const [submitted, setSubmitted] = useState('What is Charizard weak to?');
   const answer = useMemo(() => getAnswer(submitted), [submitted]);
+
+  useEffect(() => {
+    const requestedQuestion = new URLSearchParams(window.location.search).get('question');
+    if (requestedQuestion?.trim()) {
+      const cleanQuestion = requestedQuestion.trim();
+      setQuestion(cleanQuestion);
+      setSubmitted(cleanQuestion);
+    }
+  }, []);
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import TypeBadge from '@/components/TypeBadge';
 import { calculateMultiplier } from '@/lib/typeCalculations';
@@ -41,6 +41,18 @@ function findPokemon(name: string) {
 export default function TeamTypeCalculator() {
   const [team, setTeam] = useState<TeamMember[]>(INITIAL_TEAM);
   const activeTeam = team.filter(member => member.type1);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedType1 = params.get('type1') as TypeId | null;
+    const requestedType2 = params.get('type2') as TypeId | null;
+    if (!requestedType1 || !ALL_TYPES.includes(requestedType1)) return;
+    setTeam(current => current.map((member, index) => index === 0 ? {
+      name: '',
+      type1: requestedType1,
+      type2: requestedType2 && ALL_TYPES.includes(requestedType2) && requestedType2 !== requestedType1 ? requestedType2 : '',
+    } : member));
+  }, []);
 
   const updateMember = (index: number, field: keyof TeamMember, value: TypeId | '') => {
     setTeam(current => current.map((member, memberIndex) => {

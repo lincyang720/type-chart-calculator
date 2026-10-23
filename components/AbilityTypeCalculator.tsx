@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import TypeBadge from './TypeBadge';
 import { TypeId } from '@/lib/types';
 import { calculateMultiplier } from '@/lib/typeCalculations';
@@ -91,6 +91,16 @@ export default function AbilityTypeCalculator() {
   const [type2, setType2] = useState<TypeId | ''>('steel');
   const [abilityId, setAbilityId] = useState<AbilityId>('levitate');
   const ability = ABILITIES.find(item => item.id === abilityId) ?? ABILITIES[0];
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedType1 = params.get('type1');
+    const requestedType2 = params.get('type2');
+    const requestedAbility = params.get('ability') as AbilityId | null;
+    if (requestedType1 && ALL_TYPES.includes(requestedType1 as TypeId)) setType1(requestedType1 as TypeId);
+    if (requestedType2 && ALL_TYPES.includes(requestedType2 as TypeId) && requestedType2 !== requestedType1) setType2(requestedType2 as TypeId);
+    if (requestedAbility && ABILITIES.some(item => item.id === requestedAbility)) setAbilityId(requestedAbility);
+  }, []);
 
   const matchups = useMemo(() => {
     const defendingTypes = type2 ? [type1, type2] : [type1];
