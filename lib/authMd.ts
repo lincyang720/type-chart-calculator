@@ -13,6 +13,8 @@ export const AUTH_MD = [
   '# auth.md',
   '',
   '> **Status: under construction. Nothing in this file is live.**',
+  '> `available=false`; `capabilities_status=planned_contract_only`; `launch_date=null`.',
+  '> Coming soon; authentication is not available.',
   '>',
   '> TypeMatchup is a public, read-only API. Every capability on ' + SITE + ' works anonymously',
   '> today: ' + MCP_ENDPOINT + ', ' + A2A_ENDPOINT + ' and the HTTP API need no registration and no',

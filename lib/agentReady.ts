@@ -33,6 +33,14 @@ export const REPO_URL = 'https://github.com/lincyang720/type-chart-calculator';
 export const MCP_PROTOCOL_VERSION = '2025-06-18';
 export const SERVER_VERSION = '1.0.0';
 
+export const PLANNED_AUTH_STATUS = {
+  status: 'under_construction',
+  available: false,
+  capabilities_status: 'planned_contract_only',
+  message: 'Coming soon; authentication is not available.',
+  launch_date: null,
+} as const;
+
 export const SERVER_DESCRIPTION =
   'Pokemon type effectiveness data and calculation: 18x18 type chart, single and dual-type ' +
   'defensive profiles, damage multipliers, and Pokemon type lookup. Read-only, no authentication required.';
@@ -328,6 +336,7 @@ export function aiCatalogDocument() {
 /** OAuth 2.0 Authorization Server metadata — disclosed placeholder. */
 export function authorizationServerDocument() {
   return {
+    ...PLANNED_AUTH_STATUS,
     issuer: SITE,
     authorization_endpoint: `${SITE}/oauth/authorize`,
     token_endpoint: `${SITE}/oauth/token`,
@@ -337,7 +346,7 @@ export function authorizationServerDocument() {
     // auth.md / agent-auth block. Reserved placeholder: every endpoint below returns
     // HTTP 503 until the authorization server is deployed. See AUTH_MD.
     agent_auth: {
-      status: 'under_construction',
+      ...PLANNED_AUTH_STATUS,
       under_construction: true,
       skill: SKILL_FILE_URL,
       identity_endpoint: `${SITE}/oauth/agent/identity`,
@@ -358,7 +367,6 @@ export function authorizationServerDocument() {
     scopes_supported: ['type:read'],
     service_documentation: AUTH_MD_URL,
     ui_locales_supported: ['en'],
-    status: 'under_construction',
     under_construction: true,
     note:
       'TypeMatchup is currently an unauthenticated, read-only public API. This discovery document is ' +
@@ -370,14 +378,15 @@ export function authorizationServerDocument() {
 /** OAuth 2.0 Protected Resource Metadata (RFC 9728) — disclosed placeholder. */
 export function protectedResourceDocument() {
   return {
+    ...PLANNED_AUTH_STATUS,
     resource: SITE,
+    planned_resource_endpoint: `${SITE}/oauth/agent/resource`,
     resource_name: 'TypeMatchup API',
     authorization_servers: [SITE],
     scopes_supported: ['type:read'],
     bearer_methods_supported: ['header'],
     resource_documentation: `${SITE}/about`,
     resource_signing_alg_values_supported: ['RS256'],
-    status: 'under_construction',
     under_construction: true,
     note:
       'No credentials are required today: every documented capability is public and read-only. This ' +
@@ -388,8 +397,8 @@ export function protectedResourceDocument() {
 /** Empty JWKS key set — declared alongside the under-construction AS. */
 export function jwksDocument() {
   return {
+    ...PLANNED_AUTH_STATUS,
     keys: [],
-    status: 'under_construction',
     under_construction: true,
     note: 'No signing keys are published yet. The authorization server is under construction; see ' + AUTH_MD_URL + '.',
   };
