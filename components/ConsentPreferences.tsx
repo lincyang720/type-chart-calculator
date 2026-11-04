@@ -27,17 +27,22 @@ export default function ConsentPreferences() {
     };
     const disableFlag = `ga-disable-${GA4_MEASUREMENT_ID}`;
 
-    if (consent !== 'accepted') {
+    // Do not set ga-disable while consent is still being restored from storage.
+    // Google caches that flag when gtag.js initializes, so a transient `true`
+    // here can suppress collection even when the saved choice is accepted.
+    if (consent === null) return;
+
+    if (consent === 'rejected') {
       (window as unknown as Record<string, unknown>)[disableFlag] = true;
       analyticsWindow.gtag?.('consent', 'update', { analytics_storage: 'denied' });
       return;
     }
 
-    (window as unknown as Record<string, unknown>)[disableFlag] = false;
+    delete (window as unknown as Record<string, unknown>)[disableFlag];
     analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
-    analyticsWindow.gtag = analyticsWindow.gtag || ((...args: unknown[]) => {
-      analyticsWindow.dataLayer?.push(args);
-    });
+    analyticsWindow.gtag = analyticsWindow.gtag || function gtag() {
+      analyticsWindow.dataLayer?.push(arguments);
+    };
     analyticsWindow.gtag('consent', 'update', { analytics_storage: 'granted' });
     analyticsWindow.gtag('js', new Date());
     analyticsWindow.gtag('config', GA4_MEASUREMENT_ID);
