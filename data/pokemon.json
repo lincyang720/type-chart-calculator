@@ -1267,11 +1267,11 @@
       ],
       "counters": [
         "Grass-type moves",
-        "Electric-type moves",
+        "Ground moves that ignore Levitate",
         "Specially defensive walls"
       ],
-      "strengths": "Electric/Water with solid defensive stats; weak to Grass and Electric (Levitate negates Ground). Volt Switch maintains momentum.",
-      "strategy": "Rotom-Wash has one of the best defensive profiles in the game. Levitate removes the Ground weakness, leaving Grass and Electric as its only real vulnerabilities. Will-O-Wisp cripples physical attackers. Volt Switch pivots out safely. Hydro Pump provides solid STAB. A staple on balanced and bulky offense teams."
+      "strengths": "Electric/Water with Levitate. Grass is the 2× weakness that remains. Electric cancels to 1×, and Levitate removes the chart's Ground weakness.",
+      "strategy": "Rotom-Wash is Electric/Water. On the standard chart it is 2× weak to Ground and Grass. Levitate makes Ground 0×. Electric is not a second weakness: Electric resists Electric and Water is weak to Electric, so those factors cancel to 1×. Grass is the weakness that stays. Volt Switch pivots on the Electric STAB, Hydro Pump is the Water STAB, and Will-O-Wisp punishes physical attackers. If a Ground move ignores abilities, Levitate does not apply and the Ground switch has to be a Flying type instead."
     },
     {
       "id": "clefable",
