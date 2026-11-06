@@ -18,6 +18,7 @@ Steel resists **11 types** and is **immune to 1**:
 
 **Resists (0.5×):**
 - Normal
+- Electric
 - Flying
 - Rock
 - Bug

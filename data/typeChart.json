@@ -16,7 +16,7 @@
   },
   "electric": {
     "superEffective": ["water", "flying"],
-    "notVeryEffective": ["electric", "grass", "dragon"],
+    "notVeryEffective": ["electric", "grass", "dragon", "steel"],
     "noEffect": ["ground"]
   },
   "grass": {

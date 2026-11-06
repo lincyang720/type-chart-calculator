@@ -81,7 +81,7 @@
   },
   "steel": {
     "weakTo": ["fire", "fighting", "ground"],
-    "resistsTo": ["normal", "grass", "ice", "flying", "psychic", "bug", "rock", "dragon", "steel", "fairy"],
+    "resistsTo": ["normal", "electric", "grass", "ice", "flying", "psychic", "bug", "rock", "dragon", "steel", "fairy"],
     "immuneTo": ["poison"]
   },
   "fairy": {
