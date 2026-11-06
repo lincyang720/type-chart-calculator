@@ -4,6 +4,7 @@ import Link from 'next/link';
 import TypeBadge from '@/components/TypeBadge';
 import { TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
+import { isIndexableDualType } from '@/lib/dualTypeIndexing';
 import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 import AssistantEntryCta from '@/components/AssistantEntryCta';
 
@@ -39,7 +40,9 @@ function getTypeName(typeId: string) {
 }
 
 export default function TypesPage() {
-  const dualTypeGuides = Array.from(EDITORIAL_COMBINATIONS).sort((a, b) => a.localeCompare(b));
+  const dualTypeGuides = Array.from(EDITORIAL_COMBINATIONS)
+    .filter(slug => isIndexableDualType(slug))
+    .sort((a, b) => a.localeCompare(b));
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -79,6 +82,9 @@ export default function TypesPage() {
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold mb-4 text-center">Dual Type Guides</h2>
+        <p className="text-gray-600 mb-6 text-center max-w-3xl mx-auto">
+          These guides are combinations used by at least one Pokémon. Unused chart pairings stay available in the calculator and are not listed here.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {dualTypeGuides.map(slug => {
             const [type1, type2] = slug.split('-') as [TypeId, TypeId];

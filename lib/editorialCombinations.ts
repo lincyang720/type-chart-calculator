@@ -1,7 +1,7 @@
-// Dual-type pages in this list have a human-written strategy guide and are
-// eligible for indexing. Calculator-only combinations remain accessible to
-// users, but are deliberately kept out of search. Advertising is disabled sitewide
-// during the content-quality review.
+// Dual-type pages in this list have a written strategy guide. Search indexing
+// is decided separately in lib/dualTypeIndexing.ts: pairings with no roster
+// Pokémon are noindex and stay out of the sitemap. Advertising is disabled
+// sitewide during the content-quality review.
 export const EDITORIAL_COMBINATIONS = new Set([
   'fire-flying',
   'steel-fairy',

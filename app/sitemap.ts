@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import popularCombinations from '@/data/popularCombinations.json';
 import pokemonData from '@/data/pokemon.json';
 import { getBlogPosts } from '@/lib/blog';
+import { isIndexableDualType } from '@/lib/dualTypeIndexing';
 import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 import { EDITORIAL_POKEMON } from '@/lib/editorialPokemon';
 
@@ -104,10 +105,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Only submit combinations with substantial editorial content. Calculator-only
-  // pages stay accessible but are noindex and intentionally absent here.
+  // Submit dual-type guides that name at least one real Pokémon. Theoretical
+  // pairings with an empty roster are noindex and intentionally absent here.
   const comboPages: MetadataRoute.Sitemap = [];
   for (const slug of EDITORIAL_COMBINATIONS) {
+    if (!isIndexableDualType(slug)) continue;
     const [type1, type2] = slug.split('-');
     const isPopular = popularCombinations.combinations.some(
       c => (c.type1 === type1 && c.type2 === type2) ||

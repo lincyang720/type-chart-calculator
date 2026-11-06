@@ -13,6 +13,7 @@ import {
 } from '@/app/combo/[combo]/page';
 import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 import { COMBO_WORDING } from '@/lib/comboWording';
+import { dualTypeRobots } from '@/lib/dualTypeIndexing';
 
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
@@ -100,6 +101,7 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
       alternates: {
         canonical: `/types/${typeParam}`,
       },
+      robots: dualTypeRobots(typeParam),
     };
   }
 
