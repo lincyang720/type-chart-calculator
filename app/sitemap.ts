@@ -1,9 +1,7 @@
 import { MetadataRoute } from 'next';
 import popularCombinations from '@/data/popularCombinations.json';
 import pokemonData from '@/data/pokemon.json';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { getBlogPosts } from '@/lib/blog';
 import { EDITORIAL_COMBINATIONS } from '@/lib/editorialCombinations';
 import { EDITORIAL_POKEMON } from '@/lib/editorialPokemon';
 
@@ -122,34 +120,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Add blog posts
-  const blogDir = path.join(process.cwd(), 'content/blog');
-  let blogPages: MetadataRoute.Sitemap = [];
+  const blogPages: MetadataRoute.Sitemap = getBlogPosts().map(post => {
+    const contentDate = post.updated || post.date;
+    const lastModified = contentDate ? new Date(contentDate) : null;
 
-  if (fs.existsSync(blogDir)) {
-    const files = fs.readdirSync(blogDir);
-    blogPages = files
-      .filter(file => file.endsWith('.md'))
-      .map(file => {
-        const filePath = path.join(blogDir, file);
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        const { data } = matter(fileContent);
-        const contentDate = data.updated || data.date;
-
-        return {
-          url: `${baseUrl}/blog/${data.slug || file.replace('.md', '')}`,
-          ...(contentDate ? { lastModified: new Date(contentDate) } : {}),
-          changeFrequency: 'monthly' as const,
-          priority: 0.7,
-        };
-      })
-      .filter(page => ![
-        `${baseUrl}/blog/pokemon-type-chart-2026`,
-        `${baseUrl}/blog/dragon-types-chart`,
-        `${baseUrl}/blog/dragon-type-weakness`,
-        `${baseUrl}/blog/eeveelution-chart`,
-      ].includes(page.url));
-  }
+    return {
+      url: `${baseUrl}/blog/${post.slug}`,
+      ...(lastModified && !Number.isNaN(lastModified.getTime()) ? { lastModified } : {}),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    };
+  });
 
   // Add pokemon pages
   const pokemonPages = pokemonData.pokemon.filter(p => EDITORIAL_POKEMON.has(p.id)).map(p => ({
