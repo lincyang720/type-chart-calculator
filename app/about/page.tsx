@@ -14,8 +14,9 @@ export default function AboutPage() {
         <h1>About TypeMatchup</h1>
         <p>
           TypeMatchup is an independent, fan-made reference site for players who want to understand Pokémon type
-          effectiveness without repeatedly working through the chart by hand. Its calculators combine the two defending
-          types selected by a visitor and show the resulting weaknesses, resistances, and immunities.
+          effectiveness without repeatedly working through the chart by hand. The project is maintained on an ongoing
+          basis: send corrections through the <Link href="/contact">Contact page</Link>. Its calculators combine the two
+          defending types selected by a visitor and show the resulting weaknesses, resistances, and immunities.
         </p>
         <h2>What we publish</h2>
         <p>
@@ -26,7 +27,9 @@ export default function AboutPage() {
         </p>
         <h2>How calculations are checked</h2>
         <p>
-          Results are generated from a structured effectiveness chart for the modern main-series games. We test combined
+          Results use the current main-series chart from Generation VI through Generation IX: the 18-type table in
+          Pokémon Scarlet and Violet, including Fairy. Guides and chart notes are revised when a new game, event, or
+          mechanic changes a matchup. Pokémon GO and Generations I–V can use different relationships. We test combined
           multipliers and review reports when game rules or page content change. The site is not affiliated with,
           endorsed by, or sponsored by Nintendo, Game Freak, or The Pokémon Company.
         </p>

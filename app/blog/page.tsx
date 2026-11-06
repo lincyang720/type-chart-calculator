@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { formatBlogDate, getBlogPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
   title: 'Pokemon Type Strategy Blog - Tips, Guides & Analysis',
@@ -20,54 +18,6 @@ export const metadata: Metadata = {
     canonical: '/blog',
   },
 };
-
-interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  updated?: string;
-  author: string;
-  description: string;
-  image?: string;
-  tags: string[];
-}
-
-function getBlogPosts(): BlogPost[] {
-  const blogDir = path.join(process.cwd(), 'content/blog');
-
-  if (!fs.existsSync(blogDir)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(blogDir);
-  const posts = files
-    .filter(file => file.endsWith('.md'))
-    .map(file => {
-      const filePath = path.join(blogDir, file);
-      const fileContent = fs.readFileSync(filePath, 'utf-8');
-      const { data } = matter(fileContent);
-
-      return {
-        slug: data.slug || file.replace('.md', ''),
-        title: data.title || 'Untitled',
-        date: data.date || '',
-        updated: data.updated || undefined,
-        author: data.author || 'TypeMatchup',
-        description: data.description || '',
-        image: data.image,
-        tags: data.tags || [],
-      } as BlogPost;
-    })
-    .filter(post => ![
-      'pokemon-type-chart-2026',
-      'dragon-types-chart',
-      'dragon-type-weakness',
-      'eeveelution-chart',
-    ].includes(post.slug))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  return posts;
-}
 
 export default function BlogPage() {
   const posts = getBlogPosts();
@@ -123,8 +73,8 @@ export default function BlogPage() {
                     <div className="flex items-center justify-between text-sm text-gray-500">
                       <span>{post.author}</span>
                       <span>
-                        Published {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                        {post.updated && ` · Updated ${new Date(post.updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
+                        {formatBlogDate(post.date) && `Published ${formatBlogDate(post.date)}`}
+                        {post.updated && formatBlogDate(post.updated) && ` · Updated ${formatBlogDate(post.updated)}`}
                       </span>
                     </div>
                   </div>

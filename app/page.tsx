@@ -6,6 +6,7 @@ import DualTypeCalculator from '@/components/DualTypeCalculator';
 import { Metadata } from 'next';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_URL } from '@/lib/seo';
 import TypeMatchupAssistant from '@/components/TypeMatchupAssistant';
+import { formatBlogDate, getLatestBlogPosts } from '@/lib/blog';
 
 // Static generation for better SEO and performance
 
@@ -92,6 +93,8 @@ const homepageFaqSchema = {
 };
 
 export default function Home() {
+  const latestGuides = getLatestBlogPosts(4);
+
   return (
     <>
       <WebApplicationSchema />
@@ -113,6 +116,48 @@ export default function Home() {
             <DualTypeCalculator />
           </div>
         </section>
+
+        {latestGuides.length > 0 && (
+          <section className="mb-12" aria-labelledby="latest-guides">
+            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
+              <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">From the blog</p>
+                  <h2 id="latest-guides" className="text-2xl font-bold sm:text-3xl">Latest guides</h2>
+                  <p className="mt-2 max-w-3xl text-gray-700">
+                    Strategy notes on dual-type charts, team building, and matchups, published alongside the calculators.
+                  </p>
+                </div>
+                <Link
+                  href="/blog"
+                  className="inline-flex shrink-0 items-center justify-center font-semibold text-blue-700 hover:underline"
+                >
+                  All guides →
+                </Link>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {latestGuides.map(post => {
+                  const published = formatBlogDate(post.date);
+                  return (
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      className="rounded-lg border border-gray-200 p-4 transition-colors hover:border-blue-300 hover:bg-blue-50"
+                    >
+                      {published && (
+                        <p className="text-xs font-semibold uppercase tracking-wide text-blue-700">{published}</p>
+                      )}
+                      <h3 className="mt-1 font-semibold text-gray-900">{post.title}</h3>
+                      {post.description && (
+                        <p className="mt-2 line-clamp-2 text-sm text-gray-600">{post.description}</p>
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section id="assistant" className="mb-12 scroll-mt-6">
           <TypeMatchupAssistant />

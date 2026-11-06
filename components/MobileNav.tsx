@@ -2,22 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { siteNavItems } from '@/lib/siteNav';
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/calculator', label: 'Calculator' },
-    { href: '/assistant', label: 'AI Assistant' },
-    { href: '/pokemon/team-calculator', label: 'Team Builder' },
-    { href: '/pokemon/type-chart-with-abilities', label: 'Ability Matchups' },
-    { href: '/battle-simulator', label: 'Battle Simulator' },
-    { href: '/types', label: 'All Types' },
-    { href: '/pokemon', label: 'Pokemon' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/support', label: 'Support' },
-  ];
 
   return (
     <>
@@ -56,7 +44,7 @@ export default function MobileNav() {
           </button>
         </div>
         <nav className="flex flex-col gap-4 px-6">
-          {navItems.map((item) => (
+          {siteNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}

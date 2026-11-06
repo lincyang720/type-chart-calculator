@@ -5,6 +5,7 @@ import ConsentSettingsButton from '@/components/ConsentSettingsButton';
 import WebMCPBootstrap from '@/components/WebMCPBootstrap';
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
 import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME, SITE_URL } from '@/lib/seo';
+import { siteNavItems } from '@/lib/siteNav';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -61,27 +62,29 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning>
         <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
-          <nav className="container mx-auto px-4 py-3">
-            <div className="flex items-center justify-between">
-              <a href="/" className="text-xl md:text-2xl font-bold hover:opacity-90 transition-opacity">
+          <nav aria-label="Primary" className="container mx-auto px-4 py-3">
+            <div className="flex items-center justify-between gap-4">
+              <a href="/" className="shrink-0 text-xl md:text-2xl font-bold hover:opacity-90 transition-opacity">
                 <span>TypeMatchup</span>
               </a>
 
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex gap-6 text-base">
-                <a href="/" className="hover:underline">Home</a>
-                <a href="/calculator" className="hover:underline">Calculator</a>
-                <a href="/assistant" className="hover:underline">AI Assistant</a>
-                <a href="/pokemon/team-calculator" className="hover:underline">Team Builder</a>
-                <a href="/pokemon/type-chart-with-abilities" className="hover:underline">Ability Matchups</a>
-                <a href="/battle-simulator" className="hover:underline">Battle Simulator</a>
-                <a href="/types" className="hover:underline">All Types</a>
-                <a href="/pokemon" className="hover:underline">Pokemon</a>
-                <a href="/blog" className="hover:underline">Blog</a>
-                <a href="/support" className="hover:underline">Support</a>
+              <div className="hidden min-w-0 flex-1 flex-col items-end gap-1 lg:flex">
+                <div className="flex flex-wrap justify-end gap-x-5 gap-y-1 text-base font-semibold">
+                  {siteNavItems.filter(item => item.primary).map(item => (
+                    <a key={item.href} href={item.href} className="whitespace-nowrap hover:underline">
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+                <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 text-sm text-white">
+                  {siteNavItems.filter(item => !item.primary).map(item => (
+                    <a key={item.href} href={item.href} className="whitespace-nowrap hover:underline">
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
               </div>
 
-              {/* Mobile Navigation */}
               <MobileNav />
             </div>
           </nav>
@@ -95,6 +98,7 @@ export default function RootLayout({
           <div className="container mx-auto px-4 text-center">
             <p className="mb-2">© 2026 TypeMatchup. All rights reserved.</p>
             <nav aria-label="Legal and contact links" className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4 text-sm">
+              <a href="/blog" className="text-gray-200 hover:text-white hover:underline">Blog</a>
               <a href="/privacy" className="text-gray-200 hover:text-white hover:underline">Privacy</a>
               <a href="/about" className="text-gray-200 hover:text-white hover:underline">About</a>
               <a href="/terms" className="text-gray-200 hover:text-white hover:underline">Terms</a>
@@ -104,7 +108,7 @@ export default function RootLayout({
               <ConsentSettingsButton />
             </nav>
             <p className="text-sm text-gray-400">
-              Educational tool for understanding type effectiveness and matchups.
+              Independent fan-made calculators and guides. Type matchups follow the current main-series chart (Generation VI–IX).
             </p>
             <p className="text-xs text-gray-500 mt-4">
               TypeMatchup is an unofficial, fan-made reference. Pokémon trademarks belong to their respective owners.
