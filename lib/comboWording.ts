@@ -16,31 +16,31 @@ export const COMBO_WORDING: Record<string, ComboWording> = {
     description:
       'Steel Fairy Pokemon in one place: what Steel/Fairy is weak to, what it resists, what it is immune to, and the best counters to use against it.',
     intro:
-      'Steel Fairy Pokemon pair two of the strongest defensive types available. Players also search this pairing as Fairy Steel Pokemon. Below you can check the Steel Fairy weakness list, its resistances, and how to counter it.',
+      'Steel/Fairy is weak to Fire and Ground, both at 2×, and it has no 4× weakness. Poison and Dragon do 0×. Tinkaton is the Generation 9 Pokémon with this typing. Crowned Zacian and Magearna share the same chart when the format allows them. Players also search this pairing as Fairy Steel.',
     faq: [
       {
         q: 'What is the Steel Fairy Pokémon weakness?',
-        a: 'The Steel Fairy weakness list is shown in the defensive matchups above. Both types contribute, so any attack either type is weak to becomes a real threat.',
+        a: 'Fire and Ground, each at 2×. There is no 4× weakness. Fighting cancels to 1× because Steel is weak to Fighting and Fairy resists it.',
       },
       {
         q: 'What is the Fairy Steel weakness?',
-        a: 'Fairy Steel weakness is the same matchup written in the other order — Fairy/Steel and Steel/Fairy share one defensive profile, so the weaknesses are identical.',
+        a: 'The same two attacks: Fire and Ground at 2×. Fairy/Steel and Steel/Fairy are one defensive profile.',
       },
       {
         q: 'Is Steel/Fairy weakness different from Steel Fairy weakness?',
-        a: 'No. Steel/Fairy weakness and Steel Fairy weakness describe the same combination; the slash is only a different way of writing it.',
+        a: 'Steel/Fairy and Steel Fairy are the same two types. Fire and Ground are 2× either way you write the name.',
       },
       {
         q: 'Which Steel Fairy Pokemon weakness matters most in battle?',
-        a: 'Start with any 4x weakness, because both types amplify that attack. After that, plan around the 2x weaknesses listed above.',
+        a: 'Ground, when Great Tusk or Excadrill is in the game, and Fire, when Heatran or Charizard is. Neither is 4×, so one hit is not automatically a KO, and both still force Tinkaton out.',
       },
       {
-        q: 'Where can I see the Fairy Steel weaknesses in full?',
-        a: 'The defensive matchups table above lists every Fairy Steel weakness with its exact damage multiplier.',
+        q: 'What is Steel/Fairy immune to?',
+        a: 'Poison, through Steel, and Dragon, through Fairy. Draco Meteor and Sludge Bomb both do 0× into Tinkaton.',
       },
       {
         q: 'How do I read the Fairy Steel type chart?',
-        a: 'The Fairy Steel type chart multiplies both types together: two weaknesses make 4x, a weakness and a resistance cancel to 1x, and one immunity makes 0x.',
+        a: 'Multiply the two factors. Fire is 2× into Steel and 1× into Fairy, so it stays 2×. Dragon is 0.5× into Steel and 0× into Fairy, so it is 0×. Open the Steel/Fairy preset on the Dual Type Calculator to see every row.',
       },
     ],
   },
@@ -50,15 +50,15 @@ export const COMBO_WORDING: Record<string, ComboWording> = {
     description:
       'Water Ground weakness explained: what Water/Ground is weak to, what it resists, what it is immune to, and the best counters.',
     intro:
-      'Water Ground weakness is unusually short, which is why this pairing is so common. Check the full defensive profile and counters below.',
+      'Water/Ground has one weakness: Grass at 4×. Electric does 0×. Fire, Poison, Rock, and Steel are 0.5×. Swampert, Gastrodon, and Quagsire all share that chart, and Freeze-Dry is 4× as well because it treats Water as weak to Ice.',
     faq: [
       {
         q: 'What is the Water Ground weakness?',
-        a: 'The Water Ground weakness list is in the defensive matchups above. The combination removes several of Water-type’s usual problems.',
+        a: 'Grass, at 4×. It is the only super-effective type. Rillaboom’s Grassy Glide is that product at priority. Freeze-Dry is also 4×.',
       },
       {
         q: 'How many weaknesses does Water/Ground have?',
-        a: 'See the defensive matchups table above for the exact list and multipliers — this pairing is known for having very few.',
+        a: 'One. Grass is 4×. Electric is an immunity, not a weakness. Water and Ice each cancel to 1×.',
       },
     ],
   },

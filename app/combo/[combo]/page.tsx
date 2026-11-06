@@ -9,6 +9,11 @@ import pokemonData from '@/data/pokemon.json';
 import Link from 'next/link';
 import { COMBO_WORDING } from '@/lib/comboWording';
 import { dualTypeRobots, isThinTheoreticalCombination } from '@/lib/dualTypeIndexing';
+import {
+  CombinationGuide,
+  isPriorityDualTypeGuide,
+  PRIORITY_DUAL_TYPE_GUIDES,
+} from '@/lib/priorityDualTypeGuides';
 import dualTypeSpecies from '@/data/dualTypeSpecies.json';
 
 const ALL_TYPES: TypeId[] = [
@@ -62,86 +67,9 @@ function getPartnerCandidates(type1: TypeId, type2: TypeId, weaknesses: ReturnTy
     .slice(0, 5);
 }
 
-type CombinationGuide = {
-  heading: string;
-  opening: string;
-  offense: string;
-  counterplay: string;
-  teamBuilding: string;
-  extraLinks?: { href: string; label: string }[];
-  faqs: { question: string; answer: string }[];
-};
-
 // These are editorial expansions for combinations with sustained search interest.
 // Keys use the canonical order from ALL_TYPES, which is also used for /types URLs.
 const COMBINATION_GUIDES: Record<string, CombinationGuide> = {
-  'fire-flying': {
-    heading: 'Fire/Flying strategy: explosive pressure with a Rock emergency',
-    opening: 'Fire/Flying is an aggressive pairing best known through Charizard, Moltres, and Talonflame. It is immune to Ground, double-resists Grass and Bug, and resists Fire, Fighting, Steel, and Fairy, so it can find real entry points despite looking fragile. The defining liability is Rock: both types are weak to it, producing a 4× weakness. Water and Electric deal 2× damage. That makes Stealth Rock especially important because a grounded Fire/Flying Pokémon can lose half its maximum health on entry under standard hazard rules. Heavy-Duty Boots, reliable hazard removal, or unusually careful positioning is therefore part of the matchup rather than an optional convenience.',
-    offense: 'Fire STAB threatens Grass, Ice, Bug, and Steel, while Flying STAB pressures Grass, Fighting, and Bug. Together they hit many defensive utility Pokémon and can force switches, but Rock resists both attacks and Water also resists Fire. Electric does not resist Flying, yet many Electric Pokémon can threaten an immediate knockout in return. Solar Beam, Focus Blast, Ground coverage, or a strong neutral move may address a specific answer, although no single set should try to cover everything. Charizard often attacks specially, Talonflame can use Speed and priority-oriented tools, and Moltres may combine offense with recovery or status. The user should choose moves for the Pokémon and format, not copy one generic Fire/Flying set.',
-    counterplay: 'Rock attacks are the direct answer, but preserving Stealth Rock can be even more valuable than revealing Stone Edge immediately. Force repeated entries, remove Heavy-Duty Boots with Knock Off, and deny Defog or Rapid Spin to make the 4× weakness matter throughout the battle. Water and Electric attacks provide safer 2× pressure when inaccurate Rock moves are undesirable. Before committing, scout for sun, a resistance Berry, Roost, defensive Terastallization, or coverage that punishes the expected counter. Roost can temporarily change Flying-related interactions in some generations, while abilities such as Flame Body may punish contact. Strong priority and Speed control also help against offensive variants that cannot take neutral hits.',
-    teamBuilding: 'Fire/Flying needs hazard control and dependable Rock, Water, and Electric answers. Ground Pokémon can block Electric attacks and pressure Rock targets; Grass partners can help into Water; Steel or Fighting coverage can discourage Rock. Do not select partners only by type label—make sure at least one can repeatedly switch into the relevant attacker. Fire/Flying repays that support by absorbing Ground attacks and heavily resisting Grass and Bug, often protecting bulky Water- or Ground-based teammates. Use the Team Calculator to inspect the complete core, then account separately for Stealth Rock, item removal, weather, recovery, and the legal rules of the chosen format. Plan the hazard sequence before battle: if removal is blocked or Heavy-Duty Boots is lost, preserve the Fire/Flying slot until it can claim value immediately rather than spending half its health on a speculative pivot. Sun can amplify Fire pressure and reduce Water damage, but it does not solve Rock or Electric. Rain reverses that balance and may turn an otherwise manageable Water attack into a knockout. A slow pivot can create safer entries, whereas repeated double switches magnify hazard damage. Finally, separate defensive typing from role: Talonflame, Moltres, and Charizard share multipliers but have different Speed, bulk, recovery, abilities, and preferred teammates.',
-    faqs: [
-      { question: 'What is Fire/Flying 4× weak to?', answer: 'Rock attacks deal 4× damage because both Fire and Flying are weak to Rock.' },
-      { question: 'What else is Fire/Flying weak to?', answer: 'Water and Electric normally deal 2× damage. Ground has no effect because Flying grants an immunity.' },
-      { question: 'Why are Heavy-Duty Boots common?', answer: 'They prevent entry-hazard damage, including the severe Stealth Rock damage caused by the 4× Rock weakness.' },
-    ],
-  },
-  'steel-fairy': {
-    heading: 'Steel/Fairy strategy: elite defense, limited safe answers',
-    opening: 'Steel/Fairy is prized because it turns many common attacks into low-risk switch-ins. It has no 4× weakness, takes no damage from Dragon and Poison, and only fears Fire and Ground at 2×. That defensive profile creates chances to set a boost, use utility, or simply force a pivot. It does not make every Steel/Fairy Pokémon a wall, though: stats, recovery, ability, held item, and format still decide whether it can repeatedly absorb hits.',
-    offense: 'The two STAB types also ask useful questions of an opposing team. Steel pressures Fairy, Ice, and Rock targets, while Fairy checks Dragon, Dark, and Fighting targets. Magearna commonly converts that coverage into special pressure or momentum; Zacian uses it to threaten fast physical damage in restricted formats. Do not assume the type pair alone supplies perfect coverage—bulky Fire- or Water-based answers can still need a separate move, a pivot, or hazards to wear down.',
-    counterplay: 'When facing Steel/Fairy, identify whether its Ground weakness can actually be exploited before committing to Earthquake or Earth Power. Air Balloon, a Flying Tera Type, a switch, or a partner with Ground immunity can change the exchange. Fire attacks are often the cleaner immediate pressure, but rain, resist berries, and special bulk may blunt them. Strong neutral attacks, Knock Off, status, and denying recovery are often better long-game plans than repeatedly attacking into its resistances.',
-    teamBuilding: 'Pair Steel/Fairy with a dependable Fire and Ground answer rather than stacking more Pokémon that share those weaknesses. Bulky Water-types, Levitate users, and Flying-types can cover those lanes, while the Steel/Fairy slot repays them by checking Dragons and many special attackers. Use the Team Calculator to make sure the six-Pokémon roster does not quietly become Ground-weak. For a broader comparison, see the best type combinations guide before choosing a role for this typing. Decide which job the Steel/Fairy slot performs before selecting partners. A fast attacker needs safe entry and help wearing down bulky Fire or Water answers; a slower utility Pokémon needs recovery support and a plan for repeated Ground pressure. Hazards and Knock Off can turn apparent checks into temporary answers, while opposing hazards may limit how often the core pivots. Track abilities and items explicitly: Air Balloon can postpone Ground pressure, weather can change Fire damage, and an ability may add an immunity or alter contact. In restricted formats, powerful individual stats can matter more than the defensive chart, so compare actual damage and Speed rather than assuming the celebrated typing wins automatically.',
-    faqs: [
-      { question: 'What is Steel/Fairy weak to?', answer: 'Under the standard chart it is weak only to Fire and Ground, both for 2× damage; it has no 4× weakness.' },
-      { question: 'What is Steel/Fairy immune to?', answer: 'It is immune to Dragon through Fairy and to Poison through Steel.' },
-    ],
-  },
-  'water-ground': {
-    heading: 'Water/Ground strategy: one flaw, but it is a major one',
-    opening: 'Water/Ground looks almost perfect on a defensive summary: Electric does nothing, Fire and Steel are resisted, and Grass is the only attacking type that is super effective. The catch is severity. Grass lands for 4× damage, so a coverage move such as Energy Ball, Giga Drain, Leaf Storm, or even a surprise Tera Blast can end a promising switch-in. Treat the typing as an invitation to control the matchup, not a license to ignore its one answer.',
-    offense: 'Water and Ground STAB give this pair practical pressure against Fire-, Rock-, Steel-, and Electric-based targets. Swampert illustrates the role well: it can provide bulk, Stealth Rock, and strong physical attacks without surrendering momentum to Electric-types. Ground attacks must still respect Flying and Levitate immunities, while Water attacks can be absorbed by common Water-type defenders. A coverage move, a double switch, or hazard chip is usually what turns favorable type coverage into a real breakthrough.',
-    counterplay: 'The direct answer is Grass, but good Water/Ground players plan for it. They may pivot immediately, carry Ice coverage, use a teammate to punish Grass-types, or rely on a Tera Type that changes the defensive calculation. If Grass is unavailable, use strong neutral special attacks and exploit limited recovery or Speed instead of feeding an Electric move into an immunity. Opponents should also account for item and ability; immunity to Electric says nothing about a specific Pokémon’s ability to take repeated Grass hits.',
-    teamBuilding: 'A Water/Ground slot wants partners that reliably deter Grass attacks. Steel, Fire, Flying, Bug, Poison, and Dragon Pokémon can help depending on the format and movesets; a Grass-resistant pivot that invites Electric attacks creates a particularly clean loop. Conversely, avoid giving the team only one Grass answer. Test the full spread in the Team Calculator, then compare this high-reward defensive profile with other top combinations in the best combinations guide.',
-    faqs: [
-      { question: 'What is Water/Ground 4× weak to?', answer: 'Grass is its only weakness and deals 4× damage under normal type rules.' },
-      { question: 'Is Water/Ground immune to Electric?', answer: 'Yes. Ground grants a complete Electric immunity, even though Water by itself is weak to Electric.' },
-    ],
-  },
-  'ground-dragon': {
-    heading: 'Ground/Dragon strategy: punishing coverage with an Ice emergency',
-    opening: 'Ground/Dragon is an attacking typing built around forcing uncomfortable answers. It is immune to Electric, resists Fire, Poison, and Rock, and has STAB attacks that threaten a broad range of targets. Water and Grass are neutral after the two types offset each other. The entire profile is balanced by a very clear danger: Ice hits for 4× damage. Any game plan with this combination must account for Ice Beam, Ice Spinner, Ice Shard, Freeze-Dry, and hidden coverage before it tries to sweep.',
-    offense: 'Earthquake and Dragon attacks give Ground/Dragon Pokémon excellent neutral reach, and Garchomp is the classic example of how that pressure can create setup turns. Ground STAB punishes Steel, Fire, Poison, Rock, and Electric types, while Dragon STAB keeps many Water-, Grass-, and Dragon-type switch-ins honest. Neither move is consequence-free: Flying-types and Levitate ignore Ground, and Fairy-types stop Dragon attacks cold. Rock, Steel, Fire, or Poison coverage and smart pivoting often matter more than simply clicking the strongest STAB move.',
-    counterplay: 'Against Ground/Dragon, preserve an Ice option and do not reveal it too early if the opponent can remove it. Priority Ice Shard is especially valuable against faster offensive variants, but it must still clear any Focus Sash, substitute, defensive Tera Type, or bulky spread. Fairy attacks also threaten the typing at 2× and can punish an Outrage lock. If direct Ice coverage is unavailable, pressure it with faster threats, status, and chip so it cannot repeatedly exploit its useful resistances.',
-    teamBuilding: 'This typing pairs naturally with teammates that absorb Ice and Fairy pressure—Steel-types are the most direct answer, while Fire- and Water-types can help versus Ice attacks depending on the matchup. It also appreciates support against opposing Flying-types and Levitate users that evade Ground STAB. Use the calculator to check coverage after adding moves and teammates; the best combinations guide is a useful comparison when deciding whether a 4× Ice weakness fits the roster.',
-    faqs: [
-      { question: 'What is Ground/Dragon 4× weak to?', answer: 'Ice is the only 4× weakness because both Ground and Dragon are weak to it.' },
-      { question: 'What is Ground/Dragon immune to?', answer: 'It is immune to Electric attacks through its Ground typing.' },
-    ],
-  },
-  'flying-steel': {
-    heading: 'Flying/Steel strategy: pivot freely, but respect Electric and Fire',
-    opening: 'Flying/Steel is one of the safest defensive shells for a pivot. It is immune to Ground and Poison, double-resists Grass and Bug, and shrugs off many common chip moves. Those traits explain why Corviknight can repeatedly enter on physical utility attacks, remove hazards, or bring a teammate in safely. The typing is not invincible: Fire and Electric attacks both deal 2× damage, and a neutral special hit can still overwhelm a Pokémon whose bulk, recovery, or item has been worn down.',
-    offense: 'Steel STAB punishes Fairy, Ice, and Rock targets, while Flying STAB threatens Grass, Bug, and Fighting Pokémon. That pairing is especially useful for a slow pivot because it can pressure the switch without committing to a fragile sweeper plan. Still, a Steel attack is resisted by Fire, Water, Steel, and Electric, and Flying attacks are checked by Rock, Steel, and Electric. U-turn, coverage, and hazard damage often do more to create progress than trying to force every matchup with STAB alone.',
-    counterplay: 'Bring Fire or Electric pressure, but first check whether the target can pivot, recover, or change its defensive typing. A strong Fire move usually creates the clearest immediate threat; Electric coverage can be safer when Fire is resisted by the rest of the team. Ground moves should not be the primary answer unless Gravity, Smack Down, or a similar effect has removed the Flying immunity. Status and repeated entry hazards also matter because this type combination is often chosen to switch frequently.',
-    teamBuilding: 'Use Flying/Steel beside a reliable Fire and Electric answer, ideally one that appreciates a Ground immunity in return. Water/Ground is a particularly tidy defensive partner on paper: it resists Fire, ignores Electric, and invites Grass attacks that Flying/Steel handles well. Avoid treating that pairing as automatic; make sure the rest of the roster can answer strong Water and Ice coverage. Check the complete spread in the Team Calculator before committing to a six-Pokémon core, then compare its tradeoffs in the best combinations guide.',
-    faqs: [
-      { question: 'What is Flying/Steel weak to?', answer: 'Flying/Steel is weak to Fire and Electric, each for 2× damage. It has no 4× weakness.' },
-      { question: 'What is Flying/Steel immune to?', answer: 'It is immune to Ground through Flying and to Poison through Steel.' },
-    ],
-  },
-  'bug-steel': {
-    heading: 'Bug/Steel strategy: exceptional resistances, one 4× Fire alarm',
-    opening: 'Bug/Steel compresses a remarkable number of defensive jobs into one slot. It is immune to Poison, double-resists Grass, and resists a long list of other attacking types, letting it find turns against many passive or resisted attacks. The price is absolute: Fire is a 4× weakness. A seemingly harmless Fire coverage move can remove a Bug/Steel Pokémon before its resistances matter, so its user must track opposing sets, weather, and whether a Fire switch-in is waiting.',
-    offense: 'The STAB pairing is more useful than its reputation suggests. Bug attacks threaten Psychic, Dark, and Grass targets, while Steel attacks answer Fairy, Ice, and Rock Pokémon; Scizor can turn that into priority pressure with Bullet Punch. Neither side solves every defensive answer. Fire- and Water-type Pokémon can take Steel comfortably, and Flying-, Fighting-, Poison-, and Steel-based targets may make Bug attacks unattractive. Use a pivot, coverage move, or hazard chip to punish the obvious Fire-type response instead of handing it a free entrance.',
-    counterplay: 'Fire is the first answer, but it should be used with care around a predicted switch, rain, a resistance Berry, or a defensive Terastallization. If direct Fire coverage is absent, exploit the combination\'s modest Speed, limit its setup turns, and use neutral special attacks before it can convert resistances into momentum. Knock Off can be valuable against item-reliant variants, while entry hazards reduce the number of safe pivots. Do not mistake its many resistances for immunity: the type chart still leaves several avenues for neutral damage.',
-    teamBuilding: 'A Bug/Steel slot needs a dedicated Fire plan rather than a vague collection of neutral checks. Bulky Water-types, Dragons that resist Fire, and Flash Fire teammates can all cover the obvious weakness, depending on the format. In return, Bug/Steel can absorb Grass pressure for Water/Ground partners and switch into Fairy, Ice, or Psychic attacks for more fragile teammates. Use the Team Calculator to catch shared Fire weakness before finalizing the roster, and compare this specialized defensive profile with the best combinations guide.',
-    faqs: [
-      { question: 'What is Bug/Steel 4× weak to?', answer: 'Fire deals 4× damage because both Bug and Steel are weak to it.' },
-      { question: 'Is Bug/Steel immune to Poison?', answer: 'Yes. Steel grants Bug/Steel a complete Poison immunity.' },
-    ],
-  },
   'poison-ghost': {
     heading: 'Poison/Ghost strategy: disruptive coverage with four clear answers',
     opening: 'Poison/Ghost is built for disruption rather than effortless switching. It is immune to Normal and Fighting, double-resists Poison and Bug, and resists Grass and Fairy, giving it clean entries against several common support attacks. Gengar shows the attacking side of the typing: it can threaten fast special damage while making Normal- and Fighting-type moves unusable. Its value depends on the actual Pokémon, though—many users cannot afford to absorb repeated neutral hits, and the four weaknesses are all relevant coverage types.',
@@ -177,18 +105,6 @@ const COMBINATION_GUIDES: Record<string, CombinationGuide> = {
       { question: 'What does Poison/Dragon resist most?', answer: 'Grass deals only ¼ damage because both Poison and Dragon resist it. The combination also has several ½× resistances.' },
     ],
   },
-  'water-flying': {
-    heading: 'Water/Flying strategy: a Ground-proof pivot with one huge weakness',
-    opening: 'Water/Flying is deceptively sturdy. It is immune to Ground and resists Fire, Water, Fighting, Bug, and Steel, giving Gyarados, Pelipper, and Cramorant useful switch-in lanes. Both types are weak to Electric, making it a 4× weakness that changes every turn against Thunderbolt, Wild Charge, or Electric Tera Blast. Rock is also a 2× weakness, so Stealth Rock costs one quarter of maximum HP under standard hazard rules—serious, but not the half-health loss of Fire/Flying. The individual Pokémon still matters: Gyarados can set up physically, Pelipper sets rain and pivots, and Cramorant has a disruptive role.',
-    offense: 'Water STAB threatens Fire, Ground, and Rock targets; Flying STAB pressures Grass, Fighting, and Bug Pokémon. Flying can punish the Grass switch-ins that normally answer Water, but Water-resistant Dragon and opposing Water types remain awkward, while Electric and Steel targets often need coverage or a teammate. Gyarados can combine a boosting move with physical Water and Flying pressure; Pelipper more often uses rain-boosted Water attacks and slow momentum. Choose whether the slot must sweep, bring in a rain abuser, or repeatedly check Ground and Fighting attacks rather than treating the typing as a fixed moveset.',
-    counterplay: 'Electric is the clearest answer, but reveal it carefully if a Ground-type can absorb it. Fast Electric attackers, Volt Switch pressure, or a predicted double switch can matter more than blindly clicking the strongest move. Rock attacks and Stealth Rock also exploit the typing; Grass is only neutral and is not a substitute. If direct coverage is unavailable, use strong neutral attacks, status, and hazards to limit pivots. A 4× weakness does not guarantee a knockout through special bulk, a defensive Tera Type, an immunity, or a well-timed switch.',
-    teamBuilding: 'Pair Water/Flying with an Electric immunity or a Pokémon that reliably punishes Electric attackers. Ground-types are the direct choice, but must not leave the team overly exposed to Ice or Grass coverage. Water/Flying repays partners by checking Fire, Ground, Fighting, Bug, and Steel pressure. Rain teams should separate the weather setter, rain abuser, and Electric answer instead of assuming Pelipper covers all three. Use the Team Calculator to spot repeated Electric weaknesses, then compare this profile with the best type combinations guide. A safe core needs an answer that can enter on Electric moves, not merely revenge-kill an Electric Pokémon after Water/Flying falls.',
-    faqs: [
-      { question: 'What is Water/Flying 4× weak to?', answer: 'Electric attacks deal 4× damage because both Water and Flying are weak to Electric.' },
-      { question: 'What is Water/Flying immune to?', answer: 'It is immune to Ground attacks through its Flying typing.' },
-      { question: 'Is Water/Flying weak to Rock?', answer: 'Yes. Rock attacks normally deal 2× damage, so Stealth Rock is a meaningful entry-hazard concern.' },
-    ],
-  },
   'grass-poison': {
     heading: 'Grass/Poison strategy: a status-ready pivot with four attack lanes to cover',
     opening: 'Grass/Poison is a defensive utility typing with real offensive leverage. It double-resists Grass and resists Water, Electric, Fighting, Fairy, and Poison, letting Venusaur frustrate common defensive cores. Ground is neutral because Grass resists it while Poison is weak to it. The tradeoff is four 2× weaknesses—Fire, Ice, Flying, and Psychic—and no immunity. It can absorb a predicted Water or Fairy move but is not a blanket answer to special attackers. Venusaur can spread sleep or poison, pressure Water-types with Grass STAB, and become more dangerous in sun; stats, ability, recovery, and format still determine whether that plan works.',
@@ -199,18 +115,6 @@ const COMBINATION_GUIDES: Record<string, CombinationGuide> = {
       { question: 'What is Grass/Poison weak to?', answer: 'Fire, Ice, Flying, and Psychic attacks each deal 2× damage. It has no inherent 4× weakness.' },
       { question: 'What does Grass/Poison resist?', answer: 'It resists Water, Electric, Fighting, Fairy, and Poison, while Grass attacks deal only ¼ damage.' },
       { question: 'Is Grass/Poison weak to Ground?', answer: 'No. Poison is weak to Ground, but Grass resists it, so Ground attacks deal neutral 1× damage.' },
-    ],
-  },
-  'dragon-flying': {
-    heading: 'Dragon/Flying strategy: broad pressure, a 4× Ice alarm, and a Ground immunity',
-    opening: 'Dragon/Flying combines excellent neutral reach with a profile that rewards precise switching. It is immune to Ground, double-resists Grass, and resists Fire, Water, Fighting, and Bug. Dragonite, Salamence, and Rayquaza can use those openings to boost, force damage, or pivot. The danger is unmistakable: Ice deals 4× damage because both types are weak to it; Rock, Dragon, and Fairy are also 2× threats. Ice Beam, Ice Spinner, Freeze-Dry, or priority Ice Shard can turn a favorable matchup into a knockout, so identify every plausible Ice move before setting up. Multiscale, Intimidate, weather, Terastallization, and items may change an exchange, but do not erase the chart risk.',
-    offense: 'Dragon STAB supplies wide neutral damage and threatens opposing Dragons, while Flying STAB punishes Grass, Fighting, and Bug targets. Steel resists both, Fairy is immune to Dragon and resists Flying, and Rock resists Flying while threatening the type defensively. Ground, Fire, or Steel coverage—or a teammate that lures those answers—is normally needed to avoid free turns. Dragonite may use priority and a boosting move, Salamence may exploit Speed or Intimidate, and Rayquaza has distinct tools, so do not copy one species’ plan onto another. Choose whether the slot breaks, cleans, or creates a Ground immunity before selecting moves.',
-    counterplay: 'Preserve Ice coverage: it is the decisive chart answer. Priority Ice Shard is valuable against fast boosted threats, although abilities, defensive Tera Types, and Focus Sash can prevent the expected result. Fairy attacks punish Dragon STAB and also deal 2× damage, while Rock coverage pressures Flying moves. If Ice is unavailable, use Speed control, status, hazards, and repeated chip so the Dragon/Flying user cannot exploit its resistances. Ground coverage has no effect unless Gravity, Smack Down, or a similar effect removes the Flying immunity.',
-    teamBuilding: 'Dragon/Flying needs a concrete Ice and Fairy plan. Steel-types are the most direct partners because they resist both, while Fire- and Water-types can help absorb Ice attacks depending on their secondary type and opposing coverage. A Rock-resistant teammate and hazard control are also useful because Rock hits for 2× and this combination may switch often. Dragon/Flying returns value by blanking Ground attacks and resisting Fire, Water, Fighting, Bug, and Grass for partners that invite them. Run the completed core through the Team Calculator, then compare its risk-reward profile in the best type combinations guide. Count actual switch-ins: the team needs an Ice answer that survives more than one predicted coverage move.',
-    faqs: [
-      { question: 'What is Dragon/Flying 4× weak to?', answer: 'Ice attacks deal 4× damage because both Dragon and Flying are weak to Ice.' },
-      { question: 'What is Dragon/Flying immune to?', answer: 'It is immune to Ground attacks through its Flying typing.' },
-      { question: 'What else is Dragon/Flying weak to?', answer: 'Rock, Dragon, and Fairy attacks normally deal 2× damage.' },
     ],
   },
 };
@@ -1724,12 +1628,8 @@ Object.assign(
   Object.fromEntries([...GENERATED_COMBINATION_GUIDE_CONFIGS, ...BATCH3_COMBINATION_GUIDE_CONFIGS, ...BATCH4_COMBINATION_GUIDE_CONFIGS, ...BATCH5_COMBINATION_GUIDE_CONFIGS].map(config => [config.slug, makeGeneratedCombinationGuide(config)]))
 );
 
-COMBINATION_GUIDES['dragon-flying'].extraLinks = [
-  { href: '/pokemon/type-chart', label: 'Type Chart' },
-  { href: '/calculator', label: 'Dual Type Calculator' },
-  { href: '/types/ground-dragon', label: 'Ground/Dragon guide' },
-  { href: '/types/flying-steel', label: 'Flying/Steel guide' },
-];
+// These 12 guides overwrite the generated template. Assign after it so they win.
+Object.assign(COMBINATION_GUIDES, PRIORITY_DUAL_TYPE_GUIDES);
 
 function findCombination(type1: TypeId, type2: TypeId) {
   return popularCombinations.combinations.find(
@@ -1805,19 +1705,25 @@ const BATCH6_CONTENT: Record<string, Batch6Content> = {
   'steel-fairy': {
     kind: 'multiplication',
     heading: 'Steel/Fairy worked multiplier checks',
-    opening: 'A Steel/Fairy label is not one multiplier: each attacking type must be checked against Steel and Fairy separately.',
+    opening: 'Factor one is Steel and factor two is Fairy. Fire is not 4× into this pair: Fairy is neutral to Fire.',
     rows: [
-      { defender: 'Mawile (Steel/Fairy)', attack: 'Fire', factorOne: '2×', factorTwo: '2×', result: '4×' },
-      { defender: 'Klefki (Steel/Fairy)', attack: 'Ground', factorOne: '2×', factorTwo: '1×', result: '2×' },
-      { defender: 'Magearna (Steel/Fairy)', attack: 'Fighting', factorOne: '2×', factorTwo: '0.5×', result: '1×' },
+      { defender: 'Tinkaton (Steel/Fairy)', attack: 'Fire', factorOne: '2×', factorTwo: '1×', result: '2×' },
+      { defender: 'Tinkaton (Steel/Fairy)', attack: 'Ground', factorOne: '2×', factorTwo: '1×', result: '2×' },
+      { defender: 'Tinkaton (Steel/Fairy)', attack: 'Dragon', factorOne: '0.5×', factorTwo: '0×', result: '0×' },
+      { defender: 'Zacian-Crowned (Steel/Fairy)', attack: 'Fighting', factorOne: '2×', factorTwo: '0.5×', result: '1×' },
     ],
-    points: ['Mawile shows the only 4× row here because Fire is super effective against both defending types.', 'Klefki shows Ground remains a 2× hit when Fairy is neutral.', 'Magearna shows a 2× weakness and a 0.5× resistance cancel to 1×.'],
+    points: ['Fire and Ground are the only super-effective types, and each stays at 2×.', 'Dragon is 0× because Fairy is immune, even though Steel only resists Dragon.', 'Fighting cancels: Steel is weak to it and Fairy resists it.'],
   },
   'water-ground': {
-    kind: 'discussion',
-    heading: 'Questions players ask about Water/Ground',
-    opening: 'Players repeatedly ask how a pairing can ignore Electric and still lose so sharply to one Grass move.',
-    points: ['Why does Water/Ground ignore Electric? Ground supplies a complete immunity, even though Water alone is weak to Electric.', 'Why is Grass the matchup players plan around? Grass hits both halves for 2×, so the pairing has a 4× emergency rather than an ordinary weakness.', 'Why do players keep Ice coverage nearby? Ice can pressure Grass switch-ins and punish some common Water/Ground counter patterns.'],
+    kind: 'multiplication',
+    heading: 'Water/Ground worked multiplier checks',
+    opening: 'Factor one is Water and factor two is Ground. Grass is the only super-effective type because both factors are 2×.',
+    rows: [
+      { defender: 'Swampert (Water/Ground)', attack: 'Grass', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Swampert (Water/Ground)', attack: 'Electric', factorOne: '2×', factorTwo: '0×', result: '0×' },
+      { defender: 'Gastrodon (Water/Ground)', attack: 'Fire', factorOne: '0.5×', factorTwo: '1×', result: '0.5×' },
+    ],
+    points: ['Grass is 4×. Rillaboom’s Grassy Glide uses that product.', 'Electric is 0× because Ground is immune, which is why Volt Switch fails.', 'Fire is resisted by Water and neutral into Ground, so it is 0.5×.'],
   },
   'grass-poison': {
     kind: 'history',
@@ -1843,10 +1749,15 @@ const BATCH6_CONTENT: Record<string, Batch6Content> = {
     points: ['Why does Grass/Steel handle Grass attacks so well? Both defending types resist Grass, so the move is reduced twice.', 'Why is Fire the move people scout first? Fire is super effective against both Grass and Steel, creating a 4× emergency.', 'Why do Ground and Fighting still matter? Steel is weak to both, while Grass is neutral, so neither attack is cancelled by the Grass half.'],
   },
   'bug-steel': {
-    kind: 'history',
-    heading: 'Bug/Steel through chart revisions',
-    opening: 'Bug/Steel became more distinctive as new types and battle mechanics changed the context around its long resistance list.',
-    points: ['Generation I: Bug and Steel were not yet a combined pairing because Steel did not exist.', 'Generation II: Steel arrived, creating the Bug/Steel pairing and adding Steel resistances to the Bug profile.', 'Generation VI: Fairy added a new modern target for Steel attacks and a new type interaction for Bug/Steel teams.', 'Generation IX: Terastallization can replace the active Bug/Steel typing, while the base chart still retains its 4× Fire weakness.'],
+    kind: 'multiplication',
+    heading: 'Bug/Steel worked multiplier checks',
+    opening: 'Factor one is Bug and factor two is Steel. Fire is the 4× row. Ground cancels, which is the line players misread as a weakness.',
+    rows: [
+      { defender: 'Scizor (Bug/Steel)', attack: 'Fire', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Scizor (Bug/Steel)', attack: 'Poison', factorOne: '1×', factorTwo: '0×', result: '0×' },
+      { defender: 'Forretress (Bug/Steel)', attack: 'Ground', factorOne: '0.5×', factorTwo: '2×', result: '1×' },
+    ],
+    points: ['Fire is 4× because both Bug and Steel are weak to it.', 'Poison is 0× through Steel.', 'Ground is 1×: Bug resists it and Steel is weak to it.'],
   },
   'psychic-fairy': {
     kind: 'multiplication',
@@ -1855,9 +1766,10 @@ const BATCH6_CONTENT: Record<string, Batch6Content> = {
     rows: [
       { defender: 'Gardevoir (Psychic/Fairy)', attack: 'Bug', factorOne: '2×', factorTwo: '0.5×', result: '1×' },
       { defender: 'Hatterene (Psychic/Fairy)', attack: 'Ghost', factorOne: '2×', factorTwo: '1×', result: '2×' },
-      { defender: 'Tapu Lele (Psychic/Fairy)', attack: 'Steel', factorOne: '1×', factorTwo: '2×', result: '2×' },
+      { defender: 'Hatterene (Psychic/Fairy)', attack: 'Steel', factorOne: '1×', factorTwo: '2×', result: '2×' },
+      { defender: 'Gardevoir (Psychic/Fairy)', attack: 'Dragon', factorOne: '1×', factorTwo: '0×', result: '0×' },
     ],
-    points: ['Bug is neutral after Psychic weakness and Fairy resistance cancel.', 'Ghost remains 2× because Ghost is super effective against Psychic and neutral against Fairy.', 'Steel is neutral against Psychic and super effective against Fairy, producing 2×.'],
+    points: ['Bug is neutral after Psychic’s weakness and Fairy’s resistance cancel.', 'Ghost and Steel each stay at 2×.', 'Dragon is 0× because Fairy is immune. Psychic into a Dark type such as Kingambit is also 0×, which is an offensive blank rather than a defensive one.'],
   },
   'fire-fighting': {
     kind: 'discussion',
@@ -1866,10 +1778,15 @@ const BATCH6_CONTENT: Record<string, Batch6Content> = {
     points: ['Why does Fire/Fighting break Steel so reliably? Both STAB types pressure Steel, so the defender cannot rely on one resistance plan.', 'Why are Water, Ground, Flying, and Psychic the recurring answers? Those attack types target one or both halves without needing a rare interaction.', 'Why does the pairing need speed or setup? It has offensive reach but no type immunity, so a faster super-effective attack can remove the entry opportunity.'],
   },
   'dragon-flying': {
-    kind: 'history',
-    heading: 'Dragon/Flying through chart revisions',
-    opening: 'Dragon/Flying kept its Ground immunity while the generations around it changed which counter types players had to respect.',
-    points: ['Generation I: Flying existed, but Dragon was not yet an available type pairing in the original roster.', 'Generation II: Dragon became available and Dragon/Flying combinations could use the shared Ground immunity and Grass resistance.', 'Generation VI: Fairy arrived as a new 2× Dragon/Flying threat, while Ice remained the paired 4× weakness.', 'Generation IX: Terastallization can replace Dragon/Flying during battle, but the base combination still has the same chart multipliers.'],
+    kind: 'multiplication',
+    heading: 'Dragon/Flying worked multiplier checks',
+    opening: 'Factor one is Dragon and factor two is Flying. Ice stacks. Ground is 0× because Flying is immune.',
+    rows: [
+      { defender: 'Dragonite (Dragon/Flying)', attack: 'Ice', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Dragonite (Dragon/Flying)', attack: 'Ground', factorOne: '1×', factorTwo: '0×', result: '0×' },
+      { defender: 'Salamence (Dragon/Flying)', attack: 'Fairy', factorOne: '2×', factorTwo: '1×', result: '2×' },
+    ],
+    points: ['Ice is 4×. Multiscale halves the first hit only while Dragonite is at full HP.', 'Ground is 0×. Stealth Rock is one quarter because Rock is 2× into this pair.', 'Fairy is 2×, and Dragon moves into Fairy are 0×.'],
   },
   'water-ice': {
     kind: 'multiplication',
@@ -1889,10 +1806,70 @@ const BATCH6_CONTENT: Record<string, Batch6Content> = {
     points: ['Why is Water/Dragon not weak to Grass? Water is weak to Grass, but Dragon resists Grass, so the two factors cancel.', 'Why is Fairy the cleanest warning? Fairy is super effective against Dragon and neutral against Water, so it remains a direct 2× threat.', 'Why does Ice coverage still matter? Ice is super effective against Dragon while Water is neutral, so Ice keeps pressure on both defensive and offensive variants.'],
   },
   'electric-flying': {
-    kind: 'history',
-    heading: 'Electric/Flying through chart revisions',
-    opening: 'Electric/Flying has kept its Ground immunity while later generations changed the abilities and battle states that interact with it.',
-    points: ['Generation I: Electric and Flying existed separately, and Flying supplied the basic Ground immunity to the pairing.', 'Generation II: Steel and Dark entered the chart, changing surrounding resistance and coverage decisions without removing the Ground immunity.', 'Generation III: Levitate and other abilities made ability-based Ground interactions more visible across Electric/Flying counterplay.', 'Generation IX: Terastallization can replace Electric/Flying temporarily, but the base pairing remains weak to Ice and Rock and neutral to Ground only through Flying immunity.'],
+    kind: 'multiplication',
+    heading: 'Electric/Flying worked multiplier checks',
+    opening: 'Factor one is Electric and factor two is Flying. Ground is 0× because Flying is immune, even though Electric is weak to Ground.',
+    rows: [
+      { defender: 'Kilowattrel (Electric/Flying)', attack: 'Ground', factorOne: '2×', factorTwo: '0×', result: '0×' },
+      { defender: 'Zapdos (Electric/Flying)', attack: 'Ice', factorOne: '1×', factorTwo: '2×', result: '2×' },
+      { defender: 'Kilowattrel (Electric/Flying)', attack: 'Rock', factorOne: '1×', factorTwo: '2×', result: '2×' },
+    ],
+    points: ['There is no 4× weakness. Ice and Rock are the 2× lines.', 'Ground is 0×. Stealth Rock removes one quarter because Rock is 2×.', 'Electric is neutral into Steel. It is 2× into Corviknight because the Flying half is weak to Electric.'],
+  },
+  'ground-dragon': {
+    kind: 'multiplication',
+    heading: 'Ground/Dragon worked multiplier checks',
+    opening: 'Factor one is Ground and factor two is Dragon. Ice is the stacked weakness. Water and Grass each cancel.',
+    rows: [
+      { defender: 'Garchomp (Ground/Dragon)', attack: 'Ice', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Garchomp (Ground/Dragon)', attack: 'Electric', factorOne: '0×', factorTwo: '1×', result: '0×' },
+      { defender: 'Garchomp (Ground/Dragon)', attack: 'Water', factorOne: '2×', factorTwo: '0.5×', result: '1×' },
+    ],
+    points: ['Ice is 4×. Weavile’s Ice Shard is that product at priority.', 'Electric is 0× through Ground.', 'Water is 1×. Grass cancels the same way: 2× into Ground and 0.5× into Dragon.'],
+  },
+  'flying-steel': {
+    kind: 'multiplication',
+    heading: 'Flying/Steel worked multiplier checks',
+    opening: 'Factor one is Flying and factor two is Steel. Fire and Electric stay at 2×. Nothing on the chart reaches 4×.',
+    rows: [
+      { defender: 'Corviknight (Flying/Steel)', attack: 'Ground', factorOne: '0×', factorTwo: '2×', result: '0×' },
+      { defender: 'Corviknight (Flying/Steel)', attack: 'Fire', factorOne: '1×', factorTwo: '2×', result: '2×' },
+      { defender: 'Skarmory (Flying/Steel)', attack: 'Poison', factorOne: '1×', factorTwo: '0×', result: '0×' },
+    ],
+    points: ['Ground is 0× through Flying, which is why Corviknight Defogs on Earthquake.', 'Fire and Electric are 2×.', 'Rock cancels to 1×, so Stealth Rock is the ordinary one eighth.'],
+  },
+  'fighting-steel': {
+    kind: 'multiplication',
+    heading: 'Fighting/Steel worked multiplier checks',
+    opening: 'Factor one is Fighting and factor two is Steel. Fire, Fighting, and Ground are 2×. Poison is 0×.',
+    rows: [
+      { defender: 'Lucario (Fighting/Steel)', attack: 'Fire', factorOne: '1×', factorTwo: '2×', result: '2×' },
+      { defender: 'Lucario (Fighting/Steel)', attack: 'Ground', factorOne: '1×', factorTwo: '2×', result: '2×' },
+      { defender: 'Lucario (Fighting/Steel)', attack: 'Poison', factorOne: '1×', factorTwo: '0×', result: '0×' },
+    ],
+    points: ['There is no 4× weakness.', 'Close Combat from Lucario is still 4× into Kingambit, which is Dark/Steel. That is Lucario’s attack, not a weakness of this page.', 'Rock is 0.25×, so Stealth Rock removes one thirty-second.'],
+  },
+  'water-flying': {
+    kind: 'multiplication',
+    heading: 'Water/Flying worked multiplier checks',
+    opening: 'Factor one is Water and factor two is Flying. Electric stacks to 4×. Ground is 0×.',
+    rows: [
+      { defender: 'Pelipper (Water/Flying)', attack: 'Electric', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Gyarados (Water/Flying)', attack: 'Ground', factorOne: '1×', factorTwo: '0×', result: '0×' },
+      { defender: 'Gyarados (Water/Flying)', attack: 'Rock', factorOne: '1×', factorTwo: '2×', result: '2×' },
+    ],
+    points: ['Electric is 4×. Rain does not change it.', 'Ground is 0×, which is the Dragon Dance entry for Gyarados.', 'Rock is 2×, so Stealth Rock removes one quarter.'],
+  },
+  'grass-flying': {
+    kind: 'multiplication',
+    heading: 'Grass/Flying worked multiplier checks',
+    opening: 'Factor one is Grass and factor two is Flying. Ice stacks to 4×. Electric cancels.',
+    rows: [
+      { defender: 'Jumpluff (Grass/Flying)', attack: 'Ice', factorOne: '2×', factorTwo: '2×', result: '4×' },
+      { defender: 'Jumpluff (Grass/Flying)', attack: 'Ground', factorOne: '0.5×', factorTwo: '0×', result: '0×' },
+      { defender: 'Tropius (Grass/Flying)', attack: 'Electric', factorOne: '0.5×', factorTwo: '2×', result: '1×' },
+    ],
+    points: ['Ice is 4×. Fire, Poison, Flying, and Rock are 2×.', 'Ground is 0×.', 'Electric is 1×, so Thunderbolt is not the answer the way it is into Water/Flying. Stealth Rock is one quarter.'],
   },
 };
 
@@ -1905,6 +1882,7 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
   const type2Data = typesData.types.find(t => t.id === type2);
   const combo = findCombination(type1, type2);
   const guide = COMBINATION_GUIDES[resolvedParams.combo];
+  const priorityGuide = isPriorityDualTypeGuide(resolvedParams.combo);
   const batch6 = BATCH6_CONTENT[resolvedParams.combo];
 
   if (!type1Data || !type2Data) {
@@ -2031,48 +2009,117 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
       {guide && (
         <article className="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">{guide.heading}</h2>
-          <div className="prose max-w-none text-gray-700">
+          <div className="space-y-6 text-gray-700 leading-relaxed">
             <p>{guide.opening}</p>
 
-            <h3>Offensive plan</h3>
-            <p>{guide.offense}</p>
+            {guide.species && guide.species.length > 0 && (
+              <section>
+                <h3 className="mb-3 text-xl font-semibold text-gray-900">Pokémon that use this typing</h3>
+                <ul className="list-disc space-y-3 pl-5">
+                  {guide.species.map(species => (
+                    <li key={species.name}>
+                      {species.href ? (
+                        <Link href={species.href} className="font-semibold text-blue-700 underline">{species.name}</Link>
+                      ) : (
+                        <span className="font-semibold text-gray-900">{species.name}</span>
+                      )}
+                      {': '}
+                      {species.role}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
-            <h3>Counterplay and defensive risks</h3>
-            <p>{guide.counterplay}</p>
+            {guide.callouts && guide.callouts.length > 0 && (
+              <section>
+                <h3 className="mb-3 text-xl font-semibold text-gray-900">4× weaknesses and immunities</h3>
+                <ul className="grid list-none gap-3 pl-0 sm:grid-cols-2">
+                  {guide.callouts.map(callout => (
+                    <li key={callout.label} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                      <p className="font-semibold text-gray-900">{callout.label}</p>
+                      <p className="mt-1">{callout.detail}</p>
+                      <p className="mt-2">
+                        <Link href={callout.href} className="text-blue-700 underline">{callout.linkLabel}</Link>
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
-            <h3>Team-building advice</h3>
-            <p>
-              {guide.teamBuilding.split('Team Calculator').map((part, index, parts) => (
-                <span key={part}>
-                  {part}
-                  {index < parts.length - 1 && <Link href="/pokemon/team-calculator">Team Calculator</Link>}
-                </span>
-              ))}
-            </p>
-            <p>
-              Read the <Link href="/pokemon/best-type-combinations">best Pokémon type combinations guide</Link> for a
-              side-by-side defensive comparison.
-            </p>
+            <section>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Offensive plan</h3>
+              <p>{guide.offense}</p>
+            </section>
+
+            {guide.plays && guide.plays.length > 0 && (
+              <section>
+                <h3 className="mb-3 text-xl font-semibold text-gray-900">Play examples</h3>
+                <div className="space-y-4">
+                  {guide.plays.map(play => (
+                    <div key={play.title}>
+                      <h4 className="font-semibold text-gray-900">{play.title}</h4>
+                      <p className="mt-1">{play.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            <section>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Counterplay and defensive risks</h3>
+              <p>{guide.counterplay}</p>
+            </section>
+
+            {guide.formatNote && (
+              <section>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900">Singles and VGC</h3>
+                <p>{guide.formatNote}</p>
+              </section>
+            )}
+
+            <section>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Team-building advice</h3>
+              <p>
+                {guide.teamBuilding.split('Team Calculator').map((part, index, parts) => (
+                  <span key={`${index}-${part.slice(0, 24)}`}>
+                    {part}
+                    {index < parts.length - 1 && <Link href="/pokemon/team-calculator" className="text-blue-700 underline">Team Calculator</Link>}
+                  </span>
+                ))}
+              </p>
+              {!priorityGuide && (
+                <p className="mt-3">
+                  Read the <Link href="/pokemon/best-type-combinations" className="text-blue-700 underline">best Pokémon type combinations guide</Link> for a
+                  side-by-side defensive comparison.
+                </p>
+              )}
+            </section>
 
             {guide.extraLinks && guide.extraLinks.length > 0 && (
               <p>
                 Continue with{' '}
                 {guide.extraLinks.map((link, index) => (
                   <span key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link href={link.href} className="text-blue-700 underline">{link.label}</Link>
                     {index < guide.extraLinks!.length - 2 ? ', ' : index === guide.extraLinks!.length - 2 ? ', and ' : ''}
                   </span>
                 ))}.
               </p>
             )}
 
-            <h3>Frequently asked questions</h3>
-            {guide.faqs.map(faq => (
-              <div key={faq.question}>
-                <h4>{faq.question}</h4>
-                <p>{faq.answer}</p>
+            <section>
+              <h3 className="mb-3 text-xl font-semibold text-gray-900">Frequently asked questions</h3>
+              <div className="space-y-4">
+                {guide.faqs.map(faq => (
+                  <div key={faq.question}>
+                    <h4 className="font-semibold text-gray-900">{faq.question}</h4>
+                    <p className="mt-1">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </section>
           </div>
         </article>
       )}
@@ -2080,17 +2127,18 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
       {batch6 && (
         <article className="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">{batch6.heading}</h2>
-          <div className="prose max-w-none text-gray-700">
+          <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>{batch6.opening}</p>
             {batch6.rows && (
-              <table className="w-full text-left border-collapse not-prose">
+              <div className="overflow-x-auto">
+              <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
                 <thead>
                   <tr className="border-b">
-                    <th className="py-2">Defender</th>
-                    <th className="py-2">Attacking type</th>
-                    <th className="py-2">Factor one</th>
-                    <th className="py-2">Factor two</th>
-                    <th className="py-2">Result</th>
+                    <th className="py-2 pr-3 font-semibold">Defender</th>
+                    <th className="py-2 pr-3 font-semibold">Attacking type</th>
+                    <th className="py-2 pr-3 font-semibold">Factor one</th>
+                    <th className="py-2 pr-3 font-semibold">Factor two</th>
+                    <th className="py-2 font-semibold">Result</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2105,15 +2153,16 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
                   ))}
                 </tbody>
               </table>
+              </div>
             )}
-            <ul>
+            <ul className="list-disc space-y-2 pl-5">
               {batch6.points.map(point => <li key={point}>{point}</li>)}
             </ul>
           </div>
         </article>
       )}
 
-      <article className="bg-white rounded-lg shadow-lg p-6 mb-8">
+      {!priorityGuide && <article className="bg-white rounded-lg shadow-lg p-6 mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">
           TypeMatchup Original Analysis
         </h2>
@@ -2175,7 +2224,7 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
             </p>
           </section>
         </div>
-      </article>
+      </article>}
 
       {/* Detailed Matchups */}
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
@@ -2204,7 +2253,7 @@ export async function DualTypeContent({ params }: { params: Promise<{ combo: str
       </div>
 
       {/* Strategy Tips */}
-      {combo && (
+      {combo && !priorityGuide && (
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Strategy Tips</h2>
           <div className="prose max-w-none">
