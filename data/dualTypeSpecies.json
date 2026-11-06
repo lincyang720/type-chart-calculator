@@ -1,0 +1,722 @@
+{
+  "water-electric": [
+    "Lanturn",
+    "Chinchou",
+    "Rotom-Wash"
+  ],
+  "psychic-dark": [
+    "Inkay",
+    "Malamar",
+    "Hoopa Unbound"
+  ],
+  "psychic-fairy": [
+    "Gardevoir",
+    "Galarian Rapidash",
+    "Hatterene",
+    "Tapu Lele",
+    "Mr. Mime"
+  ],
+  "dragon-steel": [
+    "Dialga",
+    "Duraludon",
+    "Archaludon",
+    "Hisuian Sliggoo",
+    "Hisuian Goodra"
+  ],
+  "fire-fighting": [
+    "Blaziken",
+    "Infernape",
+    "Emboar",
+    "Pignite",
+    "Combusken"
+  ],
+  "ground-ghost": [
+    "Golett",
+    "Golurk",
+    "Sandygast",
+    "Palossand",
+    "Runerigus"
+  ],
+  "ground-flying": [
+    "Gligar",
+    "Gliscor",
+    "Landorus",
+    "Landorus-Therian"
+  ],
+  "flying-dark": [
+    "Murkrow",
+    "Honchkrow",
+    "Vullaby",
+    "Mandibuzz",
+    "Yveltal"
+  ],
+  "ice-ground": [
+    "Swinub",
+    "Piloswine",
+    "Mamoswine"
+  ],
+  "poison-bug": [
+    "Weedle",
+    "Kakuna",
+    "Beedrill",
+    "Venipede",
+    "Scolipede"
+  ],
+  "ground-rock": [
+    "Geodude",
+    "Graveler",
+    "Golem",
+    "Rhydon",
+    "Rhyperior"
+  ],
+  "grass-ice": [
+    "Snover",
+    "Abomasnow",
+    "Mega Abomasnow"
+  ],
+  "normal-flying": [
+    "Pidgey",
+    "Pidgeotto",
+    "Pidgeot",
+    "Spearow",
+    "Fearow"
+  ],
+  "bug-fairy": [
+    "Cutiefly",
+    "Ribombee",
+    "Totem Ribombee"
+  ],
+  "grass-fairy": [
+    "Cottonee",
+    "Whimsicott",
+    "Morelull",
+    "Shiinotic",
+    "Tapu Bulu"
+  ],
+  "ghost-dark": [
+    "Sableye",
+    "Spiritomb"
+  ],
+  "ghost-steel": [
+    "Honedge",
+    "Doublade",
+    "Aegislash",
+    "Gholdengo"
+  ],
+  "dragon-ghost": [
+    "Dreepy",
+    "Drakloak",
+    "Dragapult",
+    "Giratina"
+  ],
+  "water-fighting": [
+    "Poliwrath",
+    "Keldeo",
+    "Urshifu Rapid Strike",
+    "Quaquaval",
+    "Paldean Tauros Aqua Breed"
+  ],
+  "water-grass": [
+    "Lotad",
+    "Lombre",
+    "Ludicolo",
+    "Ogerpon-Wellspring"
+  ],
+  "fire-steel": [
+    "Heatran"
+  ],
+  "electric-dragon": [
+    "Mega Ampharos",
+    "Zekrom",
+    "Dracozolt",
+    "Miraidon",
+    "Raging Bolt"
+  ],
+  "dragon-ice": [
+    "Kyurem",
+    "Black Kyurem",
+    "White Kyurem",
+    "Frigibax",
+    "Baxcalibur"
+  ],
+  "dragon-psychic": [
+    "Latias",
+    "Latios",
+    "Mega Latias",
+    "Mega Latios",
+    "Ultra Necrozma"
+  ],
+  "fire-ground": [
+    "Numel",
+    "Camerupt",
+    "Mega Camerupt",
+    "Primal Groudon"
+  ],
+  "grass-dark": [
+    "Nuzleaf",
+    "Shiftry",
+    "Cacturne",
+    "Zarude",
+    "Meowscarada"
+  ],
+  "grass-fighting": [
+    "Breloom",
+    "Virizion",
+    "Chesnaught",
+    "Hisuian Lilligant",
+    "Hisuian Decidueye"
+  ],
+  "poison-dark": [
+    "Stunky",
+    "Skuntank",
+    "Drapion",
+    "Alolan Muk",
+    "Overqwil"
+  ],
+  "dark-steel": [
+    "Pawniard",
+    "Bisharp",
+    "Kingambit"
+  ],
+  "dark-fairy": [
+    "Impidimp",
+    "Morgrem",
+    "Grimmsnarl"
+  ],
+  "fire-bug": [
+    "Larvesta",
+    "Volcarona",
+    "Sizzlipede",
+    "Centiskorch"
+  ],
+  "electric-steel": [
+    "Magnemite",
+    "Magneton",
+    "Magnezone",
+    "Togedemaru"
+  ],
+  "electric-flying": [
+    "Zapdos",
+    "Emolga",
+    "Thundurus",
+    "Wattrel",
+    "Kilowattrel"
+  ],
+  "grass-steel": [
+    "Ferroseed",
+    "Ferrothorn",
+    "Kartana"
+  ],
+  "ice-psychic": [
+    "Smoochum",
+    "Jynx",
+    "Galarian Mr. Mime",
+    "Mr. Rime",
+    "Calyrex Ice Rider"
+  ],
+  "fighting-dark": [
+    "Scraggy",
+    "Scrafty",
+    "Pangoro",
+    "Urshifu Single Strike"
+  ],
+  "fighting-psychic": [
+    "Meditite",
+    "Medicham",
+    "Mega Medicham",
+    "Gallade",
+    "Mega Mewtwo X"
+  ],
+  "poison-fire": [
+    "Salandit",
+    "Salazzle",
+    "Iron Moth"
+  ],
+  "flying-psychic": [
+    "Natu",
+    "Xatu",
+    "Lugia",
+    "Woobat",
+    "Sigilyph"
+  ],
+  "water-rock": [
+    "Omanyte",
+    "Omastar",
+    "Kabuto",
+    "Kabutops",
+    "Drednaw"
+  ],
+  "fire-dark": [
+    "Houndour",
+    "Houndoom",
+    "Mega Houndoom",
+    "Incineroar",
+    "Chi-Yu"
+  ],
+  "dragon-dark": [
+    "Deino",
+    "Zweilous",
+    "Hydreigon",
+    "Guzzlord",
+    "Roaring Moon"
+  ],
+  "water-ice": [
+    "Dewgong",
+    "Cloyster",
+    "Lapras",
+    "Spheal",
+    "Walrein"
+  ],
+  "poison-fighting": [
+    "Croagunk",
+    "Toxicroak",
+    "Sneasler",
+    "Okidogi"
+  ],
+  "flying-bug": [
+    "Butterfree",
+    "Scyther",
+    "Yanma",
+    "Ninjask",
+    "Vespiquen"
+  ],
+  "fighting-rock": [
+    "Terrakion"
+  ],
+  "water-dragon": [
+    "Kingdra",
+    "Palkia",
+    "Dracovish",
+    "Tatsugiri",
+    "Walking Wake"
+  ],
+  "ghost-fairy": [
+    "Mimikyu",
+    "Flutter Mane"
+  ],
+  "ghost-water": [
+    "Frillish",
+    "Jellicent",
+    "Basculegion"
+  ],
+  "grass-psychic": [
+    "Exeggcute",
+    "Exeggutor",
+    "Celebi",
+    "Calyrex"
+  ],
+  "water-steel": [
+    "Empoleon"
+  ],
+  "water-poison": [
+    "Tentacool",
+    "Tentacruel",
+    "Qwilfish",
+    "Mareanie",
+    "Toxapex"
+  ],
+  "dragon-fire": [
+    "Mega Charizard X",
+    "Reshiram",
+    "Turtonator",
+    "Gouging Fire"
+  ],
+  "fighting-ground": [
+    "Great Tusk"
+  ],
+  "grass-ground": [
+    "Torterra",
+    "Toedscool",
+    "Toedscruel"
+  ],
+  "ice-steel": [
+    "Alolan Sandshrew",
+    "Alolan Sandslash"
+  ],
+  "fighting-steel": [
+    "Lucario",
+    "Mega Lucario",
+    "Cobalion",
+    "Zamazenta-Crowned"
+  ],
+  "psychic-steel": [
+    "Bronzor",
+    "Bronzong",
+    "Metagross",
+    "Jirachi",
+    "Solgaleo"
+  ],
+  "grass-dragon": [
+    "Alolan Exeggutor",
+    "Mega Sceptile",
+    "Applin",
+    "Flapple",
+    "Appletun"
+  ],
+  "water-fairy": [
+    "Marill",
+    "Azumarill",
+    "Primarina",
+    "Tapu Fini"
+  ],
+  "flying-fairy": [
+    "Togetic",
+    "Togekiss",
+    "Enamorus"
+  ],
+  "electric-fairy": [
+    "Dedenne",
+    "Tapu Koko"
+  ],
+  "poison-ground": [
+    "Nidoqueen",
+    "Nidoking",
+    "Paldean Wooper",
+    "Clodsire"
+  ],
+  "psychic-rock": [
+    "Lunatone",
+    "Solrock"
+  ],
+  "grass-ghost": [
+    "Phantump",
+    "Trevenant",
+    "Pumpkaboo",
+    "Gourgeist",
+    "Decidueye"
+  ],
+  "fighting-flying": [
+    "Hawlucha",
+    "Galarian Zapdos",
+    "Flamigo"
+  ],
+  "psychic-ghost": [
+    "Hoopa Confined",
+    "Lunala",
+    "Necrozma Dawn Wings",
+    "Calyrex-Shadow"
+  ],
+  "ghost-electric": [
+    "Rotom"
+  ],
+  "ground-dark": [
+    "Sandile",
+    "Krokorok",
+    "Krookodile",
+    "Ting-Lu"
+  ],
+  "ice-ghost": [
+    "Froslass"
+  ],
+  "poison-flying": [
+    "Zubat",
+    "Golbat",
+    "Crobat"
+  ],
+  "poison-steel": [
+    "Varoom",
+    "Revavroom"
+  ],
+  "fighting-fairy": [
+    "Iron Valiant"
+  ],
+  "ice-rock": [
+    "Amaura",
+    "Aurorus",
+    "Hisuian Avalugg"
+  ],
+  "ghost-fire": [
+    "Litwick",
+    "Lampent",
+    "Chandelure",
+    "Blacephalon",
+    "Skeledirge"
+  ],
+  "fighting-ghost": [
+    "Marshadow",
+    "Annihilape"
+  ],
+  "dark-rock": [
+    "Tyranitar",
+    "Mega Tyranitar"
+  ],
+  "fighting-bug": [
+    "Heracross",
+    "Mega Heracross",
+    "Buzzwole",
+    "Pheromosa"
+  ],
+  "electric-grass": [
+    "Mow Rotom",
+    "Hisuian Voltorb",
+    "Hisuian Electrode"
+  ],
+  "fire-fairy": [],
+  "fire-water": [
+    "Volcanion"
+  ],
+  "dragon-fairy": [
+    "Mega Altaria"
+  ],
+  "electric-ground": [
+    "Stunfisk",
+    "Sandy Shocks"
+  ],
+  "grass-flying": [
+    "Hoppip",
+    "Skiploom",
+    "Jumpluff",
+    "Tropius",
+    "Shaymin Sky"
+  ],
+  "grass-rock": [
+    "Lileep",
+    "Cradily",
+    "Ogerpon Cornerstone Mask"
+  ],
+  "ground-fairy": [],
+  "water-dark": [
+    "Carvanha",
+    "Sharpedo",
+    "Crawdaunt",
+    "Greninja",
+    "Mega Gyarados"
+  ],
+  "water-bug": [
+    "Surskit",
+    "Dewpider",
+    "Araquanid",
+    "Wimpod",
+    "Golisopod"
+  ],
+  "ground-steel": [
+    "Steelix",
+    "Excadrill",
+    "Iron Treads",
+    "Alolan Dugtrio",
+    "Galarian Stunfisk"
+  ],
+  "ground-bug": [
+    "Nincada",
+    "Sandy Wormadam"
+  ],
+  "fire-psychic": [
+    "Victini",
+    "Delphox",
+    "Armarouge",
+    "Zen Mode Darmanitan"
+  ],
+  "grass-bug": [
+    "Paras",
+    "Parasect",
+    "Plant Cloak Wormadam",
+    "Sewaddle",
+    "Leavanny"
+  ],
+  "ice-fairy": [
+    "Alolan Ninetales"
+  ],
+  "poison-psychic": [
+    "Munkidori",
+    "Galarian Slowbro",
+    "Galarian Slowking"
+  ],
+  "poison-fairy": [
+    "Galarian Weezing",
+    "Fezandipiti"
+  ],
+  "bug-rock": [
+    "Shuckle",
+    "Anorith",
+    "Armaldo",
+    "Dwebble",
+    "Crustle"
+  ],
+  "bug-ghost": [
+    "Shedinja"
+  ],
+  "normal-psychic": [
+    "Girafarig",
+    "Meloetta Aria",
+    "Oranguru",
+    "Wyrdeer",
+    "Farigiraf"
+  ],
+  "ice-fighting": [
+    "Crabominable"
+  ],
+  "fire-rock": [
+    "Magcargo",
+    "Carkol",
+    "Coalossal",
+    "Hisuian Growlithe",
+    "Hisuian Arcanine"
+  ],
+  "rock-steel": [
+    "Aron",
+    "Lairon",
+    "Aggron",
+    "Shieldon",
+    "Bastiodon"
+  ],
+  "ice-bug": [
+    "Snom",
+    "Frosmoth"
+  ],
+  "poison-rock": [
+    "Nihilego",
+    "Glimmet",
+    "Glimmora"
+  ],
+  "flying-ghost": [
+    "Drifloon",
+    "Drifblim",
+    "Sensu Oricorio"
+  ],
+  "normal-water": [
+    "Bibarel"
+  ],
+  "normal-ground": [
+    "Diggersby",
+    "Ursaluna",
+    "Bloodmoon Ursaluna"
+  ],
+  "ground-psychic": [
+    "Baltoy",
+    "Claydol"
+  ],
+  "normal-grass": [
+    "Deerling",
+    "Sawsbuck",
+    "Smoliv",
+    "Dolliv",
+    "Arboliva"
+  ],
+  "flying-rock": [
+    "Aerodactyl",
+    "Archen",
+    "Archeops",
+    "Minior"
+  ],
+  "normal-fire": [
+    "Litleo",
+    "Pyroar"
+  ],
+  "fire-electric": [
+    "Heat Rotom"
+  ],
+  "electric-fighting": [
+    "Pawmo",
+    "Pawmot",
+    "Iron Hands"
+  ],
+  "fire-grass": [
+    "Scovillain",
+    "Ogerpon Hearthflame Mask"
+  ],
+  "electric-dark": [
+    "Morpeko Full Belly",
+    "Morpeko Hangry"
+  ],
+  "electric-ice": [
+    "Arctozolt",
+    "Frost Rotom"
+  ],
+  "bug-dragon": [],
+  "electric-poison": [
+    "Toxel",
+    "Toxtricity Amped",
+    "Toxtricity Low Key"
+  ],
+  "electric-psychic": [
+    "Alolan Raichu"
+  ],
+  "electric-bug": [
+    "Joltik",
+    "Galvantula",
+    "Charjabug",
+    "Vikavolt"
+  ],
+  "fire-ice": [
+    "Galarian Zen Mode Darmanitan"
+  ],
+  "fighting-dragon": [
+    "Hakamo-o",
+    "Kommo-o",
+    "Koraidon"
+  ],
+  "electric-rock": [
+    "Iron Thorns",
+    "Alolan Geodude",
+    "Alolan Graveler",
+    "Alolan Golem"
+  ],
+  "ice-poison": [],
+  "ice-flying": [
+    "Articuno",
+    "Delibird"
+  ],
+  "rock-dragon": [
+    "Tyrunt",
+    "Tyrantrum"
+  ],
+  "ice-dark": [
+    "Sneasel",
+    "Weavile",
+    "Chien-Pao"
+  ],
+  "normal-fighting": [
+    "Stufful",
+    "Bewear",
+    "Pirouette Meloetta",
+    "Mega Lopunny"
+  ],
+  "bug-dark": [
+    "Lokix"
+  ],
+  "normal-ghost": [
+    "Hisuian Zorua",
+    "Hisuian Zoroark"
+  ],
+  "rock-ghost": [],
+  "rock-fairy": [
+    "Carbink",
+    "Diancie",
+    "Mega Diancie"
+  ],
+  "normal-dragon": [
+    "Drampa",
+    "Cyclizar"
+  ],
+  "normal-dark": [
+    "Obstagoon",
+    "Alolan Rattata",
+    "Alolan Raticate",
+    "Galarian Zigzagoon",
+    "Galarian Linoone"
+  ],
+  "normal-fairy": [
+    "Jigglypuff",
+    "Wigglytuff",
+    "Igglybuff",
+    "Azurill",
+    "Mega Audino"
+  ],
+  "normal-steel": [],
+  "psychic-bug": [
+    "Dottler",
+    "Orbeetle",
+    "Rabsca"
+  ],
+  "normal-electric": [
+    "Helioptile",
+    "Heliolisk"
+  ],
+  "normal-poison": [
+    "Shroodle",
+    "Grafaiai"
+  ],
+  "normal-ice": [],
+  "normal-bug": [],
+  "normal-rock": []
+}
