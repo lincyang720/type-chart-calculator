@@ -51,8 +51,8 @@ export default function PrivacyPolicyPage() {
           browser controls, privacy extensions, or cookie settings available in your region.
         </p>
         <p>
-          Advertising is currently disabled in the site code during review and setup. If TypeMatchup enables Google
-          AdSense later, ads will be served only through Google&apos;s official publisher tools and displayed in areas
+          Google AdSense advertising may be enabled on TypeMatchup. When enabled, ads are served through
+          Google&apos;s official publisher tools and displayed in areas
           labelled as advertising or otherwise clearly separate from navigation, calculator controls, download links, and
           editorial recommendations.
         </p>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
         <h2>Cookie and Local Storage Summary</h2>
         <p>
           TypeMatchup uses local storage to remember your analytics choice. If you accept analytics, Google Analytics and
-          Vercel Analytics may set measurement cookies or similar identifiers. If advertising is enabled later, Google
+          Vercel Analytics may set measurement cookies or similar identifiers. When advertising is enabled, Google
           AdSense and its advertising partners may set advertising cookies for ad delivery, fraud prevention, frequency
           capping, personalization where permitted, and performance measurement. Essential hosting, security, and payment
           providers may process technical information needed to deliver their services.

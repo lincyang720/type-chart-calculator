@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import MobileNav from '@/components/MobileNav';
 import ConsentPreferences from '@/components/ConsentPreferences';
+import AdSenseLoader from '@/components/AdSenseLoader';
 import ConsentSettingsButton from '@/components/ConsentSettingsButton';
 import WebMCPBootstrap from '@/components/WebMCPBootstrap';
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
@@ -117,6 +118,8 @@ export default function RootLayout({
         </footer>
 
         <ConsentPreferences />
+        {process.env.NEXT_PUBLIC_ADSENSE_ENABLED === 'true' &&
+          process.env.NEXT_PUBLIC_ADSENSE_CMP_READY === 'true' && <AdSenseLoader />}
         <WebMCPBootstrap />
         <ServiceWorkerRegister />
       </body>
