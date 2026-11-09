@@ -26,5 +26,7 @@ jobs:
         run: npm run typecheck
       - name: SEO guardrails
         run: npm run check:seo
+      - name: CMP consent regression checks
+        run: npm run check:consent
       - name: Production build
         run: npm run build
