@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+const layout = readFileSync('app/layout.tsx', 'utf8');
+assert.ok(layout.includes('<head>'));
+assert.ok(layout.includes('<script\n              async'));
+assert.ok(layout.includes('adsbygoogle.js?client=ca-pub-9200275562093244'));
+assert.ok(layout.includes("NEXT_PUBLIC_ADSENSE_ENABLED === 'true'"));
+assert.ok(layout.includes("NEXT_PUBLIC_ADSENSE_CMP_READY === 'true'"));
+assert.ok(!layout.includes('AdSenseLoader'));
+assert.ok(!layout.includes('data-nscript'));
+console.log('Native AdSense head tag checks passed.');

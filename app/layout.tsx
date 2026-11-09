@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import MobileNav from '@/components/MobileNav';
 import ConsentPreferences from '@/components/ConsentPreferences';
-import AdSenseLoader from '@/components/AdSenseLoader';
 import ConsentSettingsButton from '@/components/ConsentSettingsButton';
 import WebMCPBootstrap from '@/components/WebMCPBootstrap';
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
@@ -61,6 +60,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {process.env.NEXT_PUBLIC_ADSENSE_ENABLED === 'true' &&
+          process.env.NEXT_PUBLIC_ADSENSE_CMP_READY === 'true' && (
+            <script
+              async
+              crossOrigin="anonymous"
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9200275562093244"
+            />
+          )}
+      </head>
       <body suppressHydrationWarning>
         <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
           <nav aria-label="Primary" className="container mx-auto px-4 py-3">
@@ -118,8 +127,6 @@ export default function RootLayout({
         </footer>
 
         <ConsentPreferences />
-        {process.env.NEXT_PUBLIC_ADSENSE_ENABLED === 'true' &&
-          process.env.NEXT_PUBLIC_ADSENSE_CMP_READY === 'true' && <AdSenseLoader />}
         <WebMCPBootstrap />
         <ServiceWorkerRegister />
       </body>
