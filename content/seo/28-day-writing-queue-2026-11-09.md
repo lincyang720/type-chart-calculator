@@ -1,56 +1,84 @@
-# 28-day TypeMatchup verified-source editorial queue
+# TypeMatchup volume-led 28-page editorial work queue (2026-11-09)
 
-> Keyword locked: **pokemon type chart**. Comparator domains locked: pokemondb.net, sg.portal-pokemon.com, dittobase.com. Date: 2026-11-09.
-> 28 candidates, none automatically marked published. Long tails are unverified editorial phrases, NOT GSC measured queries.
+**ACTIVE QUEUE — replaces the old mechanics-first question queue.** This file is consumed by the daily 09:00 automation. No new article is published by this mapping-only change.
 
-| 序号 | 问题型英文标题 | 目标长尾词 | 独家缺口（每篇不重复） | 分类 | 对标取材页 |
-|---:|---|---|---|---|---|
-| 1 | Why Does Eelektross Have No Ground Weakness When Its Type Is Electric? | Eelektross Levitate Ground weakness | 电属性基础弱点与 Levitate 免疫条件对照 | 例外 | [正文来源](https://sg.portal-pokemon.com/pokedex/0604/) |
-| 2 | Does Mold Breaker Let a Ground Move Hit a Levitate Pokémon? | Mold Breaker vs Levitate Ground moves | 突破特性的攻击方规则，与 Levitate 本身分别验证 | 例外 | [正文来源](https://pokemondb.net/pokedex/eelektross) |
-| 3 | When Does Gravity Make Ground Moves Hit Flying-Type Pokémon? | Gravity Ground move Flying immunity | 场地状态前后同一目标攻防状态 | 场景 | [正文来源](https://dittobase.com/types/ground) |
-| 4 | Why Can Thousand Arrows Hit Flying Types Without Gravity? | Thousand Arrows Flying type effectiveness | 特殊招式自身例外，不等同于场地改变 | 例外 | [正文来源](https://dittobase.com/types/ground) |
-| 5 | Can Scrappy Make Normal and Fighting Moves Hit Ghost Pokémon? | Scrappy Ghost immunity Normal Fighting | 攻击方特性与幽灵防御免疫并列测试 | 例外 | [正文来源](https://dittobase.com/types/ghost) |
-| 6 | What Does Ring Target Actually Change About Type Immunities? | Ring Target held item type immunity | 目标持道具前后的类型免疫变化及适用限制 | 例外 | [正文来源](https://dittobase.com/types/steel) |
-| 7 | How Does Wonder Guard Change Which Moves Can Hit Shedinja? | Shedinja Wonder Guard type chart | 虫/幽灵本身倍率与守护特性不同层的保护 | 场景 | [正文来源](https://sg.portal-pokemon.com/pokedex/0292/) |
-| 8 | Why Does Freeze-Dry Hit Water/Ground Pokémon Super Effectively? | Freeze Dry Water Ground weakness | 特殊冰招式对水属性的例外与普通冰招式比较 | 例外 | [正文来源](https://pokemondb.net/type/dual) |
-| 9 | How Is Flying Press Different From an Ordinary Fighting Move? | Flying Press Fighting Flying dual type damage | 单招式双进攻属性的乘算，与普通格斗招式不同 | 例外 | [正文来源](https://dittobase.com/types) |
-| 10 | What Happens to Type Weaknesses After Soak Changes the Target? | Soak move changes Pokemon type weakness | 目标属性被改变前后两次计算对照 | 场景 | [正文来源](https://dittobase.com/types/water) |
-| 11 | Can Forest's Curse or Trick-or-Treat Add a Third Defensive Type? | Forest's Curse Trick-or-Treat third typing | 同类第三防御属性增添招式合并成一篇，不拆篇凑数 | 例外 | [正文来源](https://dittobase.com/types/grass) |
-| 12 | What Happens to a Pokémon's Defenses After Using Burn Up? | Burn Up remove Fire type weaknesses | 使用者失去火属性后单/双属性不同防御结果 | 例外 | [正文来源](https://dittobase.com/types/fire) |
-| 13 | When Do Protean and Libero Change a Pokémon's Defensive Type? | Protean Libero type change timing | 特性改变属性的生效时点与适用世代 | 场景 | [正文来源](https://pokemondb.net/type) |
-| 14 | Does Revelation Dance Use the User's Original Type or Current Type? | Revelation Dance type after Terastallization | 动态招式类型依当前属性变化而非固定表格 | 例外 | [正文来源](https://dittobase.com/scarlet-violet/guides/pokemon-type-effectiveness-guide) |
-| 15 | When Does Roost Remove a Flying-Type Pokémon's Ground Immunity? | Roost Flying type Ground immunity | Roost回合内移除飞行属性导致地面招式命中，区别于Gravity场地与Thousand Arrows特殊招式 | 场景 | [正文来源](https://pokemondb.net/type/dual) |
-| 16 | Can Electrify Turn an Opponent's Move Into an Electric Attack? | Electrify move changes opponent move type | 在对手出招前临时改变招式属性，重新计算对地面和水系目标的效果 | 例外 | [正文来源](https://pokemondb.net/move/electrify) |
-| 17 | Does Weather Ball Change Its Type in Sun, Rain, Snow or Sand? | Weather Ball type in weather | 天气改变招式自身属性而非改变防御者，且需按游戏版本判断 | 例外 | [正文来源](https://pokemondb.net/move/weather-ball) |
-| 18 | Was Ice Damage Against Fire Always Not Very Effective? | Gen 1 Ice vs Fire type effectiveness | 冰招式对火系第一世代例外 | 版本 | [正文来源](https://pokemondb.net/type/old) |
-| 19 | How Are Immunities Treated in Generation Six Inverse Battles? | Inverse Battle type immunities Generation 6 | 反转战只针对类型弱点的特别规则与特性区别 | 版本 | [正文来源](https://pokemondb.net/type/old) |
-| 20 | What Does Pokémon GO Do When an Electric Move Meets Ground/Flying? | Pokemon GO electric Ground Flying effectiveness | 同一复合目标在 GO 与主系列的零伤害/衰减差异 | 版本 | [正文来源](https://pokemondb.net/go/type) |
-| 21 | Why Does Mega Gyarados Take Different Electric Damage From Gyarados? | Mega Gyarados Electric weakness Water Dark | 水飞到水恶的形态变化与电系受伤差异 | 场景 | [正文来源](https://sg.portal-pokemon.com/pokedex/0130/) |
-| 22 | Why Does Mega Charizard X Have Different Rock and Electric Matchups? | Mega Charizard X Rock Electric weakness | 火飞变火龙后岩/电两个格子的变化，不重复普通Charizard教程 | 场景 | [正文来源](https://sg.portal-pokemon.com/pokedex/0006/) |
-| 23 | Why Can Heatran's Flash Fire Matter When Fire Is Already Resisted? | Heatran Flash Fire immunity Fire move | 火钢基础火抗性与 Flash Fire 特性免疫拆开说明 | 场景 | [正文来源](https://sg.portal-pokemon.com/pokedex/0485/) |
-| 24 | Does Tera Steel Fix Togekiss's Poison Weakness and Create New Risks? | Togekiss Tera Steel Poison Ground matchup | 妖精飞行改成钢后的毒免疫、地面新弱点对照 | 场景 | [正文来源](https://sg.portal-pokemon.com/pokedex/0468/) |
-| 25 | Which Dual-Type Combinations Are Immune to Electric Moves? | dual type Electric immunity combinations | 穷举双属性配对中电招式无效目标的完整可复核表 | 统计 | [正文来源](https://dittobase.com/types/electric) |
-| 26 | Which Dual-Type Pokémon Can Be Immune to Multiple Move Types Without Abilities? | dual type multiple immunities without abilities | 穷举自有矩阵的多重免疫组合排除特性 | 统计 | [正文来源](https://pokemondb.net/type/dual) |
-| 27 | How Often Does a Second Type Cancel a Super-Effective Hit to Neutral? | dual type weaknesses cancelled to neutral count | 统计所有不同双属性中2×与½×互抵的次数 | 统计 | [正文来源](https://pokemondb.net/type/dual) |
-| 28 | What Is the Smallest Set of Move Types That Hits Every Pure Type Super Effectively? | minimum offensive type coverage all mono types | 用精确集合覆盖方法验证纯属性超效覆盖是否可行及最小集合 | 统计 | [正文来源](https://pokemondb.net/tools/type-coverage) |
+- Fixed anchor keyword: **pokemon type chart**. Fixed competitors: **pokemondb.net / sg.portal-pokemon.com / dittobase.com**.
+- **Search volumes in this table are copied verbatim from the owner-supplied Google US monthly volume list.** They are user-supplied, not independently verified in GSC or a keyword tool, and have not been altered. `未查量` means no volume provided or verified, not zero.
+- 28 rows represent **28 distinct page-level optimization or editorial tasks**, **NOT 28 new pages**. Existing content wins when it can serve the intent; any new page must have different scope/canonical intent. No new article is warranted for synonyms of a current page.
+- Every new/updated page focuses on exactly its one row's primary target term. Neighboring phrases marked as aliases below are secondary natural wording only, not additional page targets. Do not keyword-stuff.
 
-## Writing and uniqueness rules
+## Cluster strategy
 
-- The site already has 23 content/blog Markdown posts. Current forbidden repeat intents include: general chart basics, dual-type introduction, four-times weakness catalog, general history/evolution, generic Pokémon GO chart, generic STAB and Tera overview, Fairy/Steel general guides, team build/coverage introductions, and the 2026-11-09 attack-vs-defense directionality article.
-- Before each draft search the live blog and updated repository; if an already published article answers substantially the same question, skip or combine and source a new independent gap. Conditional mechanisms should be documented separately only when their actual cause, needed inputs and effects differ, not for filler.
-- Statistical pieces must calculate against the site's data/defensiveTypeChart.json, include executable verification and disclose the precise sample/filters. Do not publish unverified counts.
-- For move mechanics, forms, ability rules and old games, verify authoritative game-generation-specific rules before writing. Competitor URLs above are starting contextual pages; do not claim the entire other website lacks the angle.
-- No competitor paragraphs copied; at least 30% meaningful original comparison/code-derived evidence; answer in first screen; no search volume, keyword difficulty or bid figures.
-- Production content counts only after PR tests, Vercel production URL renders, and sitemap includes URL. Record success and failure transparently.
+| 词簇 | 一句话页面策略 |
+|---|---|
+| 属性母词族 / charts | 完整可打印矩阵由 `/pokemon/type-chart` 承接；防御者索引由既有 `/pokemon` 改造，不能复制同一矩阵制造内耗 |
+| 弱点族 / single types | `/types/{type}` 单属性详情各自独立回答一种属性的防守弱点；新增 GO 专题必须分清游戏规则 |
+| 计算器族 / calculator | 首页是快速属性计算入口，`/calculator` 是防御弱点计算，`/battle-simulator` 是进攻招式与 STAB 的方向比较 |
+| 双属性族 / dual chart | 复用 `/dual-type-chart` 的全部组合图表，不为近义的 dual type chart 另建页面 |
+| GO 族 / Pokémon GO | 现有 GO 总览保留为总表，电系和普通系的 GO 限定问答才考虑不同新页面 |
 
-## Deduplication revision
+## Priority: unique keyword → unique canonical URL
 
-Rows 15–17 were changed after checking the full body of the site's own published type-chart-evolution.md: Gen 1 Ghost/Psychic and Bug/Poison plus Gen 6 Steel/Dark/Ghost are already covered there, so those proposed repetitions were removed. Replacements Roost, Electrify and Weather Ball involve different trigger mechanics and have verified source pages; all must still undergo prepublication freshness/duplication checks.
+| 序号 | 英文页面标题（主词家族） | 目标词 | 月搜（用户提供/未查量） | 落成什么页和文内信息增量 | 改已有还是新写 | 目标路径 |
+|---:|---|---|---|---|---|---|
+| 1 | Pokémon Type Chart: Complete Type Effectiveness Matrix | pokemon type chart | 20.1万 | 攻击×防御完整图表，主系列规则为主；正文加特性/招式例外对照 | 改已有页 | `/pokemon/type-chart` |
+| 2 | Pokémon Weakness Chart: Find What Beats Each Type | pokemon weakness chart | 6万 | 按防御者反查弱点的总览；为既有Pokémon目录页增加弱点速查表，避免重建同一张进攻矩阵 | 改已有页 | `/pokemon` |
+| 3 | Pokémon Type Calculator: Check Weaknesses and Resistances | pokemon type calculator | 2.7万 | 首页单/双属性交互工具；补入标准倍率与实际特性例外的提示 | 改已有页 | `/` |
+| 4 | All Pokémon Types: Names, Strengths and Weaknesses | all pokémon types | 1.8万 | 18 属性目录页；每个属性统一对照攻防与免疫，链接既有详情 | 改已有页 | `/types` |
+| 5 | Pokémon Electric Weakness: What Beats Electric Types? | pokemon electric weakness | 8100 | 基础地面弱点、Levitate等适用条件放同篇下方 | 改已有页 | `/types/electric` |
+| 6 | Pokémon Type Matchup: Check an Attacking Move Against a Defender | pokemon type matchup | 5400 | 选择攻击属性、目标属性及STAB的现有实战模拟器；不重复首页的防御型计算器 | 改已有页 | `/battle-simulator` |
+| 7 | Effective Pokémon Chart: Which Types Are Super Effective? | effective pokemon chart | 4400 | 已有逐格倍率页突出超效对照图；区别于/pokemon/type-chart完整可打印总表 | 改已有页 | `/type-effectiveness-calculator` |
+| 8 | Normal Pokémon Weakness: What Beats Normal Types? | normal pokemon weakness | 4400 | 普通属性格斗弱点、幽灵免疫、Scrappy例外在同页解释 | 改已有页 | `/types/normal` |
+| 9 | Pokémon GO Type Chart: Weaknesses and Damage Multipliers | pokemon go type chart | 2400 | 已有 GO 专题；补与主系列不同的免疫和倍率，不另建GO总表 | 改已有页 | `/blog/pokemon-go-type-chart-2026` |
+| 10 | Pokémon Weakness Calculator: Check Single and Dual Types | pokemon weakness calculator | 1900 | 已有 /calculator 以防御者输入为主；与首页主词区分工具意图 | 改已有页 | `/calculator` |
+| 11 | Fav Pokémon of Each Type: One Pick for Every Type | fav pokemon of each type | 1900 | 已有18属性编辑精选页；注明非官方投票、用类型例外解释选取理由 | 改已有页 | `/blog/fav-pokemon-of-each-type` |
+| 12 | Dual Type Chart: All Pokémon Type Combinations | dual type chart | 1600 | 已有153种双属性探索工具，补充例外说明；pokemon dual type chart同页承接 | 改已有页 | `/dual-type-chart` |
+| 13 | Pokémon Counter Chart: What Beats Every Type? | pokemon counter chart | 1000 | 已发以防守者为轴的克制速查表；放条件例外而非重写类型克制 | 改已有页 | `/blog/pokemon-counter-chart` |
+| 14 | Pokémon Advantage Chart: Compare a Team's Type Coverage | pokemon advantage chart | 390 | 已有队伍防御覆盖页增加可核查的优势/短板一览；必须避免误称为进攻招式覆盖 | 改已有页 | `/type-coverage-calculator` |
+| 15 | Dragon Types Chart: Dragon Weaknesses and Resistances | dragon types chart | 390 | 已上线龙属性详情；补具体版本/妖精免疫提示而不是新建龙总表 | 改已有页 | `/types/dragon` |
+| 16 | Pokémon GO Electric Weakness: What Beats Electric Pokémon? | pokemon go electric weakness | 320 | 仅讲GO的电系弱点及免疫倍率规则，与主系列电属性页不同 | 新写 | `/blog/pokemon-go-electric-weakness` |
+| 17 | Pokémon GO Normal Weakness: What Beats Normal Pokémon? | pokemon go normal weakness | 320 | 仅讲GO普通系的克制及幽灵双重抗性，与主系列普通系页不同 | 新写 | `/blog/pokemon-go-normal-weakness` |
+| 18 | Pokémon Fire Weakness: What Beats Fire Types? | pokemon fire weakness | 未查量 | 火系防御弱点、Flash Fire条件例外，改现有单属性页 | 改已有页 | `/types/fire` |
+| 19 | Pokémon Water Weakness: What Beats Water Types? | pokemon water weakness | 未查量 | 水系弱点与Soak后的变化，改现有详情页 | 改已有页 | `/types/water` |
+| 20 | Pokémon Grass Weakness: What Beats Grass Types? | pokemon grass weakness | 未查量 | 草系弱点与Forest's Curse等属性改变的差异 | 改已有页 | `/types/grass` |
+| 21 | Pokémon Ice Weakness: What Beats Ice Types? | pokemon ice weakness | 未查量 | 冰系防御弱点及Freeze-Dry招式不等同防守弱点的说明 | 改已有页 | `/types/ice` |
+| 22 | Pokémon Rock Weakness: What Beats Rock Types? | pokemon rock weakness | 未查量 | 岩石系基础防御弱点，区别普通岩石和双属性目标 | 改已有页 | `/types/rock` |
+| 23 | Pokémon Steel Weakness: What Beats Steel Types? | pokemon steel weakness | 未查量 | 钢系弱点、毒免疫以及道具例外的适用边界 | 改已有页 | `/types/steel` |
+| 24 | Pokémon Fairy Weakness: What Beats Fairy Types? | pokemon fairy weakness | 未查量 | 妖精弱点与龙系免疫，包含Tera后防守区别 | 改已有页 | `/types/fairy` |
+| 25 | Pokémon Ghost Weakness: What Beats Ghost Types? | pokemon ghost weakness | 未查量 | 幽灵基础弱点与Scrappy例外的不同层次 | 改已有页 | `/types/ghost` |
+| 26 | Pokémon Dark Weakness: What Beats Dark Types? | pokemon dark weakness | 未查量 | 恶系弱点、超能力免疫及攻击反向陷阱 | 改已有页 | `/types/dark` |
+| 27 | Pokémon Psychic Weakness: What Beats Psychic Types? | pokemon psychic weakness | 未查量 | 超能力弱点与历史版本变化只作为正文补充 | 改已有页 | `/types/psychic` |
+| 28 | Pokémon Fighting Weakness: What Beats Fighting Types? | pokemon fighting weakness | 未查量 | 格斗弱点与幽灵互相作用的方向性解释 | 改已有页 | `/types/fighting` |
 
-## Top three first
-1. **#8 Freeze-Dry** — a concrete special-move exception to a normal chart, with instantly verifiable calculations.
-2. **#1 Eelektross Levitate** — clear distinction between base Electric weakness and ability effect, grounded in official Pokédex.
-3. **#25 Electric immunity combinations** — reproducible novel dataset, distinct from a single Pokémon example.
+## Supplied words that MUST share an existing canonical target (not extra pages)
 
-## Competition audit
-See content/seo/competitor-30-page-audit-2026-11-09.md for full 30 audited pages and each page's contents and gaps.
+The following five owner-supplied phrases have their own supplied volumes, but the user intent strongly overlaps a mapped page. Adding another page would violate the no-cannibalization rule. These are **not additional 28 queue rows or separate primary targets**.
+
+| 用户原词 | 用户提供月搜 | 并入哪个主词 | 既有承接页面 |
+|---|---:|---|---|
+| pokemon chart | 5400 | pokemon type chart | `/pokemon/type-chart` |
+| element pokemon chart | 3600 | pokemon type chart | `/pokemon/type-chart` |
+| type effectiveness chart | 2900 | effective pokemon chart | `/type-effectiveness-calculator` |
+| pokemon dual type chart | 1300 | dual type chart | `/dual-type-chart` |
+| pokemon matchup chart | 1000 | pokemon type matchup | `/battle-simulator` |
+
+## Preconditions and publication gate
+
+1. **Before writing/editing:** read live `https://www.typematchup.org/sitemap.xml`, GitHub `app/sitemap.ts`, `content/blog/*.md`, and individual type pages. Recheck the latest main branch; the mapping is a snapshot, not a promise that no new page has appeared.
+2. **For existing URLs:** update that exact existing route or Markdown article and improve answer-first UX, calculated case examples, FAQ and internal links. Do **not** create a competing new slug to satisfy daily publication counts. A substantive existing-page improvement is recorded as an update, **not as a new article**.
+3. **For new pages:** only the two GO game-specific articles above are provisionally new, pending exact source/game-mechanic and duplication checks; even these can be cancelled if existing GO guide fully answers them. All planned new slugs are provisional until production validation.
+4. **Unverified variants:** `未查量` is not zero, but the editor must not state search demand is known. For a new proposed URL not already indexed, require user-supplied measured demand or a validated independent intent; do not invent volumes. In this list, the 11 unmeasured variants each map to **existing single-type pages** only.
+5. **Mechanics:** old special-move or ability topics (Freeze-Dry, Levitate, Scrappy, Roost, etc.) are **only supporting examples inside matching broad-intent pages**, never their own headline/new daily article. Validate precise generation before publishing.
+6. **Quality:** answer in first screen; add genuinely novel reproducible examples; don't copy competitor text; check per-page target uniqueness, TypeScript/SEO/build, Vercel Production and sitemap. Never claim new indexed pages until GSC verifies indexing. Never claim a new article when only editing old page.
+7. **Schedule conflict:** the original instruction "one *new* page per day" cannot be met from this deduplicated, high-volume list without duplicate/cannibalizing pages. Prioritize truthful existing-page updates; stop/flag the shortage rather than fabricate 28 new article URLs. User needs to provide additional separately verified long-tail demand if they insist on 28 brand-new pages. Keep the daily task running but report its actual action.
+8. **Counts:** this queue contains 28 unique canonical targets, 26 update tasks and 2 provisional new-page tasks. 11 target variants have no supplied monthly volume. The remaining 5 measured synonyms are explicitly merged in the appendix, not silently discarded.
+
+## Recommended first five (actual editorial actions)
+
+1. `pokemon type chart`: enhance existing complete chart with a higher-quality first-screen answer and print/mobile improvements.
+2. `pokemon weakness chart`: make the existing Pokémon directory provide a true defender-first weakness lookup (distinct from the full attack-first matrix).
+3. `pokemon type calculator`: improve homepage calculator clarity and client rendering stability, keep existing canonical.
+4. `all pokémon types`: improve the types directory and per-type navigation.
+5. `pokemon electric weakness`: improve existing electric type page with ability-conditioned examples.
+
+**No article is created or published by this file change.**
