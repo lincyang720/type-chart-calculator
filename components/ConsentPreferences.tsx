@@ -63,7 +63,8 @@ function CmpControlledAnalytics() {
 
   useEffect(() => {
     const win = window as typeof window & { googlefc?: GoogleFc };
-    const fc = win.googlefc || (win.googlefc = { callbackQueue: [] });
+    const fc: GoogleFc = win.googlefc ?? { callbackQueue: [] as Record<string, () => void>[] };
+    win.googlefc = fc;
 
     // Google's documented basic-consent-mode integration. Status GRANTED=1;
     // DENIED/UNKNOWN/NOT_APPLICABLE/NOT_CONFIGURED all fail closed.
