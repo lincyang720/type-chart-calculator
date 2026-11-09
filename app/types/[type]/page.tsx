@@ -22,6 +22,29 @@ const ALL_TYPES: TypeId[] = [
   'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy'
 ];
 
+// One contextual, topic-specific anchor per single-type page. This mapping is
+// intentionally not used by dual-type routes (those render DualTypeContent).
+const TEAM_BUILDER_ANCHORS: Record<TypeId, string> = {
+  normal: 'check if Normal teammates can cover Fighting attacks',
+  fire: 'test a Fire slot against shared Water, Ground and Rock pressure',
+  water: 'see whether Water picks leave your team open to Electric attacks',
+  electric: 'find a safe teammate for Electric-type Ground weaknesses',
+  grass: 'compare how a Grass pick changes the team’s Ice and Fire exposure',
+  ice: 'check whether an Ice slot stacks Rock and Fighting vulnerabilities',
+  fighting: 'balance Fighting picks against Psychic and Flying threats',
+  poison: 'test whether Poison teammates cover each other’s Ground weakness',
+  ground: 'see if Ground partners leave common Water and Ice gaps',
+  flying: 'plan a Flying slot around Electric, Ice and Rock attacks',
+  psychic: 'review Psychic teammates against Ghost, Dark and Bug coverage',
+  bug: 'check a Bug member’s impact on the whole team’s Fire defense',
+  rock: 'see whether Rock partners can absorb Water and Ground hits',
+  ghost: 'see how Ghost members fit into a six-Pokémon defensive lineup',
+  dragon: 'balance Dragon picks against shared Ice and Fairy pressure',
+  dark: 'measure team-wide answers to Fighting, Bug and Fairy attacks',
+  steel: 'test if Steel’s resistances protect your other five slots',
+  fairy: 'check how Fairy teammates affect your Poison and Steel coverage',
+};
+
 const typeChart = typeChartData as TypeChart;
 const defensiveTypeChart = defensiveTypeChartData as DefensiveTypeChart;
 
@@ -1113,6 +1136,16 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
             </p>
           </article>
         )}
+
+        {/* Single-type editorial cross-link: useful when one type's weakness becomes a whole-team risk. */}
+        <p className="mb-6 rounded-lg border border-blue-100 bg-blue-50 p-4 text-gray-800">
+          A {type.name}-type weakness is only one part of a lineup. To check whether your other picks can switch
+          into those attacks,{' '}
+          <Link href="/team-builder" className="font-semibold text-blue-700 underline hover:text-blue-900">
+            {TEAM_BUILDER_ANCHORS[typeId]}
+          </Link>{' '}
+          in the six-slot team editor.
+        </p>
 
         {/* FAQ Section */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-6">
