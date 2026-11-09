@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
     <div className="container mx-auto px-4 py-10">
       <article className="max-w-3xl mx-auto prose prose-gray">
         <h1>Privacy Policy</h1>
-        <p><strong>Last updated:</strong> August 29, 2026</p>
+        <p><strong>Last updated:</strong> November 9, 2026</p>
         <p>
           TypeMatchup operates the website at typematchup.org. This Privacy Policy explains what information may be
           collected when you use the site, why it is used, and the choices available to you. By using TypeMatchup, you
@@ -75,15 +75,19 @@ export default function PrivacyPolicyPage() {
 
         <h2>Cookie and Local Storage Summary</h2>
         <p>
-          TypeMatchup uses local storage to remember your analytics choice. If you accept analytics, Google Analytics and
-          Vercel Analytics may set measurement cookies or similar identifiers. When advertising is enabled, Google
+          When advertising is disabled, TypeMatchup uses local storage to remember your optional analytics choice.
+          If you accept, Google Analytics and Vercel Analytics may set measurement cookies or similar identifiers.
+          When advertising is enabled, the Google consent management platform (CMP) manages applicable consent
+          choices instead of our separate analytics prompt. Google Analytics loads only after the CMP reports
+          analytics consent granted; Vercel Analytics is disabled in this mode. Google
           AdSense and its advertising partners may set advertising cookies for ad delivery, fraud prevention, frequency
           capping, personalization where permitted, and performance measurement. Essential hosting, security, and payment
           providers may process technical information needed to deliver their services.
         </p>
         <p>
-          You can reopen privacy choices from the footer, reject optional analytics, clear browser storage, block cookies
-          in your browser, or contact us if you need help understanding which controls apply to your location.
+          You can access privacy choices from the footer, reject optional analytics in the standalone consent prompt
+          when advertising is disabled, or use available Google CMP revocation controls when advertising is enabled.
+          You can also clear browser storage, block cookies, or contact us about region-specific controls.
         </p>
 
         <h2>Location Data and Advertising Choices</h2>
