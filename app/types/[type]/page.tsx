@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import GhostWeaknessGuide, { GHOST_WEAKNESS_FAQS } from '@/components/GhostWeaknessGuide';
 import TypeBadge from '@/components/TypeBadge';
 import { DefensiveTypeChart, TypeChart, TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
@@ -123,6 +124,19 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   const defensive = defensiveTypeChart[typeId];
   const offensive = typeChart[typeId];
 
+  if (typeId === 'ghost') {
+    const title = 'Pokemon Ghost Weakness: What Beats Ghost Types?';
+    const description = 'Ghost-type Pokémon are weak to Ghost and Dark moves (2×). See complete Ghost attack/defense matchups, immunities, a computed 18-type chart, dual-type examples and FAQ.';
+    return {
+      title,
+      description,
+      keywords: 'pokemon ghost weakness',
+      alternates: { canonical: '/types/ghost' },
+      openGraph: { siteName: 'TypeMatchup', title, description, url: 'https://www.typematchup.org/types/ghost', type: 'website' },
+      twitter: { card: 'summary_large_image', title, description },
+    };
+  }
+
   if (typeId === 'dragon') {
     return {
       title: 'Dragon Type Weaknesses & Chart: What Beats Dragon Pokémon?',
@@ -223,7 +237,13 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: [
+            mainEntity: typeId === 'ghost'
+              ? GHOST_WEAKNESS_FAQS.map(({ question, answer }) => ({
+                  '@type': 'Question',
+                  name: question,
+                  acceptedAnswer: { '@type': 'Answer', text: answer },
+                }))
+              : [
               {
                 '@type': 'Question',
                 name: `What is ${type.name} type strong against?`,
@@ -266,10 +286,10 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{type.name} Type</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'ghost' ? 'Pokemon Ghost Weakness: What Beats Ghost Types?' : `${type.name} Type`}</h1>
           </div>
-          <p className="text-lg text-gray-600">{type.description}</p>
-          {PRIORITY_CTR_TYPES.includes(typeId) && (
+          <p className="text-lg text-gray-700">{typeId === 'ghost' ? 'Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2× damage against a pure Ghost defender.' : type.description}</p>
+          {PRIORITY_CTR_TYPES.includes(typeId) && typeId !== 'ghost' && (
             <div className="mt-5 rounded-lg border border-blue-200 bg-blue-50 p-4 text-gray-800">
               <p>
                 <strong>Quick answer:</strong> {type.name}-type Pokémon are weak to {formatTypeNames(defensive.weakTo)}.
@@ -330,50 +350,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </article>
         )}
 
-        {typeId === 'ghost' && (
-          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
-            <h2>Ghost type in battle</h2>
-            <p>
-              <strong>Direct answer:</strong> Ghost-type moves are super effective (2×) against Psychic and Ghost, and do nothing (0×) to Normal.
-              A Ghost Pokémon is weak (2×) to Ghost and Dark, and is immune (0×) to both Normal and Fighting.
-            </p>
-
-            <h3>Scenario 1 — switching into a Normal or Fighting move</h3>
-            <p>
-              You bring in Gengar as the opponent clicks Fake Out, Rapid Spin, or Close Combat. None of those connect: Ghost is immune to both Normal and Fighting.
-              That free turn is why Ghost is such a good defensive pivot — but only against those two categories, not against everything.
-            </p>
-
-            <h3>Scenario 2 — Ghost versus Ghost</h3>
-            <p>
-              Your Ghost faces a Ghost (think Gengar into Dragapult). Ghost is weak to Ghost, and Ghost moves are super effective against Ghost —
-              so it cuts both ways at 2×. Players often assume "same type = neutral" and lose a Pokémon they thought was safe.
-            </p>
-
-            <h3>Scenario 3 — a Dark attacker shows up</h3>
-            <p>
-              Dark moves hit Ghost for 2×. If you cannot switch to something that blanks Dark (a Fighting-immune or Dark-resistant partner),
-              the Ghost gets worn down fast. Terastallizing to a type that drops the Dark weakness is the common fix.
-            </p>
-
-            <h3>What Ghost players most often get wrong</h3>
-            <ul>
-              <li><strong>Ghost is immune to BOTH Normal and Fighting.</strong> Most people remember one and forget the other. Both Normal and Fighting moves do 0× to every Ghost Pokémon, and Ghost moves in turn do 0× to Normal.</li>
-              <li><strong>Ghost is weak to Ghost.</strong> The "same type feels neutral" trap again — Ghost takes 2× from Ghost moves, exactly like it does from Dark.</li>
-              <li><strong>Poison attacks do not affect Steel.</strong> That is the chart’s 0× interaction; Rock and Ghost instead take 0.5× damage from Poison moves. These are different outcomes, so check the target type before treating a resisted hit as an immunity.</li>
-            </ul>
-            <h3>Three real dual-type checks</h3>
-            <table className="w-full text-left border-collapse">
-              <thead><tr className="border-b"><th className="py-2">Pokémon and target move</th><th className="py-2">Calculation</th><th className="py-2">Final result</th></tr></thead>
-              <tbody>
-                <tr className="border-b"><td className="py-2">Gengar (Ghost/Poison) vs Ground</td><td className="py-2">1× × 2×</td><td className="py-2">2×</td></tr>
-                <tr className="border-b"><td className="py-2">Gengar (Ghost/Poison) vs Psychic</td><td className="py-2">1× × 2×</td><td className="py-2">2×</td></tr>
-                <tr><td className="py-2">Aegislash (Ghost/Steel) vs Fighting</td><td className="py-2">0× × 2×</td><td className="py-2">0×</td></tr>
-              </tbody>
-            </table>
-            <p>These examples show why the Ghost row alone is not enough: the second type can turn a neutral matchup into a weakness or preserve an immunity when the other type is weak.</p>
-          </article>
-        )}
+        {typeId === 'ghost' && <GhostWeaknessGuide />}
 
         {typeId === 'poison' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">

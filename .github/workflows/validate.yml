@@ -34,5 +34,7 @@ jobs:
         run: npm run check:cmp-diagnostic
       - name: Verify original directional chart statistics
         run: npm run check:type-direction
+      - name: Verify Ghost weakness data and page scope
+        run: npm run check:ghost-weakness
       - name: Production build
         run: npm run build
