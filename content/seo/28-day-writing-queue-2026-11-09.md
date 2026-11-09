@@ -19,9 +19,9 @@
 | 12 | What Happens to a Pokémon's Defenses After Using Burn Up? | Burn Up remove Fire type weaknesses | 使用者失去火属性后单/双属性不同防御结果 | 例外 | [正文来源](https://dittobase.com/types/fire) |
 | 13 | When Do Protean and Libero Change a Pokémon's Defensive Type? | Protean Libero type change timing | 特性改变属性的生效时点与适用世代 | 场景 | [正文来源](https://pokemondb.net/type) |
 | 14 | Does Revelation Dance Use the User's Original Type or Current Type? | Revelation Dance type after Terastallization | 动态招式类型依当前属性变化而非固定表格 | 例外 | [正文来源](https://dittobase.com/scarlet-violet/guides/pokemon-type-effectiveness-guide) |
-| 15 | Why Did Ghost Moves Fail Against Psychic Pokémon in Generation One? | Gen 1 Ghost Psychic type chart difference | 第一世代特殊格子与现代规则的单点复盘 | 版本 | [正文来源](https://pokemondb.net/type/old) |
-| 16 | How Did Bug and Poison Change Against Each Other After Generation One? | Gen 1 Bug Poison type chart changes | 虫/毒旧世代双向互克关系及新版非对称 | 反向情况 | [正文来源](https://pokemondb.net/type/old) |
-| 17 | When Did Steel Stop Resisting Ghost and Dark Attacks? | Steel Ghost Dark resistance generation 6 | 钢抗幽灵/恶在世代间的具体变化 | 版本 | [正文来源](https://pokemondb.net/type/old) |
+| 15 | When Does Roost Remove a Flying-Type Pokémon's Ground Immunity? | Roost Flying type Ground immunity | Roost回合内移除飞行属性导致地面招式命中，区别于Gravity场地与Thousand Arrows特殊招式 | 场景 | [正文来源](https://pokemondb.net/type/dual) |
+| 16 | Can Electrify Turn an Opponent's Move Into an Electric Attack? | Electrify move changes opponent move type | 在对手出招前临时改变招式属性，重新计算对地面和水系目标的效果 | 例外 | [正文来源](https://pokemondb.net/move/electrify) |
+| 17 | Does Weather Ball Change Its Type in Sun, Rain, Snow or Sand? | Weather Ball type in weather | 天气改变招式自身属性而非改变防御者，且需按游戏版本判断 | 例外 | [正文来源](https://pokemondb.net/move/weather-ball) |
 | 18 | Was Ice Damage Against Fire Always Not Very Effective? | Gen 1 Ice vs Fire type effectiveness | 冰招式对火系第一世代例外 | 版本 | [正文来源](https://pokemondb.net/type/old) |
 | 19 | How Are Immunities Treated in Generation Six Inverse Battles? | Inverse Battle type immunities Generation 6 | 反转战只针对类型弱点的特别规则与特性区别 | 版本 | [正文来源](https://pokemondb.net/type/old) |
 | 20 | What Does Pokémon GO Do When an Electric Move Meets Ground/Flying? | Pokemon GO electric Ground Flying effectiveness | 同一复合目标在 GO 与主系列的零伤害/衰减差异 | 版本 | [正文来源](https://pokemondb.net/go/type) |
@@ -42,6 +42,10 @@
 - For move mechanics, forms, ability rules and old games, verify authoritative game-generation-specific rules before writing. Competitor URLs above are starting contextual pages; do not claim the entire other website lacks the angle.
 - No competitor paragraphs copied; at least 30% meaningful original comparison/code-derived evidence; answer in first screen; no search volume, keyword difficulty or bid figures.
 - Production content counts only after PR tests, Vercel production URL renders, and sitemap includes URL. Record success and failure transparently.
+
+## Deduplication revision
+
+Rows 15–17 were changed after checking the full body of the site's own published type-chart-evolution.md: Gen 1 Ghost/Psychic and Bug/Poison plus Gen 6 Steel/Dark/Ghost are already covered there, so those proposed repetitions were removed. Replacements Roost, Electrify and Weather Ball involve different trigger mechanics and have verified source pages; all must still undergo prepublication freshness/duplication checks.
 
 ## Top three first
 1. **#8 Freeze-Dry** — a concrete special-move exception to a normal chart, with instantly verifiable calculations.
