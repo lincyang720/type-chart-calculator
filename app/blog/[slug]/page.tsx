@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     : null;
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-3 py-6 sm:px-4 sm:py-8">
       {faqSchema && <JsonLd data={faqSchema} />}
       <div className="max-w-4xl mx-auto">
         {/* Back to Blog */}
@@ -92,9 +92,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </Link>
 
         {/* Article Header */}
-        <article className="bg-white rounded-lg shadow-lg p-8">
+        <article className="bg-white rounded-lg shadow-lg p-4 sm:p-8">
           <header className="mb-8">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
               {data.tags?.map((tag: string) => (
                 <span
                   key={tag}
@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               ))}
             </div>
 
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold leading-tight text-gray-900 mb-4">
               {data.title}
             </h1>
 
@@ -181,6 +181,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 ),
                 hr: ({ node, ...props }) => (
                   <hr className="my-8 border-gray-300" {...props} />
+                ),
+                table: ({ node, ...props }) => (
+                  <div className="my-6 max-w-full overflow-x-auto rounded-lg border border-gray-200" tabIndex={0} role="region" aria-label="Scrollable data table">
+                    <table className="w-full min-w-[32rem] border-collapse text-left text-sm sm:text-base" {...props} />
+                  </div>
+                ),
+                img: ({ node, alt, ...props }) => (
+                  <img alt={alt || ""} loading="lazy" className="my-5 h-auto max-w-full rounded-lg border border-gray-200" {...props} />
                 ),
               }}
             >
