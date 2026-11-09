@@ -76,7 +76,7 @@ export default function ConsentPreferences() {
           <h2 className="text-lg font-bold text-gray-900">Your privacy choices</h2>
           <p className="mt-2 text-sm text-gray-700">
             We use optional analytics to understand which tools are useful. You can accept or reject analytics; the
-            calculators work either way. Advertising is currently disabled. See our <a href="/privacy" className="text-blue-700 underline">Privacy Policy</a>.
+            calculators work either way. Advertising preferences, where required, are handled separately through our advertising consent provider. See our <a href="/privacy" className="text-blue-700 underline">Privacy Policy</a>.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <button type="button" onClick={() => choose('accepted')} className="rounded-lg bg-blue-700 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-800">Accept analytics</button>
