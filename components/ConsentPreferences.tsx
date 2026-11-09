@@ -68,8 +68,9 @@ function CmpControlledAnalytics() {
 
     // Google's documented basic-consent-mode integration. Status GRANTED=1;
     // DENIED/UNKNOWN/NOT_APPLICABLE/NOT_CONFIGURED all fail closed.
-    fc.callbackQueue = fc.callbackQueue || [];
-    fc.callbackQueue.push({
+    const queue = fc.callbackQueue ?? ([] as Record<string, () => void>[]);
+    fc.callbackQueue = queue;
+    queue.push({
       CONSENT_MODE_DATA_READY: () => {
         const status = fc.getGoogleConsentModeValues?.().analyticsStoragePurposeConsentStatus;
         setAllowed(status === 1);
