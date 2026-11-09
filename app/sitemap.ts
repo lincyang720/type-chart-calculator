@@ -28,6 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/team-builder`,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/battle-simulator`,
       changeFrequency: 'weekly' as const,
       priority: 0.9,

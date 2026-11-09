@@ -117,6 +117,12 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="mb-8 text-center">
+          <Link href="/team-builder" className="inline-flex min-h-11 items-center justify-center rounded-lg border border-blue-200 bg-blue-50 px-5 py-2 font-semibold text-blue-800 hover:bg-blue-100">
+            Build a six-Pokémon team and check team weaknesses →
+          </Link>
+        </div>
+
         {latestGuides.length > 0 && (
           <section className="mb-12" aria-labelledby="latest-guides">
             <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
