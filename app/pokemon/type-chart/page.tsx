@@ -481,6 +481,14 @@ export default function TypeChartPage() {
           </div>
         </section>
 
+        <p className="mb-8 rounded-lg border border-blue-100 bg-blue-50 p-4 text-gray-800 print:hidden">
+          This chart evaluates one matchup at a time. When picking six Pokémon,{' '}
+          <Link href="/team-builder" className="font-semibold text-blue-700 underline hover:text-blue-900">
+            turn this chart into a six-member resistance check
+          </Link>{' '}
+          to find the attack types that none of your chosen Pokémon can safely resist.
+        </p>
+
         {/* Quick reference tips */}
         <section className="mb-12 bg-gray-50 rounded-lg p-6 print:hidden">
           <h2 className="text-2xl font-bold mb-4">Quick Reference Tips</h2>
