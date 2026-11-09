@@ -68,6 +68,11 @@ export default function CalculatorPage() {
 
         <DualTypeCalculator />
 
+        <p className="mt-5 text-center text-gray-700">
+          Picking actual Pokémon for a six-member team?{' '}
+          <a href="/team-builder" className="font-semibold text-blue-700 underline">Open the Pokemon Team Builder</a>.
+        </p>
+
         <div className="mt-8">
           <AssistantEntryCta compact />
         </div>
