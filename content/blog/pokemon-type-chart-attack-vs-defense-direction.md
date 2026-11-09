@@ -4,6 +4,8 @@ title: "Pokémon Type Chart: Why Attack and Defense Are Not Reversible"
 description: "The Pokémon type chart is directional: 74 of 153 distinct type pairs have different multipliers when attack and defense are reversed. Check 10 verified examples and avoid reading the chart backward."
 date: "2026-11-09"
 author: "TypeMatchup"
+image: "/seo/type-chart-directionality.svg"
+updated: "2026-11-09"
 tags: ["pokemon type chart", "type effectiveness", "attacking vs defending", "type matchups"]
 faq:
   - question: "Can you reverse the attack and defense columns on the Pokémon type chart?"
@@ -22,7 +24,11 @@ faq:
 
 **No—you cannot read the Pokémon type chart backward.** The type of the **move** goes on the attacking axis, and the type of the **target Pokémon** goes on the defending axis. Ground-type moves hit pure Electric-type targets for **2×**, but Electric-type moves hit pure Ground-type targets for **0×**. Reversing the two types changes the question.
 
+![Original infographic: Ground attacks Electric for 2×, Electric attacks Ground for 0×](/seo/type-chart-directionality.svg)
+
 This is not a rare technicality. We compared every pair of *different* types in the current 18-type main-series chart using [TypeMatchup's underlying data](/pokemon/type-chart). Of the **153 unordered type pairs**, **74 have different multipliers when attacker and defender are switched**; **79 have matching multipliers**. These counts describe **base single-type effectiveness only**—not a Pokémon's actual total battle damage. The full calculation and the ten case studies are below.
+
+![TypeMatchup audit: 74 of 153 different-type pairs behave differently when reversed](/seo/type-chart-audit.svg)
 
 ## A direction-check table: ten matchups that fool people
 
