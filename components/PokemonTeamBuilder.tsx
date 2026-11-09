@@ -14,6 +14,104 @@ const TYPES: TypeId[] = [
 ];
 const EMPTY_TEAM: (string | null)[] = [null, null, null, null, null, null];
 
+type WeaknessTotals = { weak2: number; weak4: number };
+type SwapSuggestion = {
+  pokemon: TeamBuilderPokemon;
+  replaceIndex: number;
+  replacedName: string;
+  before: WeaknessTotals;
+  after: WeaknessTotals;
+  gain: number;
+  attack: TypeId;
+  attackBefore2: number;
+  attackAfter2: number;
+  attackBefore4: number;
+  attackAfter4: number;
+};
+
+/** Every score counts all 18 attacking types and all six defenders. */
+function weaknessTotals(team: TeamBuilderPokemon[]): WeaknessTotals {
+  let weak2 = 0;
+  let weak4 = 0;
+  for (const member of team) {
+    for (const attack of TYPES) {
+      const multiplier = calculateMultiplier(attack, member.types);
+      if (multiplier === 2) weak2 += 1;
+      if (multiplier === 4) weak4 += 1;
+    }
+  }
+  return { weak2, weak4 };
+}
+
+/**
+ * Return up to three unique, real Pokémon not already on the six-member team.
+ * Each candidate is scored by its best single-slot replacement, never as a
+ * seventh member. Equal-score results prefer fewer 4× weaknesses and then name.
+ */
+function suggestReplacements(
+  team: TeamBuilderPokemon[],
+  roster: TeamBuilderPokemon[],
+): SwapSuggestion[] {
+  if (team.length !== 6) return [];
+  const selectedIds = new Set(team.map(member => member.id));
+  const before = weaknessTotals(team);
+  const scored: SwapSuggestion[] = [];
+
+  for (const candidate of roster) {
+    if (selectedIds.has(candidate.id)) continue;
+
+    let best: SwapSuggestion | null = null;
+    for (let index = 0; index < team.length; index += 1) {
+      const outgoing = team[index];
+      const after = weaknessTotals(team.map((member, slot) => slot === index ? candidate : member));
+      const gain = before.weak2 + before.weak4 - after.weak2 - after.weak4;
+      if (gain <= 0) continue;
+
+      const improved = TYPES.map(attack => {
+        const oldMultiplier = calculateMultiplier(attack, outgoing.types);
+        const newMultiplier = calculateMultiplier(attack, candidate.types);
+        const attackBefore2 = team.filter(member => calculateMultiplier(attack, member.types) === 2).length;
+        const attackBefore4 = team.filter(member => calculateMultiplier(attack, member.types) === 4).length;
+        const attackAfter2 = attackBefore2 - Number(oldMultiplier === 2) + Number(newMultiplier === 2);
+        const attackAfter4 = attackBefore4 - Number(oldMultiplier === 4) + Number(newMultiplier === 4);
+        return {
+          attack, attackBefore2, attackAfter2, attackBefore4, attackAfter4,
+          benefit: (attackBefore2 + attackBefore4) - (attackAfter2 + attackAfter4),
+        };
+      }).filter(result => result.benefit > 0)
+        .sort((a, b) => b.benefit - a.benefit || a.attack.localeCompare(b.attack));
+      if (!improved.length) continue;
+
+      const focus = improved[0];
+      const option: SwapSuggestion = {
+        pokemon: candidate,
+        replaceIndex: index,
+        replacedName: outgoing.name,
+        before,
+        after,
+        gain,
+        attack: focus.attack,
+        attackBefore2: focus.attackBefore2,
+        attackAfter2: focus.attackAfter2,
+        attackBefore4: focus.attackBefore4,
+        attackAfter4: focus.attackAfter4,
+      };
+      if (!best || option.gain > best.gain ||
+          (option.gain === best.gain && option.after.weak4 < best.after.weak4) ||
+          (option.gain === best.gain && option.after.weak4 === best.after.weak4 && option.replaceIndex < best.replaceIndex)) {
+        best = option;
+      }
+    }
+    if (best) scored.push(best);
+  }
+
+  return scored.sort((a, b) =>
+    b.gain - a.gain || a.after.weak4 - b.after.weak4 ||
+    a.pokemon.name.localeCompare(b.pokemon.name) || a.replaceIndex - b.replaceIndex
+  ).slice(0, 3);
+}
+
+
 function titleCase(type: TypeId) {
   return type.charAt(0).toUpperCase() + type.slice(1);
 }
@@ -26,6 +124,13 @@ export default function PokemonTeamBuilder({ pokemon }: { pokemon: TeamBuilderPo
   const byId = useMemo(() => new Map(pokemon.map(p => [p.id, p])), [pokemon]);
   const members = team.map(id => id ? byId.get(id) ?? null : null);
   const filled = members.filter((member): member is TeamBuilderPokemon => Boolean(member));
+  const replacementSuggestions = useMemo(
+    () => filled.length === 6 ? suggestReplacements(filled, pokemon) : [],
+    // members is derived from team; memoize the expensive candidate comparison on team changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [team, pokemon],
+  );
+
 
   function assign(index: number, id: string) {
     const selected = byId.get(id);
@@ -190,6 +295,39 @@ export default function PokemonTeamBuilder({ pokemon }: { pokemon: TeamBuilderPo
               </p>
               <p className="mt-2 text-xs text-gray-600">No resistance or immunity from any selected Pokémon: {gaps.length ? gaps.map(row => titleCase(row.attack)).join(', ') : 'none'}.</p>
             </div>
+          </>
+        )}
+      </section>
+      <section aria-labelledby="suggestions-heading" aria-live="polite" className="rounded-xl border border-gray-200 bg-white p-3 shadow-sm sm:p-5">
+        <h2 id="suggestions-heading" className="text-xl font-bold text-gray-900">Suggested team replacements</h2>
+        {filled.length < 6 ? (
+          <p className="mt-2 text-sm text-gray-700">Choose {6 - filled.length} more Pokémon to see three data-based replacement suggestions.</p>
+        ) : replacementSuggestions.length === 0 ? (
+          <p className="mt-2 text-sm text-gray-700">No unselected Pokémon in the local roster improves the team's total 2× + 4× defensive weakness count through a single replacement.</p>
+        ) : (
+          <>
+            <p className="mt-2 text-sm text-gray-600">Best one-for-one swaps from the site's existing Pokémon list, ranked by the total number of 2× and 4× weaknesses removed. Results update if you swap a member.</p>
+            <ol className="mt-3 space-y-3">
+              {replacementSuggestions.map((suggestion, index) => (
+                <li key={suggestion.pokemon.id} className="flex min-w-0 flex-col gap-3 rounded-lg border border-gray-200 bg-gray-50 p-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="min-w-0">
+                    <p className="font-bold text-gray-900">{index + 1}. {suggestion.pokemon.name} <span className="text-sm font-normal text-gray-700">for {suggestion.replacedName} (slot {suggestion.replaceIndex + 1})</span></p>
+                    <p className="mt-1 text-sm text-gray-800">
+                      Covers {titleCase(suggestion.attack)} pressure: 2× hits {suggestion.attackBefore2} → {suggestion.attackAfter2}; 4× hits {suggestion.attackBefore4} → {suggestion.attackAfter4}.
+                    </p>
+                    <p className="mt-1 text-sm text-gray-700">
+                      Whole team: 2× hits {suggestion.before.weak2} → {suggestion.after.weak2}; 4× hits {suggestion.before.weak4} → {suggestion.after.weak4} (reduces total by {suggestion.gain}).
+                    </p>
+                  </div>
+                  <button type="button"
+                    onClick={() => assign(suggestion.replaceIndex, suggestion.pokemon.id)}
+                    aria-label={'Replace ' + suggestion.replacedName + ' with ' + suggestion.pokemon.name}
+                    className="w-full shrink-0 rounded-lg bg-blue-700 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-800 sm:w-auto">
+                    Make this swap
+                  </button>
+                </li>
+              ))}
+            </ol>
           </>
         )}
       </section>
