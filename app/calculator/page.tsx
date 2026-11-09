@@ -70,7 +70,7 @@ export default function CalculatorPage() {
 
         <p className="mt-5 text-center text-gray-700">
           Picking actual Pokémon for a six-member team?{' '}
-          <a href="/team-builder" className="font-semibold text-blue-700 underline">Open the Pokemon Team Builder</a>.
+          <a href="/team-builder" className="font-semibold text-blue-700 underline">compare the six Pokémon together for shared defensive gaps</a>.
         </p>
 
         <div className="mt-8">

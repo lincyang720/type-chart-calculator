@@ -109,6 +109,15 @@ export default function Page() {
         ))}
       </article>
 
+      <p className="mx-auto mb-8 max-w-4xl rounded-lg border border-blue-100 bg-blue-50 p-4 text-gray-800">
+        Picking the strongest dual typing does not show whether the rest of a six-member team covers its weaknesses.
+        To compare actual Pokémon together,{' '}
+        <a href="/team-builder" className="font-semibold text-blue-700 underline hover:text-blue-900">
+          test your six picks for overlapping dual-type weaknesses
+        </a>{' '}
+        before settling on a lineup.
+      </p>
+
       <ToolNetwork current="/dual-type-chart" />
     </main>
   );
