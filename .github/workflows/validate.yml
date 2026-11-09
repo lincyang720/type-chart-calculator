@@ -32,5 +32,7 @@ jobs:
         run: npm run check:adsense
       - name: CMP diagnostic guardrails
         run: npm run check:cmp-diagnostic
+      - name: Verify original directional chart statistics
+        run: npm run check:type-direction
       - name: Production build
         run: npm run build
