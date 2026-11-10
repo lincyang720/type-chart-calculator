@@ -7,7 +7,7 @@
 | Date (Asia/Taipei) | Order | URL | Primary phrase | Owner-supplied monthly search | Status / evidence |
 |---|---:|---|---|---:|---|
 | 2026-11-09 | 1 | [`/types/ghost`](https://www.typematchup.org/types/ghost) | `pokemon ghost weakness` | 1.5万 | **DONE — only Ghost page changed**: PR [#21](https://github.com/lincyang720/type-chart-calculator/pull/21), production commit `49e431d9b52fd7b175189c92b010f2eb7da993f0`, Vercel production Ready. Browser shows correct title, first answer, 18-row matrix, five main FAQs, five internal links; sitemap contains URL. Browser visually loaded; exact HTTP response code was not separately captured by API. |
-| 2026-11-10 | 2 | [`/types/psychic`](https://www.typematchup.org/types/psychic) | `pokemon psychic weakness` | 1.2万 | Not started — scheduled only; verify live and record outcome before marking done. |
+| 2026-11-10 | 2 | [`/types/psychic`](https://www.typematchup.org/types/psychic) | `pokemon psychic weakness` | 1.2万 | **MERGED / Vercel success; browser verification pending** — PR [#27](https://github.com/lincyang720/type-chart-calculator/pull/27), production commit `1b8d2ec05e3237ec88d1b16df4fd94f55274cf3b`; CI Validate site passed; Vercel production status success. Independent current live-page and sitemap fetch not verified (web result stale; browser automation blocked by insufficient wallet funds). Do not mark DONE until live content confirmed. |
 | 2026-11-11 | 3 | [`/types/steel`](https://www.typematchup.org/types/steel) | `pokemon steel weakness` | 9900 | Not started — scheduled only; verify live and record outcome before marking done. |
 | 2026-11-12 | 4 | [`/types/fairy`](https://www.typematchup.org/types/fairy) | `pokemon fairy weakness` | 9900 | Not started — scheduled only; verify live and record outcome before marking done. |
 | 2026-11-13 | 5 | [`/types/poison`](https://www.typematchup.org/types/poison) | `pokemon poison weakness` | 9900 | Not started — scheduled only; verify live and record outcome before marking done. |
@@ -33,6 +33,14 @@
 - **Reproducible data**: Ghost attacks are neutral against 14 pure types and pure Ghost defends neutrally against 12. Across 17 distinct Ghost/other dual types, the original 2× Ghost/Dark weaknesses yield 4 attack–defender interactions reduced to 1× and 1 reduced to 0× (these are interactions, not species). Tested in `scripts/check-ghost-weakness.mjs` and CI.
 - **Five original FAQs** visibly present plus JSON-LD. **Five internal links** to complete chart, calculator, dual chart, Dark and Psychic weakness guides.
 - **Not changed:** other 17 type pages, their metadata, their editorial sections, ads.txt, AdSense/CMP configurations or environment variables.
+
+## Psychic page change (2026-11-10)
+
+- **Metadata/H1**: `Pokemon Psychic Weakness: What Beats Psychic Types?`, keyword `pokemon psychic weakness`, canonical `/types/psychic`.
+- **First visible answer**: pure Psychic is weak to Bug, Ghost and Dark (2× each).
+- **Content**: full 18-row bidirectional attack/defense chart; type-data-derived grouped outcomes and dual-type weakness cancellations/immunities; five matching visible/JSON-LD FAQs; five contextual internal links.
+- **Evidence**: PR [#27](https://github.com/lincyang720/type-chart-calculator/pull/27) squash-merged as `1b8d2ec05e3237ec88d1b16df4fd94f55274cf3b`; GitHub Validate site success; Vercel production deployment status success. Live browser and sitemap **not independently verified**, so status remains verification pending rather than DONE.
+- **Scope**: no changes to other 17 type page branches, ads/CMP/environment settings, or the independent 28-day report.
 
 ## Verification and future publication rules
 
