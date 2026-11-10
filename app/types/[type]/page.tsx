@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import GhostWeaknessGuide, { GHOST_WEAKNESS_FAQS } from '@/components/GhostWeaknessGuide';
+import PsychicWeaknessGuide, { PSYCHIC_FAQS } from '@/components/PsychicWeaknessGuide';
 import TypeBadge from '@/components/TypeBadge';
 import { DefensiveTypeChart, TypeChart, TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
@@ -147,6 +148,17 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   const defensive = defensiveTypeChart[typeId];
   const offensive = typeChart[typeId];
 
+  if (typeId === 'psychic') {
+    const title = 'Pokemon Psychic Weakness: What Beats Psychic Types?';
+    const description = 'Psychic-type Pokémon are weak to Bug, Ghost and Dark moves (2×). Explore all 18 attack and defense matchups, dual-type calculations and five FAQs.';
+    return {
+      title, description, keywords: 'pokemon psychic weakness',
+      alternates: { canonical: '/types/psychic' },
+      openGraph: { siteName: 'TypeMatchup', title, description, url: 'https://www.typematchup.org/types/psychic', type: 'website' },
+      twitter: { card: 'summary_large_image', title, description },
+    };
+  }
+
   if (typeId === 'ghost') {
     const title = 'Pokemon Ghost Weakness: What Beats Ghost Types?';
     const description = 'Ghost-type Pokémon are weak to Ghost and Dark moves (2×). See complete Ghost attack/defense matchups, immunities, a computed 18-type chart, dual-type examples and FAQ.';
@@ -260,7 +272,12 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: typeId === 'ghost'
+            mainEntity: typeId === 'psychic'
+              ? PSYCHIC_FAQS.map(({ question, answer }) => ({
+                  '@type': 'Question', name: question,
+                  acceptedAnswer: { '@type': 'Answer', text: answer },
+                }))
+              : typeId === 'ghost'
               ? GHOST_WEAKNESS_FAQS.map(({ question, answer }) => ({
                   '@type': 'Question',
                   name: question,
@@ -309,9 +326,9 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'ghost' ? 'Pokemon Ghost Weakness: What Beats Ghost Types?' : `${type.name} Type`}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'psychic' ? 'Pokemon Psychic Weakness: What Beats Psychic Types?' : typeId === 'ghost' ? 'Pokemon Ghost Weakness: What Beats Ghost Types?' : `${type.name} Type`}</h1>
           </div>
-          <p className="text-lg text-gray-700">{typeId === 'ghost' ? 'Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2× damage against a pure Ghost defender.' : type.description}</p>
+          <p className="text-lg text-gray-700">{typeId === 'psychic' ? 'Psychic-type Pokémon are weak to Bug, Ghost and Dark moves, each dealing 2× damage against a pure Psychic defender.' : typeId === 'ghost' ? 'Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2× damage against a pure Ghost defender.' : type.description}</p>
           {PRIORITY_CTR_TYPES.includes(typeId) && typeId !== 'ghost' && (
             <div className="mt-5 rounded-lg border border-blue-200 bg-blue-50 p-4 text-gray-800">
               <p>
@@ -374,6 +391,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
         )}
 
         {typeId === 'ghost' && <GhostWeaknessGuide />}
+        {typeId === 'psychic' && <PsychicWeaknessGuide />}
 
         {typeId === 'poison' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
