@@ -177,8 +177,8 @@ def render(previous, current, pages, terms):
         "",
         f"- **本期：** {current[0]} 至 {current[1]}（周一至周日）",
         f"- **对比期：** {previous[0]} 至 {previous[1]}（周一至周日）",
-        "- **来源：** Google Search Console 官方 Search Analytics API；资源 \`https://www.typematchup.org/\`；搜索类型 \`web\`；\`dataState=final\`；未额外筛选国家或设备",
-        "- **口径：** 页面为 \`page\` 精确匹配；查询词为 \`page + query\` 精确匹配。未返回不等于零；不等于所有查询的完整覆盖。",
+        "- **来源：** Google Search Console 官方 Search Analytics API；资源 `https://www.typematchup.org/`；搜索类型 `web`；`dataState=final`；未额外筛选国家或设备",
+        "- **口径：** 页面为 `page` 精确匹配；查询词为 `page + query` 精确匹配。未返回不等于零；不等于所有查询的完整覆盖。",
         "",
         "| 页面 | 本期曝光 | 上期曝光 | 本期点击 | 上期点击 | 本期 CTR | 上期 CTR | 本期平均排名 | 上期平均排名 | 观察 |",
         "|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
@@ -204,7 +204,7 @@ def render(previous, current, pages, terms):
             old, new = terms[(name, term, "previous")], terms[(name, term, "current")]
             n_imp, n_click, n_ctr, n_pos = display_metrics(new)
             o_imp, o_click, o_ctr, o_pos = display_metrics(old)
-            lines.append(f"| {name} | \`{term}\` | {n_imp} | {o_imp} | {n_click} | {o_click} | {n_ctr} | {o_ctr} | {n_pos} | {o_pos} |")
+            lines.append(f"| {name} | `{term}` | {n_imp} | {o_imp} | {n_click} | {o_click} | {n_ctr} | {o_ctr} | {n_pos} | {o_pos} |")
     lines.extend([
         "",
         "**实验状态：** ⏳ EXP-20261111-01 继续观察（[PR #30](https://github.com/lincyang720/type-chart-calculator/pull/30)，2026-11-11 上线）。",
