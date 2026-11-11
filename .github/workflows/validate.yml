@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Test GSC weekly report (offline fixtures)
+        run: python3 -m unittest discover -s tests -p 'test_gsc_weekly.py' -v
       - name: Check dataset exports match the type chart
         run: python3 dataset/generate.py --check
       - uses: actions/setup-node@v4
