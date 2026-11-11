@@ -122,7 +122,7 @@ export const TYPE_EDITORIAL_PROFILES: Record<TypeId, TypeEditorialProfile> = {
     exception: 'Fairy is the cleanest punishment route into Dark. If your Dark slot cannot threaten Fairy on the switch, pair it with a teammate that makes Fairy entry costly.',
   },
   steel: {
-    role: 'Steel is the premier defensive compression type, resisting ten attack types and ignoring Poison damage through immunity.',
+    role: 'Steel is the premier defensive compression type, resisting eleven attack types and ignoring Poison damage through immunity.',
     judgment: 'Use Steel when a team needs a durable answer to Dragon, Fairy, Ice, Rock, Psychic, and repeated neutral pressure. Its Fire, Fighting, and Ground weaknesses must be actively covered.',
     partners: 'Flying or Levitate users cover Ground, Water partners cover Fire, and Fairy or Psychic partners can help reduce Fighting pressure depending on the format.',
     scenario: 'Steel is strongest as a defensive anchor, hazard setter, pivot, or Fairy check that gives frailer teammates room to operate.',

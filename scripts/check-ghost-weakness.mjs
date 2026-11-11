@@ -27,8 +27,12 @@ assert.deepEqual(neutralized.sort(), ['dark:dark','dark:ghost','fairy:dark','fig
 assert.deepEqual(immune,['normal:ghost']);
 const route=readFileSync('app/types/[type]/page.tsx','utf8');
 const guide=readFileSync('components/GhostWeaknessGuide.tsx','utf8');
-assert.match(route,/Pokemon Ghost Weakness: What Beats Ghost Types\?/);
-assert.match(route,/Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2×/);
+const copy=JSON.parse(readFileSync('lib/typePageCopy.json','utf8'));
+const guideModel=readFileSync('lib/singleTypeGuide.ts','utf8');
+assert.equal(copy.ghost.title, 'Ghost Type Weakness: Counters, 4× Pairs & Calculator');
+assert.doesNotMatch(copy.ghost.description, /weak to Ghost and Dark/i);
+assert.match(guideModel, /Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2× damage against a pure Ghost defender/);
+assert.match(route, /<SingleTypeGuide/);
 assert.match(route,/typeId === 'ghost' && <GhostWeaknessGuide/);
 assert.match(guide,/GHOST_WEAKNESS_FAQS/);
 assert.match(guide,/full.*18|all 18|all 18 types|Both directions for all 18/i);

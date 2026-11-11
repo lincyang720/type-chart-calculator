@@ -10,6 +10,9 @@ import typeChartData from '@/data/typeChart.json';
 import defensiveTypeChartData from '@/data/defensiveTypeChart.json';
 import Link from 'next/link';
 import { getTypeEditorialProfile } from '@/lib/typeEditorial';
+import typePageCopy from '@/lib/typePageCopy.json';
+import { buildTypeFaqs, getSingleTypeGuide } from '@/lib/singleTypeGuide';
+import SingleTypeGuide from '@/components/SingleTypeGuide';
 import {
   DualTypeContent,
   generateMetadata as generateDualTypeMetadata,
@@ -72,12 +75,6 @@ function describeRiskBand(score: number) {
   if (score <= 4) return 'noticeable defensive burden';
   return 'high defensive burden';
 }
-
-// Prioritize the pages with the most recent Search Console impressions for the
-// first title/snippet and above-the-fold answer pass.
-const PRIORITY_CTR_TYPES: TypeId[] = [
-  'ghost', 'dragon', 'poison', 'flying', 'dark', 'fairy', 'ice', 'electric',
-];
 
 // Pre-generate all 18 single-type pages and 153 dual-type pages at build time.
 export async function generateStaticParams() {
@@ -146,97 +143,27 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
     };
   }
 
-  const defensive = defensiveTypeChart[typeId];
-  const offensive = typeChart[typeId];
-
-  if (typeId === 'steel') {
-    const title = 'Pokemon Steel Weakness: What Beats Steel Types?';
-    const description = 'Steel-type Pokémon are weak to Fire, Fighting and Ground moves (2×). Explore all 18 attack/defense matchups, resistances, dual-type calculations and five FAQs.';
-    return {
-      title, description, keywords: 'pokemon steel weakness',
-      alternates: { canonical: '/types/steel' },
-      openGraph: { siteName: 'TypeMatchup', title, description, url: 'https://www.typematchup.org/types/steel', type: 'website' },
-      twitter: { card: 'summary_large_image', title, description },
-    };
-  }
-
-  if (typeId === 'psychic') {
-    const title = 'Pokemon Psychic Weakness: What Beats Psychic Types?';
-    const description = 'Psychic-type Pokémon are weak to Bug, Ghost and Dark moves (2×). Explore all 18 attack and defense matchups, dual-type calculations and five FAQs.';
-    return {
-      title, description, keywords: 'pokemon psychic weakness',
-      alternates: { canonical: '/types/psychic' },
-      openGraph: { siteName: 'TypeMatchup', title, description, url: 'https://www.typematchup.org/types/psychic', type: 'website' },
-      twitter: { card: 'summary_large_image', title, description },
-    };
-  }
-
-  if (typeId === 'ghost') {
-    const title = 'Pokemon Ghost Weakness: What Beats Ghost Types?';
-    const description = 'Ghost-type Pokémon are weak to Ghost and Dark moves (2×). See complete Ghost attack/defense matchups, immunities, a computed 18-type chart, dual-type examples and FAQ.';
-    return {
-      title,
-      description,
-      keywords: 'pokemon ghost weakness',
-      alternates: { canonical: '/types/ghost' },
-      openGraph: { siteName: 'TypeMatchup', title, description, url: 'https://www.typematchup.org/types/ghost', type: 'website' },
-      twitter: { card: 'summary_large_image', title, description },
-    };
-  }
-
-  if (typeId === 'dragon') {
-    return {
-      title: 'Dragon Type Weaknesses & Chart: What Beats Dragon Pokémon?',
-      description: 'Dragon-type Pokémon are weak to Ice, Dragon, and Fairy. See the full Dragon type chart, resistances, Fairy immunity, dual-type examples, and a free matchup calculator.',
-      keywords: 'dragon types chart, dragon type weakness, dragon pokemon, dragon type matchups, how to beat dragon pokemon, dragon weakness 2026, dragon type chart',
-      openGraph: {
-        siteName: 'TypeMatchup',
-        title: 'Dragon Types Chart and Dragon Type Weakness (2026)',
-        description: 'Dragon is weak to Ice, Dragon, and Fairy, resists Fire, Water, Electric, and Grass, and cannot hit Fairy. Grouped Dragon Pokemon by dual typing plus counters and team cores.',
-        url: 'https://www.typematchup.org/types/dragon',
-        type: 'website',
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: 'Dragon Types Chart and Dragon Type Weakness',
-        description: 'Dragon weaknesses, resistances, featured Dragon Pokemon by typing, and the counters that beat them.',
-      },
-      alternates: {
-        canonical: '/types/dragon',
-      },
-    };
-  }
+  const copy = typePageCopy[typeId];
+  const title = copy.title;
+  const description = copy.description;
+  const keywords = `${type.name} type weakness, ${type.name} pokemon, ${type.name} counters, ${type.name} 4x weakness, pokemon type calculator`;
 
   return {
-    title: PRIORITY_CTR_TYPES.includes(typeId)
-      ? `${type.name} Type Weaknesses & Chart: What Beats ${type.name} Pokémon?`
-      : `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
-    description: PRIORITY_CTR_TYPES.includes(typeId)
-      ? `${type.name}-type Pokémon are weak to ${formatTypeNames(defensive.weakTo)}. See ${type.name} resistances, immunities, matchups, and use the free Pokemon type calculator.`
-      : `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}. Full matchup analysis.`,
-    keywords: `${type.name} type, ${type.name} weakness, ${type.name} strength, ${type.name} matchup, ${type.name} type chart`,
+    title,
+    description,
+    keywords,
+    alternates: { canonical: `/types/${typeId}` },
     openGraph: {
-    siteName: 'TypeMatchup',
-      title: PRIORITY_CTR_TYPES.includes(typeId)
-        ? `${type.name} Type Weaknesses & Chart: What Beats ${type.name} Pokémon?`
-        : `${type.name} Type Chart - Strengths, Weaknesses & Matchups`,
-      description: PRIORITY_CTR_TYPES.includes(typeId)
-        ? `${type.name}-type Pokémon are weak to ${formatTypeNames(defensive.weakTo)}. See ${type.name} resistances, immunities, and matchups.`
-        : `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
+      siteName: 'TypeMatchup',
+      title,
+      description,
       url: `https://www.typematchup.org/types/${typeId}`,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: PRIORITY_CTR_TYPES.includes(typeId)
-        ? `${type.name} Type Weaknesses & Chart`
-        : `${type.name} Type Chart`,
-      description: PRIORITY_CTR_TYPES.includes(typeId)
-        ? `${type.name}-type Pokémon are weak to ${formatTypeNames(defensive.weakTo)}. Check the complete ${type.name} type chart and matchup calculator.`
-        : `${type.name} type guide: super effective vs ${offensive.superEffective.slice(0, 3).join(', ')}. Weak to ${defensive.weakTo.slice(0, 3).join(', ')}.`,
-    },
-    alternates: {
-      canonical: `/types/${typeId}`,
+      title,
+      description,
     },
   };
 }
@@ -260,6 +187,16 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
   const defensive = defensiveTypeChart[typeId];
   const offensive = typeChart[typeId];
   const editorialProfile = getTypeEditorialProfile(typeId);
+  const guideModel = getSingleTypeGuide(typeId);
+  const copy = typePageCopy[typeId];
+  const dedicatedFaqs = typeId === 'steel'
+    ? STEEL_FAQS
+    : typeId === 'psychic'
+      ? PSYCHIC_FAQS
+      : typeId === 'ghost'
+        ? GHOST_WEAKNESS_FAQS
+        : null;
+  const faqs = dedicatedFaqs ?? buildTypeFaqs(guideModel);
   const offensiveCoverageScore = offensive.superEffective.length - offensive.notVeryEffective.length - offensive.noEffect.length * 2;
   const defensiveBurdenScore = scoreTypeRisk(typeId);
   const saferSwitchTypes = ALL_TYPES.filter(candidateTypeId =>
@@ -284,54 +221,11 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: typeId === 'steel'
-              ? STEEL_FAQS.map(({ question, answer }) => ({
-                  '@type': 'Question', name: question,
-                  acceptedAnswer: { '@type': 'Answer', text: answer },
-                }))
-              : typeId === 'psychic'
-              ? PSYCHIC_FAQS.map(({ question, answer }) => ({
-                  '@type': 'Question', name: question,
-                  acceptedAnswer: { '@type': 'Answer', text: answer },
-                }))
-              : typeId === 'ghost'
-              ? GHOST_WEAKNESS_FAQS.map(({ question, answer }) => ({
-                  '@type': 'Question',
-                  name: question,
-                  acceptedAnswer: { '@type': 'Answer', text: answer },
-                }))
-              : [
-              {
-                '@type': 'Question',
-                name: `What is ${type.name} type strong against?`,
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: offensive.superEffective.length > 0
-                    ? `${type.name} type moves are super effective (2× damage) against ${offensive.superEffective.map(t => typesData.types.find(td => td.id === t)?.name).join(', ')} types.`
-                    : `${type.name} type has no super effective matchups.`,
-                },
-              },
-              {
-                '@type': 'Question',
-                name: `What is ${type.name} type weak against?`,
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: defensive.weakTo.length > 0
-                    ? `${type.name} type is weak to (takes 2× damage from) ${defensive.weakTo.map(t => typesData.types.find(td => td.id === t)?.name).join(', ')} type moves.`
-                    : `${type.name} type has no weaknesses!`,
-                },
-              },
-              {
-                '@type': 'Question',
-                name: `What types resist ${type.name}?`,
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: offensive.notVeryEffective.length > 0
-                    ? `${offensive.notVeryEffective.map(t => typesData.types.find(td => td.id === t)?.name).join(', ')} types resist ${type.name} type moves (take 0.5× damage).`
-                    : `No types resist ${type.name} type moves.`,
-                },
-              },
-            ],
+            mainEntity: faqs.map(({ question, answer }) => ({
+              '@type': 'Question',
+              name: question,
+              acceptedAnswer: { '@type': 'Answer', text: answer },
+            })),
           }),
         }}
       />
@@ -343,21 +237,12 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'steel' ? 'Pokemon Steel Weakness: What Beats Steel Types?' : typeId === 'psychic' ? 'Pokemon Psychic Weakness: What Beats Psychic Types?' : typeId === 'ghost' ? 'Pokemon Ghost Weakness: What Beats Ghost Types?' : `${type.name} Type`}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{copy.title}</h1>
           </div>
-          <p className="text-lg text-gray-700">{typeId === 'steel' ? 'Steel-type Pokémon are weak to Fire, Fighting and Ground moves, each dealing 2× damage against a pure Steel defender.' : typeId === 'psychic' ? 'Psychic-type Pokémon are weak to Bug, Ghost and Dark moves, each dealing 2× damage against a pure Psychic defender.' : typeId === 'ghost' ? 'Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2× damage against a pure Ghost defender.' : type.description}</p>
-          {PRIORITY_CTR_TYPES.includes(typeId) && typeId !== 'ghost' && (
-            <div className="mt-5 rounded-lg border border-blue-200 bg-blue-50 p-4 text-gray-800">
-              <p>
-                <strong>Quick answer:</strong> {type.name}-type Pokémon are weak to {formatTypeNames(defensive.weakTo)}.
-                {defensive.immuneTo.length > 0 && ` They are immune to ${formatTypeNames(defensive.immuneTo)}.`}
-              </p>
-              <Link href={`/calculator?type1=${typeId}`} className="mt-3 inline-block font-semibold text-blue-700 hover:underline">
-                Check another matchup in the Type Calculator →
-              </Link>
-            </div>
-          )}
+          <p className="text-lg text-gray-700">{copy.intro}</p>
         </div>
+
+        <SingleTypeGuide model={guideModel} />
 
         {typeId === 'fire' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
@@ -1150,72 +1035,19 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           in the six-slot team editor.
         </p>
 
-        {/* FAQ Section */}
-        <section className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold text-lg mb-2">What is {type.name} type strong against?</h3>
-              <p className="text-gray-700">
-                {type.name} type moves are super effective (2× damage) against {offensive.superEffective.map(t =>
-                  typesData.types.find(type => type.id === t)?.name
-                ).join(', ')} types.
-                {offensive.superEffective.length === 0 && `${type.name} type has no super effective matchups.`}
-              </p>
+        {!dedicatedFaqs && (
+          <section id="faq" className="scroll-mt-6 bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map(faq => (
+                <div key={faq.question}>
+                  <h3 className="font-semibold text-lg mb-2">{faq.question}</h3>
+                  <p className="text-gray-700">{faq.answer}</p>
+                </div>
+              ))}
             </div>
-            <div>
-              <h3 className="font-semibold text-lg mb-2">What is {type.name} type weak against?</h3>
-              <p className="text-gray-700">
-                {defensive.weakTo.length > 0 ? (
-                  `${type.name} type is weak to (takes 2× damage from) ${defensive.weakTo.map(t =>
-                    typesData.types.find(type => type.id === t)?.name
-                  ).join(', ')} type moves.`
-                ) : (
-                  `${type.name} type has no weaknesses!`
-                )}
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg mb-2">What types resist {type.name}?</h3>
-              <p className="text-gray-700">
-                {offensive.notVeryEffective.length > 0 ? (
-                  `${offensive.notVeryEffective.map(t =>
-                    typesData.types.find(type => type.id === t)?.name
-                  ).join(', ')} types resist ${type.name} type moves (take 0.5× damage).`
-                ) : (
-                  `No types resist ${type.name} type moves.`
-                )}
-              </p>
-            </div>
-            {defensive.resistsTo.length > 0 && (
-              <div>
-                <h3 className="font-semibold text-lg mb-2">What does {type.name} type resist?</h3>
-                <p className="text-gray-700">
-                  {type.name} type resists (takes 0.5× damage from) {defensive.resistsTo.map(t =>
-                    typesData.types.find(type => type.id === t)?.name
-                  ).join(', ')} type moves.
-                </p>
-              </div>
-            )}
-            {(defensive.immuneTo.length > 0 || offensive.noEffect.length > 0) && (
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Immunities</h3>
-                <p className="text-gray-700">
-                  {defensive.immuneTo.length > 0 && (
-                    <>{type.name} type is immune to {defensive.immuneTo.map(t =>
-                      typesData.types.find(type => type.id === t)?.name
-                    ).join(', ')} type moves. </>
-                  )}
-                  {offensive.noEffect.length > 0 && (
-                    <>{type.name} type moves have no effect on {offensive.noEffect.map(t =>
-                      typesData.types.find(type => type.id === t)?.name
-                    ).join(', ')} types.</>
-                  )}
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Tools */}
         <section className="bg-gray-50 rounded-lg p-6">

@@ -1,0 +1,92 @@
+{
+  "normal": {
+    "title": "Normal Type Weakness: Species List, Counters & Chart",
+    "description": "Normal type weakness is easy to misread once a second type is added. See counters, 4× exceptions, every tracked Normal species, and calculate it.",
+    "intro": "A pure Normal defender is easy to summarize and easy to misread once the second type is added. The species table shows the real weaknesses, including 4×."
+  },
+  "fire": {
+    "title": "Fire Type Weakness: Switch Risks, Counters & 4× Pairs",
+    "description": "Fire type weakness checklist: switch-in risks, counter Pokémon and moves, every tracked Fire species with 4× results, and a dual-type calculator.",
+    "intro": "A Fire switch that resists one move can still lose the next one. See the counter moves, the 4× dual typings, and every Fire species in this dataset."
+  },
+  "water": {
+    "title": "Water Type Weakness: Dual-Type 4× Traps & Counters",
+    "description": "Water type weakness page for the 4× traps a second type creates, counter Pokémon and moves, every Water species we track, and a live calculator.",
+    "intro": "Water is a common safe switch until the second type creates a 4× hole. The species table and calculator show that result before you lock the pick."
+  },
+  "electric": {
+    "title": "Electric Type Weakness: Dual Typings, Counters & 4×",
+    "description": "Electric type weakness is only the start. Check every tracked Electric Pokémon second type, 4× exceptions, counters, and the live calculator.",
+    "intro": "Electric has a narrow defensive row, and the second type is where teams actually get surprised. Check counters, 4× exceptions, and each Electric species we track."
+  },
+  "grass": {
+    "title": "Grass Type Weakness: Species 4× Results & Counters",
+    "description": "Grass type weakness breakdown with species-level 4× results, counter Pokémon and moves, every tracked Grass Pokémon, and a second-type chart.",
+    "intro": "Grass is a specialist, not a blanket answer. Each tracked Grass species below keeps its own weakness list, including the dual typings that reach 4×."
+  },
+  "ice": {
+    "title": "Ice Type Weakness: Coverage Counters and Dual-Type 4×",
+    "description": "Ice type weakness versus using Ice as coverage: counter Pokémon, every tracked Ice species with 4× results, and a second-type calculator here.",
+    "intro": "Ice moves threaten four types, while an Ice Pokémon is the fragile one. Compare coverage counters with the Ice species that actually take the hit, including 4× cases."
+  },
+  "fighting": {
+    "title": "Fighting Type Weakness: Immunity Traps & Counter List",
+    "description": "Fighting type weakness guide for the immunity trap, counter Pokémon and moves, 4× dual typings, and every Fighting species we track in this dataset.",
+    "intro": "Fighting coverage fails in a different way from a resisted hit. The immunity case, the counter Pokémon, and the 4× species are separated on this page."
+  },
+  "poison": {
+    "title": "Poison Type Weakness: Dual-Type Exceptions & Counters",
+    "description": "Poison type weakness, continued: which dual typings cancel it, which Pokémon take 4×, and counters using the moves stored on each species page.",
+    "intro": "Poison looks simple until a partner type cancels a weakness or stacks a 4× hit. The tables below use this site’s chart on every Poison species we track."
+  },
+  "ground": {
+    "title": "Ground Type Weakness: Immunity Cases, 4× & Counters",
+    "description": "Ground type weakness page for immunity blanks, 4× dual typings, counter Pokémon and moves, and every Ground species tracked in the dataset below.",
+    "intro": "Ground pressure and a Ground Pokémon are different problems. Immunity blanks, 4× dual typings, and counter moves are calculated from the same chart as the calculator."
+  },
+  "flying": {
+    "title": "Flying Type Weakness: 4× Cases, Counters & Species",
+    "description": "Flying type weakness page covering 4× stacks, immunity exceptions, counter moves, and every Flying species tracked in the TypeMatchup chart.",
+    "intro": "Flying is as much an immunity as a weakness list. The calculator shows what a second type does to that row, including which species fall to 4×."
+  },
+  "psychic": {
+    "title": "Psychic Type Weakness: Counters, Species & 4× Chart",
+    "description": "Psychic type weakness answers past the overview: counter Pokémon, immunities that blank attacks, every tracked species, and the 4× pairs on this page.",
+    "intro": "Psychic offense stops cold against one immunity, and Psychic defenders do not all share a weakness list. Counters, 4× pairs, and every tracked species are on this page."
+  },
+  "bug": {
+    "title": "Bug Type Weakness: Generation Shifts, Counters & 4×",
+    "description": "Bug type weakness on the modern chart: counter Pokémon, stable 4× pairs, every tracked Bug species, and a dual-type calculator you can run here.",
+    "intro": "Bug’s chart row changed when new types arrived, and a Bug Pokémon still needs a second plan. Counters, 4× pairs, and tracked species are listed from the current 18-type chart."
+  },
+  "rock": {
+    "title": "Rock Type Weakness: Hazard Role, Counters & 4× List",
+    "description": "Rock type weakness guide pairing hazard pressure with defensive holes: counters, 4× species, every tracked Rock Pokémon, and the calculator.",
+    "intro": "Rock rewards hazard chip and punishes Flying, then asks the Rock Pokémon to survive a long weakness list. 4× species and counter moves are both below."
+  },
+  "ghost": {
+    "title": "Ghost Type Weakness: Counters, 4× Pairs & Calculator",
+    "description": "Skip the one-line Ghost type weakness. See counter Pokémon, every Ghost we track with dual-type and 4× holes, then run the matchup calculator.",
+    "intro": "An overview can name the weaknesses. This page adds counter Pokémon and moves, every Ghost species in our dataset with its real dual-type holes, and a calculator for the second type."
+  },
+  "dragon": {
+    "title": "Dragon Type Weakness: Dual-Type 4× List & Counters",
+    "description": "Dragon type weakness tools an overview leaves out: counter Pokémon with moves, every tracked Dragon 4× pairing, and a second-type calculator.",
+    "intro": "Dragon matchups change with the second type. Use the counter list, the 4× species table, and the calculator instead of treating every Dragon as the same defender."
+  },
+  "dark": {
+    "title": "Dark Type Weakness: Counter Pokémon, 4× Pairs & Chart",
+    "description": "Dark type weakness chart with counter Pokémon, 4× dual typings, and a full species list — not just the attacking types named in an overview.",
+    "intro": "The attacking types are the short version. The useful version is which Dark Pokémon take 4×, which partners erase a weakness, and which dataset Pokémon carry the counter move."
+  },
+  "steel": {
+    "title": "Steel Type Weakness: Counter List Beyond Resistances",
+    "description": "Steel type weakness guide that goes past the resistance list: counter Pokémon, 4× dual typings, every tracked Steel species, and a calculator.",
+    "intro": "Counting resistances does not answer a Steel switch. The counter list, the 4× dual typings, and the species table show where Steel still loses."
+  },
+  "fairy": {
+    "title": "Fairy Type Weakness: Dual-Type Chart & Counter List",
+    "description": "Fairy type weakness guide for dual typings that change the result, 4× species, counter Pokémon and moves, plus an interactive type calculator.",
+    "intro": "Fairy’s defensive reputation depends on the partner type. Run a second type in the calculator, then read the counter moves and the species that pick up a 4× weakness."
+  }
+}

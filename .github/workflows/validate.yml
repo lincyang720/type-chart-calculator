@@ -38,5 +38,7 @@ jobs:
         run: npm run check:type-direction
       - name: Verify Ghost weakness data and page scope
         run: npm run check:ghost-weakness
+      - name: Verify single-type titles, descriptions, and links
+        run: npm run check:type-page-seo
       - name: Production build
         run: npm run build

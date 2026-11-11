@@ -82,7 +82,19 @@ export default function Page() {
           A shared weakness is not automatically fatal. The important question is whether the rest of the team can absorb
           that attack and respond. Three Pokémon weak to Ground can still be manageable when a healthy Flying type or
           Levitate user is available; the same weakness becomes dangerous when every member takes neutral or super-effective
-          damage. Treat the highlighted gaps as priorities, then consider each teammate&apos;s bulk, speed, recovery, and role.
+          damage. The <Link href="/types/ground">Ground type weakness</Link> and{' '}
+          <Link href="/types/flying">Flying type weakness</Link> pages separate that immunity from the 4× cases a second
+          type can add. The same check is worth making for the types that show up as a one-line answer elsewhere:{' '}
+          <Link href="/types/ghost">Ghost type weakness</Link>,{' '}
+          <Link href="/types/dragon">Dragon type weakness</Link>,{' '}
+          <Link href="/types/poison">Poison type weakness</Link>,{' '}
+          <Link href="/types/electric">Electric type weakness</Link>,{' '}
+          <Link href="/types/dark">Dark type weakness</Link>,{' '}
+          <Link href="/types/fairy">Fairy type weakness</Link>,{' '}
+          <Link href="/types/psychic">Psychic type weakness</Link>,{' '}
+          <Link href="/types/ice">Ice type weakness</Link>, and{' '}
+          <Link href="/types/steel">Steel type weakness</Link>.
+          Treat the highlighted gaps as priorities, then consider each teammate&apos;s bulk, speed, recovery, and role.
         </p>
 
         <h2>Offensive vs Defensive Coverage</h2>

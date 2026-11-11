@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import DualTypeExplorer from '@/components/DualTypeExplorer';
 import ToolNetwork from '@/components/ToolNetwork';
 import JsonLd from '@/components/SEO/JsonLd';
@@ -73,7 +74,13 @@ export default function Page() {
           Damage multipliers against the two defending types are multiplied together. Water/Ground hit by Electric takes
           2×0=0× damage because Ground&apos;s immunity overrides Water&apos;s weakness. Grass/Ice hit by Fire takes 2×2=4×
           damage because both types are weak to Fire. Two resistances combine into 0.25× damage, while a weakness and a
-          resistance cancel to the usual 1× multiplier.
+          resistance cancel to the usual 1× multiplier. Read the single-type row first when a pairing is surprising:{' '}
+          <Link href="/types/water">Water type weakness</Link>,{' '}
+          <Link href="/types/ground">Ground type weakness</Link>,{' '}
+          <Link href="/types/electric">Electric type weakness</Link>,{' '}
+          <Link href="/types/grass">Grass type weakness</Link>,{' '}
+          <Link href="/types/ice">Ice type weakness</Link>, and{' '}
+          <Link href="/types/fire">Fire type weakness</Link>.
         </p>
 
         <h2>Which Dual Type Chart Pokemon Have the Most Weaknesses?</h2>
@@ -89,7 +96,8 @@ export default function Page() {
           Steel/Fairy has only Fire and Ground weaknesses, two immunities, and a broad set of resistances. Water/Ground has
           just one weakness, although Grass deals 4× damage. A low weakness count does not guarantee the best Pokémon: base
           stats, recovery, abilities, movepool, and the rules of the battle format determine whether a typing can consistently
-          switch into attacks.
+          switch into attacks. The <Link href="/types/steel">Steel type weakness</Link> and{' '}
+          <Link href="/types/fairy">Fairy type weakness</Link> guides list the counters and 4× species behind those pairings.
         </p>
 
         <h2>Rare Dual Type Combinations</h2>
@@ -98,6 +106,18 @@ export default function Page() {
           examples, but “rare” changes as new species and regional forms are released. Use the example links in the selected
           combination panel to inspect Pokémon present in this site&apos;s dataset, and treat rarity as generation-specific rather
           than a permanent competitive advantage.
+        </p>
+
+        <h2>Single-type weakness guides</h2>
+        <p>
+          A dual typing is easier to read after the base type is clear. These guides keep the weakness keyword, then add
+          the counter Pokémon, every tracked species, and the 4× cases this chart compresses into one cell:{' '}
+          <Link href="/types/ghost">Ghost type weakness</Link>,{' '}
+          <Link href="/types/dragon">Dragon type weakness</Link>,{' '}
+          <Link href="/types/poison">Poison type weakness</Link>,{' '}
+          <Link href="/types/dark">Dark type weakness</Link>,{' '}
+          <Link href="/types/psychic">Psychic type weakness</Link>, and{' '}
+          <Link href="/types/flying">Flying type weakness</Link>.
         </p>
 
         <h2>Dual Type Chart FAQ</h2>

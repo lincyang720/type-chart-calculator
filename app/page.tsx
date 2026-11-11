@@ -298,6 +298,20 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          <p className="mt-6 text-gray-700 max-w-4xl">
+            Each badge opens a weakness guide with counter Pokémon, 4× dual typings, and a calculator.
+            The searches that stop at a one-line answer are covered in the{' '}
+            <Link href="/types/ghost" className="font-semibold text-blue-700 hover:underline">Ghost type weakness</Link>,{' '}
+            <Link href="/types/dragon" className="font-semibold text-blue-700 hover:underline">Dragon type weakness</Link>,{' '}
+            <Link href="/types/poison" className="font-semibold text-blue-700 hover:underline">Poison type weakness</Link>,{' '}
+            <Link href="/types/electric" className="font-semibold text-blue-700 hover:underline">Electric type weakness</Link>,{' '}
+            <Link href="/types/dark" className="font-semibold text-blue-700 hover:underline">Dark type weakness</Link>,{' '}
+            <Link href="/types/fairy" className="font-semibold text-blue-700 hover:underline">Fairy type weakness</Link>,{' '}
+            <Link href="/types/psychic" className="font-semibold text-blue-700 hover:underline">Psychic type weakness</Link>,{' '}
+            <Link href="/types/flying" className="font-semibold text-blue-700 hover:underline">Flying type weakness</Link>,{' '}
+            <Link href="/types/ice" className="font-semibold text-blue-700 hover:underline">Ice type weakness</Link>, and{' '}
+            <Link href="/types/steel" className="font-semibold text-blue-700 hover:underline">Steel type weakness</Link> guides.
+          </p>
         </section>
 
         {/* Popular Combinations Section */}
