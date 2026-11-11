@@ -15,5 +15,5 @@ rock,0.5x,0.5x,2x,1x,2x,1x,2x,0.5x,2x,0.5x,1x,1x,1x,1x,1x,1x,2x,1x
 ghost,0x,1x,1x,1x,1x,1x,0x,0.5x,1x,1x,1x,0.5x,1x,2x,1x,2x,1x,1x
 dragon,1x,0.5x,0.5x,0.5x,0.5x,2x,1x,1x,1x,1x,1x,1x,1x,1x,2x,1x,1x,2x
 dark,1x,1x,1x,1x,1x,1x,2x,1x,1x,1x,0x,2x,1x,0.5x,1x,0.5x,1x,2x
-steel,0.5x,2x,1x,1x,0.5x,0.5x,2x,0x,2x,0.5x,0.5x,0.5x,0.5x,1x,0.5x,1x,0.5x,0.5x
+steel,0.5x,2x,1x,0.5x,0.5x,0.5x,2x,0x,2x,0.5x,0.5x,0.5x,0.5x,1x,0.5x,1x,0.5x,0.5x
 fairy,1x,1x,1x,1x,1x,1x,0.5x,2x,1x,1x,1x,0.5x,1x,1x,0x,0.5x,2x,1x

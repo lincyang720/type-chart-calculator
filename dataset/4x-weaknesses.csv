@@ -1,0 +1,62 @@
+attacking_type,combo,type1,type2,example_species
+fire,grass-ice,grass,ice,Snover|Abomasnow|Mega Abomasnow
+fire,grass-bug,grass,bug,Paras|Parasect|Plant Cloak Wormadam|Sewaddle|Leavanny
+fire,grass-steel,grass,steel,Ferroseed|Ferrothorn|Kartana
+fire,ice-bug,ice,bug,Snom|Frosmoth
+fire,ice-steel,ice,steel,Alolan Sandshrew|Alolan Sandslash
+fire,bug-steel,bug,steel,
+water,fire-ground,fire,ground,Numel|Camerupt|Mega Camerupt|Primal Groudon
+water,fire-rock,fire,rock,Magcargo|Carkol|Coalossal|Hisuian Growlithe|Hisuian Arcanine
+water,ground-rock,ground,rock,Geodude|Graveler|Golem|Rhydon|Rhyperior
+electric,water-flying,water,flying,
+grass,water-ground,water,ground,
+grass,water-rock,water,rock,Omanyte|Omastar|Kabuto|Kabutops|Drednaw
+grass,ground-rock,ground,rock,Geodude|Graveler|Golem|Rhydon|Rhyperior
+ice,grass-ground,grass,ground,Torterra|Toedscool|Toedscruel
+ice,grass-flying,grass,flying,Hoppip|Skiploom|Jumpluff|Tropius|Shaymin Sky
+ice,grass-dragon,grass,dragon,Alolan Exeggutor|Mega Sceptile|Applin|Flapple|Appletun
+ice,ground-flying,ground,flying,Gligar|Gliscor|Landorus|Landorus-Therian
+ice,ground-dragon,ground,dragon,
+ice,flying-dragon,flying,dragon,
+fighting,normal-ice,normal,ice,
+fighting,normal-rock,normal,rock,
+fighting,normal-dark,normal,dark,Obstagoon|Alolan Rattata|Alolan Raticate|Galarian Zigzagoon|Galarian Linoone
+fighting,normal-steel,normal,steel,
+fighting,ice-rock,ice,rock,Amaura|Aurorus|Hisuian Avalugg
+fighting,ice-dark,ice,dark,Sneasel|Weavile|Chien-Pao
+fighting,ice-steel,ice,steel,Alolan Sandshrew|Alolan Sandslash
+fighting,rock-dark,rock,dark,Tyranitar|Mega Tyranitar
+fighting,rock-steel,rock,steel,Aron|Lairon|Aggron|Shieldon|Bastiodon
+fighting,dark-steel,dark,steel,Pawniard|Bisharp|Kingambit
+poison,grass-fairy,grass,fairy,Cottonee|Whimsicott|Morelull|Shiinotic|Tapu Bulu
+ground,fire-electric,fire,electric,Heat Rotom
+ground,fire-poison,fire,poison,Salandit|Salazzle|Iron Moth
+ground,fire-rock,fire,rock,Magcargo|Carkol|Coalossal|Hisuian Growlithe|Hisuian Arcanine
+ground,fire-steel,fire,steel,Heatran
+ground,electric-poison,electric,poison,Toxel|Toxtricity Amped|Toxtricity Low Key
+ground,electric-rock,electric,rock,Iron Thorns|Alolan Geodude|Alolan Graveler|Alolan Golem
+ground,electric-steel,electric,steel,Magnemite|Magneton|Magnezone|Togedemaru
+ground,poison-rock,poison,rock,Nihilego|Glimmet|Glimmora
+ground,poison-steel,poison,steel,Varoom|Revavroom
+ground,rock-steel,rock,steel,Aron|Lairon|Aggron|Shieldon|Bastiodon
+flying,grass-fighting,grass,fighting,Breloom|Virizion|Chesnaught|Hisuian Lilligant|Hisuian Decidueye
+flying,grass-bug,grass,bug,Paras|Parasect|Plant Cloak Wormadam|Sewaddle|Leavanny
+flying,fighting-bug,fighting,bug,Heracross|Mega Heracross|Buzzwole|Pheromosa
+psychic,fighting-poison,fighting,poison,Croagunk|Toxicroak|Sneasler|Okidogi
+bug,grass-psychic,grass,psychic,Exeggcute|Exeggutor|Celebi|Calyrex
+bug,grass-dark,grass,dark,Nuzleaf|Shiftry|Cacturne|Zarude|Meowscarada
+bug,psychic-dark,psychic,dark,Inkay|Malamar|Hoopa Unbound
+rock,fire-ice,fire,ice,Galarian Zen Mode Darmanitan
+rock,fire-flying,fire,flying,
+rock,fire-bug,fire,bug,Larvesta|Volcarona|Sizzlipede|Centiskorch
+rock,ice-flying,ice,flying,Articuno|Delibird
+rock,ice-bug,ice,bug,Snom|Frosmoth
+rock,flying-bug,flying,bug,Butterfree|Scyther|Yanma|Ninjask|Vespiquen
+ghost,psychic-ghost,psychic,ghost,Hoopa Confined|Lunala|Necrozma Dawn Wings|Calyrex-Shadow
+dark,psychic-ghost,psychic,ghost,Hoopa Confined|Lunala|Necrozma Dawn Wings|Calyrex-Shadow
+steel,ice-rock,ice,rock,Amaura|Aurorus|Hisuian Avalugg
+steel,ice-fairy,ice,fairy,Alolan Ninetales
+steel,rock-fairy,rock,fairy,Carbink|Diancie|Mega Diancie
+fairy,fighting-dragon,fighting,dragon,Hakamo-o|Kommo-o|Koraidon
+fairy,fighting-dark,fighting,dark,Scraggy|Scrafty|Pangoro|Urshifu Single Strike
+fairy,dragon-dark,dragon,dark,Deino|Zweilous|Hydreigon|Guzzlord|Roaring Moon
