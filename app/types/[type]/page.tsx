@@ -184,6 +184,23 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
     };
   }
 
+  if (typeId === 'poison' || typeId === 'dark') {
+    const isPoison = typeId === 'poison';
+    const title = isPoison
+      ? 'Poison Type Weakness: Ground & Psychic | TypeMatchup'
+      : 'Dark Type Weakness: Fighting, Bug & Fairy | TypeMatchup';
+    const description = isPoison
+      ? 'Poison-type Pokémon take 2× damage from Ground and Psychic. Check resistances, dual-type exceptions and the free type matchup calculator.'
+      : 'Dark-type Pokémon take 2× damage from Fighting, Bug and Fairy, and are immune to Psychic. Check resistances, dual-type matchups and counters.';
+    return {
+      title, description,
+      keywords: isPoison ? 'poison type weakness, poison weakness' : 'dark type weakness, dark weakness',
+      alternates: { canonical: `/types/${typeId}` },
+      openGraph: { siteName: 'TypeMatchup', title, description, url: `https://www.typematchup.org/types/${typeId}`, type: 'website' },
+      twitter: { card: 'summary_large_image', title, description },
+    };
+  }
+
   if (typeId === 'dragon') {
     return {
       title: 'Dragon Type Weaknesses & Chart: What Beats Dragon Pokémon?',
@@ -343,10 +360,26 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'steel' ? 'Pokemon Steel Weakness: What Beats Steel Types?' : typeId === 'psychic' ? 'Pokemon Psychic Weakness: What Beats Psychic Types?' : typeId === 'ghost' ? 'Pokemon Ghost Weakness: What Beats Ghost Types?' : `${type.name} Type`}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'steel' ? 'Pokemon Steel Weakness: What Beats Steel Types?' : typeId === 'psychic' ? 'Pokemon Psychic Weakness: What Beats Psychic Types?' : typeId === 'ghost' ? 'Pokemon Ghost Weakness: What Beats Ghost Types?' : typeId === 'poison' ? 'Poison Type Weakness: What Beats Poison Pokémon?' : typeId === 'dark' ? 'Dark Type Weakness: What Beats Dark Pokémon?' : `${type.name} Type`}</h1>
           </div>
           <p className="text-lg text-gray-700">{typeId === 'steel' ? 'Steel-type Pokémon are weak to Fire, Fighting and Ground moves, each dealing 2× damage against a pure Steel defender.' : typeId === 'psychic' ? 'Psychic-type Pokémon are weak to Bug, Ghost and Dark moves, each dealing 2× damage against a pure Psychic defender.' : typeId === 'ghost' ? 'Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2× damage against a pure Ghost defender.' : type.description}</p>
-          {PRIORITY_CTR_TYPES.includes(typeId) && typeId !== 'ghost' && (
+          {(['ghost', 'psychic', 'poison', 'dark'] as TypeId[]).includes(typeId) && (
+            <div className="mt-5 rounded-lg border border-blue-200 bg-blue-50 p-4 text-gray-800">
+              <h2 className="font-semibold text-lg mb-2">{type.name} weakness at a glance</h2>
+              <p>
+                <strong>Weak to (2×):</strong> {formatTypeNames(defensive.weakTo)}.
+                {' '}This is for a pure {type.name}-type defender; a second type can change the multiplier.
+              </p>
+              <p className="mt-2">
+                <strong>Resists (0.5×):</strong> {formatTypeNames(defensive.resistsTo)}.
+                {' '}<strong>Immune (0×):</strong> {formatTypeNames(defensive.immuneTo)}.
+              </p>
+              <Link href={`/calculator?type1=${typeId}`} className="mt-3 inline-block font-semibold text-blue-700 hover:underline">
+                Check dual-type weaknesses in the calculator →
+              </Link>
+            </div>
+          )}
+          {PRIORITY_CTR_TYPES.includes(typeId) && !(['ghost', 'psychic', 'poison', 'dark'] as TypeId[]).includes(typeId) && (
             <div className="mt-5 rounded-lg border border-blue-200 bg-blue-50 p-4 text-gray-800">
               <p>
                 <strong>Quick answer:</strong> {type.name}-type Pokémon are weak to {formatTypeNames(defensive.weakTo)}.
