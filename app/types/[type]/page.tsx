@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import GhostWeaknessGuide, { GHOST_WEAKNESS_FAQS } from '@/components/GhostWeaknessGuide';
 import PsychicWeaknessGuide, { PSYCHIC_FAQS } from '@/components/PsychicWeaknessGuide';
+import SteelWeaknessGuide, { STEEL_FAQS } from '@/components/SteelWeaknessGuide';
 import TypeBadge from '@/components/TypeBadge';
 import { DefensiveTypeChart, TypeChart, TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
@@ -148,6 +149,17 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   const defensive = defensiveTypeChart[typeId];
   const offensive = typeChart[typeId];
 
+  if (typeId === 'steel') {
+    const title = 'Pokemon Steel Weakness: What Beats Steel Types?';
+    const description = 'Steel-type Pokémon are weak to Fire, Fighting and Ground moves (2×). Explore all 18 attack/defense matchups, resistances, dual-type calculations and five FAQs.';
+    return {
+      title, description, keywords: 'pokemon steel weakness',
+      alternates: { canonical: '/types/steel' },
+      openGraph: { siteName: 'TypeMatchup', title, description, url: 'https://www.typematchup.org/types/steel', type: 'website' },
+      twitter: { card: 'summary_large_image', title, description },
+    };
+  }
+
   if (typeId === 'psychic') {
     const title = 'Pokemon Psychic Weakness: What Beats Psychic Types?';
     const description = 'Psychic-type Pokémon are weak to Bug, Ghost and Dark moves (2×). Explore all 18 attack and defense matchups, dual-type calculations and five FAQs.';
@@ -272,7 +284,12 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: typeId === 'psychic'
+            mainEntity: typeId === 'steel'
+              ? STEEL_FAQS.map(({ question, answer }) => ({
+                  '@type': 'Question', name: question,
+                  acceptedAnswer: { '@type': 'Answer', text: answer },
+                }))
+              : typeId === 'psychic'
               ? PSYCHIC_FAQS.map(({ question, answer }) => ({
                   '@type': 'Question', name: question,
                   acceptedAnswer: { '@type': 'Answer', text: answer },
@@ -326,9 +343,9 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'psychic' ? 'Pokemon Psychic Weakness: What Beats Psychic Types?' : typeId === 'ghost' ? 'Pokemon Ghost Weakness: What Beats Ghost Types?' : `${type.name} Type`}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'steel' ? 'Pokemon Steel Weakness: What Beats Steel Types?' : typeId === 'psychic' ? 'Pokemon Psychic Weakness: What Beats Psychic Types?' : typeId === 'ghost' ? 'Pokemon Ghost Weakness: What Beats Ghost Types?' : `${type.name} Type`}</h1>
           </div>
-          <p className="text-lg text-gray-700">{typeId === 'psychic' ? 'Psychic-type Pokémon are weak to Bug, Ghost and Dark moves, each dealing 2× damage against a pure Psychic defender.' : typeId === 'ghost' ? 'Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2× damage against a pure Ghost defender.' : type.description}</p>
+          <p className="text-lg text-gray-700">{typeId === 'steel' ? 'Steel-type Pokémon are weak to Fire, Fighting and Ground moves, each dealing 2× damage against a pure Steel defender.' : typeId === 'psychic' ? 'Psychic-type Pokémon are weak to Bug, Ghost and Dark moves, each dealing 2× damage against a pure Psychic defender.' : typeId === 'ghost' ? 'Ghost-type Pokémon are weak to Ghost and Dark moves, each dealing 2× damage against a pure Ghost defender.' : type.description}</p>
           {PRIORITY_CTR_TYPES.includes(typeId) && typeId !== 'ghost' && (
             <div className="mt-5 rounded-lg border border-blue-200 bg-blue-50 p-4 text-gray-800">
               <p>
@@ -407,39 +424,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </article>
         )}
 
-        {typeId === 'steel' && (
-          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
-            <h2>Steel type across the generations</h2>
-            <p>
-              <strong>Direct answer:</strong> Steel-type moves are super effective (2×) against Ice, Rock, and Fairy.
-              A Steel Pokémon is weak (2×) to Fire, Fighting, and Ground, resists ten types, and is immune only to Poison.
-            </p>
-
-            <h3>Gen 2–5 (1999–2013): the original Steel</h3>
-            <p>
-              Steel was added in Generation 2 and arrived as the ultimate wall. It resisted eleven types — including Dark and Ghost —
-              and was immune to Poison, with only Fire, Fighting, and Ground as weaknesses. For a decade, "switch to Steel" meant "shrug off almost anything."
-            </p>
-
-            <h3>Gen 6 (2013): the Fairy rebalance</h3>
-            <p>
-              Fairy was introduced and the chart was trimmed. Steel lost its resistances to <strong>Dark</strong> and <strong>Ghost</strong> (those became neutral 1×),
-              and gained a new weakness to <strong>Fairy</strong>. Steel still resists ten types and is immune to Poison, but it no longer neutralizes Dark or Ghost attackers.
-            </p>
-
-            <h3>Gen 9 (2022+): Terastal</h3>
-            <p>
-              The type chart itself did not change, but Terastallization lets a Steel Pokémon change its type mid-battle, trading its resistances for a different defensive profile on demand.
-            </p>
-
-            <h3>What Steel players most often get wrong</h3>
-            <ul>
-              <li><strong>"Steel resists Dark and Ghost."</strong> Not since 2013. This is the single most common stale memory: a player who has been competing since Red and Blue told us the tricky ones are "matchups that have changed — mainly steel no longer resisting dark or ghost, or anything related to fairy." Since Gen 6 those two matchups are neutral, not resisted.</li>
-              <li><strong>"Steel isn't weak to Fairy."</strong> Wrong since Gen 6. Fairy was added that generation specifically and hits Steel for 2×, so Sylveon, Tinkaton, and other Fairy attackers are real answers to Steel.</li>
-              <li><strong>"Steel shrugs off Ground."</strong> It never did. Ground has been super effective against Steel since Steel existed (Gen 2). Steel's bulk comes from its many resistances, not from avoiding Ground.</li>
-            </ul>
-          </article>
-        )}
+        {typeId === 'steel' && <SteelWeaknessGuide />}
 
         {typeId === 'fairy' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
