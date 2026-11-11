@@ -6,13 +6,15 @@ A comprehensive type effectiveness calculator and battle simulator built with Ne
 
 ## Public Dataset
 
-The [`dataset/`](dataset) folder contains open, machine-readable exports of the type chart plus a
-dependency-free calculator, all generated from this repository's own `data/typeChart.json`:
+The [`dataset/`](dataset) folder is an open Generation 6–9 type chart. [`dataset/README.md`](dataset/README.md) documents every file, column, and count.
 
-- `dataset/type-chart.csv` — the full 18×18 effectiveness matrix
-- `dataset/dual-type-combinations.json` — every single and dual-type combination with its defensive summary
-- `dataset/index.html` — a standalone, offline calculator
-- `dataset/typecalc.py` — a command-line calculator
+- `dataset/type-chart.csv` — 18×18 effectiveness matrix
+- `dataset/dual-type-combinations.json` — 171 single- and dual-type defensive summaries
+- `dataset/dual-type-defensive-matrix.csv` — those 171 combinations as a table
+- `dataset/4x-weaknesses.md` and `dataset/4x-weaknesses.csv` — every combination with a 4× weakness, grouped by attacking type
+- `dataset/featured-species-by-type.csv` — the site's featured list (100 entries), not a complete dex
+- `dataset/index.html` and `dataset/typecalc.py` — small calculators
+- `dataset/generate.py` — regenerates the exports from `data/typeChart.json`
 
 ## Features
 
@@ -163,7 +165,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the ISC License.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
 ## Disclaimer
 

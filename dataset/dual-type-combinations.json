@@ -346,7 +346,7 @@
       "normal": 0.5,
       "fire": 2.0,
       "water": 1.0,
-      "electric": 1.0,
+      "electric": 0.5,
       "grass": 0.5,
       "ice": 0.5,
       "fighting": 2.0,
@@ -726,6 +726,7 @@
         "resist_0_5x": [
           "bug",
           "dragon",
+          "electric",
           "fairy",
           "flying",
           "grass",
@@ -1134,6 +1135,7 @@
         "resist_0_5x": [
           "bug",
           "dragon",
+          "electric",
           "fairy",
           "flying",
           "grass",
@@ -1558,6 +1560,7 @@
         ],
         "resist_0_5x": [
           "dragon",
+          "electric",
           "flying",
           "normal",
           "psychic"
@@ -1930,7 +1933,6 @@
       "defensive": {
         "quad_weak_4x": [],
         "weak_2x": [
-          "electric",
           "fighting",
           "ground"
         ],
@@ -2288,7 +2290,6 @@
         "resist_0_5x": [
           "bug",
           "dragon",
-          "electric",
           "fairy",
           "grass",
           "ice",
@@ -2297,6 +2298,7 @@
           "rock"
         ],
         "double_resist_0_25x": [
+          "electric",
           "flying",
           "steel"
         ],
@@ -2637,7 +2639,6 @@
         ],
         "resist_0_5x": [
           "dragon",
-          "electric",
           "fairy",
           "normal",
           "psychic",
@@ -2646,6 +2647,7 @@
           "water"
         ],
         "double_resist_0_25x": [
+          "electric",
           "grass"
         ],
         "immune_0x": [
@@ -2942,6 +2944,7 @@
         "resist_0_5x": [
           "bug",
           "dragon",
+          "electric",
           "fairy",
           "flying",
           "grass",
@@ -3229,6 +3232,7 @@
         "resist_0_5x": [
           "dark",
           "dragon",
+          "electric",
           "grass",
           "ice",
           "normal",
@@ -3489,6 +3493,7 @@
         ],
         "resist_0_5x": [
           "dragon",
+          "electric",
           "flying",
           "ice",
           "normal",
@@ -3942,7 +3947,6 @@
       "defensive": {
         "quad_weak_4x": [],
         "weak_2x": [
-          "electric",
           "fire"
         ],
         "resist_0_5x": [
@@ -4127,6 +4131,7 @@
         ],
         "resist_0_5x": [
           "dragon",
+          "electric",
           "fairy",
           "flying",
           "grass",
@@ -4278,6 +4283,7 @@
         "resist_0_5x": [
           "bug",
           "dragon",
+          "electric",
           "fairy",
           "ice",
           "normal",
@@ -4423,6 +4429,7 @@
         "resist_0_5x": [
           "bug",
           "dragon",
+          "electric",
           "fairy",
           "ice",
           "psychic",
@@ -4529,6 +4536,7 @@
         ],
         "resist_0_5x": [
           "dragon",
+          "electric",
           "fairy",
           "flying",
           "grass",
@@ -4611,7 +4619,6 @@
         ],
         "resist_0_5x": [
           "bug",
-          "electric",
           "flying",
           "normal",
           "psychic",
@@ -4620,6 +4627,7 @@
           "water"
         ],
         "double_resist_0_25x": [
+          "electric",
           "grass"
         ],
         "immune_0x": [
@@ -4671,6 +4679,7 @@
         "resist_0_5x": [
           "dark",
           "dragon",
+          "electric",
           "flying",
           "ghost",
           "grass",
@@ -4723,6 +4732,7 @@
         ],
         "resist_0_5x": [
           "dark",
+          "electric",
           "fairy",
           "flying",
           "grass",
