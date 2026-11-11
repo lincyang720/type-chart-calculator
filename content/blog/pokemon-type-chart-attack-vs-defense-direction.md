@@ -1,7 +1,7 @@
 ---
 slug: pokemon-type-chart-attack-vs-defense-direction
 title: "Pokémon Type Chart: Why Attack and Defense Are Not Reversible"
-description: "The Pokémon type chart is directional: 74 of 153 distinct type pairs have different multipliers when attack and defense are reversed. Check 10 verified examples and avoid reading the chart backward."
+description: "The Pokémon type chart is directional: 75 of 153 distinct type pairs have different multipliers when attack and defense are reversed. Check 10 verified examples and avoid reading the chart backward."
 date: "2026-11-09"
 author: "TypeMatchup"
 image: "/seo/type-chart-directionality.svg"
@@ -11,7 +11,7 @@ faq:
   - question: "Can you reverse the attack and defense columns on the Pokémon type chart?"
     answer: "No. A type chart maps the attacking move type to the defending Pokémon type. For example, Ground attacks Electric for 2×, while Electric attacks Ground for 0×."
   - question: "How many type pairs give different damage when reversed?"
-    answer: "For the modern 18-type chart, 74 of the 153 different unordered type pairs produce different base multipliers in the two directions. This is calculated from TypeMatchup's defensive type chart data, counting each distinct pair once."
+    answer: "For the modern 18-type chart, 75 of the 153 different unordered type pairs produce different base multipliers in the two directions. This is calculated from TypeMatchup's defensive type chart data, counting each distinct pair once."
   - question: "Does Ghost against Normal work both ways?"
     answer: "Yes. Normal-type and Ghost-type attacks both deal 0× to the other pure type. This is an exception: both directions are immune."
   - question: "Is Fire against Steel the same as Steel against Fire?"
@@ -26,9 +26,9 @@ faq:
 
 ![Original infographic: Ground attacks Electric for 2×, Electric attacks Ground for 0×](/seo/type-chart-directionality.svg)
 
-This is not a rare technicality. We compared every pair of *different* types in the current 18-type main-series chart using [TypeMatchup's underlying data](/pokemon/type-chart). Of the **153 unordered type pairs**, **74 have different multipliers when attacker and defender are switched**; **79 have matching multipliers**. These counts describe **base single-type effectiveness only**—not a Pokémon's actual total battle damage. The full calculation and the ten case studies are below.
+This is not a rare technicality. We compared every pair of *different* types in the current 18-type main-series chart using [TypeMatchup's underlying data](/pokemon/type-chart). Of the **153 unordered type pairs**, **75 have different multipliers when attacker and defender are switched**; **78 have matching multipliers**. These counts describe **base single-type effectiveness only**—not a Pokémon's actual total battle damage. The full calculation and the ten case studies are below.
 
-![TypeMatchup audit: 74 of 153 different-type pairs behave differently when reversed](/seo/type-chart-audit.svg)
+![TypeMatchup audit: 75 of 153 different-type pairs behave differently when reversed](/seo/type-chart-audit.svg)
 
 ## A direction-check table: ten matchups that fool people
 
@@ -59,7 +59,7 @@ Ask these three questions in order:
 
 For the full modern matrix, open the [Pokémon type chart](/pokemon/type-chart). For live calculations, select two defensive types in the [dual-type calculator](/calculator).
 
-## Original data check: 74 asymmetric pairs out of 153
+## Original data check: 75 asymmetric pairs out of 153
 
 With 18 types, there are `18 × 17 ÷ 2 = 153` ways to choose two **different** types without counting the reverse as another pair. We then computed two values for each unordered pair:
 
@@ -70,11 +70,11 @@ If the two numbers differed, we counted that pair as **asymmetric**. Otherwise i
 
 | Category | Distinct pure-type pairs | Definition |
 | --- | ---: | --- |
-| Asymmetric | **74** | `A → B` differs from `B → A` |
-| Symmetric | **79** | Both directions have the same multiplier |
+| Asymmetric | **75** | `A → B` differs from `B → A` |
+| Symmetric | **78** | Both directions have the same multiplier |
 | **Total** | **153** | All unordered pairs of 18 different types |
 
-This figure is reproducible against the website's maintained `data/defensiveTypeChart.json` using the same underlying rules as the calculator. It is a property of the **modern main-series chart**, not an official survey statistic or a claim that 74% of all battles play differently.
+This figure is reproducible against the website's maintained `data/defensiveTypeChart.json` using the same underlying rules as the calculator. It is a property of the **modern main-series chart**, not an official survey statistic or a claim that 75% of all battles play differently.
 
 ### Some pairs really *are* symmetric
 

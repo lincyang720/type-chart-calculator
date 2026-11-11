@@ -53,8 +53,9 @@ Poison and Steel coverage is rare. Most physical attackers run Fighting/Dark/Gro
 Fairy pairs incredibly well with other defensive types:
 
 **Fairy/Steel (Magearna, Zacian):**
-- 11 resistances, 2 immunities
+- 9 resistances, 2 immunities
 - Only weak to Fire and Ground
+- Electric is neutral
 - Best defensive typing in the game
 
 **Fairy/Water (Azumarill, Primarina):**
@@ -88,7 +89,7 @@ Clefable is the most versatile Fairy type. Magic Guard prevents chip damage from
 **Ability:** Soul-Heart  
 **Role:** Special attacker, tank
 
-Steel/Fairy is the best defensive typing in Pokemon. Magearna resists 11 types and is immune to Dragon and Poison. Soul-Heart boosts Special Attack by 1 stage whenever any Pokemon faints.
+Steel/Fairy is the best defensive typing in Pokemon. Magearna resists 9 types and is immune to Dragon and Poison. Soul-Heart boosts Special Attack by 1 stage whenever any Pokemon faints.
 
 **Standard Set:**
 - Fleur Cannon

@@ -3,22 +3,21 @@ title: "Steel Type Pokemon - The Ultimate Defensive Typing Guide"
 slug: "steel-type-guide"
 date: "2026-03-07"
 author: "TypeMatchup"
-description: "Complete Steel type guide: 11 resistances, 1 immunity, best Steel Pokemon, and why Steel is the most defensive typing in competitive battles."
+description: "Complete Steel type guide: 10 resistances, 1 immunity, best Steel Pokemon, and why Steel is the most defensive typing in competitive battles."
 image: "/blog/steel-type-guide.jpg"
 tags: ["steel", "defense", "competitive", "strategy", "type-guide"]
 ---
 
 # Steel Type Pokemon - The Ultimate Defensive Typing
 
-Steel type has the most resistances of any type in Pokemon: **11 resistances and 1 immunity**. This makes it the ultimate defensive typing for competitive play.
+Steel type has the most resistances of any type in Pokemon: **10 resistances and 1 immunity**. This makes it the ultimate defensive typing for competitive play.
 
 ## Steel Type Resistances & Immunities
 
-Steel resists **11 types** and is **immune to 1**:
+Steel resists **10 types** and is **immune to 1**. Electric is neutral.
 
 **Resists (0.5×):**
 - Normal
-- Electric
 - Flying
 - Rock
 - Bug
@@ -45,7 +44,7 @@ All three are common offensive types, which is Steel's main drawback. But with p
 
 ## Why Steel is the Best Defensive Type
 
-### 1. Resists 11 Types
+### 1. Resists 10 Types
 Steel resists more types than any other. This includes:
 - **Ice** — Most types are weak to Ice, but Steel resists it
 - **Dragon** — Steel walls Dragon attacks
@@ -62,8 +61,9 @@ Poison immunity means:
 Steel pairs incredibly well with other types to cover its weaknesses:
 
 **Steel/Fairy (Magearna, Zacian):**
-- 11 resistances, 2 immunities (Dragon, Poison)
+- 9 resistances (Bug at ¼×, eight others at ½×), 2 immunities (Dragon, Poison)
 - Only weak to Fire and Ground
+- Electric is neutral: neither type resists it
 - **Best defensive typing in the game**
 
 **Steel/Flying (Skarmory, Corviknight):**
@@ -146,7 +146,7 @@ Metagross has 135 base Attack and 130 base Defense. Clear Body prevents stat dro
 **Ability:** Soul-Heart  
 **Role:** Special attacker, tank
 
-Steel/Fairy is the best defensive typing in Pokemon. Magearna resists 11 types and is immune to Dragon and Poison. Soul-Heart boosts Special Attack by 1 stage whenever any Pokemon faints.
+Steel/Fairy is the best defensive typing in Pokemon. Magearna resists 9 types and is immune to Dragon and Poison. Soul-Heart boosts Special Attack by 1 stage whenever any Pokemon faints.
 
 **Standard Set:**
 - Fleur Cannon
@@ -248,7 +248,7 @@ Steel types are common in VGC:
 ## Steel Type Strategy Tips
 
 ### 1. Use Steel Types as Defensive Pivots
-Steel's 11 resistances make it easy to switch in. Use Steel types to pivot into Ice, Dragon, Fairy, or Psychic attacks.
+Steel's 10 resistances make it easy to switch in. Use Steel types to pivot into Ice, Dragon, Fairy, or Psychic attacks.
 
 ### 2. Pair with Ground Immunities
 Steel is weak to Ground. Pair it with Flying types, Levitate users, or Air Balloon holders:
@@ -288,9 +288,10 @@ Steel types are excellent in Pokemon GO:
 
 Steel/Fairy is the best defensive typing in Pokemon:
 
-**Resistances:** 11 types  
+**Resistances:** 9 types  
 **Immunities:** Dragon, Poison  
-**Weaknesses:** Fire, Ground
+**Weaknesses:** Fire, Ground  
+**Neutral to Electric:** neither Steel nor Fairy resists Electric moves
 
 **Best Steel/Fairy Pokemon:**
 - **Zacian-Crowned** (Fairy/Steel, banned to Ubers)
@@ -298,7 +299,8 @@ Steel/Fairy is the best defensive typing in Pokemon:
 - **Klefki** (Steel/Fairy, Prankster support)
 
 Steel/Fairy resists:
-- Normal, Flying, Rock, Bug, Steel, Grass, Psychic, Ice, Dark, Fairy
+- Normal, Flying, Rock, Grass, Psychic, Ice, Dark, and Fairy at ½×
+- Bug at ¼×
 
 Steel/Fairy is immune to:
 - Dragon, Poison
@@ -310,7 +312,7 @@ This typing walls almost everything. The only common weaknesses are Fire and Gro
 ## Conclusion
 
 Steel is the ultimate defensive type in Pokemon because:
-1. **11 resistances** — more than any other type
+1. **10 resistances** — more than any other type
 2. **Poison immunity** — no Toxic stall
 3. **Excellent dual-type combos** — Steel/Fairy, Steel/Flying, Steel/Dragon
 4. **Access to Stealth Rock** — most important move in competitive play

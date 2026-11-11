@@ -51,7 +51,10 @@ assert.ok(offense.ground.noEffect.includes('flying'));
 assert.ok(offense.psychic.noEffect.includes('dark'));
 assert.ok(defense.dark.immuneTo.includes('psychic'));
 assert.ok(defense.steel.resistsTo.includes('fairy'));
-assert.equal(defense.steel.resistsTo.length, 11);
+assert.ok(!defense.steel.resistsTo.includes('electric'));
+assert.ok(!offense.electric.notVeryEffective.includes('steel'));
+assert.equal(defense.steel.resistsTo.length, 10);
+assert.deepEqual(offense.electric.notVeryEffective, ['electric', 'grass', 'dragon']);
 assert.ok(defense.fairy.immuneTo.includes('dragon'));
 assert.ok(offense.dragon.noEffect.includes('fairy'));
 assert.ok(offense.ghost.notVeryEffective.includes('dark'));
@@ -70,6 +73,14 @@ const mult = (attack, defend) => {
 const dual = (attack, first, second) => mult(attack, first) * mult(attack, second);
 assert.equal(dual('rock', 'fire', 'flying'), 4);
 assert.equal(dual('ground', 'electric', 'steel'), 4);
+assert.equal(mult('electric', 'steel'), 1);
+assert.equal(mult('steel', 'electric'), 0.5);
+assert.equal(dual('electric', 'water', 'steel'), 2);
+assert.equal(dual('electric', 'flying', 'steel'), 2);
+assert.equal(dual('electric', 'steel', 'fairy'), 1);
+assert.equal(dual('electric', 'electric', 'steel'), 0.5);
+assert.equal(dual('electric', 'grass', 'steel'), 0.5);
+assert.equal(dual('electric', 'dragon', 'steel'), 0.5);
 assert.equal(dual('fighting', 'ghost', 'normal'), 0);
 assert.equal(dual('dark', 'ghost', 'fairy'), 1);
 
