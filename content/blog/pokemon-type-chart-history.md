@@ -34,7 +34,7 @@ Every Pokemon has one or two types. Two types means two columns of the chart to 
 - A 4× weakness (e.g. Ice on a Grass/Flying Pokemon) → avoid exposing it at all costs.
 
 **Step 3 — Check what it resists (0.5× or 0×).**
-Resistances tell you what this Pokemon is *good* at walling. A Steel-type that resists 9 things is your defensive anchor. A Ghost-type that's immune to Normal and Fighting is your safe switch into those attacks.
+Resistances tell you what this Pokemon is *good* at walling. A Steel-type that resists 10 things is your defensive anchor. A Ghost-type that's immune to Normal and Fighting is your safe switch into those attacks.
 
 That's it. Three questions, every turn.
 
@@ -46,7 +46,7 @@ You don't need all 324 matchups. These show up constantly:
 
 - **Fire is weak to Water, Ground, Rock.** The three most common offensive types all hit Fire hard — don't over-rely on it.
 - **Dragon is weak only to Ice, Dragon, and Fairy.** That narrow weakness is exactly why Ice moves (like Ice Beam) are staples on offensive teams.
-- **Steel resists 9 types** but is weak to Fire, Fighting, Ground — three extremely common attackers.
+- **Steel resists 10 types** but is weak to Fire, Fighting, Ground — three extremely common attackers. Electric is neutral.
 - **Fairy is immune to Dragon** — the single most important defensive property in the current metagame.
 - **Ground hits Electric, Fire, Rock, Steel for 2×** and is blocked by Flying, so an Electric/Flying Pokemon (like most Rotom forms) shuts Ground users down.
 - **Water/Ground pairs well**: each covers the other's weaknesses (Water covers Ground's Fire weakness; Ground covers Water's Electric weakness).

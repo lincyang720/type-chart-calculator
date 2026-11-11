@@ -85,7 +85,8 @@ Gen 2's additions created good balance. The meta evolved through better move dis
 
 1. **Steel Type Nerfed**
    - Lost resistances to Dark and Ghost
-   - Went from 11 resistances to 9 resistances
+   - Resists Fairy, so the modern count is 10 resistances
+   - Electric stays neutral
    - Still kept Poison immunity
 
 2. **Ghost and Dark Buffed**
@@ -144,7 +145,7 @@ The Gen 6 changes created lasting balance. Recent generations focused on:
 - **Ground**: Super effective against 5 types (Fire, Electric, Poison, Rock, Steel)
 
 ### Defensive Walls
-- **Steel**: Resists 9 types, immune to Poison
+- **Steel**: Resists 10 types, immune to Poison. Electric is neutral
 - **Fairy**: Resists 3 types, immune to Dragon
 - **Ghost**: Immune to Normal and Fighting
 

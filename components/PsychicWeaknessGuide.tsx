@@ -22,7 +22,8 @@ export const PSYCHIC_FAQS=[
 {question:'Are Dark moves strong against Psychic?',answer:'Yes. Dark attacks deal 2× to pure Psychic. In the other direction, Psychic moves do 0× against pure Dark.'},
 {question:'What does Psychic resist?',answer:'Pure Psychic resists Fighting and Psychic attacks, taking ½× from each, and has no type-based immunity.'},
 {question:'What does Psychic hit super effectively?',answer:'Psychic moves deal 2× to pure Fighting and Poison, ½× to Psychic and Steel, and 0× to Dark.'},
-{question:'Can a secondary type cancel a Psychic weakness?',answer:'Yes. Psychic/Fairy takes 1× from Dark (2× multiplied by ½×), and Psychic/Normal takes 0× from Ghost (2× multiplied by 0×).'}
+{question:'Can a secondary type cancel a Psychic weakness?',answer:'Yes. Psychic/Fairy takes 1× from Dark (2× multiplied by ½×), and Psychic/Normal takes 0× from Ghost (2× multiplied by 0×).'},
+{question:'What beats Psychic-type Pokémon?',answer:'Bug, Ghost, and Dark moves beat a pure Psychic defender at 2×. Dark is also immune to Psychic moves, so a Dark switch blanks Psychic attacks. The counter table names dataset Pokémon that carry those move types.'}
 ];
 export default function PsychicWeaknessGuide(){
  const o=attack.psychic,d=defense.psychic;
@@ -40,7 +41,7 @@ export default function PsychicWeaknessGuide(){
  <p className="mb-4">For each of 17 distinct Psychic/second-type combinations and each original Psychic 2× weakness, multiply the Psychic defensive factor by the second type's defensive factor. This yields {neutral} 1× cancellations and {immune} 0× immunities across {interactions.length} changed attack–defender interactions. These are interaction counts, not Pokémon species counts. All figures derive from data/typeChart.json and data/defensiveTypeChart.json.</p>
  <div className="overflow-x-auto mb-6"><table className="w-full text-left text-sm"><thead><tr><th>Defender</th><th>Attack</th><th>Calculation</th></tr></thead><tbody>{interactions.map(x=><tr key={x.second+x.attacker} className="border-t"><td className="py-2">Psychic/{label(x.second)}</td><td>{label(x.attacker)}</td><td>2× × {fmt(x.partnerFactor)} = {fmt(x.result)}</td></tr>)}</tbody></table></div>
  <p className="mb-5 text-sm">Ability, move, item and Terastallization exceptions can alter individual battles; they are excluded from the type-only calculations.</p>
- <h2 className="mb-3 text-xl font-bold">Psychic weakness FAQ</h2><div className="space-y-4 mb-6">{PSYCHIC_FAQS.map(f=><section key={f.question}><h3 className="font-semibold">{f.question}</h3><p>{f.answer}</p></section>)}</div>
+ <h2 id="faq" className="mb-3 scroll-mt-6 text-xl font-bold">Psychic weakness FAQ</h2><div className="space-y-4 mb-6">{PSYCHIC_FAQS.map(f=><section key={f.question}><h3 className="font-semibold">{f.question}</h3><p>{f.answer}</p></section>)}</div>
  <nav aria-label="Related Psychic matchup resources" className="flex flex-wrap gap-4 text-blue-700 underline"><Link href="/pokemon/type-chart">Complete Pokémon type chart</Link><Link href="/calculator?type1=psychic">Psychic calculator</Link><Link href="/dual-type-chart">Dual-type chart</Link><Link href="/types/ghost">Ghost weakness guide</Link><Link href="/types/dark">Dark weakness guide</Link></nav>
  </article>;
 }

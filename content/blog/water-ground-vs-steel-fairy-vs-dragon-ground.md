@@ -72,7 +72,7 @@ The second type moves the product. These are the rows that change which core you
 | [Dragapult](/pokemon/dragapult) | Water 0.5×, Earthquake 1× | Fairy 2×, Steel 1× | Dragon 2× | Dragon moves 1×, 0×, 2× |
 | [Pelipper](/pokemon/pelipper) | Water 0.5×, Earthquake 0× | Steel 0.5×, Fairy 1× | Dragon 1×, Earthquake 0× | Electric is the 4×, and none of these STABs is Electric |
 
-[Excadrill](/pokemon/excadrill) takes both Water/Ground STABs and Garchomp's Earthquake at 2×, and both Steel/Fairy STABs at 0.5×. Its Earthquake back is 1×, 2×, 1×. [Corviknight](/pokemon/corviknight) takes no STAB here at 2×: Waterfall is 1×, Earthquake is 0×, and Steel, Fairy, and Dragon are 0.5×. [Rotom-Wash](/pokemon/rotom-wash) takes Earthquake at 2× on the chart and at 0× with Levitate. Volt Switch is 0× into both Ground cores and 0.5× into Steel/Fairy.
+[Excadrill](/pokemon/excadrill) takes both Water/Ground STABs and Garchomp's Earthquake at 2×, and both Steel/Fairy STABs at 0.5×. Its Earthquake back is 1×, 2×, 1×. [Corviknight](/pokemon/corviknight) takes no STAB here at 2×: Waterfall is 1×, Earthquake is 0×, and Steel, Fairy, and Dragon are 0.5×. [Rotom-Wash](/pokemon/rotom-wash) takes Earthquake at 2× on the chart and at 0× with Levitate. Volt Switch is 0× into both Ground cores and 1× into Steel/Fairy.
 
 ## Water/Ground
 

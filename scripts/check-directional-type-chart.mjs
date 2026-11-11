@@ -19,13 +19,15 @@ for (let i = 0; i < types.length; i++) {
 }
 assert.equal(types.length, 18);
 assert.equal(pairs, 153);
-assert.equal(asymmetric, 74);
+assert.equal(asymmetric, 75);
 assert.equal(multiplier('ground', 'electric'), 2);
 assert.equal(multiplier('electric', 'ground'), 0);
+assert.equal(multiplier('electric', 'steel'), 1);
+assert.equal(multiplier('steel', 'electric'), 0.5);
 assert.equal(multiplier('ghost', 'normal'), 0);
 assert.equal(multiplier('normal', 'ghost'), 0);
 const article = readFileSync('content/blog/pokemon-type-chart-attack-vs-defense-direction.md', 'utf8');
-assert.match(article, /74 of the 153/);
+assert.match(article, /75 of the 153/);
 assert.match(article, /\*\*No—you cannot read/);
 assert.match(article, /date: "2026-11-09"/);
-console.log('Directional type-chart 74/153 figures and source article verified.');
+console.log('Directional type-chart 75/153 figures and source article verified.');

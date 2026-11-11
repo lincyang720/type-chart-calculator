@@ -9,7 +9,7 @@ faq:
   - question: "Does Terastallization replace both defending types?"
     answer: "A normal Tera type replaces both defending types until the Pokémon faints. Read that single type. Original types keep 1.5× STAB, and the Tera type gets 1.5× too. When the Tera type is already one of the original types, moves of that type get 2× STAB. The two bonuses do not multiply into 2.25×."
   - question: "Does Tera Steel Garchomp still have Dragon and Ground STAB?"
-    answer: "Yes. Earthquake and Dragon Claw stay at 1.5×. Iron Head gains 1.5× because Steel is the new type. Ice goes from 4× to 0.5×, and Fairy and Dragon go from 2× to 0.5×. Fire, Fighting, and Ground become 2×. Electric is no longer 0×. Steel resists Electric, so that hit is 0.5×."
+    answer: "Yes. Earthquake and Dragon Claw stay at 1.5×. Iron Head gains 1.5× because Steel is the new type. Ice goes from 4× to 0.5×, and Fairy and Dragon go from 2× to 0.5×. Fire, Fighting, and Ground become 2×. Electric is no longer 0×. Steel does not resist Electric, so that hit is 1×."
   - question: "Does Tera Water remove Water/Ground's Grass 4×?"
     answer: "It cuts Grass from 4× to 2× and turns the Electric immunity into an Electric weakness. Freeze-Dry stays 2× because the Pokémon is still Water. Tera Flying or Tera Steel takes Grass at 0.5×. Tera Flying takes Electric, Ice, and Rock at 2× and makes Ground 0×. Tera Steel takes Fire, Fighting, and Ground at 2×."
   - question: "When should Steel/Fairy Terastallize into Ground instead of Fire?"
@@ -51,7 +51,7 @@ The [core guide](/blog/water-ground-vs-steel-fairy-vs-dragon-ground) lists Earth
 | Ice | 4× | 0.5× | 0.5× | 1× | 2× |
 | Dragon | 2× | 0.5× | 1× | 0× | 1× |
 | Fairy | 2× | 0.5× | 0.5× | 1× | 1× |
-| Electric | 0× | 0.5× | 1× | 1× | 0× |
+| Electric | 0× | 1× | 1× | 1× | 0× |
 | Fire | 0.5× | 2× | 0.5× | 1× | 1× |
 | Fighting | 1× | 2× | 1× | 0.5× | 1× |
 | Ground | 1× | 2× | 2× | 1× | 1× |
@@ -84,7 +84,7 @@ The chart's Ice line is 1×: 0.5× into Water, 2× into Ground. Freeze-Dry treat
 | Grassy Glide | 4× | 0.5× | 0.5× | 2× |
 | Freeze-Dry | 4× | 2× | 0.5× | 2× |
 | Ice Beam | 1× | 2× | 0.5× | 0.5× |
-| Thunderbolt | 0× | 2× | 0.5× | 2× |
+| Thunderbolt | 0× | 2× | 1× | 2× |
 | Earthquake, incoming | 1× | 0× | 2× | 1× |
 | Flamethrower | 0.5× | 1× | 2× | 0.5× |
 | Close Combat | 1× | 0.5× | 2× | 1× |
@@ -92,13 +92,13 @@ The chart's Ice line is 1×: 0.5× into Water, 2× into Ground. Freeze-Dry treat
 
 Tera Flying takes Grass at 0.5× and makes Ground 0×. Electric, the hit this core was brought to answer, becomes 2×. Ice and Rock become 2×, so the next rocks are one quarter. Freeze-Dry falls from 4× to 2× while Ice Beam rises from 1× to 2×. Swampert has no Flying attack. Earthquake and Waterfall keep 1.5×. Gastrodon's Storm Drain still draws Water moves and makes them 0× even though [Flying](/calculator?type1=flying) shows Water at 1×. [Storm Drain](/pokemon/type-chart-with-abilities?type1=water&type2=ground&ability=storm-drain) survives the type change, and so does Quagsire's Water Absorb. Spikes miss, because Flying is not grounded.
 
-Tera Steel takes Grass, Freeze-Dry, and Ice Beam at 0.5×. Steel resists Electric, so Thunderbolt is 0.5×: the immunity is gone, and it did not become a weakness. Fire, Fighting, and Ground are 2×. Open [Steel](/calculator?type1=steel) beside the pair and that swap is the read. Swampert learns Hard Press. Tera Blast is the cleaner Steel STAB. Poison moves become 0×, and a later switch ignores Toxic Spikes.
+Tera Steel takes Grass, Freeze-Dry, and Ice Beam at 0.5×. Steel does not resist Electric, so Thunderbolt is 1×: the immunity is gone, and it did not become a weakness. Fire, Fighting, and Ground are 2×. Open [Steel](/calculator?type1=steel) beside the pair and that swap is the read. Swampert learns Hard Press. Tera Blast is the cleaner Steel STAB. Poison moves become 0×, and a later switch ignores Toxic Spikes.
 
 Tera Water raises Water STAB from 1.5× to 2×. Grass falls from 4× to 2×, so Grassy Glide is still super effective, and Electric falls from 0× to 2×. Freeze-Dry stays 2× because you are still Water, while Ice Beam becomes 0.5×. Click it when the extra Water STAB takes a KO and the Electric move is already off the field.
 
 ## Steel/Fairy: Ground or Fire
 
-[Tinkaton](/pokemon/tinkaton), Magearna, and Crowned [Zacian](/pokemon/zacian) share [Steel/Fairy](/calculator?type1=steel&type2=fairy). Fire and Ground are 2×. There is no 4×. Poison and Dragon are 0×. Electric is 0.5×, because Steel resists it and Fairy does not change the product. The [Steel/Fairy page](/types/steel-fairy) has the full row. The flip is the attack: both STABs bounce off the Steel walls in the [core guide](/blog/water-ground-vs-steel-fairy-vs-dragon-ground).
+[Tinkaton](/pokemon/tinkaton), Magearna, and Crowned [Zacian](/pokemon/zacian) share [Steel/Fairy](/calculator?type1=steel&type2=fairy). Fire and Ground are 2×. There is no 4×. Poison and Dragon are 0×. Electric is 1×, because neither Steel nor Fairy resists it. The [Steel/Fairy page](/types/steel-fairy) has the full row. The flip is the attack: both STABs bounce off the Steel walls in the [core guide](/blog/water-ground-vs-steel-fairy-vs-dragon-ground).
 
 Tinkaton clicks Gigaton Hammer, Play Rough, and Knock Off. Hammer cannot be used on consecutive turns. Magearna clicks Fleur Cannon, Flash Cannon, and Focus Blast. Neither learns Earthquake or a Fire move. Tinkaton does learn Bulldoze, at 60 power. The Ground or Fire button you add is Tera Blast. Hammer, Play Rough, Flash Cannon, and Fleur Cannon keep 1.5× STAB. Focus Blast stays 0× into [Gholdengo](/pokemon/gholdengo).
 
@@ -124,7 +124,7 @@ Gholdengo and Kingambit take either new type at 2×. Ferrothorn and Scizor take 
 | Water | 1× | 2× | 2× |
 | Grass | 0.5× | 2× | 0.5× |
 | Ice | 0.5× | 2× | 0.5× |
-| Electric | 0.5× | 0× | 1× |
+| Electric | 1× | 0× | 1× |
 | Dragon | 0× | 1× | 1× |
 | Poison | 0× | 0.5× | 1× |
 | Rock | 0.5× | 0.5× | 2× |

@@ -51,6 +51,14 @@ export const GHOST_WEAKNESS_FAQS = [
     question: 'Does a second type remove a Ghost weakness?',
     answer: 'Sometimes. Ghost/Fairy takes neutral 1× from Dark moves (2× against Ghost times ½× against Fairy). Ghost/Normal is immune to Ghost moves because Normal contributes 0×.',
   },
+  {
+    question: 'What is Ghost strong against?',
+    answer: 'Ghost moves deal 2× to Psychic and Ghost, ½× to Dark, and 0× to Normal.',
+  },
+  {
+    question: 'What beats Ghost-type Pokémon?',
+    answer: 'Ghost and Dark moves beat a pure Ghost defender at 2×. Dark also resists Ghost attacks, so it is the one-way answer. Normal and Fighting moves deal 0×. The counter table on this page names dataset Pokémon that carry Ghost or Dark moves.',
+  },
 ];
 
 export default function GhostWeaknessGuide() {
@@ -155,7 +163,7 @@ export default function GhostWeaknessGuide() {
         moves to affect Ghost defenders; that exception does not change the baseline chart.
       </p>
 
-      <h2 className="mb-3 text-2xl font-bold">Ghost weakness FAQ</h2>
+      <h2 id="faq" className="mb-3 scroll-mt-6 text-2xl font-bold">Ghost weakness FAQ</h2>
       <div className="mb-6 space-y-4">
         {GHOST_WEAKNESS_FAQS.map(({ question, answer }) => (
           <section key={question} className="rounded-lg border border-slate-200 p-3">

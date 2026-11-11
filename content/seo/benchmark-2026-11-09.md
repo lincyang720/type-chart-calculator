@@ -17,7 +17,7 @@ The user requested 10 relevant pages from **each** comparison domain. As of the 
 | https://pokemondb.net/go/type | GO-specific type effectiveness multipliers | A mistake-proof comparison of GO / main-series for the same defender | Calculate both chart values with version explicitly selected |
 | https://pokemondb.net/tools/type-coverage | Offensive move type coverage tool | Cases where defensive type reversal causes wrong coverage predictions | Reproducible type-coverage tests |
 | https://sg.portal-pokemon.com/game/type-chart/ | Official 18-type matrix and summary | Individual learner-oriented directional examples aren't on the chart itself | Short original attack→defender scenarios |
-| https://www.dittobase.com/scarlet-violet/guides/pokemon-type-effectiveness-guide | Dual-type math, STAB, Tera Types, Stellar Tera | Reversal audit and reproducible asymmetric counts are not presented in this guide | Verified 74/153 audit and two-way case-table |
+| https://www.dittobase.com/scarlet-violet/guides/pokemon-type-effectiveness-guide | Dual-type math, STAB, Tera Types, Stellar Tera | Reversal audit and reproducible asymmetric counts are not presented in this guide | Verified 75/153 audit and two-way case-table |
 | https://www.dittobase.com/scarlet-violet/compare | Type effectiveness table and compare tool | A focused reverse-direction reading tutorial is not established on this page | Distinguish move attacker vs defending types; test 10 pairs |
 
 **Remaining work:** find, load and qualify up to 10 genuine on-topic pages per domain, recording absent/nonexistent pages as such. In particular, the official Singapore site may not have 10 distinct type-chart editorial pages; do not substitute unrelated corporate pages. Claims about what every competitor page lacks must wait until all eligible pages have been actually read. No copying competitors' text.
@@ -26,7 +26,7 @@ The user requested 10 relevant pages from **each** comparison domain. As of the 
 
 | Priority | Unique intent/gap | Original contribution that can be audited | Status |
 | --- | --- | --- | --- |
-| 1 | Attack-vs-defense chart direction | Enumerate all 153 different type pairs and 74 reversals; 10 asymmetric examples | Drafted/publishing 2026-11-09 |
+| 1 | Attack-vs-defense chart direction | Enumerate all 153 different type pairs and 75 reversals; 10 asymmetric examples | Drafted/publishing 2026-11-09 |
 | 2 | When does a type weakness cancel to neutral? | Count cancellation patterns over all unique defending dual-type pairs, include exceptions | Planned; ensure distinct from existing /blog/how-to-read-dual-type-chart |
 | 3 | Which Pokémon type pairs have no immunity? | Programmatic all-pairs distribution with exact method and filters | Planned |
 | 4 | Electric type chart decision-tree: Ground immunities vs Flying/Water | Fully trace 10 named matchup paths from locally verified typing data | Planned |

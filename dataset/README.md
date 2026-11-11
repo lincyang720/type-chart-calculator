@@ -33,7 +33,7 @@ Multipliers are the standard chart only. Abilities, items, weather, terrain, Ter
 
 One defending type per row. The first column is `defending \ attacking`. The other 18 columns are the attacking types, in the type order above. Each cell is `0x`, `0.5x`, `1x`, or `2x`.
 
-There are 18 data rows. Read the Steel row, Electric column as `0.5x`: Electric is resisted by Steel.
+There are 18 data rows. Read the Steel row, Electric column as `1x`: Electric is neutral into Steel. The Electric row, Steel column stays `0.5x`: Steel moves are resisted by Electric.
 
 ## `dual-type-combinations.json`
 

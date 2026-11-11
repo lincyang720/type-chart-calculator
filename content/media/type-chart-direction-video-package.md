@@ -20,7 +20,7 @@ Check TypeMatchup.org for the full chart and our original examples. This is an i
 | Seconds | Original visual | Narration |
 | --- | --- | --- |
 | 0–12 | /seo/type-chart-directionality.svg, zoom arrows | Ground/Electric example |
-| 12–28 | /seo/type-chart-audit.svg, display 74 of 153 | Method and original audit |
+| 12–28 | /seo/type-chart-audit.svg, display 75 of 153 | Method and original audit |
 | 28–44 | Add Fire → Steel 2×, Steel → Fire ½× in TypeMatchup style | Second verified example |
 | 44–60 | Screen recording of the first-party calculator | Dual-type multiplication and CTA |
 
