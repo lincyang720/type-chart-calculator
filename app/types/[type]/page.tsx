@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import GhostWeaknessGuide, { GHOST_WEAKNESS_FAQS } from '@/components/GhostWeaknessGuide';
 import PsychicWeaknessGuide, { PSYCHIC_FAQS } from '@/components/PsychicWeaknessGuide';
 import SteelWeaknessGuide, { STEEL_FAQS } from '@/components/SteelWeaknessGuide';
+import FairyWeaknessGuide, { FAIRY_FAQS } from '@/components/FairyWeaknessGuide';
 import TypeBadge from '@/components/TypeBadge';
 import { DefensiveTypeChart, TypeChart, TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
@@ -144,8 +145,8 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   }
 
   const copy = typePageCopy[typeId];
-  const title = copy.title;
-  const description = copy.description;
+  const title = typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : copy.title;
+  const description = typeId === 'fairy' ? 'Fairy Pokémon are weak to Poison and Steel (2×), resist Fighting, Bug and Dark, and are immune to Dragon. Explore 18-type matchups, dual types and FAQs.' : copy.description;
   const keywords = `${type.name} type weakness, ${type.name} pokemon, ${type.name} counters, ${type.name} 4x weakness, pokemon type calculator`;
 
   return {
@@ -189,7 +190,9 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
   const editorialProfile = getTypeEditorialProfile(typeId);
   const guideModel = getSingleTypeGuide(typeId);
   const copy = typePageCopy[typeId];
-  const dedicatedFaqs = typeId === 'steel'
+  const dedicatedFaqs = typeId === 'fairy'
+    ? FAIRY_FAQS
+    : typeId === 'steel'
     ? STEEL_FAQS
     : typeId === 'psychic'
       ? PSYCHIC_FAQS
@@ -237,9 +240,9 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{copy.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : copy.title}</h1>
           </div>
-          <p className="text-lg text-gray-700">{copy.intro}</p>
+          <p className="text-lg text-gray-700">{typeId === 'fairy' ? 'Fairy-type Pokémon are weak to Poison and Steel moves, each dealing 2× damage against a pure Fairy defender.' : copy.intro}</p>
         </div>
 
         <SingleTypeGuide model={guideModel} />
@@ -311,34 +314,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
 
         {typeId === 'steel' && <SteelWeaknessGuide />}
 
-        {typeId === 'fairy' && (
-          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
-            <h2>Fairy type across the generations</h2>
-            <p>
-              <strong>Direct answer:</strong> Fairy-type moves are super effective (2×) against Fighting, Dragon, and Dark.
-              A Fairy Pokémon is weak (2×) to Poison and Steel, resists Fighting, Bug, and Dark, and is immune to Dragon.
-            </p>
-
-            <h3>Gen 6 (2013): the type that was added to stop Dragon</h3>
-            <p>
-              Fairy did not exist before Generation 6. It was introduced specifically to rein in Dragon-types, which had dominated competitive play.
-              The chart gave Fairy two jobs: be super effective against Dragon, and be the only type immune to Dragon. Both are still true today.
-            </p>
-
-            <h3>What Fairy actually does now</h3>
-            <p>
-              Offensively Fairy hits Fighting, Dragon, and Dark for 2×, is weak (0.5×) against Fire, Poison, and Steel, and has no 0× targets of its own.
-              Defensively it is the Dragon-immune type, resists Fighting, Bug, and Dark, and is weak only to Poison and Steel.
-            </p>
-
-            <h3>What Fairy players most often get wrong</h3>
-            <ul>
-              <li><strong>"Fairy is immune to Dragon — and it is the only type that is."</strong> This was a Gen 6 addition built to check Dragon dominance. Players who learned the chart before 2013 never had a Dragon-immune type, so it still slips their mind.</li>
-              <li><strong>"Fairy is weak to Poison and Steel."</strong> Both are deliberate Fairy answers — a Fairy Pokémon takes 2× from Poison moves like Poison Jab and from Steel moves. Easy to forget because Fairy otherwise feels like a premium offensive type.</li>
-              <li><strong>"Fairy only resists three types."</strong> Aside from the Dragon immunity, Fairy resists just Fighting, Bug, and Dark and is neutral to almost everything else. People over-rate its bulk.</li>
-            </ul>
-          </article>
-        )}
+        {typeId === 'fairy' && <FairyWeaknessGuide />}
 
         {typeId === 'dragon' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
