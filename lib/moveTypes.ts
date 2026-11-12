@@ -112,7 +112,6 @@ export const MOVE_TYPES: Record<string, TypeId> = {
   'Spacial Rend': 'dragon',
   'Spirit Break': 'fairy',
   'Spirit Shackle': 'ghost',
-  'Stealth Rock': 'rock',
   'Stone Edge': 'rock',
   'Sucker Punch': 'dark',
   'Superpower': 'fighting',
