@@ -45,3 +45,84 @@
 - **实际改动：** GitHub PR、部署时间、版本
 - **成功/失败信号：** 上线前定义，见 `optimization-rules.md`
 - **复盘：** 同口径数据、外部变化、局限性和最终决策
+
+---
+
+## 2026-11-12｜DIAG-20261112-02｜第二批四页 SEO 精细化诊断（仅分析，未修改页面）
+
+**状态：⚪ 未执行优化。** 本记录是诊断与候选实验，不是已经上线的 SEO 实验；本次只修改 `operations/decisions.md`。日期为 Asia/Taipei。
+
+### 数据口径与重大时序提醒
+
+- **来源**：已连接的 Google Search Console 官方 Search Analytics 数据接口，资源 `https://www.typematchup.org/`，搜索类型 Web；统计时间 **2026-10-14—2026-11-10（28 天）**。
+- 页面总量按 `page` 精确 URL 聚合读取；查询明细按 `page + query` 读取。CTR 为点击/曝光；平均排名按 GSC 原始口径，不可简单地把页面整体排名归因到某个查询。
+- **关键时序**：该 28 天数据截至 11 月 10 日；[PR #31](https://github.com/lincyang720/type-chart-calculator/pull/31)（`c2a7c8b20f03f34c2d8510597f3848065d7e3dba`）于 **2026-11-11** 修改多个属性弱点页的 Title、H1、首屏、互动计算器、反制列表和内链。**以下历史指标不能当作 PR #31 上线后的表现，也不能证明当前页面仍存在旧问题。**
+- 数据未额外按 Google US / 地区 / 设备过滤。公开网页对比只作用户意图参考，**不是经过国家和设备固定的 Google US 实际 SERP 排名审计**。
+
+### 页面级真实 GSC 基线
+
+| 优先级（下一轮检查） | 页面 | 曝光 | 点击 | CTR（计算） | 平均排名 | 现阶段判断 |
+|---|---|---:|---:|---:|---:|---|
+| P1 | [Fairy](https://www.typematchup.org/types/fairy) | 57,268 | 19 | 0.033% | 7.8311 | 低 CTR、排名偏后；先核验新版搜索结果展现 |
+| P2 | [Flying](https://www.typematchup.org/types/flying) | 52,801 | 21 | 0.040% | 7.3384 | 低 CTR、排名偏后；先核验新版展现 |
+| P3 | [Electric](https://www.typematchup.org/types/electric) | 71,200 | 53 | 0.074% | 6.5797 | 曝光最高之一，但排位靠后；先关注位置和 SERP |
+| P4 | [Dragon](https://www.typematchup.org/types/dragon) | 78,917 | 65 | 0.082% | 6.6964 | 曝光最高、相对点击稍好；新版已增强，不急于重改 |
+
+四页合计 **260,186 曝光、158 点击**（仅这四个 URL 的页面级汇总，不代表全站）。
+
+### 主要查询词 → 具体 URL（GSC page+query 精确匹配）
+
+| 页面 | 查询词 | 曝光 | 点击 | CTR | 平均排名 |
+|---|---|---:|---:|---:|---:|
+| Electric | `electric type weakness` | 10,095 | 3 | 0.030% | 6.5919 |
+| Electric | `electric weakness` | 3,143 | 1 | 0.032% | 7.2157 |
+| Electric | `electric pokemon weakness` | 2,524 | 5 | 0.198% | 7.1276 |
+| Dragon | `dragon type weakness` | 9,402 | 2 | 0.021% | 6.6990 |
+| Dragon | `dragon weakness` | 3,677 | 1 | 0.027% | 7.0155 |
+| Dragon | `dragon weakness pokemon` | 1,452 | 0 | 0% | 7.6625 |
+| Fairy | `fairy type weakness` | 7,278 | 0 | 0% | 8.5555 |
+| Fairy | `fairy weakness` | 4,421 | 1 | 0.023% | 8.1253 |
+| Fairy | `what is fairy weak to` | 988 | 0 | 0% | 9.9706 |
+| Flying | `flying type weakness` | 7,927 | 2 | 0.025% | 8.1166 |
+| Flying | `flying weakness` | 3,356 | 0 | 0% | 7.0834 |
+| Flying | `flying pokemon weakness` | 1,397 | 0 | 0% | 8.3572 |
+
+### 当前线上 Title / H1 / 首屏（2026-11-12 页面实际读取；与源码交叉核对）
+
+源码：[页面模板](https://github.com/lincyang720/type-chart-calculator/blob/main/app/types/%5Btype%5D/page.tsx)、[页面文案数据](https://github.com/lincyang720/type-chart-calculator/blob/main/lib/typePageCopy.json)、[通用指南组件](https://github.com/lincyang720/type-chart-calculator/blob/main/components/SingleTypeGuide.tsx)、[交互计算器](https://github.com/lincyang720/type-chart-calculator/blob/main/components/TypeMiniCalculator.tsx)。
+
+| 页面 | 实测 Title 与 H1 | 实测 Description 摘要 | 首屏弱点答案 | canonical |
+|---|---|---|---|---|
+| Electric | `Electric Type Weakness: Dual Typings, Counters & 4×`（Title=H1） | “Electric type weakness is only the start…”；突出 second type、counters、calculator | **Ground 2×**；抗 Electric/Flying/Steel，无免疫 | `/types/electric` |
+| Dragon | `Dragon Type Weakness: Dual-Type 4× List & Counters`（Title=H1） | “Dragon type weakness tools an overview leaves out…” | **Ice/Dragon/Fairy 2×**；抗 Fire/Water/Electric/Grass | `/types/dragon` |
+| Fairy | `Fairy Type Weakness: Dual-Type Chart & Counter List`（Title=H1） | “Fairy type weakness guide for dual typings…” | **Poison/Steel 2×**；抗 Fighting/Bug/Dark；**Dragon 0×** | `/types/fairy` |
+| Flying | `Flying Type Weakness: 4× Cases, Counters & Species`（Title=H1） | “Flying type weakness page covering…” | **Electric/Ice/Rock 2×**；抗 Grass/Fighting/Bug；**Ground 0×** | `/types/flying` |
+
+**首屏结构**：Title/H1 → 导语（先强调双属性差异） → “Quick answer” → 内页导航 → 可选第二属性的 `Interactive ... weakness calculator` → 倍率矩阵 → 反制 Pokémon 列表 / 精灵数据 / 4× 双属性例外 / FAQ。已检查实际页面内容和组件实现。
+
+**内链验证**：
+- 四页均通过页头及组件链接至 `/types`、`/calculator`、`/dual-type-chart`、`/pokemon/team-calculator` 等工具；首屏内部锚点包括 `#type-calculator`、`#counters`、`#species`、`#exceptions`、`#faq`。
+- `SingleTypeGuide.tsx` 中反制 Pokémon 使用 `/pokemon/{id}`，可索引双属性组合及其他属性使用 `/types/{slug}`；未找到“完全缺少内链”的证据。
+- **有待实机核对**：移动端导航与宽表横向滚动可用性（代码中使用 `overflow-x-auto` 和最小表格宽度）；此处仅完成源代码及文本层审查，不能宣称移动端交互已经逐项通过。
+
+### 对照用户搜索意图与公开内容
+
+主要查询如 `fairy type weakness` / `flying type weakness` / `electric type weakness` 首先是**快速查防守弱点**，其次才是双属性 4×、反制 Pokémon / 招式以及具体宝可梦。宝可梦官方属性相克表 https://sg.portal-pokemon.com/game/type-chart/ 也突出攻击方与防守方的方向区别。其他公开页面如 https://pokemonref.com/types/electric 以 “Defense — what beats Electric” 和 “Offense — what Electric moves hit” 分组呈现。
+
+**推断，不是已验证 Google SERP 结论**：现有标题着重 “4× / counters / dual typings”，与单纯寻找一行弱点答案的查询需求可能存在信息侧重点不同，但当前 Quick answer 已正确回答，不能只因历史 CTR 低就重写它。需要用固定国家、设备的实际 Google 搜索结果截图核对 Google 最终展示标题、摘要、SERP 特性，以及前 3 个结果内容之后，再决定是否做元信息实验。
+
+### 可执行优化候选（仅建议，未实施）
+
+1. **P1 Fairy（先验收，后决定）**：对 `fairy type weakness`、`fairy weakness` 和 `what is fairy weak to` 截取 Google US 桌面+手机的实际结果（含 Google 所选标题与摘要、前 3 条竞争结果）；如仍排名 7–10 且 snippet 侧重 4×/list，候选小实验是让 Title/Description 的首句直接明示 “Weak to Poison & Steel”，但保留现有计算器和详情。切忌同时全面改正文。
+2. **P2 Flying**：同法对 `flying type weakness` 等做 SERP 实测。可候选在搜索标题/描述开头明确 “Electric, Ice & Rock”，并区分防守弱点与攻击优势；当前正文已经解释 Ground 免疫，避免重复堆字。
+3. **P3 Electric**：主页面已有单一 Ground 弱点的完整答案和精灵工具。优先判断排名差距、SERP 是否直接给答案；只在搜索结果数据证实相关性不足后测试 “Weak to Ground” 的标题/描述。重点保护互动工具。
+4. **P4 Dragon**：标题已提供双属性 4× 与反制工具，实体页面内容完整。先核对 Google 展示与现有竞争格局；若对 `dragon type weakness` 的搜索摘要没有展示 Ice/Dragon/Fairy，可考虑小范围元信息试验，暂不改已有长文。
+5. **四页共同**：单独核验手机与桌面的计算器、各内页锚点、反制表格可滚动及 4× 例子准确性；如果发现在共享组件里的事实/可用性错误，走独立修复 PR，不把功能问题和 SEO 标题实验混在一起。
+6. **保护条件**：任何后续实际改动先写独立实验与明确的旧版指标、PR、上线时间；至少观察两个以上完整周，考虑谷歌抓取延迟和未修改参照页；不自动认定有效、不自动回滚、不动广告/robots/canonical。
+
+### 诊断结论
+
+- **本批不是“待补标题”的四个空页面**；PR #31 已在 11-11 改版并补充交互功能。
+- 现在最有价值的是**基于改版后完整数据和真实 SERP 判断新的低 CTR 是否持续**；优先跟踪 Fairy → Flying → Electric → Dragon。
+- 本次状态：**⚪ 已完成诊断 / 未执行页面优化 / 未上线任何 SEO 改动。**
+
