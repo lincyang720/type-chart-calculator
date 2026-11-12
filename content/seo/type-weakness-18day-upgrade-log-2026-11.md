@@ -9,7 +9,7 @@
 | 2026-11-09 | 1 | [`/types/ghost`](https://www.typematchup.org/types/ghost) | `pokemon ghost weakness` | 1.5万 | **DONE — only Ghost page changed**: PR [#21](https://github.com/lincyang720/type-chart-calculator/pull/21), production commit `49e431d9b52fd7b175189c92b010f2eb7da993f0`, Vercel production Ready. Browser shows correct title, first answer, 18-row matrix, five main FAQs, five internal links; sitemap contains URL. Browser visually loaded; exact HTTP response code was not separately captured by API. |
 | 2026-11-10 | 2 | [`/types/psychic`](https://www.typematchup.org/types/psychic) | `pokemon psychic weakness` | 1.2万 | **DONE — owner-confirmed live page opened** — PR [#27](https://github.com/lincyang720/type-chart-calculator/pull/27), production commit `1b8d2ec05e3237ec88d1b16df4fd94f55274cf3b`; CI Validate site passed; Vercel production status success. Site owner reported manually opening and verifying the live URL on 2026-11-10. This is owner-reported verification, not an independently captured browser trace; sitemap and explicit HTTP status not separately verified. |
 | 2026-11-11 | 3 | [`/types/steel`](https://www.typematchup.org/types/steel) | `pokemon steel weakness` | 9900 | **MERGED / production verification pending** — PR [#28](https://github.com/lincyang720/type-chart-calculator/pull/28), commit `17dcd4c3aba47c25cce1b66a46a605bfef5398be`; CI Validate site passed; Vercel production status pending at log time. Do not mark DONE until production success and live verification. |
-| 2026-11-12 | 4 | [`/types/fairy`](https://www.typematchup.org/types/fairy) | `pokemon fairy weakness` | 9900 | Not started — scheduled only; verify live and record outcome before marking done. |
+| 2026-11-12 | 4 | [`/types/fairy`](https://www.typematchup.org/types/fairy) | `pokemon fairy weakness` | 9900 | **MERGED / production verification pending** — PR [#35](https://github.com/lincyang720/type-chart-calculator/pull/35), commit `7555941926a5c038dbd5f07e675d4c106db2bb22`; Validate site passed (TypeScript, SEO, CMP, AdSense, build). Production deployment pending at log time; live page and sitemap not independently verified. Do not mark DONE yet. |
 | 2026-11-13 | 5 | [`/types/poison`](https://www.typematchup.org/types/poison) | `pokemon poison weakness` | 9900 | Not started — scheduled only; verify live and record outcome before marking done. |
 | 2026-11-14 | 6 | [`/types/ice`](https://www.typematchup.org/types/ice) | `pokemon ice weakness` | 8100 | Not started — scheduled only; verify live and record outcome before marking done. |
 | 2026-11-15 | 7 | [`/types/electric`](https://www.typematchup.org/types/electric) | `pokemon electric weakness` | 8100 | Not started — scheduled only; verify live and record outcome before marking done. |
@@ -50,6 +50,14 @@
 - **Corrected misinformation**: Steel resists Fairy (½×); Fairy is not a Steel weakness. Steel no longer resists Dark or Ghost in modern games.
 - **Evidence**: PR [#28](https://github.com/lincyang720/type-chart-calculator/pull/28) squash-merged at `17dcd4c3aba47c25cce1b66a46a605bfef5398be`, Validate site passed. Production deployment and independent live page verification still pending at log time.
 - **Scope**: only Steel-specific rendering/metadata; no changes to other 17 single-type page content, ads/CMP or the independent 28-day report.
+
+## Fairy page change (2026-11-12)
+
+- **Metadata/H1**: `Pokemon Fairy Weakness: What Beats Fairy Types?`; keyword `pokemon fairy weakness`; canonical `/types/fairy`.
+- **First answer**: pure Fairy is weak to Poison and Steel (2× each).
+- **Content**: full 18-row computed attack/defense chart, 17 secondary types × 2 original weaknesses, derived neutralization/immunity counts, five visible FAQs matching JSON-LD and five internal links.
+- **Evidence**: PR [#35](https://github.com/lincyang720/type-chart-calculator/pull/35) squash-merged as `7555941926a5c038dbd5f07e675d4c106db2bb22`; Validate site successful. Vercel production and live verification pending at log time.
+- **Scope**: Fairy-only guide and conditional metadata/FAQ/first answer; no Poison or later-day page changes, ads/CMP/environment changes or changes to independent 28-day report.
 
 ## Verification and future publication rules
 
