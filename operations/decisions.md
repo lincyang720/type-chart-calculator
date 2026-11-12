@@ -133,3 +133,10 @@
 - 四个线上 URL 的 Title、H1、速答与正文内链已重新读取。电页可从物种表进入 Electric/Flying（Zapdos），龙页可进入 Flying/Dragon（Dragonite），妖精页可进入 Psychic/Fairy（Gardevoir），飞行页可进入 Fire/Flying（Charizard）。各页已有计算器、反制、物种和双属性例外的锚点，首轮无需追加通用内链。这里的首屏核对指页面顶部内容顺序，尚未实测移动视口折叠线。
 - **Flying 反制表另有可复现的内容问题。** 线上 Groudon 和 Landorus-Therian 的 “Super-effective move” 栏显示 Stealth Rock。该招式是换入时触发的场地陷阱，Stone Edge 才是同列的直接岩石攻击。[招式机制](https://bulbapedia.bulbagarden.net/wiki/Stealth_Rock_(move))。根因在 [`lib/singleTypeGuide.ts` 的 `countersFor`](https://github.com/lincyang720/type-chart-calculator/blob/main/lib/singleTypeGuide.ts#L198)：只按 `MOVE_TYPES` 匹配，没有区分伤害招式和变化招式。候选独立修复：为反制表只选择能直接造成伤害的招式；若保留 Stealth Rock，放在明确标为入场陷阱的战术说明。验收时检查 Flying 的两行仍显示 Stone Edge，并检查四页共享组件的反制表。这个准确性问题可先于标题实验进入评审。
 - **标题实验顺序仍为 Fairy → Flying → Electric → Dragon。** 先等 PR #31 后至少两个完整周的 GSC 数据，按固定查询、国家与设备核查搜索结果展示和平均排名。若 Fairy 的主词仍低点击且 Google 展示没有直接回答弱点，首轮只在 `lib/typePageCopy.json` 试 Fairy 的标题 `Fairy Type Weakness: Poison & Steel | Pokémon`。当前路由共用该字段生成 Title 和 H1，若要只测试 Title，先为 Fairy 分开设置 metadata 与 H1，避免同时改正文。按同口径跟踪固定查询的曝光、点击、CTR 和平均排名，并用未修改的三页辅助判断同期变化。Flying 后续候选明确 Electric、Ice、Rock，Electric 候选明确 Ground，Dragon 候选明确 Ice、Dragon、Fairy。
+
+## 2026-11-12｜产品待办｜分享我的队伍
+
+- 状态：待排期。先完成 11 月 30 日的 Fairy GSC 复盘，再评估是否启动。
+- 第一版：在组队计算器提供分享链接，由用户主动分享。分享页默认 `noindex`，只展示结构化的队伍成员、对战规则和属性覆盖，暂不开自由外链。
+- 验证指标：去重后的分享链接创建人数、被他人打开的链接占比。先看分享功能是否有真实需求。
+- 后续索引：取得作者同意后，只对具有独立搜索价值且通过编辑审核的精选队伍开放索引，并加入 sitemap 和相关内链。已收录页面的编辑版本先复审。配套做重复队伍识别、提交限速和举报下架。
