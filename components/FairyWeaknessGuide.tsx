@@ -19,7 +19,7 @@ export const FAIRY_FAQS=[
  {question:'Does Dragon beat Fairy Pokémon?',answer:'No. Fairy Pokémon are immune to Dragon attacks (0×). Fairy moves deal 2× damage against pure Dragon Pokémon.'},
  {question:'What types does Fairy resist?',answer:'Pure Fairy resists Fighting, Bug and Dark moves (½× each), is immune to Dragon (0×), and is weak to Poison and Steel.'},
  {question:'What does Fairy hit super effectively?',answer:'Fairy attacks deal 2× to pure Fighting, Dragon and Dark Pokémon. Fire, Poison and Steel resist Fairy attacks (½×).'},
- {question:'Can dual typing cancel a Fairy weakness?',answer:'Yes. Fairy/Steel takes neutral damage from Poison (2× × ½× = 1×), while Fairy/Ground takes neutral damage from Steel (2× × ½× = 1×).'}
+ {question:'Can dual typing cancel a Fairy weakness?',answer:'Yes. Fairy/Ghost takes neutral damage from Poison (2× × ½× = 1×), while Fairy/Ground takes neutral damage from Steel (2× × ½× = 1×).'}
 ];
 export default function FairyWeaknessGuide(){
  const o=offense.fairy,d=defense.fairy;
