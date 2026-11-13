@@ -69,6 +69,11 @@ export default function RootLayout({
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9200275562093244"
             />
           )}
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="d4d8f75a-f4ae-4af4-b352-b44f7001d99c"
+        />
       </head>
       <body suppressHydrationWarning>
         <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
