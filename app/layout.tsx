@@ -115,6 +115,7 @@ export default function RootLayout({
               <a href="/disclaimer" className="text-gray-200 hover:text-white hover:underline">Disclaimer</a>
               <a href="/contact" className="text-gray-200 hover:text-white hover:underline">Contact</a>
               <a href="/support" className="text-gray-200 hover:text-white hover:underline">Support</a>
+              <a href="/llms.txt" className="text-gray-200 hover:text-white hover:underline">llms.txt</a>
               <ConsentSettingsButton />
             </nav>
             <p className="text-sm text-gray-400">
