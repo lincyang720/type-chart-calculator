@@ -256,6 +256,15 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
             ))}
             <span className="text-sm text-gray-500 ml-2">Gen {pokemon.generation} · {pokemon.category}</span>
           </div>
+          {pokemon.id === 'metagross' && weaknesses && (
+            <p className="mb-3 text-lg text-gray-900">
+              In the main-series games from Generation VI onward, Metagross takes{' '}
+              <strong>2× damage from {weaknesses.doubleWeak.map(type =>
+                typesData.types.find(entry => entry.id === type)?.name ?? type
+              ).join(', ')}</strong>{' '}
+              under the standard Steel/Psychic type matchup.
+            </p>
+          )}
           <p className="text-lg text-gray-600">{pokemon.strengths}</p>
         </div>
 
