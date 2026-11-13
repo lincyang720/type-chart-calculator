@@ -33,9 +33,14 @@ function getTypeName(typeId: TypeId) {
   return typesData.types.find(type => type.id === typeId)?.name ?? typeId;
 }
 
+const SHAREABLE_POKEMON = [
+  ...pokemonData.pokemon,
+  { id: 'klefki', name: 'Klefki', types: ['steel', 'fairy'] },
+];
+
 function findPokemon(name: string) {
   const query = name.trim().toLowerCase();
-  return pokemonData.pokemon.find(pokemon => pokemon.name.toLowerCase() === query);
+  return SHAREABLE_POKEMON.find(pokemon => pokemon.name.toLowerCase() === query);
 }
 
 export default function TeamTypeCalculator() {
@@ -53,7 +58,7 @@ export default function TeamTypeCalculator() {
           const [primary, secondary, id] = slot.split('.');
           const type1 = ALL_TYPES.find(type => type === primary) ?? '';
           const type2 = type1 && secondary !== type1 ? ALL_TYPES.find(type => type === secondary) ?? '' : '';
-          const pokemon = pokemonData.pokemon.find(entry => entry.id === id);
+          const pokemon = SHAREABLE_POKEMON.find(entry => entry.id === id);
           const name = pokemon?.types[0] === type1 && (pokemon.types[1] ?? '') === type2 ? pokemon.name : '';
           return { name, type1, type2 };
         });
@@ -220,7 +225,7 @@ export default function TeamTypeCalculator() {
             </div>
           ))}
           <datalist id="team-pokemon-names">
-            {pokemonData.pokemon.map(pokemon => <option key={pokemon.id} value={pokemon.name} />)}
+            {SHAREABLE_POKEMON.map(pokemon => <option key={pokemon.id} value={pokemon.name} />)}
           </datalist>
         </div>
       </section>
