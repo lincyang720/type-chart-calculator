@@ -49,7 +49,7 @@ export default function TeamTypeCalculator() {
     if (shared) {
       const slots = shared.split(',');
       if (slots.length === INITIAL_TEAM.length) {
-        const restored = slots.map(slot => {
+        const restored = slots.map<TeamMember>(slot => {
           const [primary, secondary, id] = slot.split('.');
           const type1 = ALL_TYPES.find(type => type === primary) ?? '';
           const type2 = type1 && secondary !== type1 ? ALL_TYPES.find(type => type === secondary) ?? '' : '';
