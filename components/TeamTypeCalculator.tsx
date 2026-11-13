@@ -40,9 +40,30 @@ function findPokemon(name: string) {
 
 export default function TeamTypeCalculator() {
   const [team, setTeam] = useState<TeamMember[]>(INITIAL_TEAM);
+  const [shareUrl, setShareUrl] = useState('');
+  const [shareStatus, setShareStatus] = useState('');
   const activeTeam = team.filter(member => member.type1);
 
   useEffect(() => {
+    const shared = new URLSearchParams(window.location.hash.slice(1)).get('team');
+    if (shared) {
+      const slots = shared.split(',');
+      if (slots.length === INITIAL_TEAM.length) {
+        const restored = slots.map<TeamMember>(slot => {
+          const [primary, secondary, id] = slot.split('.');
+          const type1 = ALL_TYPES.find(type => type === primary) ?? '';
+          const type2 = type1 && secondary !== type1 ? ALL_TYPES.find(type => type === secondary) ?? '' : '';
+          const pokemon = pokemonData.pokemon.find(entry => entry.id === id);
+          const name = pokemon?.types[0] === type1 && (pokemon.types[1] ?? '') === type2 ? pokemon.name : '';
+          return { name, type1, type2 };
+        });
+        if (restored.some(member => member.type1)) {
+          setTeam(restored);
+          return;
+        }
+      }
+    }
+
     const params = new URLSearchParams(window.location.search);
     const requestedType1 = params.get('type1') as TypeId | null;
     const requestedType2 = params.get('type2') as TypeId | null;
@@ -84,6 +105,24 @@ export default function TeamTypeCalculator() {
     }));
   };
 
+  const shareTeam = async () => {
+    const slots = team.map(({ name, type1, type2 }) => {
+      if (!type1) return '';
+      const pokemon = findPokemon(name);
+      const id = pokemon?.types[0] === type1 && (pokemon.types[1] ?? '') === type2 ? pokemon.id : '';
+      return [type1, type2, id].join('.');
+    });
+    const url = new URL('/pokemon/team-calculator', window.location.origin);
+    url.hash = new URLSearchParams({ team: slots.join(',') }).toString();
+    setShareUrl(url.href);
+    try {
+      await navigator.clipboard.writeText(url.href);
+      setShareStatus('Team link copied.');
+    } catch {
+      setShareStatus('Copy the team link below.');
+    }
+  };
+
   const analysis = ALL_TYPES.map(attackingType => {
     let weak = 0;
     let resistant = 0;
@@ -116,12 +155,31 @@ export default function TeamTypeCalculator() {
           </div>
           <button
             type="button"
+            disabled={activeTeam.length === 0}
+            onClick={shareTeam}
+            className="min-h-11 rounded-md border border-blue-700 px-3 font-semibold text-blue-700 disabled:border-gray-300 disabled:text-gray-500"
+          >
+            Copy team link
+          </button>
+          <button
+            type="button"
             onClick={() => setTeam(team.map(() => ({ name: '', type1: '', type2: '' })))}
             className="text-sm font-semibold text-blue-700 hover:underline"
           >
             Clear team
           </button>
         </div>
+
+        <p role="status" className="text-sm text-gray-700">{shareStatus}</p>
+        {shareUrl && (
+          <input
+            aria-label="Team share link"
+            readOnly
+            value={shareUrl}
+            onFocus={event => event.currentTarget.select()}
+            className="mb-4 mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+          />
+        )}
 
         <div className="space-y-3">
           {team.map((member, index) => (
