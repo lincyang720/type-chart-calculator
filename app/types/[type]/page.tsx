@@ -4,6 +4,7 @@ import GhostWeaknessGuide, { GHOST_WEAKNESS_FAQS } from '@/components/GhostWeakn
 import PsychicWeaknessGuide, { PSYCHIC_FAQS } from '@/components/PsychicWeaknessGuide';
 import SteelWeaknessGuide, { STEEL_FAQS } from '@/components/SteelWeaknessGuide';
 import FairyWeaknessGuide, { FAIRY_FAQS } from '@/components/FairyWeaknessGuide';
+import PoisonWeaknessGuide, { POISON_FAQS } from '@/components/PoisonWeaknessGuide';
 import TypeBadge from '@/components/TypeBadge';
 import { DefensiveTypeChart, TypeChart, TypeId } from '@/lib/types';
 import typesData from '@/data/types.json';
@@ -145,8 +146,8 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   }
 
   const copy = typePageCopy[typeId];
-  const title = typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : copy.title;
-  const description = typeId === 'fairy' ? 'Fairy Pokémon are weak to Poison and Steel (2×), resist Fighting, Bug and Dark, and are immune to Dragon. Explore 18-type matchups, dual types and FAQs.' : copy.description;
+  const title = typeId === 'poison' ? 'Pokemon Poison Weakness: What Beats Poison Types?' : typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : copy.title;
+  const description = typeId === 'poison' ? 'Poison Pokémon are weak to Ground and Psychic (2× each). Explore 18-type matchups, resistances, dual-type weakness changes and five FAQs.' : typeId === 'fairy' ? 'Fairy Pokémon are weak to Poison and Steel (2×), resist Fighting, Bug and Dark, and are immune to Dragon. Explore 18-type matchups, dual types and FAQs.' : copy.description;
   const keywords = `${type.name} type weakness, ${type.name} pokemon, ${type.name} counters, ${type.name} 4x weakness, pokemon type calculator`;
 
   return {
@@ -190,7 +191,9 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
   const editorialProfile = getTypeEditorialProfile(typeId);
   const guideModel = getSingleTypeGuide(typeId);
   const copy = typePageCopy[typeId];
-  const dedicatedFaqs = typeId === 'fairy'
+  const dedicatedFaqs = typeId === 'poison'
+    ? POISON_FAQS
+    : typeId === 'fairy'
     ? FAIRY_FAQS
     : typeId === 'steel'
     ? STEEL_FAQS
@@ -240,9 +243,9 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : copy.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'poison' ? 'Pokemon Poison Weakness: What Beats Poison Types?' : typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : copy.title}</h1>
           </div>
-          <p className="text-lg text-gray-700">{typeId === 'fairy' ? 'Fairy-type Pokémon are weak to Poison and Steel moves, each dealing 2× damage against a pure Fairy defender.' : copy.intro}</p>
+          <p className="text-lg text-gray-700">{typeId === 'poison' ? 'Poison-type Pokémon are weak to Ground and Psychic moves, each dealing 2× damage against a pure Poison defender.' : typeId === 'fairy' ? 'Fairy-type Pokémon are weak to Poison and Steel moves, each dealing 2× damage against a pure Fairy defender.' : copy.intro}</p>
         </div>
 
         <SingleTypeGuide model={guideModel} />
@@ -298,19 +301,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
         {typeId === 'ghost' && <GhostWeaknessGuide />}
         {typeId === 'psychic' && <PsychicWeaknessGuide />}
 
-        {typeId === 'poison' && (
-          <article className="bg-white rounded-lg shadow-lg p-6 mb-6 prose max-w-none text-gray-700">
-            <h2>Poison dual-type multiplication</h2>
-            <p>Poison is weak to Ground and Psychic, resists Fighting, Poison, Bug, Grass, and Fairy, and its attacks are super effective against Grass and Fairy.</p>
-            <dl>
-              <div className="border-b py-3"><dt className="font-semibold">Venusaur (Grass/Poison) vs Ground</dt><dd>0.5× × 2× = 1×</dd></div>
-              <div className="border-b py-3"><dt className="font-semibold">Toxapex (Poison/Water) vs Ground</dt><dd>2× × 1× = 2×</dd></div>
-              <div className="border-b py-3"><dt className="font-semibold">Gengar (Ghost/Poison) vs Fighting</dt><dd>0× × 0.5× = 0×</dd></div>
-              <div className="py-3"><dt className="font-semibold">Venusaur (Grass/Poison) vs Psychic</dt><dd>1× × 2× = 2×</dd></div>
-            </dl>
-            <p>The first type gives only one factor. Check both defending types before calling a Poison matchup neutral, resisted, or immune.</p>
-          </article>
-        )}
+        {typeId === 'poison' && <PoisonWeaknessGuide />}
 
         {typeId === 'steel' && <SteelWeaknessGuide />}
 
