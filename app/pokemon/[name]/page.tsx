@@ -317,8 +317,8 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
 
   if (pokemon.id === 'eevee') {
     return {
-      title: 'Eevee Weakness & Eeveelution Chart - Every Eevee Evolution, Type, and Weakness',
-      description,
+      title: 'Eevee Weakness & Eeveelution Chart - All 8 Evolutions',
+      description: "Eevee (Normal) weakness guide. Eevee is only 2× weak to Fighting and immune to Ghost, and the chart lists all eight Eeveelutions' types and weaknesses.",
       keywords: 'eevee weakness, eeveelution chart, eevee evolutions, eevee type, sylveon, umbreon, espeon, jolteon, vaporeon, flareon, leafeon, glaceon',
       openGraph: {
         siteName: 'TypeMatchup',
