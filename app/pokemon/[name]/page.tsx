@@ -8,6 +8,175 @@ import pokemonData from '@/data/pokemon.json';
 import Link from 'next/link';
 import { isEditorialPokemon } from '@/lib/editorialPokemon';
 
+type ExpandedPokemonGuide = {
+  description?: string;
+  strategy?: string[];
+  defense?: string[];
+  team?: string[];
+  faq?: [string, string][];
+  counters: string[];
+};
+
+const EXPANDED_POKEMON_GUIDES: Partial<Record<string, ExpandedPokemonGuide>> = {
+  "greninja": {
+    "description": "Greninja (Water/Dark) weakness guide. Primarina resists its main attacks, while Breloom exploits its Fighting weakness with Mach Punch.",
+    "strategy": [
+      "Run Protean with Heavy-Duty Boots and Hydro Pump, Dark Pulse, Ice Beam, and U-turn. Greninja forces switches with its Speed and coverage, then uses U-turn to bring in a teammate. Protean activates once per switch-in, so opening with Ice Beam costs Greninja its original Psychic immunity.",
+      "Run Battle Bond with Life Orb and Hydro Pump, Dark Pulse, Ice Beam, and Water Shuriken. Water Shuriken can finish a weakened opponent and trigger a one-time boost to Attack, Special Attack, and Speed. A healthy Water-resistant wall can deny the first knockout, and switching out after activation forfeits the boosts."
+    ],
+    "defense": [
+      "Water/Dark Greninja is immune to Psychic and Psyshock. It also resists Water, Fire, Ice, Ghost, Dark, and Steel. Look for a known Ice Beam or Shadow Ball when bringing Greninja in, since its bulk leaves little room for guessing.",
+      "Greninja has five 2× weaknesses. Fighting is particularly dangerous because Breloom’s Mach Punch and Lucario’s Vacuum Wave bypass its Speed. Both can finish a chipped Greninja while it is still Water/Dark."
+    ],
+    "team": [
+      "Dragapult naturally outspeeds unboosted Greninja and can threaten it with Draco Meteor after a free entry. Choice Scarf Meowscarada with maximum Speed can outrun even +1 Greninja and target Water/Dark with Flower Trick. Check Greninja’s current type before committing to coverage or priority.",
+      "Scizor can take Grass and Fairy attacks and bring Greninja in with a slow U-turn. Great Tusk blocks Electric moves, clears hazards with Rapid Spin, and pressures Empoleon with Ground attacks. Greninja can threaten Gliscor with Ice Beam in return."
+    ],
+    "faq": [
+      [
+        "Does Protean activate again if Greninja stays in?",
+        "Protean changes Greninja’s type only once per switch-in. It keeps the resulting type until it switches out or another effect changes it."
+      ],
+      [
+        "Can Battle Bond activate twice in the same battle?",
+        "Battle Bond activates once per battle. Switching out removes the boosts, and another knockout will not restore them."
+      ],
+      [
+        "Can Water Shuriken get past Focus Sash?",
+        "Yes, if the combined hits do enough damage to knock out the target. A later hit can finish the target after the Sash activates, or after an earlier hit has already taken it below full HP."
+      ]
+    ],
+    "counters": [
+      "Primarina (Water/Fairy) — Moonblast — Resists Hydro Pump, Dark Pulse, and Ice Beam.",
+      "Empoleon (Water/Steel) — Grass Knot and Roost — Resists Hydro Pump and Ice Beam and can heal between switches.",
+      "Tentacruel (Water/Poison) — Sludge Bomb and Rapid Spin — Resists Hydro Pump and Ice Beam and clears Spikes.",
+      "Toxapex (Poison/Water) — Recover and Haze — Resists Hydro Pump and Ice Beam and can erase Battle Bond boosts.",
+      "Blissey (Normal) — Seismic Toss and Soft-Boiled — Absorbs special attacks, though U-turn can bring in a physical threat.",
+      "Breloom (Grass/Fighting) — Mach Punch — Can finish chipped Water/Dark Greninja after a free entry."
+    ]
+  },
+  "gyarados": {
+    "description": "Gyarados (Water/Flying) weakness guide. Rotom-Wash dodges Earthquake and exploits its 4× Electric weakness with Volt Switch.",
+    "strategy": [
+      "Run Intimidate with Heavy-Duty Boots and Dragon Dance, Waterfall, Earthquake, and Taunt. Intimidate creates setup turns against physical attackers, while Taunt can preempt slower Haze or recovery. Rotom-Wash resists Waterfall and avoids Earthquake, leaving Gyarados exposed to Volt Switch.",
+      "Run Moxie with Lum Berry and Dragon Dance, Waterfall, Earthquake, and Ice Fang. Ice Fang hits Garchomp, and Lum Berry can cure one burn or paralysis as Gyarados looks for its first knockout. Losing Intimidate makes setup harder, while Unaware walls can ignore the Attack boosts."
+    ],
+    "defense": [
+      "Gyarados can switch in freely on a predicted Earthquake or Headlong Rush. It also resists Water, Fire, Fighting, Bug, and Steel, with Intimidate softening physical attacks such as Close Combat. Scout for Rock coverage before switching into a Ground attacker that can choose its move.",
+      "Electric damage is 4× before Terastallization. Rotom-Wash and Zapdos can exploit that weakness from outside Earthquake’s reach. Stealth Rock also cuts into the health Gyarados has available to set up when it lacks Heavy-Duty Boots."
+    ],
+    "team": [
+      "At maximum Speed, +1 Jolly Gyarados outruns Timid Dragapult, while +1 Adamant Gyarados falls short. Choice Scarf Sandy Shocks can outrun either, and Thunderclap from Raging Bolt can hit first if Gyarados attacks. Keep an Electric answer healthy until you know whether Gyarados carries Earthquake.",
+      "Great Tusk blocks Volt Switch and clears Stealth Rock with Rapid Spin. Gyarados takes Water attacks aimed at Great Tusk and can soften physical hits with Intimidate. Storm Drain Gastrodon also handles both of Rotom-Wash’s main attacks, though Trick can disrupt it."
+    ],
+    "faq": [
+      [
+        "Why run Heavy-Duty Boots if Gyarados is immune to Spikes?",
+        "Flying typing avoids Spikes under normal conditions, but Stealth Rock still hits super effectively. Boots help Intimidate sets switch in repeatedly."
+      ],
+      [
+        "Can Moxie overwhelm Unaware Dondozo?",
+        "Unaware ignores Attack boosts when Dondozo takes damage. Weaken Dondozo with teammates before attempting a sweep."
+      ],
+      [
+        "Does Thunderclap work against Dragon Dance?",
+        "Thunderclap fails against Dragon Dance because it is a status move. It can move first on a later turn when Gyarados chooses to attack."
+      ]
+    ],
+    "counters": [
+      "Rotom-Wash (Electric/Water) — Volt Switch — Resists Waterfall and Ice Fang and dodges Earthquake with Levitate.",
+      "Dondozo (Water) — Wave Crash and Rest — Resists Waterfall and ignores Attack boosts with Unaware.",
+      "Slowbro (Water/Psychic) — Thunder Wave and Slack Off — Resists Waterfall and Ice Fang but should scout for Taunt.",
+      "Zapdos (Electric/Flying) — Discharge and Roost — Switches in on Earthquake and threatens a 4× hit, but must scout Ice Fang.",
+      "Raging Bolt (Electric/Dragon) — Thunderclap — Can strike before boosted Gyarados if it attacks, but should avoid Earthquake on entry.",
+      "Sandy Shocks (Electric/Ground) — Thunderbolt — A fast Choice Scarf set can revenge kill even +1 Jolly Gyarados."
+    ]
+  },
+  "mewtwo": {
+    "description": "Mewtwo (Psychic) weakness guide. Ting-Lu blocks Psystrike, while Kingambit’s Sucker Punch hits Mewtwo’s Dark weakness.",
+    "strategy": [
+      "Run Pressure with Life Orb and Calm Mind, Psystrike, Aura Sphere, and Ice Beam. Psystrike targets Defense, while Aura Sphere covers Dark-types and Ice Beam pressures Groudon and Koraidon. Life Orb recoil and the lack of recovery leave Mewtwo vulnerable to physical priority.",
+      "Run Pressure with Heavy-Duty Boots and Psystrike, Fire Blast, Ice Beam, and Recover. This set attacks immediately and uses Fire Blast to pressure Steel-types such as Necrozma-Dusk-Mane. Recover helps it make repeated entries, but without Fighting coverage, bulky Dark-types such as Ting-Lu can force it out."
+    ],
+    "defense": [
+      "Pure Psychic Mewtwo resists Fighting and Psychic and has no natural type immunity. It can enter on a predicted Psychic or a Fighting attack from a foe locked into it. A slow pivot offers a safer route against strong neutral coverage.",
+      "Dark is especially awkward because it hits Mewtwo super effectively and blocks Psystrike. Ting-Lu can take advantage of a predicted Psystrike, while Kingambit can threaten priority Sucker Punch. Aura Sphere can punish either, but gives Ghost-types such as Lunala an opening."
+    ],
+    "team": [
+      "Maximum-Speed Koraidon and Miraidon outspeed maximum-Speed Mewtwo. Kingambit’s Sucker Punch can pick off a chipped Mewtwo when it attacks, but fails against Calm Mind or Recover. A healthy Ting-Lu can reset boosts with Whirlwind if it survives the hit first.",
+      "Koraidon pressures Ting-Lu and Kingambit with Fighting attacks and can pivot with U-turn. Arceus-Dark takes Ghost attacks and threatens Lunala with Judgment. Mewtwo can return the favor by pressuring Clodsire with Psystrike."
+    ],
+    "faq": [
+      [
+        "Why does Psystrike work against specially bulky targets?",
+        "Psystrike uses Mewtwo’s Special Attack against the foe’s Defense. Dark-types are immune regardless of their stats."
+      ],
+      [
+        "Does Calm Mind help Mewtwo survive Sucker Punch?",
+        "Calm Mind boosts Special Defense, and Sucker Punch is physical. Sucker Punch fails on the setup turn but can hit first when Mewtwo attacks."
+      ],
+      [
+        "When should Mewtwo keep Aura Sphere over Fire Blast?",
+        "Aura Sphere helps when Ting-Lu or Kingambit blocks Psystrike. Fire Blast is useful when Steel-types such as Necrozma-Dusk-Mane are the bigger obstacle."
+      ]
+    ],
+    "counters": [
+      "Ting-Lu (Dark/Ground) — Whirlwind and Earthquake — Blocks Psystrike and can reset Calm Mind if healthy enough to take coverage.",
+      "Arceus-Dark (Dark) — Judgment and Recover — Switches into Psystrike and threatens a super-effective hit, but must respect Aura Sphere.",
+      "Lunala (Psychic/Ghost) — Moongeist Beam — Resists Psystrike, blocks Aura Sphere, and can take coverage with Shadow Shield intact.",
+      "Necrozma-Dusk-Mane (Psychic/Steel) — Knock Off and Morning Sun — Takes Psystrike and can remove Mewtwo’s item, but should scout Fire Blast.",
+      "Giratina (Ghost/Dragon) — Shadow Ball and Roar — Blocks Aura Sphere and can force Mewtwo out, but must avoid Ice Beam.",
+      "Koraidon (Fighting/Dragon) — U-turn — Can outspeed and revenge kill a chipped Mewtwo after a free entry."
+    ]
+  },
+  "lucario": {
+    "description": "Lucario (Fighting/Steel) weakness guide. Garchomp exploits its Ground weakness with Earthquake, and Skeledirge walls standard physical sets.",
+    "strategy": [
+      "Run Inner Focus with Life Orb and Swords Dance, Close Combat, Meteor Mash, and Extreme Speed. Inner Focus blocks Intimidate and flinching, while Extreme Speed lets Lucario finish chipped opponents that would otherwise move first. Skeledirge is immune to Close Combat and Extreme Speed and resists Meteor Mash.",
+      "Run Inner Focus with Life Orb and Nasty Plot, Aura Sphere, Flash Cannon, and Dark Pulse. Dark Pulse lets the special set threaten Ghost-types, and burns do not reduce its damage. Without priority, faster Fire- and Ground-types can force Lucario out after it spends a turn setting up."
+    ],
+    "defense": [
+      "Lucario takes quarter damage from Bug and Rock, which gives it openings against a predicted U-turn or Stone Edge. Its Steel typing blocks Poison attacks and normally prevents Toxic from poisoning it. Scout coverage before relying on those resistances to set up.",
+      "Ground stands out among Lucario’s three 2× weaknesses because Earthquake is widely available. Garchomp naturally outspeeds Lucario with comparable investment, and Great Tusk threatens it with Headlong Rush. Close Combat lowers both of Lucario’s defenses and makes revenge kills easier."
+    ],
+    "team": [
+      "Garchomp and Cinderace can outrun Lucario and threaten Earthquake or Pyro Ball. Both have to watch for Extreme Speed after taking chip damage. Dragapult is immune to that priority and can answer with Flamethrower, but should avoid switching into Dark Pulse.",
+      "Gyarados is immune to Ground and resists Fire and Fighting, covering all three of Lucario’s weaknesses. Rotom-Wash avoids Earthquake with Levitate and can bring Lucario in with a slow Volt Switch. Lucario can take predicted Rock attacks aimed at Gyarados or Grass attacks aimed at Rotom-Wash."
+    ],
+    "faq": [
+      [
+        "Does Inner Focus block Intimidate on Lucario?",
+        "Yes, Inner Focus prevents Intimidate’s Attack drop in Scarlet & Violet. It also prevents Lucario from flinching."
+      ],
+      [
+        "Can Extreme Speed hit Dragapult or Skeledirge?",
+        "Both are immune while they retain their Ghost typing. Special Lucario can threaten them with Dark Pulse if it gets a safe turn."
+      ],
+      [
+        "Can Nasty Plot Lucario use Vacuum Wave?",
+        "Yes, Vacuum Wave provides special Fighting-type priority against weakened targets. Replacing Dark Pulse leaves Lucario more reliant on teammates against bulky Ghost-types."
+      ]
+    ],
+    "counters": [
+      "Skeledirge (Fire/Ghost) — Torch Song and Slack Off — Blocks Close Combat and Extreme Speed and ignores boosts with Unaware, but Dark Pulse hits it super effectively.",
+      "Hippowdon (Ground) — Earthquake and Slack Off — Takes physical hits when healthy, but boosted special attacks can overwhelm it.",
+      "Toxapex (Poison/Water) — Haze and Recover — Resists both same-type attacks and can erase either setup boost.",
+      "Landorus-Therian (Ground/Flying) — Earthquake — Resists Close Combat and threatens a super-effective hit, but Inner Focus blocks Intimidate.",
+      "Dragapult (Dragon/Ghost) — Flamethrower — Outspeeds Lucario and is immune to Extreme Speed, but should enter after a knockout to avoid Dark Pulse."
+    ]
+  },
+  "garchomp": {
+    "counters": [
+      "Skarmory (Steel/Flying) — Whirlwind and Roost — Blocks Earthquake, resists Dragon attacks, and can reset Swords Dance, but should scout Fire Blast.",
+      "Corviknight (Flying/Steel) — Body Press and Roost — Can enter repeatedly on Earthquake and resisted Dragon moves, but must scout Fire coverage.",
+      "Dondozo (Water) — Avalanche and Rest — Ignores Swords Dance with Unaware and punishes the 4× Ice weakness.",
+      "Primarina (Water/Fairy) — Moonblast — Switches into predicted Dragon attacks and hits super effectively, but Earthquake hits neutrally.",
+      "Mamoswine (Ice/Ground) — Ice Shard — Bypasses Speed and exploits the 4× Ice weakness against a chipped Garchomp after a free entry.",
+      "Weavile (Dark/Ice) — Triple Axel — Outspeeds unboosted Garchomp at comparable investment and threatens its 4× Ice weakness, but takes Rough Skin chip."
+    ]
+  }
+};
+
 const ALL_TYPES: TypeId[] = [
   'normal', 'fire', 'water', 'electric', 'grass', 'ice',
   'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug',
@@ -135,7 +304,8 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
 
   return {
     title: `${pokemon.name} Weakness & Counters - ${typeNames} Type Guide`,
-    description: `${pokemon.name} (${typeNames}) weakness guide. ${pokemon.strategy.slice(0, 120)}. Best counters, moveset, and battle strategy.`,
+    description: EXPANDED_POKEMON_GUIDES[pokemon.id]?.description ??
+      `${pokemon.name} (${typeNames}) weakness guide. ${pokemon.strategy.slice(0, 120)}. Best counters, moveset, and battle strategy.`,
     keywords: `${pokemon.name} weakness, ${pokemon.name} counters, ${pokemon.name} best moveset, ${pokemon.name} type, ${pokemon.name} strategy`,
     openGraph: {
     siteName: 'TypeMatchup',
@@ -182,6 +352,11 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
     )
     .slice(0, 3);
 
+  const guide = EXPANDED_POKEMON_GUIDES[pokemon.id];
+  const counterNames = guide?.faq
+    ? guide.counters.map(counter => counter.split(' (')[0])
+    : pokemon.counters;
+
   // Build FAQ data for JSON-LD
   const faqItems = [
     {
@@ -199,7 +374,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
       name: `What is the best moveset for ${pokemon.name}?`,
       acceptedAnswer: {
         '@type': 'Answer' as const,
-        text: `The recommended moveset for ${pokemon.name} is: ${pokemon.recommendedMoves.join(', ')}. ${pokemon.strategy}`,
+        text: `The recommended moveset for ${pokemon.name} is: ${pokemon.recommendedMoves.join(', ')}.${guide?.strategy ? '' : ` ${pokemon.strategy}`}`,
       },
     },
     {
@@ -207,9 +382,14 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
       name: `How to counter ${pokemon.name}?`,
       acceptedAnswer: {
         '@type': 'Answer' as const,
-        text: `Best counters for ${pokemon.name}: ${pokemon.counters.join(', ')}.`,
+        text: `Best counters for ${pokemon.name}: ${counterNames.join(', ')}.`,
       },
     },
+    ...(guide?.faq ?? []).map(([question, answer]) => ({
+      '@type': 'Question' as const,
+      name: question,
+      acceptedAnswer: { '@type': 'Answer' as const, text: answer },
+    })),
   ];
 
   const statTotal = pokemon.baseStats.hp + pokemon.baseStats.attack + pokemon.baseStats.defense +
@@ -585,14 +765,18 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
 
         <section className="bg-blue-50 rounded-lg p-6 mb-8">
           <h2 className="text-2xl font-bold mb-4">Competitive Strategy</h2>
-          <p className="text-gray-700 leading-relaxed">{pokemon.strategy}</p>
+          {guide?.strategy ? (
+            <div className="space-y-4">
+              {guide.strategy.map(paragraph => <p key={paragraph} className="text-gray-700 leading-relaxed">{paragraph}</p>)}
+            </div>
+          ) : <p className="text-gray-700 leading-relaxed">{pokemon.strategy}</p>}
         </section>
 
         {/* Counters */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h2 className="text-2xl font-bold mb-4">Best Counters</h2>
           <ul className="space-y-2">
-            {pokemon.counters.map(counter => (
+            {(guide?.counters ?? pokemon.counters).map(counter => (
               <li key={counter} className="flex items-start gap-2">
                 <span className="text-red-500 mt-1">•</span>
                 <span className="text-gray-700">{counter}</span>
@@ -600,6 +784,23 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
             ))}
           </ul>
         </section>
+
+        {guide?.defense && guide.team && (
+          <>
+            <section className="bg-white rounded-lg shadow-lg p-6 mb-8">
+              <h2 className="text-2xl font-bold mb-4">Defensive Profile</h2>
+              <div className="space-y-4">
+                {guide.defense.map(paragraph => <p key={paragraph} className="text-gray-700">{paragraph}</p>)}
+              </div>
+            </section>
+            <section className="bg-white rounded-lg shadow-lg p-6 mb-8">
+              <h2 className="text-2xl font-bold mb-4">Counterplay and Teammates</h2>
+              <div className="space-y-4">
+                {guide.team.map(paragraph => <p key={paragraph} className="text-gray-700">{paragraph}</p>)}
+              </div>
+            </section>
+          </>
+        )}
 
         {/* FAQ */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-8">
@@ -625,9 +826,15 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
             <div>
               <h3 className="font-semibold text-lg mb-2">How to counter {pokemon.name}?</h3>
               <p className="text-gray-700">
-                Best counters: {pokemon.counters.join(', ')}.
+                Best counters: {counterNames.join(', ')}.
               </p>
             </div>
+            {guide?.faq?.map(([question, answer]) => (
+              <div key={question}>
+                <h3 className="font-semibold text-lg mb-2">{question}</h3>
+                <p className="text-gray-700">{answer}</p>
+              </div>
+            ))}
           </div>
         </section>
 
