@@ -262,6 +262,48 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
+function pokemonDescription(pokemon: typeof pokemonData.pokemon[number], typeNames: string) {
+  const prefix = `${pokemon.name} (${typeNames}) weakness guide.`;
+  if (pokemon.id === 'garchomp') {
+    return 'Garchomp (Dragon/Ground) weakness guide. It takes 4× from Ice, so Ice Shard users like Mamoswine and Weavile are the safest answer.';
+  }
+
+  const counters = EXPANDED_POKEMON_GUIDES[pokemon.id]?.counters ?? pokemon.counters;
+  if (!counters?.length) return prefix;
+
+  const weaknesses = applyPokemonAbilityContext(pokemon, calculateDualTypeWeaknesses(
+    pokemon.types[0] as TypeId, pokemon.types[1] as TypeId | undefined
+  ));
+  const namedCounters = counters.flatMap(counter => {
+    const structured = /^(.+?) \(([^)]+)\) — /.exec(counter);
+    if (structured) return [{ name: structured[1], context: structured[2] }];
+
+    return pokemonData.pokemon.flatMap(candidate => {
+      const start = counter.indexOf(candidate.name);
+      if (start < 0 || !/[\s(]/.test(counter[start - 1] ?? ' ') ||
+          !/[\s,)]/.test(counter[start + candidate.name.length] ?? ' ')) return [];
+      return [{ name: candidate.name, context: counter, start }];
+    }).sort((a, b) => a.start - b.start);
+  });
+
+  for (const [multiplier, types] of [[4, weaknesses.quadrupleWeak], [2, weaknesses.doubleWeak]] as const) {
+    for (const type of types) {
+      const label = typesData.types.find(entry => entry.id === type)?.name;
+      if (!label) continue;
+      const match = namedCounters.find(counter =>
+        counter.context.split('/').includes(label) || counter.context.includes(`${label}-type`)
+      );
+      if (!match) continue;
+      const description = `${prefix} It takes ${multiplier}× from ${label}, so ${label}-type counters like ${match.name} can exploit that weakness.`;
+      if (description.length <= 155) return description;
+    }
+  }
+
+  const names = [...new Set(namedCounters.map(counter => counter.name))].slice(0, 2);
+  const description = `${prefix} Best counters include ${names.join(' and ')}.`;
+  return names.length === 2 && description.length <= 155 ? description : prefix;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ name: string }> }): Promise<Metadata> {
   const { name } = await params;
   const pokemon = pokemonData.pokemon.find(p => p.id === name);
@@ -271,17 +313,12 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
   }
 
   const typeNames = pokemon.types.map(t => typesData.types.find(td => td.id === t)?.name).join('/');
-  const weaknesses = pokemon.types.length === 2
-    ? applyPokemonAbilityContext(
-      pokemon,
-      calculateDualTypeWeaknesses(pokemon.types[0] as TypeId, pokemon.types[1] as TypeId)
-    )
-    : null;
+  const description = pokemonDescription(pokemon, typeNames);
 
   if (pokemon.id === 'eevee') {
     return {
       title: 'Eevee Weakness & Eeveelution Chart - Every Eevee Evolution, Type, and Weakness',
-      description: 'Eevee (Normal) weakness guide plus the full Eeveelution chart: Vaporeon, Jolteon, Flareon, Espeon, Umbreon, Leafeon, Glaceon, and Sylveon compared by type, weaknesses, resistances, and immunities.',
+      description,
       keywords: 'eevee weakness, eeveelution chart, eevee evolutions, eevee type, sylveon, umbreon, espeon, jolteon, vaporeon, flareon, leafeon, glaceon',
       openGraph: {
         siteName: 'TypeMatchup',
@@ -304,8 +341,7 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
 
   return {
     title: `${pokemon.name} Weakness & Counters - ${typeNames} Type Guide`,
-    description: EXPANDED_POKEMON_GUIDES[pokemon.id]?.description ??
-      `${pokemon.name} (${typeNames}) weakness guide. ${pokemon.strategy.slice(0, 120)}. Best counters, moveset, and battle strategy.`,
+    description,
     keywords: `${pokemon.name} weakness, ${pokemon.name} counters, ${pokemon.name} best moveset, ${pokemon.name} type, ${pokemon.name} strategy`,
     openGraph: {
     siteName: 'TypeMatchup',
@@ -357,6 +393,10 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
     ? guide.counters.map(counter => counter.split(' (')[0])
     : pokemon.counters;
 
+  const garchompCounterAnswer = pokemon.id === 'garchomp'
+    ? 'Best counters: Skarmory and Corviknight wall Earthquake and reset Swords Dance, Dondozo ignores the boost with Unaware, and Mamoswine or Weavile threaten the 4× Ice weakness with Ice Shard.'
+    : undefined;
+
   // Build FAQ data for JSON-LD
   const faqItems = [
     {
@@ -382,7 +422,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
       name: `How to counter ${pokemon.name}?`,
       acceptedAnswer: {
         '@type': 'Answer' as const,
-        text: `Best counters for ${pokemon.name}: ${counterNames.join(', ')}.`,
+        text: garchompCounterAnswer ?? `Best counters for ${pokemon.name}: ${counterNames.join(', ')}.`,
       },
     },
     ...(guide?.faq ?? []).map(([question, answer]) => ({
@@ -425,7 +465,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              {pokemon.name}
+              {pokemon.name} Weakness &amp; Counters
             </span>
           </h1>
           <div className="flex items-center gap-3 mb-4">
@@ -445,7 +485,9 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
               under the standard Steel/Psychic type matchup.
             </p>
           )}
-          <p className="text-lg text-gray-600">{pokemon.strengths}</p>
+          <p className="text-lg text-gray-600">{pokemon.id === 'greninja'
+              ? "Protean changes Greninja's type to match the move it uses, but in Gen 9 it triggers only once per switch-in, so you choose the moment. Base 122 Speed outspeeds most of the metagame. Battle Bond raises Attack, Sp. Atk and Speed once after it knocks out a target, instead of changing forme."
+              : pokemon.strengths}</p>
         </div>
 
         {/* Type Weaknesses */}
@@ -826,7 +868,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
             <div>
               <h3 className="font-semibold text-lg mb-2">How to counter {pokemon.name}?</h3>
               <p className="text-gray-700">
-                Best counters: {counterNames.join(', ')}.
+                {garchompCounterAnswer ?? `Best counters: ${counterNames.join(', ')}.`}
               </p>
             </div>
             {guide?.faq?.map(([question, answer]) => (
