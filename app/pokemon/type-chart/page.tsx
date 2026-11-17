@@ -11,7 +11,7 @@ import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 export const metadata: Metadata = {
   title: 'Pokemon Type Chart & Type Table — Gen 9 Printable',
-  description: 'Complete and printable Pokemon type chart for Gen 9 Scarlet & Violet. Check all 18 types, weaknesses, resistances, immunities, Tera Type, Tera Blast, and dual-type matchups.',
+  description: 'Printable Pokemon type chart for Gen 9 Scarlet & Violet. It covers all 18 types, weaknesses, resistances, immunities, Tera Type, and dual-type matchups.',
   keywords: 'pokemon type chart, type effectiveness chart, pokemon weakness chart, type matchup chart, gen 9 type chart, scarlet and violet type chart, tera type chart, 2026 type chart, stellar tera, tera blast',
   openGraph: {
     siteName: 'TypeMatchup',
@@ -187,7 +187,7 @@ export default function TypeChartPage() {
         </h1>
         <h2>Pokemon typing chart vs type table: the same 18×18 matrix</h2>
         <p>
-          {"Whether you call it the pokemon typing chart, the type table pokemon players check before a battle, or the pokemon types chart, it's the same 18×18 matrix — 18 attacking types down one side, 18 defending types across the top, and the damage multiplier where they meet."}
+          {"Whether you call it the pokemon typing chart, the type table pokemon players check before a battle, or the pokemon types chart, it's the same 18×18 matrix — 18 defending types down the left column, 18 attacking types across the top row, and the damage multiplier where they meet."}
         </p>
         <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
           Complete Pokemon type chart for 2026: the Gen 9 type effectiveness matrix for all 18 types in Pokemon Scarlet
