@@ -10,7 +10,7 @@ import PrintChartButton from './PrintChartButton';
 import AssistantEntryCta from '@/components/AssistantEntryCta';
 
 export const metadata: Metadata = {
-  title: 'Pokemon Type Chart 2026 - Complete Printable Gen 9 Guide',
+  title: 'Pokemon Type Chart & Type Table — Gen 9 Printable',
   description: 'Complete and printable Pokemon type chart for Gen 9 Scarlet & Violet. Check all 18 types, weaknesses, resistances, immunities, Tera Type, Tera Blast, and dual-type matchups.',
   keywords: 'pokemon type chart, type effectiveness chart, pokemon weakness chart, type matchup chart, gen 9 type chart, scarlet and violet type chart, tera type chart, 2026 type chart, stellar tera, tera blast',
   openGraph: {
@@ -185,6 +185,10 @@ export default function TypeChartPage() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Pokemon Type Chart 2026 — Gen 9 Scarlet &amp; Violet
         </h1>
+        <h2>Pokemon typing chart vs type table: the same 18×18 matrix</h2>
+        <p>
+          {"Whether you call it the pokemon typing chart, the type table pokemon players check before a battle, or the pokemon types chart, it's the same 18×18 matrix — 18 attacking types down one side, 18 defending types across the top, and the damage multiplier where they meet."}
+        </p>
         <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
           Complete Pokemon type chart for 2026: the Gen 9 type effectiveness matrix for all 18 types in Pokemon Scarlet
           &amp; Violet, including The Indigo Disk DLC. Rows show the defending type, columns show the attacking type. Find every

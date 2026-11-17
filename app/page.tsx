@@ -11,8 +11,8 @@ import { formatBlogDate, getLatestBlogPosts } from '@/lib/blog';
 // Static generation for better SEO and performance
 
 export const metadata: Metadata = {
-  title: HOME_TITLE,
-  description: HOME_DESCRIPTION,
+  title: 'Pokemon Type Calculator & Weakness Calculator',
+  description: 'Pokemon type calculator for instant matchups. Check weaknesses, resistances and immunities for any single or dual type — free, no sign-up.',
   openGraph: {
     siteName: 'TypeMatchup',
     title: HOME_TITLE,
@@ -103,7 +103,7 @@ export default function Home() {
         {/* Tool-first Hero */}
         <section className="text-center mb-6 sm:mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Pokemon Type Calculator
+            Pokemon Type Calculator &amp; Weakness Calculator
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-6 max-w-3xl mx-auto px-4">
             Use this Pokémon type calculator to check weaknesses, resistances, immunities, and damage multipliers for any single or dual-type Pokemon combination.
