@@ -397,6 +397,16 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
     ? 'Best counters: Skarmory and Corviknight wall Earthquake and reset Swords Dance, Dondozo ignores the boost with Unaware, and Mamoswine or Weavile threaten the 4× Ice weakness with Ice Shard.'
     : undefined;
 
+  const eeveeCounters = pokemon.id === 'eevee' ? [
+    "Fighting-type attackers: Lucario (Close Combat), Conkeldurr (Mach Punch), Gallade (Sacred Sword), Terrakion (Close Combat)",
+    "Priority moves such as Conkeldurr's Mach Punch and Lucario's Vacuum Wave pick off a weakened Eevee before it moves",
+    "Ghost-types such as Gengar blank Eevee's Normal STAB but need a coverage move to actually damage it",
+    "Eevee's base stats total only 325, so any strong neutral attacker can outdamage it",
+  ] : undefined;
+  const eeveeCounterAnswer = pokemon.id === 'eevee'
+    ? "Best counters: Fighting-type attackers such as Lucario (Close Combat), Conkeldurr (Mach Punch), and Gallade (Sacred Sword). Ghost-types like Gengar blank Eevee's Normal STAB but need coverage moves to damage it."
+    : undefined;
+
   // Build FAQ data for JSON-LD
   const faqItems = [
     {
@@ -422,7 +432,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
       name: `How to counter ${pokemon.name}?`,
       acceptedAnswer: {
         '@type': 'Answer' as const,
-        text: garchompCounterAnswer ?? `Best counters for ${pokemon.name}: ${counterNames.join(', ')}.`,
+        text: eeveeCounterAnswer ?? garchompCounterAnswer ?? `Best counters for ${pokemon.name}: ${counterNames.join(', ')}.`,
       },
     },
     ...(guide?.faq ?? []).map(([question, answer]) => ({
@@ -818,7 +828,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
         <section className="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h2 className="text-2xl font-bold mb-4">Best Counters</h2>
           <ul className="space-y-2">
-            {(guide?.counters ?? pokemon.counters).map(counter => (
+            {(eeveeCounters ?? guide?.counters ?? pokemon.counters).map(counter => (
               <li key={counter} className="flex items-start gap-2">
                 <span className="text-red-500 mt-1">•</span>
                 <span className="text-gray-700">{counter}</span>
@@ -868,7 +878,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
             <div>
               <h3 className="font-semibold text-lg mb-2">How to counter {pokemon.name}?</h3>
               <p className="text-gray-700">
-                {garchompCounterAnswer ?? `Best counters: ${counterNames.join(', ')}.`}
+                {eeveeCounterAnswer ?? garchompCounterAnswer ?? `Best counters: ${counterNames.join(', ')}.`}
               </p>
             </div>
             {guide?.faq?.map(([question, answer]) => (
