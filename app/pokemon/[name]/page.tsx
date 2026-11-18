@@ -5,6 +5,7 @@ import { TypeId } from '@/lib/types';
 import { calculateDualTypeWeaknesses } from '@/lib/typeCalculations';
 import typesData from '@/data/types.json';
 import pokemonData from '@/data/pokemon.json';
+import typeCounterNamesData from '@/data/typeCounterNames.json';
 import Link from 'next/link';
 import { isEditorialPokemon } from '@/lib/editorialPokemon';
 
@@ -277,16 +278,38 @@ const EEVEELUTION_DESCRIPTIONS: Record<string, string> = {
   sylveon: 'Sylveon (Fairy) weakness guide. It takes 2× from Poison and Steel, so Poison- and Steel-type attackers are the safest answer.',
 };
 
-function fitPokemonDescription(prefix: string, sentences: string[]) {
-  for (const sentence of sentences) {
-    const description = `${prefix} ${sentence}`;
-    if (description.length >= 120 && description.length <= 155) return description;
+const typeCounterNames = typeCounterNamesData as Record<TypeId, string[]>;
 
-    const expanded = description.replace(/\.$/, ' in a direct matchup.');
-    if (expanded.length >= 120 && expanded.length <= 155) return expanded;
+function weaknessDescription(
+  prefix: string,
+  multiplier: 2 | 4,
+  weaknessTypes: TypeId[],
+) {
+  const listedTypes = weaknessTypes.slice(0, 2);
+  const typeLabels = listedTypes.map(type =>
+    typesData.types.find(entry => entry.id === type)?.name ?? type
+  );
+  const counterType = listedTypes[0];
+  const counterTypeLabel = typeLabels[0];
+  const counterNames = typeCounterNames[counterType];
+  const descriptions = counterNames.map(counterName =>
+    `${prefix} It takes ${multiplier}× from ${typeLabels.join(' and ')}, so ${counterTypeLabel}-type attackers like ${counterName} are the safest answer.`
+  );
+  const firstDescription = descriptions[0];
+
+  if (firstDescription.length >= 120 && firstDescription.length <= 155) {
+    return firstDescription;
   }
 
-  return `${prefix} ${sentences.at(-1)}`;
+  if (firstDescription.length < 120) {
+    return descriptions
+      .filter(description => description.length <= 155)
+      .sort((a, b) => b.length - a.length)[0] ?? firstDescription;
+  }
+
+  return descriptions
+    .filter(description => description.length >= 120)
+    .sort((a, b) => a.length - b.length)[0] ?? firstDescription;
 }
 
 function pokemonDescription(pokemon: typeof pokemonData.pokemon[number], typeNames: string) {
@@ -298,82 +321,21 @@ function pokemonDescription(pokemon: typeof pokemonData.pokemon[number], typeNam
     return 'Garchomp (Dragon/Ground) weakness guide. It takes 4× from Ice, so Ice Shard users like Mamoswine and Weavile are the safest answer.';
   }
 
-  const counters = EXPANDED_POKEMON_GUIDES[pokemon.id]?.counters ?? pokemon.counters;
   const weaknesses = applyPokemonAbilityContext(pokemon, calculateDualTypeWeaknesses(
     pokemon.types[0] as TypeId, pokemon.types[1] as TypeId | undefined
   ));
-  const namedCounters = (counters ?? []).flatMap(counter => {
-    const structured = /^(.+?) \(([^)]+)\) — /.exec(counter);
-    if (structured) return [{ name: structured[1], context: structured[2] }];
-
-    const dataNames = pokemonData.pokemon.flatMap(candidate => {
-      const start = counter.indexOf(candidate.name);
-      if (start < 0 || !/[\s(]/.test(counter[start - 1] ?? ' ') ||
-          !/[\s,)]/.test(counter[start + candidate.name.length] ?? ' ')) return [];
-      return [{ name: candidate.name, context: counter, start }];
-    }).sort((a, b) => a.start - b.start);
-
-    const parentheticalNames = [...counter.matchAll(/\(([^)]+)\)/g)].flatMap(match =>
-      match[1].split(/,|—/).map(name => name.trim()).filter(name =>
-        /^[A-Z][A-Za-z0-9.' -]+$/.test(name) && !/\b(?:HP|STAB|weak|type|moves?|users?|typing|Attack|Speed|Defense)\b/i.test(name)
-      ).map(name => ({ name, context: counter, start: counter.indexOf(name) }))
-    );
-
-    return [...dataNames, ...parentheticalNames].sort((a, b) => a.start - b.start);
-  });
-
-  for (const type of weaknesses.quadrupleWeak) {
-    const label = typesData.types.find(entry => entry.id === type)?.name;
-    if (!label) continue;
-    const names = [...new Set(namedCounters.filter(counter =>
-        counter.context.split('/').includes(label) || counter.context.includes(`${label}-type`)
-      ).map(counter => counter.name))].slice(0, 2);
-    if (names.length < 2) continue;
-
-    return fitPokemonDescription(prefix, [
-      `It takes 4× from ${label}, so ${names[0]} and ${names[1]} are the safest answer.`,
-      `It takes 4× from ${label}, so ${names[0]} and ${names[1]} win.`,
-    ]);
+  if (weaknesses.quadrupleWeak.length > 0) {
+    return weaknessDescription(prefix, 4, weaknesses.quadrupleWeak);
   }
 
-  const doubleWeaknesses = weaknesses.doubleWeak.slice(0, 2).map(type =>
-    typesData.types.find(entry => entry.id === type)?.name
-  ).filter((label): label is string => Boolean(label));
-
-  if (doubleWeaknesses.length >= 2) {
-    const [typeA, typeB] = doubleWeaknesses;
-    return fitPokemonDescription(prefix, [
-      `It takes 2× from ${typeA} and ${typeB}, so ${typeA}- and ${typeB}-type attackers are the safest answer.`,
-      `It takes 2× from ${typeA} and ${typeB}, so ${typeA}-type attackers are the safest answer.`,
-      `It takes 2× from ${typeA} and ${typeB}, so ${typeA}- and ${typeB}-type attackers win.`,
-      `It takes 2× from ${typeA} and ${typeB}, so ${typeA}-type attackers win.`,
-    ]);
-  }
-
-  if (doubleWeaknesses.length === 1) {
-    const [type] = doubleWeaknesses;
-    return fitPokemonDescription(prefix, [
-      `It takes 2× from ${type}, so ${type}-type attackers are the safest answer.`,
-      `It takes 2× from ${type}, so ${type}-type attackers win.`,
-    ]);
-  }
-
-  const quadrupleWeakness = weaknesses.quadrupleWeak.map(type =>
-    typesData.types.find(entry => entry.id === type)?.name
-  ).find((label): label is string => Boolean(label));
-  if (quadrupleWeakness) {
-    return fitPokemonDescription(prefix, [
-      `It takes 4× from ${quadrupleWeakness}, so ${quadrupleWeakness}-type attackers are the safest answer.`,
-      `It takes 4× from ${quadrupleWeakness}, so ${quadrupleWeakness}-type attackers win.`,
-    ]);
+  if (weaknesses.doubleWeak.length > 0) {
+    return weaknessDescription(prefix, 2, weaknesses.doubleWeak);
   }
 
   const neutralType = weaknesses.normal.map(type =>
     typesData.types.find(entry => entry.id === type)?.name
   ).find((label): label is string => Boolean(label));
-  return fitPokemonDescription(prefix, [
-    `It has no weaknesses, and only ${neutralType ?? 'neutral damage'} hits it for neutral damage.`,
-  ]);
+  return `${prefix} It has no weaknesses, and only ${neutralType ?? 'neutral damage'} hits it for neutral damage.`;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ name: string }> }): Promise<Metadata> {

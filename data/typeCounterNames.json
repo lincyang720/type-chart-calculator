@@ -1,0 +1,20 @@
+{
+  "normal": ["Snorlax", "Ursaluna", "Porygon-Z"],
+  "fire": ["Charizard", "Heatran", "Blacephalon"],
+  "water": ["Kyogre", "Greninja", "Primarina"],
+  "electric": ["Regieleki", "Zapdos", "Magnezone"],
+  "grass": ["Rillaboom", "Venusaur", "Meowscarada"],
+  "ice": ["Mamoswine", "Weavile", "Cloyster"],
+  "fighting": ["Lucario", "Conkeldurr", "Terrakion"],
+  "poison": ["Sneasler", "Gengar", "Nidoking"],
+  "ground": ["Garchomp", "Excadrill", "Landorus"],
+  "flying": ["Dragonite", "Corviknight", "Staraptor"],
+  "psychic": ["Mewtwo", "Alakazam", "Tapu Lele"],
+  "bug": ["Scizor", "Volcarona", "Buzzwole"],
+  "rock": ["Tyranitar", "Garganacl", "Rhyperior"],
+  "ghost": ["Gengar", "Dragapult", "Aegislash"],
+  "dragon": ["Garchomp", "Dragapult", "Hydreigon"],
+  "dark": ["Tyranitar", "Hydreigon", "Weavile"],
+  "steel": ["Gholdengo", "Metagross", "Kingambit"],
+  "fairy": ["Sylveon", "Togekiss", "Clefable"]
+}
