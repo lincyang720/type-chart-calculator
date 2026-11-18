@@ -45,16 +45,19 @@
     "intro": "Ground pressure and a Ground Pokémon are different problems. Immunity blanks, 4× dual typings, and counter moves are calculated from the same chart as the calculator."
   },
   "flying": {
+    "metadataTitle": "Flying Type Weakness: 3 Types and 4× Stacks",
     "title": "Flying Type Weakness: 4× Cases, Counters & Species",
     "description": "Flying type weakness page covering 4× stacks, immunity exceptions, counter moves, and every Flying species tracked in the TypeMatchup chart.",
     "intro": "Flying is as much an immunity as a weakness list. The calculator shows what a second type does to that row, including which species fall to 4×."
   },
   "psychic": {
+    "metadataTitle": "Psychic Type Weakness: 3 Types, Gen 9 Chart",
     "title": "Psychic Type Weakness: Counters, Species & 4× Chart",
     "description": "Psychic type weakness answers past the overview: counter Pokémon, immunities that blank attacks, every tracked species, and the 4× pairs on this page.",
     "intro": "Psychic offense stops cold against one immunity, and Psychic defenders do not all share a weakness list. Counters, 4× pairs, and every tracked species are on this page."
   },
   "bug": {
+    "metadataTitle": "Bug Type Weakness: 3 Types in Scarlet & Violet",
     "title": "Bug Type Weakness: Generation Shifts, Counters & 4×",
     "description": "Bug type weakness on the modern chart: counter Pokémon, stable 4× pairs, every tracked Bug species, and a dual-type calculator you can run here.",
     "intro": "Bug’s chart row changed when new types arrived, and a Bug Pokémon still needs a second plan. Counters, 4× pairs, and tracked species are listed from the current 18-type chart."
@@ -65,6 +68,7 @@
     "intro": "Rock rewards hazard chip and punishes Flying, then asks the Rock Pokémon to survive a long weakness list. 4× species and counter moves are both below."
   },
   "ghost": {
+    "metadataTitle": "Ghost Type Weakness: What Beats Ghost in Gen 9",
     "title": "Ghost Type Weakness: Counters, 4× Pairs & Calculator",
     "description": "Skip the one-line Ghost type weakness. See counter Pokémon, every Ghost we track with dual-type and 4× holes, then run the matchup calculator.",
     "intro": "An overview can name the weaknesses. This page adds counter Pokémon and moves, every Ghost species in our dataset with its real dual-type holes, and a calculator for the second type."
@@ -75,6 +79,7 @@
     "intro": "Dragon matchups change with the second type. Use the counter list, the 4× species table, and the calculator instead of treating every Dragon as the same defender."
   },
   "dark": {
+    "metadataTitle": "Dark Type Weakness: 3 Types That Beat Dark",
     "title": "Dark Type Weakness: Counter Pokémon, 4× Pairs & Chart",
     "description": "Dark type weakness chart with counter Pokémon, 4× dual typings, and a full species list — not just the attacking types named in an overview.",
     "intro": "The attacking types are the short version. The useful version is which Dark Pokémon take 4×, which partners erase a weakness, and which dataset Pokémon carry the counter move."

@@ -42,6 +42,22 @@ for (const type of types) {
   assert.ok(counters.length > 0, `${type} has no dataset counter`);
 }
 
+const priorityMetadataTitles = {
+  ghost: 'Ghost Type Weakness: What Beats Ghost in Gen 9',
+  dark: 'Dark Type Weakness: 3 Types That Beat Dark',
+  psychic: 'Psychic Type Weakness: 3 Types, Gen 9 Chart',
+  bug: 'Bug Type Weakness: 3 Types in Scarlet & Violet',
+  flying: 'Flying Type Weakness: 3 Types and 4× Stacks',
+};
+for (const [type, expectedTitle] of Object.entries(priorityMetadataTitles)) {
+  const metadataTitle = copy[type].metadataTitle;
+  assert.equal(metadataTitle, expectedTitle, `${type} metadata title differs from the approved copy`);
+  assert.ok(
+    metadataTitle.length >= 40 && metadataTitle.length <= 60,
+    `${type} metadata title is ${metadataTitle.length} characters: ${metadataTitle}`,
+  );
+}
+
 assert.deepEqual(defense.electric.weakTo, ['ground']);
 assert.ok(defense.normal.immuneTo.includes('ghost'));
 assert.ok(offense.fighting.noEffect.includes('ghost'));
@@ -86,6 +102,7 @@ assert.equal(dual('dark', 'ghost', 'fairy'), 1);
 
 const route = readFileSync('app/types/[type]/page.tsx', 'utf8');
 assert.match(route, /canonical: `\/types\/\$\{typeId\}`/);
+assert.match(route, /title: metadataTitle/);
 assert.match(route, /<SingleTypeGuide/);
 assert.match(route, /buildTypeFaqs\(guideModel\)/);
 

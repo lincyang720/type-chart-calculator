@@ -147,11 +147,16 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
 
   const copy = typePageCopy[typeId];
   const title = typeId === 'poison' ? 'Pokemon Poison Weakness: What Beats Poison Types?' : typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : copy.title;
+  const metadataTitle = 'metadataTitle' in copy
+    ? copy.metadataTitle
+    : typeId === 'ghost'
+      ? 'Ghost Type Weakness & Ghost Weakness Chart (Gen 9)'
+      : title;
   const description = typeId === 'poison' ? 'Poison Pokémon are weak to Ground and Psychic (2× each). Explore 18-type matchups, resistances, dual-type weakness changes and five FAQs.' : typeId === 'fairy' ? 'Fairy Pokémon are weak to Poison and Steel (2×), resist Fighting, Bug and Dark, and are immune to Dragon. Explore 18-type matchups, dual types and FAQs.' : copy.description;
   const keywords = `${type.name} type weakness, ${type.name} pokemon, ${type.name} counters, ${type.name} 4x weakness, pokemon type calculator`;
 
   return {
-    title: typeId === 'ghost' ? 'Ghost Type Weakness & Ghost Weakness Chart (Gen 9)' : title,
+    title: metadataTitle,
     description,
     keywords,
     alternates: { canonical: `/types/${typeId}` },
