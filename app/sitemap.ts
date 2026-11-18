@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.typematchup.org';
 
   const staticPages = [
+    { url: `${baseUrl}/eeveelutions` },
     {
       url: baseUrl,
       // Omit lastModified when the page has no tracked content date.

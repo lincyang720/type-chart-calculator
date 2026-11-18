@@ -8,6 +8,10 @@ import pokemonData from '@/data/pokemon.json';
 import Link from 'next/link';
 import { isEditorialPokemon } from '@/lib/editorialPokemon';
 
+const EEVEELUTION_IDS = new Set([
+  'vaporeon', 'jolteon', 'flareon', 'espeon', 'umbreon', 'leafeon', 'glaceon', 'sylveon',
+]);
+
 type ExpandedPokemonGuide = {
   description?: string;
   strategy?: string[];
@@ -498,6 +502,12 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
           <p className="text-lg text-gray-600">{pokemon.id === 'greninja'
               ? "Protean changes Greninja's type to match the move it uses, but in Gen 9 it triggers only once per switch-in, so you choose the moment. Base 122 Speed outspeeds most of the metagame. Battle Bond raises Attack, Sp. Atk and Speed once after it knocks out a target, instead of changing forme."
               : pokemon.strengths}</p>
+          {EEVEELUTION_IDS.has(pokemon.id) && (
+            <p className="mt-3">
+              Compare {pokemon.name} with the other forms in our{' '}
+              <Link className="text-blue-700 underline" href="/eeveelutions">guide to all eight Eeveelutions</Link>.
+            </p>
+          )}
         </div>
 
         {/* Type Weaknesses */}
@@ -640,6 +650,9 @@ export default async function PokemonPage({ params }: { params: Promise<{ name: 
         {pokemon.id === 'eevee' && (
           <article className="bg-white rounded-lg shadow-lg p-6 mb-8 prose max-w-none text-gray-700">
             <h2>Eeveelution Chart: Every Eevee Evolution, Type, and Weakness</h2>
+            <p>
+              Read the <Link className="text-blue-700 underline" href="/eeveelutions">complete Eeveelutions guide</Link> for Gen 9 evolution steps and team roles.
+            </p>
             <p>
               Here is the quick <strong>Eeveelution chart</strong>: Eevee is Normal, and its eight evolutions cover eight
               different types. Use the weakness column when choosing a counter, and the immunity or resistance column when
