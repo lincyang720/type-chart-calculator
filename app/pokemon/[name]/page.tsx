@@ -266,46 +266,114 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
+const EEVEELUTION_DESCRIPTIONS: Record<string, string> = {
+  vaporeon: 'Vaporeon (Water) weakness guide. It takes 2× from Electric and Grass, so Electric- and Grass-type attackers are the safest answer.',
+  jolteon: 'Jolteon (Electric) weakness guide. It takes 2× from Ground, so Ground-type attackers like Garchomp are the safest answer.',
+  flareon: 'Flareon (Fire) weakness guide. It takes 2× from Water, Ground and Rock, so Water- and Ground-type attackers are the safest answer.',
+  espeon: 'Espeon (Psychic) weakness guide. It takes 2× from Bug, Ghost and Dark, so Dark-type attackers like Tyranitar are the safest answer.',
+  umbreon: 'Umbreon (Dark) weakness guide. It takes 2× from Fighting, Bug and Fairy, so Fairy-type attackers like Sylveon are the safest answer.',
+  leafeon: 'Leafeon (Grass) weakness guide. It takes 2× from Fire, Ice, Poison, Flying and Bug, so Fire- and Ice-type attackers are the safest answer.',
+  glaceon: 'Glaceon (Ice) weakness guide. It takes 2× from Fire, Fighting, Rock and Steel, so Fire- and Fighting-type attackers are the safest answer.',
+  sylveon: 'Sylveon (Fairy) weakness guide. It takes 2× from Poison and Steel, so Poison- and Steel-type attackers are the safest answer.',
+};
+
+function fitPokemonDescription(prefix: string, sentences: string[]) {
+  for (const sentence of sentences) {
+    const description = `${prefix} ${sentence}`;
+    if (description.length >= 120 && description.length <= 155) return description;
+
+    const expanded = description.replace(/\.$/, ' in a direct matchup.');
+    if (expanded.length >= 120 && expanded.length <= 155) return expanded;
+  }
+
+  return `${prefix} ${sentences.at(-1)}`;
+}
+
 function pokemonDescription(pokemon: typeof pokemonData.pokemon[number], typeNames: string) {
   const prefix = `${pokemon.name} (${typeNames}) weakness guide.`;
+  const exactDescription = EEVEELUTION_DESCRIPTIONS[pokemon.id];
+  if (exactDescription) return exactDescription;
+
   if (pokemon.id === 'garchomp') {
     return 'Garchomp (Dragon/Ground) weakness guide. It takes 4× from Ice, so Ice Shard users like Mamoswine and Weavile are the safest answer.';
   }
 
   const counters = EXPANDED_POKEMON_GUIDES[pokemon.id]?.counters ?? pokemon.counters;
-  if (!counters?.length) return prefix;
-
   const weaknesses = applyPokemonAbilityContext(pokemon, calculateDualTypeWeaknesses(
     pokemon.types[0] as TypeId, pokemon.types[1] as TypeId | undefined
   ));
-  const namedCounters = counters.flatMap(counter => {
+  const namedCounters = (counters ?? []).flatMap(counter => {
     const structured = /^(.+?) \(([^)]+)\) — /.exec(counter);
     if (structured) return [{ name: structured[1], context: structured[2] }];
 
-    return pokemonData.pokemon.flatMap(candidate => {
+    const dataNames = pokemonData.pokemon.flatMap(candidate => {
       const start = counter.indexOf(candidate.name);
       if (start < 0 || !/[\s(]/.test(counter[start - 1] ?? ' ') ||
           !/[\s,)]/.test(counter[start + candidate.name.length] ?? ' ')) return [];
       return [{ name: candidate.name, context: counter, start }];
     }).sort((a, b) => a.start - b.start);
+
+    const parentheticalNames = [...counter.matchAll(/\(([^)]+)\)/g)].flatMap(match =>
+      match[1].split(/,|—/).map(name => name.trim()).filter(name =>
+        /^[A-Z][A-Za-z0-9.' -]+$/.test(name) && !/\b(?:HP|STAB|weak|type|moves?|users?|typing|Attack|Speed|Defense)\b/i.test(name)
+      ).map(name => ({ name, context: counter, start: counter.indexOf(name) }))
+    );
+
+    return [...dataNames, ...parentheticalNames].sort((a, b) => a.start - b.start);
   });
 
-  for (const [multiplier, types] of [[4, weaknesses.quadrupleWeak], [2, weaknesses.doubleWeak]] as const) {
-    for (const type of types) {
-      const label = typesData.types.find(entry => entry.id === type)?.name;
-      if (!label) continue;
-      const match = namedCounters.find(counter =>
+  for (const type of weaknesses.quadrupleWeak) {
+    const label = typesData.types.find(entry => entry.id === type)?.name;
+    if (!label) continue;
+    const names = [...new Set(namedCounters.filter(counter =>
         counter.context.split('/').includes(label) || counter.context.includes(`${label}-type`)
-      );
-      if (!match) continue;
-      const description = `${prefix} It takes ${multiplier}× from ${label}, so ${label}-type counters like ${match.name} can exploit that weakness.`;
-      if (description.length <= 155) return description;
-    }
+      ).map(counter => counter.name))].slice(0, 2);
+    if (names.length < 2) continue;
+
+    return fitPokemonDescription(prefix, [
+      `It takes 4× from ${label}, so ${names[0]} and ${names[1]} are the safest answer.`,
+      `It takes 4× from ${label}, so ${names[0]} and ${names[1]} win.`,
+    ]);
   }
 
-  const names = [...new Set(namedCounters.map(counter => counter.name))].slice(0, 2);
-  const description = `${prefix} Best counters include ${names.join(' and ')}.`;
-  return names.length === 2 && description.length <= 155 ? description : prefix;
+  const doubleWeaknesses = weaknesses.doubleWeak.slice(0, 2).map(type =>
+    typesData.types.find(entry => entry.id === type)?.name
+  ).filter((label): label is string => Boolean(label));
+
+  if (doubleWeaknesses.length >= 2) {
+    const [typeA, typeB] = doubleWeaknesses;
+    return fitPokemonDescription(prefix, [
+      `It takes 2× from ${typeA} and ${typeB}, so ${typeA}- and ${typeB}-type attackers are the safest answer.`,
+      `It takes 2× from ${typeA} and ${typeB}, so ${typeA}-type attackers are the safest answer.`,
+      `It takes 2× from ${typeA} and ${typeB}, so ${typeA}- and ${typeB}-type attackers win.`,
+      `It takes 2× from ${typeA} and ${typeB}, so ${typeA}-type attackers win.`,
+    ]);
+  }
+
+  if (doubleWeaknesses.length === 1) {
+    const [type] = doubleWeaknesses;
+    return fitPokemonDescription(prefix, [
+      `It takes 2× from ${type}, so ${type}-type attackers are the safest answer.`,
+      `It takes 2× from ${type}, so ${type}-type attackers win.`,
+    ]);
+  }
+
+  const quadrupleWeakness = weaknesses.quadrupleWeak.map(type =>
+    typesData.types.find(entry => entry.id === type)?.name
+  ).find((label): label is string => Boolean(label));
+  if (quadrupleWeakness) {
+    return fitPokemonDescription(prefix, [
+      `It takes 4× from ${quadrupleWeakness}, so ${quadrupleWeakness}-type attackers are the safest answer.`,
+      `It takes 4× from ${quadrupleWeakness}, so ${quadrupleWeakness}-type attackers win.`,
+    ]);
+  }
+
+  const neutralType = weaknesses.normal.map(type =>
+    typesData.types.find(entry => entry.id === type)?.name
+  ).find((label): label is string => Boolean(label));
+  return fitPokemonDescription(prefix, [
+    `It has no weaknesses, and only ${neutralType ?? 'neutral damage'} hits it for neutral damage.`,
+  ]);
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ name: string }> }): Promise<Metadata> {
