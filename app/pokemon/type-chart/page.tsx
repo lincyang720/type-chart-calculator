@@ -194,6 +194,9 @@ export default function TypeChartPage() {
           &amp; Violet, including The Indigo Disk DLC. Rows show the defending type, columns show the attacking type. Find every
           weakness, resistance, and immunity, plus Tera Type, Tera Blast, and Stellar Tera — or print the chart for quick reference.
         </p>
+        <p className="mb-8 text-center text-gray-700">
+          After checking type damage, use the <Link href="/pokemon/nature-chart" className="font-semibold text-blue-700 hover:underline">Pokemon nature chart</Link> to choose a stat boost for the same build.
+        </p>
 
         <div className="mb-6 flex justify-center">
           <PrintChartButton />

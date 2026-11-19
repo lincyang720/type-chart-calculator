@@ -79,6 +79,9 @@ export default function PokemonTeamCalculatorPage() {
             interactions. You can also compare the <Link href="/pokemon/best-type-combinations">best Pokemon type
             combinations</Link> when choosing a replacement that complements the rest of the team.
           </p>
+          <p>
+            Once each role is set, use the <Link href="/pokemon/nature-chart">Pokemon nature chart</Link> to choose which stat to raise and which unused stat to lower.
+          </p>
         </section>
       </div>
     </div>

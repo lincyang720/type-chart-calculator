@@ -9,14 +9,15 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "check:seo": "node scripts/check-seo.mjs",
-    "verify": "npm run typecheck && npm run check:seo && npm run check:consent && npm run check:adsense && npm run check:cmp-diagnostic && npm run check:type-direction && npm run check:ghost-weakness && npm run check:type-page-seo && npm run build && npm run check:pokemon-descriptions",
+    "verify": "npm run typecheck && npm run check:seo && npm run check:consent && npm run check:adsense && npm run check:cmp-diagnostic && npm run check:type-direction && npm run check:ghost-weakness && npm run check:type-page-seo && npm run build && npm run check:pokemon-descriptions && npm run check:nature-chart",
     "check:consent": "node scripts/check-consent.mjs",
     "check:adsense": "node scripts/check-adsense.mjs",
     "check:cmp-diagnostic": "node scripts/check-cmp-diagnostic.mjs",
     "check:type-direction": "node scripts/check-directional-type-chart.mjs",
     "check:ghost-weakness": "node scripts/check-ghost-weakness.mjs",
     "check:type-page-seo": "node scripts/check-type-page-seo.mjs",
-    "check:pokemon-descriptions": "node scripts/check-pokemon-descriptions.mjs"
+    "check:pokemon-descriptions": "node scripts/check-pokemon-descriptions.mjs",
+    "check:nature-chart": "node scripts/check-nature-chart.mjs"
   },
   "keywords": [],
   "author": "",

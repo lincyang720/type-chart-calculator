@@ -157,6 +157,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Add canonical type-chart and type-quiz pages
   const pokemonToolPages = [
     {
+      url: `${baseUrl}/pokemon/nature-chart`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/pokemon/type-chart`,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
