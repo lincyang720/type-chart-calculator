@@ -248,7 +248,7 @@ export default async function TypePage({ params }: { params: Promise<{ type: str
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <TypeBadge typeId={typeId} size="lg" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'poison' ? 'Pokemon Poison Weakness: What Beats Poison Types?' : typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : typeId === 'ghost' ? 'Ghost Type Weakness & Ghost Weakness Chart (Gen 9)' : copy.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{typeId === 'poison' ? 'Pokemon Poison Weakness: What Beats Poison Types?' : typeId === 'fairy' ? 'Pokemon Fairy Weakness: What Beats Fairy Types?' : typeId === 'ghost' ? 'What Is Ghost Weak To?' : copy.title}</h1>
           </div>
           <p className="text-lg text-gray-700">{typeId === 'poison' ? 'Poison-type Pokémon are weak to Ground and Psychic moves, each dealing 2× damage against a pure Poison defender.' : typeId === 'fairy' ? 'Fairy-type Pokémon are weak to Poison and Steel moves, each dealing 2× damage against a pure Fairy defender.' : copy.intro}</p>
         </div>
