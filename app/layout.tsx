@@ -61,8 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' &&
-          process.env.NEXT_PUBLIC_ADSENSE_ENABLED === 'true' &&
+        {process.env.NEXT_PUBLIC_ADSENSE_ENABLED === 'true' &&
           process.env.NEXT_PUBLIC_ADSENSE_CMP_READY === 'true' && (
             <script
               async

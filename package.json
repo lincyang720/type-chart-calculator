@@ -17,7 +17,9 @@
     "check:ghost-weakness": "node scripts/check-ghost-weakness.mjs",
     "check:type-page-seo": "node scripts/check-type-page-seo.mjs",
     "check:pokemon-descriptions": "node scripts/check-pokemon-descriptions.mjs",
-    "check:nature-chart": "node scripts/check-nature-chart.mjs"
+    "check:nature-chart": "node scripts/check-nature-chart.mjs",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
   },
   "keywords": [],
   "author": "",
@@ -37,5 +39,8 @@
     "remark-gfm": "^4.0.1",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "1.15.1"
   }
 }

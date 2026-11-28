@@ -8,6 +8,17 @@ import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 import JsonLd from '@/components/SEO/JsonLd';
 
+export async function generateStaticParams() {
+  const blogDir = path.join(process.cwd(), 'content/blog');
+  const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
+  return files.map(f => {
+    const { data } = matter(fs.readFileSync(path.join(blogDir, f), 'utf-8'));
+    return { slug: typeof data.slug === 'string' ? data.slug : f.replace(/\.md$/, '') };
+  });
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const blogDir = path.join(process.cwd(), 'content/blog');

@@ -64,10 +64,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/',
+        has: [{ type: 'host', value: 'typematchup.org' }],
+        destination: 'https://www.typematchup.org/',
+        statusCode: 301,
+      },
+      {
         source: '/:path*',
         has: [{ type: 'host', value: 'typematchup.org' }],
         destination: 'https://www.typematchup.org/:path*',
-        permanent: true,
+        statusCode: 301,
       },
       // P1: Consolidate duplicate type-chart pages to resolve cannibalization
       {
